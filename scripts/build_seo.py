@@ -10,6 +10,19 @@ def srow(p,i):
   if p.get("archived"): tags.append("Archived on GitHub")
   t=f' <span class=vchk style="color:var(--acc);border-color:var(--acc)">{" · ".join(tags)}</span>' if tags else ""
   return f'<a class=row href="../p/{p["slug"]}.html"><span class="no mono">#{i}</span><span><h3>{e(p["name"])}{t}</h3><p>{e(p["description"])}</p></span><span class="c mono">★ {fmt(stars(p))} · by {e(p["maker"])}</span></a>'
+INTRO={
+"Agent Workflows":"This is the busiest shelf: tools that split work across several agents, enforce a plan-then-build loop, or wrap a whole delivery process. Look for ones that write their plan to files you can read, because that's what makes a long run debuggable.",
+"Memory & Context":"These plugins try to give an agent something it lacks by default: memory that survives the session. Check where each one stores what it remembers (local files vs a hosted service) before you trust it with a real codebase.",
+"Security & Governance":"Secret scanning, policy hooks, pentest helpers and guardrails. An agent with shell access can read more than you think, so this shelf is worth a look before anything else.",
+"Review & Testing":"Plugins that review diffs, write or run tests, or check an agent's work before you merge it. Most are prompts plus scripts, so read what they run.",
+"Messaging & Remote":"Ways to reach an agent, or be reached by one, from a phone, Slack, Telegram or Discord. Several route through hosted services, so check what leaves your machine.",
+"Design & Frontend":"UI, CSS, image and front-end helpers. Quality varies a lot here, so the project's own screenshots are the best quick signal.",
+"Docs, Content & SEO":"Writing, PDFs, transcripts, translation and SEO tooling for agents.",
+"Data & Backend":"Database, analytics, dbt and observability helpers. Be careful about giving any of these credentials to production systems.",
+"Deploy & DevOps":"Deploys, containers, git hosting and publishing. These touch real infrastructure, so start them on a test project.",
+"Usage & Quotas":"Small tools that show how much of your plan or rate limit an agent has used, and when it resets.",
+"Industry Tools":"Niche plugins for specific trades and businesses, from CAD to legal research.",
+}
 os.makedirs(D+"/best",exist_ok=True); os.makedirs(D+"/compare",exist_ok=True)
 for c in cats:
   items=sorted([p for p in P if p["category"]==c],key=rankkey)
@@ -18,6 +31,7 @@ for c in cats:
   cmp="".join(f'<li><a href="../compare/{cslug(a,b2)}.html">{e(a["name"])} vs {e(b2["name"])}</a></li>' for a,b2 in PAIRS if a["category"]==c)
   b=f'''<div class=prose style="max-width:900px;padding-bottom:10px"><span class=mono style="color:var(--acc)">Ranked by public signals · not tested by us</span><h1>The best {e(c)} plugins for ChatGPT &amp; Codex</h1>
 <p style="font-size:19px">{len(items)} plugins in our {e(c)} shelf ({e(BLURB.get(c,""))}), ordered by what we can actually measure: our editor's picks first, then GitHub stars{f" (checked {checked})" if checked else ""}. Archived repos go to the bottom.</p>
+<p>{e(INTRO.get(c,""))}</p>
 <p style="color:var(--mute)">Stars measure popularity, not quality or safety. We haven't installed or audited these; every description is the project's own. Read the code before you install anything. Paid placements never affect this order.</p>
 {f"<p>Most-starred right now: <a href='../p/{top['slug']}.html'><b>{e(top['name'])}</b></a> by {e(top['maker'])}.</p>" if top else ""}
 {f"<h3>Head-to-head</h3><ul class=where>{cmp}</ul>" if cmp else ""}<p><a href="../c/{slug(c)}.html">← Browse the {e(c)} shelf</a></p></div>

@@ -153,6 +153,44 @@ home=topspot()+fband("")+f"""<section class=lede><div><span class="mono" style="
 q.oninput=f;document.querySelectorAll('.cats button').forEach(b=>b.onclick=()=>{{document.querySelectorAll('.cats button').forEach(z=>z.classList.remove('on'));b.classList.add('on');c=b.dataset.c;f();document.getElementById('catalog').scrollIntoView({{behavior:'smooth'}})}});f()</script>"""
 if PREVIEW: home=preview_home()
 open(D+"/index.html","w").write(layout("PickAPlugin — an independent catalog of ChatGPT & Codex plugins",home))
+SITE_URL="https://pickaplugin.com"
+def ghfacts(p):
+  out=""
+  if p.get("pushed_at"): out+=f'<dt class=mono>Last push to GitHub</dt><dd>{e(p["pushed_at"])}</dd>'
+  if p.get("license"): out+=f'<dt class=mono>License</dt><dd>{e(p["license"])}</dd>'
+  if p.get("language"): out+=f'<dt class=mono>Main language</dt><dd>{e(p["language"])}</dd>'
+  if p.get("archived"): out+='<dt class=mono>Status</dt><dd>Archived on GitHub</dd>'
+  return out
+def installbox(p):
+  if not p.get("install"): return ""
+  return f'<div style="margin-top:18px"><span class=mono>Install (copied from the project README)</span><pre class=code>{e(p["install"])}</pre><span class=mono style="color:var(--mute);font-size:9px">Check the README for the current steps · read the code first</span></div>'
+def claimbox(p):
+  return f'''<div class=box id=claim><span class="mono" style="color:var(--acc)">Free · for makers</span><h3>Is this your plugin? Claim this listing.</h3>
+<p>Tell us it's yours and what to fix. Claiming is free. We'll check that you own or maintain the repo before changing anything.</p>
+<form method=post action="/api/claim"><input type=hidden name=slug value="{e(p["slug"])}">
+<label class=mono>Your email<input type=email name=email required autocomplete=email></label>
+<label class=mono>GitHub handle<input name=github required pattern="@?[A-Za-z0-9-]{{1,39}}" placeholder="{e(p["maker"] or "your-handle")}"></label>
+<label class=mono>Corrections (optional)<textarea name=corrections maxlength=2000 placeholder="Better description, wrong category, new link…"></textarea></label>{HONEY}{ts()}<button>Claim it free</button></form></div>'''
+def badgebox(p):
+  pick=p["slug"] in PICKS; img=f'{SITE_URL}/badge/{p["slug"]}.svg'; url=f'{SITE_URL}/p/{p["slug"]}'
+  md=f'[![{"Editor&#39;s Pick on PickAPlugin" if pick else "Listed on PickAPlugin"}]({img})]({url})'
+  return f'''<div class=box><span class=mono>Add a badge to your README</span><p><img src="../badge/{p["slug"]}.svg" alt="badge" height=20></p><p>Paste this into your README:</p><pre class=code>{md}</pre></div>'''
+def badge_svg(label,value,color):
+  lw=7*len(label)+12; vw=7*len(value)+12; w=lw+vw
+  return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="20" role="img" aria-label="{e(label)}: {e(value)}"><title>{e(label)}: {e(value)}</title><rect width="{lw}" height="20" fill="#111"/><rect x="{lw}" width="{vw}" height="20" fill="{color}"/><g fill="#fff" font-family="Verdana,DejaVu Sans,sans-serif" font-size="11" text-anchor="middle"><text x="{lw/2}" y="14">{e(label)}</text><text x="{lw+vw/2}" y="14">{e(value)}</text></g></svg>'''
+os.makedirs(D+"/badge",exist_ok=True)
+for p in P:
+  pk=p["slug"] in PICKS
+  open(f'{D}/badge/{p["slug"]}.svg',"w").write(badge_svg("PickAPlugin","Editor's Pick" if pk else "Listed","#1f3a8a" if pk else "#5d584f"))
+open(D+"/badge/listed.svg","w").write(badge_svg("PickAPlugin","Listed","#5d584f")); open(D+"/badge/editors-pick.svg","w").write(badge_svg("PickAPlugin","Editor's Pick","#1f3a8a"))
+_msg=lambda t,h,body: open(f"{D}/{t}.html","w").write(layout(h+" — PickAPlugin",f'<div class=prose><h1>{h}</h1>{body}<p><a href="index.html">← Back to the catalog</a></p></div>'))
+_msg("claimed","Thanks, we got your claim",'''<p style="font-size:19px">We'll verify that you own or maintain the repo, usually by checking that your GitHub handle matches the project's owner or contributors, then apply any corrections and reply by email.</p>
+<p>Claiming is free and always will be. If you later want more visibility, there are clearly labelled paid options on the <a href="advertise.html">advertise page</a>, but you don't need any of them.</p><p id=back></p>
+<script>let s=new URLSearchParams(location.search).get("s");if(s&&/^[a-z0-9-]+$/.test(s))document.getElementById("back").innerHTML='<a href="/p/'+s+'">← Back to your listing</a>'</script>''')
+_msg("subscribed","You're on the list","<p style='font-size:19px'>Thanks. You'll get a weekly-ish roundup of new and notable ChatGPT &amp; Codex plugins. No spam, and every email has a one-click unsubscribe link.</p>")
+_msg("unsubscribed","You're unsubscribed","<p style='font-size:19px'>Your email has been removed from the PickAPlugin list. Sorry to see you go.</p>")
+_msg("form-error","That didn't go through",f'''<p style="font-size:19px" id=why>Something was missing or invalid. Please go back and try again.</p><p>Still stuck? Email <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
+<script>let w=new URLSearchParams(location.search).get("w"),m={{captcha:"The spam check didn't pass. Please go back, wait for the check box to finish, and submit again.",unsub:"That unsubscribe link isn't valid. Email us and we'll remove you by hand.",claim:"Please enter a valid email and GitHub handle.",sub:"Please enter a valid email address."}};if(m[w])document.getElementById("why").textContent=m[w]</script>''')
 for p in P:
   same=[x for x in P if x["category"]==p["category"] and x["slug"]!=p["slug"] and not x.get("featured")][:4]
   isf=p.get("featured")
@@ -160,9 +198,9 @@ for p in P:
   rel="".join(f'<a class=row style="grid-template-columns:70px 1fr" href="{x["slug"]}.html"><span class="no mono">{num(x)}</span><span><h3>{e(x["name"])}</h3><p>{e(x["description"])}</p></span></a>' for x in same)
   b=f"""<article class=doc><div><a class=mono href="../index.html#catalog" style="text-decoration:none">← Catalog</a> <span class=mono>/</span> <a class=mono href="../c/{slug(p["category"])}.html" style="text-decoration:none">{e(p["category"])}</a>{'<div style="margin-top:14px"><span class=badge>Featured</span></div>' if isf else ""}<h1>{e(p["name"])}</h1>{'<p class=vbig>✓ Verified by maker <span class=mono>· paid badge: the maker claimed this listing and keeps it current</span></p>' if p.get("verified") else ""}<p class=d>{e(p["description"])}</p>{note}
 <a class=btn href="{e(p["link"])}" rel="nofollow noopener" target=_blank>Open the project ↗</a>{"" if isf else '<p class=mine>Is this your plugin? <a href="../featured.html">Get featured</a>'+("" if p.get("verified") else ' or <a href="../advertise.html#verified">get a Verified badge ($9/mo)</a>')+' →</p>'}
-<div class=sec><h2>Also in {e(p["category"])}</h2><span class=mono>{BLURB.get(p["category"],"")}</span></div>{pinned(p["category"],"",  "../")}{rel}</div>
+{claimbox(p)}{badgebox(p)}<div class=sec><h2>Also in {e(p["category"])}</h2><span class=mono>{BLURB.get(p["category"],"")}</span></div>{pinned(p["category"],"",  "../")}{rel}</div>
 <aside class=side><span class=mono>{num(p)}</span><dl><dt class=mono>Maker</dt><dd>{e(p["maker"] or "Unknown")}</dd><dt class=mono>Category</dt><dd>{e(p["category"])}</dd>
-<dt class=mono>Listed via</dt><dd><a href="{e(p["source_url"])}">{e(p["source"])}</a></dd><dt class=mono>In our catalog since</dt><dd>{p["first_seen"]}</dd>{checked(p) if PREVIEW else ""}</dl>
+<dt class=mono>Listed via</dt><dd><a href="{e(p["source_url"])}">{e(p["source"])}</a></dd><dt class=mono>In our catalog since</dt><dd>{p["first_seen"]}</dd>{checked(p) if PREVIEW else ""}{ghfacts(p)}</dl>{installbox(p)}
 <p style="font-size:14px;color:var(--mute);margin-top:24px">Made this? You can <a href="../featured.html">feature it</a> or <a href="mailto:{EMAIL}?subject=Listing%20fix:%20{e(p['name'])}">ask for a correction</a>.</p></aside></article>"""
   open(f'{D}/p/{p["slug"]}.html',"w").write(layout(f'{p["name"]} — PickAPlugin',b,1,p["description"][:155]))
 os.makedirs(D+"/c",exist_ok=True)
@@ -227,6 +265,7 @@ if PREVIEW: preview_pages()
 def tier(id_,name,price,per,what,status,key):
   btn=pay(key,f"Buy {name}",price) if key and STRIPE.get(key) else '<span class="mono st">Coming soon · not on sale yet</span>'
   return f'<div class="tier{" soon" if not key else ""}" id={id_}><div><h3>{name}</h3><p style="margin:0">{what}</p></div><div class=pr>{price}<small>{per}</small></div><div><p class=st style="margin:0">{status}</p>{btn}</div></div>'
+FOUNDING=min(10,sum(1 for p in P for k in ("featured","top_spot","belt","verified") if p.get(k))+len(SPONS))
 spon_open=len(cats)-sum(1 for c in cats if c in SPONS)
 ladder="".join([
  tier("top","The Top Spot","$199","per month",f"One plugin, one bold banner at the very top of the homepage, plus a short write-up on why it's worth a look. Labelled as paid.",f"{'1 of 1 open' if not TOP else '0 of 1 open · taken'}","top_spot" if not TOP else None),
@@ -237,7 +276,7 @@ ladder="".join([
  tier("newsletter","Newsletter slot","$39","per send","A labelled sponsor slot in the weekly PickAPlugin email. The newsletter hasn't launched yet, so this isn't for sale.","Coming soon",None)])
 open(D+"/advertise.html","w").write(layout("Advertise — PickAPlugin",f"""<div class=prose style="max-width:900px"><span class=mono style="color:var(--acc)">Advertise · every paid spot is labelled</span><h1>Put your plugin in front of people choosing plugins.</h1>
 <p style="font-size:19px">PickAPlugin is a hand-sorted catalog of {len(P)} ChatGPT &amp; Codex plugins. Here's everything that's for sale, with live counts of what's still open. Pay with Stripe, put your plugin's URL in the “Plugin URL” box, and you're live within 24 hours.</p>
-<div class=ladder>{ladder}</div>
+<div class=box><span class="mono" style="color:var(--acc)">Founding advertisers</span><p style="font-size:18px"><b>The first 10 paid placements keep their launch price for as long as they stay subscribed.</b> Your Stripe subscription stays at the price you signed up at, even if our rates go up later.</p><p class=mono style="color:var(--mute)">Founding placements so far: {FOUNDING} of 10</p></div><div class=ladder>{ladder}</div>
 <div class=faq><h3>The honest bits</h3><ul class=where><li>We don't publish traffic numbers yet and won't invent any. You're buying a clearly labelled spot, not a guaranteed number of installs.</li>
 <li>Editor's picks and the catalog order are never for sale. On the belt, unpaid picks are labelled “Pick” and paid cards “On the Belt”.</li>
 <li>Monthly, cancel anytime by emailing <a href="mailto:{EMAIL}">{EMAIL}</a>. Your spot stays up until the paid period ends.</li>

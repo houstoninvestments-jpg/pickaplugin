@@ -3,7 +3,7 @@ import subprocess as _sp, datetime as _dt
 BUILD=_dt.date.today(); BUILD_S=BUILD.strftime("%A, %B %-d, %Y")
 _ck=sorted({p.get("stars_checked") for p in P if p.get("stars_checked")}); CHECKED=_ck[-1] if _ck else None
 CSS="""@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,800;1,6..72,400;1,6..72,600&family=Martian+Mono:wght@400;500&display=swap');
-:root{--ink:#111;--paper:#f6f3ec;--rule:#c9c3b6;--mute:#5d584f;--acc:#b3261e}
+:root{--ink:#14171f;--paper:#f4efe1;--rule:#cfc6ad;--mute:#5b5a52;--acc:#1f3a8a}
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.5 Newsreader,Georgia,serif;font-optical-sizing:auto}
 a{color:inherit;text-decoration-thickness:1px;text-underline-offset:2px}.w{max-width:1180px;margin:auto;padding:0 28px}
 .mono{font-family:'Martian Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.02em;text-transform:uppercase}
@@ -40,17 +40,33 @@ h1,h2,h3{font-family:Newsreader,serif}
 .ladder{border-top:3px solid var(--ink);margin-top:22px}.tier{display:grid;grid-template-columns:1fr 130px 220px;gap:22px;padding:18px 0;border-bottom:1px solid var(--rule)}.tier h3{margin:0 0 4px}.tier .pr{font:600 28px Newsreader,serif}.tier .pr small{display:block;font:400 10px 'Martian Mono',monospace;color:var(--mute);text-transform:uppercase}.tier .st{font-size:14px;color:var(--mute)}.tier.soon{opacity:.6}
 .log li{margin:4px 0;list-style:none}.log{padding:0}.log .mono{color:var(--mute);margin-right:10px}
 footer{border-top:3px solid var(--ink);margin-top:40px;padding:14px 0 40px;color:var(--mute);font-size:13.5px;display:flex;justify-content:space-between;gap:30px}
+.box{border:1px solid var(--ink);background:#fffdf8;padding:14px 16px;margin:22px 0}.box h3{margin:0 0 6px;font-size:21px}.box p{margin:4px 0;font-size:15px}
+.box label{display:block;margin-top:8px}.box input,.box textarea{width:100%;border:0;border-bottom:1px solid var(--ink);background:transparent;font:16px Newsreader,serif;padding:4px 0;outline:none}.box textarea{border:1px solid var(--rule);min-height:64px}
+.box button,.nl button{border:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:8px 14px;font:500 11px 'Martian Mono',monospace;text-transform:uppercase;cursor:pointer;margin-top:10px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}.cf-turnstile{margin-top:10px}
+pre.code{background:#fffdf8;border:1px solid var(--rule);padding:8px;font:12px 'Martian Mono',monospace;white-space:pre-wrap;word-break:break-all;margin:6px 0}
+.nl{border-top:3px solid var(--ink);margin-top:40px;padding:14px 0 4px;display:grid;grid-template-columns:1fr 1.2fr;gap:24px}.nl h3{margin:0;font-size:24px;font-style:italic}.nl p{margin:4px 0;color:var(--mute);font-size:14.5px}
+.nl form{display:flex;flex-wrap:wrap;gap:8px;align-items:end}.nl input[type=email]{flex:1;min-width:200px;border:0;border-bottom:1px solid var(--ink);background:transparent;font:italic 19px Newsreader,serif;padding:4px 0;outline:none}
+@media(max-width:860px){.nl{grid-template-columns:1fr}}
 @media(max-width:860px){.cols{column-count:1}.front,.doc,.find,.tier{grid-template-columns:1fr}.front>div+div{border:0;padding-left:0}.ads{grid-template-columns:1fr}.wm{font-size:48px}}"""
 open(D+"/style.css","w").write(CSS)
 def layout(title,body,depth=0,desc="An independent, hand-edited catalog of ChatGPT and Codex plugins."):
   r="../"*depth
   return f"""<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>{e(title)}</title>
-<meta name=description content="{e(desc)}"><link rel=stylesheet href="{r}style.css"></head><body><div class=w>
+<meta name=description content="{e(desc)}"><link rel=stylesheet href="{r}style.css"><script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script></head><body><div class=w>
 <header class=mast><div class="ear mono"><span>Independent · not affiliated with OpenAI</span><span>Hand-sorted, not ranked by an algorithm</span></div>
 <a class=wm href="{r}index.html">PickA<i>Plugin</i></a><p class=tag>A catalog of ChatGPT &amp; Codex plugins, sorted by people.</p>
 <div class="dl mono"><span>Issue No. 1</span><span>Updated {BUILD_S}</span><span>{len(P)} plugins catalogued</span></div>
 <nav class="nav mono"><a href="{r}index.html#catalog">Catalog</a>{"".join(f'<a href="{r}c/{slug(c)}.html">{e(c.split(" ")[0].rstrip(","))}</a>' for c in cats[:6])}<a href="{r}about.html">How we pick</a><a href="{r}changelog.html">Changelog</a><a href="{r}advertise.html">Advertise</a></nav></header>
-{belt(r)}{body}<footer><span>PickAPlugin is an independent catalog. Not affiliated with, endorsed by, or sponsored by OpenAI. ChatGPT and Codex are trademarks of OpenAI. Listings come from public sources and are not audited. Read the code before you install anything.</span><span><a href="{r}about.html">How we pick</a> · <a href="{r}changelog.html">Changelog</a> · <a href="{r}advertise.html">Advertise</a> · <a href="{r}privacy.html">Privacy</a> · <a href="{r}terms.html">Terms</a> · <a href="mailto:{EMAIL}">{EMAIL}</a></span></footer></div></body></html>"""
+{belt(r)}{body}{nlform("footer")}<footer><span>PickAPlugin is an independent catalog. Not affiliated with, endorsed by, or sponsored by OpenAI. ChatGPT and Codex are trademarks of OpenAI. Listings come from public sources and are not audited. Read the code before you install anything.</span><span><a href="{r}about.html">How we pick</a> · <a href="{r}changelog.html">Changelog</a> · <a href="{r}advertise.html">Advertise</a> · <a href="{r}privacy.html">Privacy</a> · <a href="{r}terms.html">Terms</a> · <a href="mailto:{EMAIL}">{EMAIL}</a></span></footer></div></body></html>"""
+import json as _json
+_SEC=os.path.join(ROOT,"scripts",".secrets.json")
+SITEKEY=_json.load(open(_SEC)).get("sitekey") if os.path.exists(_SEC) else "0x4AAAAAAFnRt9YCBHXNJWZZ"
+def ts(): return f'<div class=cf-turnstile data-sitekey="{SITEKEY}" data-size="flexible"></div>'
+HONEY='<div class=hp aria-hidden=true><label>Leave this empty <input name=website tabindex=-1 autocomplete=off></label></div>'
+def nlform(where,title="The PickAPlugin roundup"):
+  return f'''<section class=nl><div><h3>{title}</h3><p>A weekly-ish email with new and notable ChatGPT &amp; Codex plugins. No spam. Unsubscribe anytime with one click.</p></div>
+<form method=post action="/api/subscribe"><input type=email name=email required placeholder="you@example.com" aria-label="Email address"><input type=hidden name=from value="{where}">{HONEY}<button>Subscribe</button>{ts()}</form></section>'''
 def meta(p):
   bits=[num(p),p["category"]]
   if isinstance(p.get("stars"),int): bits.append(f'★ {p["stars"]:,} on {p.get("stars_checked") or "?"}')
@@ -90,7 +106,7 @@ def preview_home():
   picks2="".join(f'<a class=row href="p/{s}.html"><h3>{e(by[s]["name"])}</h3><p>{e(PICKS[s])}</p><span class="m mono">{meta(by[s])}</span></a>' for s in rest)
   chips='<button class=on data-c="">Everything</button>'+"".join(f'<button data-c="{e(c)}">{e(c)}<sup>{count[c]}</sup></button>' for c in cats)
   return f"""<section class=front><div>{lead}</div><div class=side3>{side}</div></section>
-<div class=sec><h2>Ads &amp; open space</h2><span class=mono>Paid placements are labelled. They never change picks or catalog order.</span></div><div class=ads>{ads and "".join(ads[:3])}</div>
+{nlform("home","Get the roundup by email")}<div class=sec><h2>Ads &amp; open space</h2><span class=mono>Paid placements are labelled. They never change picks or catalog order.</span></div><div class=ads>{ads and "".join(ads[:3])}</div>
 {f'<div class=sec><h2>More picks</h2><span class=mono>Our opinion, from each project&#39;s own docs · not audited</span></div><div class=cols>{picks2}</div>' if picks2 else ""}
 <div class=sec id=catalog><h2>The full catalog</h2><span class=mono id=n></span></div>
 <div class=find><div><label class=mono for=q>Search {len(P)} plugins</label><input id=q placeholder="memory, PDF, secret scanning…"></div><div class=cats>{chips}</div></div>
