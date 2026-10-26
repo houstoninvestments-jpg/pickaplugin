@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Static site generator: data/plugins.json -> dist/ (Cloudflare Pages output dir)."""
 import json, os, html, shutil
-ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__))); D=os.path.join(ROOT,"dist")
+ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# REDESIGN=1 builds the print-style redesign preview into dist-preview/ (never deploy it).
+PREVIEW=os.environ.get("REDESIGN")=="1"; D=os.path.join(ROOT,"dist-preview" if PREVIEW else "dist")
 P=json.load(open(os.path.join(ROOT,"data","plugins.json")))
 for p in P:
   if p["category"]=="Other": p["category"]="Miscellany"
@@ -136,6 +138,7 @@ def fband(r):
   cards+="".join(f'<a class=fcard href="{r}p/{s}.html"><span class=badge>Editor\'s pick · unpaid</span><h3>{e(by[s]["name"])}</h3><p>{e(PICKS[s][:150])}</p><span class="by mono">by {e(by[s]["maker"])} · {e(by[s]["category"])}</span></a>' for s in fill)
   if OPEN: cards+=f'<a class="fcard open" href="{r}featured.html"><span class="mono" style="color:#e9b8ab">Featured slot · open</span><h3>Feature your<br>plugin here.</h3><p>The first thing every visitor sees, plus the top of your category page and every related list.</p><span class=cta>Claim this slot · <b>$49/mo</b> →</span></a>'
   return f'<section class=fband><div class=hd><h2>Featured</h2><span class=mono>Paid placements labelled “Featured” · picks are unpaid · <a href="{r}featured.html">how it works</a></span></div><div class=fgrid>{cards}</div></section>'
+if PREVIEW: exec(open(os.path.join(ROOT,"scripts","redesign.py")).read())
 dates=sorted({p["first_seen"] for p in P}); new=[p for p in P if len(dates)>1 and p["first_seen"]>dates[0]][-10:]
 newsec=f'<div class=sec><h2>Fresh in the catalog</h2><span class=mono>added since {dates[0]}</span></div>'+"".join(row(p) for p in new) if new else ""
 chips='<button class=on data-c="">Everything</button>'+"".join(f'<button data-c="{e(c)}">{e(c)}<sup>{count[c]}</sup></button>' for c in cats)
@@ -148,6 +151,7 @@ home=topspot()+fband("")+f"""<section class=lede><div><span class="mono" style="
 <div class=sec id=catalog><h2>The full catalog</h2><span class=mono id=n></span></div>{shelves}<div id=list>{"".join(row(p) for p in P)}</div>
 <script>let c="",q=document.getElementById('q'),rs=[...document.querySelectorAll('#list .row')];function f(){{let t=q.value.toLowerCase(),n=0;rs.forEach(x=>{{let ok=(!c||x.dataset.c==c)&&x.dataset.t.includes(t);x.style.display=ok?'':'none';n+=ok}});document.getElementById('n').textContent=n+' of {len(P)} shown'}}
 q.oninput=f;document.querySelectorAll('.cats button').forEach(b=>b.onclick=()=>{{document.querySelectorAll('.cats button').forEach(z=>z.classList.remove('on'));b.classList.add('on');c=b.dataset.c;f();document.getElementById('catalog').scrollIntoView({{behavior:'smooth'}})}});f()</script>"""
+if PREVIEW: home=preview_home()
 open(D+"/index.html","w").write(layout("PickAPlugin — an independent catalog of ChatGPT & Codex plugins",home))
 for p in P:
   same=[x for x in P if x["category"]==p["category"] and x["slug"]!=p["slug"] and not x.get("featured")][:4]
@@ -158,7 +162,7 @@ for p in P:
 <a class=btn href="{e(p["link"])}" rel="nofollow noopener" target=_blank>Open the project ↗</a>{"" if isf else '<p class=mine>Is this your plugin? <a href="../featured.html">Get featured</a>'+("" if p.get("verified") else ' or <a href="../advertise.html#verified">get a Verified badge ($9/mo)</a>')+' →</p>'}
 <div class=sec><h2>Also in {e(p["category"])}</h2><span class=mono>{BLURB.get(p["category"],"")}</span></div>{pinned(p["category"],"",  "../")}{rel}</div>
 <aside class=side><span class=mono>{num(p)}</span><dl><dt class=mono>Maker</dt><dd>{e(p["maker"] or "Unknown")}</dd><dt class=mono>Category</dt><dd>{e(p["category"])}</dd>
-<dt class=mono>Listed via</dt><dd><a href="{e(p["source_url"])}">{e(p["source"])}</a></dd><dt class=mono>In our catalog since</dt><dd>{p["first_seen"]}</dd></dl>
+<dt class=mono>Listed via</dt><dd><a href="{e(p["source_url"])}">{e(p["source"])}</a></dd><dt class=mono>In our catalog since</dt><dd>{p["first_seen"]}</dd>{checked(p) if PREVIEW else ""}</dl>
 <p style="font-size:14px;color:var(--mute);margin-top:24px">Made this? You can <a href="../featured.html">feature it</a> or <a href="mailto:{EMAIL}?subject=Listing%20fix:%20{e(p['name'])}">ask for a correction</a>.</p></aside></article>"""
   open(f'{D}/p/{p["slug"]}.html',"w").write(layout(f'{p["name"]} — PickAPlugin',b,1,p["description"][:155]))
 os.makedirs(D+"/c",exist_ok=True)
@@ -218,6 +222,7 @@ open(D+"/featured.html","w").write(layout("Get featured — PickAPlugin",f"""<di
 open(D+"/about.html","w").write(layout("About — PickAPlugin",f"""<div class=prose><h1>About</h1><p>PickAPlugin is an independent catalog of plugins for ChatGPT and Codex. It is <b>not affiliated with, endorsed by, or sponsored by OpenAI</b>.</p>
 <p>Listings are collected daily from public sources and link straight to the original project. We don't host plugin code and we haven't audited it — a plugin can run commands on your machine, so read it first.</p>
 <p>Editor's picks are our opinion, based on what each project says about itself. Featured slots are paid and always labelled.</p><p>Corrections, removals, hellos: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p></div>"""))
+if PREVIEW: preview_pages()
 
 def tier(id_,name,price,per,what,status,key):
   btn=pay(key,f"Buy {name}",price) if key and STRIPE.get(key) else '<span class="mono st">Coming soon · not on sale yet</span>'
