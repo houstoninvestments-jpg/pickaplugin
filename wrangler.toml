@@ -1,0 +1,11 @@
+name = "pickaplugin"
+main = "worker/index.js"
+compatibility_date = "2026-10-01"
+account_id = "32b17f59cb6436ea7169a23489541bd8"
+workers_dev = false
+
+[assets]
+directory = "dist"
+binding = "ASSETS"
+html_handling = "auto-trailing-slash"
+not_found_handling = "404-page"

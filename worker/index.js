@@ -1,0 +1,1 @@
+export default { fetch(req, env) { const u = new URL(req.url); if (u.hostname === 'www.pickaplugin.com') { u.hostname = 'pickaplugin.com'; return Response.redirect(u.toString(), 301); } return env.ASSETS.fetch(req); } };
