@@ -37,3 +37,9 @@ Live account: PickAPlugin `acct_1UUidjAJ19i9R4dz`. Read with the **read-only** c
 4. If anything changed: `python3 scripts/build.py`, commit `data/plugins.json`, then redeploy (steps above).
    refresh.py keeps `featured_*` fields and `featured-order` entries.
 5. Email the buyer from hello@pickaplugin.com once they're live (draft it and have Aaron approve it).
+
+## New tiers (Top Spot, Belt, Category Sponsor, Verified)
+fulfill.py now handles every subscription tier, identified by payment link id (PLINKS map in fulfill.py) or link metadata `tier`.
+Caps: top_spot 1, featured 3, belt 12, category_sponsor 1 per category, verified uncapped. Overflow orders are NOT
+turned on and print `! OVERFLOW ...`: refund/cancel them in Stripe (with Aaron's OK) and email the buyer.
+Category sponsor reads the `category` dropdown field. Optional `top_spot_note` on a plugin overrides the hero write-up.

@@ -1,21 +1,45 @@
 #!/usr/bin/env python3
-"""Apply Featured Spot orders from Stripe to data/plugins.json.
+"""Apply paid-placement orders from Stripe to data/plugins.json.
 
 Usage: python3 scripts/fulfill.py sessions.json [subscriptions.json] [--dry-run]
 
-sessions.json      checkout sessions as returned by the Stripe connector (a list, or {"data":[...]}).
+sessions.json      checkout sessions from the Stripe connector (a list, or {"data":[...]}).
 subscriptions.json optional list of subscriptions ({id,status}); without it, a session's embedded
-                   subscription object/status is used, else a paid+complete session counts as active.
+                   subscription status is used, else a paid+complete session counts as active.
 
-A session is a Featured order if mode == "subscription" (the only recurring product) or its
-metadata/payment-link metadata says featured_monthly. The "plugin_url" custom field is matched to
-entries by normalized link (github owner/repo). Unknown plugins are added as a minimal entry
-(source "featured-order", needs_review) built only from the URL; no description is invented.
-Canceled/unpaid/expired subscriptions unset the flag. Exits 0; prints a summary of changes.
+Tier is identified by the payment link (id -> tier map below, or expanded link metadata tier/pickaplugin),
+or session metadata. Tiers and the plugin fields they control:
+  featured_monthly  featured=True            cap 3   (homepage band, category pins)
+  top_spot          top_spot=True            cap 1   (homepage hero banner)
+  belt              belt=True                cap 12  (scrolling belt on every page)
+  category_sponsor  sponsor_category=<cat>   cap 1 per category ("Presented by" band)
+  verified          verified=True            no cap  (checkmark + "Verified by maker")
+Each tier also stores <tier>_sub / <tier>_session / <tier>_since; cancellations clear the flag.
+Caps are enforced: the earliest active orders win; later ones are NOT turned on and are logged
+as "! OVERFLOW ... refund" so Aaron can refund them. expedited_review (one-time) is ignored here.
+The "plugin_url" custom field is matched to entries by normalized link (github owner/repo). Unknown plugins
+are added as a minimal entry (source "featured-order", needs_review); no description is invented.
 """
 import json, re, sys, datetime
-DATA = "data/plugins.json"; CAP = 3
+DATA = "data/plugins.json"
 LIVE = {"active", "trialing", "past_due"}
+PLINKS = {
+    "plink_1UUj18AJ19i9R4dzs8Ie2Uq4": "featured_monthly",
+    "plink_1UUj1AAJ19i9R4dze4Tgzzpx": "expedited_review",
+    "plink_1UUjNCAJ19i9R4dz965F509o": "top_spot",
+    "plink_1UUjNJAJ19i9R4dz6KFmPJgJ": "belt",
+    "plink_1UUjNSAJ19i9R4dzcQ3HgQ1X": "category_sponsor",
+    "plink_1UUjNMAJ19i9R4dzXZ9x7H0u": "verified",
+}
+CAPS = {"featured_monthly": 3, "top_spot": 1, "belt": 12, "category_sponsor": 1, "verified": None}
+FLAG = {"featured_monthly": "featured", "top_spot": "top_spot", "belt": "belt", "verified": "verified",
+        "category_sponsor": "sponsor_category"}
+PREFIX = {"featured_monthly": "featured", "top_spot": "top_spot", "belt": "belt", "verified": "verified",
+          "category_sponsor": "sponsor"}
+CATS = {"agentworkflows": "Agent Workflows", "databackend": "Data & Backend", "deploydevops": "Deploy & DevOps",
+        "designfrontend": "Design & Frontend", "docscontentseo": "Docs, Content & SEO", "industrytools": "Industry Tools",
+        "memorycontext": "Memory & Context", "messagingremote": "Messaging & Remote", "reviewtesting": "Review & Testing",
+        "securitygovernance": "Security & Governance", "usagequotas": "Usage & Quotas", "miscellany": "Miscellany"}
 
 def load(path):
     d = json.load(open(path))
@@ -33,13 +57,17 @@ def norm(u):
 def field(sess, key="plugin_url"):
     for f in sess.get("custom_fields") or []:
         if f.get("key") == key:
-            return (f.get("text") or {}).get("value") or ""
+            return (f.get("text") or {}).get("value") or (f.get("dropdown") or {}).get("value") or ""
     return ""
 
-def is_featured(s):
-    md = (s.get("metadata") or {}); pl = s.get("payment_link")
-    plmd = pl.get("metadata", {}) if isinstance(pl, dict) else {}
-    return s.get("mode") == "subscription" or "featured_monthly" in (md.get("pickaplugin"), plmd.get("pickaplugin"))
+def tier(s):
+    pl = s.get("payment_link"); md = s.get("metadata") or {}
+    if isinstance(pl, dict):
+        t = (pl.get("metadata") or {}).get("tier") or (pl.get("metadata") or {}).get("pickaplugin")
+        if t: return t
+        pl = pl.get("id")
+    if pl in PLINKS: return PLINKS[pl]
+    return md.get("tier") or md.get("pickaplugin")
 
 def sub_status(s, subs):
     sub = s.get("subscription")
@@ -56,36 +84,50 @@ def main():
     sessions = load(args[0])
     subs = {x["id"]: x.get("status") for x in load(args[1])} if len(args) > 1 else {}
     P = json.load(open(DATA)); idx = {}
-    for p in P:
-        for u in (p.get("link"),): idx.setdefault(norm(u), p)
+    for p in P: idx.setdefault(norm(p.get("link")), p)
     today = datetime.date.today().isoformat(); log = []
-    # latest state per plugin wins (sessions sorted by created)
-    want = {}
+    want = {}  # (tier, plugin key) -> latest order
     for s in sorted(sessions, key=lambda s: s.get("created", 0)):
-        if not is_featured(s): continue
+        t = tier(s)
+        if t == "expedited_review": continue
+        if t not in CAPS:
+            if s.get("mode") == "subscription": log.append(f"! {s.get('id')}: subscription with unknown tier, check by hand")
+            continue
         url = field(s)
-        if not url: log.append(f"! {s.get('id')}: no plugin_url, handle by hand"); continue
+        if not url: log.append(f"! {s.get('id')} ({t}): no plugin_url, handle by hand"); continue
         sid, st = sub_status(s, subs)
-        want[norm(url)] = (url, sid, st, s.get("id"))
-    for key, (url, sid, st, cs) in want.items():
-        live = st in LIVE; p = idx.get(key)
-        if not p and live:
+        cat = CATS.get(field(s, "category"), field(s, "category")) if t == "category_sponsor" else None
+        want[(t, norm(url))] = dict(url=url, sid=sid, st=st, cs=s.get("id"), cat=cat, created=s.get("created", 0))
+    # cancellations first, so freed slots can be reused in this same run
+    for (t, key), o in want.items():
+        p = idx.get(key); f = FLAG[t]; pre = PREFIX[t]
+        if p and o["st"] not in LIVE and p.get(f) and p.get(pre + "_sub") in (o["sid"], None):
+            p[f] = None if t == "category_sponsor" else False; p[pre + "_ended"] = today
+            log.append(f"- {t} off {p['slug']} ({o['st']})")
+    for (t, key), o in sorted(want.items(), key=lambda kv: kv[1]["created"]):
+        if o["st"] not in LIVE: continue
+        f = FLAG[t]; pre = PREFIX[t]; p = idx.get(key)
+        val = o["cat"] if t == "category_sponsor" else True
+        if t == "category_sponsor" and not o["cat"]:
+            log.append(f"! {o['cs']}: category sponsor without a category, handle by hand"); continue
+        if p and p.get(f) == val: continue
+        holders = [x for x in P if x.get(f) and (t != "category_sponsor" or x.get(f) == val)]
+        if CAPS[t] is not None and len(holders) >= CAPS[t]:
+            log.append(f"! OVERFLOW {t}{' '+val if t=='category_sponsor' else ''}: {o['url']} (session {o['cs']}, sub {o['sid']}) "
+                       f"- cap {CAPS[t]} full; NOT turned on. Refund/cancel or waitlist."); continue
+        if not p:
             m = re.match(r"github\.com/([^/]+)/([^/]+)", key)
             name = m[2] if m else key.split("/")[0]
             p = {"slug": slugify(name), "name": name, "description": "", "maker": m[1] if m else "",
-                 "link": url if url.startswith("http") else "https://" + url, "category": "Other",
-                 "source": "featured-order", "source_url": "", "source_section": "Featured order",
+                 "link": o["url"] if o["url"].startswith("http") else "https://" + o["url"], "category": "Other",
+                 "source": "featured-order", "source_url": "", "source_section": "Paid order",
                  "first_seen": today, "featured": False, "needs_review": True}
             while any(x["slug"] == p["slug"] for x in P): p["slug"] += "-x"
-            P.append(p); idx[key] = p; log.append(f"+ added {p['slug']} from {url} (needs description/category review)")
-        if not p: continue
-        if live and not p.get("featured"):
-            p.update(featured=True, featured_sub=sid, featured_session=cs, featured_since=today); log.append(f"* featured {p['slug']} ({st})")
-        elif not live and p.get("featured") and p.get("featured_sub") in (sid, None):
-            p["featured"] = False; p["featured_ended"] = today; log.append(f"- unfeatured {p['slug']} ({st})")
-    n = sum(1 for p in P if p.get("featured"))
-    if n > CAP: log.append(f"! {n} featured but only {CAP} slots: site shows the first {CAP}; refund/waitlist the extra")
-    print("\n".join(log) or "no changes"); print(f"{n} featured")
+            P.append(p); idx[key] = p; log.append(f"+ added {p['slug']} from {o['url']} (needs description/category review)")
+        p[f] = val; p[pre + "_sub"] = o["sid"]; p[pre + "_session"] = o["cs"]; p[pre + "_since"] = today
+        log.append(f"* {t} on {p['slug']}{' ('+val+')' if t=='category_sponsor' else ''} ({o['st']})")
+    print("\n".join(log) or "no changes")
+    for t, f in FLAG.items(): print(f"{t}: {sum(1 for p in P if p.get(f))} active")
     if not dry and log: json.dump(P, open(DATA, "w"), indent=1, ensure_ascii=False)
 
 if __name__ == "__main__": main()
