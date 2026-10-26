@@ -35,10 +35,20 @@ def cat(t, s=""):
     if sc>score: best,score=n,sc
   return best
 def slug(s): return re.sub(r"[^a-z0-9]+","-",s.lower()).strip("-")
+INSTALL_RX=re.compile(r"^\s*\$?\s*((?:codex|claude)\s+(?:plugin|plugins|mcp)\s+(?:install|add|marketplace add)\s+\S.*|/plugin\s+(?:install|marketplace add)\s+\S.*|npx\s+(?:-y\s+)?skills\s+add\s+\S.*)$")
+def install_cmd(readme, link):
+  """Return an install command copied verbatim from a fenced code block in the README, or None. Never synthesized."""
+  for blk in re.findall(r"```[^\n]*\n(.*?)```", readme, re.S):
+    for line in blk.splitlines():
+      m=INSTALL_RX.match(line)
+      if m and len(m.group(1))<160 and "<" not in m.group(1): return m.group(1).strip()
+  return None
 def add_stars(out, old):
   """Real GitHub star counts via GraphQL (needs GITHUB_TOKEN or GH_TOKEN). Keeps old values if unavailable."""
   for s,p in out.items():
     for k in ("stars","stars_checked","archived"):
+      if k in old.get(s,{}) and k not in p: p[k]=old[s][k]
+    for k in ("pushed_at","license","language","install"):
       if k in old.get(s,{}) and k not in p: p[k]=old[s][k]
   tok=os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
   if not tok:
@@ -51,16 +61,21 @@ def add_stars(out, old):
     m=re.match(r"https://github\.com/([^/]+)/([^/#?]+)",p["link"])
     if m: items.append((s,m.group(1),m.group(2).removesuffix(".git")))
   today=datetime.date.today().isoformat(); n=0
-  for i in range(0,len(items),50):
-    chunk=items[i:i+50]
-    q="query{"+" ".join(f'r{j}:repository(owner:{json.dumps(o)},name:{json.dumps(r)}){{stargazerCount isArchived}}' for j,(_,o,r) in enumerate(chunk))+"}"
+  for i in range(0,len(items),25):
+    chunk=items[i:i+25]
+    q="query{"+" ".join(f'r{j}:repository(owner:{json.dumps(o)},name:{json.dumps(r)}){{stargazerCount isArchived pushedAt licenseInfo{{spdxId name}} primaryLanguage{{name}} rm:object(expression:\"HEAD:README.md\"){{... on Blob{{text}}}}}}' for j,(_,o,r) in enumerate(chunk))+"}"
     try:
       req=urllib.request.Request("https://api.github.com/graphql",json.dumps({"query":q}).encode(),{"Authorization":"bearer "+tok,"Content-Type":"application/json"})
       d=json.load(urllib.request.urlopen(req,timeout=60)).get("data") or {}
     except Exception as ex: print("star fetch failed:",ex); continue
     for j,(s,_,_) in enumerate(chunk):
       r=d.get(f"r{j}")
-      if r: out[s]["stars"]=r["stargazerCount"]; out[s]["archived"]=r["isArchived"]; out[s]["stars_checked"]=today; n+=1
+      if r:
+        p=out[s]; p["stars"]=r["stargazerCount"]; p["archived"]=r["isArchived"]; p["stars_checked"]=today; n+=1
+        p["pushed_at"]=(r.get("pushedAt") or "")[:10] or None
+        li=r.get("licenseInfo") or {}; p["license"]=(li.get("spdxId") if li.get("spdxId") not in (None,"NOASSERTION") else None)
+        p["language"]=(r.get("primaryLanguage") or {}).get("name")
+        p["install"]=install_cmd(((r.get("rm") or {}).get("text") or ""), p["link"])
   print(f"stars refreshed for {n}/{len(items)} repos")
 def main():
   path=os.path.join(ROOT,"data","plugins.json")

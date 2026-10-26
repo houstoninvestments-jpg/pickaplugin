@@ -13,7 +13,11 @@
   "featured": false,
   "stars": 25,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "claude mcp add --transport http call-me https://callmemcp.com/mcp"
  },
  {
   "slug": "a-team",
@@ -29,7 +33,11 @@
   "featured": false,
   "stars": 23,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": null
  },
  {
   "slug": "abuzzhive",
@@ -45,7 +53,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-09",
+  "license": null,
+  "language": "Shell",
+  "install": "claude mcp add --transport http abuzzhive https://www.abuzzhive.com/mcp"
  },
  {
   "slug": "aegis",
@@ -59,9 +71,13 @@
   "source_section": "Community list",
   "first_seen": "2026-10-25",
   "featured": false,
-  "stars": 1386,
+  "stars": 1387,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-25",
+  "license": "MIT",
+  "language": "Python",
+  "install": null
  },
  {
   "slug": "agency-continuity-audit",
@@ -77,7 +93,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-21",
+  "license": "MIT",
+  "language": "Python",
+  "install": null
  },
  {
   "slug": "agent-deck",
@@ -93,7 +113,11 @@
   "featured": false,
   "stars": 4,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-25",
+  "license": "MIT",
+  "language": "TypeScript",
+  "install": null
  },
  {
   "slug": "agent-guard",
@@ -109,7 +133,11 @@
   "featured": false,
   "stars": 34,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "Shell",
+  "install": null
  },
  {
   "slug": "agent-harness-skills",
@@ -125,7 +153,11 @@
   "featured": false,
   "stars": 11,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-07-14",
+  "license": "MIT",
+  "language": "Python",
+  "install": null
  },
  {
   "slug": "agent-message-queue",
@@ -141,7 +173,11 @@
   "featured": false,
   "stars": 88,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "Go",
+  "install": "npx skills add avivsinai/agent-message-queue -g -y"
  },
  {
   "slug": "agent-retro",
@@ -157,7 +193,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "Python",
+  "install": "/plugin marketplace add summationai/agent-retro"
  },
  {
   "slug": "agent-vision",
@@ -173,7 +213,11 @@
   "featured": false,
   "stars": 4,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-07-14",
+  "license": "MIT",
+  "language": "Shell",
+  "install": null
  },
  {
   "slug": "agent-workflow-system",
@@ -189,7 +233,11 @@
   "featured": false,
   "stars": 5,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-06-12",
+  "license": "MIT",
+  "language": "PowerShell",
+  "install": "codex plugin install 1139030773-cmd/agent-workflow-system"
  },
  {
   "slug": "agentdomains",
@@ -205,7 +253,11 @@
   "featured": false,
   "stars": 10,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-17",
+  "license": null,
+  "language": "Shell",
+  "install": "codex plugin marketplace add tashfeenahmed/AgentDomains-skill"
  },
  {
   "slug": "agentgram",
@@ -221,7 +273,11 @@
   "featured": false,
   "stars": 4,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-07-28",
+  "license": "MIT",
+  "language": "Python",
+  "install": "codex plugin marketplace add jerryfane/agentgram --ref main"
  },
  {
   "slug": "agentic-readiness-assessment",
@@ -237,7 +293,11 @@
   "featured": false,
   "stars": 24,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "Apache-2.0",
+  "language": "Python",
+  "install": "claude plugin marketplace add exadel-inc/agentic-readiness-assessment"
  },
  {
   "slug": "agentizer",
@@ -253,7 +313,11 @@
   "featured": false,
   "stars": 3,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-05-05",
+  "license": null,
+  "language": "TypeScript",
+  "install": null
  },
  {
   "slug": "agentmart",
@@ -269,7 +333,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-24",
+  "license": "MIT",
+  "language": null,
+  "install": null
  },
  {
   "slug": "agentops",
@@ -285,7 +353,11 @@
   "featured": false,
   "stars": 450,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "Apache-2.0",
+  "language": "Go",
+  "install": "claude plugin marketplace add boshu2/agentops"
  },
  {
   "slug": "agentpack",
@@ -301,7 +373,11 @@
   "featured": false,
   "stars": 25,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-25",
+  "license": "AGPL-3.0",
+  "language": "Python",
+  "install": null
  },
  {
   "slug": "agentry-observability",
@@ -317,7 +393,11 @@
   "featured": false,
   "stars": 2,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-07-13",
+  "license": null,
+  "language": "TypeScript",
+  "install": "codex plugin marketplace add fr33dr4g0n/agentry-public"
  },
  {
   "slug": "agiflow",
@@ -333,7 +413,11 @@
   "featured": false,
   "stars": 4,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-10",
+  "license": "MIT",
+  "language": null,
+  "install": "/plugin install agiflow --marketplace AgiFlow/ai-plugin"
  },
  {
   "slug": "ai-native-sdlc-loop",
@@ -349,7 +433,11 @@
   "featured": false,
   "stars": 10,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-25",
+  "license": "MIT",
+  "language": "Shell",
+  "install": "/plugin marketplace add ghiaog123/ai-native-sdlc"
  },
  {
   "slug": "aiboarding",
@@ -365,7 +453,11 @@
   "featured": false,
   "stars": 2,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-08-28",
+  "license": "MIT",
+  "language": "Shell",
+  "install": "/plugin marketplace add gustavo-meilus/aiboarding"
  },
  {
   "slug": "aident-loadout",
@@ -381,7 +473,11 @@
   "featured": false,
   "stars": 6,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-12",
+  "license": "MIT",
+  "language": "Shell",
+  "install": null
  },
  {
   "slug": "aient",
@@ -397,7 +493,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-06-02",
+  "license": null,
+  "language": null,
+  "install": "codex plugin add aient"
  },
  {
   "slug": "alcove",
@@ -413,7 +513,11 @@
   "featured": false,
   "stars": 17,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-23",
+  "license": "Apache-2.0",
+  "language": "Rust",
+  "install": "/plugin marketplace add epicsagas/plugins"
  },
  {
   "slug": "anchor",
@@ -429,7 +533,11 @@
   "featured": false,
   "stars": 3,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-05-22",
+  "license": "MIT",
+  "language": "Shell",
+  "install": null
  },
  {
   "slug": "anime-reaction-gif",
@@ -445,7 +553,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-02",
+  "license": "MIT",
+  "language": "Python",
+  "install": null
  },
  {
   "slug": "antigravity-2-0",
@@ -461,7 +573,11 @@
   "featured": false,
   "stars": 5,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-07-07",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": null
  },
  {
   "slug": "antigravity-workspace-template",
@@ -477,7 +593,11 @@
   "featured": false,
   "stars": 1355,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-23",
+  "license": "MIT",
+  "language": "Python",
+  "install": null
  },
  {
   "slug": "apple-productivity",
@@ -493,7 +613,11 @@
   "featured": false,
   "stars": 7,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-03-27",
+  "license": "MIT",
+  "language": "Python",
+  "install": null
  },
  {
   "slug": "archcore",
@@ -509,7 +633,11 @@
   "featured": false,
   "stars": 72,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "Apache-2.0",
+  "language": "TypeScript",
+  "install": null
  },
  {
   "slug": "arcmira-youtube-transcript-search",
@@ -525,7 +653,11 @@
   "featured": false,
   "stars": 75,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-23",
+  "license": null,
+  "language": "TypeScript",
+  "install": "claude mcp add --transport http --scope user arcmira https://mcp.arcmira.com/mcp"
  },
  {
   "slug": "armorcodex",
@@ -541,7 +673,11 @@
   "featured": false,
   "stars": 7,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-20",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": null
  },
  {
   "slug": "assay",
@@ -557,7 +693,11 @@
   "featured": false,
   "stars": 109,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-19",
+  "license": "MIT",
+  "language": "Python",
+  "install": "/plugin marketplace add awss1i/assay"
  },
  {
   "slug": "atomlane",
@@ -573,7 +713,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MPL-2.0",
+  "language": "Python",
+  "install": "codex plugin marketplace add cloudguo123/atomlane"
  },
  {
   "slug": "auto-pilot",
@@ -589,7 +733,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-04-08",
+  "license": "MIT",
+  "language": "Python",
+  "install": null
  },
  {
   "slug": "autocad-tianzheng-tools",
@@ -605,7 +753,11 @@
   "featured": false,
   "stars": 8,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-07-01",
+  "license": "MIT",
+  "language": "PowerShell",
+  "install": null
  },
  {
   "slug": "axonflow",
@@ -621,7 +773,11 @@
   "featured": false,
   "stars": 3,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-09-25",
+  "license": "MIT",
+  "language": "Shell",
+  "install": null
  },
  {
   "slug": "babeldoc-pdf-translate",
@@ -637,7 +793,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-22",
+  "license": "MIT",
+  "language": "Python",
+  "install": "codex plugin marketplace add reliable-ly0411/babeldoc-pdf-translate"
  },
  {
   "slug": "babok-analyst",
@@ -653,7 +813,11 @@
   "featured": false,
   "stars": 14,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-22",
+  "license": null,
+  "language": "JavaScript",
+  "install": "/plugin marketplace add GSkuza/BABOK_ANALYST"
  },
  {
   "slug": "bgs-modding-superpowers",
@@ -669,7 +833,11 @@
   "featured": false,
   "stars": 18,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-01",
+  "license": "MIT",
+  "language": "Python",
+  "install": "/plugin marketplace add BB-84C/bgs-modding-superpowers"
  },
  {
   "slug": "bitbucket-cli",
@@ -685,7 +853,11 @@
   "featured": false,
   "stars": 247,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-25",
+  "license": "MIT",
+  "language": "Go",
+  "install": "npx skills add avivsinai/bitbucket-cli -g -y"
  },
  {
   "slug": "boss",
@@ -701,7 +873,11 @@
   "featured": false,
   "stars": 544,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-25",
+  "license": "MIT",
+  "language": "TypeScript",
+  "install": "/plugin marketplace add echoVic/boss-skill"
  },
  {
   "slug": "bountyguard",
@@ -730,7 +906,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-14",
+  "license": null,
+  "language": "Python",
+  "install": null
  },
  {
   "slug": "brooks-lint",
@@ -746,7 +926,11 @@
   "featured": false,
   "stars": 1546,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "HTML",
+  "install": "/plugin marketplace add hyhmrright/brooks-lint"
  },
  {
   "slug": "build-remote-agent",
@@ -762,7 +946,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-22",
+  "license": "MIT",
+  "language": "Go",
+  "install": null
  },
  {
   "slug": "bulktranscripts-youtube-transcripts",
@@ -776,9 +964,13 @@
   "source_section": "Community list",
   "first_seen": "2026-10-25",
   "featured": false,
-  "stars": 1,
+  "stars": 2,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-17",
+  "license": "MIT",
+  "language": null,
+  "install": "claude mcp add --transport http bulktranscripts https://bulktranscripts.co/mcp"
  },
  {
   "slug": "burpsuite-mcp-bridge",
@@ -794,7 +986,11 @@
   "featured": false,
   "stars": 4,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": null,
+  "language": "Python",
+  "install": null
  },
  {
   "slug": "call-e",
@@ -810,7 +1006,11 @@
   "featured": false,
   "stars": 97,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-23",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": null
  },
  {
   "slug": "canvas-apps-plugin-codex",
@@ -826,7 +1026,11 @@
   "featured": false,
   "stars": 2,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-05-03",
+  "license": null,
+  "language": null,
+  "install": null
  },
  {
   "slug": "car-rental-business-skills",
@@ -842,7 +1046,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-20",
+  "license": "MIT",
+  "language": "Python",
+  "install": "/plugin marketplace add sergebulaev/car-rental-skills"
  },
  {
   "slug": "carsxe",
@@ -858,7 +1066,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-01",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": null
  },
  {
   "slug": "casefile",
@@ -874,7 +1086,11 @@
   "featured": false,
   "stars": 10,
   "stars_checked": "2026-10-26",
-  "archived": true
+  "archived": true,
+  "pushed_at": "2026-06-25",
+  "license": "MIT",
+  "language": "TypeScript",
+  "install": null
  },
  {
   "slug": "centricmem",
@@ -890,7 +1106,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-23",
+  "license": null,
+  "language": "JavaScript",
+  "install": null
  },
  {
   "slug": "chatgpt-agent",
@@ -906,7 +1126,11 @@
   "featured": false,
   "stars": 4,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-01",
+  "license": "MIT",
+  "language": "Python",
+  "install": "codex plugin marketplace add TohmaN233/chatgpt-review-agent-skill"
  },
  {
   "slug": "chrome-devtools",
@@ -922,7 +1146,11 @@
   "featured": false,
   "stars": 4,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-03-27",
+  "license": null,
+  "language": null,
+  "install": "codex mcp add chrome-devtools -- npx -y chrome-devtools-mcp@latest"
  },
  {
   "slug": "claude-code-codex-plugin",
@@ -938,7 +1166,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-21",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": null
  },
  {
   "slug": "claude-code-for-codex",
@@ -954,7 +1186,11 @@
   "featured": false,
   "stars": 226,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "Apache-2.0",
+  "language": "JavaScript",
+  "install": "codex plugin marketplace add sendbird/codex-marketplace"
  },
  {
   "slug": "claude-code-harness",
@@ -970,7 +1206,11 @@
   "featured": false,
   "stars": 13,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-04-05",
+  "license": "MIT",
+  "language": null,
+  "install": null
  },
  {
   "slug": "claude-code-skills",
@@ -984,9 +1224,13 @@
   "source_section": "Community list",
   "first_seen": "2026-10-25",
   "featured": false,
-  "stars": 28764,
+  "stars": 28780,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "Python",
+  "install": "/plugin marketplace add alirezarezvani/claude-skills"
  },
  {
   "slug": "claude-octopus",
@@ -1000,9 +1244,13 @@
   "source_section": "Community list",
   "first_seen": "2026-10-25",
   "featured": false,
-  "stars": 4309,
+  "stars": 4310,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-23",
+  "license": "MIT",
+  "language": "Shell",
+  "install": "claude plugin marketplace add https://github.com/nyldn/plugins.git"
  },
  {
   "slug": "claude-math",
@@ -1018,7 +1266,11 @@
   "featured": false,
   "stars": 20,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-08-18",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "/plugin marketplace add vladimirrott/claude-math"
  },
  {
   "slug": "claudemon",
@@ -1034,7 +1286,11 @@
   "featured": false,
   "stars": 8,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-25",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "/plugin marketplace add OriginalName457/claudemon"
  },
  {
   "slug": "clean-room",
@@ -1048,9 +1304,13 @@
   "source_section": "Community list",
   "first_seen": "2026-10-25",
   "featured": false,
-  "stars": 16,
+  "stars": 17,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-14",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "/plugin marketplace add https://github.com/whit3rabbit/clean-room-skill.git"
  },
  {
   "slug": "clera",
@@ -1066,7 +1326,11 @@
   "featured": false,
   "stars": 10,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-18",
+  "license": "MIT",
+  "language": null,
+  "install": "claude mcp add --transport http clera https://mcp.getclera.com"
  },
  {
   "slug": "click",
@@ -1082,7 +1346,11 @@
   "featured": false,
   "stars": 40,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-23",
+  "license": "MIT",
+  "language": "Python",
+  "install": "codex plugin marketplace add grapefruit0205/click"
  },
  {
   "slug": "clueless",
@@ -1098,7 +1366,11 @@
   "featured": false,
   "stars": 2,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-08",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "/plugin marketplace add ADanMan/clueless"
  },
  {
   "slug": "codebase-recon",
@@ -1114,7 +1386,11 @@
   "featured": false,
   "stars": 41,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-04-26",
+  "license": "MIT",
+  "language": null,
+  "install": "npx skills add yujiachen-y/codebase-recon-skill"
  },
  {
   "slug": "codetruss",
@@ -1130,7 +1406,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-14",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "/plugin marketplace add DeliriumPulse/codetruss-plugins"
  },
  {
   "slug": "codex-agenteam",
@@ -1146,7 +1426,11 @@
   "featured": false,
   "stars": 14,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-07-06",
+  "license": "MIT",
+  "language": "Python",
+  "install": null
  },
  {
   "slug": "codex-agents-workflow",
@@ -1162,7 +1446,11 @@
   "featured": false,
   "stars": 5,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-15",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "codex plugin marketplace add ."
  },
  {
   "slug": "codex-auto-resume",
@@ -1178,7 +1466,11 @@
   "featured": false,
   "stars": 50,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "Python",
+  "install": "codex plugin marketplace add songyb111-gachon/codex-auto-resume-windows"
  },
  {
   "slug": "codex-be-serious",
@@ -1194,7 +1486,11 @@
   "featured": false,
   "stars": 8,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-06-01",
+  "license": "MIT",
+  "language": "Shell",
+  "install": "codex plugin add be-serious@personal"
  },
  {
   "slug": "codex-discord-bridge",
@@ -1210,7 +1506,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-09-22",
+  "license": "MIT",
+  "language": "Rust",
+  "install": "codex plugin marketplace add yaffalhakim1/codex-discord-bridge"
  },
  {
   "slug": "codex-full-stack-workflow",
@@ -1239,7 +1539,11 @@
   "featured": false,
   "stars": 15,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-23",
+  "license": "MIT",
+  "language": "Python",
+  "install": "npx skills add Phelan164/codex-howto --skill engineering-loop -g -a codex -y"
  },
  {
   "slug": "codex-image-plugin",
@@ -1255,7 +1559,11 @@
   "featured": false,
   "stars": 2,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-04",
+  "license": "MIT",
+  "language": "Python",
+  "install": "codex plugin marketplace add zlsbksdxl/codex-image-plugin --ref main"
  },
  {
   "slug": "codex-mem",
@@ -1271,7 +1579,11 @@
   "featured": false,
   "stars": 14,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-06",
+  "license": null,
+  "language": "JavaScript",
+  "install": null
  },
  {
   "slug": "codex-multi-auth",
@@ -1287,7 +1599,11 @@
   "featured": false,
   "stars": 556,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-20",
+  "license": "MIT",
+  "language": "TypeScript",
+  "install": null
  },
  {
   "slug": "codex-obsidian",
@@ -1303,7 +1619,11 @@
   "featured": false,
   "stars": 30,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-04-22",
+  "license": "MIT",
+  "language": null,
+  "install": null
  },
  {
   "slug": "codex-process-jobs",
@@ -1319,7 +1639,11 @@
   "featured": false,
   "stars": 5,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-20",
+  "license": "Apache-2.0",
+  "language": "JavaScript",
+  "install": null
  },
  {
   "slug": "codex-quota-optimizer",
@@ -1335,7 +1659,11 @@
   "featured": false,
   "stars": 4,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-09-22",
+  "license": "MIT",
+  "language": "Python",
+  "install": "npx skills add ctdaniel/codex-quota-optimizer --skill codex-quota-optimizer"
  },
  {
   "slug": "codex-quota-title",
@@ -1351,7 +1679,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-10",
+  "license": "MIT",
+  "language": "C#",
+  "install": null
  },
  {
   "slug": "codex-reset",
@@ -1367,7 +1699,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-09-24",
+  "license": "MIT",
+  "language": null,
+  "install": "claude mcp add --transport http codex-reset https://codex-reset.com/mcp"
  },
  {
   "slug": "codex-reviewer",
@@ -1383,7 +1719,11 @@
   "featured": false,
   "stars": 14,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-05-05",
+  "license": "MIT",
+  "language": null,
+  "install": null
  },
  {
   "slug": "codex-rg-guard",
@@ -1399,7 +1739,11 @@
   "featured": false,
   "stars": 5,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-05-09",
+  "license": "MIT",
+  "language": "Rust",
+  "install": "codex mcp add cxs-rg-guard -- ~/.codex/plugins/codex-rg-guard/bin/cxs-mcp-server"
  },
  {
   "slug": "codex-seo",
@@ -1415,7 +1759,11 @@
   "featured": false,
   "stars": 9,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-07-03",
+  "license": "MIT",
+  "language": "Python",
+  "install": null
  },
  {
   "slug": "codex-skin-pack-installer",
@@ -1431,7 +1779,11 @@
   "featured": false,
   "stars": 3,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-20",
+  "license": "MIT",
+  "language": "Python",
+  "install": "npx skills add ChannelerH/codex-skin-packs --skill codex-skin-pack-installer --global --agent codex --yes"
  },
  {
   "slug": "codex-tasklist",
@@ -1447,7 +1799,11 @@
   "featured": false,
   "stars": 3,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-09-19",
+  "license": "MIT",
+  "language": "Python",
+  "install": "codex plugin marketplace add martinille/codex-tasklist"
  },
  {
   "slug": "codex-tools-bridge",
@@ -1463,7 +1819,11 @@
   "featured": false,
   "stars": 6,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-09-30",
+  "license": "MIT",
+  "language": "TypeScript",
+  "install": null
  },
  {
   "slug": "codex-tui-proof",
@@ -1479,7 +1839,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-08-01",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "codex plugin marketplace add bnc4vk/codex-tui-proof"
  },
  {
   "slug": "codex-usage-and-resets",
@@ -1495,7 +1859,11 @@
   "featured": false,
   "stars": 3,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-20",
+  "license": "Apache-2.0",
+  "language": "JavaScript",
+  "install": null
  },
  {
   "slug": "codex-usage-tracker",
@@ -1511,7 +1879,11 @@
   "featured": false,
   "stars": 196,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-14",
+  "license": "MIT",
+  "language": "Python",
+  "install": "codex plugin marketplace add douglasmonsky/codex-usage-tracker --ref v0.28.0"
  },
  {
   "slug": "codex-claude-council",
@@ -1527,7 +1899,11 @@
   "featured": false,
   "stars": 5,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": null
  },
  {
   "slug": "cohesivity",
@@ -1543,7 +1919,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-16",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "claude plugin marketplace add ./"
  },
  {
   "slug": "cometchat",
@@ -1559,7 +1939,11 @@
   "featured": false,
   "stars": 155,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-15",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "/plugin marketplace add cometchat/cometchat-skills"
  },
  {
   "slug": "command-code-usage",
@@ -1588,7 +1972,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-08-03",
+  "license": "MIT",
+  "language": "Python",
+  "install": null
  },
  {
   "slug": "contam-tools",
@@ -1604,7 +1992,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-07-01",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": null
  },
  {
   "slug": "context-attachment-manager",
@@ -1618,9 +2010,13 @@
   "source_section": "Community list",
   "first_seen": "2026-10-25",
   "featured": false,
-  "stars": 542,
+  "stars": 545,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "TypeScript",
+  "install": null
  },
  {
   "slug": "context-guard",
@@ -1636,7 +2032,11 @@
   "featured": false,
   "stars": 4,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-23",
+  "license": "Apache-2.0",
+  "language": "Python",
+  "install": null
  },
  {
   "slug": "context-pack",
@@ -1652,7 +2052,11 @@
   "featured": false,
   "stars": 12,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-09-27",
+  "license": "MIT",
+  "language": "Rust",
+  "install": null
  },
  {
   "slug": "coolify",
@@ -1668,7 +2072,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-16",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "codex plugin marketplace add hashgraph-online/awesome-codex-plugins --ref main"
  },
  {
   "slug": "core-learning",
@@ -1684,7 +2092,11 @@
   "featured": false,
   "stars": 2,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-18",
+  "license": "MIT",
+  "language": "Python",
+  "install": "codex plugin marketplace add everclear077/codex-learning-plugin --ref main"
  },
  {
   "slug": "court-rules",
@@ -1700,7 +2112,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-21",
+  "license": "MIT",
+  "language": null,
+  "install": null
  },
  {
   "slug": "damnpdfs",
@@ -1716,7 +2132,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-14",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "codex plugin marketplace add SouravBeraAkaSpeed/damnpdfs-codex-plugin --ref main"
  },
  {
   "slug": "darkmoon",
@@ -1732,7 +2152,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-19",
+  "license": "GPL-3.0",
+  "language": "TypeScript",
+  "install": null
  },
  {
   "slug": "data-product-builder-for-dbt",
@@ -1748,7 +2172,11 @@
   "featured": false,
   "stars": 13,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-05-28",
+  "license": "MIT",
+  "language": "Shell",
+  "install": "claude plugin marketplace add https://github.com/entropy-data/dataproduct-builder-dbt"
  },
  {
   "slug": "debt-ops",
@@ -1764,7 +2192,11 @@
   "featured": false,
   "stars": 8,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "Python",
+  "install": "/plugin marketplace add bcanfield/agentic-tech-debt"
  },
  {
   "slug": "deed-page",
@@ -1780,7 +2212,11 @@
   "featured": false,
   "stars": 2,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": null,
+  "install": "claude mcp add --transport http deed-page https://deed.page/mcp"
  },
  {
   "slug": "deepseek-mini-router",
@@ -1796,7 +2232,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-25",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "codex plugin marketplace add ."
  },
  {
   "slug": "deja",
@@ -1810,9 +2250,13 @@
   "source_section": "Community list",
   "first_seen": "2026-10-25",
   "featured": false,
-  "stars": 1312,
+  "stars": 1314,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "Go",
+  "install": "claude plugin marketplace add vshulcz/deja-vu && claude plugin install deja-vu@deja-vu"
  },
  {
   "slug": "dejavu",
@@ -1828,7 +2272,11 @@
   "featured": false,
   "stars": 13,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-20",
+  "license": "MIT",
+  "language": "TypeScript",
+  "install": null
  },
  {
   "slug": "delx-recovery",
@@ -1844,7 +2292,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-09-27",
+  "license": "Apache-2.0",
+  "language": "Python",
+  "install": "claude plugin marketplace add davidmosiah/delx-plugins"
  },
  {
   "slug": "design-helper",
@@ -1860,7 +2312,11 @@
   "featured": false,
   "stars": 3,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-15",
+  "license": "MIT",
+  "language": "HTML",
+  "install": "/plugin marketplace add Dessert99/design-helper"
  },
  {
   "slug": "designer-skill",
@@ -1876,7 +2332,11 @@
   "featured": false,
   "stars": 49,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-25",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "npx skills add PyModel/designer-skill --skill designer-skill -g -y"
  },
  {
   "slug": "dev-skills",
@@ -1892,7 +2352,11 @@
   "featured": false,
   "stars": 7,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-21",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "/plugin marketplace add https://github.com/Jason-chen-coder/dev-skills"
  },
  {
   "slug": "development-skills",
@@ -1908,7 +2372,11 @@
   "featured": false,
   "stars": 12,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-09-20",
+  "license": "MIT",
+  "language": "Python",
+  "install": "/plugin marketplace add reidemeister94/development-skills"
  },
  {
   "slug": "devin-plugin-cc",
@@ -1924,7 +2392,11 @@
   "featured": false,
   "stars": 2,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "Apache-2.0",
+  "language": "JavaScript",
+  "install": "/plugin marketplace add ."
  },
  {
   "slug": "devrecap",
@@ -1940,7 +2412,11 @@
   "featured": false,
   "stars": 6,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-20",
+  "license": "MIT",
+  "language": "TypeScript",
+  "install": "codex plugin marketplace add jquinteiroo/devrecap --ref main"
  },
  {
   "slug": "dex",
@@ -1954,9 +2430,13 @@
   "source_section": "Community list",
   "first_seen": "2026-10-25",
   "featured": false,
-  "stars": 100,
+  "stars": 101,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "Apache-2.0",
+  "language": "Python",
+  "install": "npx skills add exmergo/dex"
  },
  {
   "slug": "digital-marketing-pro",
@@ -1972,7 +2452,11 @@
   "featured": false,
   "stars": 911,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-11",
+  "license": "MIT",
+  "language": "Python",
+  "install": "/plugin marketplace add indranilbanerjee/neels-plugins"
  },
  {
   "slug": "docflow",
@@ -1988,7 +2472,11 @@
   "featured": false,
   "stars": 44,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-08-15",
+  "license": "MIT",
+  "language": "Shell",
+  "install": "/plugin marketplace add https://github.com/MedAdemBHA/docflow"
  },
  {
   "slug": "dodo-payments",
@@ -2004,7 +2492,11 @@
   "featured": false,
   "stars": 6,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-12",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "claude plugins marketplace add dodopayments/dodo-agent-plugin"
  },
  {
   "slug": "done-gate",
@@ -2020,7 +2512,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-09-30",
+  "license": "MIT",
+  "language": "Python",
+  "install": "claude plugin marketplace add kuroudo-ai/done-gate"
  },
  {
   "slug": "droplinked",
@@ -2036,7 +2532,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-08-05",
+  "license": "MIT",
+  "language": null,
+  "install": null
  },
  {
   "slug": "dropthehassle",
@@ -2052,7 +2552,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-20",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "npx skills add bosmdavid-gif/dropthehassle-skill"
  },
  {
   "slug": "dryforge",
@@ -2066,9 +2570,13 @@
   "source_section": "Community list",
   "first_seen": "2026-10-25",
   "featured": false,
-  "stars": 427,
+  "stars": 428,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-16",
+  "license": "Apache-2.0",
+  "language": "Python",
+  "install": "/plugin marketplace add prekuter/dryforge"
  },
  {
   "slug": "education-agent-skills",
@@ -2082,9 +2590,13 @@
   "source_section": "Community list",
   "first_seen": "2026-10-25",
   "featured": false,
-  "stars": 913,
+  "stars": 914,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-22",
+  "license": null,
+  "language": "TypeScript",
+  "install": "/plugin install education-agent-skills --marketplace GarethManning/education-agent-skills"
  },
  {
   "slug": "eigenheim-berlin-market-data",
@@ -2100,7 +2612,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-17",
+  "license": null,
+  "language": null,
+  "install": "claude mcp add --transport http eigenheim https://eigenheim-invest.de/mcp/"
  },
  {
   "slug": "ejentum-mcp",
@@ -2116,7 +2632,11 @@
   "featured": false,
   "stars": 16,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-06-11",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "claude mcp add ejentum -e EJENTUM_API_KEY=ej_... -- npx -y ejentum-mcp"
  },
  {
   "slug": "emulo",
@@ -2132,7 +2652,11 @@
   "featured": false,
   "stars": 299,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-12",
+  "license": "MIT",
+  "language": "HTML",
+  "install": "/plugin marketplace add ohad6k/emulo"
  },
  {
   "slug": "epic-harness",
@@ -2148,7 +2672,11 @@
   "featured": false,
   "stars": 20,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-24",
+  "license": "Apache-2.0",
+  "language": "Rust",
+  "install": "/plugin marketplace add epicsagas/plugins"
  },
  {
   "slug": "equibles",
@@ -2164,7 +2692,11 @@
   "featured": false,
   "stars": 7,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-19",
+  "license": "MIT",
+  "language": null,
+  "install": "codex plugin marketplace add daniel3303/stock-market-mcp-server"
  },
  {
   "slug": "espresso",
@@ -2180,7 +2712,11 @@
   "featured": false,
   "stars": 25,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-17",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": null
  },
  {
   "slug": "exa-web-search",
@@ -2196,7 +2732,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-14",
+  "license": "MIT",
+  "language": "Shell",
+  "install": "codex plugin marketplace add \\"
  },
  {
   "slug": "exotic-car-rental-skills",
@@ -2212,7 +2752,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-20",
+  "license": "MIT",
+  "language": "Python",
+  "install": "/plugin marketplace add sergebulaev/exotic-car-rental-skills"
  },
  {
   "slug": "falsegreen-skill",
@@ -2228,7 +2772,11 @@
   "featured": false,
   "stars": 2,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-19",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "/plugin marketplace add vinicq/falsegreen-skill"
  },
  {
   "slug": "fantasy-football-manager",
@@ -2244,7 +2792,11 @@
   "featured": false,
   "stars": 88,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-01",
+  "license": "MIT",
+  "language": "Python",
+  "install": "codex mcp add fantasy-football-manager -- fantasy-football-manager"
  },
  {
   "slug": "feishu-to-codex",
@@ -2260,7 +2812,11 @@
   "featured": false,
   "stars": 4,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-08-10",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "codex plugin marketplace add \\"
  },
  {
   "slug": "figma-maxxing",
@@ -2276,7 +2832,11 @@
   "featured": false,
   "stars": 11,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-22",
+  "license": "MIT",
+  "language": "Markdown",
+  "install": "npx skills add thiagoxikota/figma-maxxing"
  },
  {
   "slug": "firecrawl",
@@ -2292,7 +2852,11 @@
   "featured": false,
   "stars": 28,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-21",
+  "license": "MIT",
+  "language": "Shell",
+  "install": "codex plugin marketplace add ./path-to-marketplace-root"
  },
  {
   "slug": "flow-studio-power-automate",
@@ -2308,7 +2872,11 @@
   "featured": false,
   "stars": 34,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-09-04",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "claude mcp add --transport http flowstudio https://mcp.flowstudio.app/mcp \\"
  },
  {
   "slug": "foundry",
@@ -2324,7 +2892,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "Python",
+  "install": "/plugin marketplace add mohamedOmar11111/growth-architect-foundry"
  },
  {
   "slug": "frappe-agent",
@@ -2340,7 +2912,11 @@
   "featured": false,
   "stars": 26,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-11",
+  "license": "MIT",
+  "language": null,
+  "install": "/plugin marketplace add Dkm0315/frappe-agent"
  },
  {
   "slug": "fxmacrodata",
@@ -2356,7 +2932,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-21",
+  "license": "MIT",
+  "language": null,
+  "install": "/plugin marketplace add fxmacrodata/claude-plugin-fxmacrodata"
  },
  {
   "slug": "gcf-proxy",
@@ -2372,7 +2952,11 @@
   "featured": false,
   "stars": 2,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-09-23",
+  "license": "Apache-2.0",
+  "language": null,
+  "install": "codex plugin add gcf-proxy"
  },
  {
   "slug": "generative-media-skills",
@@ -2386,9 +2970,13 @@
   "source_section": "Community list",
   "first_seen": "2026-10-25",
   "featured": false,
-  "stars": 24,
+  "stars": 25,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-09-29",
+  "license": "MIT",
+  "language": "Shell",
+  "install": "npx skills add SamurAIGPT/Generative-Media-Skills --all"
  },
  {
   "slug": "gh-project",
@@ -2404,7 +2992,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-05-15",
+  "license": "MIT",
+  "language": "HTML",
+  "install": null
  },
  {
   "slug": "goal-progress",
@@ -2420,7 +3012,11 @@
   "featured": false,
   "stars": 29,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-22",
+  "license": "MIT",
+  "language": "TypeScript",
+  "install": null
  },
  {
   "slug": "graymatter",
@@ -2436,7 +3032,11 @@
   "featured": false,
   "stars": 3,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-08",
+  "license": "AGPL-3.0",
+  "language": "Shell",
+  "install": "codex plugin marketplace add \"$PWD/ValkyrSWARM\""
  },
  {
   "slug": "hera-agent-godot",
@@ -2452,7 +3052,11 @@
   "featured": false,
   "stars": 12,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-23",
+  "license": "MIT",
+  "language": "Go",
+  "install": "/plugin marketplace add NotNull92/hera-agent-godot"
  },
  {
   "slug": "hera-agent-unity",
@@ -2468,7 +3072,11 @@
   "featured": false,
   "stars": 29,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-23",
+  "license": "Apache-2.0",
+  "language": "C#",
+  "install": "codex plugin marketplace add NotNull92/hera-agent-unity --ref main"
  },
  {
   "slug": "herdr-codex-subagents",
@@ -2484,7 +3092,11 @@
   "featured": false,
   "stars": 4,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "Python",
+  "install": "codex plugin marketplace add arvkonstantin/herdr-codex-subagents"
  },
  {
   "slug": "hermes-tweet",
@@ -2500,7 +3112,11 @@
   "featured": false,
   "stars": 37,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "Python",
+  "install": null
  },
  {
   "slug": "hol-guard-plugin",
@@ -2516,7 +3132,11 @@
   "featured": false,
   "stars": 3,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "Apache-2.0",
+  "language": "JavaScript",
+  "install": "npx skills add hashgraph-online/hol-guard-plugin --skill plugin-scanner"
  },
  {
   "slug": "homie",
@@ -2532,7 +3152,11 @@
   "featured": false,
   "stars": 7,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "Apache-2.0",
+  "language": "JavaScript",
+  "install": "/plugin install homie --marketplace homie-rocks/homie"
  },
  {
   "slug": "honcho",
@@ -2548,7 +3172,11 @@
   "featured": false,
   "stars": 55,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-09-01",
+  "license": "MIT",
+  "language": "TypeScript",
+  "install": null
  },
  {
   "slug": "hotl-plugin",
@@ -2564,7 +3192,11 @@
   "featured": false,
   "stars": 27,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-07-06",
+  "license": "MIT",
+  "language": "Shell",
+  "install": "/plugin marketplace add yimwoo/hotl-plugin"
  },
  {
   "slug": "image-media-skills",
@@ -2580,7 +3212,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-19",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "npx skills add https://github.com/igorvaryvoda/image-optimization-skill"
  },
  {
   "slug": "jenkins-cli",
@@ -2596,7 +3232,11 @@
   "featured": false,
   "stars": 95,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "Go",
+  "install": "npx skills add avivsinai/jenkins-cli -g -y"
  },
  {
   "slug": "jetformat",
@@ -2612,7 +3252,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-22",
+  "license": "MIT",
+  "language": "Shell",
+  "install": "claude plugin marketplace add jetformat/jetformat-agent"
  },
  {
   "slug": "jev-social",
@@ -2628,7 +3272,11 @@
   "featured": false,
   "stars": 183,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-12",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "npx skills add https://github.com/socai-io/jev-social/tree/v0.1.13/skills/jev-social --skill jev-social"
  },
  {
   "slug": "jev-use",
@@ -2644,7 +3292,11 @@
   "featured": false,
   "stars": 65,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-09-22",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": null
  },
  {
   "slug": "jimeng-storyboard",
@@ -2660,7 +3312,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-13",
+  "license": "MIT",
+  "language": "Python",
+  "install": "codex plugin marketplace add https://github.com/andreamzhang/jimeng-skills.git"
  },
  {
   "slug": "kachilu-browser",
@@ -2676,7 +3332,11 @@
   "featured": false,
   "stars": 39,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-05-12",
+  "license": null,
+  "language": "JavaScript",
+  "install": null
  },
  {
   "slug": "kernel",
@@ -2692,7 +3352,11 @@
   "featured": false,
   "stars": 14,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "Python",
+  "install": "claude plugin marketplace add ariaxhan/kernel-claude"
  },
  {
   "slug": "kicad-happy",
@@ -2706,9 +3370,13 @@
   "source_section": "Community list",
   "first_seen": "2026-10-25",
   "featured": false,
-  "stars": 1512,
+  "stars": 1514,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-25",
+  "license": "MIT",
+  "language": "Python",
+  "install": "/plugin marketplace add aklofas/kicad-happy"
  },
  {
   "slug": "kreuzberg",
@@ -2724,7 +3392,11 @@
   "featured": false,
   "stars": 26,
   "stars_checked": "2026-10-26",
-  "archived": true
+  "archived": true,
+  "pushed_at": "2026-08-05",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "/plugin install xberg@claude-community"
  },
  {
   "slug": "kreuzberg-cloud",
@@ -2740,7 +3412,11 @@
   "featured": false,
   "stars": 26,
   "stars_checked": "2026-10-26",
-  "archived": true
+  "archived": true,
+  "pushed_at": "2026-08-05",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "/plugin install xberg@claude-community"
  },
  {
   "slug": "kreuzcrawl",
@@ -2756,7 +3432,11 @@
   "featured": false,
   "stars": 26,
   "stars_checked": "2026-10-26",
-  "archived": true
+  "archived": true,
+  "pushed_at": "2026-08-05",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "/plugin install xberg@claude-community"
  },
  {
   "slug": "krexa",
@@ -2770,9 +3450,13 @@
   "source_section": "Community list",
   "first_seen": "2026-10-25",
   "featured": false,
-  "stars": 70,
+  "stars": 71,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-21",
+  "license": "MIT-0",
+  "language": null,
+  "install": "npx skills add krexa-xyz/skills --skill krexa -g"
  },
  {
   "slug": "krypton",
@@ -2788,7 +3472,11 @@
   "featured": false,
   "stars": 132,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-07-24",
+  "license": "MIT",
+  "language": "Shell",
+  "install": "codex plugin marketplace add \\"
  },
  {
   "slug": "kuudo-skills",
@@ -2804,7 +3492,11 @@
   "featured": false,
   "stars": 3,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-24",
+  "license": null,
+  "language": "Python",
+  "install": "codex plugin marketplace add /absolute/path/to/skills"
  },
  {
   "slug": "lacuna-music",
@@ -2820,7 +3512,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-08-31",
+  "license": "MIT",
+  "language": null,
+  "install": "/plugin marketplace add JOYLINK-LTD/lacuna-plugin"
  },
  {
   "slug": "langfuse-observability",
@@ -2836,7 +3532,11 @@
   "featured": false,
   "stars": 112,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-25",
+  "license": "MIT",
+  "language": "Python",
+  "install": "claude mcp add \\"
  },
  {
   "slug": "launch-fast",
@@ -2852,7 +3552,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-08-20",
+  "license": "MIT",
+  "language": null,
+  "install": null
  },
  {
   "slug": "liendeadline",
@@ -2868,7 +3572,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-22",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "npx skills add LienDeadline/skills"
  },
  {
   "slug": "linkedin-skills",
@@ -2882,9 +3590,13 @@
   "source_section": "Community list",
   "first_seen": "2026-10-25",
   "featured": false,
-  "stars": 5215,
+  "stars": 5216,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-22",
+  "license": "MIT",
+  "language": "Python",
+  "install": "codex plugin marketplace add sergebulaev/linkedin-skills"
  },
  {
   "slug": "linkmcp",
@@ -2900,7 +3612,11 @@
   "featured": false,
   "stars": 3,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": null,
+  "install": "claude mcp add --transport http linkmcp \"https://app.linkmcp.io/api/mcp?ref=github\""
  },
  {
   "slug": "llm-transpile",
@@ -2916,7 +3632,11 @@
   "featured": false,
   "stars": 8,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-24",
+  "license": "Apache-2.0",
+  "language": "HTML",
+  "install": "/plugin marketplace add epicsagas/plugins"
  },
  {
   "slug": "llmslim",
@@ -2932,7 +3652,11 @@
   "featured": false,
   "stars": 22,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "Python",
+  "install": "/plugin marketplace add Thanatos9404/llmslim"
  },
  {
   "slug": "lmcp",
@@ -2948,7 +3672,11 @@
   "featured": false,
   "stars": 73,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": null,
+  "language": "JavaScript",
+  "install": null
  },
  {
   "slug": "loomaly",
@@ -2964,7 +3692,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-22",
+  "license": "MIT",
+  "language": null,
+  "install": "/plugin marketplace add loomaly/loomaly"
  },
  {
   "slug": "lvtd-skills",
@@ -2980,7 +3712,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": true
+  "archived": true,
+  "pushed_at": "2026-09-11",
+  "license": "MIT",
+  "language": "TypeScript",
+  "install": "npx skills add LVTD-LLC/skills --skill django-htmx"
  },
  {
   "slug": "maestro",
@@ -2996,7 +3732,11 @@
   "featured": false,
   "stars": 5,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-01",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "/plugin marketplace add mbanderas/maestro"
  },
  {
   "slug": "maestro-costguard",
@@ -3012,7 +3752,11 @@
   "featured": false,
   "stars": 2,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-09-17",
+  "license": "MIT",
+  "language": "TypeScript",
+  "install": "/plugin marketplace add mbanderas/costguard"
  },
  {
   "slug": "magents",
@@ -3028,7 +3772,11 @@
   "featured": false,
   "stars": 15,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-24",
+  "license": "MIT",
+  "language": "Rust",
+  "install": null
  },
  {
   "slug": "magic-hour",
@@ -3044,7 +3792,11 @@
   "featured": false,
   "stars": 12,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-25",
+  "license": "MIT",
+  "language": "Python",
+  "install": "npx skills add magichourhq/skills --skill magic-hour-image-to-video"
  },
  {
   "slug": "mailagent",
@@ -3060,7 +3812,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": true
+  "archived": true,
+  "pushed_at": "2026-07-31",
+  "license": "MIT",
+  "language": "TypeScript",
+  "install": null
  },
  {
   "slug": "maintainer-mode",
@@ -3089,7 +3845,11 @@
   "featured": false,
   "stars": 2,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-17",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "claude mcp add --transport http maqami-travel https://mcp.maqami.co/"
  },
  {
   "slug": "markdown-reader",
@@ -3105,7 +3865,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-25",
+  "license": "Apache-2.0",
+  "language": "JavaScript",
+  "install": "claude mcp add md-reader -- node /full/path/to/mcp-md-reader/dist/index.js"
  },
  {
   "slug": "masaka-for-codex",
@@ -3121,7 +3885,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-12",
+  "license": "Apache-2.0",
+  "language": "JavaScript",
+  "install": null
  },
  {
   "slug": "matlab-simulink-tools",
@@ -3137,7 +3905,11 @@
   "featured": false,
   "stars": 2,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-07-01",
+  "license": "MIT",
+  "language": "MATLAB",
+  "install": null
  },
  {
   "slug": "memi",
@@ -3153,7 +3925,11 @@
   "featured": false,
   "stars": 49,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-25",
+  "license": "MIT",
+  "language": "TypeScript",
+  "install": "npx skills add memi-design/memi --skill audit-frontend-design"
  },
  {
   "slug": "ml-pipeline",
@@ -3169,7 +3945,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-22",
+  "license": "Apache-2.0",
+  "language": "Python",
+  "install": "/plugin marketplace add jananthan30/ml-pipeline"
  },
  {
   "slug": "mnemoverse-memory",
@@ -3185,7 +3965,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-25",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "/plugin marketplace add mnemoverse/claude-plugin"
  },
  {
   "slug": "mobazha",
@@ -3201,7 +3985,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-05-03",
+  "license": "MIT",
+  "language": "Python",
+  "install": "/plugin install mobazha@claude-plugins-official"
  },
  {
   "slug": "moltnode-by-chord",
@@ -3217,7 +4005,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-20",
+  "license": "MIT",
+  "language": "Python",
+  "install": "claude mcp add --transport http moltnode https://moltnode.ag/mcp"
  },
  {
   "slug": "morningai",
@@ -3233,7 +4025,11 @@
   "featured": false,
   "stars": 32,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-05-16",
+  "license": null,
+  "language": "Python",
+  "install": "/plugin install morning-ai"
  },
  {
   "slug": "nightshift",
@@ -3249,7 +4045,11 @@
   "featured": false,
   "stars": 78,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-22",
+  "license": "MIT",
+  "language": "Shell",
+  "install": "codex plugin marketplace add orwa-mahmoud/nightshift"
  },
  {
   "slug": "notfair-plugin",
@@ -3265,7 +4065,11 @@
   "featured": false,
   "stars": 4064,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-23",
+  "license": "MIT",
+  "language": "Python",
+  "install": "/plugin marketplace add nowork-studio/notfair-plugin"
  },
  {
   "slug": "npmscan",
@@ -3279,9 +4083,13 @@
   "source_section": "Community list",
   "first_seen": "2026-10-26",
   "featured": false,
-  "stars": 371,
+  "stars": 372,
   "archived": false,
-  "stars_checked": "2026-10-26"
+  "stars_checked": "2026-10-26",
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "TypeScript",
+  "install": "/plugin marketplace add salemalem/npmscan-mcp-plugin"
  },
  {
   "slug": "nullcost",
@@ -3297,7 +4105,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-07-12",
+  "license": null,
+  "language": "JavaScript",
+  "install": null
  },
  {
   "slug": "oc-chatgpt-multi-auth",
@@ -3313,7 +4125,11 @@
   "featured": false,
   "stars": 207,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-20",
+  "license": "MIT",
+  "language": "TypeScript",
+  "install": null
  },
  {
   "slug": "off-the-wall",
@@ -3329,7 +4145,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "/plugin install off-the-wall --marketplace toranalytics/off-the-wall"
  },
  {
   "slug": "oh-my-cassette",
@@ -3345,7 +4165,11 @@
   "featured": false,
   "stars": 118,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "Python",
+  "install": "claude plugin marketplace add Cassette-Editor/oh-my-cassette"
  },
  {
   "slug": "oh-my-openspec",
@@ -3361,7 +4185,11 @@
   "featured": false,
   "stars": 3,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-25",
+  "license": "MIT",
+  "language": "TypeScript",
+  "install": null
  },
  {
   "slug": "ontoly",
@@ -3377,7 +4205,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-07-21",
+  "license": "MIT",
+  "language": null,
+  "install": "npx skills add 0xsarwagya/ontoly --list"
  },
  {
   "slug": "open-dynamic-workflows",
@@ -3393,7 +4225,11 @@
   "featured": false,
   "stars": 50,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-07-09",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": null
  },
  {
   "slug": "openproject-codex",
@@ -3409,7 +4245,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-07-16",
+  "license": "MIT",
+  "language": "Python",
+  "install": null
  },
  {
   "slug": "ophis",
@@ -3425,7 +4265,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-09-21",
+  "license": "MIT",
+  "language": null,
+  "install": "/plugin marketplace add ophis-fi/skills"
  },
  {
   "slug": "orgx",
@@ -3441,7 +4285,11 @@
   "featured": false,
   "stars": 2,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": null
  },
  {
   "slug": "panews-agent-toolkit",
@@ -3457,7 +4305,11 @@
   "featured": false,
   "stars": 45,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-10",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "npx skills add panewslab/skills"
  },
  {
   "slug": "papersflow",
@@ -3473,7 +4325,11 @@
   "featured": false,
   "stars": 4,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-10",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": null
  },
  {
   "slug": "pdf-monster",
@@ -3502,7 +4358,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-06",
+  "license": "MIT",
+  "language": "Python",
+  "install": "claude plugin marketplace add AltByteSG/personal-data-protection-skill"
  },
  {
   "slug": "pixeltable",
@@ -3518,7 +4378,11 @@
   "featured": false,
   "stars": 6,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-23",
+  "license": "Apache-2.0",
+  "language": "Python",
+  "install": "npx skills add pixeltable/pixeltable-skill"
  },
  {
   "slug": "placecall",
@@ -3534,7 +4398,11 @@
   "featured": false,
   "stars": 107,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "Shell",
+  "install": "/plugin marketplace add voygr-tech/placecall"
  },
  {
   "slug": "plori",
@@ -3550,7 +4418,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-22",
+  "license": "MIT",
+  "language": null,
+  "install": "codex plugin marketplace add plori-ai/codex-plugin"
  },
  {
   "slug": "pmc",
@@ -3566,7 +4438,11 @@
   "featured": false,
   "stars": 2,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-08-18",
+  "license": "MIT",
+  "language": "Python",
+  "install": null
  },
  {
   "slug": "post",
@@ -3582,7 +4458,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-25",
+  "license": "MIT",
+  "language": "HTML",
+  "install": "claude plugin marketplace add jack-reson8/post-skill"
  },
  {
   "slug": "posteverywhere",
@@ -3598,7 +4478,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-20",
+  "license": "MIT",
+  "language": null,
+  "install": null
  },
  {
   "slug": "praxis",
@@ -3614,7 +4498,11 @@
   "featured": false,
   "stars": 12,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-09-01",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "claude plugins marketplace add ouonet/praxis"
  },
  {
   "slug": "pricewin",
@@ -3630,7 +4518,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-24",
+  "license": "MIT",
+  "language": null,
+  "install": "/plugin marketplace add PriceDotWin/pricewin-agent-plugin"
  },
  {
   "slug": "pro-launch",
@@ -3646,7 +4538,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-25",
+  "license": "MIT",
+  "language": "Python",
+  "install": "/plugin marketplace add jack-reson8/pro-launch"
  },
  {
   "slug": "pro-motion",
@@ -3662,7 +4558,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-25",
+  "license": null,
+  "language": "JavaScript",
+  "install": "claude plugin marketplace add jack-reson8/pro-motion"
  },
  {
   "slug": "project-autopilot",
@@ -3678,7 +4578,11 @@
   "featured": false,
   "stars": 16,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-04-09",
+  "license": "MIT",
+  "language": "Python",
+  "install": null
  },
  {
   "slug": "prompt-to-asset",
@@ -3694,7 +4598,11 @@
   "featured": false,
   "stars": 24,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-18",
+  "license": "MIT",
+  "language": "TypeScript",
+  "install": "claude mcp add prompt-to-asset -- p2a"
  },
  {
   "slug": "pronounce",
@@ -3710,7 +4618,11 @@
   "featured": false,
   "stars": 47,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-09-01",
+  "license": "MIT",
+  "language": "Python",
+  "install": null
  },
  {
   "slug": "qatom",
@@ -3726,7 +4638,11 @@
   "featured": false,
   "stars": 3,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-23",
+  "license": "MIT",
+  "language": "Python",
+  "install": null
  },
  {
   "slug": "qrstuff",
@@ -3742,7 +4658,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-15",
+  "license": "MIT",
+  "language": null,
+  "install": "codex plugin install qrstuff-mcp-server@qrstuff-codex-plugins"
  },
  {
   "slug": "quality-engineering-skills",
@@ -3758,7 +4678,11 @@
   "featured": false,
   "stars": 40,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-23",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "npx skills add RBraga01/Quality-Engineering-Skills"
  },
  {
   "slug": "quiver",
@@ -3774,7 +4698,11 @@
   "featured": false,
   "stars": 16,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-19",
+  "license": "MIT",
+  "language": "Shell",
+  "install": "/plugin marketplace add yagizdo/quiver"
  },
  {
   "slug": "rag-reviewer",
@@ -3790,7 +4718,11 @@
   "featured": false,
   "stars": 20,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-25",
+  "license": "MIT",
+  "language": "Python",
+  "install": null
  },
  {
   "slug": "read-image",
@@ -3806,7 +4738,11 @@
   "featured": false,
   "stars": 4,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "Python",
+  "install": null
  },
  {
   "slug": "receipts-by-nueton",
@@ -3822,7 +4758,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-20",
+  "license": "MIT",
+  "language": "Python",
+  "install": null
  },
  {
   "slug": "red-green-proof",
@@ -3838,7 +4778,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-09-01",
+  "license": "MIT",
+  "language": "Shell",
+  "install": "/plugin marketplace add RooAGI/red-green-proof"
  },
  {
   "slug": "redfox-agent-plugins",
@@ -3854,7 +4798,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-09-22",
+  "license": "MIT",
+  "language": "Python",
+  "install": "/plugin marketplace add redfox-data/redfox-agent-plugins"
  },
  {
   "slug": "registry-broker",
@@ -3870,7 +4818,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-08-24",
+  "license": "Apache-2.0",
+  "language": "TypeScript",
+  "install": null
  },
  {
   "slug": "rekall",
@@ -3886,7 +4838,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-25",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "codex plugin marketplace add DitriXNew/rekall"
  },
  {
   "slug": "remotion-plugin",
@@ -3902,7 +4858,11 @@
   "featured": false,
   "stars": 4,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-04-03",
+  "license": "Apache-2.0",
+  "language": null,
+  "install": "codex mcp add remotion-documentation -- npx @remotion/mcp@latest"
  },
  {
   "slug": "remove-ai-watermarks",
@@ -3916,9 +4876,13 @@
   "source_section": "Community list",
   "first_seen": "2026-10-25",
   "featured": false,
-  "stars": 6141,
+  "stars": 6143,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "Apache-2.0",
+  "language": "Python",
+  "install": "npx skills add wiltodelta/remove-ai-watermarks    # agent skill for Claude Code, Codex, Cursor, and other agents"
  },
  {
   "slug": "renhua",
@@ -3934,7 +4898,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-25",
+  "license": "MIT",
+  "language": null,
+  "install": "claude plugin marketplace add jack-reson8/renhua"
  },
  {
   "slug": "repopilot",
@@ -3950,7 +4918,11 @@
   "featured": false,
   "stars": 24,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "Apache-2.0",
+  "language": "Rust",
+  "install": "/plugin marketplace add MykytaStel/repopilot"
  },
  {
   "slug": "research-agent-skills",
@@ -3966,7 +4938,11 @@
   "featured": false,
   "stars": 66,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-25",
+  "license": null,
+  "language": "Python",
+  "install": "npx skills add KalarisLabs/research-agent-skills"
  },
  {
   "slug": "resume-tailor",
@@ -3982,7 +4958,11 @@
   "featured": false,
   "stars": 49,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-03",
+  "license": "MIT",
+  "language": "Python",
+  "install": "npx skills add olegvg/resume-tailor-plugin --list"
  },
  {
   "slug": "revid",
@@ -3998,7 +4978,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-22",
+  "license": "MIT",
+  "language": "Shell",
+  "install": "/plugin marketplace add tmakersas/revid-skills"
  },
  {
   "slug": "reviewable-html-workbench",
@@ -4014,7 +4998,11 @@
   "featured": false,
   "stars": 300,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-09-10",
+  "license": "MIT",
+  "language": "Python",
+  "install": "claude plugin marketplace add u-ichi/reviewable-html-workbench"
  },
  {
   "slug": "river-review",
@@ -4030,7 +5018,11 @@
   "featured": false,
   "stars": 7,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "/plugin marketplace add s977043/river-review"
  },
  {
   "slug": "roadmapsmith",
@@ -4046,7 +5038,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-25",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "npx skills add PapiScholz/roadmapsmith"
  },
  {
   "slug": "roomcomm",
@@ -4062,7 +5058,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-06",
+  "license": "MIT",
+  "language": null,
+  "install": "codex plugin marketplace add kotinder/codex-roomcomm"
  },
  {
   "slug": "ru-text",
@@ -4078,7 +5078,11 @@
   "featured": false,
   "stars": 280,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-25",
+  "license": "MIT",
+  "language": "Shell",
+  "install": null
  },
  {
   "slug": "runtype-skills",
@@ -4094,7 +5098,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-23",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "npx skills add runtypelabs/skills"
  },
  {
   "slug": "rust-reverse-engineering",
@@ -4110,7 +5118,11 @@
   "featured": false,
   "stars": 12,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-21",
+  "license": "Apache-2.0",
+  "language": "Shell",
+  "install": "claude plugin marketplace add jingjing2222/rust-reverse-engineering-skill"
  },
  {
   "slug": "scrapegraph-ai",
@@ -4126,7 +5138,11 @@
   "featured": false,
   "stars": 73,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-09-21",
+  "license": "MIT",
+  "language": "TypeScript",
+  "install": "npx skills add https://github.com/ScrapeGraphAI/just-scrape --skill just-scrape"
  },
  {
   "slug": "sealos",
@@ -4142,7 +5158,11 @@
   "featured": false,
   "stars": 83,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-09-28",
+  "license": null,
+  "language": "Python",
+  "install": "claude plugin marketplace add labring/sealos-skills"
  },
  {
   "slug": "sectionsight",
@@ -4158,7 +5178,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "/plugin marketplace add Majny/sectionsight"
  },
  {
   "slug": "self-starter",
@@ -4174,7 +5198,11 @@
   "featured": false,
   "stars": 7,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-22",
+  "license": "MIT",
+  "language": "TypeScript",
+  "install": "codex plugin marketplace add hyprh/self-starter"
  },
  {
   "slug": "sendpaper",
@@ -4190,7 +5218,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-24",
+  "license": "MIT",
+  "language": null,
+  "install": "codex plugin marketplace add ryan-tish/sendpaper-plugin"
  },
  {
   "slug": "sendsets",
@@ -4206,7 +5238,11 @@
   "featured": false,
   "stars": 3,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-09-27",
+  "license": "Apache-2.0",
+  "language": "Shell",
+  "install": "claude mcp add --transport http sendsets https://api.sendsetsapi.com/v1/mcp"
  },
  {
   "slug": "seo-dungeon",
@@ -4222,7 +5258,11 @@
   "featured": false,
   "stars": 4,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-23",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": null
  },
  {
   "slug": "serply",
@@ -4238,7 +5278,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": null,
+  "install": "npx skills add serply-inc/skills"
  },
  {
   "slug": "session-orchestrator",
@@ -4254,7 +5298,11 @@
   "featured": false,
   "stars": 52,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "/plugin marketplace add Kanevry/session-orchestrator"
  },
  {
   "slug": "shots",
@@ -4270,7 +5318,11 @@
   "featured": false,
   "stars": 3,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-14",
+  "license": "MIT",
+  "language": "Python",
+  "install": "codex plugin marketplace add hitSlop/shots"
  },
  {
   "slug": "silicon-valley-atlas",
@@ -4286,7 +5338,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-10",
+  "license": "MIT",
+  "language": null,
+  "install": "claude plugin marketplace add https://svatlas.io/plugins/marketplace.json"
  },
  {
   "slug": "simple-man",
@@ -4302,7 +5358,11 @@
   "featured": false,
   "stars": 11,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-01",
+  "license": "MIT",
+  "language": "Python",
+  "install": "npx skills add Maksim-Burtsev/simple-man -g -a claude-code -s simple-man -y"
  },
  {
   "slug": "since-cutoff",
@@ -4318,7 +5378,11 @@
   "featured": false,
   "stars": 10,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-25",
+  "license": "MIT",
+  "language": "Python",
+  "install": "/plugin marketplace add MohammadHijjawi97/since-cutoff"
  },
  {
   "slug": "sitemd",
@@ -4334,7 +5398,11 @@
   "featured": false,
   "stars": 9,
   "stars_checked": "2026-10-26",
-  "archived": true
+  "archived": true,
+  "pushed_at": "2026-09-21",
+  "license": null,
+  "language": "HTML",
+  "install": null
  },
  {
   "slug": "skill-skill",
@@ -4350,7 +5418,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-25",
+  "license": "MIT",
+  "language": "Python",
+  "install": "/plugin marketplace add jack-reson8/skill-skill"
  },
  {
   "slug": "skill-sync-publisher",
@@ -4366,7 +5438,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-07-28",
+  "license": "MIT",
+  "language": "Python",
+  "install": null
  },
  {
   "slug": "sno-station-skills",
@@ -4380,9 +5456,13 @@
   "source_section": "Community list",
   "first_seen": "2026-10-25",
   "featured": false,
-  "stars": 871,
+  "stars": 874,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-24",
+  "license": "Apache-2.0",
+  "language": "Shell",
+  "install": "claude plugin marketplace add sno-ai/sno-station-skills"
  },
  {
   "slug": "solidping",
@@ -4398,7 +5478,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-22",
+  "license": "MIT",
+  "language": null,
+  "install": "codex plugin marketplace add fclairamb/solidping-plugin"
  },
  {
   "slug": "solidworks-gpt-plugin",
@@ -4414,7 +5498,11 @@
   "featured": false,
   "stars": 14,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-25",
+  "license": "MIT",
+  "language": "Python",
+  "install": "codex plugin marketplace add Erfouni/solidworks-GPT-plugin"
  },
  {
   "slug": "spec-driven-development",
@@ -4430,7 +5518,11 @@
   "featured": false,
   "stars": 10,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-05-18",
+  "license": "MIT",
+  "language": "Shell",
+  "install": "codex plugin marketplace add Habib0x0/spec-driven-plugin"
  },
  {
   "slug": "spec-superflow",
@@ -4446,7 +5538,11 @@
   "featured": false,
   "stars": 872,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "/plugin marketplace add MageByte-Zero/spec-superflow"
  },
  {
   "slug": "spellbook-skills",
@@ -4462,7 +5558,11 @@
   "featured": false,
   "stars": 2,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-23",
+  "license": "MIT",
+  "language": "Python",
+  "install": "/plugin marketplace add yyykf/spellbook-skills"
  },
  {
   "slug": "stacked-prs",
@@ -4478,7 +5578,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-23",
+  "license": "MIT",
+  "language": "Python",
+  "install": "claude plugin marketplace add Qabbout/stacked-prs-skill"
  },
  {
   "slug": "staff-engineer-mode",
@@ -4507,7 +5611,11 @@
   "featured": false,
   "stars": 31,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-07-26",
+  "license": "Apache-2.0",
+  "language": "Python",
+  "install": "/plugin marketplace add f0d010c/stark"
  },
  {
   "slug": "stickypane",
@@ -4523,7 +5631,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-19",
+  "license": "MIT",
+  "language": "Go",
+  "install": "claude mcp add stickypane -- stickypane mcp"
  },
  {
   "slug": "stop-that-shit",
@@ -4537,9 +5649,13 @@
   "source_section": "Community list",
   "first_seen": "2026-10-25",
   "featured": false,
-  "stars": 3193,
+  "stars": 3195,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "claude plugin marketplace add ./"
  },
  {
   "slug": "story-skills",
@@ -4555,7 +5671,11 @@
   "featured": false,
   "stars": 353,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-20",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "/plugin marketplace add danjdewhurst/story-skills"
  },
  {
   "slug": "storyflo",
@@ -4571,7 +5691,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-09-12",
+  "license": "MIT",
+  "language": null,
+  "install": null
  },
  {
   "slug": "supercov",
@@ -4587,7 +5711,11 @@
   "featured": false,
   "stars": 157,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "Rust",
+  "install": "/plugin marketplace add supercorp-ai/supercov"
  },
  {
   "slug": "superloopy",
@@ -4603,7 +5731,11 @@
   "featured": false,
   "stars": 112,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-15",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "codex plugin marketplace add https://github.com/beefiker/superloopy"
  },
  {
   "slug": "superpipelines",
@@ -4619,7 +5751,11 @@
   "featured": false,
   "stars": 4,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-07-15",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": null
  },
  {
   "slug": "swapwallet",
@@ -4635,7 +5771,11 @@
   "featured": false,
   "stars": 2,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-12",
+  "license": "MIT",
+  "language": null,
+  "install": "claude mcp add --transport http swapwallet https://swapwallet.app/mcp"
  },
  {
   "slug": "swarmmemo",
@@ -4651,7 +5791,11 @@
   "featured": false,
   "stars": 3,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "Apache-2.0",
+  "language": "Go",
+  "install": null
  },
  {
   "slug": "synta-mcp",
@@ -4667,7 +5811,11 @@
   "featured": false,
   "stars": 4,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-04-03",
+  "license": null,
+  "language": null,
+  "install": null
  },
  {
   "slug": "sysknife",
@@ -4681,9 +5829,13 @@
   "source_section": "Community list",
   "first_seen": "2026-10-25",
   "featured": false,
-  "stars": 71,
+  "stars": 73,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "Rust",
+  "install": null
  },
  {
   "slug": "tablejourney",
@@ -4699,7 +5851,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-04",
+  "license": "MIT",
+  "language": null,
+  "install": null
  },
  {
   "slug": "tailtest",
@@ -4715,7 +5871,11 @@
   "featured": false,
   "stars": 4,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-06-13",
+  "license": "MIT",
+  "language": "Python",
+  "install": "codex plugin marketplace add avansaber/tailtest-codex"
  },
  {
   "slug": "taisly-agent-kit",
@@ -4731,7 +5891,11 @@
   "featured": false,
   "stars": 220,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-22",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "codex mcp add taisly --url https://app.taisly.com/mcp"
  },
  {
   "slug": "talivia-agent-kit",
@@ -4747,7 +5911,11 @@
   "featured": false,
   "stars": 32,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-01",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "codex mcp add talivia --url https://talivia.com/mcp"
  },
  {
   "slug": "tandem-workflow-architect",
@@ -4763,7 +5931,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-05-21",
+  "license": "MIT",
+  "language": "TypeScript",
+  "install": "codex plugin marketplace add frumu-ai/tandem-codex-plugin"
  },
  {
   "slug": "tartiner-labs",
@@ -4779,7 +5951,11 @@
   "featured": false,
   "stars": 8,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-24",
+  "license": "MIT",
+  "language": "Go",
+  "install": "codex plugin add xcode-skills@tartinerlabs"
  },
  {
   "slug": "task-scheduler",
@@ -4795,7 +5971,11 @@
   "featured": false,
   "stars": 4,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-04-03",
+  "license": "MIT",
+  "language": "Python",
+  "install": null
  },
  {
   "slug": "teaching-skills",
@@ -4811,7 +5991,11 @@
   "featured": false,
   "stars": 7,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-03",
+  "license": "MIT",
+  "language": "Python",
+  "install": null
  },
  {
   "slug": "team-skills-platform",
@@ -4827,7 +6011,11 @@
   "featured": false,
   "stars": 3,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-13",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "npx skills add alchaincyf/huashu-design"
  },
  {
   "slug": "thermal-fluid-research-workflow",
@@ -4843,7 +6031,11 @@
   "featured": false,
   "stars": 22,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "Python",
+  "install": null
  },
  {
   "slug": "tmcra-local-memory",
@@ -4859,7 +6051,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "Apache-2.0",
+  "language": "JavaScript",
+  "install": null
  },
  {
   "slug": "tnt-house-risk-data-api",
@@ -4875,7 +6071,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-08-21",
+  "license": "MIT",
+  "language": null,
+  "install": null
  },
  {
   "slug": "token-harbor",
@@ -4904,7 +6104,11 @@
   "featured": false,
   "stars": 563,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "/plugin marketplace add ooples/token-optimizer-mcp"
  },
  {
   "slug": "tokenchronicle",
@@ -4920,7 +6124,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-09-10",
+  "license": null,
+  "language": null,
+  "install": "codex plugin marketplace add https://github.com/HuaHuiJian/tokenchronicle-marketplace.git"
  },
  {
   "slug": "tokrepo-search",
@@ -4936,7 +6144,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-04-02",
+  "license": "MIT",
+  "language": null,
+  "install": null
  },
  {
   "slug": "tool-advisor",
@@ -4952,7 +6164,11 @@
   "featured": false,
   "stars": 12,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-04-23",
+  "license": "MIT",
+  "language": "Shell",
+  "install": "npx skills add dragon1086/claude-skills -y --agent claude-code"
  },
  {
   "slug": "tree-ring-memory",
@@ -4968,7 +6184,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-21",
+  "license": "MIT",
+  "language": "Python",
+  "install": "codex plugin marketplace add TerminallyLazy/tree-ring-memory-codex-plugin"
  },
  {
   "slug": "uizze",
@@ -4984,7 +6204,11 @@
   "featured": false,
   "stars": 68,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-24",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "npx skills add https://uizze.com --skill ui-design"
  },
  {
   "slug": "unforgit",
@@ -5000,7 +6224,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-23",
+  "license": "MIT",
+  "language": null,
+  "install": null
  },
  {
   "slug": "unified-ai-system",
@@ -5016,7 +6244,11 @@
   "featured": false,
   "stars": 10,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-25",
+  "license": "Apache-2.0",
+  "language": "JavaScript",
+  "install": "codex mcp add unified-ai-system -- docker run --rm -i ghcr.io/happy520ai/unified-ai-system/mcp-server:0.8.0"
  },
  {
   "slug": "unity-agent-workflows",
@@ -5032,7 +6264,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-02",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "npx skills add AUN-PN/unity-agent-workflows --list"
  },
  {
   "slug": "universal-design-principles",
@@ -5048,7 +6284,11 @@
   "featured": false,
   "stars": 9,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-05-03",
+  "license": null,
+  "language": "Markdown",
+  "install": "/plugin marketplace add HDeibler/universal-design-principles"
  },
  {
   "slug": "unslop",
@@ -5064,7 +6304,11 @@
   "featured": false,
   "stars": 164,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "Python",
+  "install": "/plugin marketplace add MohamedAbdallah-14/unslop"
  },
  {
   "slug": "upwork-autopilot",
@@ -5080,7 +6324,11 @@
   "featured": false,
   "stars": 7,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-07-03",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": null
  },
  {
   "slug": "usage-engineer",
@@ -5096,7 +6344,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-24",
+  "license": "MIT",
+  "language": "Python",
+  "install": null
  },
  {
   "slug": "val-town",
@@ -5112,7 +6364,11 @@
   "featured": false,
   "stars": 10,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-13",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "claude plugin install valtown@claude-plugins-official"
  },
  {
   "slug": "velith",
@@ -5128,7 +6384,11 @@
   "featured": false,
   "stars": 39,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-09-30",
+  "license": "Apache-2.0",
+  "language": "JavaScript",
+  "install": "/plugin marketplace add epicsagas/plugins"
  },
  {
   "slug": "vibe-prospecting",
@@ -5144,7 +6404,11 @@
   "featured": false,
   "stars": 263,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "Shell",
+  "install": "npx skills add explorium-ai/vibeprospecting-plugin --all"
  },
  {
   "slug": "vibeportrait",
@@ -5160,7 +6424,11 @@
   "featured": false,
   "stars": 26,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-04-08",
+  "license": "MIT",
+  "language": "HTML",
+  "install": "/plugin marketplace add dadwadw233/VibePortrait"
  },
  {
   "slug": "vibestretch",
@@ -5176,7 +6444,11 @@
   "featured": false,
   "stars": 2,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-14",
+  "license": "MIT",
+  "language": "Shell",
+  "install": "/plugin marketplace add Eliasjunit/vibestretch"
  },
  {
   "slug": "vidseeds-ai",
@@ -5192,7 +6464,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-07-20",
+  "license": "MIT",
+  "language": null,
+  "install": "/plugin marketplace add CarrotGamesStudios/vidseeds-mcp"
  },
  {
   "slug": "villagesql-skills",
@@ -5208,7 +6484,11 @@
   "featured": false,
   "stars": 5,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-13",
+  "license": null,
+  "language": null,
+  "install": "/plugin install vsql-extension-builder@claude-plugins-official"
  },
  {
   "slug": "voicemoat-skills",
@@ -5224,7 +6504,11 @@
   "featured": false,
   "stars": 0,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-04",
+  "license": "MIT",
+  "language": null,
+  "install": "/plugin marketplace add prateeks367/voicemoat-skills"
  },
  {
   "slug": "waggle",
@@ -5240,7 +6524,11 @@
   "featured": false,
   "stars": 44,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-23",
+  "license": "Apache-2.0",
+  "language": "Python",
+  "install": null
  },
  {
   "slug": "wakewire",
@@ -5256,7 +6544,11 @@
   "featured": false,
   "stars": 11,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "TypeScript",
+  "install": "codex plugin marketplace add https://github.com/glenncalleja/wakewire   # or a local checkout path"
  },
  {
   "slug": "wavespeed",
@@ -5272,7 +6564,11 @@
   "featured": false,
   "stars": 3,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-21",
+  "license": "MIT",
+  "language": "Shell",
+  "install": "codex plugin marketplace add WaveSpeedAI/codex-plugin-wavespeed-cli"
  },
  {
   "slug": "webly",
@@ -5288,7 +6584,11 @@
   "featured": false,
   "stars": 2,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-25",
+  "license": "Apache-2.0",
+  "language": "JavaScript",
+  "install": "/plugin marketplace add ./path/to/webly-plugin   # test locally"
  },
  {
   "slug": "wingman",
@@ -5304,7 +6604,11 @@
   "featured": false,
   "stars": 7,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-09-29",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "codex plugin marketplace add lsshym/wingman.ai"
  },
  {
   "slug": "workflow-kit",
@@ -5320,7 +6624,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-06-02",
+  "license": "MIT",
+  "language": "Python",
+  "install": "claude plugin marketplace add Le-Xuan-Thang/workflow-kit"
  },
  {
   "slug": "writer-s-loop",
@@ -5336,7 +6644,11 @@
   "featured": false,
   "stars": 12,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-09-21",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": null
  },
  {
   "slug": "wtfm",
@@ -5350,9 +6662,13 @@
   "source_section": "Community list",
   "first_seen": "2026-10-25",
   "featured": false,
-  "stars": 97,
+  "stars": 99,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-23",
+  "license": "Apache-2.0",
+  "language": "JavaScript",
+  "install": "codex plugin marketplace add SupportPages-io/wtfm"
  },
  {
   "slug": "x-twitter-skills",
@@ -5368,7 +6684,11 @@
   "featured": false,
   "stars": 157,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-21",
+  "license": "MIT",
+  "language": "Python",
+  "install": "codex plugin marketplace add sergebulaev/x-skills"
  },
  {
   "slug": "x-twitter-scraper",
@@ -5382,9 +6702,13 @@
   "source_section": "Community list",
   "first_seen": "2026-10-25",
   "featured": false,
-  "stars": 220,
+  "stars": 221,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-26",
+  "license": "MIT",
+  "language": "TypeScript",
+  "install": "codex plugin marketplace add Xquik-dev/x-twitter-scraper"
  },
  {
   "slug": "yandex-direct",
@@ -5400,7 +6724,11 @@
   "featured": false,
   "stars": 21,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-23",
+  "license": "MIT",
+  "language": "Python",
+  "install": null
  },
  {
   "slug": "youtube-skills-by-transcriptapi",
@@ -5414,9 +6742,13 @@
   "source_section": "Community list",
   "first_seen": "2026-10-25",
   "featured": false,
-  "stars": 1122,
+  "stars": 1123,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-20",
+  "license": "MIT",
+  "language": null,
+  "install": "npx skills add ZeroPointRepo/youtube-skills --skill youtube-full"
  },
  {
   "slug": "yylo",
@@ -5432,7 +6764,11 @@
   "featured": false,
   "stars": 66,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-23",
+  "license": "MIT",
+  "language": "Python",
+  "install": null
  },
  {
   "slug": "zagrosi-forge",
@@ -5448,7 +6784,11 @@
   "featured": false,
   "stars": 8,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-22",
+  "license": "MIT",
+  "language": "Python",
+  "install": "claude plugin marketplace add zagrosi-code/zagrosi-forge"
  },
  {
   "slug": "zcode-bridge",
@@ -5464,7 +6804,11 @@
   "featured": false,
   "stars": 1,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-10-19",
+  "license": "Apache-2.0",
+  "language": "TypeScript",
+  "install": "codex plugin marketplace add https://github.com/Sandyzzx/codex-zcode-bridge.git --ref master"
  },
  {
   "slug": "zotero-research-tools",
@@ -5480,6 +6824,10 @@
   "featured": false,
   "stars": 4,
   "stars_checked": "2026-10-26",
-  "archived": false
+  "archived": false,
+  "pushed_at": "2026-07-01",
+  "license": "MIT",
+  "language": "PowerShell",
+  "install": null
  }
 ]
