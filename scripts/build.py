@@ -49,56 +49,103 @@ a{color:inherit}.w{max-width:1160px;margin:auto;padding:0 28px}.mono{font-family
 .note{border-left:3px solid var(--acc);padding:4px 0 4px 16px;margin:26px 0;font-style:italic}
 .todo{border:1px dashed var(--acc);color:var(--acc);padding:12px 14px;font-size:14px;margin-top:18px}.prose{max-width:680px;padding:40px 0 70px}.prose h1{font:800 48px/1.05 Fraunces,serif;margin:0 0 20px}.prose h3{font:600 22px Fraunces,serif;margin:34px 0 6px}.price{font:600 40px Fraunces,serif}
 footer{border-top:3px double var(--ink);padding:22px 0 40px;color:var(--mute);font-size:13px;display:flex;justify-content:space-between;gap:30px}
-@media(max-width:800px){.lede,.doc{grid-template-columns:1fr}.picks,.slots{grid-template-columns:1fr}.row{grid-template-columns:44px 1fr}.side+x{}.doc .row p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.row .c{display:none}.brand a.n{font-size:38px}}"""
+.fband{background:var(--ink);color:var(--paper);margin:26px 0 0;padding:26px 26px 28px}.fband .hd{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid #4a443a;padding-bottom:12px}
+.fband .hd h2{font:600 26px Fraunces,serif;margin:0}.fband .hd a{color:#e9b8ab}.fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.fcard{display:flex;flex-direction:column;background:#211d17;border:1px solid #4a443a;padding:22px;text-decoration:none;color:var(--paper);min-height:230px;transition:border-color .15s}.fcard:hover{border-color:var(--acc)}
+.badge{display:inline-block;background:var(--acc);color:#fff;font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;align-self:flex-start}
+.fcard h3{font:800 30px/1.08 Fraunces,serif;margin:14px 0 8px;letter-spacing:-.01em}.fcard p{margin:0;color:#d8d0c0;font-size:15px}.fcard .by{margin-top:auto;padding-top:16px;color:#a39a88}
+.fcard.open{border-style:dashed;background:transparent}.fcard.open h3{color:#fff}.fcard .cta{margin-top:auto;padding-top:16px;color:#fff;font-weight:600}.fcard .cta b{color:#e9b8ab}
+.fpin{border:2px solid var(--ink);margin:14px 0 4px}.fpin .row{border-bottom:0;padding:16px 14px;background:#fbf8f1}.fpin .row+.row{border-top:1px solid var(--rule)}
+.fopen{display:flex;justify-content:space-between;gap:16px;align-items:center;border:1px dashed var(--acc);padding:12px 14px;margin:14px 0 4px;font-size:14px;text-decoration:none}.fopen b{color:var(--acc)}
+.mine{font-size:13px;color:var(--mute);margin:14px 0 0}.mine a{color:var(--acc)}.shelves{display:flex;flex-wrap:wrap;gap:8px 18px;padding:14px 0 4px;font-size:14px}
+.faq h3{margin-top:26px}.where li{margin:6px 0}.slotstat{display:flex;gap:10px;margin:18px 0}.slotstat span{flex:1;border:1px solid var(--ink);padding:12px;text-align:center}.slotstat .taken{background:var(--ink);color:var(--paper)}
+@media(max-width:800px){.fgrid{grid-template-columns:1fr}.lede,.doc{grid-template-columns:1fr}.picks,.slots{grid-template-columns:1fr}.row{grid-template-columns:44px 1fr}.side+x{}.doc .row p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.row .c{display:none}.brand a.n{font-size:38px}}"""
 def layout(title,body,depth=0,desc="An independent, hand-edited catalog of ChatGPT and Codex plugins."):
   r="../"*depth
   return f"""<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>{e(title)}</title>
 <meta name=description content="{e(desc)}"><link rel=stylesheet href="{r}style.css"></head><body><div class=w>
 <header class=mast><div class="top mono"><span>Independent · not affiliated with OpenAI</span><span>{len(P)} plugins catalogued</span></div>
-<div class=brand><a class=n href="{r}index.html">PickA<i>Plugin</i></a><nav><a href="{r}index.html#catalog">Catalog</a><a href="{r}submit.html">Submit</a><a href="{r}featured.html">Advertise</a><a href="{r}about.html">About</a></nav></div></header>
+<div class=brand><a class=n href="{r}index.html">PickA<i>Plugin</i></a><nav><a href="{r}index.html#catalog">Catalog</a><a href="{r}submit.html">Submit</a><a href="{r}featured.html" style="color:var(--acc);font-weight:600">Get featured</a><a href="{r}about.html">About</a></nav></div></header>
 {body}<footer><span>PickAPlugin is an independent catalog. Not affiliated with, endorsed by, or sponsored by OpenAI. ChatGPT and Codex are trademarks of OpenAI. Listings come from public sources — read the code before you install anything.</span><span><a href="mailto:{EMAIL}">{EMAIL}</a></span></footer></div></body></html>"""
 idx={p["slug"]:i+1 for i,p in enumerate(P)}
 def num(p): return f"No.{idx[p['slug']]:03d}"
-def row(p): return f'<a class=row href="p/{p["slug"]}.html" data-c="{e(p["category"])}" data-t="{e((p["name"]+" "+p["description"]+" "+p["maker"]).lower())}"><span class="no mono">{num(p)}</span><span><h3>{e(p["name"])}</h3><p>{e(p["description"])}</p></span><span class="c mono">{e(p["category"])}</span></a>'
+def row(p,pre="p/"): return f'<a class=row href="{pre}{p["slug"]}.html" data-c="{e(p["category"])}" data-t="{e((p["name"]+" "+p["description"]+" "+p["maker"]).lower())}"><span class="no mono">{num(p)}</span><span><h3>{e(p["name"])}</h3><p>{e(p["description"])}</p></span><span class="c mono">{e(p["category"])}</span></a>'
+def slug(c): return "".join(ch if ch.isalnum() else "-" for ch in c.lower()).replace("--","-").replace("--","-").strip("-")
+def pinrow(p,pre): return f'<a class=row style="grid-template-columns:110px 1fr" href="{pre}{p["slug"]}.html"><span class=badge>Featured</span><span><h3>{e(p["name"])}</h3><p>{e(p["description"])}</p></span></a>'
+def pinned(cat,pre,r):
+  fs=[p for p in FEAT if p["category"]==cat]
+  if fs: return '<div class=fpin>'+"".join(pinrow(p,pre) for p in fs)+'</div>'
+  if OPEN: return f'<a class=fopen href="{r}featured.html"><span><b>Featured spot open in {e(cat)}.</b> Pin your plugin here, above every list in this category.</span><span class=mono>$49/mo →</span></a>'
+  return ""
 def pay(key,label,price):
   if STRIPE[key]: return f'<a class=btn href="{STRIPE[key]}">{label} — {price}</a>'
   return f'<div class=todo>TODO: Stripe Payment Link for “{label}” ({price}) isn\'t connected yet, so payments aren\'t live. Until then, email <a href="mailto:{EMAIL}">{EMAIL}</a>.</div>'
 shutil.rmtree(D,ignore_errors=True); os.makedirs(D+"/p"); open(D+"/style.css","w").write(CSS)
+FEAT=[p for p in P if p.get("featured")][:3]; OPEN=3-len(FEAT)
 by={p["slug"]:p for p in P}; cats=sorted({p["category"] for p in P},key=lambda c:(c=="Miscellany",c))
 count={c:sum(p["category"]==c for p in P) for c in cats}
 picks="".join(f'<a class=pick href="p/{s}.html"><span class="no mono">Pick {i+1:02d} · {e(by[s]["category"])}</span><h3>{e(by[s]["name"])}</h3><p>{e(n)}</p><div class="by mono">by {e(by[s]["maker"])}</div></a>' for i,(s,n) in enumerate(PICKS.items()) if s in by)
-feat=[p for p in P if p.get("featured")][:3]
+feat=FEAT
 slots="".join(f'<a class=slot href="p/{p["slug"]}.html"><span class=mono>Featured</span><b>{e(p["name"])}</b><span>{e(p["description"][:90])}</span></a>' for p in feat)+(f'<a class=slot href="featured.html" style="grid-column:span {3-len(feat)}"><span class=mono>Sponsored · {3-len(feat)} of 3 slots open</span><b>Built a plugin? Put it here for $49 a month.</b><span>Clearly labelled, never touches our picks or the catalog order. Cancel anytime.</span></a>' if len(feat)<3 else "")
+def fband(r):
+  cards="".join(f'<a class=fcard href="{r}p/{p["slug"]}.html"><span class=badge>Featured</span><h3>{e(p["name"])}</h3><p>{e(p["description"][:150])}</p><span class="by mono">by {e(p["maker"])} · {e(p["category"])}</span></a>' for p in FEAT)
+  cards+="".join(f'<a class="fcard open" href="{r}featured.html"><span class="mono" style="color:#e9b8ab">Slot {len(FEAT)+i+1:02d} of 03 · open</span><h3>Your plugin,<br>right here.</h3><p>The first thing every visitor sees, plus the top of your category page and every related list.</p><span class=cta>Claim this slot · <b>$49/mo</b> →</span></a>' for i in range(OPEN))
+  return f'<section class=fband><div class=hd><h2>Featured</h2><span class=mono>{"Paid placement · always labelled" if not OPEN else f"{OPEN} of 3 slots open · <a href={chr(34)}{r}featured.html{chr(34)}>how it works</a>"}</span></div><div class=fgrid>{cards}</div></section>'
 dates=sorted({p["first_seen"] for p in P}); new=[p for p in P if len(dates)>1 and p["first_seen"]>dates[0]][-10:]
 newsec=f'<div class=sec><h2>Fresh in the catalog</h2><span class=mono>added since {dates[0]}</span></div>'+"".join(row(p) for p in new) if new else ""
 chips='<button class=on data-c="">Everything</button>'+"".join(f'<button data-c="{e(c)}">{e(c)}<sup>{count[c]}</sup></button>' for c in cats)
-home=f"""<section class=lede><div><span class="mono" style="color:var(--acc)">The catalog · Issue 01</span><h1>Plugins for ChatGPT &amp; Codex, <em>sorted by a person</em>, not a leaderboard.</h1>
+shelves='<div class=shelves><span class=mono>Shelves:</span>'+"".join(f'<a href="c/{slug(c)}.html">{e(c)}</a>' for c in cats)+'</div>'
+home=fband("")+f"""<section class=lede><div><span class="mono" style="color:var(--acc)">The catalog · Issue 01</span><h1>Plugins for ChatGPT &amp; Codex, <em>sorted by a person</em>, not a leaderboard.</h1>
 <p>We read the lists so you don't have to. Every plugin here links back to its source. A few we'd actually install are marked as picks.</p></div>
 <div><label class=mono for=q>Search {len(P)} plugins</label><input id=q placeholder="memory, PDF, secret scanning…"><div class=cats>{chips}</div></div></section>
 <div class=sec><h2>Editor's picks</h2><span class=mono>Chosen from each project's own description · not audited</span></div><div class=picks>{picks}</div>
-<div class=slots>{slots}</div>{newsec}
-<div class=sec id=catalog><h2>The full catalog</h2><span class=mono id=n></span></div><div id=list>{"".join(row(p) for p in P)}</div>
+{newsec}
+<div class=sec id=catalog><h2>The full catalog</h2><span class=mono id=n></span></div>{shelves}<div id=list>{"".join(row(p) for p in P)}</div>
 <script>let c="",q=document.getElementById('q'),rs=[...document.querySelectorAll('#list .row')];function f(){{let t=q.value.toLowerCase(),n=0;rs.forEach(x=>{{let ok=(!c||x.dataset.c==c)&&x.dataset.t.includes(t);x.style.display=ok?'':'none';n+=ok}});document.getElementById('n').textContent=n+' of {len(P)} shown'}}
 q.oninput=f;document.querySelectorAll('.cats button').forEach(b=>b.onclick=()=>{{document.querySelectorAll('.cats button').forEach(z=>z.classList.remove('on'));b.classList.add('on');c=b.dataset.c;f();document.getElementById('catalog').scrollIntoView({{behavior:'smooth'}})}});f()</script>"""
 open(D+"/index.html","w").write(layout("PickAPlugin — an independent catalog of ChatGPT & Codex plugins",home))
 for p in P:
-  same=[x for x in P if x["category"]==p["category"] and x["slug"]!=p["slug"]][:4]
+  same=[x for x in P if x["category"]==p["category"] and x["slug"]!=p["slug"] and not x.get("featured")][:4]
+  isf=p.get("featured")
   note=f'<p class=note>Editor\'s note: {e(PICKS[p["slug"]])}</p>' if p["slug"] in PICKS else ""
   rel="".join(f'<a class=row style="grid-template-columns:70px 1fr" href="{x["slug"]}.html"><span class="no mono">{num(x)}</span><span><h3>{e(x["name"])}</h3><p>{e(x["description"])}</p></span></a>' for x in same)
-  b=f"""<article class=doc><div><a class=mono href="../index.html#catalog" style="text-decoration:none">← Catalog / {e(p["category"])}</a><h1>{e(p["name"])}</h1><p class=d>{e(p["description"])}</p>{note}
-<a class=btn href="{e(p["link"])}" rel="nofollow noopener" target=_blank>Open the project ↗</a>
-<div class=sec><h2>Also in {e(p["category"])}</h2><span class=mono>{BLURB.get(p["category"],"")}</span></div>{rel}</div>
+  b=f"""<article class=doc><div><a class=mono href="../index.html#catalog" style="text-decoration:none">← Catalog</a> <span class=mono>/</span> <a class=mono href="../c/{slug(p["category"])}.html" style="text-decoration:none">{e(p["category"])}</a>{'<div style="margin-top:14px"><span class=badge>Featured</span></div>' if isf else ""}<h1>{e(p["name"])}</h1><p class=d>{e(p["description"])}</p>{note}
+<a class=btn href="{e(p["link"])}" rel="nofollow noopener" target=_blank>Open the project ↗</a>{"" if isf else '<p class=mine>Is this your plugin? <a href="../featured.html">Get featured →</a></p>'}
+<div class=sec><h2>Also in {e(p["category"])}</h2><span class=mono>{BLURB.get(p["category"],"")}</span></div>{pinned(p["category"],"",  "../")}{rel}</div>
 <aside class=side><span class=mono>{num(p)}</span><dl><dt class=mono>Maker</dt><dd>{e(p["maker"] or "Unknown")}</dd><dt class=mono>Category</dt><dd>{e(p["category"])}</dd>
 <dt class=mono>Listed via</dt><dd><a href="{e(p["source_url"])}">{e(p["source"])}</a></dd><dt class=mono>In our catalog since</dt><dd>{p["first_seen"]}</dd></dl>
 <p style="font-size:14px;color:var(--mute);margin-top:24px">Made this? You can <a href="../featured.html">feature it</a> or <a href="mailto:{EMAIL}?subject=Listing%20fix:%20{e(p['name'])}">ask for a correction</a>.</p></aside></article>"""
   open(f'{D}/p/{p["slug"]}.html',"w").write(layout(f'{p["name"]} — PickAPlugin',b,1,p["description"][:155]))
+os.makedirs(D+"/c",exist_ok=True)
+for c in cats:
+  items=[p for p in P if p["category"]==c]
+  b=f'''<div class=sec style="padding-top:40px"><h2 style="font-size:44px">{e(c)}</h2><span class=mono>{len(items)} plugins · {e(BLURB.get(c,""))}</span></div>{pinned(c,"../p/","../")}<div>{"".join(row(p,"../p/") for p in items)}</div>'''
+  open(f"{D}/c/{slug(c)}.html","w").write(layout(f"{c} plugins for ChatGPT & Codex — PickAPlugin",b,1,f"{len(items)} {c} plugins for ChatGPT and Codex, hand-sorted."))
 open(D+"/submit.html","w").write(layout("Submit a plugin — PickAPlugin",f"""<div class=prose><span class=mono style="color:var(--acc)">Free, always</span><h1>Submit a plugin</h1>
 <p>Listing costs nothing. We re-read our public sources every day, so if your plugin is public and in a list like <a href="https://github.com/hashgraph-online/awesome-codex-plugins">awesome-codex-plugins</a>, it'll show up on its own.</p>
 <p>Not in a list yet? Email <a href="mailto:{EMAIL}?subject=Submit%20a%20plugin">{EMAIL}</a> with the repo link and one sentence on what it does. We read every one.</p>
-<h3>In a hurry?</h3><p class=price>$19 <span class=mono>one-time</span></p><p>Expedited review: a decision within 48 hours. Paying buys speed, not a yes — if we pass, you get a refund.</p>{pay("expedited_review","Expedited review","$19")}</div>"""))
-open(D+"/featured.html","w").write(layout("Advertise — PickAPlugin",f"""<div class=prose><span class=mono style="color:var(--acc)">Three slots, no more</span><h1>Get your plugin in front of people who are choosing one</h1>
-<p class=price>$49 <span class=mono>per month</span></p><ul><li>One of three featured slots on the homepage</li><li>Pinned to the top of your category</li><li>Always labelled “Featured” — it never changes the catalog order or our picks</li><li>Monthly, cancel anytime</li></ul>
-{pay("featured_monthly","Featured slot","$49/month")}<p style="color:var(--mute);font-size:14px;margin-top:20px">We don't promise traffic or installs. We do promise not to feature anything broken.</p></div>"""))
+<h3>In a hurry?</h3><p class=price>$19 <span class=mono>one-time</span></p><p>Expedited review: a decision within 24 hours. Paying buys speed, not a yes — if we pass, you get a refund.</p>{pay("expedited_review","Expedited review","$19")}</div>"""))
+stat="".join(f'<span class=taken>Slot {k+1:02d}<br><b>{e(p["name"])}</b></span>' for k,p in enumerate(FEAT))+"".join(f'<span>Slot {len(FEAT)+k+1:02d}<br><b>Open</b></span>' for k in range(OPEN))
+avail=f"{OPEN} of 3 open right now" if OPEN else "All 3 slots are taken right now"
+cta=pay("featured_monthly","Claim a featured slot","$49/month") if OPEN else f'<p><b>All three slots are taken.</b> Email <a href="mailto:{EMAIL}?subject=Featured%20waitlist">{EMAIL}</a> and we\'ll tell you the moment one frees up.</p>'
+open(D+"/featured.html","w").write(layout("Get featured — PickAPlugin",f"""<div class=prose><span class=mono style="color:var(--acc)">Three slots. That's the whole inventory.</span><h1>Put your plugin where people pick plugins.</h1>
+<p style="font-size:19px">PickAPlugin is a hand-sorted catalog of {len(P)} ChatGPT &amp; Codex plugins. Featured is the only paid placement, and there are exactly three of them — so each one actually stands out.</p>
+<p class=price>$49 <span class=mono>per month · cancel anytime</span></p>
+<div class=slotstat>{stat}</div><p class=mono style="margin-top:-6px">{avail}</p>
+{cta}
+<h3>Where you appear</h3><ul class=where>
+<li><b>Top of the homepage</b>: a large card in the Featured band, above the search and editor's picks.</li>
+<li><b>Top of your category page</b>: pinned above every other plugin in that category.</li>
+<li><b>“Also in” lists</b>: pinned first on the page of every other plugin in your category.</li>
+<li><b>Your own page</b> gets a Featured badge.</li></ul>
+<h3>What you get</h3><ul class=where><li>A clear “Featured” label. We don't disguise ads as picks, which is why readers trust the rest of the page.</li><li>Your own name, description and link. Want different copy? Email us.</li><li>Live within 24 hours of payment.</li><li>Month to month. Email us to cancel any time, no questions asked.</li></ul>
+<div class=faq><h3>How do I get set up?</h3><p>Click the button and pay with Stripe. Put your plugin's URL (GitHub repo or homepage) in the “Plugin URL” box. If it isn't in the catalog yet, we'll add it.</p>
+<h3>Will this get me installs?</h3><p>We don't promise traffic numbers, and we'll never invent any. What you get is the most visible spot on a site built for people who are choosing a plugin.</p>
+<h3>Does paying change your picks or the catalog order?</h3><p>No. Editor's picks and the numbered catalog are never for sale.</p>
+<h3>Can you turn me down?</h3><p>Yes. If a plugin is broken, malicious or misleading, we'll refund you and pass.</p>
+<h3>What happens when I cancel?</h3><p>Your slot stays up until the end of the period you've paid for, then opens for someone else.</p>
+<h3>Questions?</h3><p><a href="mailto:{EMAIL}">{EMAIL}</a></p></div>
+<p style="margin-top:30px">{cta if OPEN else ""}</p></div>"""))
 open(D+"/about.html","w").write(layout("About — PickAPlugin",f"""<div class=prose><h1>About</h1><p>PickAPlugin is an independent catalog of plugins for ChatGPT and Codex. It is <b>not affiliated with, endorsed by, or sponsored by OpenAI</b>.</p>
 <p>Listings are collected daily from public sources and link straight to the original project. We don't host plugin code and we haven't audited it — a plugin can run commands on your machine, so read it first.</p>
 <p>Editor's picks are our opinion, based on what each project says about itself. Featured slots are paid and always labelled.</p><p>Corrections, removals, hellos: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p></div>"""))
