@@ -108,22 +108,20 @@ SPONS={}
 for p in P:
   if p.get("sponsor_category") and p["sponsor_category"] not in SPONS: SPONS[p["sponsor_category"]]=p
 def vmark(p): return ' <span class=vchk title="Verified by maker (paid badge)">✓ Verified by maker</span>' if p.get("verified") else ""
+PK=[x for x in PICKS if x in by]
 def belt(r):
   paid=[f'<a class="bc paid" href="{r}p/{p["slug"]}.html"><span class=bl>On the Belt</span><b>{e(p["name"])}</b><span class=bd>{e(p["description"][:70])}</span></a>' for p in BELT]
-  opens=[f'<a class="bc open" href="{r}advertise.html#belt"><span class=bl>Open slot</span><b>Your plugin here</b><span class=bd>$19/mo · labelled “On the Belt”</span></a>' for _ in range(BELT_OPEN)]
-  picks=[f'<a class="bc pk" href="{r}p/{s}.html"><span class=bl>Pick</span><b>{e(by[s]["name"])}</b><span class=bd>{e(by[s]["category"])} · editor\'s choice, unpaid</span></a>' for s in PICKS if s in by]
-  mix=[]; pi=0
-  for i,o in enumerate(opens):
-    mix.append(o)
-    if picks and i%2==1: mix.append(picks[pi%len(picks)]); pi+=1
-  cards=paid+mix if paid or mix else picks
-  t="".join(cards)
-  return f'<div class=belt aria-label="On the Belt: paid placements (labelled), open slots and unpaid editor\'s picks"><div class=bhd mono><span>On the Belt</span><a href="{r}advertise.html#belt">{BELT_OPEN} of 12 open · $19/mo</a></div><div class=btrack><div class=brow>{t}</div><div class=brow aria-hidden=true>{t}</div></div></div>'
+  ps={p["slug"] for p in BELT}
+  picks=[f'<a class="bc pk" href="{r}p/{s}.html"><span class=bl>Editor\'s pick, unpaid</span><b>{e(by[s]["name"])}</b><span class=bd>{e(by[s]["category"])}</span></a>' for s in PK if s not in ps][:max(0,BELT_OPEN-1) if BELT_OPEN else 0]
+  opens=[f'<a class="bc open" href="{r}advertise.html#belt"><span class=bl>Open slot</span><b>Your plugin here</b><span class=bd>$19/mo · labelled “On the Belt”</span></a>'] if BELT_OPEN else []
+  t="".join(paid+picks+opens)
+  return f'<div class=belt aria-label="On the Belt: paid placements (labelled) and unpaid editor\'s picks"><div class=bhd mono><span>On the Belt</span><a href="{r}advertise.html#belt">Put your plugin on the belt · $19/mo</a></div><div class=btrack><div class=brow>{t}</div><div class=brow aria-hidden=true>{t}</div></div></div>'
 def topspot():
   if TOP:
     p=TOP[0]; w=p.get("top_spot_note") or p["description"]
     return f'<section class=hero><span class=badge>The Top Spot · Paid placement</span><h2><a href="p/{p["slug"]}.html">{e(p["name"])}</a></h2><p>{e(w)}</p><span class="mono by">by {e(p["maker"])} · {e(p["category"])}</span><a class=hbtn href="p/{p["slug"]}.html">See the plugin →</a></section>'
-  return f'<a class="hero open" href="advertise.html#top"><span class=badge>The Top Spot · 1 of 1 open</span><h2>One plugin gets this banner.</h2><p>The biggest thing on the homepage, with a short write-up in our voice about why your plugin is worth a look. Only one at a time, clearly labelled as paid.</p><span class=hbtn>Take the Top Spot · $199/mo →</span></a>'
+  p=by[PK[0]]
+  return f'<section class=hero><span class=badge>Editor\'s pick · unpaid</span><h2><a href="p/{p["slug"]}.html">{e(p["name"])}</a></h2><p>{e(PICKS[p["slug"]])}</p><span class="mono by">by {e(p["maker"])} · {e(p["category"])}</span><a class=hbtn href="p/{p["slug"]}.html">See the plugin →</a><a href="advertise.html#top" style="display:block;margin-top:10px;font-size:12px;opacity:.7;color:inherit">This spot is available →</a></section>'
 def sponsor(c):
   p=SPONS.get(c)
   if p: return f'<a class=spons href="../p/{p["slug"]}.html"><span class=mono>Presented by · sponsor</span><b>{e(p["name"])}</b><span>{e(p["description"][:120])}</span></a>'
@@ -133,8 +131,11 @@ feat=FEAT
 slots="".join(f'<a class=slot href="p/{p["slug"]}.html"><span class=mono>Featured</span><b>{e(p["name"])}</b><span>{e(p["description"][:90])}</span></a>' for p in feat)+(f'<a class=slot href="featured.html" style="grid-column:span {3-len(feat)}"><span class=mono>Sponsored · {3-len(feat)} of 3 slots open</span><b>Built a plugin? Put it here for $49 a month.</b><span>Clearly labelled, never touches our picks or the catalog order. Cancel anytime.</span></a>' if len(feat)<3 else "")
 def fband(r):
   cards="".join(f'<a class=fcard href="{r}p/{p["slug"]}.html"><span class=badge>Featured</span><h3>{e(p["name"])}</h3><p>{e(p["description"][:150])}</p><span class="by mono">by {e(p["maker"])} · {e(p["category"])}</span></a>' for p in FEAT)
-  cards+="".join(f'<a class="fcard open" href="{r}featured.html"><span class="mono" style="color:#e9b8ab">Slot {len(FEAT)+i+1:02d} of 03 · open</span><h3>Your plugin,<br>right here.</h3><p>The first thing every visitor sees, plus the top of your category page and every related list.</p><span class=cta>Claim this slot · <b>$49/mo</b> →</span></a>' for i in range(OPEN))
-  return f'<section class=fband><div class=hd><h2>Featured</h2><span class=mono>{"Paid placement · always labelled" if not OPEN else f"{OPEN} of 3 slots open · <a href={chr(34)}{r}featured.html{chr(34)}>how it works</a>"}</span></div><div class=fgrid>{cards}</div></section>'
+  fs={p["slug"] for p in FEAT}; top=None if TOP else PK[0]
+  fill=[s for s in PK if s not in fs and s!=top][:max(0,OPEN-1)]
+  cards+="".join(f'<a class=fcard href="{r}p/{s}.html"><span class=badge>Editor\'s pick · unpaid</span><h3>{e(by[s]["name"])}</h3><p>{e(PICKS[s][:150])}</p><span class="by mono">by {e(by[s]["maker"])} · {e(by[s]["category"])}</span></a>' for s in fill)
+  if OPEN: cards+=f'<a class="fcard open" href="{r}featured.html"><span class="mono" style="color:#e9b8ab">Featured slot · open</span><h3>Feature your<br>plugin here.</h3><p>The first thing every visitor sees, plus the top of your category page and every related list.</p><span class=cta>Claim this slot · <b>$49/mo</b> →</span></a>'
+  return f'<section class=fband><div class=hd><h2>Featured</h2><span class=mono>Paid placements labelled “Featured” · picks are unpaid · <a href="{r}featured.html">how it works</a></span></div><div class=fgrid>{cards}</div></section>'
 dates=sorted({p["first_seen"] for p in P}); new=[p for p in P if len(dates)>1 and p["first_seen"]>dates[0]][-10:]
 newsec=f'<div class=sec><h2>Fresh in the catalog</h2><span class=mono>added since {dates[0]}</span></div>'+"".join(row(p) for p in new) if new else ""
 chips='<button class=on data-c="">Everything</button>'+"".join(f'<button data-c="{e(c)}">{e(c)}<sup>{count[c]}</sup></button>' for c in cats)
