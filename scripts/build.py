@@ -83,7 +83,7 @@ def layout(title,body,depth=0,desc="An independent, hand-edited catalog of ChatG
 <header class=mast><div class="top mono"><span>Independent · not affiliated with OpenAI</span><span>{len(P)} plugins catalogued</span></div>
 <div class=brand><a class=n href="{r}index.html">PickA<i>Plugin</i></a><nav><a href="{r}index.html#catalog">Catalog</a><a href="{r}submit.html">Submit</a><a href="{r}featured.html" style="color:var(--acc);font-weight:600">Get featured</a><a href="{r}advertise.html">Advertise</a><a href="{r}about.html">About</a></nav></div></header></div>
 {belt(r)}<div class=w>
-{body}<footer><span>PickAPlugin is an independent catalog. Not affiliated with, endorsed by, or sponsored by OpenAI. ChatGPT and Codex are trademarks of OpenAI. Listings come from public sources — read the code before you install anything.</span><span><a href="{r}advertise.html">Advertise</a> · <a href="mailto:{EMAIL}">{EMAIL}</a></span></footer></div></body></html>"""
+{body}<footer><span>PickAPlugin is an independent catalog. Not affiliated with, endorsed by, or sponsored by OpenAI. ChatGPT and Codex are trademarks of OpenAI. Listings come from public sources — read the code before you install anything.</span><span><a href="{r}advertise.html">Advertise</a> · <a href="{r}privacy.html">Privacy</a> · <a href="{r}terms.html">Terms</a> · <a href="mailto:{EMAIL}">{EMAIL}</a></span></footer></div></body></html>"""
 idx={p["slug"]:i+1 for i,p in enumerate(P)}
 def num(p): return f"No.{idx[p['slug']]:03d}"
 def row(p,pre="p/"): return f'<a class=row href="{pre}{p["slug"]}.html" data-c="{e(p["category"])}" data-t="{e((p["name"]+" "+p["description"]+" "+p["maker"]).lower())}"><span class="no mono">{num(p)}</span><span><h3>{e(p["name"])}{vmark(p)}</h3><p>{e(p["description"])}</p></span><span class="c mono">{e(p["category"])}</span></a>'
@@ -161,9 +161,33 @@ for p in P:
 <p style="font-size:14px;color:var(--mute);margin-top:24px">Made this? You can <a href="../featured.html">feature it</a> or <a href="mailto:{EMAIL}?subject=Listing%20fix:%20{e(p['name'])}">ask for a correction</a>.</p></aside></article>"""
   open(f'{D}/p/{p["slug"]}.html',"w").write(layout(f'{p["name"]} — PickAPlugin',b,1,p["description"][:155]))
 os.makedirs(D+"/c",exist_ok=True)
+# ---- best-of rankings + comparisons (real signals only: GitHub stars, editor's picks) ----
+import re as _re
+def stars(p): return p.get("stars") if isinstance(p.get("stars"),int) else -1
+def rankkey(p): return (p.get("archived") is True, -(1 if p["slug"] in PICKS else 0), -stars(p), p["name"].lower())
+def words(p): return {w for w in _re.findall(r"[a-z]{4,}",p["description"].lower())}-{"with","your","that","from","into","codex","claude","code","plugin","plugins","agent","agents","skills","skill","tools","using","which","their","this","them","they","over"}
+PAIRS=[]
+for c in cats:
+  if c=="Miscellany": continue
+  top=sorted([p for p in P if p["category"]==c and not p.get("archived") and stars(p)>=0],key=rankkey)[:25]
+  for i,a in enumerate(top):
+    for b2 in top[i+1:]:
+      PAIRS.append((len(words(a)&words(b2))/max(1,len(words(a)|words(b2))),a,b2))
+_sel=[]; _used=set(); _per={}
+for j,a,b2 in sorted(PAIRS,key=lambda t:-t[0]):
+  if len(_sel)==10 or j<0.12: break
+  if a["slug"] in _used or b2["slug"] in _used or _per.get(a["category"],0)>=2: continue
+  _sel.append((a,b2)); _used|={a["slug"],b2["slug"]}; _per[a["category"]]=_per.get(a["category"],0)+1
+PAIRS=_sel
+def cslug(a,b2): return f"{a['slug']}-vs-{b2['slug']}"
+def catlinks(c):
+  cmp=[(a,b2) for a,b2 in PAIRS if a["category"]==c]
+  x=f'<p class=shelves><span class=mono>Ranked:</span><a href="../best/{slug(c)}.html">Best {e(c)} plugins, ranked by GitHub stars →</a>'
+  x+="".join(f' <a href="../compare/{cslug(a,b2)}.html">{e(a["name"])} vs {e(b2["name"])}</a>' for a,b2 in cmp)
+  return x+'</p>'
 for c in cats:
   items=[p for p in P if p["category"]==c]
-  b=f'''<div class=sec style="padding-top:40px"><h2 style="font-size:44px">{e(c)}</h2><span class=mono>{len(items)} plugins · {e(BLURB.get(c,""))}</span></div>{sponsor(c)}{pinned(c,"../p/","../")}<div>{"".join(row(p,"../p/") for p in items)}</div>'''
+  b=f'''<div class=sec style="padding-top:40px"><h2 style="font-size:44px">{e(c)}</h2><span class=mono>{len(items)} plugins · {e(BLURB.get(c,""))}</span></div>{catlinks(c)}{sponsor(c)}{pinned(c,"../p/","../")}<div>{"".join(row(p,"../p/") for p in items)}</div>'''
   open(f"{D}/c/{slug(c)}.html","w").write(layout(f"{c} plugins for ChatGPT & Codex — PickAPlugin",b,1,f"{len(items)} {c} plugins for ChatGPT and Codex, hand-sorted."))
 open(D+"/submit.html","w").write(layout("Submit a plugin — PickAPlugin",f"""<div class=prose><span class=mono style="color:var(--acc)">Free, always</span><h1>Submit a plugin</h1>
 <p>Listing costs nothing. We re-read our public sources every day, so if your plugin is public and in a list like <a href="https://github.com/hashgraph-online/awesome-codex-plugins">awesome-codex-plugins</a>, it'll show up on its own.</p>
@@ -213,4 +237,5 @@ open(D+"/advertise.html","w").write(layout("Advertise — PickAPlugin",f"""<div 
 <li>Monthly, cancel anytime by emailing <a href="mailto:{EMAIL}">{EMAIL}</a>. Your spot stays up until the paid period ends.</li>
 <li>If a spot fills up before your payment lands, or your plugin is broken, malicious or misleading, we refund you in full.</li></ul>
 <h3>Questions?</h3><p><a href="mailto:{EMAIL}">{EMAIL}</a></p></div></div>"""))
+exec(open(os.path.join(ROOT,"scripts","build_seo.py")).read())
 print("built",len(P),"pages")

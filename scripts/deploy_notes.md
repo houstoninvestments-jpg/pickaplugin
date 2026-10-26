@@ -43,3 +43,8 @@ fulfill.py now handles every subscription tier, identified by payment link id (P
 Caps: top_spot 1, featured 3, belt 12, category_sponsor 1 per category, verified uncapped. Overflow orders are NOT
 turned on and print `! OVERFLOW ...`: refund/cancel them in Stripe (with Aaron's OK) and email the buyer.
 Category sponsor reads the `category` dropdown field. Optional `top_spot_note` on a plugin overrides the hero write-up.
+
+## SEO (build_seo.py, run by build.py)
+build.py execs scripts/build_seo.py: /best/<cat>, /compare/<a>-vs-<b>, /privacy, /terms, robots.txt, sitemap.xml,
+IndexNow key file, clean-URL rewrite, canonical/OG/JSON-LD. refresh.py pulls real GitHub star counts (GITHUB_TOKEN/GH_TOKEN or `gh auth token`).
+After each deploy: `python3 scripts/indexnow.py`.

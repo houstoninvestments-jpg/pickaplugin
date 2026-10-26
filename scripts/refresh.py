@@ -35,6 +35,33 @@ def cat(t, s=""):
     if sc>score: best,score=n,sc
   return best
 def slug(s): return re.sub(r"[^a-z0-9]+","-",s.lower()).strip("-")
+def add_stars(out, old):
+  """Real GitHub star counts via GraphQL (needs GITHUB_TOKEN or GH_TOKEN). Keeps old values if unavailable."""
+  for s,p in out.items():
+    for k in ("stars","stars_checked","archived"):
+      if k in old.get(s,{}) and k not in p: p[k]=old[s][k]
+  tok=os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+  if not tok:
+    try:
+      import subprocess; tok=subprocess.run(["gh","auth","token"],capture_output=True,text=True,timeout=10).stdout.strip()
+    except Exception: tok=""
+  if not tok: print("no GitHub token: star counts not refreshed"); return
+  items=[]
+  for s,p in out.items():
+    m=re.match(r"https://github\.com/([^/]+)/([^/#?]+)",p["link"])
+    if m: items.append((s,m.group(1),m.group(2).removesuffix(".git")))
+  today=datetime.date.today().isoformat(); n=0
+  for i in range(0,len(items),50):
+    chunk=items[i:i+50]
+    q="query{"+" ".join(f'r{j}:repository(owner:{json.dumps(o)},name:{json.dumps(r)}){{stargazerCount isArchived}}' for j,(_,o,r) in enumerate(chunk))+"}"
+    try:
+      req=urllib.request.Request("https://api.github.com/graphql",json.dumps({"query":q}).encode(),{"Authorization":"bearer "+tok,"Content-Type":"application/json"})
+      d=json.load(urllib.request.urlopen(req,timeout=60)).get("data") or {}
+    except Exception as ex: print("star fetch failed:",ex); continue
+    for j,(s,_,_) in enumerate(chunk):
+      r=d.get(f"r{j}")
+      if r: out[s]["stars"]=r["stargazerCount"]; out[s]["archived"]=r["isArchived"]; out[s]["stars_checked"]=today; n+=1
+  print(f"stars refreshed for {n}/{len(items)} repos")
 def main():
   path=os.path.join(ROOT,"data","plugins.json")
   old={p["slug"]:p for p in json.load(open(path))} if os.path.exists(path) else {}
@@ -59,6 +86,7 @@ def main():
       if k.startswith(("featured_","top_spot","belt","verified","sponsor_")): p[k]=v
   for s,p in old.items():  # paid listings added by fulfill.py aren't in any source list
     if s not in out and p.get("source")=="featured-order": out[s]=p
+  add_stars(out, old)
   data=sorted(out.values(),key=lambda p:p["name"].lower())
   json.dump(data,open(path,"w"),indent=1,ensure_ascii=False)
   print(f"{len(data)} plugins written ({len(set(out)-set(old))} new)")
