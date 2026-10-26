@@ -6,12 +6,12 @@ P=json.load(open(os.path.join(ROOT,"data","plugins.json")))
 for p in P:
   if p["category"]=="Other": p["category"]="Miscellany"
 # TODO(Aaron): paste real Stripe Payment Links here once created in Stripe. Leave "" until then.
-# Live Stripe Payment Links go here. Sandbox (test-mode) links, for local preview only:
+# Live Stripe Payment Links (acct_1UUidjAJ19i9R4dz). Sandbox (test-mode) links, for local preview only:
 #   featured_monthly: https://buy.stripe.com/test_14AaEZ8TC3vJelQ2ai73G00
 #   expedited_review: https://buy.stripe.com/test_bJe5kF4Dmd6j4Lg9CK73G01
 # Preview with: STRIPE_PREVIEW=test python3 scripts/build.py   (never deploy that build)
 import os as _os
-STRIPE={"featured_monthly":"","expedited_review":""}
+STRIPE={"featured_monthly":"https://buy.stripe.com/aFa14m2Ih7DV2ep15bcQU00","expedited_review":"https://buy.stripe.com/eVqbJ02Ih6zRg5fg05cQU01"}
 if _os.environ.get("STRIPE_PREVIEW")=="test":
     STRIPE={"featured_monthly":"https://buy.stripe.com/test_14AaEZ8TC3vJelQ2ai73G00","expedited_review":"https://buy.stripe.com/test_bJe5kF4Dmd6j4Lg9CK73G01"}
 EMAIL="hello@pickaplugin.com"; e=html.escape
