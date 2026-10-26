@@ -14,6 +14,13 @@
     }
   ],
   "kit_posts": [],
-  "queue_posts": [],
+  "queue_posts": [
+    {
+      "q": 1,
+      "id": "2114809478017401295",
+      "posted": "2026-10-26T13:01:00-07:00",
+      "url": "https://x.com/PickAPlugin/status/2114809478017401295"
+    }
+  ],
   "queue_note": "From 2026-10-26 the routine posts from launch/queue.md only (Q1..Q75). tag_posts/kit_posts are legacy history; queue.md already excludes tag post #1."
 }

@@ -2,8 +2,8 @@
 """Static site generator: data/plugins.json -> dist/ (Cloudflare Pages output dir)."""
 import json, os, html, shutil
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# REDESIGN=1 builds the print-style redesign preview into dist-preview/ (never deploy it).
-PREVIEW=os.environ.get("REDESIGN")=="1"; D=os.path.join(ROOT,"dist-preview" if PREVIEW else "dist")
+# Print-style redesign is the default (scripts/redesign.py). REDESIGN=0 builds the old look; OUT=dir overrides output.
+PREVIEW=os.environ.get("REDESIGN","1")!="0"; D=os.path.join(ROOT,os.environ.get("OUT","dist"))
 P=json.load(open(os.path.join(ROOT,"data","plugins.json")))
 for p in P:
   if p["category"]=="Other": p["category"]="Miscellany"
