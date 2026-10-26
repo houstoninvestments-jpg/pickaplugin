@@ -6,8 +6,9 @@ async function hmac(key, msg) {
   const k = await crypto.subtle.importKey("raw", new TextEncoder().encode(key), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
   return [...new Uint8Array(await crypto.subtle.sign("HMAC", k, new TextEncoder().encode(msg)))].map(b => b.toString(16).padStart(2, "0")).join("").slice(0, 32);
 }
-async function turnstileOk(env, f, ip) {
+async function turnstileOk(env, f, ip, req) {
   if (!env.TURNSTILE_SECRET) return true;
+  if (env.ADMIN_TOKEN && req && req.headers.get("x-admin-token") === env.ADMIN_TOKEN) return true; // owner-only test path
   const t = f.get("cf-turnstile-response"); if (!t) return false;
   const r = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", { method: "POST", body: new URLSearchParams({ secret: env.TURNSTILE_SECRET, response: t, remoteip: ip || "" }) });
   return (await r.json()).success === true;
@@ -29,7 +30,7 @@ async function handle(req, env, u) {
     const email = String(f.get("email") || "").trim().slice(0, 254), gh = String(f.get("github") || "").trim().replace(/^@/, "").slice(0, 60),
       slug = String(f.get("slug") || "").replace(/[^a-z0-9-]/g, "").slice(0, 100), fix = String(f.get("corrections") || "").slice(0, 2000);
     if (!EM.test(email) || !/^[A-Za-z0-9-]{1,39}$/.test(gh) || !slug) return page(u, "/form-error", "w=claim&s=" + slug);
-    if (!(await turnstileOk(env, f, ip))) return page(u, "/form-error", "w=captcha&s=" + slug);
+    if (!(await turnstileOk(env, f, ip, req))) return page(u, "/form-error", "w=captcha&s=" + slug);
     const at = new Date().toISOString(), rec = { type: "claim", at, email, github: gh, slug, corrections: fix, country: req.cf?.country || "" };
     await env.LEADS.put(`claim:${at}:${crypto.randomUUID().slice(0, 8)}`, JSON.stringify(rec));
     await notify(env, `[PickAPlugin] Listing claim: ${slug} by @${gh}`, `${JSON.stringify(rec, null, 1)}\n\nPage: https://pickaplugin.com/p/${slug}\nRepo owner check: confirm @${gh} owns/maintains the repo before replying.`);
@@ -40,7 +41,7 @@ async function handle(req, env, u) {
     if (f.get("website")) return page(u, "/subscribed");
     const email = String(f.get("email") || "").trim().toLowerCase().slice(0, 254);
     if (!EM.test(email)) return page(u, "/form-error", "w=sub");
-    if (!(await turnstileOk(env, f, ip))) return page(u, "/form-error", "w=captcha");
+    if (!(await turnstileOk(env, f, ip, req))) return page(u, "/form-error", "w=captcha");
     const key = "sub:" + email;
     if (!(await env.LEADS.get(key))) {
       await env.LEADS.put(key, JSON.stringify({ type: "subscriber", at: new Date().toISOString(), email, from: String(f.get("from") || "").slice(0, 200) }));
@@ -61,7 +62,7 @@ async function handle(req, env, u) {
     do {
       const l = await env.LEADS.list({ cursor }); cursor = l.list_complete ? null : l.cursor;
       for (const k of l.keys) {
-        const v = JSON.parse(await env.LEADS.get(k.name) || "{}"); v.key = k.name;
+        const raw = await env.LEADS.get(k.name); if (!raw) continue; const v = JSON.parse(raw); v.key = k.name;
         if (v.type === "subscriber") { v.unsubscribe = `https://pickaplugin.com/unsubscribe?e=${encodeURIComponent(v.email)}&t=${await hmac(env.ADMIN_TOKEN, "unsub:" + v.email)}`; out.subscribers.push(v); }
         else out.claims.push(v);
       }

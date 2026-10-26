@@ -48,3 +48,8 @@ Category sponsor reads the `category` dropdown field. Optional `top_spot_note` o
 build.py execs scripts/build_seo.py: /best/<cat>, /compare/<a>-vs-<b>, /privacy, /terms, robots.txt, sitemap.xml,
 IndexNow key file, clean-URL rewrite, canonical/OG/JSON-LD. refresh.py pulls real GitHub star counts (GITHUB_TOKEN/GH_TOKEN or `gh auth token`).
 After each deploy: `python3 scripts/indexnow.py`.
+
+## Lead capture (claims + newsletter)
+Worker routes /api/claim, /api/subscribe, /unsubscribe, /api/admin. Bindings are added by upload_buckets.py from the
+git-ignored scripts/.secrets.json; without that file the deploy breaks the forms. See scripts/leads_notes.md.
+When a paid placement goes live, the founding counter on /advertise updates on the next build.
