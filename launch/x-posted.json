@@ -1,0 +1,19 @@
+{
+  "pinned_intro": {
+    "posted": "2026-10-26",
+    "url": null
+  },
+  "tag_posts": [
+    {
+      "n": 1,
+      "handle": "@jerry543",
+      "slug": "agentgram",
+      "image": "tag-agentgram.png",
+      "posted": "2026-10-26T09:16-07:00",
+      "url": "https://x.com/PickAPlugin/status/2114752864102834426"
+    }
+  ],
+  "kit_posts": [],
+  "queue_posts": [],
+  "queue_note": "From 2026-10-26 the routine posts from launch/queue.md only (Q1..Q75). tag_posts/kit_posts are legacy history; queue.md already excludes tag post #1."
+}

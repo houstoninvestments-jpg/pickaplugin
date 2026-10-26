@@ -1,3 +1,5 @@
+> Posting order now lives in launch/queue.md.
+
 # Spotlight tag posts (13) — drafts, NOT posted
 
 One per maker whose outreach Channel is X DM. No pitch, no prices. Images in launch/graphics/.

@@ -1,3 +1,5 @@
+> **Superseded for posting:** the routine now posts from launch/queue.md (built by scripts/build_queue.py), which interleaves these posts with launch/value-posts.md at roughly 3 value posts per promo. Posts cut as pure promo: Day 5 #2, Day 7 #2, Day 10 #2, Day 12 #1, Day 14 #2.
+
 # PickAPlugin X kit (@PickAPlugin), NOT POSTED
 Aaron posts everything here by hand. Facts used: 343 plugins, 12 shelves, every entry links to its source. No traffic numbers, testimonials or urgency claimed. Paid spots are always called paid.
 Site URLs: plugin page = pickaplugin.com/p/<slug>, shelf = pickaplugin.com/c/<shelf>. All links below were checked against data/plugins.json.
