@@ -83,6 +83,13 @@ def _fix(m,base):
   elif p.endswith(".html"): p=p[:-5]
   return f'href="/{p.lstrip("./")}{"#"+frag if frag else ""}"'.replace('href="/"','href="/"')
 URLS=[]
+_N=len(PL) if "PL" in dir() else None
+DESCS={"index.html":"Hundreds of ChatGPT and Codex plugins are scattered across GitHub. PickAPlugin gathers them in one free, hand-sorted catalog with last update, license and install command for each.",
+ "about.html":"How PickAPlugin finds, sorts and lists ChatGPT and Codex plugins, what our editor's picks mean, and how paid placements are labelled.",
+ "changelog.html":"Every change to the PickAPlugin catalog and site, generated from the git history at build time.",
+ "advertise.html":"Advertise a ChatGPT or Codex plugin on PickAPlugin. Clearly labelled placements; paid spots never change the ranking order.",
+ "submit.html":"Submit a ChatGPT or Codex plugin to the PickAPlugin catalog for free."}
+_ORG={"@context":"https://schema.org","@type":"Organization","name":"PickAPlugin","url":SITE+"/","logo":SITE+"/og.png","sameAs":["https://x.com/PickAPlugin"]}
 _ogsrc=os.path.join(ROOT,"launch","graphics","header.png")
 if os.path.exists(_ogsrc): shutil.copy(_ogsrc,D+"/og.png")
 for f in sorted(_glob.glob(D+"/**/*.html",recursive=True)):
@@ -90,12 +97,22 @@ for f in sorted(_glob.glob(D+"/**/*.html",recursive=True)):
   h=open(f).read()
   h=_re.sub(r'href="([^"]*)"',lambda m:_fix(m,base),h)
   h=h.replace('href="../style.css"','href="/style.css"').replace('href="style.css"','href="/style.css"')
+  _dd=DESCS.get(rel)
+  if _dd: h=_re.sub(r'<meta name=description content="[^"]*">','<meta name=description content="'+_dd+'">',h,1)
   t=_re.search(r"<title>(.*?)</title>",h).group(1); dm=_re.search(r'<meta name=description content="(.*?)">',h); d=dm.group(1) if dm else ""
   img=SITE+"/og.png"
   meta=(f'<link rel=canonical href="{url}"><meta property="og:type" content="website"><meta property="og:site_name" content="PickAPlugin">'
         f'<meta property="og:title" content="{t}"><meta property="og:description" content="{d}"><meta property="og:url" content="{url}">'
         f'<meta property="og:image" content="{img}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@PickAPlugin">'
         f'<meta name="twitter:title" content="{t}"><meta name="twitter:description" content="{d}"><meta name="twitter:image" content="{img}">')
+  if rel=="index.html":
+    _pl=sorted(by.values(),key=lambda x:-(x.get("stars") or 0))[:50]
+    for _o in (_ORG,{"@context":"https://schema.org","@type":"WebSite","name":"PickAPlugin","url":SITE+"/"},
+               {"@context":"https://schema.org","@type":"ItemList","name":"ChatGPT and Codex plugins","numberOfItems":len(_pl),
+                "itemListElement":[{"@type":"ListItem","position":i+1,"url":SITE+"/p/"+x["slug"],"name":x["name"]} for i,x in enumerate(_pl)]}):
+      meta+='<script type="application/ld+json">'+_json.dumps(_o).replace("</","<\\/")+'</script>'
+  if rel in ("about.html","changelog.html"):
+    meta+='<script type="application/ld+json">'+_json.dumps(_ORG)+'</script>'
   if rel.startswith("p"+os.sep):
     p=by.get(_pp.basename(rel)[:-5])
     if p:
@@ -104,10 +121,21 @@ for f in sorted(_glob.glob(D+"/**/*.html",recursive=True)):
           "author":{"@type":"Person" ,"name":p["maker"]} if p["maker"] else None,"isAccessibleForFree":True}
       ld={k:v for k,v in ld.items() if v is not None}
       meta+='<script type="application/ld+json">'+_json.dumps(ld).replace("</","<\\/")+'</script>'
+      _bc={"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PickAPlugin","item":SITE+"/"},{"@type":"ListItem","position":2,"name":p["name"],"item":url}]}
+      meta+='<script type="application/ld+json">'+_json.dumps(_bc).replace("</","<\\/")+'</script>'
   h=h.replace("</title>","</title>"+meta,1)
   open(f,"w").write(h)
 open(D+"/robots.txt","w").write("User-agent: *\nAllow: /\n\nSitemap: "+SITE+"/sitemap.xml\n")
 today=_dt.date.today().isoformat()
 open(D+"/sitemap.xml","w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+"".join(f"<url><loc>{u}</loc><lastmod>{today}</lastmod></url>\n" for u in URLS)+"</urlset>\n")
+_cats={}
+for x in by.values(): _cats.setdefault(x["category"],[]).append(x)
+_l=["# PickAPlugin","","> An independent, hand-sorted catalog of ChatGPT and Codex plugins collected from public GitHub sources. Free to browse. Not affiliated with OpenAI. Descriptions are each project's own; we do not test or audit plugins.","",
+ "## Key pages",f"- [Home / catalog]({SITE}/)",f"- [How we pick]({SITE}/about)",f"- [Changelog]({SITE}/changelog)",f"- [Submit a plugin]({SITE}/submit)",f"- [Advertise]({SITE}/advertise)",f"- [Sitemap]({SITE}/sitemap.xml)",""]
+for c in sorted(_cats):
+  _l.append("## "+c)
+  for x in sorted(_cats[c],key=lambda x:-(x.get("stars") or 0))[:15]: _l.append(f"- [{x['name']}]({SITE}/p/{x['slug']}): {x['description'][:160]}")
+  _l.append("")
+open(D+"/llms.txt","w").write("\n".join(_l))
 open(f"{D}/{INDEXNOW_KEY}.txt","w").write(INDEXNOW_KEY)
 print("seo:",len(URLS),"urls,",len(PAIRS),"comparisons")

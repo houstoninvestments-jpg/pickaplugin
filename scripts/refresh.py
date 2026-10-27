@@ -100,7 +100,7 @@ def main():
     for k,v in old.get(s,{}).items():
       if k.startswith(("featured_","top_spot","belt","verified","sponsor_")): p[k]=v
   for s,p in old.items():  # paid listings added by fulfill.py aren't in any source list
-    if s not in out and p.get("source")=="featured-order": out[s]=p
+    if s not in out and p.get("source") in ("featured-order","editor-added"): out[s]=p
   add_stars(out, old)
   data=sorted(out.values(),key=lambda p:p["name"].lower())
   json.dump(data,open(path,"w"),indent=1,ensure_ascii=False)

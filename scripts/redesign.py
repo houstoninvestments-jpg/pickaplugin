@@ -48,7 +48,13 @@ pre.code{background:#fffdf8;border:1px solid var(--rule);padding:8px;font:12px '
 .nl{border-top:3px solid var(--ink);margin-top:40px;padding:14px 0 4px;display:grid;grid-template-columns:1fr 1.2fr;gap:24px}.nl h3{margin:0;font-size:24px;font-style:italic}.nl p{margin:4px 0;color:var(--mute);font-size:14.5px}
 .nl form{display:flex;flex-wrap:wrap;gap:8px;align-items:end}.nl input[type=email]{flex:1;min-width:200px;border:0;border-bottom:1px solid var(--ink);background:transparent;font:italic 19px Newsreader,serif;padding:4px 0;outline:none}
 @media(max-width:860px){.nl{grid-template-columns:1fr}}
-@media(max-width:860px){.cols{column-count:1}.front,.doc,.find,.tier{grid-template-columns:1fr}.front>div+div{border:0;padding-left:0}.ads{grid-template-columns:1fr}.wm{font-size:48px}}"""
+@media(max-width:860px){.cols{column-count:1}.front,.doc,.find,.tier{grid-template-columns:1fr}.front>div+div{border:0;padding-left:0}.ads{grid-template-columns:1fr}.wm{font-size:48px}}
+.hero2{text-align:center;padding:64px 0 56px;border-bottom:1px solid var(--ink)}.hero2 h1{font:800 58px/1.04 Newsreader,serif;letter-spacing:-.03em;margin:0 auto 18px;max-width:17ch}.hero2 h1 em{font-weight:600;color:var(--acc)}
+.hero2 p{font-size:21px;line-height:1.45;max-width:40ch;margin:0 auto 30px;color:#2b2823}
+.hero2 form{display:flex;max-width:560px;margin:0 auto;border:1px solid var(--ink);background:#fffdf8}.hero2 input{flex:1;min-width:0;border:0;background:transparent;font:italic 19px Newsreader,serif;padding:13px 16px!important;outline:none;height:auto}
+.hero2 button{border:0;background:var(--ink);color:var(--paper);font:500 11px 'Martian Mono',monospace;text-transform:uppercase;padding:0 20px;cursor:pointer}.hero2 button:hover{background:var(--acc)}
+.hero2 .mk{display:block;margin-top:18px;font-size:15px;color:var(--mute)}.hero2 .mk a{color:var(--acc)}
+@media(max-width:860px){.ear,.dl{display:none}.nav{justify-content:flex-start;overflow-x:auto;white-space:nowrap;gap:18px}.hero2{padding:36px 0 32px}.hero2 h1{font-size:38px}.hero2 p{font-size:18px}}"""
 open(D+"/style.css","w").write(CSS)
 def layout(title,body,depth=0,desc="An independent, hand-edited catalog of ChatGPT and Codex plugins."):
   r="../"*depth
@@ -58,7 +64,7 @@ def layout(title,body,depth=0,desc="An independent, hand-edited catalog of ChatG
 <a class=wm href="{r}index.html">PickA<i>Plugin</i></a><p class=tag>A catalog of ChatGPT &amp; Codex plugins, sorted by people.</p>
 <div class="dl mono"><span>Issue No. 1</span><span>Updated {BUILD_S}</span><span>{len(P)} plugins catalogued</span></div>
 <nav class="nav mono"><a href="{r}index.html#catalog">Catalog</a>{"".join(f'<a href="{r}c/{slug(c)}.html">{e(c.split(" ")[0].rstrip(","))}</a>' for c in cats[:6])}<a href="{r}about.html">How we pick</a><a href="{r}changelog.html">Changelog</a><a href="{r}advertise.html">Advertise</a></nav></header>
-{belt(r)}{body}{nlform("footer")}<footer><span>PickAPlugin is an independent catalog. Not affiliated with, endorsed by, or sponsored by OpenAI. ChatGPT and Codex are trademarks of OpenAI. Listings come from public sources and are not audited. Read the code before you install anything.</span><span><a href="{r}about.html">How we pick</a> · <a href="{r}changelog.html">Changelog</a> · <a href="{r}advertise.html">Advertise</a> · <a href="{r}privacy.html">Privacy</a> · <a href="{r}terms.html">Terms</a> · <a href="mailto:{EMAIL}">{EMAIL}</a></span></footer></div></body></html>"""
+{(body.replace("<!--/hero-->",belt(r),1) if "<!--/hero-->" in body else belt(r)+body)}{nlform("footer")}<footer><span>PickAPlugin is an independent catalog. Not affiliated with, endorsed by, or sponsored by OpenAI. ChatGPT and Codex are trademarks of OpenAI. Listings come from public sources and are not audited. Read the code before you install anything.</span><span><a href="{r}about.html">How we pick</a> · <a href="{r}changelog.html">Changelog</a> · <a href="{r}advertise.html">Advertise</a> · <a href="{r}privacy.html">Privacy</a> · <a href="{r}terms.html">Terms</a> · <a href="mailto:{EMAIL}">{EMAIL}</a></span></footer></div></body></html>"""
 import json as _json
 _SEC=os.path.join(ROOT,"scripts",".secrets.json")
 SITEKEY=_json.load(open(_SEC)).get("sitekey") if os.path.exists(_SEC) else "0x4AAAAAAFnRt9YCBHXNJWZZ"
@@ -105,11 +111,15 @@ def preview_home():
   rest=[s for s in PK if s!=p["slug"] and s not in others]
   picks2="".join(f'<a class=row href="p/{s}.html"><h3>{e(by[s]["name"])}</h3><p>{e(PICKS[s])}</p><span class="m mono">{meta(by[s])}</span></a>' for s in rest)
   chips='<button class=on data-c="">Everything</button>'+"".join(f'<button data-c="{e(c)}">{e(c)}<sup>{count[c]}</sup></button>' for c in cats)
-  return f"""<section class=front><div>{lead}</div><div class=side3>{side}</div></section>
+  hero=f"""<section class=hero2><h1>Hundreds of ChatGPT &amp; Codex plugins, scattered across GitHub. <em>Here they are in one place.</em></h1>
+<p>We gather them, sort them by hand, and show the real details (last update, license, install command) so you can tell what's worth installing. Free to browse.</p>
+<form onsubmit="event.preventDefault();document.getElementById('catalog').scrollIntoView({{behavior:'smooth'}})" role=search><input id=q type=search placeholder="memory, PDF, secrets…" aria-label="Search plugins"><button>Browse plugins</button></form>
+<span class=mk>Made a plugin? <a href="submit.html">List it free</a> or claim your listing.</span></section><!--/hero-->"""
+  return hero+f"""<section class=front><div>{lead}</div><div class=side3>{side}</div></section>
 {nlform("home","Get the roundup by email")}<div class=sec><h2>Ads &amp; open space</h2><span class=mono>Paid placements are labelled. They never change picks or catalog order.</span></div><div class=ads>{ads and "".join(ads[:3])}</div>
 {f'<div class=sec><h2>More picks</h2><span class=mono>Our opinion, from each project&#39;s own docs · not audited</span></div><div class=cols>{picks2}</div>' if picks2 else ""}
 <div class=sec id=catalog><h2>The full catalog</h2><span class=mono id=n></span></div>
-<div class=find><div><label class=mono for=q>Search {len(P)} plugins</label><input id=q placeholder="memory, PDF, secret scanning…"></div><div class=cats>{chips}</div></div>
+<div class=find style="grid-template-columns:1fr"><div class=cats>{chips}</div></div>
 <p class="mono" style="color:var(--mute);margin:10px 0 0">Stars pulled from GitHub on {CHECKED or "—"}. Listed in catalog order.</p>
 <div id=list class=cols>{"".join(row(x) for x in P)}</div>
 <script>let c="",q=document.getElementById('q'),rs=[...document.querySelectorAll('#list .row')];function f(){{let t=q.value.toLowerCase(),n=0;rs.forEach(x=>{{let ok=(!c||x.dataset.c==c)&&x.dataset.t.includes(t);x.style.display=ok?'':'none';n+=ok}});document.getElementById('n').textContent=n+' of {len(P)} shown'}}
