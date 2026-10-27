@@ -79,6 +79,16 @@ export default {
       try { const r = await handle(req, env, u); if (r) return r; } catch (e) { console.log(String(e)); return json({ error: "server error" }, 500); }
       return json({ error: "not found" }, 404);
     }
-    return env.ASSETS.fetch(req);
+    const res = await env.ASSETS.fetch(req);
+    const m = u.pathname.match(/^\/(language|license)\/([^\/]+?)\/?$/);
+    if (res.status === 404 && m) {
+      // collection page below the gate (or alias spelling): fold the alias, else send to the hub
+      const raw = decodeURIComponent(m[2]).toLowerCase().replace(/\.html$/, "");
+      const al = { "c#": "csharp", "c++": "cpp", "js": "javascript", "ts": "typescript", "golang": "go" };
+      const norm = (al[raw] || raw).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+      const to = norm && norm !== m[2] ? `/${m[1]}/${norm}` : `/${m[1]}s`;
+      return Response.redirect(`https://pickaplugin.com${to}`, 308);
+    }
+    return res;
   }
 };

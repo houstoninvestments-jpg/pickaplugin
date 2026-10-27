@@ -102,6 +102,7 @@ def pay(key,label,price):
 shutil.rmtree(D,ignore_errors=True); os.makedirs(D+"/p"); open(D+"/style.css","w").write(CSS)
 FEAT=[p for p in P if p.get("featured")][:3]; OPEN=3-len(FEAT)
 by={p["slug"]:p for p in P}; cats=sorted({p["category"] for p in P},key=lambda c:(c=="Miscellany",c))
+exec(open(os.path.join(ROOT,"scripts","build_collections.py")).read())
 count={c:sum(p["category"]==c for p in P) for c in cats}
 # ---- paid placements beyond Featured (see scripts/fulfill.py) ----
 TOP=[p for p in P if p.get("top_spot")][:1]
@@ -157,8 +158,8 @@ SITE_URL="https://pickaplugin.com"
 def ghfacts(p):
   out=""
   if p.get("pushed_at"): out+=f'<dt class=mono>Last push to GitHub</dt><dd>{e(p["pushed_at"])}</dd>'
-  if p.get("license"): out+=f'<dt class=mono>License</dt><dd>{e(p["license"])}</dd>'
-  if p.get("language"): out+=f'<dt class=mono>Main language</dt><dd>{e(p["language"])}</dd>'
+  if p.get("license"): _h=coll_href("license",p["license"]); out+=f'<dt class=mono>License</dt><dd>'+(f'<a href="{_h}">{e(p["license"])}</a>' if _h else e(p["license"]))+'</dd>'
+  if p.get("language"): _h=coll_href("language",p["language"]); out+=f'<dt class=mono>Main language</dt><dd>'+(f'<a href="{_h}">{e(p["language"])}</a>' if _h else e(p["language"]))+'</dd>'
   if p.get("archived"): out+='<dt class=mono>Status</dt><dd>Archived on GitHub</dd>'
   return out
 def installbox(p):

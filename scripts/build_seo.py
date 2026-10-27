@@ -68,6 +68,7 @@ open(D+"/terms.html","w").write(layout("Terms — PickAPlugin",f"""<div class=pr
 <li>We don't promise any amount of traffic, clicks or installs.</li></ul>
 <h3>No warranty</h3><p>The site is provided as is. To the extent the law allows, we aren't liable for losses from using it or from any plugin listed on it. Our total liability for a paid placement is limited to what you paid us for it.</p>
 <h3>Changes</h3><p>We may update these terms and will post the changes here. Last updated 2026-10-26.</p></div>"""))
+build_collections()
 # ---- clean URLs, canonical, OG/Twitter, JSON-LD ----
 def _url(rel):
   rel=rel.replace(os.sep,"/")
@@ -127,7 +128,7 @@ for f in sorted(_glob.glob(D+"/**/*.html",recursive=True)):
   open(f,"w").write(h)
 open(D+"/robots.txt","w").write("User-agent: *\nAllow: /\n\nSitemap: "+SITE+"/sitemap.xml\n")
 today=_dt.date.today().isoformat()
-open(D+"/sitemap.xml","w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+"".join(f"<url><loc>{u}</loc><lastmod>{today}</lastmod></url>\n" for u in URLS)+"</urlset>\n")
+open(D+"/sitemap.xml","w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+"".join(f"<url><loc>{u}</loc><lastmod>{COLL_LASTMOD.get(u[len(SITE)+1:],today)}</lastmod></url>\n" for u in URLS)+"</urlset>\n")
 _cats={}
 for x in by.values(): _cats.setdefault(x["category"],[]).append(x)
 _l=["# PickAPlugin","","> An independent, hand-sorted catalog of ChatGPT and Codex plugins collected from public GitHub sources. Free to browse. Not affiliated with OpenAI. Descriptions are each project's own; we do not test or audit plugins.","",
