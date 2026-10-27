@@ -285,4 +285,10 @@ open(D+"/advertise.html","w").write(layout("Advertise — PickAPlugin",f"""<div 
 <h3>Questions?</h3><p><a href="mailto:{EMAIL}">{EMAIL}</a></p></div></div>"""))
 exec(open(os.path.join(ROOT,"scripts","build_tools.py")).read())
 exec(open(os.path.join(ROOT,"scripts","build_seo.py")).read())
+# one URL style: no trailing slash. Nested index pages become <dir>.html so /dir serves 200 and /dir/ redirects.
+import glob as _g
+for _f in _g.glob(D+"/*/index.html"):
+  _t=open(_f).read()
+  if _re.search(r'(src|href)="(?![a-z]+:|/|#)',_t): print("WARN relative ref in",_f)
+  os.replace(_f,_f[:-11]+".html")
 print("built",len(P),"pages")

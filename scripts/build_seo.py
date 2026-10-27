@@ -72,7 +72,8 @@ build_collections()
 # ---- clean URLs, canonical, OG/Twitter, JSON-LD ----
 def _url(rel):
   rel=rel.replace(os.sep,"/")
-  if rel.endswith("index.html"): rel=rel[:-10]
+  if rel=="index.html": rel=""
+  elif rel.endswith("/index.html"): rel=rel[:-11]
   elif rel.endswith(".html"): rel=rel[:-5]
   return SITE+"/"+rel
 def _fix(m,base):
@@ -80,7 +81,8 @@ def _fix(m,base):
   if _re.match(r"^(https?:|mailto:|#|data:)",h) or not (".html" in h): return m.group(0)
   path,_,frag=h.partition("#")
   p=_pp.normpath(_pp.join(base,path))
-  if p.endswith("index.html"): p=p[:-10]
+  if p in ("index.html","./index.html"): p=""
+  elif p.endswith("/index.html"): p=p[:-11]
   elif p.endswith(".html"): p=p[:-5]
   return f'href="/{p.lstrip("./")}{"#"+frag if frag else ""}"'.replace('href="/"','href="/"')
 URLS=[]
