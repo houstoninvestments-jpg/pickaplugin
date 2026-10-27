@@ -128,3 +128,69 @@ _page("alternatives.html",0,"PickAPlugin alternatives: other ChatGPT & Codex plu
  [("Which Codex plugin directory is the biggest?","By their own counts, CodexStacks and Codex Harness list the most (roughly 900–1,000+ as of "+_CHK+"). Bigger isn't always better, so check what filter each uses."),
   ("Can I use more than one?","Sure. They're all free to browse, and the install command is the same wherever you find a plugin.")])
 print("aiseo:",len(GUIDES),"guides + hub, faq, alternatives")
+
+# ---- MCP converter pair pages (only formats our converter handles: mcpServers JSON, VS Code servers JSON, Codex TOML) ----
+_APPS={"claude-desktop":("Claude Desktop","claude","claude_desktop_config.json (macOS: ~/Library/Application Support/Claude/, Windows: %APPDATA%\\Claude\\)"),
+ "claude-code":("Claude Code","claude",".mcp.json in the project, or ~/.claude.json"),
+ "cursor":("Cursor","claude",".cursor/mcp.json in the project, or ~/.cursor/mcp.json"),
+ "vscode":("VS Code","vscode",".vscode/mcp.json in the workspace"),
+ "codex":("Codex","codex","~/.codex/config.toml (or .codex/config.toml in a trusted project)")}
+_EX={"claude":'{\n  "mcpServers": {\n    "context7": {\n      "command": "npx",\n      "args": ["-y", "@upstash/context7-mcp"],\n      "env": {"API_KEY": "..."}\n    }\n  }\n}',
+ "vscode":'{\n  "servers": {\n    "context7": {\n      "type": "stdio",\n      "command": "npx",\n      "args": ["-y", "@upstash/context7-mcp"],\n      "env": {"API_KEY": "..."}\n    }\n  }\n}',
+ "codex":'[mcp_servers.context7]\ncommand = "npx"\nargs = ["-y", "@upstash/context7-mcp"]\nenv = { API_KEY = "..." }'}
+_NOTE={("claude","codex"):"JSON becomes TOML. Each entry under <code>mcpServers</code> turns into its own <code>[mcp_servers.NAME]</code> table, and <code>env</code> becomes an inline table. For remote servers, use <code>url</code> plus <code>http_headers</code>, or <code>bearer_token_env_var</code> so the token stays out of the file.",
+ ("vscode","codex"):"Drop the <code>type</code> field and turn each entry under <code>servers</code> into a <code>[mcp_servers.NAME]</code> TOML table. VS Code's <code>${env:NAME}</code> and <code>${input:...}</code> variables don't carry over, so put the real env var names in Codex's <code>env</code> or <code>env_vars</code>.",
+ ("codex","claude"):"Each <code>[mcp_servers.NAME]</code> table becomes a key under <code>mcpServers</code>. Inline tables like <code>env = {...}</code> become plain JSON objects. Codex-only fields such as <code>startup_timeout_sec</code> or <code>bearer_token_env_var</code> have no direct match, so you'll have to handle them yourself.",
+ ("codex","vscode"):"Tables go under <code>servers</code>, and VS Code wants a <code>type</code> on each one (<code>stdio</code> for a command, <code>http</code> for a URL).",
+ ("claude","vscode"):"Rename the root key from <code>mcpServers</code> to <code>servers</code> and add a <code>type</code> to each entry. Everything else carries straight over.",
+ ("vscode","claude"):"Rename <code>servers</code> to <code>mcpServers</code> and you can drop <code>type</code>. Swap any <code>${input:...}</code> prompts for real values or env vars."}
+_PAIRS=[(a,b) for a in _APPS for b in _APPS if a!=b and (_APPS[a][1],_APPS[b][1]) in _NOTE]
+os.makedirs(D+"/tools/mcp-config-converter",exist_ok=True)
+CONV=[]
+for a,b in _PAIRS:
+  A,fa,pa=_APPS[a]; B,fb,pb=_APPS[b]; sl=f"{a}-to-{b}"; CONV.append((sl,A,B))
+  others=" · ".join(f'<a href="{x}-to-{y}.html">{_APPS[x][0]} → {_APPS[y][0]}</a>' for x,y in _PAIRS if (x,y)!=(a,b) and (x==a or y==b))
+  body=f'''<h2>Where each file lives</h2><ul><li><b>{A}:</b> <code>{e(pa)}</code></li><li><b>{B}:</b> <code>{e(pb)}</code></li></ul>
+<h2>Before and after</h2><div style="display:grid;grid-template-columns:1fr 1fr;gap:14px"><div><span class=mono>{A}</span><pre>{e(_EX[fa])}</pre></div><div><span class=mono>{B}</span><pre>{e(_EX[fb])}</pre></div></div>
+<h2>What changes</h2><p>{_NOTE[(fa,fb)]}</p>
+<p style="font-size:18px"><a href="/tools/mcp-config-converter?to={fb}"><b>Open the converter set to {B} →</b></a> Paste your {A} config, copy the result. It runs in your browser and nothing gets uploaded.</p>
+<p>Double-check before you paste the result anywhere: if your config has tokens in it, they'll be in the output too.</p>
+<h3>Other conversions</h3><p>{others}</p>'''
+  qa=[(f"How do I convert an MCP config from {A} to {B}?",f"Paste the {A} config into PickAPlugin's free MCP config converter with the target set to {B}, then save the result to {pb}."),
+      (f"Do I need to change the MCP server itself?","No. A local server runs the same command in every app. Only the config format around it changes.")]
+  _page(f"tools/mcp-config-converter/{sl}.html",2,f"Convert MCP config from {A} to {B} (free, in-browser) — PickAPlugin",
+   f"Move MCP servers from {A} to {B}: file locations, a before/after example, what changes, and a free converter that runs in your browser.",
+   "Free tool · MCP config · updated "+_CHK,f"Convert MCP servers from {A} to {B}",
+   f"Got MCP servers working in {A} and want the same ones in {B}? The servers don't change, only the config wrapper does. Here's exactly what to change.",body,qa)
+_cv=D+"/tools/mcp-config-converter.html"
+_h=open(_cv).read()
+_pl="".join(f'<li><a href="mcp-config-converter/{s}.html">{A} → {B}</a></li>' for s,A,B in CONV)
+_h=_h.replace("<h3>Related on PickAPlugin</h3>",f'<h3>Step-by-step for each pair</h3><ul>{_pl}</ul><h3>Related on PickAPlugin</h3>',1)
+_h=_h.replace("</body>",'<script>(function(){var t=new URLSearchParams(location.search).get("to"),s=document.getElementById("to");if(t&&s&&[].some.call(s.options,function(o){return o.value==t}))s.value=t})()</script></body>',1)
+open(_cv,"w").write(_h)
+
+# ---- Best Codex plugins (November 2026), from catalog data ----
+import datetime as _ddt
+def _fresh(p):
+  try: return (_ddt.date.today()-_ddt.date.fromisoformat((p.get("pushed_at") or "")[:10])).days<=60
+  except: return False
+_best=[]
+for c in sorted(cats):
+  if c=="Other": continue
+  ps=[p for p in P if p["category"]==c and p.get("install") and not p.get("archived") and _fresh(p)]
+  ps.sort(key=lambda p:-(p.get("stars") or 0))
+  if ps: _best.append((c,ps[:3]))
+_n=sum(len(x) for _,x in _best)
+_rows="".join(f'<tr><td style="padding:8px;border-bottom:1px solid var(--rule)">{e(c)}</td><td style="padding:8px;border-bottom:1px solid var(--rule)"><a href="../p/{p["slug"]}.html">{e(p["name"])}</a><br><span style="color:var(--mute);font-size:14px">{e(p["description"][:110])}</span></td><td style="padding:8px;border-bottom:1px solid var(--rule)" class=mono>{(p.get("stars") or 0):,}</td><td style="padding:8px;border-bottom:1px solid var(--rule)" class=mono>{e((p.get("pushed_at") or "")[:10])}</td><td style="padding:8px;border-bottom:1px solid var(--rule)" class=mono>{e(p.get("license") or "none")}</td></tr>' for c,ps in _best for p in ps)
+_cmds="".join(f'<h3>{e(c)}</h3>'+"".join(f'<p style="margin:6px 0"><a href="../p/{p["slug"]}.html"><b>{e(p["name"])}</b></a></p><pre>{e(p["install"])}</pre>' for p in ps) for c,ps in _best)
+os.makedirs(D+"/blog",exist_ok=True)
+_page("blog/best-codex-plugins-november-2026.html",1,"Best Codex plugins (November 2026): top picks by category with install commands — PickAPlugin",
+ f"The {_n} most-starred, still-maintained Codex and ChatGPT plugins in each category, from PickAPlugin's {len(P)}-plugin catalog. Table, stars, last update, license and copyable install commands.",
+ "Data pulled "+_CHK+" · for November 2026",f"Best Codex plugins (November 2026)",
+ f"No vibes, just a filter anyone can check. From our {len(P)}-plugin catalog we kept plugins that have an install command in their README, aren't archived, and got a commit in the last 60 days. Then we took the 3 most-starred in each category. Stars tell you a plugin is popular, not that it's good or safe, so read the repo before you install.",
+ f'''<h2>The table</h2><div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;font-size:15px"><tr class=mono style="text-align:left"><th style="padding:8px">Category</th><th style="padding:8px">Plugin</th><th style="padding:8px">Stars</th><th style="padding:8px">Last commit</th><th style="padding:8px">License</th></tr>{_rows}</table></div>
+<h2>Install commands</h2><p>These are copied from each project's README. Some are written for Claude Code or a skills installer rather than for <code>codex plugin</code>. When that's the case, our <a href="../guides/install-codex-plugin.html">install guide</a> shows the Codex route.</p>{_cmds}
+<h2>How we picked</h2><p>Stars and last-commit dates come from GitHub on our last refresh. Nobody paid to be on this list, and featured placements don't affect it. Want the full list? <a href="../index.html#catalog">Browse all {len(P)}</a> or check <a href="../guides/vet-a-plugin.html">the 2-minute safety check</a>.</p>''',
+ [("What's the best Codex plugin?","It depends on the job. This list shows the most-starred plugins in each category that are still maintained. Start with the category you need and read the repo."),
+  ("How was this list made?","From PickAPlugin's catalog: plugins with an install command that aren't archived and had a commit in the last 60 days, sorted by GitHub stars, top 3 per category. Nobody paid to be on it.")])
+print("aiseo: +",len(CONV),"converter pairs, best list",_n)

@@ -134,12 +134,18 @@ open(D+"/sitemap.xml","w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlse
 _cats={}
 for x in by.values(): _cats.setdefault(x["category"],[]).append(x)
 _l=["# PickAPlugin","","> An independent, hand-sorted catalog of ChatGPT and Codex plugins collected from public GitHub sources. Free to browse. Not affiliated with OpenAI. Descriptions are each project's own; we do not test or audit plugins.","",
- "## Key pages",f"- [Home / catalog]({SITE}/)",f"- [How we pick]({SITE}/about)",f"- [Changelog]({SITE}/changelog)",f"- [Submit a plugin]({SITE}/submit)",f"- [Advertise]({SITE}/advertise)",f"- [Sitemap]({SITE}/sitemap.xml)",f"- [FAQ]({SITE}/faq)",f"- [Alternatives / other directories]({SITE}/alternatives)",""]+["## Guides"]+[f"- [{h}]({SITE}/guides/{s}): {d}" for s,h,d in GUIDES]+["","## Free tools"]+[f"- [{h}]({SITE}/tools/{s}): {b}" for s,h,b in TOOLS]+[""]
+ "## Key pages",f"- [Home / catalog]({SITE}/)",f"- [How we pick]({SITE}/about)",f"- [Changelog]({SITE}/changelog)",f"- [Submit a plugin]({SITE}/submit)",f"- [Advertise]({SITE}/advertise)",f"- [Sitemap]({SITE}/sitemap.xml)",f"- [FAQ]({SITE}/faq)",f"- [Alternatives / other directories]({SITE}/alternatives)",""]+["## Guides"]+[f"- [{h}]({SITE}/guides/{s}): {d}" for s,h,d in GUIDES]+["","## Articles",f"- [Best Codex plugins (November 2026)]({SITE}/blog/best-codex-plugins-november-2026): top 3 maintained plugins per category, with install commands","","## MCP config conversions"]+[f"- [{A} to {B}]({SITE}/tools/mcp-config-converter/{s})" for s,A,B in CONV]+["","## Free tools"]+[f"- [{h}]({SITE}/tools/{s}): {b}" for s,h,b in TOOLS]+[""]
 for c in sorted(_cats):
   _l.append("## "+c)
   for x in sorted(_cats[c],key=lambda x:-(x.get("stars") or 0))[:15]: _l.append(f"- [{x['name']}]({SITE}/p/{x['slug']}): {x['description'][:160]}")
   _l.append("")
+_l.insert(3,f"Full catalog for agents: {SITE}/llms-full.txt\n")
 open(D+"/llms.txt","w").write("\n".join(_l))
+_f=_l[:]
+_f.append("# Full catalog\n")
+for x in sorted(by.values(),key=lambda x:(x["category"],-(x.get("stars") or 0))):
+  _f+= [f"## {x['name']}",f"- Page: {SITE}/p/{x['slug']}",f"- Source: {x['link']}",f"- Category: {x['category']}",f"- Maker: {x.get('maker') or 'unknown'}",f"- Stars: {x.get('stars')}  Last commit: {(x.get('pushed_at') or '')[:10]}  License: {x.get('license') or 'none'}  Language: {x.get('language') or 'n/a'}"+("  ARCHIVED" if x.get("archived") else ""),f"- What it does: {x['description']}"]+([f"- Install (from README): {x['install']}"] if x.get("install") else [])+[""]
+open(D+"/llms-full.txt","w").write("\n".join(_f))
 open(f"{D}/{INDEXNOW_KEY}.txt","w").write(INDEXNOW_KEY)
 print("seo:",len(URLS),"urls,",len(PAIRS),"comparisons")
 # Bing Webmaster verification (file + homepage meta)
