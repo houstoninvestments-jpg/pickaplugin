@@ -134,7 +134,7 @@ open(D+"/sitemap.xml","w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlse
 _cats={}
 for x in by.values(): _cats.setdefault(x["category"],[]).append(x)
 _l=["# PickAPlugin","","> An independent, hand-sorted catalog of ChatGPT and Codex plugins collected from public GitHub sources. Free to browse. Not affiliated with OpenAI. Descriptions are each project's own; we do not test or audit plugins.","",
- "## Key pages",f"- [Home / catalog]({SITE}/)",f"- [How we pick]({SITE}/about)",f"- [Changelog]({SITE}/changelog)",f"- [Submit a plugin]({SITE}/submit)",f"- [Advertise]({SITE}/advertise)",f"- [Sitemap]({SITE}/sitemap.xml)",""]
+ "## Key pages",f"- [Home / catalog]({SITE}/)",f"- [How we pick]({SITE}/about)",f"- [Changelog]({SITE}/changelog)",f"- [Submit a plugin]({SITE}/submit)",f"- [Advertise]({SITE}/advertise)",f"- [Sitemap]({SITE}/sitemap.xml)",f"- [FAQ]({SITE}/faq)",f"- [Alternatives / other directories]({SITE}/alternatives)",""]+["## Guides"]+[f"- [{h}]({SITE}/guides/{s}): {d}" for s,h,d in GUIDES]+["","## Free tools"]+[f"- [{h}]({SITE}/tools/{s}): {b}" for s,h,b in TOOLS]+[""]
 for c in sorted(_cats):
   _l.append("## "+c)
   for x in sorted(_cats[c],key=lambda x:-(x.get("stars") or 0))[:15]: _l.append(f"- [{x['name']}]({SITE}/p/{x['slug']}): {x['description'][:160]}")

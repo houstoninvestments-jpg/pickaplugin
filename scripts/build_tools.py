@@ -244,3 +244,4 @@ open(D+"/tools/index.html","w").write(layout("Free tools for ChatGPT & Codex plu
 <p style="margin-top:24px">Want a tool that isn't here? Email <a href="mailto:{EMAIL}">{EMAIL}</a>. Or <a href="../index.html#catalog">browse the catalog</a>.</p></div>''',1,
  "Free browser tools for ChatGPT and Codex plugin builders: plugin.json validator, MCP config converter, install command finder and AGENTS.md generator."))
 print("tools:",len(TOOLS))
+exec(open(os.path.join(ROOT,"scripts","build_aiseo.py")).read())
