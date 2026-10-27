@@ -284,6 +284,7 @@ open(D+"/advertise.html","w").write(layout("Advertise — PickAPlugin",f"""<div 
 <li>If a spot fills up before your payment lands, or your plugin is broken, malicious or misleading, we refund you in full.</li></ul>
 <h3>Questions?</h3><p><a href="mailto:{EMAIL}">{EMAIL}</a></p></div></div>"""))
 exec(open(os.path.join(ROOT,"scripts","build_tools.py")).read())
+exec(open(os.path.join(ROOT,"scripts","build_blackfriday.py")).read())
 exec(open(os.path.join(ROOT,"scripts","build_seo.py")).read())
 # one URL style: no trailing slash. Nested index pages become <dir>.html so /dir serves 200 and /dir/ redirects.
 import glob as _g

@@ -1,0 +1,15 @@
+{"checked":"2026-10-27",
+ "deals":[],
+ "watch":[
+  ["Cursor","AI code editor","https://cursor.com/pricing"],
+  ["GitHub Copilot","AI pair programmer","https://github.com/features/copilot/plans"],
+  ["Tabnine","Private AI code assistant","https://www.tabnine.com/pricing"],
+  ["JetBrains AI","AI in JetBrains IDEs","https://www.jetbrains.com/ai/"],
+  ["Warp","Agentic terminal","https://www.warp.dev/pricing"],
+  ["Zed","Fast editor with AI","https://zed.dev/pricing"],
+  ["Replit","Build and deploy in the browser","https://replit.com/pricing"],
+  ["Lovable","Prompt-to-app builder","https://lovable.dev/pricing"],
+  ["Bolt.new","Prompt-to-app builder","https://bolt.new/pricing"],
+  ["v0 by Vercel","UI and app generator","https://v0.app/pricing"],
+  ["Raycast","Launcher with AI and extensions","https://www.raycast.com/pricing"],
+  ["Supabase","Postgres backend with an MCP server","https://supabase.com/pricing"]]}
