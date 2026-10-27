@@ -1,0 +1,236 @@
+{
+ "as_of": "2026-10-27",
+ "catalog": 346,
+ "github_reachable": 339,
+ "license": [
+  [
+   "MIT",
+   268
+  ],
+  [
+   "Apache-2.0",
+   38
+  ],
+  [
+   "NOASSERTION",
+   22
+  ],
+  [
+   "None found",
+   6
+  ],
+  [
+   "AGPL-3.0",
+   2
+  ],
+  [
+   "MPL-2.0",
+   1
+  ],
+  [
+   "GPL-3.0",
+   1
+  ],
+  [
+   "MIT-0",
+   1
+  ]
+ ],
+ "no_license": 6,
+ "other_license": 22,
+ "archived": 7,
+ "stale90": 55,
+ "stale180": 13,
+ "fresh30": 245,
+ "fresh7": 168,
+ "created_2026": 329,
+ "stars_median": 6,
+ "stars_total": 97833,
+ "top10pct_share": 94.1,
+ "stars_buckets": [
+  [
+   "0",
+   52
+  ],
+  [
+   "1\u20139",
+   140
+  ],
+  [
+   "10\u201399",
+   99
+  ],
+  [
+   "100\u2013999",
+   35
+  ],
+  [
+   "1k\u201310k",
+   11
+  ],
+  [
+   "10k+",
+   2
+  ]
+ ],
+ "lang": [
+  [
+   "Python",
+   99
+  ],
+  [
+   "JavaScript",
+   90
+  ],
+  [
+   "None",
+   50
+  ],
+  [
+   "Shell",
+   34
+  ],
+  [
+   "TypeScript",
+   31
+  ],
+  [
+   "Go",
+   10
+  ],
+  [
+   "Rust",
+   9
+  ],
+  [
+   "HTML",
+   8
+  ],
+  [
+   "PowerShell",
+   3
+  ],
+  [
+   "C#",
+   2
+  ],
+  [
+   "Markdown",
+   2
+  ],
+  [
+   "MATLAB",
+   1
+  ]
+ ],
+ "install": 234,
+ "has_readme": 339,
+ "apikey": 145,
+ "remote_mcp": 61,
+ "any_manifest": 334,
+ "codex_manifest": 326,
+ "claude_manifest": 209,
+ "agents_md": 117,
+ "mcp_json": 94,
+ "pj_n": 274,
+ "pj_loc": [
+  [
+   "pj_codex",
+   220
+  ],
+  [
+   "pj_root",
+   50
+  ],
+  [
+   "pj_claude",
+   4
+  ]
+ ],
+ "pj_invalid_json": 0,
+ "pj_with_err": 3,
+ "pj_clean": 251,
+ "pj_err_codes": [
+  [
+   "path_bad",
+   2
+  ],
+  [
+   "name_not_kebab",
+   1
+  ]
+ ],
+ "pj_warn_codes": [
+  [
+   "no_schema",
+   12
+  ],
+  [
+   "no_version",
+   5
+  ],
+  [
+   "no_displayName",
+   4
+  ],
+  [
+   "path_no_dot_slash",
+   3
+  ],
+  [
+   "no_description",
+   1
+  ]
+ ],
+ "cat": [
+  [
+   "Agent Workflows",
+   86
+  ],
+  [
+   "Other",
+   54
+  ],
+  [
+   "Memory & Context",
+   43
+  ],
+  [
+   "Docs, Content & SEO",
+   34
+  ],
+  [
+   "Review & Testing",
+   28
+  ],
+  [
+   "Design & Frontend",
+   24
+  ],
+  [
+   "Usage & Quotas",
+   18
+  ],
+  [
+   "Messaging & Remote",
+   15
+  ],
+  [
+   "Deploy & DevOps",
+   15
+  ],
+  [
+   "Security & Governance",
+   12
+  ],
+  [
+   "Industry Tools",
+   9
+  ],
+  [
+   "Data & Backend",
+   8
+  ]
+ ],
+ "unreachable": 7
+}
