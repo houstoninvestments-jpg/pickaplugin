@@ -282,5 +282,6 @@ open(D+"/advertise.html","w").write(layout("Advertise — PickAPlugin",f"""<div 
 <li>Monthly, cancel anytime by emailing <a href="mailto:{EMAIL}">{EMAIL}</a>. Your spot stays up until the paid period ends.</li>
 <li>If a spot fills up before your payment lands, or your plugin is broken, malicious or misleading, we refund you in full.</li></ul>
 <h3>Questions?</h3><p><a href="mailto:{EMAIL}">{EMAIL}</a></p></div></div>"""))
+exec(open(os.path.join(ROOT,"scripts","build_tools.py")).read())
 exec(open(os.path.join(ROOT,"scripts","build_seo.py")).read())
 print("built",len(P),"pages")
