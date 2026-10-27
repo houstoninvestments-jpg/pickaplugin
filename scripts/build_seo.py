@@ -140,3 +140,9 @@ for c in sorted(_cats):
 open(D+"/llms.txt","w").write("\n".join(_l))
 open(f"{D}/{INDEXNOW_KEY}.txt","w").write(INDEXNOW_KEY)
 print("seo:",len(URLS),"urls,",len(PAIRS),"comparisons")
+# Bing Webmaster verification (file + homepage meta)
+import shutil as _sh
+_sh.copyfile(os.path.join(os.path.dirname(os.path.abspath(__file__)),"BingSiteAuth.xml"),D+"/BingSiteAuth.xml")
+_hp=D+"/index.html"; _h=open(_hp).read()
+_mv='<meta name="msvalidate.01" content="64C98C3E1DCFAFF92857E6DFEB8AE54D" />'
+if _mv not in _h: open(_hp,"w").write(_h.replace("<head>","<head>\n"+_mv,1))
