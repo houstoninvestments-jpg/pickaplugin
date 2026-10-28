@@ -1,0 +1,67 @@
+[
+ {
+  "key": "backlink-hol",
+  "site": "HOL awesome-codex-plugins (github.com/hashgraph-online/awesome-codex-plugins)",
+  "to": "support@hol.org",
+  "email": "support@hol.org",
+  "subject": "PickAPlugin started from your list",
+  "time": "2026-10-27T10:07:42",
+  "date": "2026-10-27",
+  "target_page": "https://github.com/hashgraph-online/awesome-codex-plugins#guides--articles",
+  "link": "https://pickaplugin.com/research/state-of-codex-plugins-2026",
+  "status": "sent",
+  "id": "01a17e55-028f-706c-bf39-bf9fbc6f8951"
+ },
+ {
+  "key": "backlink-skillaudit",
+  "site": "SkillAudit (skillaudit.dev)",
+  "to": "hello@skillaudit.dev",
+  "email": "hello@skillaudit.dev",
+  "subject": "Your MCP shortlist + our Codex plugin data",
+  "time": "2026-10-27T10:07:42",
+  "date": "2026-10-27",
+  "target_page": "https://skillaudit.dev/blog/mcp-server-install-shortlist/",
+  "link": "https://pickaplugin.com/research/state-of-codex-plugins-2026",
+  "status": "sent",
+  "id": "01a17e55-0424-71f3-8ed2-656551b98275"
+ },
+ {
+  "key": "backlink-agentatlas",
+  "site": "AgentAtlas Weekly (agentatlas.dev)",
+  "to": "hello@agentatlas.dev",
+  "email": "hello@agentatlas.dev",
+  "subject": "Codex plugin data for a future issue",
+  "time": "2026-10-27T10:07:43",
+  "date": "2026-10-27",
+  "target_page": "https://agentatlas.dev/newsletter",
+  "link": "https://pickaplugin.com/research/state-of-codex-plugins-2026",
+  "status": "sent",
+  "id": "01a17e55-057d-7918-bfca-32d43b0abaf0"
+ },
+ {
+  "key": "backlink-agenticweekly",
+  "site": "Agentic Weekly (theagenticweekly.com)",
+  "to": "hello@theagenticweekly.com",
+  "email": "hello@theagenticweekly.com",
+  "subject": "Open data on 339 Codex plugins",
+  "time": "2026-10-27T10:07:43",
+  "date": "2026-10-27",
+  "target_page": "https://theagenticweekly.com/",
+  "link": "https://pickaplugin.com/research/state-of-codex-plugins-2026",
+  "status": "sent",
+  "id": "01a17e55-0622-7cc2-9e98-6f0c47e3f0ad"
+ },
+ {
+  "key": "backlink-mejba",
+  "site": "Mejba Ahmed blog (mejba.me)",
+  "to": "mejba.13@gmail.com",
+  "email": "mejba.13@gmail.com",
+  "subject": "Your Codex plugins review",
+  "time": "2026-10-27T10:07:43",
+  "date": "2026-10-27",
+  "target_page": "https://www.mejba.me/blog/openai-codex-plugins-guide",
+  "link": "https://pickaplugin.com/research/state-of-codex-plugins-2026",
+  "status": "sent",
+  "id": "01a17e55-06dd-7c03-b6ed-083c5cacbf90"
+ }
+]

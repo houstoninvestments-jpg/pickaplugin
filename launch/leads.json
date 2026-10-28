@@ -1,0 +1,222 @@
+[
+ {
+  "found": "2026-10-27",
+  "maker": "callstackincubator",
+  "plugin": "Mobile Dev (Callstack)",
+  "slug": "mobile-dev-callstack",
+  "repo": "https://github.com/callstackincubator/codex-mobile-dev-plugin",
+  "site": "https://callstack.com",
+  "email": "hello@callstack.com",
+  "x": null,
+  "created": "2026-09-30",
+  "pushed": "2026-10-27",
+  "stars": 171,
+  "scores": {
+   "recency": 5,
+   "traction": 5,
+   "contact": 5
+  },
+  "score": 5.0,
+  "source": "github",
+  "catalog": "added as free listing",
+  "note": "Well-known React Native agency; actively pushed today."
+ },
+ {
+  "found": "2026-10-27",
+  "maker": "eigenpal",
+  "plugin": "docx-editor MCP App",
+  "slug": "docx-editor-mcp-app",
+  "repo": "https://github.com/eigenpal/docx-editor-mcp-app",
+  "site": "https://www.docx-editor.dev/mcp-app",
+  "email": "docx-editor@eigenpal.com",
+  "x": null,
+  "created": "2026-08-27",
+  "pushed": "2026-10-27",
+  "stars": 0,
+  "scores": {
+   "recency": 5,
+   "traction": 2,
+   "contact": 5
+  },
+  "score": 4.0,
+  "source": "github",
+  "catalog": "added as free listing",
+  "note": "Commercial product with a ChatGPT app angle; zero stars so far."
+ },
+ {
+  "found": "2026-10-27",
+  "maker": "pidgeon-ai",
+  "plugin": "Pidgeon",
+  "slug": "pidgeon",
+  "repo": "https://github.com/pidgeon-ai/pidgeon-plugins",
+  "site": "https://pidgeon.ai",
+  "email": "devs@pidgeon.ai",
+  "x": null,
+  "created": "2026-10-18",
+  "pushed": "2026-10-27",
+  "stars": 1,
+  "scores": {
+   "recency": 5,
+   "traction": 2,
+   "contact": 5
+  },
+  "score": 4.0,
+  "source": "github",
+  "catalog": "added as free listing",
+  "note": "Funded-looking startup, plugin repo is 9 days old."
+ },
+ {
+  "found": "2026-10-27",
+  "maker": "modelplan",
+  "plugin": "ModelPlan",
+  "slug": "modelplan",
+  "repo": "https://github.com/modelplan/modelplan",
+  "site": "https://modelplan.ai",
+  "email": null,
+  "x": null,
+  "created": "2026-10-12",
+  "pushed": "2026-10-27",
+  "stars": 41,
+  "scores": {
+   "recency": 5,
+   "traction": 4,
+   "contact": 3
+  },
+  "score": 4.0,
+  "source": "github",
+  "catalog": "added as free listing",
+  "note": "Has a site but no public email found."
+ },
+ {
+  "found": "2026-10-27",
+  "maker": "Clypmint",
+  "plugin": "Clypmint B-Roll",
+  "slug": "clypmint-b-roll",
+  "repo": "https://github.com/Clypmint/clypmint-broll",
+  "site": "https://clypmint.com/broll",
+  "email": "support@clypmint.com",
+  "x": null,
+  "created": "2026-10-24",
+  "pushed": "2026-10-27",
+  "stars": 4,
+  "scores": {
+   "recency": 5,
+   "traction": 2,
+   "contact": 5
+  },
+  "score": 4.0,
+  "source": "github",
+  "catalog": "added as free listing",
+  "note": "Paid API product, launched 3 days ago."
+ },
+ {
+  "found": "2026-10-27",
+  "maker": "ItsOdeLeo",
+  "plugin": "Usage Planner",
+  "slug": "usage-planner",
+  "repo": "https://github.com/ItsOdeLeo/usage-planner",
+  "site": "https://usageplanner.com",
+  "email": null,
+  "x": "ItsOdeLeo",
+  "created": "2026-10-21",
+  "pushed": "2026-10-26",
+  "stars": 5,
+  "scores": {
+   "recency": 5,
+   "traction": 2,
+   "contact": 3
+  },
+  "score": 3.3,
+  "source": "github",
+  "catalog": "added as free listing",
+  "note": "Solo maker, has X handle and a site."
+ },
+ {
+  "found": "2026-10-27",
+  "maker": "PhysAI-Lab",
+  "plugin": "WorldAgent",
+  "slug": "worldagent",
+  "repo": "https://github.com/PhysAI-Lab/WorldAgent",
+  "site": "https://peterchencyc.com/joining",
+  "email": null,
+  "x": null,
+  "created": "2026-10-24",
+  "pushed": "2026-10-26",
+  "stars": 6,
+  "scores": {
+   "recency": 5,
+   "traction": 2,
+   "contact": 2
+  },
+  "score": 3.0,
+  "source": "github",
+  "catalog": "added as free listing",
+  "note": "Academic lab, unlikely buyer but good listing."
+ },
+ {
+  "found": "2026-10-27",
+  "maker": "Sunwaycoser",
+  "plugin": "codex-context-handoff",
+  "slug": "codex-context-handoff",
+  "repo": "https://github.com/Sunwaycoser/codex-context-handoff",
+  "site": null,
+  "email": null,
+  "x": null,
+  "created": "2026-10-22",
+  "pushed": "2026-10-26",
+  "stars": 5,
+  "scores": {
+   "recency": 5,
+   "traction": 2,
+   "contact": 1
+  },
+  "score": 2.7,
+  "source": "github",
+  "catalog": "added as free listing",
+  "note": "Chinese-language solo maker, no contact."
+ },
+ {
+  "found": "2026-10-27",
+  "maker": "Plokies-2",
+  "plugin": "Stata Research Guard",
+  "slug": "stata-research-guard",
+  "repo": "https://github.com/Plokies-2/stata-research-guard",
+  "site": null,
+  "email": null,
+  "x": null,
+  "created": "2026-10-22",
+  "pushed": "2026-10-26",
+  "stars": 4,
+  "scores": {
+   "recency": 5,
+   "traction": 2,
+   "contact": 1
+  },
+  "score": 2.7,
+  "source": "github",
+  "catalog": "added as free listing",
+  "note": "Niche academic tool, no contact."
+ },
+ {
+  "found": "2026-10-27",
+  "maker": "retailcrm",
+  "plugin": "RetailCRM",
+  "slug": "retailcrm",
+  "repo": "https://github.com/retailcrm/mcp-plugin",
+  "site": null,
+  "email": null,
+  "x": null,
+  "created": "2026-10-20",
+  "pushed": "2026-10-20",
+  "stars": 2,
+  "scores": {
+   "recency": 4,
+   "traction": 2,
+   "contact": 1
+  },
+  "score": 2.3,
+  "source": "github",
+  "catalog": "added as free listing",
+  "note": "Official vendor plugin, Russian-language README, no contact found."
+ }
+]

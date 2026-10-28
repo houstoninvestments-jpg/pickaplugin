@@ -88,3 +88,8 @@ https://pickaplugin.com/research/state-of-codex-plugins-2026
 https://pickaplugin.com/research/state-of-codex-plugins-2026
 
 3. Checked 339 plugin repos for an install command in the README. 105 don't have one. If you make a plugin, one copy-paste line in a code block is the cheapest win you've got. Full data (free CSV): https://pickaplugin.com/research/state-of-codex-plugins-2026
+
+---
+## Send log
+2026-10-27 6:14 AM PT: NOTHING SENT. Approved by Aaron, but there is no working send path from hello@pickaplugin.com (Email Routing is forward-only; Cloudflare Email Sending needs Workers Paid $5/mo and the connector gets 401; same blocker logged in outreach-sent.md 2026-10-26). TLDR not checked/sent.
+2026-10-27 8:18 AM PT: SENT via Resend API (from PickAPlugin <hello@pickaplugin.com>, reply-to hello@pickaplugin.com, key pickaplugin-outreach in .secrets/resend_api_key). Ars Technica (news@arstechnica.com), The New Stack (frederic@thenewstack.io), InfoQ (editors@infoq.com), DevClass (devclass@sitpub.com), Console.dev (hello@console.dev). Resend IDs in resend-send-log.json. TLDR NOT sent: submissions@tldr.tech not found on tldr.tech (unconfirmed). Simon Willison and Changelog not emailed (not email routes). Do not resend.

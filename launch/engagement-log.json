@@ -1,0 +1,225 @@
+{
+ "note": "PickAPlugin X engagement replies. One entry per reply; never reply to same author within 3 days; max 12/day.",
+ "replies": [
+  {
+   "date": "2026-10-26",
+   "run": "15:30",
+   "thread_url": "https://x.com/edinsoncode/status/2114712381334921248",
+   "author": "@edinsoncode",
+   "reply_text": "\"Can I undo what it did\" is the test most tools fail quietly. Cheapest fix: start every agent run on its own branch or git worktree, so undo is one delete. CodeTruss is also worth a look; it checks the agent stayed in scope before you accept the change.",
+   "reply_url": "https://x.com/PickAPlugin/status/2114848652103713064",
+   "status": "posted",
+   "posted_at": "2026-10-26T15:36:27-07:00",
+   "mentions_site": false
+  },
+  {
+   "date": "2026-10-26",
+   "run": "15:30",
+   "thread_url": "https://x.com/spencerldixon/status/2114671622527361084",
+   "author": "@spencerldixon",
+   "reply_text": "From the plugin side: non-devs mostly want the boring chores done. Sendpaper mails real postcards, PostEverywhere schedules social posts, DamnPDFs handles PDF/Office grunt work. We track 344 Codex/ChatGPT plugins at pickaplugin.com and the non-code ones say a lot.",
+   "reply_url": "https://x.com/PickAPlugin/status/2114849211199975859",
+   "status": "posted",
+   "posted_at": "2026-10-26T15:38:39-07:00",
+   "mentions_site": true
+  },
+  {
+   "date": "2026-10-26",
+   "run": "15:30",
+   "thread_url": "https://x.com/VarunChopr17597/status/2114714139348123970",
+   "author": "@VarunChopr17597",
+   "reply_text": "Mine would be a red-green test loop: the agent has to write a failing test that reproduces the bug before it's allowed to touch the fix. Kills the \"fixed it!\" that fixed nothing. Red-Green Proof packages exactly that for Codex and Claude Code.",
+   "reply_url": "https://x.com/PickAPlugin/status/2114849735043395976",
+   "status": "posted",
+   "posted_at": "2026-10-26T15:40:45-07:00",
+   "mentions_site": false
+  },
+  {
+   "date": "2026-10-26",
+   "run": "15:30",
+   "thread_url": "https://x.com/MagnusOlseq8r6/status/2114697211070071279",
+   "author": "@MagnusOlseq8r6",
+   "reply_text": "48 is wild but not surprising: each open Claude Code or Codex session starts its own copy of every local (stdio) MCP server. Closing sessions you're done with helps, and for servers you use everywhere, a remote/HTTP version means one process instead of dozens.",
+   "reply_url": "https://x.com/PickAPlugin/status/2114850254655025582",
+   "status": "posted",
+   "posted_at": "2026-10-26T15:42:48-07:00",
+   "mentions_site": false
+  },
+  {
+   "thread_url": "https://x.com/liran_tal/status/2114689425510654029",
+   "author": "@liran_tal",
+   "reply_text": "A Go binary can't run inside a Worker itself, but Cloudflare Containers can run it: package it as a Docker image and have a Worker route the HTTP traffic to it. For the missing auth, Cloudflare's workers-oauth-provider library can sit in that Worker in front of it.",
+   "date": "2026-10-26",
+   "run": "19:30",
+   "reply_url": "https://x.com/PickAPlugin/status/2114909552873533810",
+   "status": "posted",
+   "posted_at": "2026-10-26T19:38:00-07:00",
+   "mentions_site": false
+  },
+  {
+   "thread_url": "https://x.com/RoundtableSpace/status/2114699842601558046",
+   "author": "@RoundtableSpace",
+   "reply_text": "Sandboxing fixes what the agent can read. The leak that bites more often is the agent pasting a secret into a prompt, a log or a commit. Pair the sandbox with a hook layer: Agent Guard blocks or masks secrets in Claude Code and Codex, locally, with no telemetry.",
+   "date": "2026-10-26",
+   "run": "19:30",
+   "reply_url": "https://x.com/PickAPlugin/status/2114910631203913819",
+   "status": "posted",
+   "posted_at": "2026-10-26T19:43:00-07:00",
+   "mentions_site": false
+  },
+  {
+   "thread_url": "https://x.com/marcinperlak/status/2114840206771982704",
+   "author": "@marcinperlak",
+   "reply_text": "Good catch. Rules tied to one tool hold up better inside that tool's own description, right where the agent decides whether to call it. Keep those short too, since some clients clip tool descriptions as well. Server-wide instructions are for the few rules that apply everywhere.",
+   "date": "2026-10-26",
+   "run": "19:30",
+   "reply_url": "https://x.com/PickAPlugin/status/2114911183597638055",
+   "status": "posted",
+   "posted_at": "2026-10-26T19:45:00-07:00",
+   "mentions_site": false
+  },
+  {
+   "thread_url": "https://x.com/constance_etin/status/2114789143431741766",
+   "author": "@constance_etin",
+   "reply_text": "Spec-to-MCP is the right starting point. The step people skip is pruning: a big API mapped 1:1 into 80 tools buries the agent in choices. Folding the handful of calls people actually make into a few task-shaped tools usually beats exposing every endpoint.",
+   "date": "2026-10-26",
+   "run": "19:30",
+   "reply_url": "https://x.com/PickAPlugin/status/2114911698134163818",
+   "status": "posted",
+   "posted_at": "2026-10-26T19:47:00-07:00",
+   "mentions_site": false
+  },
+  {
+   "thread_url": "https://x.com/hakimieiqbal/status/2115008886579093945",
+   "author": "@hakimieiqbal",
+   "reply_text": "the 6 overlapping tools part is so real lol. i'd start with whatever fixes the thing that annoys you most this week and only add the next one when something else starts bugging you",
+   "date": "2026-10-27",
+   "run": "10:30",
+   "reply_url": "https://x.com/PickAPlugin/status/2115134429186376035",
+   "status": "posted",
+   "posted_at": "2026-10-27T10:33:00-07:00",
+   "mentions_site": false
+  },
+  {
+   "thread_url": "https://x.com/eng_khairallah1/status/2114845080603533613",
+   "author": "@eng_khairallah1",
+   "reply_text": "having the other agents try to disprove each finding is smart ngl. false alarms are usually why people stop reading security tool output in the first place",
+   "date": "2026-10-27",
+   "run": "10:30",
+   "reply_url": "https://x.com/PickAPlugin/status/2115134997157777517",
+   "status": "posted",
+   "posted_at": "2026-10-27T10:35:00-07:00",
+   "mentions_site": false
+  },
+  {
+   "thread_url": "https://x.com/foobar_beer/status/2115082462166450627",
+   "author": "@foobar_beer",
+   "reply_text": "nice, does it keep the graph in sync as the code changes or is it more of a one time export? stale graphs are where this kind of thing usually falls apart. would fit on pickaplugin.com too if you want it listed, it's free",
+   "date": "2026-10-27",
+   "run": "10:30",
+   "reply_url": "https://x.com/PickAPlugin/status/2115135501816729859",
+   "status": "posted",
+   "posted_at": "2026-10-27T10:37:00-07:00",
+   "mentions_site": true
+  },
+  {
+   "thread_url": "https://x.com/NixonPerinchery/status/2115111280478761466",
+   "author": "@NixonPerinchery",
+   "reply_text": "good call on the $ being list price, people screenshot those like it's their actual bill. for codex folks, Codex Usage Tracker does something similar off the local session logs",
+   "date": "2026-10-27",
+   "run": "10:30",
+   "reply_url": "https://x.com/PickAPlugin/status/2115136007355941134",
+   "status": "posted",
+   "posted_at": "2026-10-27T10:39:00-07:00",
+   "mentions_site": false
+  },
+  {
+   "date": "2026-10-27",
+   "run": "15:30",
+   "thread_url": "https://x.com/richgel999/status/2114862983461458189",
+   "author": "@richgel999",
+   "reply_text": "native is so much nicer than the old http bridge hacks. does it hold up on bigger editor ops or does it still stall sometimes?",
+   "reply_url": "https://x.com/PickAPlugin/status/2115209958937837692",
+   "status": "posted",
+   "posted_at": "2026-10-27T15:32:00-07:00",
+   "mentions_site": false
+  },
+  {
+   "date": "2026-10-27",
+   "run": "15:30",
+   "thread_url": "https://x.com/sodi_trade/status/2115202238188810619",
+   "author": "@sodi_trade",
+   "reply_text": "per-agent keys with a daily cap is the part i'd actually use. one runaway loop and you find out the hard way otherwise lol",
+   "reply_url": "https://x.com/PickAPlugin/status/2115210527496442174",
+   "status": "posted",
+   "posted_at": "2026-10-27T15:34:00-07:00",
+   "mentions_site": false
+  },
+  {
+   "date": "2026-10-27",
+   "run": "15:30",
+   "thread_url": "https://x.com/ardent__dev/status/2115017927233843540",
+   "author": "@ardent__dev",
+   "reply_text": "building pickaplugin.com, basically a searchable list of codex/chatgpt plugins and mcp servers. 350+ in there so far, mostly so people stop rebuilding stuff that already exists",
+   "reply_url": "https://x.com/PickAPlugin/status/2115211038270632208",
+   "status": "posted",
+   "posted_at": "2026-10-27T15:36:00-07:00",
+   "mentions_site": true
+  },
+  {
+   "date": "2026-10-27",
+   "run": "15:30",
+   "thread_url": "https://x.com/telemetrydev/status/2115058733961125894",
+   "author": "@telemetrydev",
+   "reply_text": "the refund getting converted to cents twice is such a classic bug ngl. read-only is the right call too, wouldn't want an agent with write access poking around prod traces",
+   "reply_url": "https://x.com/PickAPlugin/status/2115211531457859594",
+   "status": "posted",
+   "posted_at": "2026-10-27T15:38:00-07:00",
+   "mentions_site": false
+  },
+  {
+   "date": "2026-10-27",
+   "run": "19:30",
+   "thread_url": "https://x.com/jestmaxxing/status/2115226811257020577",
+   "author": "@jestmaxxing",
+   "reply_text": "making it prove the work is the part most setups skip. does it check the tests actually cover the change or just that they ran green? that's where i've seen agents game it",
+   "reply_url": "https://x.com/PickAPlugin/status/2115271636844691678",
+   "status": "posted",
+   "posted_at": "2026-10-27T19:39:00-07:00",
+   "mentions_site": false
+  },
+  {
+   "date": "2026-10-27",
+   "run": "19:30",
+   "thread_url": "https://x.com/timwork_notes/status/2115027235346211237",
+   "author": "@timwork_notes",
+   "reply_text": "yikes. keying on session id when stateless mode literally has no session is rough. a hash of the token itself plus the tenant is the least i'd want there",
+   "reply_url": "https://x.com/PickAPlugin/status/2115272163406102896",
+   "status": "posted",
+   "posted_at": "2026-10-27T19:41:00-07:00",
+   "mentions_site": false
+  },
+  {
+   "date": "2026-10-27",
+   "run": "19:30",
+   "thread_url": "https://x.com/chebyte/status/2115200102990004379",
+   "author": "@chebyte",
+   "reply_text": "way better than the agent posting \"still building\" every 30 seconds lol. you should throw it on pickaplugin.com, listing is free",
+   "reply_url": "https://x.com/PickAPlugin/status/2115272683252588648",
+   "status": "posted",
+   "posted_at": "2026-10-27T19:50:00-07:00",
+   "mentions_site": true
+  },
+  {
+   "date": "2026-10-27",
+   "run": "19:30",
+   "thread_url": "https://x.com/MarcusSchuler/status/2115017014649500084",
+   "author": "@MarcusSchuler",
+   "reply_text": "625k extra tokens per task for no real gain is wild. feels like the big skill packs help on vague prompts and just add overhead once you know what you want",
+   "reply_url": "https://x.com/PickAPlugin/status/2115273204700705064",
+   "status": "posted",
+   "posted_at": "2026-10-27T19:59:00-07:00",
+   "mentions_site": false
+  }
+ ]
+}
