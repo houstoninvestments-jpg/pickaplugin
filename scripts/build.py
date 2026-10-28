@@ -175,7 +175,7 @@ def claimbox(p):
 def badgebox(p):
   pick=p["slug"] in PICKS; img=f'{SITE_URL}/badge/{p["slug"]}.svg'; url=f'{SITE_URL}/p/{p["slug"]}'
   md=f'[![{"Editor&#39;s Pick on PickAPlugin" if pick else "Listed on PickAPlugin"}]({img})]({url})'
-  return f'''<div class=box><span class=mono>Add a badge to your README</span><p><img src="../badge/{p["slug"]}.svg" alt="badge" height=20></p><p>Paste this into your README:</p><pre class=code>{md}</pre></div>'''
+  return f'''<div class=box><span class=mono>Add a badge to your README</span><p><img src="../badge/{p["slug"]}.svg" alt="badge" height=20></p><p>Paste this into your README:</p><pre class=code>{md}</pre><p><a href="../badge.html">More badge styles (light/dark, HTML) →</a></p></div>'''
 def badge_svg(label,value,color):
   lw=7*len(label)+12; vw=7*len(value)+12; w=lw+vw
   return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="20" role="img" aria-label="{e(label)}: {e(value)}"><title>{e(label)}: {e(value)}</title><rect width="{lw}" height="20" fill="#111"/><rect x="{lw}" width="{vw}" height="20" fill="{color}"/><g fill="#fff" font-family="Verdana,DejaVu Sans,sans-serif" font-size="11" text-anchor="middle"><text x="{lw/2}" y="14">{e(label)}</text><text x="{lw+vw/2}" y="14">{e(value)}</text></g></svg>'''
@@ -183,6 +183,25 @@ os.makedirs(D+"/badge",exist_ok=True)
 for p in P:
   pk=p["slug"] in PICKS
   open(f'{D}/badge/{p["slug"]}.svg',"w").write(badge_svg("PickAPlugin","Editor's Pick" if pk else "Listed","#1f3a8a" if pk else "#5d584f"))
+def badge_svg2(value,bg,fg,acc,line):
+  lw=88; vw=7*len(value)+16; w=lw+vw
+  return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="20" role="img" aria-label="PickAPlugin: {e(value)}"><title>PickAPlugin: {e(value)}</title><rect x=".5" y=".5" width="{w-1}" height="19" rx="3" fill="{bg}" stroke="{line}"/><rect x="{lw}" y="1" width="{vw-1}" height="18" fill="{acc}" rx="0"/><g font-family="Verdana,DejaVu Sans,sans-serif" font-size="11" text-anchor="middle"><text x="{lw/2}" y="14" fill="{fg}">PickAPlugin</text><text x="{lw+vw/2}" y="14" fill="#fff">{e(value)}</text></g></svg>'''
+open(D+"/badge/listed-light.svg","w").write(badge_svg2("Listed","#ffffff","#111111","#1f3a8a","#d4d0c8"))
+open(D+"/badge/listed-dark.svg","w").write(badge_svg2("Listed","#111111","#f5f3ee","#3b5bdb","#333333"))
+_ex=next((p for p in P if p["slug"] in ("context7",)),P[0]); _xs=_ex["slug"]
+def _pre(t): return f'<pre class=code>{e(t)}</pre>'
+open(D+"/badge.html","w").write(layout("Add a 'Listed on PickAPlugin' badge — PickAPlugin",f"""<div class=prose><span class=mono style="color:var(--acc)">Free, for listed plugins</span><h1>Add a badge</h1>
+<p style="font-size:19px">If your plugin or MCP server is on PickAPlugin, you can show it in your README or on your site. It's free, optional, and just links to your listing.</p>
+<h3>Light</h3><p><img src="badge/listed-light.svg" alt="Listed on PickAPlugin" height=20></p>
+<h3>Dark</h3><p style="background:#111;padding:10px;display:inline-block"><img src="badge/listed-dark.svg" alt="Listed on PickAPlugin" height=20></p>
+<h3>Find your listing URL</h3><p>Every listing lives at <code>{SITE_URL}/p/&lt;your-slug&gt;</code>. For example, {e(_ex["name"])} is at <a href="p/{_xs}.html">{SITE_URL}/p/{_xs}</a>. Search the <a href="index.html#catalog">catalog</a> to find yours. Not listed yet? <a href="submit.html">Submit it free</a>.</p>
+<p>Your listing page also has a ready-made snippet with your slug filled in.</p>
+<h3>Markdown (README)</h3>{_pre(f"[![Listed on PickAPlugin]({SITE_URL}/badge/listed-light.svg)]({SITE_URL}/p/{_xs})")}
+<p>Dark version:</p>{_pre(f"[![Listed on PickAPlugin]({SITE_URL}/badge/listed-dark.svg)]({SITE_URL}/p/{_xs})")}
+<h3>HTML (your site)</h3>{_pre(f'<a href="{SITE_URL}/p/{_xs}"><img src="{SITE_URL}/badge/listed-light.svg" alt="Listed on PickAPlugin" height="20"></a>')}
+<p>Auto light/dark on GitHub:</p>{_pre(f'<a href="{SITE_URL}/p/{_xs}"><picture><source media="(prefers-color-scheme: dark)" srcset="{SITE_URL}/badge/listed-dark.svg"><img src="{SITE_URL}/badge/listed-light.svg" alt="Listed on PickAPlugin" height="20"></picture></a>')}
+<p>Rather link to the homepage? Swap the link for <code>{SITE_URL}</code>.</p>
+<p class=mono>Swap <code>{_xs}</code> for your own slug. The badge only says you're listed. It isn't a review or a ranking.</p></div>""",0,"Free 'Listed on PickAPlugin' badge for your README or site, in light and dark, with copy-paste Markdown and HTML."))
 open(D+"/badge/listed.svg","w").write(badge_svg("PickAPlugin","Listed","#5d584f")); open(D+"/badge/editors-pick.svg","w").write(badge_svg("PickAPlugin","Editor's Pick","#1f3a8a"))
 _msg=lambda t,h,body: open(f"{D}/{t}.html","w").write(layout(h+" — PickAPlugin",f'<div class=prose><h1>{h}</h1>{body}<p><a href="index.html">← Back to the catalog</a></p></div>'))
 _msg("claimed","Thanks, we got your claim",'''<p style="font-size:19px">We'll verify that you own or maintain the repo, usually by checking that your GitHub handle matches the project's owner or contributors, then apply any corrections and reply by email.</p>
@@ -237,6 +256,7 @@ open(D+"/submit.html","w").write(layout("Submit a plugin — PickAPlugin",f"""<d
 <p>Listing costs nothing. We re-read our public sources every day, so if your plugin is public and in a list like <a href="https://github.com/hashgraph-online/awesome-codex-plugins">awesome-codex-plugins</a>, it'll show up on its own.</p>
 <p>Not in a list yet? Email <a href="mailto:{EMAIL}?subject=Submit%20a%20plugin">{EMAIL}</a> with the repo link and one sentence on what it does. We read every one.</p>
 <p>Got an MCP server too? Here's <a href="guides/where-to-submit-mcp-server.html">every other place to submit it</a>.</p>
+<p>Already listed? <a href="badge.html">Add a badge</a> to your README.</p>
 <h3>In a hurry?</h3><p class=price>$19 <span class=mono>one-time</span></p><p>Expedited review: a decision within 24 hours. Paying buys speed, not a yes — if we pass, you get a refund.</p>{pay("expedited_review","Expedited review","$19")}</div>"""))
 stat="".join(f'<span class=taken>Slot {k+1:02d}<br><b>{e(p["name"])}</b></span>' for k,p in enumerate(FEAT))+"".join(f'<span>Slot {len(FEAT)+k+1:02d}<br><b>Open</b></span>' for k in range(OPEN))
 avail=f"{OPEN} of 3 open right now" if OPEN else "All 3 slots are taken right now"
