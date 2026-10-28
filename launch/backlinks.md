@@ -77,3 +77,47 @@ Hold for a planned big day (needs prep, not routine drip): Product Hunt, Hacker 
 |---|---|---|---|---|
 | 1 | Hugging Face | 2026-10-27 | Blocked, needs Aaron: signup is email+password only (no SSO on free tier). Needs a vault-generated login saved in chat first. No account created. | none |
 | 2 | Fazier | 2026-10-27 | Blocked, needs Aaron: only "Continue with Google" (box Google session is Aaron's personal houstoninvestments@gmail.com, not used) or email+password. Needs a vault-generated login saved in chat. Free tier is reviewed within 30 days and requires a Fazier backlink/badge on homepage or footer (embed code only visible after login). No account created. | none |
+
+## Batch 4 (from Aaron, Oct 28): AI/dev first, then general. Free options only; re-check price at signup
+Already done/queued elsewhere, so not repeated: PeerPush, TinyLaunch, StartupBase, SaaSHub, Uneed, MicroLaunch, Launch Llama, SideProjectors, Smol Launch. What Launched Today was skipped before (HTTP 402).
+Skipped as paid-only (as far as we know): There's An AI For That (paid submission), Toolify.ai (paid submission). Left out as spammy: activesearchresults, linkcentre, viesearch, brownbook.
+"(?)" = pricing not confirmed yet, check at signup.
+
+| # | Site | Submit URL | Free/paid | Notes |
+|---|---|---|---|---|
+| M1 | Official MCP Registry | https://registry.modelcontextprotocol.io | Free | Only for real MCP servers (mcp-publisher CLI). PickAPlugin has none, so skip unless we ship one |
+| M2 | MCP Market | https://mcpmarket.com/submit | Free, $29 optional | Takes a GitHub repo URL. Same "only if we ship a server" caveat |
+| M3 | mcpservers.org | https://mcpservers.org/submit | Free (2-wk review), $39 optional | Same caveat |
+| M4 | mcp.so | https://mcp.so/submit | Free, $39 optional | Has an "AI Product" type, so PickAPlugin may fit as a product |
+| M5 | Glama | https://glama.ai/mcp/servers | Free | Server index; same caveat |
+| M6 | cursor.directory | https://cursor.directory/mcp | Free | Sign-in required; same caveat |
+| M7 | LobeHub MCP | https://lobehub.com/mcp | Free | Same caveat |
+| D1 | StackShare | https://stackshare.io | Free | Dev tool profile |
+| D2 | twelve.tools | https://twelve.tools | Free (?) | AI tools directory |
+| D3 | ToolPilot | https://www.toolpilot.ai | Free (?) | AI tools directory |
+| D4 | Futurepedia/FutureTools | https://www.futuretools.io/submit-a-tool | Free (?) | Manual review, may not be picked |
+| D5 | Magicbox.tools | https://magicbox.tools | Free (?) | AI tools |
+| D6 | Toolfolio | https://toolfolio.io | Free (?) | AI tools |
+| D7 | GoodAITools | https://goodaitools.com | Free (?) | AI tools |
+| D8 | AI Directories (aidirectori.es) | https://aidirectori.es | Free (?) | Directory of AI directories |
+| D9 | CodeHype | https://codehype.ai | Free (?) | AI/dev |
+| D10 | Sidebar.io | https://sidebar.io | Free | Design/dev link submission; submit the research report, not the homepage |
+| D11 | code.market | https://code.market | (?) | Code marketplace; may not fit a directory site, check first |
+| D12 | Dodo Payments index | https://index.dodopayments.com | Free (?) | |
+| G1 | Crunchbase | https://www.crunchbase.com | Free | Company profile |
+| G2 | G2 | https://www.g2.com/products/new | Free | Product listing |
+| G3 | Download.com (CNET) | https://download.cnet.com | Free (?) | Software-focused; only fits if we list the browser extension later |
+| G4 | YourStory | https://yourstory.com | Free (?) | India-focused startup profile |
+| G5 | Startup Fame (startupfa.me) | https://startupfa.me | Free (?) | Not the same as startupfa.st in list 2 |
+| G6 | CompareCamp | https://comparecamp.com | Free (?) | |
+| G7 | Startups Lab | https://startupslab.site | Free (?) | |
+| G8 | HotVsNot | https://hotvsnot.com | Free (?) | |
+| G9 | MarketingDB | https://marketingdb.live | Free (?) | |
+| G10 | Startup Stash | https://startupstash.com | Free (?) | |
+| G11 | BetterLaunch | https://betterlaunch.co | Free (?) | |
+| G12 | Outbid.lol | https://outbid.lol | (?) | Bid-based placement; only if a free tier exists |
+| G13 | TrustMRR | https://trustmrr.com | Free (?) | Needs a Stripe revenue connection, so ask Aaron first |
+| G14 | Gravatar | https://gravatar.com | Free | Profile with links for hello@pickaplugin.com |
+| G15 | All Top Startups | https://alltopstartups.com | Free (?) | |
+| G16 | Starter Story | https://www.starterstory.com | Free (?) | Founder interview pitch, not a form listing |
+| G17 | FeedMyStartup | https://feedmystartup.com | Free (?) | |
