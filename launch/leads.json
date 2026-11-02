@@ -469,7 +469,7 @@
   "score": 4.3,
   "source": "x",
   "post": "https://x.com/psyccotoxicc/status/2115005876662645230",
-  "catalog": "added as free listing",
+  "catalog": "added as free listing (re-added 2026-11-02; earlier add was lost before commit)",
   "note": "Already selling founder seats ($99 once), so used to paying for distribution. Best fit."
  },
  {
@@ -492,7 +492,7 @@
   "score": 3.7,
   "source": "x",
   "post": "https://x.com/heykadirhan/status/2115251671777345903",
-  "catalog": "added as free listing",
+  "catalog": "added as free listing (re-added 2026-11-02; earlier add was lost before commit)",
   "note": "Indie hacker, tiny audience, just open-sourced the engine."
  },
  {
@@ -515,7 +515,7 @@
   "score": 3.0,
   "source": "x",
   "post": "https://x.com/StarFinanceRh/status/2114972262134960417",
-  "catalog": "added as free listing",
+  "catalog": "not added: no description source found (site has no metadata)",
   "note": "20 likes on launch post; no email, X only."
  },
  {
@@ -538,7 +538,7 @@
   "score": 3.3,
   "source": "x",
   "post": "https://x.com/brookservers/status/2115605866032345235",
-  "catalog": "added as free listing",
+  "catalog": "added as free listing (re-added 2026-11-02; earlier add was lost before commit)",
   "note": "Live on Product Hunt Oct 28; site but no public email."
  },
  {
@@ -561,7 +561,7 @@
   "score": 3.7,
   "source": "x",
   "post": "https://x.com/gpaulbagetti/status/2115473675667587318",
-  "catalog": "added as free listing",
+  "catalog": "added as free listing (re-added 2026-11-02; earlier add was lost before commit)",
   "note": "Brazilian data company (site in Portuguese); funded team, could pay."
  },
  {
@@ -584,7 +584,7 @@
   "score": 3.3,
   "source": "github",
   "post": null,
-  "catalog": "added as free listing",
+  "catalog": "added as free listing (re-added 2026-11-02; earlier add was lost before commit)",
   "note": "Repo created Oct 29, has a product site."
  },
  {
@@ -607,7 +607,7 @@
   "score": 3.7,
   "source": "github",
   "post": null,
-  "catalog": "added as free listing",
+  "catalog": "added as free listing (re-added 2026-11-02; earlier add was lost before commit)",
   "note": "Commercial print-on-demand company; works with ChatGPT."
  },
  {
@@ -630,7 +630,7 @@
   "score": 3.7,
   "source": "github",
   "post": null,
-  "catalog": "added as free listing",
+  "catalog": "added as free listing (re-added 2026-11-02; earlier add was lost before commit)",
   "note": "Brand-new Codex plugin from a commercial product."
  },
  {
@@ -653,7 +653,7 @@
   "score": 4.0,
   "source": "github",
   "post": null,
-  "catalog": "added as free listing",
+  "catalog": "added as free listing (re-added 2026-11-02; earlier add was lost before commit)",
   "note": "Org behind it has a site and email."
  },
  {
@@ -676,7 +676,237 @@
   "score": 3.3,
   "source": "github",
   "post": null,
-  "catalog": "added as free listing",
+  "catalog": "added as free listing (re-added 2026-11-02; earlier add was lost before commit)",
   "note": "Fast-growing hobby repo, no contact; unlikely to pay."
+ },
+ {
+  "found": "2026-11-02",
+  "maker": "GitHubCard",
+  "plugin": "GitHubCard MCP",
+  "slug": "githubcard-mcp",
+  "repo": "https://github.com/ghcardhq/githubcard-mcp",
+  "site": "https://githubcard.com",
+  "email": "hello@githubcard.com",
+  "x": null,
+  "created": null,
+  "pushed": "2026-11-01",
+  "stars": 15,
+  "scores": {
+   "recency": 5,
+   "traction": 3,
+   "contact": 5
+  },
+  "score": 4.3,
+  "source": "github",
+  "post": null,
+  "catalog": "added as free listing",
+  "note": "Freemium product ('free to start') with an MCP add-on; already monetizing."
+ },
+ {
+  "found": "2026-11-02",
+  "maker": "Thunder Client (Ranga Vadhineni)",
+  "plugin": "Thunder Client MCP Server v2",
+  "slug": "thunder-client-mcp",
+  "repo": null,
+  "site": "https://www.thunderclient.com",
+  "email": null,
+  "x": "@ranga_vadhineni",
+  "created": null,
+  "pushed": "2026-11-01",
+  "stars": null,
+  "scores": {
+   "recency": 5,
+   "traction": 4,
+   "contact": 3
+  },
+  "score": 4.0,
+  "source": "x",
+  "post": "https://x.com/ranga_vadhineni/status/2116998718813790519",
+  "catalog": "added as free listing",
+  "note": "Well-known paid VS Code API client; launch post itself got little reach. No public email found, reach via X or site."
+ },
+ {
+  "found": "2026-11-02",
+  "maker": "Mitigant",
+  "plugin": "Mitigant MCP Server",
+  "slug": "mitigant-mcp",
+  "repo": null,
+  "site": "https://mitigant.io/en/mcp",
+  "email": "contact@mitigant.io",
+  "x": "@run2obtain",
+  "created": null,
+  "pushed": "2026-11-01",
+  "stars": null,
+  "scores": {
+   "recency": 5,
+   "traction": 2,
+   "contact": 5
+  },
+  "score": 4.0,
+  "source": "x",
+  "post": "https://x.com/run2obtain/status/2116902195303965081",
+  "catalog": "added as free listing",
+  "note": "Enterprise cloud-security company, budget likely; launch post small."
+ },
+ {
+  "found": "2026-11-02",
+  "maker": "Yash Agarwal",
+  "plugin": "Excalidraw Boards",
+  "slug": "excalidraw-boards",
+  "repo": "https://github.com/yashagw/excalidraw-boards",
+  "site": "https://yashagw.github.io/",
+  "email": "Yash.ag@outlook.com",
+  "x": null,
+  "created": null,
+  "pushed": "2026-10-30",
+  "stars": 20,
+  "scores": {
+   "recency": 4,
+   "traction": 3,
+   "contact": 5
+  },
+  "score": 4.0,
+  "source": "github",
+  "post": null,
+  "catalog": "added as free listing",
+  "note": "Hobby/open-source project; unlikely to pay."
+ },
+ {
+  "found": "2026-11-02",
+  "maker": "Mancer",
+  "plugin": "Mancer MCP Server + SDK",
+  "slug": "mancer-mcp",
+  "repo": "https://github.com/blockhash-xyz/mancer-sdk",
+  "site": "https://mancer.xyz",
+  "email": null,
+  "x": "@MancerXYZ",
+  "created": null,
+  "pushed": "2026-11-02",
+  "stars": 0,
+  "scores": {
+   "recency": 5,
+   "traction": 4,
+   "contact": 3
+  },
+  "score": 4.0,
+  "source": "x",
+  "post": "https://x.com/MancerXYZ/status/2116988200157626692",
+  "catalog": "added as free listing",
+  "note": "Crypto trading app (8.8k followers, 79 likes on launch). Has money but crypto audience fit is so-so."
+ },
+ {
+  "found": "2026-11-02",
+  "maker": "Drew (Calorie Cub)",
+  "plugin": "Calorie Cub",
+  "slug": "calorie-cub",
+  "repo": null,
+  "site": "https://caloriecub.com",
+  "email": "aj@intuicodigital.com",
+  "x": "@14hous",
+  "created": null,
+  "pushed": "2026-10-31",
+  "stars": null,
+  "scores": {
+   "recency": 4,
+   "traction": 2,
+   "contact": 5
+  },
+  "score": 3.7,
+  "source": "x",
+  "post": "https://x.com/14hous/status/2116626194556649801",
+  "catalog": "added as free listing",
+  "note": "Consumer app built MCP-first; email is the agency on the site footer."
+ },
+ {
+  "found": "2026-11-02",
+  "maker": "Waren Gonzaga",
+  "plugin": "Suno Music Producer",
+  "slug": "suno-music-producer",
+  "repo": "https://github.com/warengonzaga/suno-music-producer",
+  "site": "https://waren.build",
+  "email": "hey@warenmail.com",
+  "x": "@warengonzaga",
+  "created": null,
+  "pushed": "2026-11-02",
+  "stars": 2,
+  "scores": {
+   "recency": 5,
+   "traction": 1,
+   "contact": 5
+  },
+  "score": 3.7,
+  "source": "github",
+  "post": null,
+  "catalog": "added as free listing",
+  "note": "Brand-new Codex plugin, tiny traction."
+ },
+ {
+  "found": "2026-11-02",
+  "maker": "Akari Sora / Sam Drake",
+  "plugin": "synology-nas-cli",
+  "slug": "synology-nas-cli",
+  "repo": "https://github.com/akari-sora/synology-nas-cli",
+  "site": "https://gitlab.com/aa22396584/synology-nas-cli",
+  "email": null,
+  "x": "@l1s_ai",
+  "created": null,
+  "pushed": "2026-11-01",
+  "stars": 76,
+  "scores": {
+   "recency": 4,
+   "traction": 4,
+   "contact": 2
+  },
+  "score": 3.3,
+  "source": "github",
+  "post": "https://x.com/l1s_ai/status/2116585909806313484",
+  "catalog": "added as free listing",
+  "note": "Fastest-growing repo this batch, but a free security tool with no contact; unlikely to pay."
+ },
+ {
+  "found": "2026-11-02",
+  "maker": "Zipline",
+  "plugin": "Zipline",
+  "slug": "zipline-mcp",
+  "repo": null,
+  "site": "https://zipline.li",
+  "email": "info@zipline.li",
+  "x": "@ziplinemcp",
+  "created": null,
+  "pushed": "2026-10-31",
+  "stars": null,
+  "scores": {
+   "recency": 4,
+   "traction": 1,
+   "contact": 5
+  },
+  "score": 3.3,
+  "source": "x",
+  "post": "https://x.com/ziplinemcp/status/2116553491707769334",
+  "catalog": "added as free listing",
+  "note": "New startup, 1 follower; distribution-hungry."
+ },
+ {
+  "found": "2026-11-02",
+  "maker": "uaghazada",
+  "plugin": "GotEmail MCP",
+  "slug": "gotemail-mcp",
+  "repo": null,
+  "site": null,
+  "email": null,
+  "x": "@uaghazadae",
+  "created": null,
+  "pushed": "2026-11-02",
+  "stars": null,
+  "scores": {
+   "recency": 5,
+   "traction": 3,
+   "contact": 1
+  },
+  "score": 3.0,
+  "source": "x",
+  "post": "https://x.com/uaghazadae/status/2117233451552149857",
+  "catalog": "not added: no public product page found yet",
+  "note": "Mac email app shipped MCP in v0.9.8; 21 likes. Couldn't find a product page, so not catalogued."
  }
 ]

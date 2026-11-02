@@ -1013,6 +1013,19 @@
   "install": "/plugin marketplace add hyhmrright/brooks-lint"
  },
  {
+  "slug": "anomaly-browse",
+  "name": "browse",
+  "description": "Lets your AI agents use your real, logged-in browser through an MCP server and a Chromium extension.",
+  "maker": "Anomaly",
+  "link": "https://github.com/anomalyco/browse",
+  "category": "Agent Workflows",
+  "source": "editor-added",
+  "source_url": "https://github.com/anomalyco/browse",
+  "source_section": "Editor-added",
+  "first_seen": "2026-10-29",
+  "featured": false
+ },
+ {
   "slug": "build-remote-agent",
   "name": "Build Remote Agent",
   "description": "Pair a phone as spectator to a local Codex session via gbr-agent (QR / 8-char) and attach at 127.0.0.1:8788 or gbr-mcp.",
@@ -1111,6 +1124,19 @@
   "license": "MIT",
   "language": "JavaScript",
   "install": null
+ },
+ {
+  "slug": "calorie-cub",
+  "name": "Calorie Cub",
+  "description": "Agent-first calorie tracking with an API and MCP server: log meals by chatting with Claude, ChatGPT or any MCP client.",
+  "maker": "Calorie Cub",
+  "link": "https://caloriecub.com",
+  "category": "Industry Tools",
+  "source": "editor-added",
+  "source_url": "https://caloriecub.com",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-02",
+  "featured": false
  },
  {
   "slug": "canonry",
@@ -3059,6 +3085,19 @@
   "install": "codex plugin marketplace add daniel3303/stock-market-mcp-server"
  },
  {
+  "slug": "erathos-mcp",
+  "name": "Erathos MCP",
+  "description": "MCP server for Erathos, a data-ingestion platform that connects 100+ sources to your data warehouse.",
+  "maker": "Erathos",
+  "link": "https://erathos.com",
+  "category": "Data & Backend",
+  "source": "editor-added",
+  "source_url": "https://erathos.com",
+  "source_section": "Editor-added",
+  "first_seen": "2026-10-29",
+  "featured": false
+ },
+ {
   "slug": "espresso",
   "name": "Espresso",
   "description": "Concise, evidence-preserving output with bundled Ponytail, for Claude Code, Codex, Pi and OMP.",
@@ -3097,6 +3136,19 @@
   "license": "MIT",
   "language": "Shell",
   "install": "codex plugin marketplace add \\"
+ },
+ {
+  "slug": "excalidraw-boards",
+  "name": "Excalidraw Boards",
+  "description": "Self-hosted Excalidraw with boards in folders saved on your server, plus an MCP server so AI agents can draw on them.",
+  "maker": "Yash Agarwal",
+  "link": "https://github.com/yashagw/excalidraw-boards",
+  "category": "Design & Frontend",
+  "source": "editor-added",
+  "source_url": "https://github.com/yashagw/excalidraw-boards",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-02",
+  "featured": false
  },
  {
   "slug": "exotic-car-rental-skills",
@@ -3392,6 +3444,19 @@
   "install": "npx skills add SamurAIGPT/Generative-Media-Skills --all"
  },
  {
+  "slug": "gguf-neuron-explorer",
+  "name": "GGUF Neuron Explorer",
+  "description": "Find, rank and steer MLP neurons of GGUF models on llama.cpp, export control vectors, with a 3D web UI and an MCP server.",
+  "maker": "balaena01",
+  "link": "https://github.com/balaena01/gguf-neuron-explorer",
+  "category": "Data & Backend",
+  "source": "editor-added",
+  "source_url": "https://github.com/balaena01/gguf-neuron-explorer",
+  "source_section": "Editor-added",
+  "first_seen": "2026-10-29",
+  "featured": false
+ },
+ {
   "slug": "gh-project",
   "name": "GH Project",
   "description": "Create GitHub repositories from Codex with inferred defaults, native menus, explicit confirmation, and deterministic local cloning.",
@@ -3410,6 +3475,19 @@
   "license": "MIT",
   "language": "HTML",
   "install": null
+ },
+ {
+  "slug": "githubcard-mcp",
+  "name": "GitHubCard MCP",
+  "description": "Create GitHub profile and repo cards from Claude, Cursor, VS Code and other AI agents.",
+  "maker": "GitHubCard",
+  "link": "https://github.com/ghcardhq/githubcard-mcp",
+  "category": "Design & Frontend",
+  "source": "editor-added",
+  "source_url": "https://github.com/ghcardhq/githubcard-mcp",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-02",
+  "featured": false
  },
  {
   "slug": "goal-progress",
@@ -3592,6 +3670,19 @@
   "install": null
  },
  {
+  "slug": "hoplix-mcp",
+  "name": "Hoplix Print-on-Demand MCP",
+  "description": "Remote OAuth MCP server for Hoplix print-on-demand, usable from Claude, ChatGPT and any MCP client.",
+  "maker": "Hoplix",
+  "link": "https://github.com/hoplix/hoplix-print-on-demand-mcp",
+  "category": "Industry Tools",
+  "source": "editor-added",
+  "source_url": "https://github.com/hoplix/hoplix-print-on-demand-mcp",
+  "source_section": "Editor-added",
+  "first_seen": "2026-10-29",
+  "featured": false
+ },
+ {
   "slug": "hotl-plugin",
   "name": "HOTL Plugin",
   "description": "Human-on-the-Loop AI coding workflow plugin for Codex, Claude Code, and Cline with structured planning, review, and verification guardrails.",
@@ -3610,6 +3701,19 @@
   "license": "MIT",
   "language": "Shell",
   "install": "/plugin marketplace add yimwoo/hotl-plugin"
+ },
+ {
+  "slug": "hronaut-codex",
+  "name": "Hronaut for Codex",
+  "description": "Codex plugin for Hronaut, a visible desktop browser for coding agents with a separate workspace per project. Adds its MCP server and agent skill.",
+  "maker": "Hronaut",
+  "link": "https://github.com/hronaut/hronaut-codex-plugin",
+  "category": "Agent Workflows",
+  "source": "editor-added",
+  "source_url": "https://github.com/hronaut/hronaut-codex-plugin",
+  "source_section": "Editor-added",
+  "first_seen": "2026-10-29",
+  "featured": false
  },
  {
   "slug": "image-media-skills",
@@ -4385,6 +4489,19 @@
   "featured": false
  },
  {
+  "slug": "mancer-mcp",
+  "name": "Mancer MCP Server",
+  "description": "Open-source MCP server and SDK that give an agent a Robinhood Chain wallet to swap tokens and place orders, with every trade returned ready to sign.",
+  "maker": "Mancer",
+  "link": "https://github.com/blockhash-xyz/mancer-sdk",
+  "category": "Industry Tools",
+  "source": "editor-added",
+  "source_url": "https://github.com/blockhash-xyz/mancer-sdk",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-02",
+  "featured": false
+ },
+ {
   "slug": "maqami-travel",
   "name": "MAQAMI Travel",
   "description": "Search hotels (3M+ hotels) and flights worldwide, read hotel details, then get a secure checkout link on book.maqami.co through the hosted MAQAMI MCP server (no API key), with a booking skill that confirms with you before holding a rate.",
@@ -4503,6 +4620,19 @@
   "license": "MIT",
   "language": "Python",
   "install": "claude plugin marketplace add MetaMask/agent-skills"
+ },
+ {
+  "slug": "mitigant-mcp",
+  "name": "Mitigant MCP Server",
+  "description": "Lets AI agents run curated, reversible cloud attacks mapped to MITRE ATT&CK, with attack-lifecycle management and reporting.",
+  "maker": "Mitigant",
+  "link": "https://mitigant.io/en/mcp",
+  "category": "Security & Governance",
+  "source": "editor-added",
+  "source_url": "https://mitigant.io/en/mcp",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-02",
+  "featured": false
  },
  {
   "slug": "ml-pipeline",
@@ -5438,6 +5568,19 @@
   "install": null
  },
  {
+  "slug": "ramback",
+  "name": "Ramback",
+  "description": "Free Mac menu bar app that finds the dev servers Claude Code, Codex and Cursor left running, plus forgotten simulators and Gradle daemons, and stops them.",
+  "maker": "Kadirhan Yilmaz",
+  "link": "https://ramback.app",
+  "category": "Deploy & DevOps",
+  "source": "editor-added",
+  "source_url": "https://ramback.app",
+  "source_section": "Editor-added",
+  "first_seen": "2026-10-29",
+  "featured": false
+ },
+ {
   "slug": "read-image",
   "name": "Read Image",
   "description": "Read local images, videos, web pages, and Windows screenshots through Doubao, GLM, or Qwen-compatible vision APIs.",
@@ -5456,6 +5599,19 @@
   "license": "MIT",
   "language": "Python",
   "install": null
+ },
+ {
+  "slug": "readme-score",
+  "name": "README Score",
+  "description": "Scores your README out of 100 and suggests a fix for every miss.",
+  "maker": "flisk-sh",
+  "link": "https://github.com/flisk-sh/readme-score",
+  "category": "Docs, Content & SEO",
+  "source": "editor-added",
+  "source_url": "https://github.com/flisk-sh/readme-score",
+  "source_section": "Editor-added",
+  "first_seen": "2026-10-29",
+  "featured": false
  },
  {
   "slug": "receipts-by-nueton",
@@ -6511,6 +6667,19 @@
   "install": null
  },
  {
+  "slug": "suno-music-producer",
+  "name": "Suno Music Producer",
+  "description": "Codex plugin that bundles the Suno MCP server and a reusable skill for producing songs and covers.",
+  "maker": "Waren Gonzaga",
+  "link": "https://github.com/warengonzaga/suno-music-producer",
+  "category": "Docs, Content & SEO",
+  "source": "editor-added",
+  "source_url": "https://github.com/warengonzaga/suno-music-producer",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-02",
+  "featured": false
+ },
+ {
   "slug": "supercov",
   "name": "Supercov",
   "description": "Coverage, security and code quality for coding agents.",
@@ -6611,6 +6780,19 @@
   "install": null
  },
  {
+  "slug": "synology-nas-cli",
+  "name": "synology-nas-cli",
+  "description": "Zero-dependency Python CLI and MCP server for Synology DSM 7: security audits, one-command config fixes and alerts, usable from Claude Code, Codex and Cursor.",
+  "maker": "akari-sora",
+  "link": "https://github.com/akari-sora/synology-nas-cli",
+  "category": "Security & Governance",
+  "source": "editor-added",
+  "source_url": "https://github.com/akari-sora/synology-nas-cli",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-02",
+  "featured": false
+ },
+ {
   "slug": "synta-mcp",
   "name": "Synta MCP",
   "description": "Build, edit, validate, and self-heal n8n workflows with Synta MCP tools and Codex-ready workflow guidance.",
@@ -6669,6 +6851,19 @@
   "license": "MIT",
   "language": null,
   "install": null
+ },
+ {
+  "slug": "tactile-ui",
+  "name": "Tactile UI",
+  "description": "UI components that work like real hardware: 39 objects, 55 page sections, 210 kit parts and 1,100+ ready-made examples for React, Vue, Svelte or plain JS, available as a Claude connector.",
+  "maker": "Ciprian Titire",
+  "link": "https://tactileui.dev",
+  "category": "Design & Frontend",
+  "source": "editor-added",
+  "source_url": "https://tactileui.dev",
+  "source_section": "Editor-added",
+  "first_seen": "2026-10-29",
+  "featured": false
  },
  {
   "slug": "tailtest",
@@ -6851,6 +7046,19 @@
   "install": null
  },
  {
+  "slug": "thunder-client-mcp",
+  "name": "Thunder Client MCP Server",
+  "description": "Build requests, run tests and fix failures in your Thunder Client collections from Claude Code, GitHub Copilot, Cursor and Codex, with a one-command setup.",
+  "maker": "Thunder Client",
+  "link": "https://www.thunderclient.com/blog/thunder-client-mcp-server-v2",
+  "category": "Review & Testing",
+  "source": "editor-added",
+  "source_url": "https://www.thunderclient.com/blog/thunder-client-mcp-server-v2",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-02",
+  "featured": false
+ },
+ {
   "slug": "tmcra-local-memory",
   "name": "TMCRA Local Memory",
   "description": "Owner-local memory for Codex that recalls user and project evidence before each answer and carries source-attributed project context across sessions and supported agent tools.",
@@ -6982,6 +7190,19 @@
   "license": "MIT",
   "language": "Shell",
   "install": "npx skills add dragon1086/claude-skills -y --agent claude-code"
+ },
+ {
+  "slug": "topopt",
+  "name": "topopt",
+  "description": "Topology optimization for 3D printing as an MCP server for Claude, Codex, Cursor and other agents: loads and regions in, a lighter printable STL out.",
+  "maker": "Charter Group",
+  "link": "https://github.com/chartergroup/topopt",
+  "category": "Industry Tools",
+  "source": "editor-added",
+  "source_url": "https://github.com/chartergroup/topopt",
+  "source_section": "Editor-added",
+  "first_seen": "2026-10-29",
+  "featured": false
  },
  {
   "slug": "tree-ring-memory",
@@ -7722,6 +7943,19 @@
   "license": "Apache-2.0",
   "language": "TypeScript",
   "install": "codex plugin marketplace add https://github.com/Sandyzzx/codex-zcode-bridge.git --ref codex-zcode-bridge-v1.3.0"
+ },
+ {
+  "slug": "zipline-mcp",
+  "name": "Zipline",
+  "description": "MCP platform where Claude, ChatGPT, Grok and Gemini share one conversation, pick up tasks in their own apps and hand off to each other.",
+  "maker": "Zipline",
+  "link": "https://zipline.li",
+  "category": "Agent Workflows",
+  "source": "editor-added",
+  "source_url": "https://zipline.li",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-02",
+  "featured": false
  },
  {
   "slug": "zotero-research-tools",

@@ -115,3 +115,41 @@ Saw you open-sourced Ramback's engine. Letting Claude Code check what's eating R
 If you want more eyes on it, a featured spot is $49/mo and keeps it near the top of the DevOps category. If not, no worries, the listing's free for good. Let me know if anything needs fixing.
 
 Aaron
+
+## 2026-11-02
+
+### 1. GitHubCard, GitHubCard MCP
+To: hello@githubcard.com
+Subject: GitHubCard MCP is on PickAPlugin
+
+Hey GitHubCard folks,
+
+Making profile and repo cards straight from Claude or Cursor is a fun one, so I added the GitHubCard MCP server to PickAPlugin (a directory of Codex and ChatGPT plugins and MCP servers) as a free listing: https://pickaplugin.com/p/githubcard-mcp
+
+If you want more eyes on it, there's a featured spot for $49/mo that keeps it near the top of the homepage and the Design & Frontend category. Totally optional, the free listing stays either way. If anything on the page is off, just reply and I'll fix it.
+
+Aaron
+
+### 2. Mitigant, Mitigant MCP Server
+To: contact@mitigant.io
+Subject: Mitigant MCP Server is listed on PickAPlugin
+
+Hi Mitigant team,
+
+Saw the MCP server launch. Letting agents run reversible, ATT&CK-mapped cloud attacks is a pretty different take from the usual scanners. I put it on PickAPlugin as a free listing: https://pickaplugin.com/p/mitigant-mcp
+
+We also have a featured spot ($49/mo) that pins it near the top of the homepage and the Security & Governance category, if reaching people who are wiring MCP servers into their agents is useful. No pressure. Happy to reword the description if you'd put it differently.
+
+Aaron
+
+### 3. Thunder Client, MCP Server v2
+To: (no public email found; reach @ranga_vadhineni on X or the Thunder Client site)
+Subject: Thunder Client MCP Server on PickAPlugin
+
+Hey Ranga,
+
+Congrats on MCP Server v2. Running Thunder Client collections and fixing failing tests from Claude Code or Codex is really handy. It's now on PickAPlugin as a free listing: https://pickaplugin.com/p/thunder-client-mcp
+
+If you want it in front of more people, a featured spot is $49/mo and keeps it near the top of the Review & Testing category. If not, no worries, the listing's free for good. Let me know if anything needs fixing.
+
+Aaron
