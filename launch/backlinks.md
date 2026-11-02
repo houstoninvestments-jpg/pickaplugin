@@ -77,6 +77,10 @@ Hold for a planned big day (needs prep, not routine drip): Product Hunt, Hacker 
 |---|---|---|---|---|
 | 1 | Hugging Face | 2026-10-27 | Blocked, needs Aaron: signup is email+password only (no SSO on free tier). Needs a vault-generated login saved in chat first. No account created. | none |
 | 2 | Fazier | 2026-10-27 | Blocked, needs Aaron: only "Continue with Google" (box Google session is Aaron's personal houstoninvestments@gmail.com, not used) or email+password. Needs a vault-generated login saved in chat. Free tier is reviewed within 30 days and requires a Fazier backlink/badge on homepage or footer (embed code only visible after login). No account created. | none |
+| 3 | PeerPush | 2026-10-28 | Submitted (free queue, #8440, est. launch ~4 months; "Not Verified", not yet public/crawlable). Account hello1207 via email code, no password. Optional "Get verified"/badge not opened. | https://peerpush.com/p/pickaplugin |
+| 4 | Hashnode article | 2026-10-28 | LIVE: published "Your Codex plugin isn't showing up? Check these 5 things in plugin.json" on existing PickAPlugin account (hello@pickaplugin.com), blog pickaplugin.hashnode.dev, links to /tools/plugin-json-validator. | https://pickaplugin.hashnode.dev/your-codex-plugin-isn-t-showing-up-check-these-5-things-in-plugin-json |
+| 5 | Huzzler | 2026-10-29 | Blocked, needs Aaron: signup is email+password only (Name, Username, Email, Password) or "Sign up with Google" (not used). No magic link/code. Needs a vault-generated login saved in chat. Product form (badge/payment rules) not reached. No account created. | none |
+| 6 | Neeed Directory | 2026-10-29 | LIVE: free listing (Software, Free, Developer Tools), account via emailed sign-in code (no password). Neeed badge plus SubmitPR link added to the site footer "Featured on" strip and redeployed 2026-10-29. Badge verified 2026-10-29 (Neeed says this upgrades the link to dofollow). SubmitPR release links activated 2026-10-29 via the footer link (free verify; it re-checks on load, so keep the link). | https://neeed.directory/products/pickaplugin |
 
 ## Batch 4 (from Aaron, Oct 28): AI/dev first, then general. Free options only; re-check price at signup
 Already done/queued elsewhere, so not repeated: PeerPush, TinyLaunch, StartupBase, SaaSHub, Uneed, MicroLaunch, Launch Llama, SideProjectors, Smol Launch. What Launched Today was skipped before (HTTP 402).
@@ -121,3 +125,8 @@ Skipped as paid-only (as far as we know): There's An AI For That (paid submissio
 | G15 | All Top Startups | https://alltopstartups.com | Free (?) | |
 | G16 | Starter Story | https://www.starterstory.com | Free (?) | Founder interview pitch, not a form listing |
 | G17 | FeedMyStartup | https://feedmystartup.com | Free (?) | |
+
+## Live backlink checks (2026-10-28 10:20 PT)
+- LIVE: github.com/hashgraph-online/awesome-codex-plugins links to pickaplugin.com (PR #601 "Add PickAPlugin to Related Projects" merged). Michael Kantor (HOL) confirmed by email 2026-10-28.
+- Not yet: skillaudit.dev/blog/mcp-server-install-shortlist/, agentatlas.dev/newsletter, theagenticweekly.com, mejba.me/blog/openai-codex-plugins-guide (no pickaplugin mention in page HTML).
+- Unlinked-mention search: only third-party mention found is our own SubmitPR press release (links not activated); nothing to ask for.
