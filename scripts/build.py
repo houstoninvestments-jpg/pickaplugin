@@ -256,6 +256,7 @@ open(D+"/submit.html","w").write(layout("Submit a plugin — PickAPlugin",f"""<d
 <p>Listing costs nothing. We re-read our public sources every day, so if your plugin is public and in a list like <a href="https://github.com/hashgraph-online/awesome-codex-plugins">awesome-codex-plugins</a>, it'll show up on its own.</p>
 <p>Not in a list yet? Email <a href="mailto:{EMAIL}?subject=Submit%20a%20plugin">{EMAIL}</a> with the repo link and one sentence on what it does. We read every one.</p>
 <p>Got an MCP server too? Here's <a href="guides/where-to-submit-mcp-server.html">every other place to submit it</a>.</p>
+<p>Want it in OpenAI's official Plugins Directory too? Here's <a href="guides/publish-codex-plugin.html">how to publish a Codex or ChatGPT plugin</a>.</p>
 <p>Already listed? <a href="badge.html">Add a badge</a> to your README.</p>
 <h3>In a hurry?</h3><p class=price>$19 <span class=mono>one-time</span></p><p>Expedited review: a decision within 24 hours. Paying buys speed, not a yes — if we pass, you get a refund.</p>{pay("expedited_review","Expedited review","$19")}</div>"""))
 stat="".join(f'<span class=taken>Slot {k+1:02d}<br><b>{e(p["name"])}</b></span>' for k,p in enumerate(FEAT))+"".join(f'<span>Slot {len(FEAT)+k+1:02d}<br><b>Open</b></span>' for k in range(OPEN))

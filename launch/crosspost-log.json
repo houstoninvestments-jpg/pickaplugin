@@ -1,1 +1,20 @@
-[{"date":"2026-10-27","platform":"bluesky","url":"https://bsky.app/profile/pickaplugin.bsky.social/post/3myvabrqax226","source":"Q1"}]
+[
+ {
+  "date": "2026-10-27",
+  "platform": "bluesky",
+  "url": "https://bsky.app/profile/pickaplugin.bsky.social/post/3myvabrqax226",
+  "source": "Q1"
+ },
+ {
+  "date": "2026-10-28",
+  "platform": "hashnode",
+  "url": "https://pickaplugin.hashnode.dev/your-codex-plugin-isn-t-showing-up-check-these-5-things-in-plugin-json",
+  "source": "third-party-posts.md #2 (directory submissions routine)"
+ },
+ {
+  "date": "2026-10-29",
+  "platform": "bluesky",
+  "url": "https://bsky.app/profile/pickaplugin.bsky.social/post/3mz2663oyos25",
+  "source": "Q3 (agent guard), reworded"
+ }
+]

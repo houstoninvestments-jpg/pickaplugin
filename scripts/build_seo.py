@@ -1,4 +1,6 @@
 # Executed at the end of build.py (shares its namespace: P, D, layout, e, slug, cats, PICKS, PAIRS, ...).
+# Per-page title overrides from Search Console (one change per page; log each in launch/seo-log.md)
+_BEST_TITLE={"data-backend":"Best backend & database plugins for OpenAI Codex and ChatGPT ({n} ranked) — PickAPlugin"}
 # Writes /best, /compare, /privacy, /terms, robots.txt, sitemap.xml, the IndexNow key file, then rewrites
 # every page to clean URLs and adds canonical / Open Graph / JSON-LD tags.
 import glob as _glob, posixpath as _pp, datetime as _dt, json as _json
@@ -36,7 +38,8 @@ for c in cats:
 {f"<p>Most-starred right now: <a href='../p/{top['slug']}.html'><b>{e(top['name'])}</b></a> by {e(top['maker'])}.</p>" if top else ""}
 {f"<h3>Head-to-head</h3><ul class=where>{cmp}</ul>" if cmp else ""}<p><a href="../c/{slug(c)}.html">← Browse the {e(c)} shelf</a></p></div>
 <div>{"".join(srow(p,i+1) for i,p in enumerate(items))}</div>'''
-  open(f"{D}/best/{slug(c)}.html","w").write(layout(f"Best {c} plugins for ChatGPT & Codex ({len(items)} ranked) — PickAPlugin",b,1,f"The {len(items)} {c} plugins for ChatGPT and Codex in our catalog, ranked by editor's picks and GitHub stars. No paid ordering."))
+  _t=_BEST_TITLE.get(slug(c),"Best {c} plugins for ChatGPT & Codex ({n} ranked) — PickAPlugin").format(c=c,n=len(items))
+  open(f"{D}/best/{slug(c)}.html","w").write(layout(_t,b,1,f"The {len(items)} {c} plugins for ChatGPT and Codex in our catalog, ranked by editor's picks and GitHub stars. No paid ordering."))
 for a,b2 in PAIRS:
   def cell(p): return f'<td style="padding:10px;vertical-align:top;border-bottom:1px solid var(--rule)">'
   rows=[("What it says it does",lambda p:e(p["description"])),("Maker",lambda p:e(p["maker"])),("GitHub stars",lambda p:fmt(stars(p))+(f' <span class=mono>(checked {p.get("stars_checked")})</span>' if p.get("stars_checked") else "")),

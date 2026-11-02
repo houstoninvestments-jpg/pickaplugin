@@ -124,6 +124,40 @@ guide("where-to-submit-mcp-server","Where to submit your MCP server (2026): ever
   ("Do I need a public GitHub repo?","For most directories and for awesome-mcp-servers, yes. Hosted-only servers can still go in the official registry, Smithery and awesome-remote-mcp-servers."),
   ("How do I get my MCP server onto PickAPlugin?",'Submit it free on our <a href="../submit.html">submit page</a>. If it ships as a ChatGPT or Codex plugin and sits in a list we read, it shows up automatically.')])
 
+guide("publish-codex-plugin","How to publish a Codex or ChatGPT plugin (2026): submit it and get it listed — PickAPlugin",
+ "How to publish and submit a Codex or ChatGPT plugin in 2026: the OpenAI plugin submission portal, a GitHub repo marketplace, and the free directories that list community plugins.",
+ "How to publish a Codex or ChatGPT plugin (2026)",
+ "You've built a plugin. There are three ways to get it in front of people: submit it to OpenAI's Plugins Directory, publish it from your own GitHub repo as a marketplace, and list it in the community directories. Most makers do all three. Checked Nov 2, 2026.",
+ '''<h2>1. The official Plugins Directory (OpenAI review)</h2>
+<p>ChatGPT and Codex share one public plugin directory. On July 9, 2026 OpenAI moved the old ChatGPT app directory into it, so "submit a ChatGPT app" now means submitting a plugin. A plugin can be skills only, an MCP-backed app, or both.</p>
+<p>You submit through the plugin submission portal on the OpenAI Platform. Per <a href="https://learn.chatgpt.com/docs/submit-plugins" rel=nofollow>OpenAI's submit guide</a> and <a href="https://developers.openai.com/plugins/deploy/submission" rel=nofollow>upload and submit docs</a>:</p>
+<ul><li>Upload the built package as a ZIP and fix any required setup or validation errors the automated checks find.</li>
+<li>If it connects to an MCP server, include five positive test cases, three negative test cases, a video walkthrough and release notes. If sign-in is needed, give reviewers a test account that works without MFA or email codes.</li>
+<li>Fill in the listing details (name, logo, description, company and privacy policy URLs) and the policy attestations, then submit for review.</li>
+<li>OpenAI says review timelines vary. Once you're approved, you choose when to publish, and then it shows up in the directory in both ChatGPT and Codex.</li></ul>
+<h2>2. Your own GitHub repo marketplace (no review, works today)</h2>
+<p>You don't need OpenAI's approval to share a plugin. Put a <code>.agents/plugins/marketplace.json</code> in your repo that lists the plugin, and anyone can install it:</p>
+<pre>codex plugin marketplace add owner/repo
+codex plugin add plugin-name@marketplace-name</pre>
+<p>Put those two lines at the top of your README. Workspace admins can also import and sync a GitHub marketplace for their team. Before you push, run your manifest through our <a href="../tools/plugin-json-validator.html">plugin.json validator</a>, and test the install from a clean machine with the steps in <a href="install-codex-plugin.html">how to install a Codex plugin</a>.</p>
+<h2>3. Community directories (free listings)</h2>
+<ul><li><b>PickAPlugin (us).</b> Listing is free: send the repo on the <a href="../submit.html">submit page</a>. If you're already in a list we read, you show up automatically. Listed makers can add a <a href="../badge.html">"Listed on PickAPlugin" badge</a> to their README.</li>
+<li><b>awesome-codex-plugins</b> (hashgraph-online on GitHub). An awesome list that's also an installable marketplace. It requires a scanner score to get in.</li>
+<li><b>HOL Plugins</b> (<a href="https://hol.org/plugins" rel=nofollow>hol.org/plugins</a>). A free directory with trust scores, from the same team.</li>
+<li><b>CodexStacks, Codex Harness, Codex Marketplace.</b> Independent catalogs. Some pick up public repos on their own, and Codex Marketplace has a submit flow. See <a href="../alternatives.html">how the directories compare</a>.</li></ul>
+<p>If your plugin bundles an MCP server, list the server too. Here's <a href="where-to-submit-mcp-server.html">every place to submit an MCP server</a>.</p>
+<h2>What helps people actually install it</h2>
+<ul><li>One plain sentence at the top of the README saying what it does and who it's for.</li>
+<li>A copy-paste install line. Most directories, ours included, lift it straight from the README.</li>
+<li>A license file. Without one, a lot of people won't touch it.</li>
+<li>Recent commits. Directories show the last update date, and stale repos get skipped.</li>
+<li>Say what it can read and write. If it runs hooks or shell commands, say so up front. That's the first thing careful users check (<a href="vet-a-plugin.html">here's what they look for</a>).</li></ul>''',
+ [("How do I submit a plugin to the ChatGPT and Codex Plugins Directory?","Through the plugin submission portal on the OpenAI Platform. Upload your package as a ZIP, fix the automated findings, add review info (test cases, a video walkthrough and release notes if it uses an MCP server), and submit for review. After approval you choose when to publish."),
+  ("Can I still submit a ChatGPT app?","Apps are now submitted and published as plugins. OpenAI moved the app directory into the Plugins Directory on July 9, 2026."),
+  ("How long does OpenAI's plugin review take?","OpenAI doesn't promise a timeline. Its docs say review times vary as it scales the process."),
+  ("Can people install my Codex plugin without OpenAI approval?","Yes. Publish a marketplace.json in your GitHub repo and people can run codex plugin marketplace add owner/repo, then install it by name."),
+  ("Is listing on PickAPlugin free?",'Yes. Send the repo on the <a href="../submit.html">submit page</a>. Paid featured spots exist, but they\'re always labelled and never change the ranking.')])
+
 _gl="".join(f'<a class=row style="grid-template-columns:1fr" href="{s}.html"><span><h3>{e(h)}</h3><p>{e(d)}</p></span></a>' for s,h,d in GUIDES)
 open(D+"/guides/index.html","w").write(layout("ChatGPT & Codex plugin guides — PickAPlugin",f'''<div class=prose style="max-width:860px"><span class=mono style="color:var(--acc)">Guides</span><h1>Plain-English guides to ChatGPT and Codex plugins</h1><p style="font-size:19px">Short, practical answers to the stuff people actually get stuck on.</p></div><div style="border-top:3px solid var(--ink)">{_gl}</div>''',1,"Practical guides: install a Codex plugin, validate plugin.json, convert MCP configs, write AGENTS.md, and vet a plugin before installing."))
 
@@ -134,6 +168,7 @@ _FAQ=[("What is PickAPlugin?",f"An independent, free directory of {len(P)} ChatG
  ("How do I install a plugin I found here?",'Each plugin page shows the install command from its README. See <a href="guides/install-codex-plugin.html">how to install a Codex plugin</a>.'),
  ("Do you test or audit plugins?",'No. Descriptions are each project\'s own. Read the code first. Here\'s <a href="guides/vet-a-plugin.html">a two-minute checklist</a>.'),
  ("How do I get my plugin listed?",'Submit it free on the <a href="submit.html">submit page</a>.'),
+ ("How do I publish my Codex or ChatGPT plugin?",'Submit it to OpenAI\'s Plugins Directory through the plugin submission portal, publish a marketplace.json from your GitHub repo, and list it in free directories. Step by step: <a href="guides/publish-codex-plugin.html">how to publish a Codex or ChatGPT plugin</a>.'),
  ("Where else should I submit my MCP server?",'Start with the official MCP Registry, then the big directories. We keep a list with submit links and prices in <a href="guides/where-to-submit-mcp-server.html">where to submit your MCP server</a>.'),
  ("How often is the catalog updated?",'It rebuilds daily, and star counts and last-update dates come from GitHub. See the <a href="changelog.html">changelog</a>.'),
  ("What free tools do you have?",'A <a href="tools/plugin-json-validator.html">plugin.json validator</a>, an <a href="tools/mcp-config-converter.html">MCP config converter</a>, an <a href="tools/plugin-install-command.html">install command finder</a> and an <a href="tools/agents-md-generator.html">AGENTS.md generator</a>. All of them run in your browser.'),

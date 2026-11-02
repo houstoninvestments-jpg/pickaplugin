@@ -44,7 +44,47 @@
       "id": "2115234812969754686",
       "posted": "2026-10-27T17:10:00-07:00",
       "url": "https://x.com/PickAPlugin/status/2115234812969754686"
+    },
+    {
+      "q": 6,
+      "id": "2115475669589110846",
+      "posted": "2026-10-28T09:08:00-07:00",
+      "url": "https://x.com/PickAPlugin/status/2115475669589110846"
+    },
+    {
+      "q": 7,
+      "id": "2115534629642043546",
+      "posted": "2026-10-28T13:02:00-07:00",
+      "url": "https://x.com/PickAPlugin/status/2115534629642043546"
+    },
+    {
+      "q": 8,
+      "id": "2115595272868733420",
+      "posted": "2026-10-28T17:03:00-07:00",
+      "url": "https://x.com/PickAPlugin/status/2115595272868733420"
+    },
+    {
+      "q": 9,
+      "id": "2115837068496810126",
+      "posted": "2026-10-29T09:04:00-07:00",
+      "url": "https://x.com/PickAPlugin/status/2115837068496810126"
+    },
+    {
+      "q": 10,
+      "id": "2115897341421252917",
+      "posted": "2026-10-29T13:03:32-07:00",
+      "url": "https://x.com/PickAPlugin/status/2115897341421252917"
     }
   ],
-  "queue_note": "From 2026-10-26 the routine posts from launch/queue.md only (Q1..Q75). tag_posts/kit_posts are legacy history; queue.md already excludes tag post #1."
+  "queue_note": "From 2026-10-26 the routine posts from launch/queue.md only (Q1..Q75). tag_posts/kit_posts are legacy history; queue.md already excludes tag post #1.",
+  "article_quote_tweets": [
+    {
+      "angle": 1,
+      "quoted": "https://x.com/PickAPlugin/status/2114979490677899619",
+      "id": "2115521191209549948",
+      "posted": "2026-10-28T12:08:51-07:00",
+      "url": "https://x.com/PickAPlugin/status/2115521191209549948"
+    }
+  ],
+  "article_quote_tweets_note": "Angles from article.md 'Quote-tweet angles' QT1..QT3. Next unused: QT2 (swap '345' for '350+' when posting)."
 }
