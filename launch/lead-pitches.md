@@ -153,3 +153,79 @@ Congrats on MCP Server v2. Running Thunder Client collections and fixing failing
 If you want it in front of more people, a featured spot is $49/mo and keeps it near the top of the Review & Testing category. If not, no worries, the listing's free for good. Let me know if anything needs fixing.
 
 Aaron
+
+## 2026-11-03
+
+### 1. Refcat, Refcat MCP
+To: hello@refcat.app
+Subject: Refcat is on PickAPlugin
+
+Hey Refcat team,
+
+Giving Claude Code and Cursor 3.3M real app screens to look at before they write UI is a great fix for the "every AI app looks the same" problem, so I added Refcat to PickAPlugin (a directory of Codex and ChatGPT plugins and MCP servers) as a free listing: https://pickaplugin.com/p/refcat-mcp
+
+If you want more people to find it, there's a featured spot for $49/mo that keeps it near the top of the homepage and the Design & Frontend category. Totally optional, the free listing stays either way. If anything on the page is off, just reply and I'll fix it.
+
+Aaron
+
+### 2. Modem, Boxery
+To: hello@modem.dev
+Subject: Boxery is listed on PickAPlugin
+
+Hi Modem folks,
+
+Saw Boxery go up. Handing coding agents their own VMs, local or in the cloud, with the MCP server already wired in is exactly the kind of thing people browsing MCP servers want. I put it on PickAPlugin as a free listing: https://pickaplugin.com/p/boxery
+
+We also have a featured spot ($49/mo) that pins it near the top of the homepage and the Deploy & DevOps category, if that kind of reach is useful. No pressure at all. Happy to reword the description if you'd put it differently.
+
+Aaron
+
+### 3. Luke Parker, Strobe
+To: (no public email found; reach @LukeParkerDev on X or via lukeparker.dev)
+Subject: Strobe on PickAPlugin
+
+Hey Luke,
+
+Congrats on Strobe, 70+ stars in a few days is a strong start. An agent-native perf tool that can actually explain why a page or process is slow is really handy, so it's now on PickAPlugin as a free listing: https://pickaplugin.com/p/strobe
+
+If you ever want it in front of more people, a featured spot is $49/mo and keeps it near the top of the Review & Testing category. If not, no worries, the listing's free for good. Let me know if anything needs fixing.
+
+Aaron
+
+## 2026-11-04
+
+### 1. API Drifter
+To: hello@apidrifter.com
+Subject: API Drifter is on PickAPlugin
+
+Hey API Drifter team,
+
+Running a spec against the live API and getting a fix for each mismatch is a really practical idea, and doing it as both a CLI and an MCP server is smart. I added API Drifter to PickAPlugin (a directory of Codex and ChatGPT plugins and MCP servers) as a free listing: https://pickaplugin.com/p/apidrifter
+
+If you'd like more eyes on it, there's a featured spot for $49/mo that keeps it near the top of the homepage and the Review & Testing category. Totally optional, the free listing stays either way. If anything on the page is off, just reply and I'll fix it.
+
+Aaron
+
+### 2. EXZA, EXZA Remote
+To: info@exza.de
+Subject: EXZA Remote is listed on PickAPlugin
+
+Hi EXZA team,
+
+Saw EXZA Remote pick up 170+ stars in its first couple of days. Letting ChatGPT and Claude reach your own computer with proper device pairing is something a lot of people browsing MCP servers are looking for, so I put it on PickAPlugin as a free listing: https://pickaplugin.com/p/exza-remote
+
+We also have a featured spot ($49/mo) that pins it near the top of the homepage and the Messaging & Remote category, if that kind of reach is useful. No pressure at all. Happy to reword the description if you'd put it differently.
+
+Aaron
+
+### 3. Sourcery, Sourcery MCP
+To: (no public email found; reach @SourceryAI on X or via sourcery.ai)
+Subject: Sourcery MCP on PickAPlugin
+
+Hey Sourcery folks,
+
+Congrats on the MCP server launch. Having the coding agent ask for a review and then fix the comments and security findings itself closes the loop nicely, so it's now on PickAPlugin as a free listing: https://pickaplugin.com/p/sourcery-mcp
+
+If you ever want it in front of more Codex and Claude Code users, a featured spot is $49/mo and keeps it near the top of the Review & Testing category. If not, no worries, the listing's free for good. Let me know if anything needs fixing.
+
+Aaron
