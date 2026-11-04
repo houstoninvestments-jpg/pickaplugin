@@ -315,4 +315,14 @@ for _f in _g.glob(D+"/*/index.html"):
   _t=open(_f).read()
   if _re.search(r'(src|href)="(?![a-z]+:|/|#)',_t): print("WARN relative ref in",_f)
   os.replace(_f,_f[:-11]+".html")
+# GA4 (Mediavine needs GA). Injected into every built HTML page once, right after <head>.
+GA_ID="G-KR8QS9P1YR"
+GA_TAG=('<script async src="https://www.googletagmanager.com/gtag/js?id=%s"></script>'
+ '<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}'
+ "gtag('js',new Date());gtag('config','%s');</script>")%(GA_ID,GA_ID)
+for _f in _g.glob(D+"/**/*.html",recursive=True):
+  _t=open(_f).read()
+  if GA_ID in _t: continue
+  _t2=_re.sub(r'(<head[^>]*>)',lambda m:m.group(1)+GA_TAG,_t,count=1,flags=_re.I)
+  if _t2!=_t: open(_f,"w").write(_t2)
 print("built",len(P),"pages")
