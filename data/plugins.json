@@ -3319,10 +3319,7 @@
   "stars": 176,
   "archived": false,
   "stars_checked": "2026-11-04",
-  "pushed_at": "2026-11-03",
-  "license": null,
-  "language": null,
-  "install": null
+  "pushed_at": "2026-11-03"
  },
  {
   "slug": "fair-value-calculator",
@@ -6940,13 +6937,7 @@
   "source_section": "Editor-added",
   "first_seen": "2026-11-04",
   "featured": false,
-  "stars": null,
-  "archived": false,
-  "stars_checked": null,
-  "pushed_at": null,
-  "license": null,
-  "language": null,
-  "install": null
+  "archived": false
  },
  {
   "slug": "spec-driven-development",
@@ -7812,13 +7803,7 @@
   "source_section": "Editor-added",
   "first_seen": "2026-11-04",
   "featured": false,
-  "stars": null,
-  "archived": false,
-  "stars_checked": null,
-  "pushed_at": null,
-  "license": null,
-  "language": null,
-  "install": null
+  "archived": false
  },
  {
   "slug": "tree-ring-memory",
