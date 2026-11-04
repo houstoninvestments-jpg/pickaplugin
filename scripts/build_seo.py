@@ -147,7 +147,7 @@ open(D+"/llms.txt","w").write("\n".join(_l))
 _f=_l[:]
 _f.append("# Full catalog\n")
 for x in sorted(by.values(),key=lambda x:(x["category"],-(x.get("stars") or 0))):
-  _f+= [f"## {x['name']}",f"- Page: {SITE}/p/{x['slug']}",f"- Source: {x['link']}",f"- Category: {x['category']}",f"- Maker: {x.get('maker') or 'unknown'}",f"- Stars: {x.get('stars')}  Last commit: {(x.get('pushed_at') or '')[:10]}  License: {x.get('license') or 'none'}  Language: {x.get('language') or 'n/a'}"+("  ARCHIVED" if x.get("archived") else ""),f"- What it does: {x['description']}"]+([f"- Install (from README): {x['install']}"] if x.get("install") else [])+[""]
+  _f+= [f"## {x['name']}",f"- Page: {SITE}/p/{x['slug']}",f"- Source: {x['link']}",f"- Category: {x['category']}",f"- Maker: {x.get('maker') or 'unknown'}",f"- Stars: {x.get('stars')}  Last commit: {(x.get('pushed_at') or '')[:10]}  Repository license: {x.get('license') or 'not identified'}  Language: {x.get('language') or 'n/a'}"+("  ARCHIVED" if x.get("archived") else ""),f"- What it does: {x['description']}"]+([f"- Install (from README): {x['install']}"] if x.get("install") else [])+[""]
 open(D+"/llms-full.txt","w").write("\n".join(_f))
 open(f"{D}/{INDEXNOW_KEY}.txt","w").write(INDEXNOW_KEY)
 print("seo:",len(URLS),"urls,",len(PAIRS),"comparisons")
