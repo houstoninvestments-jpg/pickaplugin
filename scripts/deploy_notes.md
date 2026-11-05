@@ -35,7 +35,7 @@ Live account: PickAPlugin `acct_1UUidjAJ19i9R4dz`. Read with the **read-only** c
      when cancel_at_period_end is set, so the slot stays up for the paid period.
    - Warns if more than 3 are active; refund or waitlist the extra (the site only shows 3).
 4. If anything changed: `python3 scripts/build.py`, commit `data/plugins.json`, then redeploy (steps above).
-   refresh.py keeps `featured_*` fields and `featured-order` entries.
+   refresh.py keeps `featured_*`/`homepage`/`docs` fields and every listing whose `source` is not a crawled list (editor-added, maker-submitted, featured-order, …). Always set `source` to `editor-added` (section "Maker submission") for hand-added listings.
 5. Email the buyer from hello@pickaplugin.com once they're live (draft it and have Aaron approve it).
 
 ## New tiers (Top Spot, Belt, Category Sponsor, Verified)

@@ -99,8 +99,21 @@ def main():
   for s,p in out.items():  # keep fulfillment fields (featured_sub, featured_since...)
     for k,v in old.get(s,{}).items():
       if k.startswith(("featured_","top_spot","belt","verified","sponsor_","homepage","docs")): p[k]=v
-  for s,p in old.items():  # paid listings added by fulfill.py aren't in any source list
-    if s not in out and p.get("source") in ("featured-order","editor-added"): out[s]=p
+  # Keep every listing that didn't come from a crawled source list. Previously only
+  # featured-order + editor-added survived, so a hand-added entry with any other
+  # source (e.g. maker-submitted) was silently dropped on the next refresh. Prefer
+  # source "editor-added" for maker submissions. Crawled-source slugs that left
+  # upstream are still dropped on purpose.
+  crawl_sources = {name for name, _, _ in SOURCES}
+  kept = 0
+  for s, p in old.items():
+    if s in out: continue
+    src = p.get("source")
+    if src in crawl_sources: continue
+    out[s] = p
+    kept += 1
+  if kept:
+    print(f"kept {kept} non-crawled listings (editor-added/featured-order/maker-submitted/...)")
   add_stars(out, old)
   data=sorted(out.values(),key=lambda p:p["name"].lower())
   json.dump(data,open(path,"w"),indent=1,ensure_ascii=False)
