@@ -7076,6 +7076,27 @@
   "install": null
  },
  {
+  "slug": "skycloak-mcp",
+  "name": "Skycloak MCP",
+  "description": "Official MCP server for Skycloak managed Keycloak: manage clusters, realms, applications, SSO and users from any MCP client.",
+  "maker": "sky-cloak",
+  "link": "https://github.com/sky-cloak/skycloak-mcp",
+  "category": "Security & Governance",
+  "source": "editor-added",
+  "source_url": "https://skycloak.io/mcp/",
+  "source_section": "Maker submission",
+  "first_seen": "2026-11-05",
+  "featured": false,
+  "homepage": "https://skycloak.io/mcp/",
+  "stars": 1,
+  "stars_checked": "2026-11-05",
+  "archived": false,
+  "pushed_at": "2026-11-05",
+  "license": "Apache-2.0",
+  "language": "Go",
+  "install": "claude mcp add --transport http skycloak https://mcp.skycloak.io"
+ },
+ {
   "slug": "sno-station-skills",
   "name": "Sno Station Skills",
   "description": "Peer review, delegation, handoff and self-improvement skills that give Codex and Claude Code the working habits of a real team.",
