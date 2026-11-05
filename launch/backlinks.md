@@ -81,6 +81,12 @@ Hold for a planned big day (needs prep, not routine drip): Product Hunt, Hacker 
 | 4 | Hashnode article | 2026-10-28 | LIVE: published "Your Codex plugin isn't showing up? Check these 5 things in plugin.json" on existing PickAPlugin account (hello@pickaplugin.com), blog pickaplugin.hashnode.dev, links to /tools/plugin-json-validator. | https://pickaplugin.hashnode.dev/your-codex-plugin-isn-t-showing-up-check-these-5-things-in-plugin-json |
 | 5 | Huzzler | 2026-10-29 | Blocked, needs Aaron: signup is email+password only (Name, Username, Email, Password) or "Sign up with Google" (not used). No magic link/code. Needs a vault-generated login saved in chat. Product form (badge/payment rules) not reached. No account created. | none |
 | 6 | Neeed Directory | 2026-10-29 | LIVE: free listing (Software, Free, Developer Tools), account via emailed sign-in code (no password). Neeed badge plus SubmitPR link added to the site footer "Featured on" strip and redeployed 2026-10-29. Badge verified 2026-10-29 (Neeed says this upgrades the link to dofollow). SubmitPR release links activated 2026-10-29 via the footer link (free verify; it re-checks on load, so keep the link). | https://neeed.directory/products/pickaplugin |
+| 7 | TinyLaunch | 2026-11-02 | Scheduled (free Standard tier), waiting for TinyLaunch approval; if approved goes live 2026-12-07 at midnight PT. Account hello@pickaplugin.com via emailed login code (maker handle pickaplugin), startup ID 32482, official logo uploaded. Free tier gives a backlink/badge only to top 3 products; no badge required. Declined the $39 Premium upsell and $0 add-ons only. | none yet (dashboard https://www.tinylaunch.com/dashboard/startups/32482/launch) |
+| 8 | OpenHunts | 2026-11-02 | Blocked, needs Aaron: sign-up is Name/Email/Password (plus an optional-looking "Invitation code" field) or Google/GitHub (not used). No magic link or email code. Needs a vault-generated login saved in chat. Submit URL https://openhunts.com/submit redirects to sign-in. No account created. | none |
+| 9 | PitchWall | 2026-11-03 | Blocked, needs Aaron: login is OAuth only (Google, GitHub, Microsoft, Discord), no email/magic link/password option. Free Launch plan exists (30-day wait, do-follow link, 1-day homepage), Pro $49 / Premium $99 declined. Submission form (badge rules) not reached. No account created. | none |
+| 10 | Bear Blog | 2026-11-03 | Blocked, needs Aaron: final signup step needs email + password (no magic link). Subdomain pickaplugin looked available. Needs a vault-generated login saved in chat. No account created. | none (would be https://pickaplugin.bearblog.dev) |
+
+Top 10 done 2026-11-03: 2 live (Hashnode, Neeed), 2 queued (PeerPush, TinyLaunch), 6 blocked needing Aaron (Hugging Face, Fazier, Huzzler, OpenHunts, Bear Blog need a vault-saved password; PitchWall is OAuth-only). Directory submissions routine paused.
 
 ## Batch 4 (from Aaron, Oct 28): AI/dev first, then general. Free options only; re-check price at signup
 Already done/queued elsewhere, so not repeated: PeerPush, TinyLaunch, StartupBase, SaaSHub, Uneed, MicroLaunch, Launch Llama, SideProjectors, Smol Launch. What Launched Today was skipped before (HTTP 402).
@@ -130,3 +136,28 @@ Skipped as paid-only (as far as we know): There's An AI For That (paid submissio
 - LIVE: github.com/hashgraph-online/awesome-codex-plugins links to pickaplugin.com (PR #601 "Add PickAPlugin to Related Projects" merged). Michael Kantor (HOL) confirmed by email 2026-10-28.
 - Not yet: skillaudit.dev/blog/mcp-server-install-shortlist/, agentatlas.dev/newsletter, theagenticweekly.com, mejba.me/blog/openai-codex-plugins-guide (no pickaplugin mention in page HTML).
 - Unlinked-mention search: only third-party mention found is our own SubmitPR press release (links not activated); nothing to ask for.
+
+## Live backlink checks (2026-11-02 PT)
+- LIVE: github.com/hashgraph-online/awesome-codex-plugins (HOL) still links to pickaplugin.com. No new live links.
+- Not yet: skillaudit, agentatlas, theagenticweekly, mejba, pluginsradar, triedaitools, codexstacks, codex-harness, aicodingweekly, pulsemcp, mcpselect, mcpplaygroundonline, mcp.so, ai101.tools, protocolprobe, skillagent, mermail.
+- Unreachable today (curl 000 / WebFetch 504): mcp-find.org, mcpagentsmarket.com. Re-check next run.
+- Unlinked third-party mentions: none found (only our own Neeed/SubmitPR/Hashnode pages).
+- No-thanks: CodexStacks (hello@codexstacks.com, Oct 29) won't do link swaps or list other directories; will credit our data per CC BY if they cite it. Do not re-pitch.
+- Sent today (8, Resend): branolabs, turboai, mcp.directory, datanorth, swarmnest, openagentskill, bestaiagenttools, skiln. See backlink-outreach.json.
+- Skipped: affpapa.org catalog list (only privacy@ email), firecrawl blog (support inbox only, earlier maker pitch blocked), codex-docs.com (mirror), mcp-radar (email only in page config).
+
+## LIVE 2026-11-03: Agent Skills Index by BranoLabs
+- Page: https://skills.branolabs.com/reports (Reports page; Branislav says it's also linked from the Codex plugins page)
+- Links: https://pickaplugin.com and https://pickaplugin.com/research/state-of-codex-plugins-2026, rel="noopener" (followed), credited CC BY 4.0
+- From outreach sent 2026-11-02; they declined a swap (they don't ask for links back). Thanked them 2026-11-03.
+
+## Update Nov 3, 2026 (parent)
+- Accounts now EXIST and are verified (created Nov 2 with Aaron): Hugging Face (user pickaplugin, vault 1952691), Fazier (vault 2671917), Huzzler (user pickaplugin, vault 2672610). Box browser sessions are signed in. Next step: actually submit/list PickAPlugin on each (free tiers only).
+- OpenHunts: requires an invitation code; skip (vault 2672760 saved).
+- PitchWall: OAuth-only; skip unless Aaron picks an account.
+
+- 2026-11-04: Alternative Biz (alternativebiz.com, Zinn Digital) listed PickAPlugin unprompted at https://alternativebiz.com/o/RYe7oeqtLLKZ1N_0b53XuA/listing, but with no link to our site. They say claiming it (free) adds a backlink: https://alternativebiz.com/o/RYe7oeqtLLKZ1N_0b53XuA . Not claimed yet (needs an account sign-up; directory-submissions territory).
+
+## TurboAI follow-up (2026-11-05)
+- Reply sent to Alex Sorokoletov (alex@turboai.dev) with win-win ideas (Aaron approved).
+- We linked his Codex CLI plugins reference (https://www.turboai.dev/docs/codex/plugins) as a followed Go-deeper link from /guides/validate-plugin-json and /guides/install-codex-plugin (manifest / not-showing-up sections).
