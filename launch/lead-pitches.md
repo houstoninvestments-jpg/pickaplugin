@@ -229,3 +229,43 @@ Congrats on the MCP server launch. Having the coding agent ask for a review and 
 If you ever want it in front of more Codex and Claude Code users, a featured spot is $49/mo and keeps it near the top of the Review & Testing category. If not, no worries, the listing's free for good. Let me know if anything needs fixing.
 
 Aaron
+
+## 2026-11-05
+
+> Drafts only — NOT SENT. Do not DM or email without Aaron's say-so.
+
+### 1. DataForSEO, DataForSEO Codex Plugins
+To: info@dataforseo.com
+Subject: DataForSEO Codex plugin is on PickAPlugin
+
+Hey DataForSEO team,
+
+Saw the Codex plugin land in today's digest. Letting people pull live keyword, SERP and backlink data straight inside Codex is a natural fit for makers browsing SEO tooling, so I added it to PickAPlugin (a directory of Codex and ChatGPT plugins and MCP servers) as a free listing: https://pickaplugin.com/p/dataforseo-codex-plugins
+
+If you'd like more eyes on it, there's a featured spot for $49/mo that keeps it near the top of the homepage and the Docs, Content & SEO category. Totally optional, the free listing stays either way. If anything on the page is off, just reply and I'll fix it.
+
+Aaron
+
+### 2. Rollstack, Rollstack skills
+To: security@rollstack.com
+Subject: Rollstack skills listed on PickAPlugin
+
+Hi Rollstack folks,
+
+Caught the new Claude Code plugin and agent skills repo. Having an agent build decks from company data, refresh schedules and send reports through your MCP is exactly the kind of workflow people looking for presentation tooling want, so I put it on PickAPlugin as a free listing: https://pickaplugin.com/p/rollstack-skills
+
+We also have a featured spot ($49/mo) that pins it near the top of the homepage and the Docs, Content & SEO category, if that kind of reach is useful. No pressure at all. Happy to reword the description if you'd put it differently.
+
+Aaron
+
+### 3. Darius Chandra, Postminion
+To: support@postminion.com
+Subject: Postminion is on PickAPlugin
+
+Hey Darius,
+
+Congrats on the ChatGPT plugin launch. Scheduling TikTok, Reels, Shorts and the rest from a chat instead of another dashboard is a clean idea, so Postminion is now on PickAPlugin as a free listing: https://pickaplugin.com/p/postminion
+
+If you ever want it in front of more ChatGPT and Claude users, a featured spot is $49/mo and keeps it near the top of the Docs, Content & SEO category. If not, no worries, the listing's free for good. Let me know if anything needs fixing.
+
+Aaron
