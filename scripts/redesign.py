@@ -69,7 +69,7 @@ def layout(title,body,depth=0,desc="An independent, hand-edited catalog of ChatG
 import json as _json
 _SEC=os.path.join(ROOT,"scripts",".secrets.json")
 SITEKEY=_json.load(open(_SEC)).get("sitekey") if os.path.exists(_SEC) else "0x4AAAAAAFnRt9YCBHXNJWZZ"
-def ts(): return f'<div class=cf-turnstile data-sitekey="{SITEKEY}" data-size="flexible"></div>'
+def ts(): return f'<div class=cf-turnstile data-sitekey="{SITEKEY}" data-size="flexible" data-callback=tsOk data-expired-callback=tsNo data-error-callback=tsNo></div><script>window.tsOk=window.tsOk||function(){{document.querySelectorAll(".cf-turnstile").forEach(function(w){{var b=w.closest("form")&&w.closest("form").querySelector("button");if(b&&w.querySelector("input[name=cf-turnstile-response]")&&w.querySelector("input[name=cf-turnstile-response]").value)b.disabled=false}})}};window.tsNo=window.tsNo||function(){{document.querySelectorAll(".cf-turnstile").forEach(function(w){{var i=w.querySelector("input[name=cf-turnstile-response]"),b=w.closest("form")&&w.closest("form").querySelector("button");if(b&&(!i||!i.value))b.disabled=true}})}};</script>'
 HONEY='<div class=hp aria-hidden=true><label>Leave this empty <input name=website tabindex=-1 autocomplete=off></label></div>'
 def nlform(where,title="The PickAPlugin roundup"):
   return f'''<section class=nl><div><h3>{title}</h3><p>A weekly-ish email with new and notable ChatGPT &amp; Codex plugins. No spam. Unsubscribe anytime with one click.</p></div>

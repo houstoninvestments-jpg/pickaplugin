@@ -685,6 +685,8 @@
   "description": "Search YouTube transcripts for timestamped quotes, speaker appearances, sponsors and recommendations.",
   "maker": "arcmira",
   "link": "https://github.com/arcmira/mcp",
+  "homepage": "https://arcmira.com",
+  "docs": "https://arcmira.com/docs",
   "category": "Docs, Content & SEO",
   "source": "awesome-codex-plugins",
   "source_url": "https://github.com/hashgraph-online/awesome-codex-plugins",

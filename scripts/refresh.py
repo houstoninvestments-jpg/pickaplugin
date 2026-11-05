@@ -98,7 +98,7 @@ def main():
         "first_seen":old.get(s,{}).get("first_seen",today),"featured":old.get(s,{}).get("featured",False)}
   for s,p in out.items():  # keep fulfillment fields (featured_sub, featured_since...)
     for k,v in old.get(s,{}).items():
-      if k.startswith(("featured_","top_spot","belt","verified","sponsor_")): p[k]=v
+      if k.startswith(("featured_","top_spot","belt","verified","sponsor_","homepage","docs")): p[k]=v
   for s,p in old.items():  # paid listings added by fulfill.py aren't in any source list
     if s not in out and p.get("source") in ("featured-order","editor-added"): out[s]=p
   add_stars(out, old)
