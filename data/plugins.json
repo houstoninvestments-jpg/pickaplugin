@@ -4170,6 +4170,28 @@
   "install": "codex plugin marketplace add https://github.com/andreamzhang/jimeng-skills.git"
  },
  {
+  "slug": "jobspipe",
+  "name": "JobsPipe",
+  "description": "Hosted MCP server for searching live, normalized job postings from 30+ ATS feeds and job boards.",
+  "maker": "jobspipe",
+  "link": "https://github.com/jobspipe/mcp",
+  "category": "Industry Tools",
+  "source": "editor-added",
+  "source_url": "https://jobspipe.dev",
+  "source_section": "Maker submission",
+  "first_seen": "2026-11-06",
+  "featured": false,
+  "homepage": "https://jobspipe.dev",
+  "docs": "https://docs.jobspipe.dev/ai-agents/mcp",
+  "stars": 0,
+  "stars_checked": "2026-11-06",
+  "archived": false,
+  "pushed_at": "2026-09-29",
+  "license": "MIT",
+  "language": null,
+  "install": "claude mcp add --transport http jobspipe https://mcp.jobspipe.dev/mcp"
+ },
+ {
   "slug": "joxo",
   "name": "Joxo",
   "description": "Setup skill that joins Codex to a team's shared Joxo project, where teammates' coding agents share one task board, decisions and handoffs.",
