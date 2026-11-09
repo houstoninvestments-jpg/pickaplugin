@@ -24,6 +24,8 @@ import json, re, sys, datetime
 DATA = "data/plugins.json"
 LIVE = {"active", "trialing", "past_due"}
 PLINKS = {
+    # Add founding $29/mo plink id here once Stripe reconnect creates it (maps to featured_monthly).
+    # "plink_...": "featured_monthly",  # featured_founding $29/mo + 7-day trial
     "plink_1UUj18AJ19i9R4dzs8Ie2Uq4": "featured_monthly",
     "plink_1UUj1AAJ19i9R4dze4Tgzzpx": "expedited_review",
     "plink_1UUjNCAJ19i9R4dz965F509o": "top_spot",

@@ -19,6 +19,13 @@ STRIPE={"featured_monthly":"https://buy.stripe.com/aFa14m2Ih7DV2ep15bcQU00","exp
 if _os.environ.get("STRIPE_PREVIEW")=="test":
     STRIPE.update({"featured_monthly":"https://buy.stripe.com/test_14AaEZ8TC3vJelQ2ai73G00","expedited_review":"https://buy.stripe.com/test_bJe5kF4Dmd6j4Lg9CK73G01"})
 EMAIL="hello@pickaplugin.com"; e=html.escape
+# Founding featured offer (first 10 makers). Spots left = total - claimed.
+_founding_path=os.path.join(ROOT,"data","founding.json")
+FOUNDING_DATA=json.load(open(_founding_path)) if os.path.exists(_founding_path) else {"spots_total":10,"claimed":[],"price_monthly":29,"regular_price_monthly":49,"trial_days":7,"stripe_payment_link":""}
+if FOUNDING_DATA.get("stripe_payment_link"):
+  STRIPE["featured_founding"]=FOUNDING_DATA["stripe_payment_link"]
+FOUNDING_LEFT=max(0,int(FOUNDING_DATA.get("spots_total",10))-len(FOUNDING_DATA.get("claimed") or []))
+FOUNDING_ACTIVE=FOUNDING_LEFT>0
 # Editor's picks. Notes paraphrase each project's own README description; not independently audited.
 PICKS={"agent-guard":"Hooks that catch secrets before they leak out of an agent session. Local by default, no telemetry. The first thing we'd install.",
  "deja":"Full-text search over the coding sessions already on your disk, across two dozen tools. No model in the loop — just an index.",
@@ -94,11 +101,21 @@ def pinrow(p,pre): return f'<a class=row style="grid-template-columns:110px 1fr"
 def pinned(cat,pre,r):
   fs=[p for p in FEAT if p["category"]==cat]
   if fs: return '<div class=fpin>'+"".join(pinrow(p,pre) for p in fs)+'</div>'
-  if OPEN: return f'<a class=fopen href="{r}featured.html"><span><b>Featured spot open in {e(cat)}.</b> Pin your plugin here, above every list in this category.</span><span class=mono>$49/mo →</span></a>'
+  if OPEN: return f'<a class=fopen href="{r}featured.html"><span><b>Featured spot open in {e(cat)}.</b> Pin your plugin here, above every list in this category.</span><span class=mono>{feat_price_short()} →</span></a>'
   return ""
 def pay(key,label,price):
-  if STRIPE[key]: return f'<a class=btn href="{STRIPE[key]}">{label} — {price}</a>'
+  if STRIPE.get(key): return f'<a class=btn href="{STRIPE[key]}">{label} — {price}</a>'
   return f'<div class=todo>TODO: Stripe Payment Link for “{label}” ({price}) isn\'t connected yet, so payments aren\'t live. Until then, email <a href="mailto:{EMAIL}">{EMAIL}</a>.</div>'
+def feat_price_short():
+  return f"$29/mo founding · {FOUNDING_LEFT} of 10 left" if FOUNDING_ACTIVE else "$49/mo"
+def founding_cta(label="Claim a founding featured spot"):
+  """Primary CTA while founding spots remain. Prefers Stripe founding link; else email."""
+  if not FOUNDING_ACTIVE:
+    return pay("featured_monthly","Claim a featured slot","$49/month") if OPEN else f'<p><b>All three slots are taken.</b> Email <a href="mailto:{EMAIL}?subject=Featured%20waitlist">{EMAIL}</a> and we\'ll tell you the moment one frees up.</p>'
+  if STRIPE.get("featured_founding"):
+    return pay("featured_founding",label,"$29/mo for life · first week free")
+  return (f'<p><b>{FOUNDING_LEFT} of 10 founding spots left.</b> Self-serve founding checkout is being set up. '
+          f'Email <a href="mailto:{EMAIL}?subject=Founding%20featured%20spot">{EMAIL}</a> with your plugin URL to claim one now — we\'ll send the payment link.</p>')
 shutil.rmtree(D,ignore_errors=True); os.makedirs(D+"/p"); open(D+"/style.css","w").write(CSS)
 FEAT=[p for p in P if p.get("featured")][:3]; OPEN=3-len(FEAT)
 by={p["slug"]:p for p in P}; cats=sorted({p["category"] for p in P},key=lambda c:(c=="Miscellany",c))
@@ -131,13 +148,13 @@ def sponsor(c):
   return f'<a class="spons open" href="../advertise.html#sponsor"><span class=mono>Presented by · open</span><b>Sponsor the {e(c)} shelf</b><span>One sponsor per category, labelled. $29/mo →</span></a>'
 picks="".join(f'<a class=pick href="p/{s}.html"><span class="no mono">Pick {i+1:02d} · {e(by[s]["category"])}</span><h3>{e(by[s]["name"])}</h3><p>{e(n)}</p><div class="by mono">by {e(by[s]["maker"])}</div></a>' for i,(s,n) in enumerate(PICKS.items()) if s in by)
 feat=FEAT
-slots="".join(f'<a class=slot href="p/{p["slug"]}.html"><span class=mono>Featured</span><b>{e(p["name"])}</b><span>{e(p["description"][:90])}</span></a>' for p in feat)+(f'<a class=slot href="featured.html" style="grid-column:span {3-len(feat)}"><span class=mono>Sponsored · {3-len(feat)} of 3 slots open</span><b>Built a plugin? Put it here for $49 a month.</b><span>Clearly labelled, never touches our picks or the catalog order. Cancel anytime.</span></a>' if len(feat)<3 else "")
+slots="".join(f'<a class=slot href="p/{p["slug"]}.html"><span class=mono>Featured</span><b>{e(p["name"])}</b><span>{e(p["description"][:90])}</span></a>' for p in feat)+(f'<a class=slot href="featured.html" style="grid-column:span {3-len(feat)}"><span class=mono>Sponsored · {3-len(feat)} of 3 slots open</span><b>Built a plugin? Put it here — {("founding $29/mo · "+str(FOUNDING_LEFT)+" of 10 left") if FOUNDING_ACTIVE else "$49/mo"}.</b><span>Clearly labelled, never touches our picks or the catalog order. Cancel anytime.</span></a>' if len(feat)<3 else "")
 def fband(r):
   cards="".join(f'<a class=fcard href="{r}p/{p["slug"]}.html"><span class=badge>Featured</span><h3>{e(p["name"])}</h3><p>{e(p["description"][:150])}</p><span class="by mono">by {e(p["maker"])} · {e(p["category"])}</span></a>' for p in FEAT)
   fs={p["slug"] for p in FEAT}; top=None if TOP else PK[0]
   fill=[s for s in PK if s not in fs and s!=top][:max(0,OPEN-1)]
   cards+="".join(f'<a class=fcard href="{r}p/{s}.html"><span class=badge>Editor\'s pick · unpaid</span><h3>{e(by[s]["name"])}</h3><p>{e(PICKS[s][:150])}</p><span class="by mono">by {e(by[s]["maker"])} · {e(by[s]["category"])}</span></a>' for s in fill)
-  if OPEN: cards+=f'<a class="fcard open" href="{r}featured.html"><span class="mono" style="color:#e9b8ab">Featured slot · open</span><h3>Feature your<br>plugin here.</h3><p>The first thing every visitor sees, plus the top of your category page and every related list.</p><span class=cta>Claim this slot · <b>$49/mo</b> →</span></a>'
+  if OPEN: cards+=f'<a class="fcard open" href="{r}featured.html"><span class="mono" style="color:#e9b8ab">Featured slot · open</span><h3>Feature your<br>plugin here.</h3><p>The first thing every visitor sees, plus the top of your category page and every related list.</p><span class=cta>Claim this slot · <b>{feat_price_short()}</b> →</span></a>'
   return f'<section class=fband><div class=hd><h2>Featured</h2><span class=mono>Paid placements labelled “Featured” · picks are unpaid · <a href="{r}featured.html">how it works</a></span></div><div class=fgrid>{cards}</div></section>'
 if PREVIEW: exec(open(os.path.join(ROOT,"scripts","redesign.py")).read())
 dates=sorted({p["first_seen"] for p in P}); new=[p for p in P if len(dates)>1 and p["first_seen"]>dates[0]][-10:]
@@ -261,23 +278,33 @@ open(D+"/submit.html","w").write(layout("Submit a plugin — PickAPlugin",f"""<d
 <h3>In a hurry?</h3><p class=price>$19 <span class=mono>one-time</span></p><p>Expedited review: a decision within 24 hours. Paying buys speed, not a yes — if we pass, you get a refund.</p>{pay("expedited_review","Expedited review","$19")}</div>"""))
 stat="".join(f'<span class=taken>Slot {k+1:02d}<br><b>{e(p["name"])}</b></span>' for k,p in enumerate(FEAT))+"".join(f'<span>Slot {len(FEAT)+k+1:02d}<br><b>Open</b></span>' for k in range(OPEN))
 avail=f"{OPEN} of 3 open right now" if OPEN else "All 3 slots are taken right now"
-cta=pay("featured_monthly","Claim a featured slot","$49/month") if OPEN else f'<p><b>All three slots are taken.</b> Email <a href="mailto:{EMAIL}?subject=Featured%20waitlist">{EMAIL}</a> and we\'ll tell you the moment one frees up.</p>'
+cta=founding_cta() if OPEN else f'<p><b>All three slots are taken.</b> Email <a href="mailto:{EMAIL}?subject=Featured%20waitlist">{EMAIL}</a> and we\'ll tell you the moment one frees up.</p>'
+founding_box=(f'<div class=box style="margin:18px 0 8px"><span class="mono" style="color:var(--acc)">Founding offer · Nov 2026</span>'
+  f'<p style="font-size:18px"><b>$29/mo for life for our first 10 featured makers (normally $49), first week free.</b> '
+  f'Your Stripe subscription stays at $29 for as long as you stay subscribed.</p>'
+  f'<p class=mono style="color:var(--mute)">Founding spots left: {FOUNDING_LEFT} of {FOUNDING_DATA.get("spots_total",10)}</p></div>') if FOUNDING_ACTIVE else ""
+price_line=(f'<p class=price>$29 <span class=mono>per month for life · normally $49 · first week free</span></p>' if FOUNDING_ACTIVE
+            else '<p class=price>$49 <span class=mono>per month · cancel anytime</span></p>')
+howto=("Email us with your plugin URL to claim a founding spot. We'll send the $29/mo payment link (first week free)."
+       if FOUNDING_ACTIVE and not STRIPE.get("featured_founding")
+       else "Click the button and pay with Stripe. Put your plugin's URL (GitHub repo or homepage) in the “Plugin URL” box. If it isn't in the catalog yet, we'll add it.")
 open(D+"/featured.html","w").write(layout("Get featured — PickAPlugin",f"""<div class=prose><span class=mono style="color:var(--acc)">Three slots. That's the whole inventory.</span><h1>Put your plugin where people pick plugins.</h1>
 <p style="font-size:19px">PickAPlugin is a hand-sorted catalog of {len(P)} ChatGPT &amp; Codex plugins. Featured gets three slots, so each one actually stands out. (Other placements are on the <a href="advertise.html">advertise</a> page.)</p>
-<p class=price>$49 <span class=mono>per month · cancel anytime</span></p>
+{founding_box}{price_line}
 <div class=slotstat>{stat}</div><p class=mono style="margin-top:-6px">{avail}</p>
 {cta}
 <h3>Where you appear</h3><ul class=where>
 <li><b>Top of the homepage</b>: a large card in the Featured band, above the search and editor's picks.</li>
 <li><b>Top of your category page</b>: pinned above every other plugin in that category.</li>
 <li><b>“Also in” lists</b>: pinned first on the page of every other plugin in your category.</li>
-<li><b>Your own page</b> gets a Featured badge.</li></ul>
+<li><b>Your own page</b> gets a Featured badge.</li>
+<li><b>Newsletter mention</b>: founding featured makers also get a mention in the PickAPlugin Substack roundup.</li></ul>
 <h3>What you get</h3><ul class=where><li>A clear “Featured” label. We don't disguise ads as picks, which is why readers trust the rest of the page.</li><li>Your own name, description and link. Want different copy? Email us.</li><li>Live within 24 hours of payment.</li><li>Month to month. Email us to cancel any time, no questions asked.</li></ul>
-<div class=faq><h3>How do I get set up?</h3><p>Click the button and pay with Stripe. Put your plugin's URL (GitHub repo or homepage) in the “Plugin URL” box. If it isn't in the catalog yet, we'll add it.</p>
-<h3>Will this get me installs?</h3><p>We don't promise traffic numbers, and we'll never invent any. What you get is the most visible spot on a site built for people who are choosing a plugin.</p>
+<div class=faq><h3>How do I get set up?</h3><p>{howto}</p>
+<h3>Will this get me installs?</h3><p>We don't promise traffic numbers, and we'll never invent any. Traffic is still early. What you get is the most visible spot on a site built for people who are choosing a plugin, at the founding rate while spots last.</p>
 <h3>Does paying change your picks or the catalog order?</h3><p>No. Editor's picks and the numbered catalog are never for sale.</p>
 <h3>Can you turn me down?</h3><p>Yes. If a plugin is broken, malicious or misleading, we'll refund you and pass.</p>
-<h3>What happens when I cancel?</h3><p>Your slot stays up until the end of the period you've paid for, then opens for someone else.</p>
+<h3>What happens when I cancel?</h3><p>Your slot stays up until the end of the period you've paid for, then opens for someone else. Founding pricing is for as long as you stay subscribed — if you cancel and come back later, the regular rate applies.</p>
 <h3>Questions?</h3><p><a href="mailto:{EMAIL}">{EMAIL}</a></p></div>
 <p style="margin-top:30px">{cta if OPEN else ""}</p></div>"""))
 open(D+"/about.html","w").write(layout("About — PickAPlugin",f"""<div class=prose><h1>About</h1><p>PickAPlugin is an independent catalog of plugins for ChatGPT and Codex. It is <b>not affiliated with, endorsed by, or sponsored by OpenAI</b>.</p>
@@ -286,20 +313,28 @@ open(D+"/about.html","w").write(layout("About — PickAPlugin",f"""<div class=pr
 if PREVIEW: preview_pages()
 
 def tier(id_,name,price,per,what,status,key):
-  btn=pay(key,f"Buy {name}",price) if key and STRIPE.get(key) else '<span class="mono st">Coming soon · not on sale yet</span>'
+  if key and STRIPE.get(key):
+    btn=pay(key,f"Buy {name}",price)
+  elif key=="featured_founding" and FOUNDING_ACTIVE:
+    btn=f'<a class=btn href="mailto:{EMAIL}?subject=Founding%20featured%20spot">Email to claim founding rate — $29/mo</a>'
+  elif key:
+    btn=pay(key,f"Buy {name}",price)  # shows TODO/email if link missing
+  else:
+    btn='<span class="mono st">Coming soon · not on sale yet</span>'
   return f'<div class="tier{" soon" if not key else ""}" id={id_}><div><h3>{name}</h3><p style="margin:0">{what}</p></div><div class=pr>{price}<small>{per}</small></div><div><p class=st style="margin:0">{status}</p>{btn}</div></div>'
 FOUNDING=min(10,sum(1 for p in P for k in ("featured","top_spot","belt","verified") if p.get(k))+len(SPONS))
+FOUNDING_TAKEN=FOUNDING_DATA.get("spots_total",10)-FOUNDING_LEFT
 spon_open=len(cats)-sum(1 for c in cats if c in SPONS)
 ladder="".join([
  tier("top","The Top Spot","$199","per month",f"One plugin, one bold banner at the very top of the homepage, plus a short write-up on why it's worth a look. Labelled as paid.",f"{'1 of 1 open' if not TOP else '0 of 1 open · taken'}","top_spot" if not TOP else None),
- tier("featured","Featured","$49","per month","A large card in the Featured band on the homepage, pinned at the top of your category page and the “Also in” lists, plus a Featured badge on your page.",f"{OPEN} of 3 open","featured_monthly" if OPEN else None),
+ tier("featured","Featured",("$29" if FOUNDING_ACTIVE else "$49"),("per month for life · founding · normally $49 · first week free" if FOUNDING_ACTIVE else "per month"),"A large card in the Featured band on the homepage, pinned at the top of your category page and the “Also in” lists, plus a Featured badge on your page."+(f" Founding: {FOUNDING_LEFT} of 10 left." if FOUNDING_ACTIVE else ""),f"{OPEN} of 3 open"+(f" · email {EMAIL} to claim founding rate" if FOUNDING_ACTIVE and not STRIPE.get("featured_founding") else ""),("featured_founding" if FOUNDING_ACTIVE else "featured_monthly") if OPEN else None),
  tier("belt","On the Belt","$19","per month","A card on the slow-scrolling belt across the top of every page, labelled “On the Belt”. Up to 12 plugins share it.",f"{BELT_OPEN} of 12 open","belt" if BELT_OPEN else None),
  tier("sponsor","Category Sponsor","$29","per month",f"A “Presented by” band at the top of one category page. One sponsor per category; you pick the category at checkout.",f"{spon_open} of {len(cats)} categories open"+(f" · taken: {', '.join(e(c) for c in SPONS)}" if SPONS else ""),"category_sponsor" if spon_open else None),
  tier("verified","Verified badge","$9","per month","A “✓ Verified by maker” mark on your listing and plugin page. It says you claimed the listing and keep it current. We confirm you maintain the project before turning it on.",f"{sum(1 for p in P if p.get('verified'))} verified so far · no cap","verified"),
  tier("newsletter","Newsletter slot","$39","per send","A labelled sponsor slot in the weekly PickAPlugin email. The newsletter hasn't launched yet, so this isn't for sale.","Coming soon",None)])
 open(D+"/advertise.html","w").write(layout("Advertise — PickAPlugin",f"""<div class=prose style="max-width:900px"><span class=mono style="color:var(--acc)">Advertise · every paid spot is labelled</span><h1>Put your plugin in front of people choosing plugins.</h1>
 <p style="font-size:19px">PickAPlugin is a hand-sorted catalog of {len(P)} ChatGPT &amp; Codex plugins. Here's everything that's for sale, with live counts of what's still open. Pay with Stripe, put your plugin's URL in the “Plugin URL” box, and you're live within 24 hours.</p>
-<div class=box><span class="mono" style="color:var(--acc)">Founding advertisers</span><p style="font-size:18px"><b>The first 10 paid placements keep their launch price for as long as they stay subscribed.</b> Your Stripe subscription stays at the price you signed up at, even if our rates go up later.</p><p class=mono style="color:var(--mute)">Founding placements so far: {FOUNDING} of 10</p></div><div class=ladder>{ladder}</div>
+<div class=box><span class="mono" style="color:var(--acc)">Founding advertisers</span><p style="font-size:18px"><b>Featured founding offer: $29/mo for life for our first 10 featured makers (normally $49), first week free.</b> Your Stripe subscription stays at the price you signed up at. Other tiers also keep their signup price for life among the first 10 paid placements overall.</p><p class=mono style="color:var(--mute)">Featured founding spots left: {FOUNDING_LEFT} of {FOUNDING_DATA.get("spots_total",10)} · paid placements so far: {FOUNDING} of 10</p></div><div class=ladder>{ladder}</div>
 <div class=faq><h3>The honest bits</h3><ul class=where><li>We don't publish traffic numbers yet and won't invent any. You're buying a clearly labelled spot, not a guaranteed number of installs.</li>
 <li>Editor's picks and the catalog order are never for sale. On the belt, unpaid picks are labelled “Pick” and paid cards “On the Belt”.</li>
 <li>Monthly, cancel anytime by emailing <a href="mailto:{EMAIL}">{EMAIL}</a>. Your spot stays up until the paid period ends.</li>

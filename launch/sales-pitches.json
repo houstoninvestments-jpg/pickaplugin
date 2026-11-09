@@ -1,0 +1,14 @@
+{
+  "schema": {
+    "to": "recipient email",
+    "name": "maker name",
+    "tool": "plugin/MCP name",
+    "listing_url": "https://pickaplugin.com/p/...",
+    "subject": "email subject",
+    "resend_id": "Resend message id after send",
+    "date": "YYYY-MM-DD",
+    "offer": "founding $29/mo for life + first week free",
+    "status": "draft|sent|replied|won|lost"
+  },
+  "pitches": []
+}

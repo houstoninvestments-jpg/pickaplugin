@@ -1,0 +1,10 @@
+{
+  "spots_total": 10,
+  "claimed": [],
+  "price_monthly": 29,
+  "regular_price_monthly": 49,
+  "trial_days": 7,
+  "note": "First 10 featured makers: $29/mo for life (normally $49), first week free. Keep this file in sync when a founding subscription starts.",
+  "stripe_payment_link": "",
+  "updated": "2026-11-09"
+}

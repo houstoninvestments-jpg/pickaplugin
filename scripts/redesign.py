@@ -86,7 +86,7 @@ def pinrow(p,pre): return cad("Advertisement · Featured",p["name"],p["descripti
 def pinned(cat,pre,r):
   fs=[p for p in FEAT if p["category"]==cat]
   if fs: return '<div class=fpin>'+"".join(pinrow(p,pre) for p in fs)+'</div>'
-  if OPEN: return f'<div class=fopen>{cad("Classified · space available","Featured spot open in "+cat,"Pin your plugin above every list in this category. $49/mo.",r+"featured.html",True)}</div>'
+  if OPEN: return f'<div class=fopen>{cad("Classified · space available","Featured spot open in "+cat,"Pin your plugin above every list in this category. "+feat_price_short()+".",r+"featured.html",True)}</div>'
   return ""
 def belt(r):
   paid=[f'<a href="{r}p/{p["slug"]}.html"><b>{e(p["name"])}</b> — {e(p["description"][:60])}</a>' for p in BELT]
@@ -106,7 +106,7 @@ def preview_home():
   others=[s for s in PK if s!=p["slug"]][:3]
   side="<span class=mono>Also picked this issue</span>"+"".join(f'<div class=it><span class="mono" style="color:var(--acc)">Pick · {e(by[s]["category"])}</span><h3><a href="p/{s}.html" style="text-decoration:none">{e(by[s]["name"])}</a></h3><p>{e(PICKS[s])}</p></div>' for s in others)
   ads=[pinrow(x,"p/") for x in FEAT]
-  if OPEN: ads.append(cad("Classified · space available",f"Featured: {OPEN} of 3 open","A labelled box on the front page and atop your category. $49/mo.","featured.html",True))
+  if OPEN: ads.append(cad("Classified · space available",f"Featured: {OPEN} of 3 open","A labelled box on the front page and atop your category. "+feat_price_short()+".","featured.html",True))
   if not TOP: ads.append(cad("Classified · space available","The Top Spot","The lead story slot above, labelled as paid. $199/mo, one at a time.","advertise.html#top",True))
   ads.append(cad("Classified · always open","Verified by maker","Claim your listing and keep it current. $9/mo.","advertise.html#verified",True))
   rest=[s for s in PK if s!=p["slug"] and s not in others]
