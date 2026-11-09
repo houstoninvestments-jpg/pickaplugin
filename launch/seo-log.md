@@ -29,7 +29,7 @@ Next week: refresh /c/agent-workflows (position 13) and look at the homepage CTR
 
 ## 2026-11-09 (Monday GSC meeting)
 
-**Data:** launch/gsc-exports/2026-11-09-Queries.csv + 2026-11-09-Pages.csv (last 28 days: 28 clicks, 1.51K impressions, avg position 16.9). Brand "pickaplugin" excluded. Code: scripts/seo_overrides.py (title overrides + content injections, applied in build_seo.py). Check date for everything below: **2026-02-07** (90 days), first title-CTR glance 2026-11-23.
+**Data:** launch/gsc-exports/2026-11-09-Queries.csv + 2026-11-09-Pages.csv (last 28 days: 28 clicks, 1.51K impressions, avg position 16.9). Brand "pickaplugin" excluded. Code: scripts/seo_overrides.py (title overrides + content injections, applied in build_seo.py). Check date for everything below: **2027-02-07** (90 days), first title-CTR glance 2026-11-23.
 
 Not due / left alone:
 - /best/data-backend title changed 2026-11-02, too soon to judge. "best backend for openai codex" went 16 impr @ 6.4 → 46 impr @ 7.0, still 0 clicks. No title change; content and links only (below). Re-check 2026-11-16 as planned.
