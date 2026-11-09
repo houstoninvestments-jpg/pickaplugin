@@ -269,3 +269,43 @@ Congrats on the ChatGPT plugin launch. Scheduling TikTok, Reels, Shorts and the 
 If you ever want it in front of more ChatGPT and Claude users, a featured spot is $49/mo and keeps it near the top of the Docs, Content & SEO category. If not, no worries, the listing's free for good. Let me know if anything needs fixing.
 
 Aaron
+
+## 2026-11-09
+
+> Drafts only. Not sent from this run. Picked for buying fit rather than raw score: Scott Hanselman's sandbox-mcp scored highest (5.0) and auto-ontology-mcp 4.3, but neither is a likely payer; a "thanks for sharing" note to Scott is the better ask there.
+
+### 1. Takuya Matsuyama, Inkdrop MCP Server
+To: @inkdrop_app (X DM) or the contact form on inkdrop.app
+Subject: Inkdrop MCP server is on PickAPlugin
+
+Hey Takuya,
+
+Saw the MCP Server v1.7.0 release this morning. Letting agents search and write Inkdrop notes is a great fit for people browsing memory tools, so I added it to PickAPlugin (a directory of Codex, ChatGPT and Claude plugins and MCP servers) as a free listing: https://pickaplugin.com/p/inkdrop-mcp-server
+
+Honest heads-up, we're new and traffic is still small. That's why the first 10 makers get a featured spot at a founding price of $29/mo for life, with the first week free, which pins it near the top of the homepage and the Memory & Context category. Totally optional, the free listing stays either way. If anything on the page is off, just reply and I'll fix it.
+
+Aaron
+
+### 2. WorkMagic team, WorkMagic agent plugin
+To: support@workmagic.io
+Subject: WorkMagic's agent plugin is listed on PickAPlugin
+
+Hi WorkMagic team,
+
+Caught the new agent plugin. Asking Claude, ChatGPT or Codex about attribution and lift tests directly is a strong use case, so it's now on PickAPlugin as a free listing: https://pickaplugin.com/p/workmagic-agent-plugin
+
+We're a young directory and traffic is still modest, so I won't oversell it. If you want extra placement while it grows, the first 10 makers get a featured spot (top of the Data & Backend category and the homepage) at $29/mo for life, first week free, plus a mention in our newsletter. No pressure at all. Happy to reword the description if you'd put it differently.
+
+Aaron
+
+### 3. Swarms, Swarms Skills
+To: kye@swarms.world
+Subject: Swarms Skills listed on PickAPlugin
+
+Hey Kye,
+
+Saw the Swarms Skills release. Giving coding agents a path into the Swarms Marketplace is exactly what people in our Agent Workflows category look for, so I listed it for free: https://pickaplugin.com/p/swarms-skills
+
+Being upfront, PickAPlugin is new and traffic is still small. For the first 10 makers there's a founding featured spot at $29/mo for life with the first week free, which keeps it near the top of Agent Workflows and the homepage and includes a newsletter mention. Free listing stays regardless. Let me know if anything needs fixing.
+
+Aaron
