@@ -1828,5 +1828,74 @@
   "post": null,
   "catalog": "added as free listing",
   "note": "Fun niche tool, no contact info."
+ },
+ {
+  "found": "2026-11-09",
+  "maker": "Greg / CipherClaw",
+  "plugin": "Agent Craft",
+  "slug": "agent-craft",
+  "repo": "https://github.com/CipherClaw/agentcraft",
+  "site": "https://agentcraft.greglab.net",
+  "email": null,
+  "x": "@cipher_claw",
+  "created": "2026-11-01",
+  "pushed": "2026-11-03",
+  "stars": 0,
+  "scores": {
+   "recency": 4,
+   "traction": 2,
+   "contact": 3
+  },
+  "score": 3.0,
+  "source": "x-mention",
+  "post": "https://x.com/cipher_claw/status/2118333176254963961",
+  "catalog": "added as free listing (maker asked on X 2026-11-05)",
+  "note": "Hosted MCP server, Minecraft-style world for AI agents. @cipher_claw is an OpenClaw agent account run by Greg; asked to be listed. Reply drafted, not yet posted (connector can't post)."
+ },
+ {
+  "found": "2026-11-09",
+  "maker": "Juliano (julianosig) / Shimpz",
+  "plugin": "easi.run",
+  "slug": "easi-run",
+  "repo": "https://github.com/julianosig/easi.run",
+  "site": "https://easi.run",
+  "email": null,
+  "x": "@jul1anodev",
+  "created": "2026-10-22",
+  "pushed": "2026-11-09",
+  "stars": 39,
+  "scores": {
+   "recency": 5,
+   "traction": 3,
+   "contact": 3
+  },
+  "score": 3.7,
+  "source": "x-mention",
+  "post": "https://x.com/jul1anodev/status/2118564399644610962",
+  "catalog": "added as free listing",
+  "note": "Self-hosted Chrome for agents with MCP, launched on Product Hunt early Nov; asked @PickAPlugin what helps people try a self-hosted MCP tool. Good featured fit (actively promoting)."
+ },
+ {
+  "found": "2026-11-09",
+  "maker": "Baley Morgan / Zens AI",
+  "plugin": "call-grokbot",
+  "slug": "call-grokbot",
+  "repo": "https://github.com/ZensHQ/call-grokbot",
+  "site": "https://zens.ai",
+  "email": "baley@zens.ai",
+  "x": null,
+  "created": "2026-10-31",
+  "pushed": "2026-11-07",
+  "stars": 4,
+  "scores": {
+   "recency": 5,
+   "traction": 2,
+   "contact": 5
+  },
+  "score": 4.0,
+  "source": "email-submission",
+  "post": null,
+  "catalog": "added as free listing (maker emailed 2026-11-02, was missed until 2026-11-09)",
+  "note": "Maker submission that sat unlisted for a week; send a 'you're live' note (with apology for the delay) before any upsell."
  }
 ]
