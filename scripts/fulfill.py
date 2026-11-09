@@ -24,8 +24,7 @@ import json, re, sys, datetime
 DATA = "data/plugins.json"
 LIVE = {"active", "trialing", "past_due"}
 PLINKS = {
-    # Add founding $29/mo plink id here once Stripe reconnect creates it (maps to featured_monthly).
-    # "plink_...": "featured_monthly",  # featured_founding $29/mo + 7-day trial
+    "plink_1UZxXNAJ19i9R4dzzjsjlHAq": "featured_monthly",  # founding $29/mo + 7-day trial
     "plink_1UUj18AJ19i9R4dzs8Ie2Uq4": "featured_monthly",
     "plink_1UUj1AAJ19i9R4dze4Tgzzpx": "expedited_review",
     "plink_1UUjNCAJ19i9R4dz965F509o": "top_spot",
@@ -64,12 +63,15 @@ def field(sess, key="plugin_url"):
 
 def tier(s):
     pl = s.get("payment_link"); md = s.get("metadata") or {}
+    t = None
     if isinstance(pl, dict):
         t = (pl.get("metadata") or {}).get("tier") or (pl.get("metadata") or {}).get("pickaplugin")
-        if t: return t
         pl = pl.get("id")
-    if pl in PLINKS: return PLINKS[pl]
-    return md.get("tier") or md.get("pickaplugin")
+    if not t and pl in PLINKS: t = PLINKS[pl]
+    if not t: t = md.get("tier") or md.get("pickaplugin")
+    # founding payment link / metadata is fulfilled as a normal featured slot
+    if t == "featured_founding": t = "featured_monthly"
+    return t
 
 def sub_status(s, subs):
     sub = s.get("subscription")
@@ -128,8 +130,61 @@ def main():
             P.append(p); idx[key] = p; log.append(f"+ added {p['slug']} from {o['url']} (needs description/category review)")
         p[f] = val; p[pre + "_sub"] = o["sid"]; p[pre + "_session"] = o["cs"]; p[pre + "_since"] = today
         log.append(f"* {t} on {p['slug']}{' ('+val+')' if t=='category_sponsor' else ''} ({o['st']})")
+    # Keep founding spots counter in sync when a founding payment link sale is fulfilled.
+    FOUNDING = "data/founding.json"
+    FOUNDING_PLINK = "plink_1UZxXNAJ19i9R4dzzjsjlHAq"
+    try:
+        fd = json.load(open(FOUNDING))
+    except Exception:
+        fd = {"spots_total": 10, "claimed": []}
+    claimed = list(fd.get("claimed") or [])
+    claimed_slugs = {c.get("slug") for c in claimed if isinstance(c, dict)}
+    sess_by_id = {s.get("id"): s for s in sessions if s.get("id")}
+
+    def is_founding_order(o):
+        s = sess_by_id.get(o.get("cs")) or {}
+        pl = s.get("payment_link")
+        plid = pl.get("id") if isinstance(pl, dict) else pl
+        if plid == FOUNDING_PLINK:
+            return True
+        md = (s.get("metadata") or {})
+        if md.get("pickaplugin") == "featured_founding" or md.get("tier") == "featured_founding":
+            return True
+        if isinstance(pl, dict):
+            pmd = pl.get("metadata") or {}
+            if pmd.get("pickaplugin") == "featured_founding" or pmd.get("tier") == "featured_founding":
+                return True
+        return False
+
+    for (tt, key), o in want.items():
+        if tt != "featured_monthly" or o["st"] not in LIVE:
+            continue
+        if not is_founding_order(o):
+            continue
+        plugin = idx.get(key)
+        if not plugin or not plugin.get("featured"):
+            continue
+        if plugin["slug"] in claimed_slugs:
+            continue
+        claimed.append({
+            "slug": plugin["slug"],
+            "name": plugin.get("name"),
+            "since": plugin.get("featured_since") or today,
+            "sub_id": o.get("sid"),
+            "session": o.get("cs"),
+        })
+        claimed_slugs.add(plugin["slug"])
+        log.append(f"* founding claimed {plugin['slug']} ({len(claimed)}/{fd.get('spots_total', 10)})")
+    fd["claimed"] = claimed
+    fd["updated"] = today
+
     print("\n".join(log) or "no changes")
     for t, f in FLAG.items(): print(f"{t}: {sum(1 for p in P if p.get(f))} active")
-    if not dry and log: json.dump(P, open(DATA, "w"), indent=1, ensure_ascii=False)
+    print(f"founding claimed: {len(claimed)}/{fd.get('spots_total', 10)}")
+    if not dry and log:
+        json.dump(P, open(DATA, "w"), indent=1, ensure_ascii=False)
+        with open(FOUNDING, "w") as fh:
+            json.dump(fd, fh, indent=2, ensure_ascii=False)
+            fh.write("\n")
 
 if __name__ == "__main__": main()
