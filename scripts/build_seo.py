@@ -89,6 +89,7 @@ def _fix(m,base):
   elif p.endswith(".html"): p=p[:-5]
   return f'href="/{p.lstrip("./")}{"#"+frag if frag else ""}"'.replace('href="/"','href="/"')
 URLS=[]
+exec(open(os.path.join(ROOT,"scripts","seo_overrides.py")).read())
 _N=len(PL) if "PL" in dir() else None
 DESCS={"index.html":"Hundreds of ChatGPT and Codex plugins are scattered across GitHub. PickAPlugin gathers them in one free, hand-sorted catalog with last update, license and install command for each.",
  "about.html":"How PickAPlugin finds, sorts and lists ChatGPT and Codex plugins, what our editor's picks mean, and how paid placements are labelled.",
@@ -105,6 +106,7 @@ for f in sorted(_glob.glob(D+"/**/*.html",recursive=True)):
   h=h.replace('href="../style.css"','href="/style.css"').replace('href="style.css"','href="/style.css"')
   _dd=DESCS.get(rel)
   if _dd: h=_re.sub(r'<meta name=description content="[^"]*">','<meta name=description content="'+_dd+'">',h,1)
+  h=_apply_overrides(rel,h)
   t=_re.search(r"<title>(.*?)</title>",h).group(1); dm=_re.search(r'<meta name=description content="(.*?)">',h); d=dm.group(1) if dm else ""
   img=SITE+"/og.png"
   meta=(f'<link rel=canonical href="{url}"><meta property="og:type" content="website"><meta property="og:site_name" content="PickAPlugin">'
