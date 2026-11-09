@@ -40,3 +40,32 @@ Working send path: Resend API, domain pickaplugin.com verified. From "PickAPlugi
 2026-10-29 10:08 PT: backlink outreach to ProtocolProbe (protocolprobe.com) <hello@protocolprobe.com> "Your registry checks + our Codex plugin data" -> sent 01a188a2-c004-779d-8082-2c8388f5c3ba
 2026-10-29 10:08 PT: backlink outreach to SkillAgent (skillagent.dev) <hello@skillagent.dev> "Your best MCP servers page" -> sent 01a188a2-c099-75ec-86c8-a52facafd27b
 2026-10-29 10:08 PT: backlink outreach to Mermail (mermail.app) <contact@mermail.app> "Free listing for Mermail on PickAPlugin" -> sent 01a188a2-c103-7e08-b1a8-b494611eac8b
+2026-11-02 09:56 PT: backlink outreach to Agent Skills Index by BranoLabs (skills.branolabs.com) <hello@branolabs.com> "Your Codex plugins page" -> sent 01a19d67-ac18-75b6-b3bf-92e94533e776
+2026-11-02 09:56 PT: backlink outreach to TurboAI (turboai.dev) <alex@turboai.dev> "Your Codex CLI plugins reference" -> sent 01a19d67-acb0-7745-87e2-b631e9eac893
+2026-11-02 09:56 PT: backlink outreach to MCP.Directory (mcp.directory) <hello@mcp.directory> "Link swap idea: MCP.Directory + PickAPlugin" -> sent 01a19d67-ad14-77e3-8be2-59c320cfba19
+2026-11-02 09:56 PT: backlink outreach to DataNorth (datanorth.ai) <info@datanorth.ai> "Your best ChatGPT plugins post" -> sent 01a19d67-adc9-7114-be49-3656c647576d
+2026-11-02 09:56 PT: backlink outreach to Swarmnest (swarmnest.ai) <hello@swarmnest.ai> "Swarmnest + PickAPlugin" -> sent 01a19d67-ae6b-77a8-b7b6-262323e5ba28
+2026-11-02 09:56 PT: backlink outreach to OpenAgentSkill (openagentskill.com) <qudongqi2023@gmail.com> "Your skills report + our Codex plugin data" -> sent 01a19d67-aefc-7cb4-9d61-3861ea847d52
+2026-11-02 09:56 PT: backlink outreach to Best AI Agent Tools (bestaiagenttools.com) <bestaiagenttools@gmail.com> "Research note for your Codex skills guide" -> sent 01a19d67-af8b-7022-a017-ba0c1991d41f
+2026-11-02 09:56 PT: backlink outreach to Skiln (skiln.co) <hey@skiln.co> "Skiln + PickAPlugin link swap?" -> sent 01a19d67-afef-76b3-8a48-859522fa3f97
+2026-11-03 09:59 PT: backlink outreach to Lukes Lu blog (ilukes.com) <lukes.lu@yahoo.com> "Your 10 essential Codex plugins post" -> sent 01a1a291-5f16-74bc-9c0c-7a5117b15eae
+2026-11-03 09:59 PT: backlink outreach to AgentSkillsDir (agentskillsdir.com) <contact@agentskillsdir.com> "Source-checked plugin data you might like" -> sent 01a1a291-5fb0-72da-abfd-ca61d0d6f5a7
+2026-11-03 09:59 PT: backlink outreach to VibeCoding Newsletter (vibecodingnewsletter.com) <contact@vibecodingnewsletter.com> "A possible tools item for VibeCoding Newsletter" -> sent 01a1a291-6086-771a-84ee-5146d2fd6628
+2026-11-03 09:59 PT: backlink outreach to MCP Newsletter (mcpnewsletter.com) <contact@mcpnewsletter.com> "Codex plugin data for a future issue" -> sent 01a1a291-6107-7137-93c2-f57a89dd0e05
+2026-11-03 09:59 PT: backlink outreach to claudecodexplugins (claudecodexplugins.com) <support@claudecodexplugins.com> "claudecodexplugins + PickAPlugin" -> sent 01a1a291-61c4-7efd-a684-aa30d83dc3ec
+2026-11-03 10:00 PT: thread reply (thanks) to BranoLabs <hello@branolabs.com> "Re: Your Codex plugins page" -> sent 01a1a291-8c95-7412-83fd-e9e8832d0333
+2026-11-04 09:53 PT: backlink outreach to Agent Plugins Directory by Ellelion (agentpluginsdirectory.com) <info@ellelion.com> "Your plugin.json census + our Codex plugin data" -> sent 01a1a7b1-a8de-70da-a7ee-b4145d187944
+2026-11-04 09:53 PT: backlink outreach to Agent Plugins Directory by Ronny Badilla (agent-plugins.directory) <info@ronnybadilla.com> "agent-plugins.directory + PickAPlugin" -> sent 01a1a7b1-a975-751d-b67f-97c8706ca1fb
+2026-11-04 09:53 PT: backlink outreach to MCPNav (mcpnav.net) <hello@mcpnav.net> "Codex plugin data for your field guides" -> sent 01a1a7b1-aa06-763d-8c2d-76082b340f75
+2026-11-04 09:53 PT: backlink outreach to Agent Skills Hub (agentskillshub.dev) <support@agentskillshub.dev> "Security-ish data on 339 Codex plugins" -> sent 01a1a7b1-aab3-7cf8-b4e3-512dcef945b3
+2026-11-04 09:53 PT: backlink outreach to agent-toolbox by Yunseo Kim (github.com/yunseo-kim/agent-toolbox) <contact@yunseo.kim> "Free listing for agent-toolbox on PickAPlugin" -> sent 01a1a7b1-ab2b-755b-aa5d-90ed65c13a66
+2026-11-05 09:54 PT: backlink outreach to ChatGPT Plugins Directory (chatgptpluginsdirectory.com) <info@chatgptpluginsdirectory.com> "chatgptpluginsdirectory.com + PickAPlugin" -> sent 01a1acd9-62c2-7d13-b947-f46d6660dbdc
+2026-11-05 09:54 PT: backlink outreach to Atlas Cloud (atlascloud.ai Codex plugins roundup) <support@atlascloud.ai> "A data source for your Codex plugins roundup" -> sent 01a1acd9-6330-77e8-828c-45f17f0fa406
+2026-11-05 09:54 PT: backlink outreach to Awesome Codex Skills by Composio (github.com/composio-community/awesome-codex-skills) <support@composio.dev> "PickAPlugin for the Awesome Codex Skills resources?" -> sent 01a1acd9-648f-781c-84b2-6252f772b143
+2026-11-05 09:54 PT: backlink outreach to Glama MCP (glama.ai) <frank@glama.ai> "Codex plugin data that might fit Glama" -> sent 01a1acd9-653d-77b3-8fd4-1fb324e61c4b
+2026-11-05 09:54 PT: backlink outreach to GoodSender (blog.goodsender.com) <support@goodsender.com> "Free listing for GoodSender's Codex MCP" -> sent 01a1acd9-65cc-7b21-aa14-cea0ec8e7562
+2026-11-05 09:54 PT: backlink outreach to ManyCP (manycp.com) <hello@manycp.com> "PickAPlugin for ManyCP's directory list?" -> sent 01a1acd9-6654-71af-9cb4-16fb9b938ada
+2026-11-05 09:54 PT: backlink outreach to awesome-codex-mcp-servers by Kuber Mehta (github.com/Kuberwastaken/awesome-codex-mcp-servers) <kuberhob@gmail.com> "Your awesome-codex-mcp-servers list" -> sent 01a1acd9-66f4-76e9-ae93-858283460d18
+2026-11-05 09:54 PT: backlink outreach to MCP Market (mcpmarket.com) <support@mcpmarket.com> "MCP Market + PickAPlugin" -> sent 01a1acd9-6794-7581-9184-ebc5dd38b633
+2026-11-05 09:54 PT: backlink outreach to MCPfinder (mcpfinder.org) <hello@mcpfinder.org> "MCPfinder + PickAPlugin" -> sent 01a1acd9-682e-7ef7-b3e1-96f654839186
+2026-11-05 09:54 PT: backlink outreach to Manufact (manufact.com MCP blog) <support@manufact.com> "Data tip for your Codex + ChatGPT MCP post" -> sent 01a1acd9-68c3-7cdb-8df5-9be98ac04a51

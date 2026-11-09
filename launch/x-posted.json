@@ -74,6 +74,38 @@
       "id": "2115897341421252917",
       "posted": "2026-10-29T13:03:32-07:00",
       "url": "https://x.com/PickAPlugin/status/2115897341421252917"
+    },
+    {
+      "q": 11,
+      "id": "2117304942515884432",
+      "posted": "2026-11-02T09:16:00-08:00",
+      "url": "https://x.com/PickAPlugin/status/2117304942515884432"
+    },
+    {
+      "q": 12,
+      "id": "2117667163028750825",
+      "posted": "2026-11-03T09:16:00-08:00",
+      "url": "https://x.com/PickAPlugin/status/2117667163028750825"
+    },
+    {
+      "q": 13,
+      "id": "2118029707111211130",
+      "posted": "2026-11-04T09:16:47-08:00",
+      "url": "https://x.com/PickAPlugin/status/2118029707111211130",
+      "note": "Changed 43 to 40+ because the shelf now has 49; the image still says 43."
+    },
+    {
+      "q": 14,
+      "id": "2118392065059164401",
+      "posted": "2026-11-05T09:16:59-08:00",
+      "url": "https://x.com/PickAPlugin/status/2118392065059164401",
+      "note": "Changed 343 to 350+ for catalog consistency."
+    },
+    {
+      "q": 15,
+      "id": "2118755670480580971",
+      "posted": "2026-11-06T09:22:21-08:00",
+      "url": "https://x.com/PickAPlugin/status/2118755670480580971"
     }
   ],
   "queue_note": "From 2026-10-26 the routine posts from launch/queue.md only (Q1..Q75). tag_posts/kit_posts are legacy history; queue.md already excludes tag post #1.",

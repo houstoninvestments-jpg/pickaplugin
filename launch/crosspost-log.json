@@ -16,5 +16,42 @@
   "platform": "bluesky",
   "url": "https://bsky.app/profile/pickaplugin.bsky.social/post/3mz2663oyos25",
   "source": "Q3 (agent guard), reworded"
+ },
+ {
+  "date": "2026-11-02",
+  "platform": "bluesky",
+  "url": "https://bsky.app/profile/pickaplugin.bsky.social/post/3mzeeaksyik2b",
+  "source": "Q7 (official vs indie directories, value-posts V4), reworded"
+ },
+ {
+  "date": "2026-11-02",
+  "platform": "hashnode",
+  "url": "https://pickaplugin.hashnode.dev/i-moved-my-mcp-servers-from-claude-to-codex-here-s-the-cheat-sheet",
+  "source": "third-party-posts.md #1 / articles/2026-11-02-mcp-claude-to-codex.md; canonical https://pickaplugin.com/guides/convert-mcp-config-claude-to-codex"
+ },
+ {
+  "date": "2026-11-02",
+  "platform": "devto",
+  "url": null,
+  "status": "pending: dev.to signed out",
+  "source": "articles/2026-11-02-mcp-claude-to-codex.md (same as Hashnode); canonical https://pickaplugin.com/guides/convert-mcp-config-claude-to-codex; tags ai, mcp, codex, tutorial"
+ },
+ {
+  "date": "2026-11-04",
+  "platform": "bluesky",
+  "url": "https://bsky.app/profile/pickaplugin.bsky.social/post/3mzjfc4gvd22j",
+  "source": "Q8 (3 questions before installing an MCP server), reworded"
+ },
+ {
+  "date": "2026-11-04",
+  "platform": "devto",
+  "url": "https://dev.to/pickaplugin/how-i-vet-a-codex-plugin-or-mcp-server-in-about-two-minutes-475d",
+  "source": "articles/2026-11-04-vet-a-plugin.md (from guides/vet-a-plugin); canonical https://pickaplugin.com/guides/vet-a-plugin; tags ai, mcp, security, codex"
+ },
+ {
+  "date": "2026-11-04",
+  "platform": "hashnode",
+  "url": "https://pickaplugin.hashnode.dev/how-i-vet-a-codex-plugin-or-mcp-server-in-about-two-minutes",
+  "source": "articles/2026-11-04-vet-a-plugin.md (from guides/vet-a-plugin); canonical https://pickaplugin.com/guides/vet-a-plugin; tags ai, mcp, security, codex"
  }
 ]
