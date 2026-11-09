@@ -22,3 +22,7 @@ Changes shipped:
 - NEW PAGE /guides/publish-codex-plugin: buyer-intent page for makers. Targets "publish codex plugin", "submit codex plugin" and "submit chatgpt app" (all in Google autocomplete), plus "codex plugin marketplace github". Covers the OpenAI submission portal (facts from OpenAI docs, checked Nov 2), repo marketplaces and free directories, and links to /submit and /badge. Linked from /submit, /faq and /guides.
 
 Next week: refresh /c/agent-workflows (position 13) and look at the homepage CTR (title/description).
+
+## 2026-11-09 (CEO weekly review)
+- NEW LISTING PAGES /p/agent-craft, /p/easi-run, /p/call-grokbot (maker requests via X and email). In sitemap; IndexNow pinged 567 URLs after deploy (200).
+- COPY (conversion, not ranking): every non-featured /p/ page's "Is this your plugin?" line now shows the founding featured rate ($29/mo for life, first week free, N of 10 left); /submit gained a "Want it seen first?" block; /claimed thank-you page mentions the founding offer. No title/description changes, so no GSC re-check needed for these.
