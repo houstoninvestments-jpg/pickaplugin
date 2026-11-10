@@ -55,6 +55,7 @@ If you want more eyes on it, there's a featured spot for $49/mo that pins it nea
 Aaron
 
 ### 2. Tripsy, Tripsy MCP
+**DO NOT SEND OR FOLLOW UP.** James Bilsbrough (support@tripsy.app) opted out on 2026-11-10: firm no, remove from marketing lists. Free listing stays. See launch/do-not-contact.json.
 To: support@tripsy.app
 Subject: Tripsy MCP on PickAPlugin
 

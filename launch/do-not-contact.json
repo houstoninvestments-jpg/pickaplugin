@@ -1,0 +1,24 @@
+{
+  "description": "Suppression list for all PickAPlugin marketing: featured pitches, backlink/sales follow-ups, newsletter, and X DMs. Never email, DM, or add these people to a marketing list again. Free listings stay up unless they also ask for removal.",
+  "entries": [
+    {
+      "added": "2026-11-10",
+      "name": "James Bilsbrough / Tripsy",
+      "emails": [
+        "support@tripsy.app"
+      ],
+      "x": [
+        "@tripsyapp"
+      ],
+      "domains": [
+        "tripsy.app"
+      ],
+      "slugs": [
+        "tripsy-mcp"
+      ],
+      "reason": "Replied to featured-spot pitch: firm no, prefers platform directories, asked 'Please remove us from your marketing lists.' Free listing left in place.",
+      "action": "do_not_contact",
+      "listing": "leave https://pickaplugin.com/p/tripsy-mcp unless they ask to take it down"
+    }
+  ]
+}
