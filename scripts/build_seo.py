@@ -28,7 +28,7 @@ INTRO={
 os.makedirs(D+"/best",exist_ok=True); os.makedirs(D+"/compare",exist_ok=True)
 for c in cats:
   items=sorted([p for p in P if p["category"]==c],key=rankkey)
-  checked=max((p.get("stars_checked","") for p in items),default="")
+  checked=max((p.get("stars_checked") or "" for p in items),default="")
   top=items[0] if items else None
   cmp="".join(f'<li><a href="../compare/{cslug(a,b2)}.html">{e(a["name"])} vs {e(b2["name"])}</a></li>' for a,b2 in PAIRS if a["category"]==c)
   b=f'''<div class=prose style="max-width:900px;padding-bottom:10px"><span class=mono style="color:var(--acc)">Ranked by public signals · not tested by us</span><h1>The best {e(c)} plugins for ChatGPT &amp; Codex</h1>
