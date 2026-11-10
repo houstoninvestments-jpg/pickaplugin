@@ -309,3 +309,45 @@ Saw the Swarms Skills release. Giving coding agents a path into the Swarms Marke
 Being upfront, PickAPlugin is new and traffic is still small. For the first 10 makers there's a founding featured spot at $29/mo for life with the first week free, which keeps it near the top of Agent Workflows and the homepage and includes a newsletter mention. Free listing stays regardless. Let me know if anything needs fixing.
 
 Aaron
+
+## 2026-11-10
+
+> Drafts only. Not sent from this run. Picked for buying fit: all three are commercial products that launched an MCP server this week. MCP1 has the highest score (4.3); Known Agents (4.0) and Buildcord (3.7) both have a support email. Living Brain (4.0) is the backup pick, but with 5.5M launch views it may find us too small right now.
+
+### 1. Known Agents, Known Agents MCP Server
+To: contact@knownagents.com (or X DM @KnownAgents)
+Subject: Known Agents MCP is on PickAPlugin
+
+Hi Known Agents team,
+
+Saw this morning's MCP launch. Asking ChatGPT or Claude which crawlers and agents are hitting your site is a really nice use of it, so I added it to PickAPlugin (a directory of 490+ Codex, ChatGPT and Claude plugins and MCP servers) as a free listing: https://pickaplugin.com/p/known-agents-mcp
+
+To be honest, we're new and traffic is still small. That's why the first 10 makers get a featured spot at a founding price of $29/mo for life, with the first week free. It pins you near the top of the homepage and the Docs, Content & SEO category and comes with a newsletter mention: https://buy.stripe.com/7sY6oG0A9bUbdX7eW1cQU06
+
+Totally optional, the free listing stays either way. If anything on the page is off, just reply and I'll fix it.
+
+Aaron
+
+### 2. Appwrite, MCP1
+To: X DM @MCP1_ (or @appwrite)
+Subject: n/a (DM)
+
+Hey MCP1 team, congrats on the launch. "One URL for every MCP server" is exactly what people browsing our Agent Workflows category are after, so I listed MCP1 on PickAPlugin for free: https://pickaplugin.com/p/mcp1
+
+Being upfront, we're a young directory (490+ plugins) and traffic is still modest. If a new product account wants extra placement, the first 10 makers get a founding featured spot (top of Agent Workflows plus the homepage, plus a newsletter mention) at $29/mo for life, first week free: https://buy.stripe.com/7sY6oG0A9bUbdX7eW1cQU06. No pressure, and happy to tweak the description.
+
+Aaron
+
+### 3. Buildcord, Buildcord MCP Server
+To: support@buildcord.dev
+Subject: Buildcord's MCP server is listed on PickAPlugin
+
+Hi Buildcord team,
+
+Caught the new MCP server today. Building Discord bots straight from ChatGPT or Claude is a fun fit for us, so it's now on PickAPlugin as a free listing: https://pickaplugin.com/p/buildcord-mcp
+
+Honest heads-up, we're new and traffic is still small, so I won't oversell it. While we grow, the first 10 makers can get a featured spot (top of the Messaging & Remote category and the homepage, plus a newsletter mention) at $29/mo for life with the first week free: https://buy.stripe.com/7sY6oG0A9bUbdX7eW1cQU06
+
+Either way the free listing stays. Let me know if you'd describe it differently.
+
+Aaron

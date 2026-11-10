@@ -19,7 +19,8 @@
   "score": 5.0,
   "source": "github",
   "catalog": "added as free listing",
-  "note": "Well-known React Native agency; actively pushed today."
+  "note": "Well-known React Native agency; actively pushed today.",
+  "featured_pitched": "2026-11-09"
  },
  {
   "found": "2026-10-27",
@@ -240,7 +241,8 @@
   "source": "github",
   "post": null,
   "catalog": "added as free listing",
-  "note": "Commercial product with a paid API, 1.2k stars, pushed today. Strong buyer."
+  "note": "Commercial product with a paid API, 1.2k stars, pushed today. Strong buyer.",
+  "featured_pitched": "2026-11-09"
  },
  {
   "found": "2026-10-28",
@@ -263,7 +265,8 @@
   "source": "github",
   "post": null,
   "catalog": "added as free listing",
-  "note": "SEO company shipping Codex plugins, audience overlaps ours. Good buyer."
+  "note": "SEO company shipping Codex plugins, audience overlaps ours. Good buyer.",
+  "featured_pitched": "2026-11-09"
  },
  {
   "found": "2026-10-28",
@@ -1252,7 +1255,8 @@
   "source": "github",
   "post": null,
   "catalog": "added as free listing",
-  "note": "Proprietary hosted MCP with paid licensing; email in README. Good paid fit."
+  "note": "Proprietary hosted MCP with paid licensing; email in README. Good paid fit.",
+  "featured_pitched": "2026-11-09"
  },
  {
   "found": "2026-11-04",
@@ -1896,6 +1900,237 @@
   "source": "email-submission",
   "post": null,
   "catalog": "added as free listing (maker emailed 2026-11-02, was missed until 2026-11-09)",
-  "note": "Maker submission that sat unlisted for a week; send a 'you're live' note (with apology for the delay) before any upsell."
+  "note": "Maker submission that sat unlisted for a week; send a 'you're live' note (with apology for the delay) before any upsell.",
+  "featured_pitched": "2026-11-09"
+ },
+ {
+  "found": "2026-11-10",
+  "maker": "Known Agents",
+  "plugin": "Known Agents MCP Server",
+  "slug": "known-agents-mcp",
+  "repo": null,
+  "site": "https://knownagents.com",
+  "email": "contact@knownagents.com",
+  "x": "@KnownAgents",
+  "created": "2026-11-10",
+  "pushed": "2026-11-10",
+  "stars": null,
+  "scores": {
+   "recency": 5,
+   "traction": 2,
+   "contact": 5
+  },
+  "score": 4.0,
+  "source": "x",
+  "post": "https://x.com/KnownAgents/status/2120149990773322131",
+  "catalog": "added as free listing",
+  "note": "Bot/AI-agent traffic analytics SaaS; launched MCP server today so you can ask ChatGPT or Claude about crawler and agent visits. Paid product, small X audience (14 followers), real contact email. Strong buyer fit."
+ },
+ {
+  "found": "2026-11-10",
+  "maker": "ChatAndBuild (Christel Buchanan)",
+  "plugin": "Living Brain",
+  "slug": "living-brain",
+  "repo": "https://github.com/ChatAndBuild/livingbrain",
+  "site": "https://livingbrain.com",
+  "email": null,
+  "x": "@livingbrain / @ladyxtel",
+  "created": "2026-10-26",
+  "pushed": "2026-11-04",
+  "stars": 6,
+  "scores": {
+   "recency": 4,
+   "traction": 5,
+   "contact": 3
+  },
+  "score": 4.0,
+  "source": "x",
+  "post": "https://x.com/ladyxtel/status/2119114188614451476",
+  "catalog": "added as free listing",
+  "note": "Persistent memory layer across ChatGPT, Claude, Codex, Cursor via MCP. Shipped official ChatGPT plugin last week; #2 on Product Hunt, founder has 48k followers. Funded/marketing-heavy, good featured fit but may consider us too small."
+ },
+ {
+  "found": "2026-11-10",
+  "maker": "Appwrite",
+  "plugin": "MCP1",
+  "slug": "mcp1",
+  "repo": null,
+  "site": "https://mcp1.com",
+  "email": null,
+  "x": "@MCP1_ / @appwrite",
+  "created": "2026-11-05",
+  "pushed": "2026-11-09",
+  "stars": null,
+  "scores": {
+   "recency": 5,
+   "traction": 5,
+   "contact": 3
+  },
+  "score": 4.3,
+  "source": "x",
+  "post": "https://x.com/appwrite/status/2119679207836131488",
+  "catalog": "added as free listing",
+  "note": "Appwrite's new MCP gateway (one URL for every MCP server, works with ChatGPT, Codex, Claude Code, Cursor). Launch post 108 likes / 9k views from a 125k-follower account. Brand-new product account (@MCP1_, 29 followers) needs distribution."
+ },
+ {
+  "found": "2026-11-10",
+  "maker": "Buildcord",
+  "plugin": "Buildcord MCP Server",
+  "slug": "buildcord-mcp",
+  "repo": "https://github.com/buildcord-dev/mcp",
+  "site": "https://buildcord.dev",
+  "email": "support@buildcord.dev",
+  "x": null,
+  "created": "2026-11-10",
+  "pushed": "2026-11-10",
+  "stars": 0,
+  "scores": {
+   "recency": 5,
+   "traction": 1,
+   "contact": 5
+  },
+  "score": 3.7,
+  "source": "github",
+  "post": null,
+  "catalog": "added as free listing",
+  "note": "No-code Discord bot builder (freemium SaaS) shipped a remote MCP server plus Claude/Cursor plugin today. Commercial, has support email. Good paid fit."
+ },
+ {
+  "found": "2026-11-10",
+  "maker": "WebTwizz",
+  "plugin": "WebTwizz",
+  "slug": "webtwizz",
+  "repo": "https://github.com/WebTwizz/agent",
+  "site": "https://webtwizz.com/mcp",
+  "email": "support@webtwizz.com",
+  "x": null,
+  "created": "2026-11-08",
+  "pushed": "2026-11-08",
+  "stars": 0,
+  "scores": {
+   "recency": 4,
+   "traction": 1,
+   "contact": 5
+  },
+  "score": 3.3,
+  "source": "github",
+  "post": null,
+  "catalog": "added as free listing",
+  "note": "AI website builder SaaS with hosted MCP plus Claude/Codex/Gemini plugin (plugin.json). Commercial, support email. Good paid fit."
+ },
+ {
+  "found": "2026-11-10",
+  "maker": "QDinvest (QDInvestments)",
+  "plugin": "codemap",
+  "slug": "codemap-qd",
+  "repo": "https://github.com/QDinvest/Code-Map-QD",
+  "site": null,
+  "email": null,
+  "x": "@QDInvestM",
+  "created": "2026-11-09",
+  "pushed": "2026-11-09",
+  "stars": 1,
+  "scores": {
+   "recency": 5,
+   "traction": 3,
+   "contact": 2
+  },
+  "score": 3.3,
+  "source": "x",
+  "post": "https://x.com/QDInvestM/status/2119709520310186109",
+  "catalog": "added as free listing",
+  "note": "Code map for coding agents (file + line range, callers, tests, confidence in one call). Launch post 37 likes / 12k views. Indie OSS, no email; reach via X."
+ },
+ {
+  "found": "2026-11-10",
+  "maker": "abruption",
+  "plugin": "Aptly",
+  "slug": "aptly",
+  "repo": "https://github.com/abruption/aptly",
+  "site": "https://abruption.dev",
+  "email": null,
+  "x": "@abruptWave",
+  "created": "2026-11-05",
+  "pushed": "2026-11-10",
+  "stars": 3,
+  "scores": {
+   "recency": 5,
+   "traction": 2,
+   "contact": 3
+  },
+  "score": 3.3,
+  "source": "x",
+  "post": "https://x.com/abruptWave/status/2118568151097147407",
+  "catalog": "added as free listing",
+  "note": "Local MCP that picks model and reasoning effort for Codex and Claude Code subagents via the OpenAI Decisions API; on npm. Indie OSS, low buyer likelihood."
+ },
+ {
+  "found": "2026-11-10",
+  "maker": "Nicky Christensen",
+  "plugin": "Jeeves",
+  "slug": "jeeves",
+  "repo": "https://github.com/nickycdk/jeeves",
+  "site": "https://nickychristensen.dk",
+  "email": null,
+  "x": "@nickycdk",
+  "created": "2026-11-08",
+  "pushed": "2026-11-10",
+  "stars": 2,
+  "scores": {
+   "recency": 5,
+   "traction": 2,
+   "contact": 3
+  },
+  "score": 3.3,
+  "source": "x",
+  "post": "https://x.com/nickycdk/status/2120086551724007718",
+  "catalog": "added as free listing",
+  "note": "Claude Code plugin for long tasks: writes a verified handover before context fills, clears and continues. Released today. Indie OSS, low buyer likelihood."
+ },
+ {
+  "found": "2026-11-10",
+  "maker": "PlotJuggler",
+  "plugin": "PlotJuggler agent plugin",
+  "slug": "plotjuggler-agent",
+  "repo": "https://github.com/PlotJuggler/plotjuggler-agent",
+  "site": "https://plotjuggler.io",
+  "email": null,
+  "x": null,
+  "created": "2026-11-07",
+  "pushed": "2026-11-08",
+  "stars": 2,
+  "scores": {
+   "recency": 4,
+   "traction": 3,
+   "contact": 3
+  },
+  "score": 3.3,
+  "source": "github",
+  "post": null,
+  "catalog": "added as free listing",
+  "note": "Official Codex + Claude Code plugin (.codex-plugin) for PlotJuggler 4 (6.3k-star robotics data viz tool). Established OSS project; featured unlikely but good catalog add."
+ },
+ {
+  "found": "2026-11-10",
+  "maker": "PendingDelete.net",
+  "plugin": "PendingDelete.net MCP",
+  "slug": "pendingdelete-mcp",
+  "repo": "https://github.com/tampa3/pendingdelete-mcp",
+  "site": "https://pendingdelete.net/mcp-server",
+  "email": null,
+  "x": null,
+  "created": "2026-11-08",
+  "pushed": "2026-11-08",
+  "stars": 1,
+  "scores": {
+   "recency": 4,
+   "traction": 1,
+   "contact": 3
+  },
+  "score": 2.7,
+  "source": "github",
+  "post": null,
+  "catalog": "added as free listing",
+  "note": "Domain-drop search site shipped an MCP server listed in Claude/ChatGPT directories. Small commercial site; no email found, site only."
  }
 ]
