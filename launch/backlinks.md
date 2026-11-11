@@ -161,3 +161,38 @@ Skipped as paid-only (as far as we know): There's An AI For That (paid submissio
 ## TurboAI follow-up (2026-11-05)
 - Reply sent to Alex Sorokoletov (alex@turboai.dev) with win-win ideas (Aaron approved).
 - We linked his Codex CLI plugins reference (https://www.turboai.dev/docs/codex/plugins) as a followed Go-deeper link from /guides/validate-plugin-json and /guides/install-codex-plugin (manifest / not-showing-up sections).
+
+## LIVE (found 2026-11-09): TurboAI Codex plugins docs
+- Page: https://www.turboai.dev/docs/codex/plugins (Alex Sorokoletov)
+- Links: https://pickaplugin.com and https://pickaplugin.com/tools/plugin-json-validator, no rel=nofollow (followed)
+- Came from the 2026-11-02 outreach plus the 2026-11-05 follow-up where we linked his docs from our guides.
+
+## Run 2026-11-09 (backlink outreach routine)
+- Unlinked mentions: none new (only our own SubmitPR, Neeed, Hashnode, dev.to pages).
+- Sent 5 via Resend: mcpcensus (info@mcpcensus.com), mcpifex (support@amdose.com), codexskills.dev (hello@), mcp360 (support@), vibeide (info@). All "sent"; ids in backlink-outreach.json.
+- Live checks: HOL awesome-codex-plugins and BranoLabs still live. Not yet: manycp, mcpfinder, manufact, kuber awesome list, goodsender, glama, mcpmarket.
+- Note: the Nov 6 run left no sends or log entries.
+
+## Live backlink checks (2026-11-10 PT)
+- Still live: HOL awesome-codex-plugins, BranoLabs reports, TurboAI Codex plugins docs. No new live links. No unlinked third-party mentions found (only our own press/profile pages).
+- Sent 6 outreach emails today: codexdesign.io, xtrusio.com, blastra.io, plugandship.dev, plugmcp.ai, theanthropicstack.com.
+
+## Grant O directory list (2026-11-10 PT)
+
+Vetted the 29 names from Grant O's directory post (https://x.com/2whazzuup/status/2119991797002997953; the post said 30, 29 names were passed). Research only: nothing submitted. Full verdict table: launch/grant-o-directories-2026-11-10.md.
+
+- SUBMIT (public free form, no Aaron login): Launching Next (https://www.launchingnext.com/submit/), Startup Buffer (https://startupbuffer.com/site/submit), AppRater (https://apprater.net/#submit).
+- MAYBE / NEEDS AARON: 15 (OAuth, password, or a required badge), including StartupBase, Side Projectors, and Tiny Startups. Those three were on earlier shortlists as "already done/queued elsewhere," but no live PickAPlugin listing was found.
+- SKIP: 11 (paid-only, no website link on the free tier, phone required, dead, spammy, or poor fit).
+- ALREADY LISTED: none.
+
+# Grant O list (2026-11-10 PT)
+
+Source: https://x.com/2whazzuup/status/2119991797002997953 (29 of 30 names; see launch/grant-o-directories-2026-11-10.md).
+
+Submitted free, 2026-11-10 evening PT ($0, no upgrades):
+- Launching Next: submitted, in queue (~4 months). https://www.launchingnext.com/thanks/?i=178804
+- Startup Buffer: submitted, in review. Private edit link is in grant-o-directories-2026-11-10.md.
+- AppRater: submitted, in hand-review queue (confirmation email to hello@pickaplugin.com).
+
+11 skipped (paid-only, no website link, phone required, or poor fit). 15 left as maybe (login, badge, or both). None were already listed.
