@@ -352,3 +352,47 @@ Honest heads-up, we're new and traffic is still small, so I won't oversell it. W
 Either way the free listing stays. Let me know if you'd describe it differently.
 
 Aaron
+
+## 2026-11-11
+
+> Drafts only. Not sent from this run. Picked for buying fit: all three are commercial products that shipped an agent plugin or MCP server this week. Webskan (4.0) is actively launching (Product Hunt Nov 10, dev.to posts); Vast (4.0) has a public team email; Pushwing (3.7) shipped its official Codex/ChatGPT plugin today. Ether and Zenitya (3.3) are backups.
+
+### 1. Webskan, Webskan MCP
+To: X DM @WebskanAgent (or contact form on webskan.com)
+Subject: n/a (DM)
+
+Hey, saw the Product Hunt launch. Having the agent audit the site it just deployed and then re-check after fixing is a really smart loop, so I added Webskan to PickAPlugin (a directory of 500+ Codex, ChatGPT and Claude plugins and MCP servers) as a free listing: https://pickaplugin.com/p/webskan-mcp
+
+Honest heads-up: we're new and traffic is still small. That's why the first 10 makers get a featured spot (top of Review & Testing plus the homepage, and a newsletter mention) at a founding $29/mo for life, first week free: https://buy.stripe.com/7sY6oG0A9bUbdX7eW1cQU06
+
+No pressure, the free listing stays either way. Happy to tweak the description if it's off.
+
+Aaron
+
+### 2. Vast / FirstBlood, Vast Agentic Giveaway
+To: team@firstblood.io
+Subject: Vast's agent giveaway plugin is on PickAPlugin
+
+Hi Vast team,
+
+Running a giveaway straight from Claude Code or Codex is a fun one, so I listed your new plugin on PickAPlugin (500+ Codex, ChatGPT and Claude plugins and MCP servers) for free: https://pickaplugin.com/p/vast-agentic-giveaway
+
+To be upfront, we're a young directory and traffic is still modest. While we grow, the first 10 makers can get a featured spot near the top of the homepage and the Docs, Content & SEO category, plus a newsletter mention, at $29/mo for life with the first week free: https://buy.stripe.com/7sY6oG0A9bUbdX7eW1cQU06
+
+Totally optional. If anything on the page is wrong, just reply and I'll fix it.
+
+Aaron
+
+### 3. Pushwing, Pushwing plugin
+To: contact form / support on pushwing.com (no public email found yet)
+Subject: Pushwing is listed on PickAPlugin
+
+Hi Keshav,
+
+Congrats on shipping the official Pushwing plugin today. Publishing and scheduling YouTube and Instagram posts from Codex or ChatGPT is a great fit for our creator crowd, so it's now on PickAPlugin as a free listing: https://pickaplugin.com/p/pushwing
+
+Being honest, we're new and traffic is still small, so I won't oversell it. The first 10 makers get a founding featured spot (top of Docs, Content & SEO plus the homepage, and a newsletter mention) at $29/mo for life, first week free: https://buy.stripe.com/7sY6oG0A9bUbdX7eW1cQU06
+
+Either way the free listing stays. Let me know if you'd describe it differently.
+
+Aaron
