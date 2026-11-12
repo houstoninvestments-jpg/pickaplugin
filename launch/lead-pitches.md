@@ -396,3 +396,47 @@ Being honest, we're new and traffic is still small, so I won't oversell it. The 
 Either way the free listing stays. Let me know if you'd describe it differently.
 
 Aaron
+
+## 2026-11-12
+
+> Drafts only. Not sent from this run. Picked for buying fit: ShowTake (4.0) shipped its Codex/ChatGPT plugin today and has a team email; SnapRender (3.7) is a paid screenshot API with a fresh agent plugin and a support email; Hubletter (3.7) launched its MCP on X today and sells sponsorships itself, so paid placement is familiar. NoLang (3.7) and Wapliss/Apavin (3.3) are backups.
+
+### 1. ShowTake, ShowTake plugin
+To: team@showtake.app
+Subject: ShowTake is listed on PickAPlugin
+
+Hi ShowTake team,
+
+Having the agent film the demo video and App Store screenshots of the app it just built is a great idea, so I added ShowTake to PickAPlugin (a directory of 500+ Codex, ChatGPT and Claude plugins and MCP servers) as a free listing: https://pickaplugin.com/p/showtake
+
+Honest heads-up: we're new and traffic is still small. That's why the first 10 makers get a featured spot (top of Design & Frontend plus the homepage, and a newsletter mention) at a founding $29/mo for life, first week free: https://buy.stripe.com/7sY6oG0A9bUbdX7eW1cQU06
+
+No pressure, the free listing stays either way. Happy to tweak the description if it's off.
+
+Aaron
+
+### 2. SnapRender, SnapRender agent plugin
+To: support@snap-render.com
+Subject: SnapRender's agent plugin is on PickAPlugin
+
+Hi SnapRender folks,
+
+Letting an agent actually see and read a page before it answers is handy, so your new plugin is now on PickAPlugin as a free listing: https://pickaplugin.com/p/snaprender
+
+To be upfront, we're a young directory and traffic is still modest. While we grow, the first 10 makers can get a featured spot near the top of the homepage and Review & Testing, plus a newsletter mention, at $29/mo for life with the first week free: https://buy.stripe.com/7sY6oG0A9bUbdX7eW1cQU06
+
+Totally optional. If anything on the page is wrong, just reply and I'll fix it.
+
+Aaron
+
+### 3. Hubletter, Hubletter MCP
+To: X DM @didac_email (no public email found; site is hubletter.com)
+Subject: n/a (DM)
+
+Hey Didac, saw the Hubletter MCP launch. Booking sponsorships straight from an agent is a fun twist, so I listed it on PickAPlugin (500+ agent plugins and MCP servers) for free: https://pickaplugin.com/p/hubletter-mcp
+
+You know the sponsorship game better than me, so I'll be straight: we're new and traffic is still small. The first 10 makers get a founding featured spot (homepage + category + newsletter mention) at $29/mo for life, first week free: https://buy.stripe.com/7sY6oG0A9bUbdX7eW1cQU06
+
+No pressure, the listing stays either way.
+
+Aaron

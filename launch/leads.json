@@ -42,7 +42,8 @@
     "score": 4.0,
     "source": "github",
     "catalog": "added as free listing",
-    "note": "Commercial product with a ChatGPT app angle; zero stars so far."
+    "note": "Commercial product with a ChatGPT app angle; zero stars so far.",
+    "featured_pitched": "2026-11-11"
   },
   {
     "found": "2026-10-27",
@@ -64,7 +65,8 @@
     "score": 4.0,
     "source": "github",
     "catalog": "added as free listing",
-    "note": "Funded-looking startup, plugin repo is 9 days old."
+    "note": "Funded-looking startup, plugin repo is 9 days old.",
+    "featured_pitched": "2026-11-11"
   },
   {
     "found": "2026-10-27",
@@ -108,7 +110,8 @@
     "score": 4.0,
     "source": "github",
     "catalog": "added as free listing",
-    "note": "Paid API product, launched 3 days ago."
+    "note": "Paid API product, launched 3 days ago.",
+    "featured_pitched": "2026-11-11"
   },
   {
     "found": "2026-10-27",
@@ -289,7 +292,8 @@
     "source": "github",
     "post": null,
     "catalog": "added as free listing",
-    "note": "Small company, open-source funnel for its product."
+    "note": "Small company, open-source funnel for its product.",
+    "featured_pitched": "2026-11-11"
   },
   {
     "found": "2026-10-28",
@@ -616,7 +620,8 @@
     "source": "github",
     "post": null,
     "catalog": "added as free listing (re-added 2026-11-02; earlier add was lost before commit)",
-    "note": "Commercial print-on-demand company; works with ChatGPT."
+    "note": "Commercial print-on-demand company; works with ChatGPT.",
+    "featured_pitched": "2026-11-11"
   },
   {
     "found": "2026-10-29",
@@ -755,7 +760,8 @@
     "source": "x",
     "post": "https://x.com/run2obtain/status/2116902195303965081",
     "catalog": "added as free listing",
-    "note": "Enterprise cloud-security company, budget likely; launch post small."
+    "note": "Enterprise cloud-security company, budget likely; launch post small.",
+    "featured_pitched": "2026-11-11"
   },
   {
     "found": "2026-11-02",
@@ -1474,7 +1480,8 @@
     "source": "x",
     "post": "https://x.com/ricardodantas/status/2118276031735832693",
     "catalog": "added as free listing",
-    "note": "Indie Markdown notes app with live co-editing and an MCP server for agents. Launched on X Nov 5."
+    "note": "Indie Markdown notes app with live co-editing and an MCP server for agents. Launched on X Nov 5.",
+    "featured_pitched": "2026-11-11"
   },
   {
     "found": "2026-11-05",
@@ -1728,7 +1735,8 @@
     "source": "x",
     "post": "https://x.com/swarms_corp/status/2118849370703671406",
     "catalog": "added as free listing",
-    "note": "Marketplace company with 47k X followers and a monetization angle; launch post got 54 likes."
+    "note": "Marketplace company with 47k X followers and a monetization angle; launch post got 54 likes.",
+    "featured_pitched": "2026-11-11"
   },
   {
     "found": "2026-11-09",
@@ -2006,7 +2014,8 @@
     "source": "github",
     "post": null,
     "catalog": "added as free listing",
-    "note": "No-code Discord bot builder (freemium SaaS) shipped a remote MCP server plus Claude/Cursor plugin today. Commercial, has support email. Good paid fit."
+    "note": "No-code Discord bot builder (freemium SaaS) shipped a remote MCP server plus Claude/Cursor plugin today. Commercial, has support email. Good paid fit.",
+    "featured_pitched": "2026-11-11"
   },
   {
     "found": "2026-11-10",
@@ -2029,7 +2038,8 @@
     "source": "github",
     "post": null,
     "catalog": "added as free listing",
-    "note": "AI website builder SaaS with hosted MCP plus Claude/Codex/Gemini plugin (plugin.json). Commercial, support email. Good paid fit."
+    "note": "AI website builder SaaS with hosted MCP plus Claude/Codex/Gemini plugin (plugin.json). Commercial, support email. Good paid fit.",
+    "featured_pitched": "2026-11-11"
   },
   {
     "found": "2026-11-10",
@@ -2375,5 +2385,235 @@
     "post": null,
     "catalog": "added as free listing",
     "note": "OSS dev tool, no contact; featured unlikely."
+  },
+  {
+    "found": "2026-11-12",
+    "maker": "Orchestero (ShowTake)",
+    "plugin": "ShowTake",
+    "slug": "showtake",
+    "repo": "https://github.com/orchestero/showtake-codex-plugin",
+    "site": "https://showtake.app",
+    "email": "team@showtake.app",
+    "x": null,
+    "created": "2026-11-12",
+    "pushed": "2026-11-12",
+    "stars": 0,
+    "scores": {
+      "recency": 5,
+      "traction": 2,
+      "contact": 5
+    },
+    "score": 4.0,
+    "source": "github",
+    "post": null,
+    "catalog": "added as free listing",
+    "note": "Commercial app-demo video product; plugin repo created today; site has team email."
+  },
+  {
+    "found": "2026-11-12",
+    "maker": "team-tissis (NoLang)",
+    "plugin": "NoLang",
+    "slug": "nolang",
+    "repo": "https://github.com/team-tissis/nolang-mcp",
+    "site": "https://no-lang.com",
+    "email": "contact@mvrks.co",
+    "x": null,
+    "created": "2026-11-12",
+    "pushed": "2026-11-12",
+    "stars": 0,
+    "scores": {
+      "recency": 5,
+      "traction": 2,
+      "contact": 4
+    },
+    "score": 3.7,
+    "source": "github",
+    "post": null,
+    "catalog": "added as free listing",
+    "note": "Japanese AI video generation SaaS shipping Codex plugin + MCP today; contact email is parent company (mvrks.co)."
+  },
+  {
+    "found": "2026-11-12",
+    "maker": "SnapRender",
+    "plugin": "SnapRender",
+    "slug": "snaprender",
+    "repo": "https://github.com/User0856/snaprender-agent-plugin",
+    "site": "https://snap-render.com/ai-agents",
+    "email": "support@snap-render.com",
+    "x": null,
+    "created": "2026-11-11",
+    "pushed": "2026-11-12",
+    "stars": 0,
+    "scores": {
+      "recency": 5,
+      "traction": 1,
+      "contact": 5
+    },
+    "score": 3.7,
+    "source": "github",
+    "post": null,
+    "catalog": "added as free listing",
+    "note": "Paid screenshot API with new agent plugin; support email in README."
+  },
+  {
+    "found": "2026-11-12",
+    "maker": "MidasAI (FinVector)",
+    "plugin": "FinVector MCP",
+    "slug": "finvector-mcp",
+    "repo": "https://github.com/MidasAI/finvector-mcp",
+    "site": "https://app.finvector.ai/api-docs",
+    "email": null,
+    "x": null,
+    "created": "2026-11-11",
+    "pushed": "2026-11-11",
+    "stars": 4,
+    "scores": {
+      "recency": 5,
+      "traction": 2,
+      "contact": 3
+    },
+    "score": 3.3,
+    "source": "github",
+    "post": null,
+    "catalog": "added as free listing",
+    "note": "Paid SEC-filings API with hosted MCP; site but no public email found."
+  },
+  {
+    "found": "2026-11-12",
+    "maker": "Jirav",
+    "plugin": "Jirav for ChatGPT",
+    "slug": "jirav-chatgpt",
+    "repo": "https://github.com/Jirav-Inc/jirav-chatgpt-plugin",
+    "site": "https://www.jirav.com",
+    "email": null,
+    "x": null,
+    "created": "2026-11-11",
+    "pushed": "2026-11-11",
+    "stars": 0,
+    "scores": {
+      "recency": 5,
+      "traction": 2,
+      "contact": 3
+    },
+    "score": 3.3,
+    "source": "github",
+    "post": null,
+    "catalog": "added as free listing",
+    "note": "Established FP&A SaaS; official ChatGPT plugin. Enterprise, lower odds of buying a small directory spot."
+  },
+  {
+    "found": "2026-11-12",
+    "maker": "Quantum Metric",
+    "plugin": "Quantum Metric for Codex",
+    "slug": "quantum-metric-codex",
+    "repo": "https://github.com/quantummetric/qm-plugin-codex",
+    "site": null,
+    "email": "support@quantummetric.com",
+    "x": null,
+    "created": "2026-11-11",
+    "pushed": "2026-11-12",
+    "stars": 0,
+    "scores": {
+      "recency": 5,
+      "traction": 2,
+      "contact": 3
+    },
+    "score": 3.3,
+    "source": "github",
+    "post": null,
+    "catalog": "added as free listing",
+    "note": "Large enterprise analytics vendor; only a support email, unlikely buyer."
+  },
+  {
+    "found": "2026-11-12",
+    "maker": "Wapliss (netdigitaltech)",
+    "plugin": "Wapliss for ChatGPT",
+    "slug": "wapliss-chatgpt",
+    "repo": "https://github.com/proteuscrypto/wapliss-for-chatgpt",
+    "site": "https://wapliss.com/integrations#chatgpt",
+    "email": "commerce@netdigitaltech.com",
+    "x": null,
+    "created": "2026-11-10",
+    "pushed": "2026-11-12",
+    "stars": 0,
+    "scores": {
+      "recency": 4,
+      "traction": 1,
+      "contact": 5
+    },
+    "score": 3.3,
+    "source": "github",
+    "post": null,
+    "catalog": "added as free listing",
+    "note": "Small WhatsApp SaaS with ChatGPT MCP; commerce email in README."
+  },
+  {
+    "found": "2026-11-12",
+    "maker": "Apavin (Vinayak)",
+    "plugin": "Apavin MCP",
+    "slug": "apavin-mcp",
+    "repo": "https://github.com/vinayak0920/apavin-mcp-server",
+    "site": "https://apavin.com/mcp",
+    "email": "vinayak@apavin.com",
+    "x": null,
+    "created": "2026-11-10",
+    "pushed": "2026-11-10",
+    "stars": 1,
+    "scores": {
+      "recency": 4,
+      "traction": 1,
+      "contact": 5
+    },
+    "score": 3.3,
+    "source": "github",
+    "post": null,
+    "catalog": "added as free listing",
+    "note": "Small startup, founder email plus sales@apavin.com in README."
+  },
+  {
+    "found": "2026-11-12",
+    "maker": "Pipex (chiempt)",
+    "plugin": "Odoo MCP Lite",
+    "slug": "odoo-mcp-lite",
+    "repo": "https://github.com/chiempt/odoo-mcp-lite",
+    "site": "https://www.pipex.pro",
+    "email": null,
+    "x": null,
+    "created": "2026-11-10",
+    "pushed": "2026-11-11",
+    "stars": 2,
+    "scores": {
+      "recency": 4,
+      "traction": 1,
+      "contact": 3
+    },
+    "score": 2.7,
+    "source": "github",
+    "post": null,
+    "catalog": "added as free listing",
+    "note": "Free read-only Odoo MCP from an Odoo consultancy; site only."
+  },
+  {
+    "found": "2026-11-12",
+    "maker": "Didac (Hubletter)",
+    "plugin": "Hubletter",
+    "slug": "hubletter-mcp",
+    "repo": null,
+    "site": "https://hubletter.com/en/",
+    "email": null,
+    "x": "@didac_email",
+    "created": "2026-11-12",
+    "pushed": "2026-11-12",
+    "stars": null,
+    "scores": {
+      "recency": 5,
+      "traction": 3,
+      "contact": 3
+    },
+    "score": 3.7,
+    "source": "x",
+    "post": "https://x.com/didac_email/status/2120835496683192365",
+    "catalog": "added as free listing",
+    "note": "Launched Hubletter MCP on X today (founder ~6k followers). Sells sponsorships itself, so understands paid placement."
   }
 ]
