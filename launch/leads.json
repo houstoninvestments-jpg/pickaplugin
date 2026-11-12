@@ -574,7 +574,8 @@
     "source": "x",
     "post": "https://x.com/gpaulbagetti/status/2115473675667587318",
     "catalog": "added as free listing (re-added 2026-11-02; earlier add was lost before commit)",
-    "note": "Brazilian data company (site in Portuguese); funded team, could pay."
+    "note": "Brazilian data company (site in Portuguese); funded team, could pay.",
+    "featured_pitched": "2026-11-12"
   },
   {
     "found": "2026-10-29",
@@ -1527,7 +1528,8 @@
     "source": "github",
     "post": null,
     "catalog": "added as free listing",
-    "note": "Created today. npm package google-gsc-mcp; talks to Search Console from Claude/Cursor/Codex."
+    "note": "Created today. npm package google-gsc-mcp; talks to Search Console from Claude/Cursor/Codex.",
+    "featured_pitched": "2026-11-12"
   },
   {
     "found": "2026-11-05",
@@ -1550,7 +1552,8 @@
     "source": "github",
     "post": null,
     "catalog": "added as free listing",
-    "note": "Voice layer for Claude Code/Codex/Hermes/Gemini CLI: call your agent from phone and let it call you back. Self-hostable."
+    "note": "Voice layer for Claude Code/Codex/Hermes/Gemini CLI: call your agent from phone and let it call you back. Self-hostable.",
+    "featured_pitched": "2026-11-12"
   },
   {
     "found": "2026-11-05",
@@ -2223,7 +2226,8 @@
     "source": "github",
     "post": null,
     "catalog": "added as free listing",
-    "note": "Commercial giveaway platform; public org email team@firstblood.io on GitHub. Marketing-tool buyer."
+    "note": "Commercial giveaway platform; public org email team@firstblood.io on GitHub. Marketing-tool buyer.",
+    "featured_pitched": "2026-11-12"
   },
   {
     "found": "2026-11-11",
@@ -2407,7 +2411,8 @@
     "source": "github",
     "post": null,
     "catalog": "added as free listing",
-    "note": "Commercial app-demo video product; plugin repo created today; site has team email."
+    "note": "Commercial app-demo video product; plugin repo created today; site has team email.",
+    "featured_pitched": "2026-11-12"
   },
   {
     "found": "2026-11-12",
@@ -2430,7 +2435,8 @@
     "source": "github",
     "post": null,
     "catalog": "added as free listing",
-    "note": "Japanese AI video generation SaaS shipping Codex plugin + MCP today; contact email is parent company (mvrks.co)."
+    "note": "Japanese AI video generation SaaS shipping Codex plugin + MCP today; contact email is parent company (mvrks.co).",
+    "featured_pitched": "2026-11-12"
   },
   {
     "found": "2026-11-12",
@@ -2453,7 +2459,8 @@
     "source": "github",
     "post": null,
     "catalog": "added as free listing",
-    "note": "Paid screenshot API with new agent plugin; support email in README."
+    "note": "Paid screenshot API with new agent plugin; support email in README.",
+    "featured_pitched": "2026-11-12"
   },
   {
     "found": "2026-11-12",
@@ -2545,7 +2552,8 @@
     "source": "github",
     "post": null,
     "catalog": "added as free listing",
-    "note": "Small WhatsApp SaaS with ChatGPT MCP; commerce email in README."
+    "note": "Small WhatsApp SaaS with ChatGPT MCP; commerce email in README.",
+    "featured_pitched": "2026-11-12"
   },
   {
     "found": "2026-11-12",
@@ -2568,7 +2576,8 @@
     "source": "github",
     "post": null,
     "catalog": "added as free listing",
-    "note": "Small startup, founder email plus sales@apavin.com in README."
+    "note": "Small startup, founder email plus sales@apavin.com in README.",
+    "featured_pitched": "2026-11-12"
   },
   {
     "found": "2026-11-12",
