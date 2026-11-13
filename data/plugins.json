@@ -618,6 +618,21 @@
   "install": "codex plugin add aient"
  },
  {
+  "slug": "aisle-mcp",
+  "name": "AISLE MCP",
+  "description": "Read-only MCP server that pulls AISLE security findings and suggested patches into Claude Code, Codex or Cursor so the agent can fix vulnerabilities in the editor.",
+  "maker": "AISLE",
+  "link": "https://aisle.com/blog/announcing-the-aisle-mcp-server",
+  "category": "Security & Governance",
+  "source": "editor-added",
+  "source_url": "https://aisle.com/blog/announcing-the-aisle-mcp-server",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-13",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-13"
+ },
+ {
   "slug": "alcove",
   "name": "Alcove",
   "description": "Local-first MCP server for private project docs with hybrid BM25+vector search, tree-sitter code indexing, and automated linting for team-wide documentation standards.",
@@ -796,6 +811,22 @@
   "license": "Apache-2.0",
   "language": "TypeScript",
   "install": "claude mcp add apidrifter -- npx -y apidrifter serve"
+ },
+ {
+  "slug": "apitally-mcp",
+  "name": "Apitally MCP",
+  "description": "Remote MCP server for Apitally API observability: agents can dig into API errors, slow requests, logs and traces, and set up alerts, with read-only or read-write access.",
+  "maker": "Apitally",
+  "link": "https://apitally.io/blog/apitally-mcp-server",
+  "category": "Deploy & DevOps",
+  "source": "editor-added",
+  "source_url": "https://apitally.io/blog/apitally-mcp-server",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-13",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-13",
+  "install": "codex mcp add apitally --url https://mcp.apitally.io/mcp"
  },
  {
   "slug": "apple-productivity",
@@ -1103,6 +1134,22 @@
   "install": "/plugin marketplace add GSkuza/BABOK_ANALYST"
  },
  {
+  "slug": "ballast-mcp",
+  "name": "Ballast",
+  "description": "MCP server for Ballast cold email software: set up mailboxes, import leads, write and launch campaigns and handle replies from your AI, with confirmations before anything sends.",
+  "maker": "Ballast",
+  "link": "https://ballast.to/docs/mcp",
+  "category": "Messaging & Remote",
+  "source": "editor-added",
+  "source_url": "https://x.com/minimalsource/status/2121190474740371517",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-13",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-13",
+  "install": "npx -y ballast-mcp"
+ },
+ {
   "slug": "bankbridge",
   "name": "BankBridge",
   "description": "Remote MCP server and skill that give Codex read-only access to your own US bank, credit card and investment accounts, fetched live, for questions about spending, subscriptions, cashflow and holdings; paid, $5/month per connected bank.",
@@ -1374,6 +1421,25 @@
   "license": "MIT",
   "language": "TypeScript",
   "install": null
+ },
+ {
+  "slug": "browser-hands",
+  "name": "Browser Hands",
+  "description": "Chrome extension plus a small local MCP server that lets Claude Code, Codex or Cursor drive the Chrome you already use: click, type, read pages, screenshot and record GIFs across profiles.",
+  "maker": "214140846",
+  "link": "https://github.com/214140846/browser-hands",
+  "category": "Agent Workflows",
+  "source": "editor-added",
+  "source_url": "https://github.com/214140846/browser-hands",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-13",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-13",
+  "stars": 11,
+  "pushed_at": "2026-11-13",
+  "language": "TypeScript",
+  "license": "MIT"
  },
  {
   "slug": "build-remote-agent",
@@ -2856,6 +2922,26 @@
   "license": "MIT",
   "language": "JavaScript",
   "install": "codex plugin marketplace add hashgraph-online/awesome-codex-plugins --ref main"
+ },
+ {
+  "slug": "copper-kicad",
+  "name": "Copper",
+  "description": "MCP server that lets AI apps design real, orderable KiCad circuit boards: schematics, LCSC parts, PCB routing, ERC/DRC checks and JLCPCB fab files.",
+  "maker": "claynicholson",
+  "link": "https://github.com/claynicholson/copper-kicad-mcp",
+  "category": "Industry Tools",
+  "source": "editor-added",
+  "source_url": "https://github.com/claynicholson/copper-kicad-mcp",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-13",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-13",
+  "stars": 47,
+  "pushed_at": "2026-11-13",
+  "language": "Python",
+  "license": "MIT",
+  "install": "npx -y copper-kicad setup"
  },
  {
   "slug": "core-learning",
@@ -5995,6 +6081,22 @@
   "install": "claude mcp add memtomem -s user -e MEMTOMEM_EXTRA_TOOLS=mem_update_coverage -- uvx --isolated --from \"memtomem[all]==0.7.8\" memtomem-server"
  },
  {
+  "slug": "meta-box-skill",
+  "name": "Meta Box Agent Skill",
+  "description": "Official agent skill that teaches Claude Code, Cursor and Codex how to write correct Meta Box (WordPress custom fields) code and avoid common ACF mix-ups; free and open source.",
+  "maker": "Meta Box",
+  "link": "https://metabox.io/meta-box-ai-skill/",
+  "category": "Docs, Content & SEO",
+  "source": "editor-added",
+  "source_url": "https://x.com/wpmetabox/status/2121100720535691663",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-13",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-13",
+  "install": "npx skills add wpmetabox/skills"
+ },
+ {
   "slug": "metamask-agent-wallet",
   "name": "MetaMask Agent Wallet",
   "description": "Official MetaMask plugin that gives Codex a self-custodial wallet to swap, bridge, trade Hyperliquid perps and Polymarket markets, earn yield, and pay x402 APIs within user-set limits.",
@@ -6648,6 +6750,25 @@
   "install": null
  },
  {
+  "slug": "pacxio",
+  "name": "pacxio",
+  "description": "Open-source packaging design engine with a Claude Code / Codex plugin: generate editable dielines for cartons, mailers, labels and pouches, preview them in 3D and export DXF or PDF.",
+  "maker": "pacxio",
+  "link": "https://github.com/pacxio-dev/pacxio",
+  "category": "Design & Frontend",
+  "source": "editor-added",
+  "source_url": "https://github.com/pacxio-dev/pacxio",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-13",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-13",
+  "stars": 1,
+  "pushed_at": "2026-11-13",
+  "language": "Python",
+  "license": "MIT"
+ },
+ {
   "slug": "panews-agent-toolkit",
   "name": "PANews Agent Toolkit",
   "description": "Crypto and blockchain news discovery, authenticated creator publishing workflows, and page-to-Markdown reading.",
@@ -6699,6 +6820,25 @@
   "source_section": "Community list",
   "first_seen": "2026-10-25",
   "featured": false
+ },
+ {
+  "slug": "pdf-to-einvoice",
+  "name": "PDF to E-Invoice",
+  "description": "Turns an invoice PDF into an EN 16931 e-invoice (ZUGFeRD / Factur-X, XRechnung) without changing its layout; browser app, CLI, library and MCP server that run locally.",
+  "maker": "Smart-Byte GmbH",
+  "link": "https://github.com/smart-byte/pdf-to-einvoice",
+  "category": "Industry Tools",
+  "source": "editor-added",
+  "source_url": "https://github.com/smart-byte/pdf-to-einvoice",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-13",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-13",
+  "stars": 3,
+  "pushed_at": "2026-11-12",
+  "language": "TypeScript",
+  "license": "MIT"
  },
  {
   "slug": "pendingdelete-mcp",
@@ -6994,6 +7134,22 @@
   "source_section": "Editor-added",
   "first_seen": "2026-11-05",
   "featured": false
+ },
+ {
+  "slug": "postpiper-mcp",
+  "name": "PostPiper",
+  "description": "Hosted MCP server for drafting, scheduling and publishing posts to X, LinkedIn and TikTok from ChatGPT, Claude or Codex, with a review step before anything goes out; free tier available.",
+  "maker": "PostPiper",
+  "link": "https://postpiper.ai/mcp",
+  "category": "Docs, Content & SEO",
+  "source": "editor-added",
+  "source_url": "https://x.com/0xinhua/status/2120531517864808637",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-13",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-13",
+  "install": "codex mcp add postpiper --url https://mcp.postpiper.ai/mcp"
  },
  {
   "slug": "praxis",
@@ -7753,6 +7909,25 @@
   "license": "MIT",
   "language": "JavaScript",
   "install": "/plugin marketplace add s977043/river-review"
+ },
+ {
+  "slug": "rizamo-mcp",
+  "name": "Rizamo",
+  "description": "Hosted remote MCP server for Rizamo: publish, schedule and analyze social media posts from your AI agent, with OAuth sign-in.",
+  "maker": "Rizamo",
+  "link": "https://github.com/rizamohq/rizamo-mcp",
+  "category": "Docs, Content & SEO",
+  "source": "editor-added",
+  "source_url": "https://github.com/rizamohq/rizamo-mcp",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-13",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-13",
+  "stars": 4,
+  "pushed_at": "2026-11-13",
+  "license": "MIT",
+  "install": "codex mcp add rizamo --url https://mcp.rizamo.com/mcp"
  },
  {
   "slug": "roadmapsmith",

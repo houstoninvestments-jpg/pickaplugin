@@ -440,3 +440,47 @@ You know the sponsorship game better than me, so I'll be straight: we're new and
 No pressure, the listing stays either way.
 
 Aaron
+
+## 2026-11-13
+
+### 1. Meta Box, Meta Box Agent Skill
+To: Meta Box team via https://metabox.io (no public email found; X @wpmetabox)
+Subject: Your Meta Box agent skill is on PickAPlugin
+
+Hi Meta Box team,
+
+Writing a skill so agents stop handing people get_field() from ACF is a really practical fix, so I added the Meta Box Agent Skill to PickAPlugin (a directory of 540+ Codex, ChatGPT and Claude plugins, skills and MCP servers) as a free listing: https://pickaplugin.com/p/meta-box-skill
+
+Honest heads-up: we're new and traffic is still small. That's why the first 10 makers get a featured spot (top of Docs, Content & SEO plus the homepage, and a newsletter mention) at a founding $29/mo for life, first week free: https://buy.stripe.com/7sY6oG0A9bUbdX7eW1cQU06
+
+No pressure, the free listing stays either way. Happy to tweak the description if it's off.
+
+Aaron
+
+### 2. Apitally, Apitally MCP
+To: Simon Gurcke via https://apitally.io (no public email found)
+Subject: Apitally's MCP server is on PickAPlugin
+
+Hi Simon,
+
+Asking an agent why POST /orders got slow this week and having it read the trace is a great demo, so I listed the Apitally MCP server on PickAPlugin for free: https://pickaplugin.com/p/apitally-mcp
+
+To be upfront, we're a young directory and traffic is still modest. While we grow, the first 10 makers can get a featured spot near the top of the homepage and Deploy & DevOps, plus a newsletter mention, at $29/mo for life with the first week free: https://buy.stripe.com/7sY6oG0A9bUbdX7eW1cQU06
+
+Totally optional. If anything on the page is wrong, just reply and I'll fix it.
+
+Aaron
+
+### 3. PostPiper, PostPiper MCP
+To: support@postpiper.ai (founder Kevin Wu, X @0xinhua)
+Subject: PostPiper is listed on PickAPlugin
+
+Hey Kevin,
+
+Saw your "0 to 1 is hard" shipping post. Same boat here, so I added PostPiper's MCP to PickAPlugin (540+ agent plugins and MCP servers) as a free listing: https://pickaplugin.com/p/postpiper-mcp
+
+I'll be straight: we're new and traffic is still small. The first 10 makers get a founding featured spot (homepage + Docs, Content & SEO + a newsletter mention) at $29/mo for life, first week free: https://buy.stripe.com/7sY6oG0A9bUbdX7eW1cQU06
+
+No pressure, the listing stays either way.
+
+Aaron
