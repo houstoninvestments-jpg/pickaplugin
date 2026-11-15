@@ -1,0 +1,11 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.pickaplugin/pickaplugin",
+  "title": "PickAPlugin",
+  "description": "Search a directory of 550+ MCP servers, Codex/ChatGPT/Claude plugins and agent skills.",
+  "version": "1.0.0",
+  "websiteUrl": "https://pickaplugin.com/mcp-server",
+  "repository": {"url": "https://github.com/houstoninvestments-jpg/pickaplugin", "source": "github", "subfolder": "plugin"},
+  "icons": [{"src": "https://raw.githubusercontent.com/houstoninvestments-jpg/pickaplugin/main/plugin/assets/logo.png", "mimeType": "image/png"}],
+  "remotes": [{"type": "streamable-http", "url": "https://pickaplugin.com/mcp"}]
+}

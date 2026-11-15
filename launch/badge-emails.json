@@ -1,0 +1,294 @@
+{
+ "about": "Badge email state. 'sent' = done (never resend). Opt-outs go to do-not-contact.json.",
+ "sent": [
+  {
+   "to": "marceloalejandrovc@gmail.com",
+   "slugs": [
+    "horizonx"
+   ],
+   "subject": "Free badge for HorizonX on PickAPlugin",
+   "date": "2026-11-15",
+   "time": "2026-11-15T06:39:25",
+   "id": "01a1dfa6-11db-7330-a801-f8c3661dea1d"
+  },
+  {
+   "to": "contacto@sonnivasquez.com",
+   "slugs": [
+    "gsc-mcp"
+   ],
+   "subject": "Free badge for gsc-mcp on PickAPlugin",
+   "date": "2026-11-15",
+   "time": "2026-11-15T06:39:25",
+   "id": "01a1dfa6-1504-7b5e-a759-ddd80e7d6984"
+  },
+  {
+   "to": "1804287165@qq.com",
+   "slugs": [
+    "cesium-mcp"
+   ],
+   "subject": "Free badge for Cesium MCP on PickAPlugin",
+   "date": "2026-11-15",
+   "time": "2026-11-15T06:39:26",
+   "id": "01a1dfa6-182c-7cde-abe3-025d439b622c"
+  },
+  {
+   "to": "Yash.ag@outlook.com",
+   "slugs": [
+    "excalidraw-boards"
+   ],
+   "subject": "Free badge for Excalidraw Boards on PickAPlugin",
+   "date": "2026-11-15",
+   "time": "2026-11-15T06:39:27",
+   "id": "01a1dfa6-1b56-76d1-8b8d-59be3fd5eded"
+  },
+  {
+   "to": "scott@hanselman.com",
+   "slugs": [
+    "sandbox-mcp"
+   ],
+   "subject": "Free badge for sandbox-mcp on PickAPlugin",
+   "date": "2026-11-15",
+   "time": "2026-11-15T06:39:28",
+   "id": "01a1dfa6-1e55-7070-8e5f-b054ff05b927"
+  },
+  {
+   "to": "12ymh12@gmail.com",
+   "slugs": [
+    "auto-ontology-mcp"
+   ],
+   "subject": "Free badge for auto-ontology-mcp on PickAPlugin",
+   "date": "2026-11-15",
+   "time": "2026-11-15T06:39:29",
+   "id": "01a1dfa6-2176-7038-8372-90cef7e520f6"
+  },
+  {
+   "to": "hwiery@naver.com",
+   "slugs": [
+    "teollimi"
+   ],
+   "subject": "Free badge for Teollimi on PickAPlugin",
+   "date": "2026-11-15",
+   "time": "2026-11-15T06:39:29",
+   "id": "01a1dfa6-249e-7371-888a-e40f440f962e"
+  },
+  {
+   "to": "support@quantummetric.com",
+   "slugs": [
+    "quantum-metric-codex"
+   ],
+   "subject": "Free badge for Quantum Metric for Codex on PickAPlugin",
+   "date": "2026-11-15",
+   "time": "2026-11-15T06:39:30",
+   "id": "01a1dfa6-27c1-7ebb-a3a0-fdfd91b4ebc5"
+  }
+ ],
+ "skipped": [],
+ "last_run": {
+  "date": "2026-11-15",
+  "sent": 8,
+  "errors": [],
+  "remaining_ready": 0,
+  "deferred": [
+   {
+    "to": "dvir@jobspipe.dev",
+    "eligible": "2026-11-23"
+   },
+   {
+    "to": "mariam.soliman@skycloak.io",
+    "eligible": "2026-11-23"
+   },
+   {
+    "to": "zeal@arcmira.com",
+    "eligible": "2026-11-23"
+   },
+   {
+    "to": "hello@neverapply.co",
+    "eligible": "2026-11-23"
+   },
+   {
+    "to": "baley@zens.ai",
+    "eligible": "2026-11-23"
+   },
+   {
+    "to": "hello@fastcrw.com",
+    "eligible": "2026-11-23"
+   },
+   {
+    "to": "hello@callstack.com",
+    "eligible": "2026-11-23"
+   },
+   {
+    "to": "info@exza.de",
+    "eligible": "2026-11-23"
+   },
+   {
+    "to": "hello@canonry.ai",
+    "eligible": "2026-11-23"
+   },
+   {
+    "to": "hello@apidrifter.com",
+    "eligible": "2026-11-24"
+   },
+   {
+    "to": "info@dataforseo.com",
+    "eligible": "2026-11-24"
+   },
+   {
+    "to": "cip@titi.re",
+    "eligible": "2026-11-24"
+   },
+   {
+    "to": "hello@githubcard.com",
+    "eligible": "2026-11-24"
+   },
+   {
+    "to": "hello@refcat.app",
+    "eligible": "2026-11-24"
+   },
+   {
+    "to": "hello@modem.dev",
+    "eligible": "2026-11-24"
+   },
+   {
+    "to": "support@workmagic.io",
+    "eligible": "2026-11-24"
+   },
+   {
+    "to": "contact@knownagents.com",
+    "eligible": "2026-11-24"
+   },
+   {
+    "to": "support@postminion.com",
+    "eligible": "2026-11-24"
+   },
+   {
+    "to": "devs@pidgeon.ai",
+    "eligible": "2026-11-25"
+   },
+   {
+    "to": "support@clypmint.com",
+    "eligible": "2026-11-25"
+   },
+   {
+    "to": "docx-editor@eigenpal.com",
+    "eligible": "2026-11-25"
+   },
+   {
+    "to": "hello@spronta.com",
+    "eligible": "2026-11-25"
+   },
+   {
+    "to": "contact@mitigant.io",
+    "eligible": "2026-11-25"
+   },
+   {
+    "to": "me@ricardodantas.me",
+    "eligible": "2026-11-25"
+   },
+   {
+    "to": "kye@swarms.world",
+    "eligible": "2026-11-25"
+   },
+   {
+    "to": "support@buildcord.dev",
+    "eligible": "2026-11-25"
+   },
+   {
+    "to": "support@webtwizz.com",
+    "eligible": "2026-11-25"
+   },
+   {
+    "to": "support@hoplix.com",
+    "eligible": "2026-11-25"
+   },
+   {
+    "to": "brady@agentgrown.com",
+    "eligible": "2026-11-26"
+   },
+   {
+    "to": "team@showtake.app",
+    "eligible": "2026-11-26"
+   },
+   {
+    "to": "contact@mvrks.co",
+    "eligible": "2026-11-26"
+   },
+   {
+    "to": "vinayak@apavin.com",
+    "eligible": "2026-11-26"
+   },
+   {
+    "to": "commerce@netdigitaltech.com",
+    "eligible": "2026-11-26"
+   },
+   {
+    "to": "team@firstblood.io",
+    "eligible": "2026-11-26"
+   },
+   {
+    "to": "hello@twring.com",
+    "eligible": "2026-11-26"
+   },
+   {
+    "to": "info@websensepro.com",
+    "eligible": "2026-11-26"
+   },
+   {
+    "to": "contato@erathos.com",
+    "eligible": "2026-11-26"
+   },
+   {
+    "to": "support@hronaut.dev",
+    "eligible": "2026-11-27"
+   },
+   {
+    "to": "hello@anoma.ly",
+    "eligible": "2026-11-27"
+   },
+   {
+    "to": "info@zipline.li",
+    "eligible": "2026-11-27"
+   },
+   {
+    "to": "georgesm.petrov@gmail.com",
+    "eligible": "2026-11-27"
+   },
+   {
+    "to": "jean@je4ndev.com",
+    "eligible": "2026-11-27"
+   },
+   {
+    "to": "hello@formsmtp.com",
+    "eligible": "2026-11-27"
+   },
+   {
+    "to": "aj@intuicodigital.com",
+    "eligible": "2026-11-27"
+   },
+   {
+    "to": "hey@kadirhan.dev",
+    "eligible": "2026-11-27"
+   },
+   {
+    "to": "deanjyool@gmail.com",
+    "eligible": "2026-11-27"
+   },
+   {
+    "to": "hey@warenmail.com",
+    "eligible": "2026-11-27"
+   },
+   {
+    "to": "hi@rizamo.com",
+    "eligible": "after featured pitch + 14d"
+   },
+   {
+    "to": "support@postpiper.ai",
+    "eligible": "after featured pitch + 14d"
+   },
+   {
+    "to": "contact@smart-byte.com",
+    "eligible": "after featured pitch + 14d"
+   }
+  ]
+ }
+}
