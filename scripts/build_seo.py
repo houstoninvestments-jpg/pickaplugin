@@ -30,7 +30,9 @@ for c in cats:
   items=sorted([p for p in P if p["category"]==c],key=rankkey)
   checked=max((p.get("stars_checked") or "" for p in items),default="")
   top=items[0] if items else None
-  cmp="".join(f'<li><a href="../compare/{cslug(a,b2)}.html">{e(a["name"])} vs {e(b2["name"])}</a></li>' for a,b2 in PAIRS if a["category"]==c)
+  cmp="".join(f'<li><a href="../compare/{cslug(a,b2)}.html">{e(a["name"])} vs {e(b2["name"])}</a></li>' for a,b2 in (CMP_PAIRS if "CMP_PAIRS" in dir() else PAIRS) if a["category"]==c)
+  _alt=[p for p,_ in ALT_PAGES if p["category"]==c] if "ALT_PAGES" in dir() else []
+  if _alt: cmp+='<li>Alternatives to: '+", ".join(f'<a href="../alternatives/{p["slug"]}.html">{e(p["name"])}</a>' for p in _alt[:10])+' · <a href="../compare.html">all comparisons</a></li>'
   b=f'''<div class=prose style="max-width:900px;padding-bottom:10px"><span class=mono style="color:var(--acc)">Ranked by public signals · not tested by us</span><h1>The best {e(c)} plugins for ChatGPT &amp; Codex</h1>
 <p style="font-size:19px">{len(items)} plugins in our {e(c)} shelf ({e(BLURB.get(c,""))}), ordered by what we can actually measure: our editor's picks first, then GitHub stars{f" (checked {checked})" if checked else ""}. Archived repos go to the bottom.</p>
 <p>{e(INTRO.get(c,""))}</p>
@@ -41,6 +43,7 @@ for c in cats:
   _t=_BEST_TITLE.get(slug(c),"Best {c} plugins for ChatGPT & Codex ({n} ranked) — PickAPlugin").format(c=c,n=len(items))
   open(f"{D}/best/{slug(c)}.html","w").write(layout(_t,b,1,f"The {len(items)} {c} plugins for ChatGPT and Codex in our catalog, ranked by editor's picks and GitHub stars. No paid ordering."))
 for a,b2 in PAIRS:
+  if cslug(a,b2) in globals().get("CMP_SLUGS",set()): continue
   def cell(p): return f'<td style="padding:10px;vertical-align:top;border-bottom:1px solid var(--rule)">'
   rows=[("What it says it does",lambda p:e(p["description"])),("Maker",lambda p:e(p["maker"])),("GitHub stars",lambda p:fmt(stars(p))+(f' <span class=mono>(checked {p.get("stars_checked")})</span>' if p.get("stars_checked") else "")),
         ("Archived",lambda p:"Yes" if p.get("archived") else "No"),("Editor's pick",lambda p:"Yes — "+e(PICKS[p["slug"]]) if p["slug"] in PICKS else "No"),

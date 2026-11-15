@@ -361,6 +361,9 @@ exec(open(os.path.join(ROOT,"scripts","build_tools.py")).read())
 exec(open(os.path.join(ROOT,"scripts","build_blackfriday.py")).read())
 exec(open(os.path.join(ROOT,"scripts","build_research.py")).read())
 exec(open(os.path.join(ROOT,"scripts","build_mcp.py")).read())
+exec(open(os.path.join(ROOT,"scripts","build_reports.py")).read())
+exec(open(os.path.join(ROOT,"scripts","build_launch.py")).read())
+exec(open(os.path.join(ROOT,"scripts","build_compare.py")).read())
 exec(open(os.path.join(ROOT,"scripts","build_seo.py")).read())
 # one URL style: no trailing slash. Nested index pages become <dir>.html so /dir serves 200 and /dir/ redirects.
 import glob as _g

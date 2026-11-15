@@ -1,0 +1,588 @@
+{
+ "month": "2026-11",
+ "as_of": "2026-11-14",
+ "generated": "2026-11-14",
+ "complete": false,
+ "baseline_commit": "f318d92",
+ "baseline_date": "2026-10-31",
+ "catalog_start": 380,
+ "catalog_now": 550,
+ "new_count": 161,
+ "new_by_category": [
+  [
+   "Agent Workflows",
+   26
+  ],
+  [
+   "Docs, Content & SEO",
+   25
+  ],
+  [
+   "Design & Frontend",
+   19
+  ],
+  [
+   "Review & Testing",
+   17
+  ],
+  [
+   "Other",
+   14
+  ],
+  [
+   "Messaging & Remote",
+   13
+  ],
+  [
+   "Memory & Context",
+   13
+  ],
+  [
+   "Industry Tools",
+   10
+  ],
+  [
+   "Security & Governance",
+   9
+  ],
+  [
+   "Data & Backend",
+   8
+  ],
+  [
+   "Deploy & DevOps",
+   5
+  ],
+  [
+   "Usage & Quotas",
+   2
+  ]
+ ],
+ "catalog_by_category": [
+  [
+   "Agent Workflows",
+   114
+  ],
+  [
+   "Other",
+   73
+  ],
+  [
+   "Docs, Content & SEO",
+   65
+  ],
+  [
+   "Memory & Context",
+   59
+  ],
+  [
+   "Design & Frontend",
+   50
+  ],
+  [
+   "Review & Testing",
+   48
+  ],
+  [
+   "Messaging & Remote",
+   29
+  ],
+  [
+   "Industry Tools",
+   25
+  ],
+  [
+   "Security & Governance",
+   24
+  ],
+  [
+   "Usage & Quotas",
+   22
+  ],
+  [
+   "Deploy & DevOps",
+   21
+  ],
+  [
+   "Data & Backend",
+   20
+  ]
+ ],
+ "new_by_week": [
+  [
+   "2026-11-01",
+   76
+  ],
+  [
+   "2026-11-08",
+   85
+  ]
+ ],
+ "new_by_license": [
+  [
+   "MIT",
+   97
+  ],
+  [
+   "No license file",
+   42
+  ],
+  [
+   "Apache-2.0",
+   16
+  ],
+  [
+   "AGPL-3.0",
+   4
+  ],
+  [
+   "GPL-3.0",
+   1
+  ],
+  [
+   "MPL-2.0",
+   1
+  ]
+ ],
+ "new_by_language": [
+  [
+   "n/a",
+   59
+  ],
+  [
+   "JavaScript",
+   31
+  ],
+  [
+   "Python",
+   30
+  ],
+  [
+   "TypeScript",
+   23
+  ],
+  [
+   "Shell",
+   8
+  ],
+  [
+   "Rust",
+   3
+  ],
+  [
+   "Swift",
+   3
+  ],
+  [
+   "Go",
+   2
+  ]
+ ],
+ "new_by_packaging": [
+  [
+   "No install command in README",
+   52
+  ],
+  [
+   "Claude Code plugin",
+   50
+  ],
+  [
+   "MCP server (mcp add)",
+   37
+  ],
+  [
+   "Codex plugin",
+   12
+  ],
+  [
+   "Skills (npx skills add)",
+   10
+  ]
+ ],
+ "catalog_by_packaging": [
+  [
+   "Claude Code plugin",
+   176
+  ],
+  [
+   "No install command in README",
+   175
+  ],
+  [
+   "Codex plugin",
+   81
+  ],
+  [
+   "MCP server (mcp add)",
+   67
+  ],
+  [
+   "Skills (npx skills add)",
+   51
+  ]
+ ],
+ "new_with_stars": 141,
+ "new_median_stars": 2,
+ "pushed_7d": 277,
+ "pushed_30d": 395,
+ "live_with_push_data": 516,
+ "archived": 6,
+ "stars_tracked": 370,
+ "stars_total_start": 104932,
+ "stars_total_now": 113184,
+ "gained_any": 147,
+ "lost_any": 11,
+ "fastest_abs": [
+  {
+   "slug": "claude-seo",
+   "name": "claude-seo",
+   "category": "Docs, Content & SEO",
+   "maker": "AgriciDaniel",
+   "from": 24905,
+   "to": 29227,
+   "gain": 4322,
+   "pct": 17.4
+  },
+  {
+   "slug": "claude-code-skills",
+   "name": "Claude Code Skills",
+   "category": "Agent Workflows",
+   "maker": "alirezarezvani",
+   "from": 29056,
+   "to": 29789,
+   "gain": 733,
+   "pct": 2.5
+  },
+  {
+   "slug": "linkedin-skills",
+   "name": "LinkedIn Skills",
+   "category": "Docs, Content & SEO",
+   "maker": "sergebulaev",
+   "from": 5418,
+   "to": 5916,
+   "gain": 498,
+   "pct": 9.2
+  },
+  {
+   "slug": "stop-that-shit",
+   "name": "Stop That Shit",
+   "category": "Agent Workflows",
+   "maker": "lennney",
+   "from": 3437,
+   "to": 3888,
+   "gain": 451,
+   "pct": 13.1
+  },
+  {
+   "slug": "nightshift",
+   "name": "Nightshift",
+   "category": "Other",
+   "maker": "orwa-mahmoud",
+   "from": 80,
+   "to": 451,
+   "gain": 371,
+   "pct": 463.8
+  },
+  {
+   "slug": "deja",
+   "name": "deja",
+   "category": "Memory & Context",
+   "maker": "vshulcz",
+   "from": 1341,
+   "to": 1548,
+   "gain": 207,
+   "pct": 15.4
+  },
+  {
+   "slug": "remove-ai-watermarks",
+   "name": "Remove AI Watermarks",
+   "category": "Design & Frontend",
+   "maker": "wiltodelta",
+   "from": 6227,
+   "to": 6384,
+   "gain": 157,
+   "pct": 2.5
+  },
+  {
+   "slug": "sysknife",
+   "name": "SysKnife",
+   "category": "Other",
+   "maker": "lacs-project",
+   "from": 117,
+   "to": 258,
+   "gain": 141,
+   "pct": 120.5
+  },
+  {
+   "slug": "context-attachment-manager",
+   "name": "Context Attachment Manager",
+   "category": "Design & Frontend",
+   "maker": "chipfighter",
+   "from": 669,
+   "to": 803,
+   "gain": 134,
+   "pct": 20.0
+  },
+  {
+   "slug": "kicad-happy",
+   "name": "KiCad Happy",
+   "category": "Other",
+   "maker": "aklofas",
+   "from": 1558,
+   "to": 1673,
+   "gain": 115,
+   "pct": 7.4
+  }
+ ],
+ "fastest_pct": [
+  {
+   "slug": "nightshift",
+   "name": "Nightshift",
+   "category": "Other",
+   "maker": "orwa-mahmoud",
+   "from": 80,
+   "to": 451,
+   "gain": 371,
+   "pct": 463.8
+  },
+  {
+   "slug": "sysknife",
+   "name": "SysKnife",
+   "category": "Other",
+   "maker": "lacs-project",
+   "from": 117,
+   "to": 258,
+   "gain": 141,
+   "pct": 120.5
+  },
+  {
+   "slug": "research-agent-skills",
+   "name": "Research Agent Skills",
+   "category": "Agent Workflows",
+   "maker": "KalarisLabs",
+   "from": 83,
+   "to": 129,
+   "gain": 46,
+   "pct": 55.4
+  },
+  {
+   "slug": "call-me",
+   "name": "/call-me",
+   "category": "Messaging & Remote",
+   "maker": "radres",
+   "from": 29,
+   "to": 44,
+   "gain": 15,
+   "pct": 51.7
+  },
+  {
+   "slug": "codex-auto-resume",
+   "name": "Codex Auto Resume",
+   "category": "Usage & Quotas",
+   "maker": "songyb111-gachon",
+   "from": 66,
+   "to": 93,
+   "gain": 27,
+   "pct": 40.9
+  },
+  {
+   "slug": "generative-media-skills",
+   "name": "Generative Media Skills",
+   "category": "Design & Frontend",
+   "maker": "SamurAIGPT",
+   "from": 30,
+   "to": 42,
+   "gain": 12,
+   "pct": 40.0
+  },
+  {
+   "slug": "mobile-dev-callstack",
+   "name": "Mobile Dev (Callstack)",
+   "category": "Design & Frontend",
+   "maker": "callstackincubator",
+   "from": 170,
+   "to": 237,
+   "gain": 67,
+   "pct": 39.4
+  },
+  {
+   "slug": "uizze",
+   "name": "UIZZE",
+   "category": "Design & Frontend",
+   "maker": "uizze",
+   "from": 78,
+   "to": 101,
+   "gain": 23,
+   "pct": 29.5
+  },
+  {
+   "slug": "oh-my-cassette",
+   "name": "Oh My Cassette",
+   "category": "Other",
+   "maker": "Cassette-Editor",
+   "from": 180,
+   "to": 220,
+   "gain": 40,
+   "pct": 22.2
+  },
+  {
+   "slug": "context-attachment-manager",
+   "name": "Context Attachment Manager",
+   "category": "Design & Frontend",
+   "maker": "chipfighter",
+   "from": 669,
+   "to": 803,
+   "gain": 134,
+   "pct": 20.0
+  }
+ ],
+ "notable_new": [
+  {
+   "slug": "e2e",
+   "name": "e2e",
+   "category": "Review & Testing",
+   "maker": "tester-army",
+   "stars": 13867,
+   "first_seen": "2026-11-11",
+   "license": "Apache-2.0",
+   "description": "Write, run, and debug end-to-end tests for web and mobile apps with agent skills and an MCP server."
+  },
+  {
+   "slug": "stack-diagram",
+   "name": "stack-diagram",
+   "category": "Docs, Content & SEO",
+   "maker": "caru-ini",
+   "stars": 2495,
+   "first_seen": "2026-11-04",
+   "license": "MIT",
+   "description": "Agent skill that turns a one-sentence description of your stack into an architecture diagram with official logos."
+  },
+  {
+   "slug": "poki",
+   "name": "Poki",
+   "category": "Messaging & Remote",
+   "maker": "Joseph Zhou",
+   "stars": 1211,
+   "first_seen": "2026-11-05",
+   "license": "AGPL-3.0",
+   "description": "Open-source local MCP server and agent that lets AI assistants operate a real iPhone through the accessibility tree, with no jailbreak or extra hardware."
+  },
+  {
+   "slug": "kubai-icons",
+   "name": "Kubai Icons",
+   "category": "Design & Frontend",
+   "maker": "kubai087",
+   "stars": 825,
+   "first_seen": "2026-11-03",
+   "license": null,
+   "description": "Claude skill that draws dynamic icons in one consistent style, with hover motion or as static SVG."
+  },
+  {
+   "slug": "muse4ai",
+   "name": "Muse4AI",
+   "category": "Design & Frontend",
+   "maker": "andrew-babo",
+   "stars": 808,
+   "first_seen": "2026-11-04",
+   "license": "MIT",
+   "description": "Local Windows bridge that hands your Muse session to ChatGPT, Claude, Cursor, Codex or n8n over REST, MCP or OAuth so agents can make pictures and videos."
+  },
+  {
+   "slug": "sandbox-mcp",
+   "name": "sandbox-mcp",
+   "category": "Review & Testing",
+   "maker": "Scott Hanselman",
+   "stars": 428,
+   "first_seen": "2026-11-09",
+   "license": "MIT",
+   "description": "MCP server and CLI that automate Windows Sandbox, giving your coding agent fresh, throwaway Windows machines to test apps in."
+  },
+  {
+   "slug": "auto-ontology-mcp",
+   "name": "auto-ontology-mcp",
+   "category": "Memory & Context",
+   "maker": "Minhyeong Yu",
+   "stars": 405,
+   "first_seen": "2026-11-09",
+   "license": "Apache-2.0",
+   "description": "NVIDIA Auto Ontology's semantic layer plus a personal knowledge base as an MCP server for Claude, ChatGPT and other MCP clients, no LLM API key needed."
+  },
+  {
+   "slug": "ztd-charts",
+   "name": "ztd charts",
+   "category": "Design & Frontend",
+   "maker": "junhan2",
+   "stars": 319,
+   "first_seen": "2026-11-05",
+   "license": "MIT",
+   "description": "Library of 33 animated, accessible React charts in pure SVG, with a CLI and MCP server so AI agents can emit chart JSON specs."
+  },
+  {
+   "slug": "ru-marketplace-mcp",
+   "name": "ru-marketplace-mcp",
+   "category": "Agent Workflows",
+   "maker": "Vladimir-Human",
+   "stars": 189,
+   "first_seen": "2026-11-08",
+   "license": "MIT",
+   "description": "Read-only Codex plugin (`.codex-plugin/plugin.json`), MCP server, and 15 Agent Skills for buyer-side product search, cards, seller details, reviews, and cross-marketplace price comparison across 12 Russian and Chinese marketplaces and classifieds (Wildberries, Ozon, Yandex Market, Detsky Mir, Avito, AliExpress, Taobao, Megamarket, Lamoda, DNS, Citilink, and Cian real estate) with no API keys required."
+  },
+  {
+   "slug": "exza-remote",
+   "name": "EXZA Remote",
+   "category": "Messaging & Remote",
+   "maker": "EXZA",
+   "stars": 176,
+   "first_seen": "2026-11-04",
+   "license": null,
+   "description": "Hosted MCP service that connects ChatGPT, Claude and other assistants to your own Mac, Windows or Linux computer with secure device pairing."
+  },
+  {
+   "slug": "andon",
+   "name": "Andon",
+   "category": "Review & Testing",
+   "maker": "PrimeFoldTools",
+   "stars": 168,
+   "first_seen": "2026-11-07",
+   "license": "MIT",
+   "description": "Stop hooks that stop a coding agent from claiming \"done\" without proof, using a same-session verification log, warn or block mode, and a public defect ledger."
+  },
+  {
+   "slug": "strobe",
+   "name": "Strobe",
+   "category": "Review & Testing",
+   "maker": "Hona",
+   "stars": 161,
+   "first_seen": "2026-11-03",
+   "license": "MIT",
+   "description": "Agent-native CLI and MCP server that measures and explains performance for web pages, Electron apps, Bun/Node and any process."
+  }
+ ],
+ "license_share_catalog": [
+  [
+   "MIT",
+   394
+  ],
+  [
+   "No license file",
+   86
+  ],
+  [
+   "Apache-2.0",
+   57
+  ],
+  [
+   "AGPL-3.0",
+   7
+  ],
+  [
+   "MPL-2.0",
+   2
+  ],
+  [
+   "GPL-3.0",
+   2
+  ]
+ ]
+}
