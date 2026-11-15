@@ -3,7 +3,10 @@
 Storage: Cloudflare Workers KV namespace `pickaplugin-leads` (id caf33a408d824dc39e86448463eb97b4), bound to the
 `pickaplugin` Worker as `LEADS`. Free tier.
 - Listing claims: keys `claim:<ISO time>:<rand>` → `{type,at,email,github,slug,corrections,country}`
-- Subscribers:   keys `sub:<email>` → `{type,at,email,from}`
+- Subscribers:   keys `sub:<email>` → `{type,status,at,email,from,confirm_sent_at,confirm_id,confirmed_at}`.
+  Double opt-in: /api/subscribe stores `status:"pending"` and the Worker emails a confirm link via Resend (RESEND_KEY binding,
+  from .secrets/resend_api_key). /confirm (static page) POSTs to /api/confirm → `status:"confirmed"` + notify email.
+  Only `confirmed` subscribers get the newsletter. Max 3 confirm emails per address, 15 min apart.
 
 Secrets live in `scripts/.secrets.json` (git-ignored): `admin_token`, Turnstile `sitekey`/`secret`, `kv` id.
 upload_buckets.py reads it and attaches the bindings LEADS, TURNSTILE_SECRET, ADMIN_TOKEN, NOTIFY on every deploy.
@@ -34,3 +37,22 @@ Owner-only test path: send header `x-admin-token: $T` to skip Turnstile (used fo
 /advertise shows "Founding placements so far: N of 10", computed at build time from active paid flags in
 data/plugins.json (featured, top_spot, belt, verified, category sponsors). The first 10 subscriptions keep their
 Stripe price; never change the price on an existing subscription.
+
+## Weekly newsletter (scripts/newsletter.py)
+    python3 scripts/newsletter.py draft --date YYYY-MM-DD    # data/newsletter/<date>.json from catalog + git star history
+    python3 scripts/newsletter.py preview --date D           # /workspace/newsletter-<date>.html/.txt
+    python3 scripts/newsletter.py test --date D --to delivered@resend.dev
+    python3 scripts/newsletter.py send --date D --yes        # confirmed subscribers only; resumable, never double-sends
+    python3 scripts/newsletter.py subscribers                # counts by status
+    python3 scripts/newsletter.py sync-log                   # log Worker confirmation sends (masked) in launch/resend-send-log.json
+Then commit data/newsletter/<date>.json, rebuild and deploy so /newsletter lists it. Drafts publish at /newsletter/<date>
+with noindex and a "Preview" banner. The repo is public: subscriber addresses never go in git (full send state is in the
+git-ignored .secrets/newsletter-sends.json; the public log has masked addresses + Resend ids).
+
+## Views / clicks sent to makers (Durable Object `Stats`, binding STATS)
+/p/<slug> views and /go/<slug> clicks are counted in the Worker: browser-like UAs only (bot regex, verified bots,
+prefetch and no-Accept-Language requests skipped), once per visitor per slug per day using an HMAC of IP+date
+(salted with ADMIN_TOKEN, rotates daily, rows pruned after 2 days; raw IPs never stored). Monthly totals (UTC month).
+/p pages show "N views · M clicks to the maker this month" only when views > 0; /advertise shows the site-wide clicks line
+only when > 0. Read all counts: `curl -s "https://pickaplugin.com/api/admin?token=$T&stats=1[&month=2026-11]"`.
+Counting started 2026-11-15.

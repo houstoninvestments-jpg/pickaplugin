@@ -1,4 +1,5 @@
 import { EmailMessage } from "cloudflare:email";
+import { DurableObject } from "cloudflare:workers";
 const H = { "content-type": "application/json", "cache-control": "no-store" };
 const json = (o, s = 200) => new Response(JSON.stringify(o, null, 1), { status: s, headers: H });
 const EM = /^[^\s@<>"]{1,64}@[^\s@<>"]{1,190}\.[a-z]{2,}$/i;
@@ -21,6 +22,56 @@ async function notify(env, subject, text) {
     await env.NOTIFY.send(new EmailMessage("hello@pickaplugin.com", "houstoninvestments@gmail.com", raw));
   } catch (e) { console.log("notify failed", String(e)); }
 }
+async function resend(env, to, subject, html, text) {
+  if (!env.RESEND_KEY) return null;
+  try {
+    const r = await fetch("https://api.resend.com/emails", { method: "POST", headers: { authorization: "Bearer " + env.RESEND_KEY, "content-type": "application/json" },
+      body: JSON.stringify({ from: "PickAPlugin <hello@pickaplugin.com>", to: [to], subject, html, text, reply_to: "hello@pickaplugin.com" }) });
+    if (!r.ok) { console.log("resend", r.status, await r.text()); return null; }
+    return (await r.json()).id || null;
+  } catch (e) { console.log("resend failed", String(e)); return null; }
+}
+// ---- views / clicks sent to makers (Durable Object, SQLite). Only salted hashed IPs, kept 2 days, for once-per-day dedupe. ----
+const month = () => new Date().toISOString().slice(0, 7);
+export class Stats extends DurableObject {
+  constructor(ctx, env) {
+    super(ctx, env); this.sql = ctx.storage.sql;
+    this.sql.exec("CREATE TABLE IF NOT EXISTS seen(day TEXT, h TEXT, slug TEXT, kind TEXT, PRIMARY KEY(day,h,slug,kind))");
+    this.sql.exec("CREATE TABLE IF NOT EXISTS counts(month TEXT, slug TEXT, kind TEXT, n INTEGER, PRIMARY KEY(month,slug,kind))");
+  }
+  get(slug) {
+    const o = { month: month(), views: 0, clicks: 0 };
+    for (const r of this.sql.exec("SELECT kind, n FROM counts WHERE month=? AND slug=?", o.month, slug)) o[r.kind === "view" ? "views" : "clicks"] = r.n;
+    return o;
+  }
+  hit(kind, slug, h) {
+    if (h && (kind === "view" || kind === "click")) {
+      const day = new Date().toISOString().slice(0, 10);
+      const ins = this.sql.exec("INSERT OR IGNORE INTO seen VALUES(?,?,?,?) RETURNING 1", day, h, slug, kind).toArray();
+      if (ins.length) this.sql.exec("INSERT INTO counts VALUES(?,?,?,1) ON CONFLICT(month,slug,kind) DO UPDATE SET n=n+1", day.slice(0, 7), slug, kind);
+      if (Math.random() < 0.02) this.sql.exec("DELETE FROM seen WHERE day < ?", new Date(Date.now() - 2 * 864e5).toISOString().slice(0, 10));
+    }
+    return this.get(slug);
+  }
+  total(kind) { const r = this.sql.exec("SELECT COALESCE(SUM(n),0) AS n, COUNT(*) AS c FROM counts WHERE month=? AND kind=?", month(), kind).one(); return { month: month(), total: r.n, plugins: r.c }; }
+  all(m) { return { month: m, rows: this.sql.exec("SELECT slug, kind, n FROM counts WHERE month=? ORDER BY n DESC", m).toArray() }; }
+}
+const statsStub = env => env.STATS.get(env.STATS.idFromName("v1"));
+const BOT = /bot|crawl|spider|slurp|scrap|fetch|curl|wget|python|httpx|aiohttp|go-http|java\/|okhttp|axios|undici|node|deno|headless|phantom|puppeteer|playwright|selenium|lighthouse|pagespeed|gtmetrix|preview|facebookexternalhit|embedly|whatsapp|telegram|discord|slack|skype|monitor|uptime|pingdom|feed|rss|archiv|semrush|ahrefs|mj12|dataforseo|bytespider|gpt|claude|anthropic|perplexity|cohere|meta-external|petal|yandex|baidu|bing|google|yahoo|validator|checker|scan|http-client|libwww|winhttp|postman|insomnia/i;
+function human(req) {
+  const ua = req.headers.get("user-agent") || "";
+  if (ua.length < 40 || !/^Mozilla\/5\.0 /.test(ua) || BOT.test(ua)) return false;
+  if (req.cf && req.cf.verifiedBotCategory) return false;
+  const pur = (req.headers.get("sec-purpose") || req.headers.get("purpose") || "").toLowerCase();
+  if (pur.includes("prefetch") || pur.includes("prerender")) return false;
+  if (!req.headers.get("accept-language")) return false;
+  return true;
+}
+async function visitor(req, env) {
+  const ip = req.headers.get("cf-connecting-ip"); if (!ip || !human(req)) return null;
+  return hmac(env.ADMIN_TOKEN || "pap", "ip:" + new Date().toISOString().slice(0, 10) + ":" + ip);  // salted, daily-rotating, never stored raw
+}
+const fmtN = n => n.toLocaleString("en-US");
 const page = (u, path, q) => Response.redirect(new URL(path + (q ? "?" + q : ""), u).toString(), 303);
 async function handle(req, env, u) {
   const p = u.pathname, ip = req.headers.get("cf-connecting-ip");
@@ -37,27 +88,54 @@ async function handle(req, env, u) {
     return page(u, "/claimed", "s=" + slug);
   }
   if (p === "/api/subscribe" && req.method === "POST") {
+    // double opt-in: store as pending, email a confirm link; only status "confirmed" gets the newsletter
     const f = await req.formData();
     if (f.get("website")) return page(u, "/subscribed");
     const email = String(f.get("email") || "").trim().toLowerCase().slice(0, 254);
     if (!EM.test(email)) return page(u, "/form-error", "w=sub");
     if (!(await turnstileOk(env, f, ip, req))) return page(u, "/form-error", "w=captcha");
-    const key = "sub:" + email;
-    if (!(await env.LEADS.get(key))) {
-      await env.LEADS.put(key, JSON.stringify({ type: "subscriber", at: new Date().toISOString(), email, from: String(f.get("from") || "").slice(0, 200) }));
-      await notify(env, "[PickAPlugin] New newsletter subscriber", email);
+    const key = "sub:" + email, raw = await env.LEADS.get(key), old = raw ? JSON.parse(raw) : null;
+    if (old && old.status === "confirmed") return page(u, "/subscribed");
+    if (old && old.confirm_sent_at && Date.now() - Date.parse(old.confirm_sent_at) < 15 * 60000) return page(u, "/subscribed");
+    const rec = { type: "subscriber", status: "pending", at: (old && old.at) || new Date().toISOString(), email, from: String(f.get("from") || (old && old.from) || "").slice(0, 200), confirm_sends: ((old && old.confirm_sends) || 0) + 1 };
+    if (rec.confirm_sends > 3) return page(u, "/subscribed");
+    const link = `https://pickaplugin.com/confirm?e=${encodeURIComponent(email)}&t=${await hmac(env.ADMIN_TOKEN, "confirm:" + email)}`;
+    const unsub = `https://pickaplugin.com/unsubscribe?e=${encodeURIComponent(email)}&t=${await hmac(env.ADMIN_TOKEN, "unsub:" + email)}`;
+    const id = await resend(env, email, "Confirm your PickAPlugin subscription",
+      `<div style="font:16px/1.5 Georgia,serif;color:#14171f;max-width:560px"><p>Hi,</p><p>Someone (hopefully you) asked to get the PickAPlugin weekly email: new MCP servers and plugins, once a week.</p><p><a href="${link}" style="display:inline-block;background:#14171f;color:#f4efe1;padding:10px 16px;text-decoration:none">Yes, subscribe me</a></p><p>If that wasn't you, ignore this email and you won't hear from us again.</p><p style="color:#5b5a52;font-size:13px">PickAPlugin · pickaplugin.com · <a href="${unsub}" style="color:#5b5a52">unsubscribe</a></p></div>`,
+      `Someone (hopefully you) asked to get the PickAPlugin weekly email: new MCP servers and plugins, once a week.\n\nConfirm here: ${link}\n\nIf that wasn't you, ignore this email and you won't hear from us again.\n\nPickAPlugin · https://pickaplugin.com`);
+    if (id) { rec.confirm_sent_at = new Date().toISOString(); rec.confirm_id = id; }
+    await env.LEADS.put(key, JSON.stringify(rec));
+    return page(u, id ? "/subscribed" : "/form-error", id ? "" : "w=mail");
+  }
+  if (p === "/api/confirm" && req.method === "POST") {
+    const f = await req.formData();
+    const email = String(f.get("e") || "").toLowerCase(), t = String(f.get("t") || "");
+    if (!email || t !== await hmac(env.ADMIN_TOKEN, "confirm:" + email)) return page(u, "/form-error", "w=confirm");
+    const key = "sub:" + email, raw = await env.LEADS.get(key);
+    if (!raw) return page(u, "/form-error", "w=confirm");
+    const rec = JSON.parse(raw);
+    if (rec.status !== "confirmed") {
+      rec.status = "confirmed"; rec.confirmed_at = new Date().toISOString();
+      await env.LEADS.put(key, JSON.stringify(rec));
+      await notify(env, "[PickAPlugin] New newsletter subscriber (confirmed)", email + "\nfrom: " + (rec.from || ""));
     }
-    return page(u, "/subscribed");
+    return page(u, "/confirmed");
   }
   if (p === "/unsubscribe") {
     const email = (u.searchParams.get("e") || "").toLowerCase(), t = u.searchParams.get("t") || "";
-    if (email && t === await hmac(env.ADMIN_TOKEN, "unsub:" + email)) { await env.LEADS.delete("sub:" + email); return page(u, "/unsubscribed"); }
+    if (email && t === await hmac(env.ADMIN_TOKEN, "unsub:" + email)) {
+      await env.LEADS.delete("sub:" + email);
+      if (req.method === "POST") return new Response("unsubscribed", { status: 200 }); // RFC 8058 one-click
+      return page(u, "/unsubscribed");
+    }
     return page(u, "/form-error", "w=unsub");
   }
   if (p === "/api/admin") {
     if (!env.ADMIN_TOKEN || u.searchParams.get("token") !== env.ADMIN_TOKEN) return json({ error: "not found" }, 404);
     const del = u.searchParams.get("delete");
     if (del) { await env.LEADS.delete(del); return json({ deleted: del }); }
+    if (u.searchParams.get("stats")) return json(await statsStub(env).all(u.searchParams.get("month") || month()));
     const out = { claims: [], subscribers: [] }; let cursor;
     do {
       const l = await env.LEADS.list({ cursor }); cursor = l.list_complete ? null : l.cursor;
@@ -206,16 +284,47 @@ async function mcp(req, env, u) {
     return r ? hdr(r) : hdr(null, 202);
   } catch (e) { console.log("mcp", String(e)); return hdr(rpcErr(body && body.id, -32603, "Internal error"), 500); }
 }
+async function goOut(req, env, u, slug) {
+  let p = null;
+  try { p = (await catalog(env, u)).plugins.find(x => x.slug === slug); } catch (e) { console.log("go", String(e)); }
+  if (!p) return Response.redirect("https://pickaplugin.com/p/" + slug, 302);
+  const to = u.searchParams.get("to"), dest = (to === "home" && p.homepage) || (to === "docs" && p.docs) || p.repo;
+  if (!/^https?:\/\//.test(dest || "")) return Response.redirect("https://pickaplugin.com/p/" + slug, 302);
+  if (env.STATS && req.method === "GET") {
+    try { const h = await visitor(req, env); if (h) await statsStub(env).hit("click", slug, h); } catch (e) { console.log("stats click", String(e)); }
+  }
+  return new Response(null, { status: 302, headers: { location: dest, "cache-control": "no-store", "x-robots-tag": "noindex, nofollow", "referrer-policy": "origin" } });
+}
+async function withViews(req, env, res, slug) {
+  let c = null;
+  try { const h = await visitor(req, env); c = await statsStub(env).hit(h ? "view" : "none", slug, h); } catch (e) { console.log("stats view", String(e)); }
+  const out = new Response(res.body, res); out.headers.set("cache-control", "no-store");
+  if (!c || !c.views) return out;
+  const txt = `${fmtN(c.views)} view${c.views === 1 ? "" : "s"}` + (c.clicks ? ` · ${fmtN(c.clicks)} click${c.clicks === 1 ? "" : "s"} to the maker` : "") + " this month";
+  return new HTMLRewriter().on("#vs", { element(el) { el.removeAttribute("hidden"); el.setInnerContent(txt); el.setAttribute("title", "Counted by PickAPlugin: one per visitor per day, obvious bots excluded"); } }).transform(out);
+}
+async function withTotal(env, res) {
+  let t = null; try { t = await statsStub(env).total("click"); } catch (e) { console.log("stats total", String(e)); }
+  const out = new Response(res.body, res); out.headers.set("cache-control", "no-store");
+  if (!t || !t.total) return out;
+  const txt = `So far this month, PickAPlugin sent ${fmtN(t.total)} click${t.total === 1 ? "" : "s"} to makers' projects across ${fmtN(t.plugins)} listing${t.plugins === 1 ? "" : "s"}. We started counting on November 15, 2026: one click per visitor per listing per day, obvious bots excluded.`;
+  return new HTMLRewriter().on("#clicks-sent", { element(el) { el.removeAttribute("hidden"); el.setInnerContent(txt); } }).transform(out);
+}
 export default {
   async fetch(req, env) {
     const u = new URL(req.url);
     if (u.hostname === "www.pickaplugin.com" || u.protocol === "http:") { u.hostname = "pickaplugin.com"; u.protocol = "https:"; return Response.redirect(u.toString(), 301); }
     if (u.pathname === "/mcp" || u.pathname === "/mcp/") return mcp(req, env, u);
+    const go = u.pathname.match(/^\/go\/([a-z0-9-]+)\/?$/);
+    if (go) return goOut(req, env, u, go[1]);
     if (u.pathname.startsWith("/api/") || u.pathname === "/unsubscribe") {
       try { const r = await handle(req, env, u); if (r) return r; } catch (e) { console.log(String(e)); return json({ error: "server error" }, 500); }
       return json({ error: "not found" }, 404);
     }
     const res = await env.ASSETS.fetch(req);
+    const ps = u.pathname.match(/^\/p\/([a-z0-9-]+?)(?:\.html)?\/?$/);
+    if (ps && res.status === 200 && req.method === "GET" && env.STATS) return withViews(req, env, res, ps[1]);
+    if (/^\/advertise(\.html|\/)?$/.test(u.pathname) && res.status === 200 && env.STATS) return withTotal(env, res);
     const m = u.pathname.match(/^\/(language|license)\/([^\/]+?)\/?$/);
     if (res.status === 404 && m) {
       // collection page below the gate (or alias spelling): fold the alias, else send to the hub

@@ -51,9 +51,12 @@ After each deploy: `python3 scripts/indexnow.py`.
 
 ## Lead capture (claims + newsletter)
 Worker routes /api/claim, /api/subscribe, /unsubscribe, /api/admin. Bindings are added by upload_buckets.py from the
-git-ignored scripts/.secrets.json; without that file the deploy breaks the forms. See scripts/leads_notes.md.
+git-ignored scripts/.secrets.json (plus RESEND_KEY from .secrets/resend_api_key and the STATS Durable Object; code2.js adds
+the DO migration v1 only if the live script lacks it, and sets assets run_worker_first for /p/*, /advertise, /go/*); without that file the deploy breaks the forms. See scripts/leads_notes.md.
 When a paid placement goes live, the founding counter on /advertise updates on the next build.
 
 ## Big deploys (many changed files)
 The connector truncates step 3's output at ~24 KB, so when 600+ files changed the bucket list is cut off and upload_buckets.py fails.
 Workaround used 2026-11-14: have step 3 return `JSON.stringify(result)`, upload the hashes that are visible, then call step 3 again (Cloudflare only asks for files it still lacks) until the result isn't truncated, then run upload_buckets.py on that one as normal.
+
+Tip: the user-Cloudflare `execute` tool takes `truncate: false`; with `write_to_file: true` that may avoid the 24 KB cut entirely.

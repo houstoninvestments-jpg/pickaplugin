@@ -1,0 +1,208 @@
+{
+ "date": "2026-11-15",
+ "status": "draft",
+ "generated_at": "2026-11-15T06:42:18",
+ "window": [
+  "2026-11-08",
+  "2026-11-15"
+ ],
+ "catalog_size": 550,
+ "stars_baseline_commit": "474b0a5",
+ "subject": "81 new MCP servers & plugins this week",
+ "new_total": 81,
+ "new": [
+  {
+   "slug": "e2e",
+   "name": "e2e",
+   "summary": "Write, run, and debug end-to-end tests for web and mobile apps with agent skills and an MCP server.",
+   "category": "Review & Testing",
+   "maker": "tester-army",
+   "url": "https://pickaplugin.com/p/e2e",
+   "stars": 13867
+  },
+  {
+   "slug": "sandbox-mcp",
+   "name": "sandbox-mcp",
+   "summary": "MCP server and CLI that automate Windows Sandbox, giving your coding agent fresh, throwaway Windows machines to test apps in.",
+   "category": "Review & Testing",
+   "maker": "Scott Hanselman",
+   "url": "https://pickaplugin.com/p/sandbox-mcp",
+   "stars": 428
+  },
+  {
+   "slug": "auto-ontology-mcp",
+   "name": "auto-ontology-mcp",
+   "summary": "NVIDIA Auto Ontology's semantic layer plus a personal knowledge base as an MCP server for Claude, ChatGPT and other MCP clients, no LLM API key needed.",
+   "category": "Memory & Context",
+   "maker": "Minhyeong Yu",
+   "url": "https://pickaplugin.com/p/auto-ontology-mcp",
+   "stars": 405
+  },
+  {
+   "slug": "copper-kicad",
+   "name": "Copper",
+   "summary": "MCP server that lets AI apps design real, orderable KiCad circuit boards: schematics, LCSC parts, PCB routing, ERC/DRC checks and JLCPCB fab files.",
+   "category": "Industry Tools",
+   "maker": "claynicholson",
+   "url": "https://pickaplugin.com/p/copper-kicad",
+   "stars": 83
+  },
+  {
+   "slug": "easi-run",
+   "name": "easi.run",
+   "summary": "Self-hosted Chrome sessions for AI agents on your own Linux server, with a built-in MCP server, live human takeover for logins and 2FA, and saved profiles.",
+   "category": "Agent Workflows",
+   "maker": "julianosig",
+   "url": "https://pickaplugin.com/p/easi-run",
+   "stars": 81
+  },
+  {
+   "slug": "phonedriver",
+   "name": "phonedriver",
+   "summary": "Lets Codex see and operate Android phones, emulators, the iOS Simulator and iPhones through a local MCP server and its skill, and asks you before any tap that pays.",
+   "category": "Messaging & Remote",
+   "maker": "hridaya423",
+   "url": "https://pickaplugin.com/p/phonedriver",
+   "stars": 78
+  },
+  {
+   "slug": "inkdrop-mcp-server",
+   "name": "Inkdrop MCP Server",
+   "summary": "Official MCP server for the Inkdrop note-taking app, so AI agents can search, read and write your Markdown notes.",
+   "category": "Memory & Context",
+   "maker": "Inkdrop (Takuya Matsuyama)",
+   "url": "https://pickaplugin.com/p/inkdrop-mcp-server",
+   "stars": 57
+  },
+  {
+   "slug": "sozai-search-mcp",
+   "name": "sozai-search-mcp",
+   "summary": "Search about 36,000 free, mostly CC0 3D models, materials and HDRIs with real-world sizes from your AI agent, as an MCP server.",
+   "category": "Design & Frontend",
+   "maker": "KANA (KanaWorks AI)",
+   "url": "https://pickaplugin.com/p/sozai-search-mcp",
+   "stars": 51
+  },
+  {
+   "slug": "loom",
+   "name": "Loom",
+   "summary": "Self-hosted shared long-term memory and code index (definitions, callers, change impact) for Codex, stored in ClickHouse, with lifecycle hooks that capture each session and MCP tools that save and recall decisions across sessions and teammates.",
+   "category": "Memory & Context",
+   "maker": "ClickHouse",
+   "url": "https://pickaplugin.com/p/loom",
+   "stars": 39
+  },
+  {
+   "slug": "vibe-shield",
+   "name": "vibe-shield",
+   "summary": "60-rule static security scanner, MCP server and skill-poisoning auditor for AI-generated codebases in Claude Code, Codex and Cursor.",
+   "category": "Security & Governance",
+   "maker": "VibeFoundry",
+   "url": "https://pickaplugin.com/p/vibe-shield",
+   "stars": 39
+  },
+  {
+   "slug": "bulkhead",
+   "name": "Bulkhead",
+   "summary": "Guards for machines that run many Codex and other agent sessions at once: a PreToolUse hook on Bash blocks name-based process kills, port collisions, destructive git commands on another session's worktree, whole-disk scans and long foreground sleeps, and holds heavy commands back when RAM runs low.",
+   "category": "Memory & Context",
+   "maker": "dooly6276",
+   "url": "https://pickaplugin.com/p/bulkhead",
+   "stars": 34
+  },
+  {
+   "slug": "workmagic-agent-plugin",
+   "name": "WorkMagic agent plugin",
+   "summary": "Ask your WorkMagic marketing data anything (attribution, lift tests and budget plans) from Claude, ChatGPT, Codex, Cursor, Copilot and Gemini.",
+   "category": "Data & Backend",
+   "maker": "WorkMagic",
+   "url": "https://pickaplugin.com/p/workmagic-agent-plugin",
+   "stars": 23
+  },
+  {
+   "slug": "browser-hands",
+   "name": "Browser Hands",
+   "summary": "Chrome extension plus a small local MCP server that lets Claude Code, Codex or Cursor drive the Chrome you already use: click, type, read pages, screenshot and record GIFs across profiles.",
+   "category": "Agent Workflows",
+   "maker": "214140846",
+   "url": "https://pickaplugin.com/p/browser-hands",
+   "stars": 20
+  },
+  {
+   "slug": "insta-edits-for-claude",
+   "name": "Insta Edits for Claude",
+   "summary": "Claude Code plugin and MCP server for Instagram Edits on Mac that lets Claude edit your Reels: beat cuts, captions, text, transitions and export.",
+   "category": "Docs, Content & SEO",
+   "maker": "faisalkhanzemi",
+   "url": "https://pickaplugin.com/p/insta-edits-for-claude",
+   "stars": 15
+  },
+  {
+   "slug": "option-desk",
+   "name": "Option Desk",
+   "summary": "Skills and a local MCP server for option research on a supplied chain, with Greeks, dealer positioning, strategy payoffs, simulation and backtests.",
+   "category": "Other",
+   "maker": "Iman",
+   "url": "https://pickaplugin.com/p/option-desk",
+   "stars": 11
+  }
+ ],
+ "movers": [
+  {
+   "slug": "claude-seo",
+   "name": "claude-seo",
+   "summary": "SEO skill pack with 26 sub-skills and 19 specialist agents for technical SEO, schema, E-E-A-T, AI-search (GEO) and sitemap audits; built for Claude Code and documented to work with Codex CLI via AGENTS.md.",
+   "category": "Docs, Content & SEO",
+   "maker": "AgriciDaniel",
+   "url": "https://pickaplugin.com/p/claude-seo",
+   "stars": 29227,
+   "gained": 1795,
+   "was": 27432
+  },
+  {
+   "slug": "poki",
+   "name": "Poki",
+   "summary": "Open-source local MCP server and agent that lets AI assistants operate a real iPhone through the accessibility tree, with no jailbreak or extra hardware.",
+   "category": "Messaging & Remote",
+   "maker": "Joseph Zhou",
+   "url": "https://pickaplugin.com/p/poki",
+   "stars": 1211,
+   "gained": 623,
+   "was": 588
+  },
+  {
+   "slug": "kubai-icons",
+   "name": "Kubai Icons",
+   "summary": "Claude skill that draws dynamic icons in one consistent style, with hover motion or as static SVG.",
+   "category": "Design & Frontend",
+   "maker": "kubai087",
+   "url": "https://pickaplugin.com/p/kubai-icons",
+   "stars": 825,
+   "gained": 546,
+   "was": 279
+  },
+  {
+   "slug": "muse4ai",
+   "name": "Muse4AI",
+   "summary": "Local Windows bridge that hands your Muse session to ChatGPT, Claude, Cursor, Codex or n8n over REST, MCP or OAuth so agents can make pictures and videos.",
+   "category": "Design & Frontend",
+   "maker": "andrew-babo",
+   "url": "https://pickaplugin.com/p/muse4ai",
+   "stars": 808,
+   "gained": 420,
+   "was": 388
+  },
+  {
+   "slug": "stack-diagram",
+   "name": "stack-diagram",
+   "summary": "Agent skill that turns a one-sentence description of your stack into an architecture diagram with official logos.",
+   "category": "Docs, Content & SEO",
+   "maker": "caru-ini",
+   "url": "https://pickaplugin.com/p/stack-diagram",
+   "stars": 2495,
+   "gained": 380,
+   "was": 2115
+  }
+ ],
+ "sponsored": null
+}

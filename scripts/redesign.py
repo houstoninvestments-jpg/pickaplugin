@@ -35,7 +35,7 @@ h1,h2,h3{font-family:Newsreader,serif}
 .prose{max-width:700px;padding:30px 0 60px}.prose h1{font:800 50px/1.02 Newsreader,serif;letter-spacing:-.03em;margin:8px 0 18px}.prose h3{font-size:22px;margin:30px 0 4px}.price{font:600 36px Newsreader,serif}
 .sig{font-style:italic;margin-top:30px;border-top:1px solid var(--ink);padding-top:10px}
 .todo{border:1px dashed var(--acc);padding:10px}.mine{font-size:14px;color:var(--mute)}.mine a{color:var(--acc)}.shelves{display:flex;flex-wrap:wrap;gap:4px 16px;padding:10px 0;font-size:15px}
-.fpin{margin:12px 0}.fopen{display:block;margin:12px 0}.spons{margin:12px 0}
+.vs{color:var(--mute);margin:12px 0 0}.fpin{margin:12px 0}.fopen{display:block;margin:12px 0}.spons{margin:12px 0}
 .slotstat{display:flex;gap:10px;margin:14px 0}.slotstat span{flex:1;border:1px solid var(--ink);padding:10px;text-align:center}.slotstat .taken{background:var(--ink);color:var(--paper)}
 .ladder{border-top:3px solid var(--ink);margin-top:22px}.tier{display:grid;grid-template-columns:1fr 130px 220px;gap:22px;padding:18px 0;border-bottom:1px solid var(--rule)}.tier h3{margin:0 0 4px}.tier .pr{font:600 28px Newsreader,serif}.tier .pr small{display:block;font:400 10px 'Martian Mono',monospace;color:var(--mute);text-transform:uppercase}.tier .st{font-size:14px;color:var(--mute)}.tier.soon{opacity:.6}
 .log li{margin:4px 0;list-style:none}.log{padding:0}.log .mono{color:var(--mute);margin-right:10px}
@@ -71,9 +71,9 @@ _SEC=os.path.join(ROOT,"scripts",".secrets.json")
 SITEKEY=_json.load(open(_SEC)).get("sitekey") if os.path.exists(_SEC) else "0x4AAAAAAFnRt9YCBHXNJWZZ"
 def ts(): return f'<div class=cf-turnstile data-sitekey="{SITEKEY}" data-size="flexible" data-callback=tsOk data-expired-callback=tsNo data-error-callback=tsNo></div><script>window.tsOk=window.tsOk||function(){{document.querySelectorAll(".cf-turnstile").forEach(function(w){{var b=w.closest("form")&&w.closest("form").querySelector("button");if(b&&w.querySelector("input[name=cf-turnstile-response]")&&w.querySelector("input[name=cf-turnstile-response]").value)b.disabled=false}})}};window.tsNo=window.tsNo||function(){{document.querySelectorAll(".cf-turnstile").forEach(function(w){{var i=w.querySelector("input[name=cf-turnstile-response]"),b=w.closest("form")&&w.closest("form").querySelector("button");if(b&&(!i||!i.value))b.disabled=true}})}};</script>'
 HONEY='<div class=hp aria-hidden=true><label>Leave this empty <input name=website tabindex=-1 autocomplete=off></label></div>'
-def nlform(where,title="The PickAPlugin roundup"):
-  return f'''<section class=nl><div><h3>{title}</h3><p>A weekly-ish email with new and notable ChatGPT &amp; Codex plugins. No spam. Unsubscribe anytime with one click.</p></div>
-<form method=post action="/api/subscribe"><input type=email name=email required placeholder="you@example.com" aria-label="Email address"><input type=hidden name=from value="{where}">{HONEY}<button>Subscribe</button>{ts()}</form></section>'''
+def nlform(where,title="New MCP servers &amp; plugins, once a week"):
+  return f'''<section class=nl><div><h3>{title}</h3><p>One short email a week: the MCP servers and plugins that joined the catalog, and the ones gaining stars fastest. Free. Confirm by email, unsubscribe in one click. <a href="/newsletter">Past issues</a>.</p></div>
+<form method=post action="/api/subscribe"><input type=email name=email required placeholder="you@example.com" aria-label="Email address" autocomplete=email><input type=hidden name=from value="{e(where)}">{HONEY}<button>Subscribe</button>{ts()}</form></section>'''
 def meta(p):
   bits=[num(p),p["category"]]
   if isinstance(p.get("stars"),int): bits.append(f'★ {p["stars"]:,} on {p.get("stars_checked") or "?"}')
@@ -117,7 +117,7 @@ def preview_home():
 <form onsubmit="event.preventDefault();document.getElementById('catalog').scrollIntoView({{behavior:'smooth'}})" role=search><input id=q type=search placeholder="memory, PDF, secrets…" aria-label="Search plugins"><button>Browse plugins</button></form>
 <span class=mk>Made a plugin? <a href="submit.html">List it free</a> or claim your listing. Running a sale? <a href="black-friday.html">Black Friday deals</a>. New: <a href="research/state-of-codex-plugins-2026.html">State of Codex Plugins 2026</a>, our data on 339 plugin repos.</span></section><!--/hero-->"""
   return hero+f"""<section class=front><div>{lead}</div><div class=side3>{side}</div></section>
-{nlform("home","Get the roundup by email")}<div class=sec><h2>Ads &amp; open space</h2><span class=mono>Paid placements are labelled. They never change picks or catalog order.</span></div><div class=ads>{ads and "".join(ads[:3])}</div>
+{nlform("home")}<div class=sec><h2>Ads &amp; open space</h2><span class=mono>Paid placements are labelled. They never change picks or catalog order.</span></div><div class=ads>{ads and "".join(ads[:3])}</div>
 {f'<div class=sec><h2>More picks</h2><span class=mono>Our opinion, from each project&#39;s own docs · not audited</span></div><div class=cols>{picks2}</div>' if picks2 else ""}
 <div class=sec id=catalog><h2>The full catalog</h2><span class=mono id=n></span></div>
 <div class=find style="grid-template-columns:1fr"><div class=cats>{chips}</div></div>

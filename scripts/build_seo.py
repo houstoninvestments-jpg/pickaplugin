@@ -103,8 +103,9 @@ _ORG={"@context":"https://schema.org","@type":"Organization","name":"PickAPlugin
 _ogsrc=os.path.join(ROOT,"launch","graphics","header.png")
 if os.path.exists(_ogsrc): shutil.copy(_ogsrc,D+"/og.png")
 for f in sorted(_glob.glob(D+"/**/*.html",recursive=True)):
-  rel=os.path.relpath(f,D); base=_pp.dirname(rel.replace(os.sep,"/")); url=_url(rel); URLS.append(url)
+  rel=os.path.relpath(f,D); base=_pp.dirname(rel.replace(os.sep,"/")); url=_url(rel)
   h=open(f).read()
+  if 'name=robots content="noindex' not in h: URLS.append(url)
   h=_re.sub(r'href="([^"]*)"',lambda m:_fix(m,base),h)
   h=h.replace('href="../style.css"','href="/style.css"').replace('href="style.css"','href="/style.css"')
   _dd=DESCS.get(rel)
@@ -136,7 +137,7 @@ for f in sorted(_glob.glob(D+"/**/*.html",recursive=True)):
       meta+='<script type="application/ld+json">'+_json.dumps(_bc).replace("</","<\\/")+'</script>'
   h=h.replace("</title>","</title>"+meta,1)
   open(f,"w").write(h)
-open(D+"/robots.txt","w").write("User-agent: *\nAllow: /\n\nSitemap: "+SITE+"/sitemap.xml\n")
+open(D+"/robots.txt","w").write("User-agent: *\nAllow: /\nDisallow: /go/\n\nSitemap: "+SITE+"/sitemap.xml\n")
 today=_dt.date.today().isoformat()
 open(D+"/sitemap.xml","w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+"".join(f"<url><loc>{u}</loc><lastmod>{COLL_LASTMOD.get(u[len(SITE)+1:],today)}</lastmod></url>\n" for u in URLS)+"</urlset>\n")
 _cats={}
