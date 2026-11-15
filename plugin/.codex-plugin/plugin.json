@@ -1,0 +1,27 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "pickaplugin",
+  "version": "1.0.0",
+  "description": "Search the PickAPlugin directory of 500+ ChatGPT, Codex and Claude plugins and MCP servers from inside your agent.",
+  "author": { "name": "PickAPlugin", "email": "hello@pickaplugin.com", "url": "https://pickaplugin.com" },
+  "homepage": "https://pickaplugin.com/mcp-server",
+  "repository": "https://github.com/houstoninvestments-jpg/pickaplugin",
+  "license": "MIT",
+  "keywords": ["plugins", "mcp", "directory", "search", "codex", "chatgpt", "claude"],
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "PickAPlugin",
+    "shortDescription": "Find the right plugin or MCP server for any job",
+    "longDescription": "Ask \"find me a plugin for X\" and get matches from the PickAPlugin catalog: name, summary, category, repo, install command and a link to the listing. Read-only, free, no account needed. Paid featured listings are always labelled.",
+    "developerName": "PickAPlugin",
+    "category": "Developer Tools",
+    "capabilities": ["Read"],
+    "websiteURL": "https://pickaplugin.com",
+    "privacyPolicyURL": "https://pickaplugin.com/privacy",
+    "termsOfServiceURL": "https://pickaplugin.com/terms",
+    "defaultPrompt": ["Find me a memory plugin for Codex", "What are the top security plugins?", "Is there an MCP server for Postgres?"],
+    "brandColor": "#1F3A8A",
+    "composerIcon": "./assets/logo.png",
+    "logo": "./assets/logo.png"
+  }
+}

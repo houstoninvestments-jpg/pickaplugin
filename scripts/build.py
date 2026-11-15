@@ -189,22 +189,38 @@ def claimbox(p):
 <label class=mono>Your email<input type=email name=email required autocomplete=email></label>
 <label class=mono>GitHub handle<input name=github required pattern="@?[A-Za-z0-9-]{{1,39}}" placeholder="{e(p["maker"] or "your-handle")}"></label>
 <label class=mono>Corrections (optional)<textarea name=corrections maxlength=2000 placeholder="Better description, wrong category, new link…"></textarea></label>{HONEY}{ts()}<button>Claim it free</button></form></div>'''
+def badge_snippets(sl,alt="Listed on PickAPlugin"):
+  img=f'{SITE_URL}/badge/{sl}.svg'; url=f'{SITE_URL}/p/{sl}' if sl not in ("listed","listed-light","listed-dark") else SITE_URL
+  return (f'[![{alt}]({img})]({url})', f'<a href="{url}"><img src="{img}" alt="{alt}" height="20"></a>')
+BADGE_JS='<script>function cpy(b){navigator.clipboard.writeText(b.previousElementSibling.textContent).then(()=>{b.textContent="Copied";setTimeout(()=>b.textContent="Copy",1500)})}</script>'
+def _snip(label,t): return f'<p class=mono style="margin:10px 0 0">{label}</p><pre class=code>{e(t)}</pre><button type=button onclick="cpy(this)" style="margin-top:0">Copy</button>'
 def badgebox(p):
-  pick=p["slug"] in PICKS; img=f'{SITE_URL}/badge/{p["slug"]}.svg'; url=f'{SITE_URL}/p/{p["slug"]}'
-  md=f'[![{"Editor&#39;s Pick on PickAPlugin" if pick else "Listed on PickAPlugin"}]({img})]({url})'
-  return f'''<div class=box><span class=mono>Add a badge to your README</span><p><img src="../badge/{p["slug"]}.svg" alt="badge" height=20></p><p>Paste this into your README:</p><pre class=code>{md}</pre><p><a href="../badge.html">More badge styles (light/dark, HTML) →</a></p></div>'''
-def badge_svg(label,value,color):
-  lw=7*len(label)+12; vw=7*len(value)+12; w=lw+vw
-  return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="20" role="img" aria-label="{e(label)}: {e(value)}"><title>{e(label)}: {e(value)}</title><rect width="{lw}" height="20" fill="#111"/><rect x="{lw}" width="{vw}" height="20" fill="{color}"/><g fill="#fff" font-family="Verdana,DejaVu Sans,sans-serif" font-size="11" text-anchor="middle"><text x="{lw/2}" y="14">{e(label)}</text><text x="{lw+vw/2}" y="14">{e(value)}</text></g></svg>'''
+  alt=_blabel(p)+" PickAPlugin"; md,ht=badge_snippets(p["slug"],alt)
+  return f'''<div class=box id=badge><span class=mono>Get your badge</span><h3>Made this? Show it's listed.</h3><p><img src="../badge/{p["slug"]}.svg" alt="{e(alt)}" height=20> &nbsp; <img src="../badge/{p["slug"]}-light.svg" alt="{e(alt)} (light)" height=20></p><p>Free, optional, and it links back to this page. Paste one of these into your README or site:</p>{_snip("Markdown (README)",md)}{_snip("HTML (your site)",ht)}<p style="margin-top:10px">Light version: add <code>-light</code> before <code>.svg</code>. <a href="../badge.html">More styles →</a></p>{BADGE_JS}</div>'''
+# ---- "Listed on PickAPlugin" badges (static SVGs; old URLs kept working) ----
+_CW={**{c:6.1 for c in "abcdeghknopqsuvxyz"},**{c:3.1 for c in "fijlrt"},"m":9.7,"w":8.2," ":3.5,"'":2.7,"·":3.5,
+ **{c:7.4 for c in "ABCDEFGHKNOPQRSUVXYZ"},"I":4.3,"J":4.6,"L":6.2,"M":8.6,"T":6.8,"W":10.2}
+def _tw(t,bold=False): return round(sum(_CW.get(c,6.6) for c in t)*(1.07 if bold else 1),1)
+_PLUG='<g transform="translate(6 4)" fill="{c}"><rect x="2.5" y="0" width="1.6" height="4" rx=".6"/><rect x="7.9" y="0" width="1.6" height="4" rx=".6"/><path d="M0 3.6h12v2.6a4.6 4.6 0 0 1-4.6 4.6h-.5V12h-1.8v-1.2h-.5A4.6 4.6 0 0 1 0 6.2z"/></g>'
+def badge_svg(left,right="PickAPlugin",lbg="#14171f",lfg="#f4efe1",rbg="#1f3a8a",rfg="#ffffff",stroke=None):
+  lt=_tw(left); rt=_tw(right,True); lw=round(24+lt+7); rw=round(rt+16); w=lw+rw
+  st=f'<rect x=".5" y=".5" width="{w-1}" height="19" rx="3.5" fill="none" stroke="{stroke}"/>' if stroke else ""
+  return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="20" viewBox="0 0 {w} 20" role="img" aria-label="{e(left)} {e(right)}">'
+    f'<title>{e(left)} {e(right)}</title><clipPath id="r"><rect width="{w}" height="20" rx="4"/></clipPath><g clip-path="url(#r)">'
+    f'<rect width="{lw}" height="20" fill="{lbg}"/><rect x="{lw}" width="{rw}" height="20" fill="{rbg}"/></g>{st}'
+    +_PLUG.format(c=lfg)+
+    f'<g font-family="Verdana,DejaVu Sans,Geneva,sans-serif" font-size="11" text-rendering="geometricPrecision">'
+    f'<text x="24" y="14" fill="{lfg}" textLength="{lt}" lengthAdjust="spacingAndGlyphs">{e(left)}</text>'
+    f'<text x="{lw+8}" y="14" fill="{rfg}" font-weight="bold" textLength="{rt}" lengthAdjust="spacingAndGlyphs">{e(right)}</text></g></svg>')
+BADGE_DARK=dict(); BADGE_LIGHT=dict(lbg="#ffffff",lfg="#14171f",stroke="#cfc6ad")
 os.makedirs(D+"/badge",exist_ok=True)
+def _blabel(p): return "Featured on" if p.get("featured") else ("Editor's pick on" if p["slug"] in PICKS else "Listed on")
 for p in P:
-  pk=p["slug"] in PICKS
-  open(f'{D}/badge/{p["slug"]}.svg',"w").write(badge_svg("PickAPlugin","Editor's Pick" if pk else "Listed","#1f3a8a" if pk else "#5d584f"))
-def badge_svg2(value,bg,fg,acc,line):
-  lw=88; vw=7*len(value)+16; w=lw+vw
-  return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="20" role="img" aria-label="PickAPlugin: {e(value)}"><title>PickAPlugin: {e(value)}</title><rect x=".5" y=".5" width="{w-1}" height="19" rx="3" fill="{bg}" stroke="{line}"/><rect x="{lw}" y="1" width="{vw-1}" height="18" fill="{acc}" rx="0"/><g font-family="Verdana,DejaVu Sans,sans-serif" font-size="11" text-anchor="middle"><text x="{lw/2}" y="14" fill="{fg}">PickAPlugin</text><text x="{lw+vw/2}" y="14" fill="#fff">{e(value)}</text></g></svg>'''
-open(D+"/badge/listed-light.svg","w").write(badge_svg2("Listed","#ffffff","#111111","#1f3a8a","#d4d0c8"))
-open(D+"/badge/listed-dark.svg","w").write(badge_svg2("Listed","#111111","#f5f3ee","#3b5bdb","#333333"))
+  open(f'{D}/badge/{p["slug"]}.svg',"w").write(badge_svg(_blabel(p)))
+  open(f'{D}/badge/{p["slug"]}-light.svg',"w").write(badge_svg(_blabel(p),**BADGE_LIGHT))
+open(D+"/badge/listed-light.svg","w").write(badge_svg("Listed on",**BADGE_LIGHT))
+open(D+"/badge/listed-dark.svg","w").write(badge_svg("Listed on"))
+open(D+"/badge/mcp.svg","w").write(badge_svg("MCP server",rbg="#1f3a8a"))
 _ex=next((p for p in P if p["slug"] in ("context7",)),P[0]); _xs=_ex["slug"]
 def _pre(t): return f'<pre class=code>{e(t)}</pre>'
 open(D+"/badge.html","w").write(layout("Add a 'Listed on PickAPlugin' badge — PickAPlugin",f"""<div class=prose><span class=mono style="color:var(--acc)">Free, for listed plugins</span><h1>Add a badge</h1>
@@ -219,7 +235,7 @@ open(D+"/badge.html","w").write(layout("Add a 'Listed on PickAPlugin' badge — 
 <p>Auto light/dark on GitHub:</p>{_pre(f'<a href="{SITE_URL}/p/{_xs}"><picture><source media="(prefers-color-scheme: dark)" srcset="{SITE_URL}/badge/listed-dark.svg"><img src="{SITE_URL}/badge/listed-light.svg" alt="Listed on PickAPlugin" height="20"></picture></a>')}
 <p>Rather link to the homepage? Swap the link for <code>{SITE_URL}</code>.</p>
 <p class=mono>Swap <code>{_xs}</code> for your own slug. The badge only says you're listed. It isn't a review or a ranking.</p></div>""",0,"Free 'Listed on PickAPlugin' badge for your README or site, in light and dark, with copy-paste Markdown and HTML."))
-open(D+"/badge/listed.svg","w").write(badge_svg("PickAPlugin","Listed","#5d584f")); open(D+"/badge/editors-pick.svg","w").write(badge_svg("PickAPlugin","Editor's Pick","#1f3a8a"))
+open(D+"/badge/listed.svg","w").write(badge_svg("Listed on")); open(D+"/badge/editors-pick.svg","w").write(badge_svg("Editor's pick on"))
 _msg=lambda t,h,body: open(f"{D}/{t}.html","w").write(layout(h+" — PickAPlugin",f'<div class=prose><h1>{h}</h1>{body}<p><a href="index.html">← Back to the catalog</a></p></div>'))
 _msg("claimed","Thanks, we got your claim",'''<p style="font-size:19px">We'll verify that you own or maintain the repo, usually by checking that your GitHub handle matches the project's owner or contributors, then apply any corrections and reply by email.</p>
 <p>Claiming is free and always will be. If you later want more visibility, there are clearly labelled paid options on the <a href="advertise.html">advertise page</a>, but you don't need any of them.</p>'''+(f'''<p>One you might like: while they last, our first 10 featured makers get the <a href="featured.html">featured spot</a> at <b>$29/mo for life</b> (normally $49), with the first week free. {FOUNDING_LEFT} of 10 founding spots are left. Traffic is still early, so we won't promise numbers.</p>''' if FOUNDING_ACTIVE else '')+'''<p id=back></p>
@@ -274,7 +290,8 @@ open(D+"/submit.html","w").write(layout("Submit a plugin — PickAPlugin",f"""<d
 <p>Not in a list yet? Email <a href="mailto:{EMAIL}?subject=Submit%20a%20plugin">{EMAIL}</a> with the repo link and one sentence on what it does. We read every one.</p>
 <p>Got an MCP server too? Here's <a href="guides/where-to-submit-mcp-server.html">every other place to submit it</a>.</p>
 <p>Want it in OpenAI's official Plugins Directory too? Here's <a href="guides/publish-codex-plugin.html">how to publish a Codex or ChatGPT plugin</a>.</p>
-<p>Already listed? <a href="badge.html">Add a badge</a> to your README.</p>
+<div class=box id=badge><span class=mono>Get your badge</span><h3>Already listed? Show it.</h3><p><img src="badge/listed-dark.svg" alt="Listed on PickAPlugin" height=20> &nbsp; <img src="badge/listed-light.svg" alt="Listed on PickAPlugin (light)" height=20></p><p>Swap <code>your-slug</code> for the slug in your listing URL (<code>pickaplugin.com/p/your-slug</code>). Every listing page also has this snippet with the slug filled in.</p>"""+_snip("Markdown (README)",f"[![Listed on PickAPlugin]({SITE_URL}/badge/your-slug.svg)]({SITE_URL}/p/your-slug)")+_snip("HTML (your site)",f'<a href="{SITE_URL}/p/your-slug"><img src="{SITE_URL}/badge/your-slug.svg" alt="Listed on PickAPlugin" height="20"></a>')+f"""<p style="margin-top:10px">Light version: <code>your-slug-light.svg</code>. <a href="badge.html">More styles →</a></p>{BADGE_JS}</div>
+<p>Building with an agent? Our free <a href="mcp-server.html">MCP server</a> lets Claude, Cursor, Codex or VS Code search the catalog directly.</p>
 <h3>In a hurry?</h3><p class=price>$19 <span class=mono>one-time</span></p><p>Expedited review: a decision within 24 hours. Paying buys speed, not a yes — if we pass, you get a refund.</p>{pay("expedited_review","Expedited review","$19")}"""+(f"""<h3>Want it seen first?</h3><p>Once you're listed, you can take one of three <a href="featured.html">featured spots</a> (homepage + top of your category). Our first 10 featured makers pay <b>$29/mo for life</b> instead of $49, and the first week is free. {FOUNDING_LEFT} of 10 founding spots left. Traffic is still early, so we don't promise numbers, and free listings stay free either way.</p>""" if FOUNDING_ACTIVE else "")+"""</div>"""))
 stat="".join(f'<span class=taken>Slot {k+1:02d}<br><b>{e(p["name"])}</b></span>' for k,p in enumerate(FEAT))+"".join(f'<span>Slot {len(FEAT)+k+1:02d}<br><b>Open</b></span>' for k in range(OPEN))
 avail=f"{OPEN} of 3 open right now" if OPEN else "All 3 slots are taken right now"
@@ -343,6 +360,7 @@ open(D+"/advertise.html","w").write(layout("Advertise — PickAPlugin",f"""<div 
 exec(open(os.path.join(ROOT,"scripts","build_tools.py")).read())
 exec(open(os.path.join(ROOT,"scripts","build_blackfriday.py")).read())
 exec(open(os.path.join(ROOT,"scripts","build_research.py")).read())
+exec(open(os.path.join(ROOT,"scripts","build_mcp.py")).read())
 exec(open(os.path.join(ROOT,"scripts","build_seo.py")).read())
 # one URL style: no trailing slash. Nested index pages become <dir>.html so /dir serves 200 and /dir/ redirects.
 import glob as _g

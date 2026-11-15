@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "pickaplugin": {
+      "type": "http",
+      "url": "https://pickaplugin.com/mcp"
+    }
+  }
+}

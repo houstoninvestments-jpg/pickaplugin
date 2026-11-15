@@ -1,0 +1,11 @@
+{
+  "name": "pickaplugin",
+  "version": "1.0.0",
+  "description": "Search the PickAPlugin directory of 500+ ChatGPT, Codex and Claude plugins and MCP servers from inside your agent.",
+  "author": { "name": "PickAPlugin", "email": "hello@pickaplugin.com", "url": "https://pickaplugin.com" },
+  "homepage": "https://pickaplugin.com/mcp-server",
+  "repository": "https://github.com/houstoninvestments-jpg/pickaplugin",
+  "license": "MIT",
+  "keywords": ["plugins", "mcp", "directory", "search"],
+  "mcpServers": "./.mcp.json"
+}
