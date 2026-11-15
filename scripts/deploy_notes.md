@@ -25,7 +25,7 @@ Live account: PickAPlugin `acct_1UUidjAJ19i9R4dz`. Read with the **read-only** c
 1. List checkout sessions since the last run: Stripe connector list/search of checkout sessions, status `complete`.
    Save the JSON to `/workspace/sessions.json`. Each needs `id, created, mode, status, payment_status,
    subscription, custom_fields` (the `plugin_url` field). Featured = `mode:"subscription"`. The $19 Expedited
-   Review is one-time (`mode:"payment"`) and is ignored here; handle those by hand within 24h.
+   Review is one-time (`mode:"payment"`) and is ignored here; handle those by hand within 24h. The $79 Launch Package is also one-time (`mode:"payment"`, plink_1Uc4PTAJ19i9R4dzaQacBal5). fulfill.py logs it to `data/launch_orders.json` and prints a schedule-manually note; email the buyer within 1 business day to pick a launch day (max 2/week, not enforced in Stripe). Do not auto-feature these.
 2. List subscriptions (status `all`) → `/workspace/subs.json` (`[{id,status},...]`).
 3. `python3 scripts/fulfill.py /workspace/sessions.json /workspace/subs.json --dry-run`, then run it without `--dry-run`.
    - Matches `plugin_url` to `link` (normalized github.com/owner/repo), sets `featured` plus `featured_sub`/`featured_since`.

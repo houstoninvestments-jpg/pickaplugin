@@ -1,6 +1,18 @@
 {
- "enabled": true,
- "price_note": "Price on request while we set up checkout (proposed to Aaron, not live).",
- "traffic": {"cf_uniques_week": "about 6,000", "cf_week": "Nov 7–13, 2026", "gsc_clicks_28d": 28, "gsc_impressions_28d": "1,500", "gsc_export": "2026-11-09"},
- "slots_per_week": 2
+  "enabled": true,
+  "price_note": "$79 one-time (intro price)",
+  "traffic": {
+    "cf_uniques_week": "about 6,000",
+    "cf_week": "Nov 7–13, 2026",
+    "gsc_clicks_28d": 28,
+    "gsc_impressions_28d": "1,500",
+    "gsc_export": "2026-11-09"
+  },
+  "slots_per_week": 2,
+  "price_one_time": 79,
+  "stripe_payment_link": "https://buy.stripe.com/fZu6oG6Yx7DVbOZ29fcQU07",
+  "stripe_payment_link_id": "plink_1Uc4PTAJ19i9R4dzaQacBal5",
+  "stripe_product_id": "prod_VdL5NmvNudhIsC",
+  "stripe_price_id": "price_1Uc4PIAJ19i9R4dzzAn5q9cF",
+  "updated": "2026-11-15"
 }

@@ -17,6 +17,8 @@ or session metadata. Tiers and the plugin fields they control:
 Each tier also stores <tier>_sub / <tier>_session / <tier>_since; cancellations clear the flag.
 Caps are enforced: the earliest active orders win; later ones are NOT turned on and are logged
 as "! OVERFLOW ... refund" so Aaron can refund them. expedited_review (one-time) is ignored here.
+launch_package (one-time $79) is logged to data/launch_orders.json and printed with a
+"schedule manually" note; it is not auto-applied to the catalog (launch day is booked by hand).
 The "plugin_url" custom field is matched to entries by normalized link (github owner/repo). Unknown plugins
 are added as a minimal entry (source "featured-order", needs_review); no description is invented.
 """
@@ -31,6 +33,7 @@ PLINKS = {
     "plink_1UUjNJAJ19i9R4dz6KFmPJgJ": "belt",
     "plink_1UUjNSAJ19i9R4dzcQ3HgQ1X": "category_sponsor",
     "plink_1UUjNMAJ19i9R4dzXZ9x7H0u": "verified",
+    "plink_1Uc4PTAJ19i9R4dzaQacBal5": "launch_package",  # $79 one-time intro
 }
 CAPS = {"featured_monthly": 3, "top_spot": 1, "belt": 12, "category_sponsor": 1, "verified": None}
 FLAG = {"featured_monthly": "featured", "top_spot": "top_spot", "belt": "belt", "verified": "verified",
@@ -61,6 +64,59 @@ def field(sess, key="plugin_url"):
             return (f.get("text") or {}).get("value") or (f.get("dropdown") or {}).get("value") or ""
     return ""
 
+LAUNCH_ORDERS = "data/launch_orders.json"
+
+def session_email(s):
+    cd = s.get("customer_details") or {}
+    if isinstance(cd, dict) and cd.get("email"):
+        return cd["email"]
+    if s.get("customer_email"):
+        return s["customer_email"]
+    c = s.get("customer")
+    if isinstance(c, dict) and c.get("email"):
+        return c["email"]
+    return ""
+
+def load_launch_orders():
+    try:
+        d = json.load(open(LAUNCH_ORDERS))
+    except Exception:
+        d = {"orders": []}
+    if not isinstance(d, dict):
+        d = {"orders": []}
+    d.setdefault("orders", [])
+    return d
+
+def record_launch_order(s, orders, today, log):
+    """Log a paid launch package; fulfillment (scheduling the launch day) is manual."""
+    sid = s.get("id")
+    if not sid:
+        log.append("! launch_package session missing id, handle by hand")
+        return False
+    seen = {o.get("session") for o in orders if isinstance(o, dict)}
+    if sid in seen:
+        return False
+    if s.get("status") != "complete" or s.get("payment_status") != "paid":
+        return False
+    url = field(s)
+    em = session_email(s)
+    orders.append({
+        "session": sid,
+        "plugin": url or "",
+        "email": em or "",
+        "created": s.get("created"),
+        "paid": today,
+        "status": "needs_scheduling",
+        "note": "Email within 1 business day to schedule the launch.",
+    })
+    bits = [f"* launch_package paid {url or '(no plugin_url)'} session {sid}"]
+    bits.append(f"email {em}" if em else "(no email on session)")
+    bits.append("— schedule manually (email within 1 business day)")
+    log.append(" ".join(bits))
+    if not url:
+        log.append(f"! {sid} (launch_package): no plugin_url, still paid — schedule by hand from Stripe")
+    return True
+
 def tier(s):
     pl = s.get("payment_link"); md = s.get("metadata") or {}
     t = None
@@ -90,9 +146,14 @@ def main():
     P = json.load(open(DATA)); idx = {}
     for p in P: idx.setdefault(norm(p.get("link")), p)
     today = datetime.date.today().isoformat(); log = []
+    launch = load_launch_orders(); launch_changed = False
     want = {}  # (tier, plugin key) -> latest order
     for s in sorted(sessions, key=lambda s: s.get("created", 0)):
         t = tier(s)
+        if t == "launch_package":
+            if record_launch_order(s, launch["orders"], today, log):
+                launch_changed = True
+            continue
         if t == "expedited_review": continue
         if t not in CAPS:
             if s.get("mode") == "subscription": log.append(f"! {s.get('id')}: subscription with unknown tier, check by hand")
@@ -181,10 +242,18 @@ def main():
     print("\n".join(log) or "no changes")
     for t, f in FLAG.items(): print(f"{t}: {sum(1 for p in P if p.get(f))} active")
     print(f"founding claimed: {len(claimed)}/{fd.get('spots_total', 10)}")
-    if not dry and log:
-        json.dump(P, open(DATA, "w"), indent=1, ensure_ascii=False)
-        with open(FOUNDING, "w") as fh:
-            json.dump(fd, fh, indent=2, ensure_ascii=False)
-            fh.write("\n")
+    pending = sum(1 for o in launch.get("orders") or [] if isinstance(o, dict) and o.get("status") == "needs_scheduling")
+    print(f"launch packages pending schedule: {pending}/{len(launch.get('orders') or [])}")
+    placement_log = [line for line in log if "launch_package" not in line]
+    if not dry:
+        if placement_log:
+            json.dump(P, open(DATA, "w"), indent=1, ensure_ascii=False)
+            with open(FOUNDING, "w") as fh:
+                json.dump(fd, fh, indent=2, ensure_ascii=False)
+                fh.write("\n")
+        if launch_changed:
+            with open(LAUNCH_ORDERS, "w") as fh:
+                json.dump(launch, fh, indent=2, ensure_ascii=False)
+                fh.write("\n")
 
 if __name__ == "__main__": main()
