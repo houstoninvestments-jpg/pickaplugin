@@ -398,6 +398,21 @@
   "install": "claude plugin marketplace add exadel-inc/agentic-readiness-assessment"
  },
  {
+  "slug": "agentic-ui",
+  "name": "Agentic UI",
+  "description": "Agentic design system (v2.0 \"Aqua\") that ships with its own MCP server and a Claude plugin, plus Storybook and a Figma file, so coding agents build product screens from real components. Paid product.",
+  "maker": "Alex Gilev",
+  "link": "https://agenticui.dev/",
+  "category": "Design & Frontend",
+  "source": "editor-added",
+  "source_url": "https://agenticui.dev/",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-16",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-16"
+ },
+ {
   "slug": "agentizer",
   "name": "Agentizer",
   "description": "Turn any website into an AI-powered agentfront with split-pane",
@@ -4178,6 +4193,21 @@
   "install": "codex plugin marketplace add ./path-to-marketplace-root"
  },
  {
+  "slug": "first-concepts-mcp",
+  "name": "First Concepts MCP",
+  "description": "MCP server for First Concepts, the visual AI workspace for early creative work: jump from your AI assistant into a project with your brief, references and concepts instead of copy-pasting.",
+  "maker": "First Concepts",
+  "link": "https://firstconcepts.co/",
+  "category": "Design & Frontend",
+  "source": "editor-added",
+  "source_url": "https://firstconcepts.co/",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-16",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-16"
+ },
+ {
   "slug": "fixlane",
   "name": "Fixlane",
   "description": "Known security issues in developer software with reviewed fix procedures: checks your installed tools and versions read-only. Remote MCP server plus plugin for Claude and Codex.",
@@ -4590,6 +4620,21 @@
   "license": "Apache-2.0",
   "language": "TypeScript",
   "install": "claude mcp add gsc-mcp -e GSC_AUTH_MODE=oauth -e GSC_ACCESS_MODE=readonly -e GSC_SITE_URLS=sc-domain:example.com -- npx -y @sonnivasquez/gsc-mcp"
+ },
+ {
+  "slug": "hawkscan-mcp",
+  "name": "Hawkscan GEO MCP",
+  "description": "GEO MCP server for Hawkscan: your agent reads how ChatGPT, Gemini, Google AI Mode and Copilot mention your brand, then works through the ranked action plan to raise your AI visibility.",
+  "maker": "Hawkscan",
+  "link": "https://hawkscan.ai/en/features/ai-agents",
+  "category": "Docs, Content & SEO",
+  "source": "editor-added",
+  "source_url": "https://hawkscan.ai/en/features/ai-agents",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-16",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-16"
  },
  {
   "slug": "hera-agent-godot",
@@ -5171,6 +5216,22 @@
   "license": null,
   "language": "TypeScript",
   "install": "claude plugin marketplace add JoxoAI/joxo && claude plugin install joxo@joxo   # Claude Code"
+ },
+ {
+  "slug": "justroadmap-mcp",
+  "name": "JustRoadmap MCP",
+  "description": "MCP server for JustRoadmap: Claude, Cursor and VS Code can read and change your visual roadmaps, with OAuth and read-only or read-and-change access per workspace.",
+  "maker": "JustRoadmap",
+  "link": "https://www.justroadmap.io/developers",
+  "category": "Agent Workflows",
+  "source": "editor-added",
+  "source_url": "https://www.justroadmap.io/developers",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-16",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-16",
+  "install": "claude mcp add --transport http justroadmap https://www.justroadmap.io/mcp"
  },
  {
   "slug": "kachilu-browser",
@@ -6453,6 +6514,21 @@
   "install": "claude plugin marketplace add beastlabai/multi-llm-plugin \\"
  },
  {
+  "slug": "mumro-mcp",
+  "name": "Mumro MCP",
+  "description": "Remote MCP for the Mumro content app: 38+ tools to audit post cohorts, stage media, draft campaigns and queue social posts from Claude, ChatGPT, Codex or Cursor, with human confirmation before anything publishes.",
+  "maker": "Mumro",
+  "link": "https://mumro.io/",
+  "category": "Docs, Content & SEO",
+  "source": "editor-added",
+  "source_url": "https://mumro.io/",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-16",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-16"
+ },
+ {
   "slug": "muse4ai",
   "name": "Muse4AI",
   "description": "Local Windows bridge that hands your Muse session to ChatGPT, Claude, Cursor, Codex or n8n over REST, MCP or OAuth so agents can make pictures and videos.",
@@ -6711,6 +6787,21 @@
   "license": "MIT",
   "language": null,
   "install": "claude plugin marketplace add KevinUK/okzest-skill"
+ },
+ {
+  "slug": "onehaus-mcp",
+  "name": "OneHaus MCP",
+  "description": "Remote MCP server for the OneHaus household app: from ChatGPT or Claude, add shopping items, check chores and what's due, or look up home contacts, signing in with your OneHaus account.",
+  "maker": "OneHaus",
+  "link": "https://onehaus.app/",
+  "category": "Other",
+  "source": "editor-added",
+  "source_url": "https://onehaus.app/",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-16",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-16"
  },
  {
   "slug": "ontoly",
@@ -7027,6 +7118,21 @@
   "language": null
  },
  {
+  "slug": "pikastat-mcp",
+  "name": "PikaStat MCP",
+  "description": "Pokémon GO PvP MCP server: ask Claude or ChatGPT which of your Pokémon to build for a league, check IV ranks and Stardust costs, and get team suggestions from your own collection.",
+  "maker": "PikaStat",
+  "link": "https://pikastat.com/mcp-server",
+  "category": "Other",
+  "source": "editor-added",
+  "source_url": "https://pikastat.com/mcp-server",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-16",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-16"
+ },
+ {
   "slug": "pixeltable",
   "name": "Pixeltable",
   "description": "Declarative multimodal AI data engine for tables, computed columns, embedding search, agents, and FastAPI services.",
@@ -7186,6 +7292,25 @@
   "license": "MIT",
   "language": "JavaScript",
   "install": "/plugin install ponder --marketplace Quinnod345/ponder"
+ },
+ {
+  "slug": "poptin-mcp",
+  "name": "Poptin MCP",
+  "description": "Official remote MCP server (OAuth) for Poptin: agents create and schedule email campaigns, compare popup and form conversions, and build audience segments from plain-language requests.",
+  "maker": "Poptin",
+  "link": "https://github.com/Poptin-LTD/Poptin-MCP",
+  "category": "Docs, Content & SEO",
+  "source": "editor-added",
+  "source_url": "https://github.com/Poptin-LTD/Poptin-MCP",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-16",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-16",
+  "stars": 36,
+  "pushed_at": "2026-11-16",
+  "license": "MIT",
+  "install": "codex mcp add poptin --url https://mcp.popt.in/mcp"
  },
  {
   "slug": "post",
@@ -7974,6 +8099,26 @@
   "license": "MIT",
   "language": "Python",
   "install": "claude plugin marketplace add u-ichi/reviewable-html-workbench"
+ },
+ {
+  "slug": "riffumi-skill",
+  "name": "Riffumi",
+  "description": "Agent skill for Claude Code and Codex that edits your clips and photos into finished product showcases, ads, tutorials and social videos; renders locally with ffmpeg, no API keys. MIT.",
+  "maker": "Riffumi",
+  "link": "https://github.com/TheBurdz/riffumi-skill",
+  "category": "Design & Frontend",
+  "source": "editor-added",
+  "source_url": "https://github.com/TheBurdz/riffumi-skill",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-16",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-16",
+  "stars": 1,
+  "pushed_at": "2026-11-15",
+  "license": "MIT",
+  "language": "Python",
+  "install": "/plugin marketplace add TheBurdz/riffumi-skill"
  },
  {
   "slug": "risk-desk",
@@ -9698,6 +9843,24 @@
   "license": "MIT",
   "language": "Python",
   "install": null
+ },
+ {
+  "slug": "thirdminute",
+  "name": "Thirdminute",
+  "description": "Codex CLI plugin that gives Codex memory across chats: once you enable learning it builds a local memory graph from finished turns, and later chats can look up past decisions and why they were made. Linux preview.",
+  "maker": "550W Lab",
+  "link": "https://github.com/550w-lab/thirdminute",
+  "category": "Memory & Context",
+  "source": "editor-added",
+  "source_url": "https://github.com/550w-lab/thirdminute",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-16",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-16",
+  "stars": 5,
+  "pushed_at": "2026-11-15",
+  "language": "Python"
  },
  {
   "slug": "thunder-client-mcp",

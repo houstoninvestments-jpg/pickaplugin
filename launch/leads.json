@@ -435,7 +435,8 @@
     "source": "x",
     "post": "https://x.com/sudo_yavi/status/2114702398598074720",
     "catalog": "added as free listing",
-    "note": "Indie hacker launch, small audience."
+    "note": "Indie hacker launch, small audience.",
+    "featured_pitched": "2026-11-13"
   },
   {
     "found": "2026-10-28",
@@ -505,7 +506,8 @@
     "source": "x",
     "post": "https://x.com/heykadirhan/status/2115251671777345903",
     "catalog": "added as free listing (re-added 2026-11-02; earlier add was lost before commit)",
-    "note": "Indie hacker, tiny audience, just open-sourced the engine."
+    "note": "Indie hacker, tiny audience, just open-sourced the engine.",
+    "featured_pitched": "2026-11-13"
   },
   {
     "found": "2026-10-29",
@@ -645,7 +647,8 @@
     "source": "github",
     "post": null,
     "catalog": "added as free listing (re-added 2026-11-02; earlier add was lost before commit)",
-    "note": "Brand-new Codex plugin from a commercial product."
+    "note": "Brand-new Codex plugin from a commercial product.",
+    "featured_pitched": "2026-11-13"
   },
   {
     "found": "2026-10-29",
@@ -668,7 +671,8 @@
     "source": "github",
     "post": null,
     "catalog": "added as free listing (re-added 2026-11-02; earlier add was lost before commit)",
-    "note": "Org behind it has a site and email."
+    "note": "Org behind it has a site and email.",
+    "featured_pitched": "2026-11-13"
   },
   {
     "found": "2026-10-29",
@@ -831,7 +835,8 @@
     "source": "x",
     "post": "https://x.com/14hous/status/2116626194556649801",
     "catalog": "added as free listing",
-    "note": "Consumer app built MCP-first; email is the agency on the site footer."
+    "note": "Consumer app built MCP-first; email is the agency on the site footer.",
+    "featured_pitched": "2026-11-13"
   },
   {
     "found": "2026-11-02",
@@ -854,7 +859,8 @@
     "source": "github",
     "post": null,
     "catalog": "added as free listing",
-    "note": "Brand-new Codex plugin, tiny traction."
+    "note": "Brand-new Codex plugin, tiny traction.",
+    "featured_pitched": "2026-11-13"
   },
   {
     "found": "2026-11-02",
@@ -900,7 +906,8 @@
     "source": "x",
     "post": "https://x.com/ziplinemcp/status/2116553491707769334",
     "catalog": "added as free listing",
-    "note": "New startup, 1 follower; distribution-hungry."
+    "note": "New startup, 1 follower; distribution-hungry.",
+    "featured_pitched": "2026-11-13"
   },
   {
     "found": "2026-11-02",
@@ -1017,7 +1024,8 @@
     "source": "github",
     "post": null,
     "catalog": "added as free listing",
-    "note": "Created today, 22 stars already."
+    "note": "Created today, 22 stars already.",
+    "featured_pitched": "2026-11-13"
   },
   {
     "found": "2026-11-03",
@@ -1364,7 +1372,8 @@
     "source": "github",
     "post": null,
     "catalog": "added as free listing",
-    "note": "Solo dev, public email on GitHub profile."
+    "note": "Solo dev, public email on GitHub profile.",
+    "featured_pitched": "2026-11-13"
   },
   {
     "found": "2026-11-04",
@@ -1576,7 +1585,8 @@
     "source": "github",
     "post": null,
     "catalog": "added as free listing",
-    "note": "Open-source customer-service inbox (WhatsApp/Telegram/web/email) with MCP so AI agents draft and act inside approved limits."
+    "note": "Open-source customer-service inbox (WhatsApp/Telegram/web/email) with MCP so AI agents draft and act inside approved limits.",
+    "featured_pitched": "2026-11-13"
   },
   {
     "found": "2026-11-05",
@@ -2460,7 +2470,8 @@
     "post": null,
     "catalog": "added as free listing",
     "note": "Paid screenshot API with new agent plugin; support email in README.",
-    "featured_pitched": "2026-11-12"
+    "featured_pitched": "2026-11-12",
+    "declined": true
   },
   {
     "found": "2026-11-12",
@@ -2854,5 +2865,235 @@
     "post": "https://x.com/Toolfitly/status/2121002200407462003",
     "catalog": "added as free listing",
     "note": "AppSec company launched read-only MCP; larger company, enterprise sales, unlikely self-serve buyer."
+  },
+  {
+    "found": "2026-11-16",
+    "maker": "Alex Gilev (Agentic UI)",
+    "plugin": "Agentic UI 2.0",
+    "slug": "agentic-ui",
+    "repo": null,
+    "site": "https://agenticui.dev/",
+    "email": null,
+    "x": "@alexgilev",
+    "created": "2026-11-16",
+    "pushed": "2026-11-16",
+    "stars": null,
+    "scores": {
+      "recency": 5,
+      "traction": 4,
+      "contact": 3
+    },
+    "score": 4.0,
+    "source": "x",
+    "post": "https://x.com/alexgilev/status/2122338110327374311",
+    "catalog": "added as free listing",
+    "note": "Paid design system launched v2.0 today with MCP server + Claude plugin (ChatGPT plugin 'soon'); founder has 15.6k followers and runs a lifetime-access launch promo this week. Already sells, so a likely self-serve buyer. No public email; X @alexgilev, also @agenticui."
+  },
+  {
+    "found": "2026-11-16",
+    "maker": "Poptin",
+    "plugin": "Poptin MCP",
+    "slug": "poptin-mcp",
+    "repo": "https://github.com/Poptin-LTD/Poptin-MCP",
+    "site": "https://www.poptin.com/mcp/",
+    "email": null,
+    "x": "@poptins",
+    "created": "2026-11-12",
+    "pushed": "2026-11-16",
+    "stars": 36,
+    "scores": {
+      "recency": 5,
+      "traction": 4,
+      "contact": 3
+    },
+    "score": 4.0,
+    "source": "github",
+    "post": null,
+    "catalog": "added as free listing",
+    "note": "Official remote MCP (OAuth) from an established popup/email SaaS; dedicated landing page at poptin.com/mcp shows they're marketing it. No public email on the site (support via app/chat)."
+  },
+  {
+    "found": "2026-11-16",
+    "maker": "Mumro (G. Stuczyński)",
+    "plugin": "Mumro MCP",
+    "slug": "mumro-mcp",
+    "repo": null,
+    "site": "https://mumro.io/",
+    "email": "stuczynski.g@gmail.com",
+    "x": "@mumro_io",
+    "created": "2026-11-16",
+    "pushed": "2026-11-16",
+    "stars": null,
+    "scores": {
+      "recency": 5,
+      "traction": 2,
+      "contact": 5
+    },
+    "score": 4.0,
+    "source": "x",
+    "post": "https://x.com/mumro_io/status/2122351505323737176",
+    "catalog": "added as free listing",
+    "note": "Polish content/publishing SaaS with 38+ remote MCP tools, works in ChatGPT and Codex; early-partners program. Email is the founder's address listed on the site. Small audience (46 followers)."
+  },
+  {
+    "found": "2026-11-16",
+    "maker": "Hawkscan (Dam, Max)",
+    "plugin": "Hawkscan GEO MCP",
+    "slug": "hawkscan-mcp",
+    "repo": null,
+    "site": "https://hawkscan.ai/en/features/ai-agents",
+    "email": null,
+    "x": "@damitour",
+    "created": "2026-11-16",
+    "pushed": "2026-11-16",
+    "stars": null,
+    "scores": {
+      "recency": 5,
+      "traction": 3,
+      "contact": 3
+    },
+    "score": 3.7,
+    "source": "x",
+    "post": "https://x.com/damitour/status/2122273631669469521",
+    "catalog": "added as free listing",
+    "note": "Paid GEO/AI-visibility SaaS announced its MCP server today (posts from both founders, @damitour 1.2k followers and @mx_cena). No public email found; reach via X."
+  },
+  {
+    "found": "2026-11-16",
+    "maker": "First Concepts (Conor)",
+    "plugin": "First Concepts MCP",
+    "slug": "first-concepts-mcp",
+    "repo": null,
+    "site": "https://firstconcepts.co/",
+    "email": "conor@firstconcepts.co",
+    "x": "@FirstConceptsFC",
+    "created": "2026-11-12",
+    "pushed": "2026-11-12",
+    "stars": null,
+    "scores": {
+      "recency": 4,
+      "traction": 2,
+      "contact": 5
+    },
+    "score": 3.7,
+    "source": "x",
+    "post": "https://x.com/FirstConceptsFC/status/2120939874224115791",
+    "catalog": "added as free listing",
+    "note": "Creative-team AI workspace released its MCP server Nov 12 with a paid launch campaign (utm mcp-launch). Founder email on the site. Tiny X audience."
+  },
+  {
+    "found": "2026-11-16",
+    "maker": "Riffumi (TheBurdz)",
+    "plugin": "Riffumi skill",
+    "slug": "riffumi-skill",
+    "repo": "https://github.com/TheBurdz/riffumi-skill",
+    "site": "https://riffumi.com/skill",
+    "email": "support@riffumi.com",
+    "x": "@riffumiHQ",
+    "created": "2026-11-13",
+    "pushed": "2026-11-15",
+    "stars": 1,
+    "scores": {
+      "recency": 5,
+      "traction": 1,
+      "contact": 5
+    },
+    "score": 3.7,
+    "source": "x",
+    "post": "https://x.com/riffumiHQ/status/2121697049825677787",
+    "catalog": "added as free listing",
+    "note": "Open-source (MIT) video-editing skill for Claude Code and Codex, the local edition of a paid connector. Brand-new account, no traction yet."
+  },
+  {
+    "found": "2026-11-16",
+    "maker": "PikaStat",
+    "plugin": "PikaStat MCP",
+    "slug": "pikastat-mcp",
+    "repo": null,
+    "site": "https://pikastat.com/mcp-server",
+    "email": "hello@pikastat.com",
+    "x": "@pikastat",
+    "created": "2026-11-13",
+    "pushed": "2026-11-13",
+    "stars": null,
+    "scores": {
+      "recency": 4,
+      "traction": 2,
+      "contact": 5
+    },
+    "score": 3.7,
+    "source": "x",
+    "post": "https://x.com/pikastat/status/2121183809232080901",
+    "catalog": "added as free listing",
+    "note": "Consumer Pokémon GO PvP site with a remote MCP for Claude/ChatGPT; free tool, likely low budget. Email on the MCP page."
+  },
+  {
+    "found": "2026-11-16",
+    "maker": "OneHaus (Stuart, @CodeWithStu)",
+    "plugin": "OneHaus MCP",
+    "slug": "onehaus-mcp",
+    "repo": null,
+    "site": "https://onehaus.app/",
+    "email": "support@onehaus.app",
+    "x": "@onehausapp",
+    "created": "2026-11-13",
+    "pushed": "2026-11-13",
+    "stars": null,
+    "scores": {
+      "recency": 4,
+      "traction": 1,
+      "contact": 5
+    },
+    "score": 3.3,
+    "source": "x",
+    "post": "https://x.com/onehausapp/status/2121245681184653639",
+    "catalog": "added as free listing",
+    "note": "Household app with a remote MCP for ChatGPT and Claude; maker also runs verifymcp.io. Tiny audience."
+  },
+  {
+    "found": "2026-11-16",
+    "maker": "JustRoadmap (Clifty)",
+    "plugin": "JustRoadmap MCP",
+    "slug": "justroadmap-mcp",
+    "repo": null,
+    "site": "https://www.justroadmap.io/developers",
+    "email": null,
+    "x": "@clifty_io",
+    "created": "2026-11-15",
+    "pushed": "2026-11-15",
+    "stars": null,
+    "scores": {
+      "recency": 5,
+      "traction": 1,
+      "contact": 2
+    },
+    "score": 2.7,
+    "source": "x",
+    "post": "https://x.com/clifty_io/status/2121969033121505481",
+    "catalog": "added as free listing",
+    "note": "JustRoadmap 5 shipped an OAuth MCP server Nov 15 (also on Glama). Posted from the Clifty account (5 followers); no public email found."
+  },
+  {
+    "found": "2026-11-16",
+    "maker": "550W Lab (Prof Hex)",
+    "plugin": "Thirdminute",
+    "slug": "thirdminute",
+    "repo": "https://github.com/550w-lab/thirdminute",
+    "site": null,
+    "email": null,
+    "x": "@hex550w",
+    "created": "2026-10-28",
+    "pushed": "2026-11-15",
+    "stars": 5,
+    "scores": {
+      "recency": 5,
+      "traction": 1,
+      "contact": 2
+    },
+    "score": 2.7,
+    "source": "x",
+    "post": "https://x.com/hex550w/status/2121780293212557767",
+    "catalog": "added as free listing",
+    "note": "Codex CLI memory plugin; first public preview v0.2.10 went live Nov 15 (repo created Oct 28). Research project, 5 stars, unlikely buyer."
   }
 ]

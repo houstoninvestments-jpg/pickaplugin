@@ -484,3 +484,47 @@ I'll be straight: we're new and traffic is still small. The first 10 makers get 
 No pressure, the listing stays either way.
 
 Aaron
+
+## 2026-11-16
+
+### 1. Agentic UI, Agentic UI 2.0
+To: Alex Gilev via X @alexgilev or https://agenticui.dev (no public email found)
+Subject: Agentic UI is on PickAPlugin
+
+Hey Alex,
+
+Congrats on shipping Aqua. A design system that comes with its own MCP server and Claude plugin is exactly the kind of thing people browse for, so I added Agentic UI to PickAPlugin (560+ Codex, ChatGPT and Claude plugins, skills and MCP servers) as a free listing: https://pickaplugin.com/p/agentic-ui
+
+Honest heads-up: we're new and traffic is still small. That's why the first 10 makers get a founding featured spot (top of Design & Frontend, the homepage, and a newsletter mention) at $29/mo for life instead of the regular $49, first week free: https://buy.stripe.com/7sY6oG0A9bUbdX7eW1cQU06
+
+Could be a cheap extra spot for your launch week. No pressure, the free listing stays either way, and I'm happy to fix the description or add the ChatGPT plugin when it's out.
+
+Aaron
+
+### 2. Mumro, Mumro MCP
+To: stuczynski.g@gmail.com (listed on https://mumro.io)
+Subject: Mumro's MCP is on PickAPlugin
+
+Hi there,
+
+38 remote MCP tools with a human confirmation step before anything goes live is a thoughtful setup, so I listed Mumro on PickAPlugin, a directory of 560+ agent plugins and MCP servers, for free: https://pickaplugin.com/p/mumro-mcp
+
+To be upfront, we're a young directory and traffic is still modest. While we grow, the first 10 makers can get a featured spot near the top of the homepage and Docs, Content & SEO, plus a newsletter mention, at $29/mo for life (normally $49) with the first week free: https://buy.stripe.com/7sY6oG0A9bUbdX7eW1cQU06
+
+Totally optional. If anything on the page is off, reply and I'll fix it.
+
+Aaron
+
+### 3. Poptin, Poptin MCP
+To: Poptin team via https://www.poptin.com/mcp/ contact/chat (no public email found; X @poptins)
+Subject: Poptin MCP is listed on PickAPlugin
+
+Hi Poptin team,
+
+Saw the official Poptin MCP go up last week. Drafting a campaign, sending a test and only then confirming the send is a nice safe flow, so I added it to PickAPlugin as a free listing: https://pickaplugin.com/p/poptin-mcp
+
+I'll be straight: we're new and traffic is still small, so this isn't a big-reach play yet. The first 10 makers get a founding featured spot (homepage + Docs, Content & SEO + a newsletter mention) at $29/mo for life, first week free, versus $49/mo later: https://buy.stripe.com/7sY6oG0A9bUbdX7eW1cQU06
+
+No pressure, the listing stays either way.
+
+Aaron
