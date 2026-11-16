@@ -69,3 +69,46 @@ Working send path: Resend API, domain pickaplugin.com verified. From "PickAPlugi
 2026-11-05 09:54 PT: backlink outreach to MCP Market (mcpmarket.com) <support@mcpmarket.com> "MCP Market + PickAPlugin" -> sent 01a1acd9-6794-7581-9184-ebc5dd38b633
 2026-11-05 09:54 PT: backlink outreach to MCPfinder (mcpfinder.org) <hello@mcpfinder.org> "MCPfinder + PickAPlugin" -> sent 01a1acd9-682e-7ef7-b3e1-96f654839186
 2026-11-05 09:54 PT: backlink outreach to Manufact (manufact.com MCP blog) <support@manufact.com> "Data tip for your Codex + ChatGPT MCP post" -> sent 01a1acd9-68c3-7cdb-8df5-9be98ac04a51
+2026-11-09 09:53 PT: backlink outreach to The MCP Census (mcpcensus.com) <info@mcpcensus.com> "Codex plugin data for your registries page" -> sent 01a1c171-ffbf-71a0-9884-20b4e950761e
+2026-11-09 09:53 PT: backlink outreach to MCPifex (mcpifex.com) <support@amdose.com> "Your best MCP marketplaces page" -> sent 01a1c172-004a-7555-a69f-c1d215d7b352
+2026-11-09 09:53 PT: backlink outreach to Codex Skills (codexskills.dev) <hello@codexskills.dev> "Codex Skills + PickAPlugin" -> sent 01a1c172-00c6-751f-af7f-401e978a3933
+2026-11-09 09:53 PT: backlink outreach to MCP360 (mcp360.ai) <support@mcp360.ai> "Data for your Codex plugins guide" -> sent 01a1c172-0171-764d-ae6c-47e113a8f5d7
+2026-11-09 09:53 PT: backlink outreach to VibeIDE (vibeide.dev) <info@vibeide.dev> "A free tool for your Codex guides" -> sent 01a1c172-01ec-7b16-8dce-9173362d7243
+
+## 2026-11-09 featured-spot sales pitches (founding $29/mo for life + first week free)
+- 2026-11-09 JobsPipe -> dvir@jobspipe.dev | JobsPipe featured spot on PickAPlugin? | Resend 01a1c17f-3754-7de2-b2a6-780c8a3be74a
+- 2026-11-09 Skycloak MCP -> mariam.soliman@skycloak.io | Skycloak MCP featured spot on PickAPlugin? | Resend 01a1c17f-3ab6-70c7-b21f-bfc7eda9fec0
+- 2026-11-09 LurkAPI -> mesmerpercy@gmail.com | LurkAPI featured spot on PickAPlugin? | Resend 01a1c17f-3de2-7c63-9883-2dc1ad73a73f
+- 2026-11-09 Arcmira -> zeal@arcmira.com | Arcmira featured spot on PickAPlugin? | Resend 01a1c17f-40ea-7bfc-a223-c13271a13cfc
+- 2026-11-09 NeverApply -> hello@neverapply.co | NeverApply featured spot on PickAPlugin? | Resend 01a1c17f-4436-7d65-a153-9adca34c1c1a
+- 2026-11-09 call-grokbot -> baley@zens.ai | call-grokbot is live on PickAPlugin | Resend 01a1c17f-475a-7098-9452-2522594c29c6
+- 2026-11-09 CRW -> hello@fastcrw.com | CRW featured spot on PickAPlugin? | Resend 01a1c17f-4a82-7612-949c-faaeea8b2e3f
+- 2026-11-09 Mobile Dev -> hello@callstack.com | Mobile Dev featured spot on PickAPlugin? | Resend 01a1c17f-4da0-7621-9a0e-a9ba8f901fdb
+- 2026-11-09 EXZA Remote -> info@exza.de | EXZA Remote featured spot on PickAPlugin? | Resend 01a1c17f-50cb-7567-bc4f-2e255b2791b4
+- 2026-11-09 Canonry -> hello@canonry.ai | Canonry featured spot on PickAPlugin? | Resend 01a1c17f-53c3-7a9a-85a4-3dd34fc7e33a
+
+## 2026-11-10 backlink outreach
+- 2026-11-10 Codex Design (codexdesign.io) -> info@codexdesign.io "Codex Design on PickAPlugin" -> sent 01a1c697-ef70-7d6a-9c20-9f3737964bbf
+- 2026-11-10 Xtrusio (xtrusio.com) -> hello@xtrusio.com "Your Codex plugins install guide" -> sent 01a1c697-efda-7bac-b10d-41b8dc8b97b2
+- 2026-11-10 Blastra (blastra.io) -> ceo@blastra.io "One more for your MCP directories list" -> sent 01a1c697-f047-7ac2-9b88-1bcf6815bf11
+- 2026-11-10 Plug and Ship (plugandship.dev) -> hello@plugandship.dev "Your where to submit an MCP server guide" -> sent 01a1c697-f0ea-7eb1-99a6-d9dd433a104a
+- 2026-11-10 PlugMCP (plugmcp.ai) -> contact@plugmcp.ai "Your best MCP directories field guide" -> sent 01a1c697-f160-7749-8596-936b0d333899
+- 2026-11-10 The Anthropic Stack (theanthropicstack.com) -> theanthropicstack@proton.me "A link for The Queue maybe" -> sent 01a1c697-f19e-717e-8a8f-9ae7fa38995a
+2026-11-11 09:57 PT: backlink outreach to Apideck (apideck.com) <hello@apideck.com> "Your MCP directories post" -> sent 01a1cbc2-35e5-7ee8-a422-96a4c9fb4e04
+2026-11-11 09:57 PT: backlink outreach to SaaSCity (saascity.io) <support@saascity.io> "MCP server directories page" -> sent 01a1cbc2-3637-7f08-8022-21191b9ca2e9
+2026-11-11 09:57 PT: backlink outreach to Left Hook (lefthook.com) <hello@lefthook.com> "Your hosted MCP server listing post" -> sent 01a1cbc2-36a3-7c6d-9eab-059681a26e23
+2026-11-11 09:57 PT: backlink outreach to Linkly (linklyhq.com) <support@linklyhq.com> "Your MCP directories roundup" -> sent 01a1cbc2-372d-770b-834b-3c5201e00e63
+2026-11-11 09:57 PT: backlink outreach to REVERB (reverbico.com) <david@reverbico.com> "Your MCP directories and registries list" -> sent 01a1cbc2-37a0-7713-8d40-2d082957185c
+2026-11-11 09:57 PT: backlink outreach to Gaintage (gaintage.com) <hello@gaintage.com> "Your ChatGPT plugins explainer" -> sent 01a1cbc2-37ef-7cda-a1d3-2b77ed732781
+2026-11-11 09:57 PT: backlink outreach to Essen Industries (essenindustries.com) <sales@essenindustries.com> "Your plugins vs apps vs connectors post" -> sent 01a1cbc2-3877-7b3c-9f26-929b2b050543
+2026-11-12 09:57 PT: backlink outreach to Frank Spin (frankspin.com) <info@frankspin.com> "Your MCP app store map" -> sent 01a1d0e8-b465-7739-b085-ddbab46c3f07
+2026-11-12 09:57 PT: backlink outreach to Yep Soso (yepsoso.com) <support@yepsoso.com> "Your Codex plugins walkthrough" -> sent 01a1d0e8-b4d9-7971-b241-06851acd0fe5
+2026-11-12 09:57 PT: backlink outreach to Viraloop (viraloop.io) <hello@viraloop.io> "Your AI plugin directories guide" -> sent 01a1d0e8-b549-799a-99f2-2fdd2098ccb6
+2026-11-12 09:57 PT: backlink outreach to SkillMaxx (skillmaxx.gilventures.ai) <skillmaxx@gilventures.ai> "SkillMaxx + PickAPlugin" -> sent 01a1d0e8-b591-7ee7-a6d0-bb0d3b6702e8
+2026-11-13 09:55 PT: backlink outreach to Scrape.ly (scrape.ly) <hello@scrape.ly> "Scrape.ly is listed on PickAPlugin" -> sent 01a1d60c-f5c8-79c4-af91-729b540b88f9
+2026-11-13 09:55 PT: backlink outreach to AgentShortlist (agentshortlist.dev) <hi@agentshortlist.dev> "Your MCP servers ranking + a data source" -> sent 01a1d60c-f616-7771-8860-2b58cd961c2a
+2026-11-13 09:55 PT: backlink outreach to GearPicked (gearpicked.com) <hello@gearpicked.com> "One more route for your MCP submission checklist" -> sent 01a1d60c-f69a-7239-abe3-5f62870fb694
+2026-11-13 09:55 PT: backlink outreach to Flaq AI (flaq.ai) <contact@flaq.ai> "Your awesome_codex_skills list" -> sent 01a1d60c-f70d-7c3c-9bd7-6cba3455c9cb
+2026-11-13 09:55 PT: backlink outreach to ChatGPT Apps Rank (chatgptappsrank.com) <hello@chatgptappsrank.com> "Your apps vs plugins explainer" -> sent 01a1d60c-f764-7cbb-be20-420c86e7e98b
+2026-11-13 09:55 PT: backlink outreach to Big Hat Group Codex Weekly (bighatgroup.com) <info@bighatgroup.com> "Something for Codex Weekly maybe" -> sent 01a1d60c-f7d7-7252-b057-b1f8db9d2bb3
+2026-11-16 08:15 PT: confirmed link swap with SkillMaxx <skillmaxx@gilventures.ai> "Re: SkillMaxx + PickAPlugin" (our link live on /alternatives; they add 'Related directories' on /how-we-test/) -> sent 01a1e524-7ec5-704f-a8a4-f7d157270d36

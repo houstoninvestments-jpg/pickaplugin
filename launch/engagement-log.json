@@ -1264,6 +1264,132 @@
       "author": "@ArdenBuilds",
       "reply_text": "codex rn. claude code desktop is nicer to look at but i keep drifting back to the terminal anyway",
       "reply_url": "https://x.com/PickAPlugin/status/2119638420662485361"
+    },
+    {
+      "date": "2026-11-09",
+      "run": "10:30",
+      "type": "reply",
+      "thread_url": "https://x.com/kchecker/status/2119854014175355275",
+      "author": "@kchecker",
+      "reply_text": "cursor's marketplace and the official mcp registry are the two i'd do first, a lot of smaller directories scrape the registry anyway. pickaplugin.com/submit lists mcp servers for free too if you want one more indexed page",
+      "reply_url": "https://x.com/PickAPlugin/status/2119862822758732069"
+    },
+    {
+      "date": "2026-11-09",
+      "run": "10:30",
+      "type": "reply",
+      "thread_url": "https://x.com/rohit_jsfreaky/status/2119858912711381381",
+      "author": "@rohit_jsfreaky",
+      "reply_text": "honestly most mcp servers would get better by deleting half their tools. 16 near identical names is just asking the model to guess",
+      "reply_url": "https://x.com/PickAPlugin/status/2119863449975202199"
+    },
+    {
+      "date": "2026-11-09",
+      "run": "10:30",
+      "type": "reply",
+      "thread_url": "https://x.com/_vmlops/status/2119842086921081121",
+      "author": "@_vmlops",
+      "reply_text": "wasting their time instead of blocking them is kinda genius lol. give it a month before the agents learn to spot the bait",
+      "reply_url": "https://x.com/PickAPlugin/status/2119864037555220575"
+    },
+    {
+      "date": "2026-11-09",
+      "run": "10:30",
+      "type": "quote_tweet",
+      "thread_url": "https://x.com/Stefan_3D_AI/status/2119852539080511601",
+      "author": "@Stefan_3D_AI",
+      "reply_text": "unreal putting claude code and codex inside the editor before half of saas has a usable api is very on brand for this year",
+      "reply_url": "https://x.com/PickAPlugin/status/2119864893138718895"
+    },
+    {
+      "date": "2026-11-09",
+      "run": "10:30",
+      "type": "skipped",
+      "thread_url": "https://x.com/meestierolff/status/2119734090052083756",
+      "author": "@meestierolff",
+      "note": "post unavailable, not posted"
+    },
+    {
+      "date": "2026-11-09",
+      "run": "15:30",
+      "type": "reply",
+      "thread_url": "https://x.com/erickb336/status/2119937588521996698",
+      "author": "@erickb336",
+      "reply_text": "shipping it before you're proud of it is the right move tbh. when sage feels ready, codex/claude plugins get a free listing at pickaplugin.com/submit, might get it a few more eyes",
+      "reply_url": "https://x.com/PickAPlugin/status/2119939430350037432"
+    },
+    {
+      "date": "2026-11-09",
+      "run": "15:30",
+      "type": "reply",
+      "thread_url": "https://x.com/github/status/2119926269982961833",
+      "author": "@github",
+      "reply_text": "fewer tool calls for the same result is the number i actually care about. that's what decides if agent mode feels quick or painfully slow",
+      "reply_url": "https://x.com/PickAPlugin/status/2119940089937813700"
+    },
+    {
+      "date": "2026-11-09",
+      "run": "15:30",
+      "type": "reply",
+      "thread_url": "https://x.com/emollick/status/2119918307457577163",
+      "author": "@emollick",
+      "reply_text": "25k agents and 450 worlds is wild but i mostly want to know how many of the portals actually lead somewhere lol",
+      "reply_url": "https://x.com/PickAPlugin/status/2119940754118422557"
+    },
+    {
+      "date": "2026-11-09",
+      "run": "15:30",
+      "type": "quote_tweet",
+      "thread_url": "https://x.com/alexalbert__/status/2119916954337349737",
+      "author": "@alexalbert__",
+      "reply_text": "turning old notebooks into stuff you can actually poke at is the best education use of these models i've seen. way better than another chatbot tutor",
+      "reply_url": "https://x.com/PickAPlugin/status/2119941443573653601"
+    },
+    {
+      "date": "2026-11-09",
+      "run": "19:30",
+      "type": "reply",
+      "thread_url": "https://x.com/MirageaVoice/status/2119987044306833680",
+      "author": "@MirageaVoice",
+      "reply_text": "keeping each speaker's voice is the part most dubbing tools fumble, nice that it's mit. if you want one more spot for people to find it, mcp servers get a free listing at pickaplugin.com/submit",
+      "reply_url": "https://x.com/PickAPlugin/status/2119998692212240791"
+    },
+    {
+      "date": "2026-11-09",
+      "run": "19:30",
+      "type": "reply",
+      "thread_url": "https://x.com/avinashpdy/status/2119996488168231062",
+      "author": "@avinashpdy",
+      "reply_text": "before push is the right place for this. once it's a PR nobody actually reads the agent diffs, they just skim and approve",
+      "reply_url": "https://x.com/PickAPlugin/status/2119996489321648189",
+      "note": "reported reply URL looks off (id predates our post); verify"
+    },
+    {
+      "date": "2026-11-09",
+      "run": "19:30",
+      "type": "reply",
+      "thread_url": "https://x.com/rodri_shema/status/2119981462837481781",
+      "author": "@rodri_shema",
+      "reply_text": "the boring stuff mostly, migration scripts and test fixtures. big refactors i still read every line because it'll happily rename something three files away",
+      "reply_url": "https://x.com/PickAPlugin/status/2120000069550182481"
+    },
+    {
+      "date": "2026-11-09",
+      "run": "19:30",
+      "type": "reply",
+      "thread_url": "https://x.com/BetterStackHQ/status/2119971984138490359",
+      "author": "@BetterStackHQ",
+      "reply_text": "reusing what it already figured out feels obvious in hindsight. my question is what happens when the cached answer is stale and the repo moved on",
+      "reply_url": "https://x.com/PickAPlugin/status/2120000644622733616"
+    },
+    {
+      "date": "2026-11-09",
+      "run": "19:30",
+      "type": "quote_tweet",
+      "thread_url": "https://x.com/amasad/status/2119965240066752682",
+      "author": "@amasad",
+      "reply_text": "july '24 feels like a decade ago in ai years. wild that the name came after the thing",
+      "reply_url": "https://x.com/PickAPlugin/status/2120001373269868564"
     }
   ]
 }

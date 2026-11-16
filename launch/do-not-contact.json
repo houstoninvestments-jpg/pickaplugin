@@ -19,6 +19,24 @@
       "reason": "Replied to featured-spot pitch: firm no, prefers platform directories, asked 'Please remove us from your marketing lists.' Free listing left in place.",
       "action": "do_not_contact",
       "listing": "leave https://pickaplugin.com/p/tripsy-mcp unless they ask to take it down"
+    },
+    {
+      "added": "2026-11-13",
+      "name": "Alex / SnapRender",
+      "emails": [
+        "support@snap-render.com",
+        "alex@snap-render.com"
+      ],
+      "x": [],
+      "domains": [
+        "snap-render.com"
+      ],
+      "slugs": [
+        "snaprender"
+      ],
+      "reason": "Replied 2026-11-12 to featured-spot pitch: passing for now (spending focused on few channels). Logged as lost; no confirmation sent.",
+      "action": "do_not_contact",
+      "listing": "leave https://pickaplugin.com/p/snaprender"
     }
   ]
 }

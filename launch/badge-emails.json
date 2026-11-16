@@ -80,6 +80,76 @@
    "date": "2026-11-15",
    "time": "2026-11-15T06:39:30",
    "id": "01a1dfa6-27c1-7ebb-a3a0-fdfd91b4ebc5"
+  },
+  {
+   "to": "jan@inhotel.io",
+   "slugs": [
+    "govisit-toolkit"
+   ],
+   "subject": "Re: GoVisit Toolkit \u2014 Codex/ChatGPT plugin listing",
+   "date": "2026-11-16",
+   "time": "2026-11-16T08:15:21",
+   "id": "01a1e524-45a7-754b-9d1f-fa87570c007f"
+  },
+  {
+   "to": "wlain.cwb@gmail.com",
+   "slugs": [
+    "kling-ai"
+   ],
+   "subject": "Re: Free listing suggestion: Kling AI ChatGPT and Codex plugin",
+   "date": "2026-11-16",
+   "time": "2026-11-16T08:15:22",
+   "id": "01a1e524-48df-7d90-9788-d1b1830046ea"
+  },
+  {
+   "to": "support@juzpost.com",
+   "slugs": [
+    "juzpost"
+   ],
+   "subject": "Re: Plugin submission: JuzPost for ChatGPT",
+   "date": "2026-11-16",
+   "time": "2026-11-16T08:15:23",
+   "id": "01a1e524-4c06-7811-9e14-ea55aabfba57"
+  },
+  {
+   "to": "hello@applysent.com",
+   "slugs": [
+    "applysent"
+   ],
+   "subject": "Re: Plugin submission: ApplySent",
+   "date": "2026-11-16",
+   "time": "2026-11-16T08:15:24",
+   "id": "01a1e524-4f38-787a-a274-329486025b16"
+  },
+  {
+   "to": "team@agentseo.dev",
+   "slugs": [
+    "agentseo"
+   ],
+   "subject": "Re: Free listing request: AgentSEO Clients (MCP + SEO/AEO API)",
+   "date": "2026-11-16",
+   "time": "2026-11-16T08:15:25",
+   "id": "01a1e524-52ae-7eeb-9e6d-763c3ea65e7b"
+  },
+  {
+   "to": "nic@sequenzy.com",
+   "slugs": [
+    "sequenzy"
+   ],
+   "subject": "Re: Free listing submission: Sequenzy email marketing plugin",
+   "date": "2026-11-16",
+   "time": "2026-11-16T08:15:26",
+   "id": "01a1e524-55f8-7214-94b0-07be29e056f9"
+  },
+  {
+   "to": "ai@artarasov.com",
+   "slugs": [
+    "kismet"
+   ],
+   "subject": "Re: Submit Kismet \u2014 open-source Unreal Engine MCP server",
+   "date": "2026-11-16",
+   "time": "2026-11-16T08:15:26",
+   "id": "01a1e524-591f-7f38-bd51-8b09db557d10"
   }
  ],
  "skipped": [],

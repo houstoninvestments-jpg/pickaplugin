@@ -53,5 +53,59 @@
   "platform": "hashnode",
   "url": "https://pickaplugin.hashnode.dev/how-i-vet-a-codex-plugin-or-mcp-server-in-about-two-minutes",
   "source": "articles/2026-11-04-vet-a-plugin.md (from guides/vet-a-plugin); canonical https://pickaplugin.com/guides/vet-a-plugin; tags ai, mcp, security, codex"
+ },
+ {
+  "date": "2026-11-09",
+  "platform": "bluesky",
+  "url": "https://bsky.app/profile/pickaplugin.bsky.social/post/3mzvxf7yuas2t",
+  "source": "Q15 (V6, too many MCP servers), reworded"
+ },
+ {
+  "date": "2026-11-09",
+  "platform": "devto",
+  "url": "https://dev.to/pickaplugin/how-to-write-an-agentsmd-for-codex-with-a-starter-template-ibb",
+  "source": "articles/2026-11-09-write-agents-md.md (from guides/write-agents-md); canonical https://pickaplugin.com/guides/write-agents-md; tags ai, programming, productivity, tutorial"
+ },
+ {
+  "date": "2026-11-09",
+  "platform": "hashnode",
+  "url": "https://pickaplugin.hashnode.dev/how-to-write-an-agents-md-for-codex-with-a-starter-template",
+  "source": "articles/2026-11-09-write-agents-md.md (from guides/write-agents-md); canonical https://pickaplugin.com/guides/write-agents-md"
+ },
+ {
+  "date": "2026-11-11",
+  "platform": "bluesky",
+  "url": "https://bsky.app/profile/pickaplugin.bsky.social/post/3n22ycdnr422c",
+  "source": "Q17 (codex usage and resets), reworded"
+ },
+ {
+  "date": "2026-11-11",
+  "platform": "devto",
+  "url": "https://dev.to/pickaplugin/how-to-install-a-codex-plugin-cli-app-and-github-repos-4mnd",
+  "source": "articles/2026-11-11-install-codex-plugin.md (from guides/install-codex-plugin); canonical https://pickaplugin.com/guides/install-codex-plugin; tags ai, tutorial, productivity"
+ },
+ {
+  "date": "2026-11-11",
+  "platform": "hashnode",
+  "url": "https://pickaplugin.hashnode.dev/how-to-install-a-codex-plugin-cli-app-and-github-repos",
+  "source": "articles/2026-11-11-install-codex-plugin.md (from guides/install-codex-plugin); canonical https://pickaplugin.com/guides/install-codex-plugin; tags ai, codex, tutorial, productivity"
+ },
+ {
+  "date": "2026-11-13",
+  "platform": "bluesky",
+  "url": "https://bsky.app/profile/pickaplugin.bsky.social/post/3n27zpnb2ss23",
+  "source": "Q18-adjacent: publish via own GitHub marketplace, reworded"
+ },
+ {
+  "date": "2026-11-13",
+  "platform": "devto",
+  "url": "https://dev.to/pickaplugin/how-to-publish-a-codex-or-chatgpt-plugin-three-routes-no-guesswork-36g8",
+  "source": "articles/2026-11-13-publish-plugin.md (from guides/publish-codex-plugin); canonical https://pickaplugin.com/guides/publish-codex-plugin; tags ai, codex, tutorial, opensource"
+ },
+ {
+  "date": "2026-11-13",
+  "platform": "hashnode",
+  "url": "https://pickaplugin.hashnode.dev/how-to-publish-a-codex-or-chatgpt-plugin-three-routes-no-guesswork",
+  "source": "articles/2026-11-13-publish-plugin.md (from guides/publish-codex-plugin); canonical https://pickaplugin.com/guides/publish-codex-plugin; tags ai, codex, tutorial, opensource"
  }
 ]

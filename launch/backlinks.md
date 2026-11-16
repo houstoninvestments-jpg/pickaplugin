@@ -196,3 +196,21 @@ Submitted free, 2026-11-10 evening PT ($0, no upgrades):
 - AppRater: submitted, in hand-review queue (confirmation email to hello@pickaplugin.com).
 
 11 skipped (paid-only, no website link, phone required, or poor fit). 15 left as maybe (login, badge, or both). None were already listed.
+
+## Run 2026-11-11 (backlink outreach routine)
+- Unlinked mentions: none new (only our own SubmitPR, Neeed, Hashnode, Alternative Biz profile pages).
+- Sent 7 via Resend, all "sent" (ids in backlink-outreach.json): apideck.com (hello@), saascity.io (support@), lefthook.com (hello@), linklyhq.com (support@), reverbico.com (david@), gaintage.com (hello@), essenindustries.com (sales@).
+- Live checks (60 outreach pages): still live HOL awesome-codex-plugins, BranoLabs reports, TurboAI docs. No new live links.
+- Script fix: the daily cap of 10 now counts backlink emails only; featured-pitch sends (a separate 10/day allowance) are no longer counted.
+
+## Run 2026-11-12 (backlink outreach routine)
+- Unlinked mentions: none new (only our own SubmitPR, Alternative Biz, SiftFox, Hashnode pages).
+- Sent 4 via Resend, all "sent" (ids in backlink-outreach.json): frankspin.com (info@), yepsoso.com (support@), viraloop.io (hello@), skillmaxx@gilventures.ai.
+- Live checks (37 outreach pages since Nov 4): no new live links.
+- Skipped (no public email found): kxdevelopers.com, agenticcodingweekly.com, scriptbyai.com, feedough.com, awesomeskills.dev, simplified.guide. Hokai (info@hokai.io) is a weak fit for a general MCP guide, so I held off.
+
+## Run 2026-11-13 (backlink outreach routine)
+- Unlinked mentions: none new (only our own Hashnode, SubmitPR, Alternative Biz, SiftFox pages).
+- Sent 6 via Resend, all "sent" (ids in backlink-outreach.json): scrape.ly (hello@, their plugin is listed at /p/scrape-ly), agentshortlist.dev (hi@), gearpicked.com (hello@), flaq.ai (contact@, awesome_codex_skills), chatgptappsrank.com (hello@), bighatgroup.com (info@, Codex Weekly).
+- Live checks (51 outreach pages Nov 2-12): only the known TurboAI docs and BranoLabs reports. No new live links.
+- Skipped: shortstackdaily.com (only a placeholder email), noxi.ai, eastondev.com, publishport.app, submitmcp.com, reviewland.io (no public email found).
