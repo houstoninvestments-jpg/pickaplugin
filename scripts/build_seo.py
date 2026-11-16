@@ -92,6 +92,14 @@ def _fix(m,base):
   elif p.endswith(".html"): p=p[:-5]
   return f'href="/{p.lstrip("./")}{"#"+frag if frag else ""}"'.replace('href="/"','href="/"')
 URLS=[]
+# Real lastmod (2026-11-16): a page's lastmod only moves when its substantive content changes. Signature = page text with
+# scripts, digits (star counts, dates, counters) and whitespace removed. State in data/lastmod.json; URLs changed in today's
+# builds go to data/changed_urls.json, which indexnow.py submits by default (Bing asks for changed URLs only).
+import hashlib as _hl
+_PAGE_SIG={}
+def _sig(h):
+  t=_re.sub(r"(?is)<script.*?</script>","",h); t=_re.sub(r"\d+","",t); t=_re.sub(r"\s+"," ",t)
+  return _hl.sha256(t.encode()).hexdigest()[:20]
 exec(open(os.path.join(ROOT,"scripts","seo_overrides.py")).read())
 _N=len(PL) if "PL" in dir() else None
 DESCS={"index.html":"Hundreds of ChatGPT and Codex plugins are scattered across GitHub. PickAPlugin gathers them in one free, hand-sorted catalog with last update, license and install command for each.",
@@ -137,9 +145,27 @@ for f in sorted(_glob.glob(D+"/**/*.html",recursive=True)):
       meta+='<script type="application/ld+json">'+_json.dumps(_bc).replace("</","<\\/")+'</script>'
   h=h.replace("</title>","</title>"+meta,1)
   open(f,"w").write(h)
+  if url in URLS: _PAGE_SIG[url]=_sig(h)
 open(D+"/robots.txt","w").write("User-agent: *\nAllow: /\nDisallow: /go/\n\nSitemap: "+SITE+"/sitemap.xml\n")
 today=_dt.date.today().isoformat()
-open(D+"/sitemap.xml","w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+"".join(f"<url><loc>{u}</loc><lastmod>{COLL_LASTMOD.get(u[len(SITE)+1:],today)}</lastmod></url>\n" for u in URLS)+"</urlset>\n")
+_LMF=os.path.join(ROOT,"data","lastmod.json")
+_LM=_json.load(open(_LMF)) if os.path.exists(_LMF) else {}
+_seed=not _LM
+def _seed_date(u):
+  k=u[len(SITE)+1:]
+  if k.startswith("p/") and by.get(k[2:],{}).get("first_seen"): return min(by[k[2:]]["first_seen"][:10],today)
+  if k.split("/")[0] in ("compare","alternatives","best-for") and "/" in k: return "2026-11-14"
+  return COLL_LASTMOD.get(k) or today
+for _u,_sg in _PAGE_SIG.items():
+  _old=_LM.get(_u)
+  if not _old: _LM[_u]={"sig":_sg,"date":_seed_date(_u) if _seed else today}
+  elif _old["sig"]!=_sg: _LM[_u]={"sig":_sg,"date":today}
+_json.dump(dict(sorted(_LM.items())),open(_LMF,"w"),indent=0)
+_chg=sorted(u for u in URLS if _LM.get(u,{}).get("date")==today and not _seed)
+_json.dump({"date":today,"urls":_chg},open(os.path.join(ROOT,"data","changed_urls.json"),"w"),indent=1)
+print("seo: lastmod changed today:",len(_chg),"of",len(URLS),"(seed run)" if _seed else "")
+LASTMOD={u:_LM.get(u,{}).get("date",today) for u in URLS}
+open(D+"/sitemap.xml","w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+"".join(f"<url><loc>{u}</loc><lastmod>{LASTMOD[u]}</lastmod></url>\n" for u in URLS)+"</urlset>\n")
 _cats={}
 for x in by.values(): _cats.setdefault(x["category"],[]).append(x)
 _l=["# PickAPlugin","","> An independent, hand-sorted catalog of ChatGPT and Codex plugins collected from public GitHub sources. Free to browse. Not affiliated with OpenAI. Descriptions are each project's own; we do not test or audit plugins.","",

@@ -182,8 +182,9 @@ _ALT=[("OpenAI's built-in Plugins directory","https://developers.openai.com/code
  ("CodexStacks","https://codexstacks.com/","Its homepage says 1,029 listings: 65 official and 964 community repos that pass its filter.","You want a big Codex-only list with 'best for' pages."),
  ("Codex Harness","https://codex-harness.com/plugins/","Says it indexes about 898 plugins parsed from plugin.json, and shows bundled skills and MCP servers.","You want to sort by skill count or see what a plugin bundles."),
  ("awesome-codex-plugins (hashgraph-online)","https://github.com/hashgraph-online/awesome-codex-plugins","A GitHub awesome list that's also an installable marketplace, and it requires a scanner score to get in.","You want to add one marketplace in Codex and install from it."),
- ("Codex Marketplace","https://www.codex-marketplace.com/","A community catalog with docs and its own npx installer.","You like a store-style site with a submit flow.")]
-_ab="".join(f'<h2>{e(n)}</h2><p>{e(w)} <a href="{u}" rel=nofollow>{e(u)}</a></p><p><b>Pick it if:</b> {e(f)}</p>' for n,u,w,f in _ALT)
+ ("Codex Marketplace","https://www.codex-marketplace.com/","A community catalog with docs and its own npx installer.","You like a store-style site with a submit flow."),
+ ("SkillMaxx install-test results","https://skillmaxx.gilventures.ai/reports/latest/","Not a directory: it installs agent skills and MCP servers every night and publishes which ones break and why.","You've picked a plugin and want to know whether it installs cleanly today.")]
+_ab="".join(f'<h2>{e(n)}</h2><p>{e(w)} <a href="{u}"{"" if "skillmaxx" in u else " rel=nofollow"}>{e(u)}</a></p><p><b>Pick it if:</b> {e(f)}</p>' for n,u,w,f in _ALT)
 _page("alternatives.html",0,"PickAPlugin alternatives: other ChatGPT & Codex plugin directories compared","An honest look at where else to find ChatGPT and Codex plugins (OpenAI's directory, CodexStacks, Codex Harness, awesome-codex-plugins) and when each is the better pick.",
  "Compared · checked "+_CHK,"PickAPlugin vs other plugin directories",
  "We'd rather you find the right plugin than stay on our site. Here's where else to look, and when each one is the better pick. Counts are what each site says about itself as of "+_CHK+".",

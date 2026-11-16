@@ -75,3 +75,29 @@ Bing (Webmaster Tools, AI Performance): 16 AI citations, all on /blog/best-codex
 - NEW /reports/2026-11 (State of MCP & Codex Plugins, month to date through Nov 14) + /reports index. `python3 scripts/make_report.py 2026-11` regenerates data/reports/2026-11.json; re-run on Dec 1 for the final November numbers, then `make_report.py 2026-12` through December.
 - IndexNow: indexnow.py now takes path prefixes (`python3 scripts/indexnow.py /compare /alternatives ...`); pinged 285 changed URLs (200).
 - Check on 2026-12-14: impressions on /compare, /alternatives, /best-for in GSC; prune any page with 0 impressions after 60 days.
+
+## 2026-11-16 (Monday GSC meeting + traffic-drop diagnosis)
+
+**Data:** launch/gsc-exports/2026-11-16-*.csv (last 28 days Oct 26–Nov 14, Web: 30 clicks, 1.63K impressions, avg pos 16.7). No brand ("pickaplugin") rows in the export. Bing Webmaster Tools was signed out in the box browser, so there's no Bing data this week (no AI Performance or Topic Portfolio review).
+
+**The cliff:** daily impressions were 80–169/day Oct 27–Nov 8, then Nov 9: 12, Nov 10: 2, Nov 11: 3, Nov 12–13: 0, Nov 14: 3. It hits every page at once, so it's site-wide, not a page or title problem. The non-brand query table is almost identical to the Nov 9 export: nothing new was earned this week. Bing went to about 0/day from Nov 4.
+
+Checked on 2026-11-16, nothing blocking found:
+- robots.txt: `Allow: /`, `Disallow: /go/` (click redirects only), sitemap line present.
+- /, /c/agent-workflows, /p/lurkapi, /sitemap.xml return 200 to Googlebot, bingbot and curl user agents. Self canonical on the apex host, no meta robots noindex, no X-Robots-Tag (only /go/* redirects carry noindex). The only noindex page in dist is the unsent newsletter preview, which is intended.
+- Cloudflare: bot fight mode, AI-bot blocking, crawler protection and JS detections are all off. Security level medium, managed free ruleset only. Redirect rules are just www→apex and strip-trailing-slash, unchanged since Oct 27.
+- Cloudflare logs, last 24h: real Googlebot (desktop and smartphone) fetched /, robots.txt, /c/*, /p/*, guides and sitemap and got 200s (plus expected 301s from www/trailing slash and two 404s for /ads.txt and /favicon.ico). Not challenged or blocked. Daily edge 403s were normal except Nov 9 (171), which was a one-day blip.
+- No deploy Nov 8–10 touched robots, canonicals or headers. The Nov 9 commits were founding-offer copy, five title overrides and internal links.
+- Sitemap: 913 valid apex URLs, no duplicates. But 912 of 913 had lastmod = build day, and IndexNow got the whole sitemap after every deploy (913 URLs this morning). That's the Nov 9 Bing follow-up, which had **not** been done until today (fixed below).
+- Context: Google's November 2026 core update started Nov 10 (a day after our drop began) and runs to about Nov 24. No spam update in November.
+
+**Most likely cause:** Google has stopped showing the site almost everywhere, either through a site-level quality reassessment of a young domain with about 900 mostly programmatic pages, or through something only Search Console can show (a manual action, a security issue, or "crawled/discovered – not indexed" for most URLs). It isn't a technical block we can see from outside. **Next step (needs the GSC UI):** check Security & Manual actions, the Indexing → Pages trend since Nov 8, and URL Inspection (live test) on / and /c/agent-workflows. Until then, and until the core update finishes (~Nov 24): **no new title changes and no new programmatic page batches.** Per the guide, don't undo work without a named mistake.
+
+**Fixes shipped today:**
+- REAL LASTMOD: build_seo.py now gives each page a content signature (text without scripts, digits and whitespace, so star counts and dates don't count as edits), kept in data/lastmod.json. lastmod moves only when a page really changes. Seeded today: /p pages use their first_seen date, compare/alternatives/best-for use 2026-11-14 (when they were created), the rest use today.
+- INDEXNOW CHANGED-ONLY: indexnow.py now sends only data/changed_urls.json (URLs whose signature changed today). `--all` is the escape hatch. Today it sent nothing, because the morning redeploy had already sent everything.
+- DETERMINISTIC COMPARE PAGES: build_compare.py picked head-to-head pairs and "shared terms" by Python set order, so every build added or dropped a few /compare URLs and rewrote others (7 pages differed between two identical builds). Pairs and terms are now sorted. There are now 120 stable head-to-heads; pages that dropped out 404 as before.
+
+**Job 1/2/3 this week:** not run as changes. With about 0 impressions since Nov 9, there's no fresh signal, and the guide says not to touch titles during a drop or a core update. Nov 9 title changes (home, codex-auto-resume, data-product-builder, devin-plugin-cc, where-to-submit-mcp-server): not due, first glance 2026-11-23. /best/data-backend (changed Nov 2): "best backend for openai codex" 48 impr @ 7.0, 0 clicks, which is the same data as last week, so no verdict.
+
+**Other:** /alternatives gained a SkillMaxx install-test results entry (a link swap SkillMaxx agreed to on Nov 13; they're adding a "Related directories" link to us on their How we test page).

@@ -47,7 +47,7 @@ Category sponsor reads the `category` dropdown field. Optional `top_spot_note` o
 ## SEO (build_seo.py, run by build.py)
 build.py execs scripts/build_seo.py: /best/<cat>, /compare/<a>-vs-<b>, /privacy, /terms, robots.txt, sitemap.xml,
 IndexNow key file, clean-URL rewrite, canonical/OG/JSON-LD. refresh.py pulls real GitHub star counts (GITHUB_TOKEN/GH_TOKEN or `gh auth token`).
-After each deploy: `python3 scripts/indexnow.py`.
+After each deploy: `python3 scripts/indexnow.py` (sends only URLs whose content changed today; real lastmod dates live in data/lastmod.json, commit it with the deploy. `--all` resends everything, avoid it).
 
 ## Lead capture (claims + newsletter)
 Worker routes /api/claim, /api/subscribe, /unsubscribe, /api/admin. Bindings are added by upload_buckets.py from the

@@ -106,7 +106,7 @@ ALT_SET={p["slug"] for p,_ in ALT_PAGES}
 _bys={p["slug"]:p for p in P}
 _pairs={}
 for a,b2 in PAIRS: _pairs[(a["slug"],b2["slug"])]=(9,a,b2)  # keep already-indexed URLs
-for s1,s2 in _VSHIT:
+for s1,s2 in sorted(_VSHIT):  # sorted: set order changes per run (PYTHONHASHSEED), which made pages flip between builds
   a,b2=_bys[s1],_bys[s2]
   if not a.get("archived") and not b2.get("archived"): _pairs.setdefault((s1,s2),(5,a,b2))
 for p,al in ALT_PAGES:
@@ -117,7 +117,7 @@ for p,al in ALT_PAGES:
     a,b2=(p,q) if stars(p)>=stars(q) else (q,p)
     _pairs[(a["slug"],b2["slug"])]=(_sim(p,q)+min(stars(a),3000)/3000,a,b2)
 _cnt=_cc.Counter(); CMP_PAIRS=[]
-for sc,a,b2 in sorted(_pairs.values(),key=lambda t:-t[0]):
+for sc,a,b2 in sorted(_pairs.values(),key=lambda t:(-t[0],t[1]["slug"],t[2]["slug"])):
   if len(CMP_PAIRS)>=MAX_COMPARE: break
   if sc<9 and (_cnt[a["slug"]]>=3 or _cnt[b2["slug"]]>=3): continue
   CMP_PAIRS.append((a,b2)); _cnt[a["slug"]]+=1; _cnt[b2["slug"]]+=1
@@ -192,7 +192,7 @@ for a,b2 in CMP_PAIRS:
         ("Install",_inst),("Editor's pick",lambda p:"Yes: "+e(PICKS[p["slug"]]) if p["slug"] in PICKS else "No"),
         ("In our catalog since",lambda p:p["first_seen"]),("Source",_src),("Our page",lambda p:f'<a href="../p/{p["slug"]}.html">{e(p["name"])} →</a>')]
   tbl="".join(f'<tr><th {_TH}>{k}</th><td {_TD}>{f(a)}</td><td {_TD}>{f(b2)}</td></tr>' for k,f in rows)
-  common=[w for w,_ in sorted(((w,_V[a["slug"]][w]*_V[b2["slug"]][w]) for w in _W[a["slug"]]&_W[b2["slug"]]),key=lambda t:-t[1])][:6]
+  common=[w for w,_ in sorted(((w,_V[a["slug"]][w]*_V[b2["slug"]][w]) for w in _W[a["slug"]]&_W[b2["slug"]]),key=lambda t:(-round(t[1],9),t[0]))][:6]
   more=[]
   for s in (a["slug"],b2["slug"]):
     if s in ALT_SET: more.append(f'<a href="../alternatives/{s}.html">{e(_bys[s]["name"])} alternatives</a>')
