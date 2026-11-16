@@ -101,3 +101,8 @@ Checked on 2026-11-16, nothing blocking found:
 **Job 1/2/3 this week:** not run as changes. With about 0 impressions since Nov 9, there's no fresh signal, and the guide says not to touch titles during a drop or a core update. Nov 9 title changes (home, codex-auto-resume, data-product-builder, devin-plugin-cc, where-to-submit-mcp-server): not due, first glance 2026-11-23. /best/data-backend (changed Nov 2): "best backend for openai codex" 48 impr @ 7.0, 0 clicks, which is the same data as last week, so no verdict.
 
 **Other:** /alternatives gained a SkillMaxx install-test results entry (a link swap SkillMaxx agreed to on Nov 13; they're adding a "Related directories" link to us on their How we test page).
+### 2026-11-16 GSC health check (browser, read-only)
+- Manual actions: none. Security issues: none.
+- Page indexing (report updated 2026-11-12): 86 indexed, 467 not indexed (273 "Crawled - currently not indexed", 191 "Discovered - currently not indexed", 3 redirects).
+- URL Inspection of / : "URL is not on Google" — Crawled - currently not indexed (last crawl 2026-11-10, fetch OK, indexing allowed, canonical self).
+- Read: Google is dropping the site on quality, not a technical block (likely thin, auto-generated pages plus the Nov core update). Hold off on new generated-page batches; next step is consolidating or noindexing thin /p, /compare and /alternatives pages and making the home page and key hubs more substantial. Re-check on 2026-11-23.
