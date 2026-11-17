@@ -3965,6 +3965,26 @@
   "install": null
  },
  {
+  "slug": "enhancv-mcp",
+  "name": "Enhancv MCP",
+  "description": "Enhancv's official remote MCP server (OAuth): Claude, ChatGPT, Cursor and other AI apps can edit your resumes, write cover letters, search jobs and track applications in your Enhancv account.",
+  "maker": "Enhancv",
+  "link": "https://github.com/enhancv/mcp-server",
+  "category": "Industry Tools",
+  "source": "editor-added",
+  "source_url": "https://github.com/enhancv/mcp-server",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-17",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-17",
+  "install": "claude mcp add --transport http --scope user enhancv https://api.enhancv.com/mcp",
+  "stars": 11,
+  "pushed_at": "2026-11-17",
+  "license": "MIT",
+  "language": null
+ },
+ {
   "slug": "epic-harness",
   "name": "Epic Harness",
   "description": "Auto-trigger quality skills + self-evolving agent harness — orbit (spec-to-ship), evolve (skill mutation), team (multi-agent), TDD, check, ship, simplify, debug, perf, secure.",
@@ -5603,6 +5623,22 @@
   "install": null
  },
  {
+  "slug": "komuta-mcp",
+  "name": "Komuta MCP",
+  "description": "MCP server for Komuta, a cloud PaaS: from Claude Code, Claude Desktop or Codex, deploy repos and Postgres, debug from live traces, and do one-sentence rollbacks and path locks.",
+  "maker": "Komuta",
+  "link": "https://www.komuta.io/docs/mcp/mcp-setup",
+  "category": "Deploy & DevOps",
+  "source": "editor-added",
+  "source_url": "https://www.komuta.io/docs/mcp/mcp-setup",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-17",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-17",
+  "install": null
+ },
+ {
   "slug": "kreuzberg",
   "name": "Kreuzberg",
   "description": "Local document extraction for 91+ formats with skills for CLI usage, OCR, table extraction, output formats, and a local MCP server.",
@@ -6352,6 +6388,26 @@
   "install": "claude mcp add --transport http maqami-travel https://mcp.maqami.co/"
  },
  {
+  "slug": "markdown-convert-mcp",
+  "name": "markdown-convert-mcp",
+  "description": "MCP server that converts Markdown (CommonMark and GFM) into Slack, Microsoft Teams, Jira or plain text for agents; in the official MCP Registry with plugin manifests for Codex, Claude, Cursor and Gemini.",
+  "maker": "Sai Siva Krishna",
+  "link": "https://github.com/ysskrishna/markdown-convert-mcp",
+  "category": "Messaging & Remote",
+  "source": "editor-added",
+  "source_url": "https://github.com/ysskrishna/markdown-convert-mcp",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-17",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-17",
+  "install": "codex plugin marketplace add ysskrishna/markdown-convert-mcp",
+  "stars": 0,
+  "pushed_at": "2026-11-17",
+  "license": "MIT",
+  "language": "TypeScript"
+ },
+ {
   "slug": "markdown-reader",
   "name": "Markdown Reader",
   "description": "Navigate Markdown structure and retrieve only the relevant section through a portable Codex MCP plugin.",
@@ -6837,6 +6893,22 @@
   "install": "/plugin marketplace add orwa-mahmoud/nightshift"
  },
  {
+  "slug": "no-stairs-please-mcp",
+  "name": "No Stairs Please MCP",
+  "description": "Remote MCP server for No Stairs Please, a database of 38,000+ small US music venues: ChatGPT, Claude or Gemini can search venues and real show listings, route multi-stop tours and pull verified booking contacts.",
+  "maker": "No Stairs Please",
+  "link": "https://nostairsplease.com/mcp",
+  "category": "Industry Tools",
+  "source": "editor-added",
+  "source_url": "https://nostairsplease.com/mcp",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-17",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-17",
+  "install": null
+ },
+ {
   "slug": "nolang",
   "name": "NoLang",
   "description": "AI video generation from NoLang for agents: a Claude Code and Codex plugin, CLI and MCP connector.",
@@ -7015,6 +7087,22 @@
   "license": "MIT",
   "language": "TypeScript",
   "install": null
+ },
+ {
+  "slug": "okara-mcp",
+  "name": "Okara MCP",
+  "description": "Remote MCP server for Okara, the AI CMO: ask ChatGPT, Claude, Codex or Cursor to plan launch posts, check your SEO, find Reddit threads worth replying to and report how marketing did this week; anything public waits for your OK.",
+  "maker": "Okara",
+  "link": "https://okara.ai/mcp",
+  "category": "Docs, Content & SEO",
+  "source": "editor-added",
+  "source_url": "https://okara.ai/mcp",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-17",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-17",
+  "install": "https://okara.ai/api/mcp"
  },
  {
   "slug": "okzest-skill",
@@ -7230,6 +7318,22 @@
   "license": "MIT",
   "language": "JavaScript",
   "install": "npx skills add panewslab/skills"
+ },
+ {
+  "slug": "paper-mcp",
+  "name": "Paper MCP",
+  "description": "MCP server for Paper, the HTML/CSS-native design tool: agents read and write your Paper files, generate layouts, pull in real content and turn frames into code. New Remote MCP (early access) lets cloud agents and CI work in your files with Paper Desktop closed.",
+  "maker": "Paper",
+  "link": "https://paper.design/docs/mcp",
+  "category": "Design & Frontend",
+  "source": "editor-added",
+  "source_url": "https://paper.design/docs/mcp",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-17",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-17",
+  "install": null
  },
  {
   "slug": "papersflow",
@@ -7499,6 +7603,22 @@
   "pushed_at": "2026-08-18",
   "license": "MIT",
   "language": "Python",
+  "install": null
+ },
+ {
+  "slug": "podchapters-mcp",
+  "name": "PodChapters MCP",
+  "description": "PodChapters API and MCP server: Claude, ChatGPT or Cursor can add podcast episodes, transcribe them, generate and edit chapters, manage presets and export chapters in every format (40 operations, OAuth or API key).",
+  "maker": "PodChapters",
+  "link": "https://podchapters.com/developers",
+  "category": "Docs, Content & SEO",
+  "source": "editor-added",
+  "source_url": "https://podchapters.com/developers",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-17",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-17",
   "install": null
  },
  {
@@ -7789,6 +7909,26 @@
   "license": "MIT",
   "language": "Shell",
   "install": "claude plugin marketplace add msoltanov/Proxmox-Technical-Writing-Style-Skill"
+ },
+ {
+  "slug": "punchcutter",
+  "name": "Punchcutter",
+  "description": "A type foundry inside Claude, ChatGPT and Codex: describe a typeface or send a photo of your handwriting and get a real font family (variable fonts, kerning, OpenType) with its own Studio app. Plugin, skill and MCP server.",
+  "maker": "Rishi Shah",
+  "link": "https://github.com/byrishi/punchcutter",
+  "category": "Design & Frontend",
+  "source": "editor-added",
+  "source_url": "https://github.com/byrishi/punchcutter",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-17",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-17",
+  "install": "/plugin marketplace add byrishi/punchcutter",
+  "stars": 15,
+  "pushed_at": "2026-11-15",
+  "license": "MIT",
+  "language": "Python"
  },
  {
   "slug": "pushwing",
@@ -10656,6 +10796,22 @@
   "language": "JavaScript"
  },
  {
+  "slug": "vaartix-mcp",
+  "name": "Vaartix MCP",
+  "description": "Hosted MCP server for Vaartix, the transactional email API for Indian developers: connect Claude, Cursor or VS Code with a sign-in; read-only by default, sends need your approval, pause any time.",
+  "maker": "Vaartix",
+  "link": "https://vaartix.com/docs/guides/mcp-hosted",
+  "category": "Messaging & Remote",
+  "source": "editor-added",
+  "source_url": "https://vaartix.com/docs/guides/mcp-hosted",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-17",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-17",
+  "install": "https://mcp.vaartix.com"
+ },
+ {
   "slug": "val-town",
   "name": "Val Town",
   "description": "Build and deploy serverless TypeScript on Val Town from Codex — hosted MCP server plus skills for HTTP vals, cron, SQLite, email, OAuth, and React UI.",
@@ -11056,6 +11212,26 @@
   "license": "MIT",
   "language": null,
   "install": "claude mcp add --transport http webtwizz https://app.webtwizz.com/mcp"
+ },
+ {
+  "slug": "wingbox",
+  "name": "Wingbox",
+  "description": "Gives your coding agent a local map of your codebase (blast radius, find usages, architecture layers) to cut cost and missed files; skill and Claude Code/Codex plugin plus an MCP server, 9 languages, no model and nothing leaves your machine.",
+  "maker": "Aileron Tech",
+  "link": "https://github.com/aileron-tech/wingbox",
+  "category": "Memory & Context",
+  "source": "editor-added",
+  "source_url": "https://github.com/aileron-tech/wingbox",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-17",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-17",
+  "install": "/plugin marketplace add aileron-tech/wingbox",
+  "stars": 15,
+  "pushed_at": "2026-11-17",
+  "license": "MIT",
+  "language": "Python"
  },
  {
   "slug": "wingman",

@@ -528,3 +528,47 @@ I'll be straight: we're new and traffic is still small, so this isn't a big-reac
 No pressure, the listing stays either way.
 
 Aaron
+
+## 2026-11-17
+
+### 1. Okara, Okara MCP
+To: support@okara.ai (listed on https://okara.ai; X @askOkara)
+Subject: Okara MCP is on PickAPlugin
+
+Hey Okara team,
+
+Saw the MCP launch yesterday. Running your AI CMO from inside ChatGPT, Claude or Codex, with anything public waiting for a yes, is a really nice setup, so I added Okara MCP to PickAPlugin (590+ Codex, ChatGPT and Claude plugins, skills and MCP servers) as a free listing: https://pickaplugin.com/p/okara-mcp
+
+Honest heads-up: we're new and traffic is still small, so this is a cheap extra placement, not a big-reach play. The first 10 makers get a founding featured spot (top of Docs, Content & SEO, the homepage, and a newsletter mention) at $29/mo for life instead of the regular $49, first week free: https://buy.stripe.com/7sY6oG0A9bUbdX7eW1cQU06
+
+No pressure, the free listing stays either way. If anything on the page is off, reply and I'll fix it.
+
+Aaron
+
+### 2. Paper, Paper MCP (Remote MCP)
+To: team@paper.design (listed on https://paper.design; X @paper)
+Subject: Paper MCP is listed on PickAPlugin
+
+Hi Paper team,
+
+Congrats on Remote MCP. Letting cloud agents and CI work in Paper files with the desktop app closed is a big step, so I listed Paper MCP on PickAPlugin, a directory of 590+ agent plugins and MCP servers, for free: https://pickaplugin.com/p/paper-mcp
+
+To be upfront, we're a young directory and traffic is still modest, so you clearly don't need us for reach. If a small extra spot is useful while Remote MCP is in early access, the first 10 makers get a featured placement (homepage + Design & Frontend + a newsletter mention) at $29/mo for life, first week free: https://buy.stripe.com/7sY6oG0A9bUbdX7eW1cQU06
+
+Totally optional. Happy to update the page when Remote MCP leaves early access.
+
+Aaron
+
+### 3. Enhancv, Enhancv MCP
+To: help@enhancv.com (listed on https://enhancv.com; also support@enhancv.com)
+Subject: Enhancv's MCP server is on PickAPlugin
+
+Hi Enhancv team,
+
+Saw the official remote MCP go up this week. Editing a resume, writing a cover letter and tracking applications right from Claude or ChatGPT is a great fit for how people job-hunt now, so I added it to PickAPlugin as a free listing: https://pickaplugin.com/p/enhancv-mcp
+
+I'll be straight: we're new and traffic is still small. That's why the first 10 makers get a founding featured spot (homepage + Industry Tools + a newsletter mention) at $29/mo for life versus $49/mo later, with the first week free: https://buy.stripe.com/7sY6oG0A9bUbdX7eW1cQU06
+
+No pressure, the listing stays either way.
+
+Aaron
