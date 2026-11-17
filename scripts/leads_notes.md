@@ -5,8 +5,9 @@ Storage: Cloudflare Workers KV namespace `pickaplugin-leads` (id caf33a408d824dc
 - Listing claims: keys `claim:<ISO time>:<rand>` → `{type,at,email,github,slug,corrections,country}`
 - Subscribers:   keys `sub:<email>` → `{type,status,at,email,from,confirm_sent_at,confirm_id,confirmed_at}`.
   Double opt-in: /api/subscribe stores `status:"pending"` and the Worker emails a confirm link via Resend (RESEND_KEY binding,
-  from .secrets/resend_api_key). /confirm (static page) POSTs to /api/confirm → `status:"confirmed"` + notify email.
-  Only `confirmed` subscribers get the newsletter. Max 3 confirm emails per address, 15 min apart.
+  from .secrets/resend_api_key). /confirm (static page) POSTs to /api/confirm → `status:"confirmed"`.
+  No per-confirm alert is emailed to Aaron; include subscriber counts in the Tuesday newsletter report instead
+  (`python3 scripts/newsletter.py report`). Only `confirmed` subscribers get the newsletter. Max 3 confirm emails per address, 15 min apart.
 
 Secrets live in `scripts/.secrets.json` (git-ignored): `admin_token`, Turnstile `sitekey`/`secret`, `kv` id.
 upload_buckets.py reads it and attaches the bindings LEADS, TURNSTILE_SECRET, ADMIN_TOKEN, NOTIFY on every deploy.
@@ -20,8 +21,9 @@ Delete one entry: `curl -s "https://pickaplugin.com/api/admin?token=$T&delete=<k
 Also visible in the Cloudflare dashboard → Workers KV → pickaplugin-leads.
 
 ## Notifications
-Each new claim/subscriber also sends a plain-text email to houstoninvestments@gmail.com through the free
+Each new listing claim sends a plain-text email to houstoninvestments@gmail.com through the free
 Email Routing `send_email` binding (NOTIFY, verified destination only). Failures are logged and don't block the form.
+Newsletter confirms do not send an alert; the Tuesday newsletter report prints confirmed/pending/new counts instead.
 
 ## Spam protection
 Honeypot field `website` (silently accepted, not stored) + Cloudflare Turnstile (free, widget `pickaplugin-forms`).
@@ -44,6 +46,7 @@ Stripe price; never change the price on an existing subscription.
     python3 scripts/newsletter.py test --date D --to delivered@resend.dev
     python3 scripts/newsletter.py send --date D --yes        # confirmed subscribers only; resumable, never double-sends
     python3 scripts/newsletter.py subscribers                # counts by status
+    python3 scripts/newsletter.py report                     # confirmed/pending/new-in-last-7-days counts (no addresses)
     python3 scripts/newsletter.py sync-log                   # log Worker confirmation sends (masked) in launch/resend-send-log.json
 Then commit data/newsletter/<date>.json, rebuild and deploy so /newsletter lists it. Drafts publish at /newsletter/<date>
 with noindex and a "Preview" banner. The repo is public: subscriber addresses never go in git (full send state is in the

@@ -1,4 +1,5 @@
 # 2026-11-16: replies to maker submissions received Nov 14-16 (listing live + free badge; founding offer only where appropriate).
+# Exempt from launch/outreach_cooldown.py: these are replies to people who wrote us.
 import json, urllib.request, datetime, time
 R='/workspace/pickaplugin'
 KEY=open(f'{R}/.secrets/resend_api_key').read().strip()

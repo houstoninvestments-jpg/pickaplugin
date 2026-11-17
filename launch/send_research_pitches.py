@@ -1,4 +1,6 @@
 import json, re, sys, os, urllib.request, datetime
+sys.path.insert(0, "/workspace/pickaplugin/launch")
+from outreach_cooldown import skip_message
 DRY = "--dry" in sys.argv
 base = "/workspace/pickaplugin/launch"
 md = open(f"{base}/research-pitches.md").read()
@@ -19,6 +21,9 @@ for k, head, to in targets:
     body = sec[m.end():].strip() + "\n"
     if k in sent_keys:
         print("SKIP already sent", k); continue
+    cool = skip_message(to, log=log)
+    if cool:
+        print(cool); continue
     if DRY:
         print(f"--- {k} to {to}\nSubject: {subject}\n{body}"); continue
     payload = {"from": "PickAPlugin <hello@pickaplugin.com>", "to": [to], "reply_to": "hello@pickaplugin.com", "subject": subject, "text": body}

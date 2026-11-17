@@ -5,6 +5,7 @@
   python3 scripts/newsletter.py test --date D --to ADDR        send ONE [TEST] copy (use delivered@resend.dev for a dry run)
   python3 scripts/newsletter.py send --date D --yes            send to CONFIRMED subscribers only, then mark the issue sent
   python3 scripts/newsletter.py subscribers                    counts by status (no addresses printed)
+  python3 scripts/newsletter.py report                         confirmed/pending/new-in-last-7-days counts (no addresses)
   python3 scripts/newsletter.py sync-log                       copy Worker confirmation sends into launch/resend-send-log.json
 
 Content: plugins whose first_seen falls in the 7 days ending on <date>, the biggest GitHub star gains vs the committed
@@ -166,6 +167,31 @@ def send(date, test_to=None):
     I.update(status="sent", sent_at=dt.datetime.now().isoformat(timespec="seconds"), recipients=len(done))
     json.dump(I, open(path, "w"), indent=1, ensure_ascii=False); open(path, "a").write("\n")
     print(f"sent {n} now, {len(done)} total. Rebuild + deploy to publish /newsletter/{date} in the archive list.")
+    print("--- subscriber counts ---"); report()
+
+def report():
+    """Counts only, no addresses. For the Tuesday newsletter report to Aaron (replaces per-confirm alert emails)."""
+    from collections import Counter
+    subs = subscribers()
+    counts = Counter(s.get("status", "legacy-unconfirmed") for s in subs)
+    confirmed = counts.get("confirmed", 0)
+    pending = counts.get("pending", 0)
+    week_ago = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=7)).strftime("%Y-%m-%dT%H:%M:%S")
+    new7 = 0
+    for s in subs:
+        if s.get("status") != "confirmed":
+            continue
+        at = str(s.get("confirmed_at") or s.get("at") or "")
+        if at[:19] >= week_ago:
+            new7 += 1
+    print(f"confirmed: {confirmed}")
+    print(f"pending: {pending}")
+    print(f"newly confirmed in last 7 days: {new7}")
+    extra = {k: v for k, v in counts.items() if k not in ("confirmed", "pending")}
+    if extra:
+        print("other:", dict(extra))
+    print("(include these counts in the Tuesday newsletter report to Aaron; do not email him per signup)")
+    return {"confirmed": confirmed, "pending": pending, "newly_confirmed_7d": new7}
 
 def sync_log():
     L = json.load(open(LOG)) if os.path.exists(LOG) else []
@@ -177,7 +203,7 @@ def sync_log():
     print("logged", n, "confirmation sends")
 
 if __name__ == "__main__":
-    ap = argparse.ArgumentParser(); ap.add_argument("cmd", choices=["draft", "preview", "test", "send", "subscribers", "sync-log"])
+    ap = argparse.ArgumentParser(); ap.add_argument("cmd", choices=["draft", "preview", "test", "send", "subscribers", "report", "sync-log"])
     ap.add_argument("--date", default=dt.date.today().isoformat()); ap.add_argument("--to"); ap.add_argument("--yes", action="store_true")
     a = ap.parse_args()
     if a.cmd == "draft": draft(a.date)
@@ -193,4 +219,6 @@ if __name__ == "__main__":
         send(a.date)
     elif a.cmd == "subscribers":
         from collections import Counter; print(dict(Counter(s.get("status", "legacy-unconfirmed") for s in subscribers())))
+    elif a.cmd == "report":
+        report()
     elif a.cmd == "sync-log": sync_log()

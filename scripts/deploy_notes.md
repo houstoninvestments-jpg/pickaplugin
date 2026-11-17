@@ -60,3 +60,16 @@ The connector truncates step 3's output at ~24 KB, so when 600+ files changed th
 Workaround used 2026-11-14: have step 3 return `JSON.stringify(result)`, upload the hashes that are visible, then call step 3 again (Cloudflare only asks for files it still lacks) until the result isn't truncated, then run upload_buckets.py on that one as normal.
 
 Tip: the user-Cloudflare `execute` tool takes `truncate: false`; with `write_to_file: true` that may avoid the 24 KB cut entirely.
+
+## hello@ inbound mail (Worker `pickaplugin-hello-fanout`)
+Cloudflare Email Routing rule "hello forward" (zone pickaplugin.com) sends mail for hello@pickaplugin.com
+to Worker `pickaplugin-hello-fanout`, which forwards only to the agent inbox `aaronhouston@mail.grokbot.com`.
+Source: `worker/hello-fanout.js`. Do not forward to houstoninvestments@gmail.com (Aaron asked that inbound
+hello@ copies stop going to his Gmail; the agent inbox copy stays). Redeploy this Worker separately from
+the site (it has no assets): PUT the script via the user-Cloudflare connector with metadata
+`{main_module:"worker.js", compatibility_date:"2025-01-01"}` and the contents of `worker/hello-fanout.js`.
+
+## Outreach cooldown
+Before any outbound marketing email (sales pitches, badge emails, backlink outreach), skip a recipient who
+got any PickAPlugin email in the last 7 days per `launch/resend-send-log.json`. Helper: `launch/outreach_cooldown.py`.
+Replies to people who wrote us are exempt.

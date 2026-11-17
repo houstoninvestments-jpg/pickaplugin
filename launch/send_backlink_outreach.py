@@ -1,6 +1,8 @@
 # Usage: python3 send_backlink_outreach.py [--send] [key ...]   (default: dry run, prints only)
 import json, sys, os, urllib.request, urllib.error, datetime
 base = "/workspace/pickaplugin/launch"
+sys.path.insert(0, base)
+from outreach_cooldown import skip_message
 SEND = "--send" in sys.argv
 only = [a for a in sys.argv[1:] if not a.startswith("--")]
 drafts = json.load(open(f"{base}/backlink-drafts-2026-10-27.json"))
@@ -15,6 +17,9 @@ key = open("/workspace/pickaplugin/.secrets/resend_api_key").read().strip() if S
 for d in drafts:
     if only and d["key"] not in only: continue
     to = d["to"].lower(); dom = to.split("@")[-1]
+    cool = skip_message(to, log=rl)
+    if cool:
+        print(cool); continue
     if to in used or (dom != "gmail.com" and dom in used_dom) or to in sent_md:
         print("SKIP duplicate", to); continue
     if today_sent >= 10: print("STOP daily cap 10 reached"); break

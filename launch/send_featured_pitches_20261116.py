@@ -1,5 +1,7 @@
-import json, urllib.request, datetime, time
+import json, urllib.request, datetime, time, sys
 R='/workspace/pickaplugin'
+sys.path.insert(0, f'{R}/launch')
+from outreach_cooldown import recent_send, skip_message
 KEY=open(f'{R}/.secrets/resend_api_key').read().strip()
 TODAY='2026-11-16'
 OFFER='founding $29/mo for life + first week free'
@@ -58,6 +60,9 @@ for p in P:
     e=p['to'].lower()
     if e in dnc_e or e.split('@')[1] in dnc_d or p['slug'] in dnc_s or e in pitched or 'codexstacks' in e:
         print('SKIP',p['to']); continue
+    hit = skip_message(e, log=log)
+    if hit:
+        print(hit); continue
     code=urllib.request.urlopen(urllib.request.Request('https://pickaplugin.com/p/'+p['slug'],headers={'User-Agent':'pickaplugin/1.0'}),timeout=20).status
     if code!=200: print('SKIP 404',p['slug']); continue
     text=body(p['greet'],p['comp'],p['slug'],p['cat'])

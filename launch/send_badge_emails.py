@@ -3,10 +3,12 @@
 Usage: python3 launch/send_badge_emails.py [--dry-run] [--max N]
 Sources (only emails already in our data, no scraping): launch/leads.json, launch/sales-pitches.json, INBOUND below.
 Skips: do-not-contact.json (emails/domains/slugs), leads declined/do_not_contact, pitches lost/replied/won,
-anyone already badge-emailed, anyone emailed by us in the last COOLDOWN_DAYS (deferred, not dropped).
+anyone already badge-emailed, anyone emailed by us in the last COOLDOWN_DAYS (deferred, not dropped; uses launch/outreach_cooldown.py, 14d here vs the global 7d minimum).
 State: launch/badge-emails.json. Every send also appended to launch/resend-send-log.json."""
 import json, re, sys, time, datetime, urllib.request, os
 R='/workspace/pickaplugin'
+sys.path.insert(0, f'{R}/launch')
+from outreach_cooldown import recent_send
 MAX=50; COOLDOWN_DAYS=14
 if '--max' in sys.argv: MAX=int(sys.argv[sys.argv.index('--max')+1])
 DRY='--dry-run' in sys.argv
@@ -41,10 +43,6 @@ for s in pitches:
     nm=s.get('name') or ''
     add(s['to'], None if nm.endswith(' team') else nm, s['listing_url'].rstrip('/').rsplit('/',1)[1])
 for l in leads: add(l.get('email'),None,l['slug'])
-last={}
-for x in log:
-    e=(x.get('to') or x.get('email') or '').lower(); d=x.get('date')
-    if e and d and d>last.get(e,''): last[e]=d
 today=datetime.date.today()
 queue=[];deferred=[];excluded=[]
 for e,c in cand.items():
@@ -53,8 +51,14 @@ for e,c in cand.items():
     if e in dnc_e or dom in dnc_d or any(s in dnc_s for s in c['slugs']) or e in bad_status: excluded.append(e); continue
     if e.startswith(ROLE_SKIP) or 'noreply' in e: excluded.append(e); continue
     if any(x in HOLD_SLUGS for x in c['slugs']) and e not in pitched: deferred.append((e,'after featured pitch + %dd'%COOLDOWN_DAYS)); continue
-    if e in last and (today-datetime.date.fromisoformat(last[e])).days<COOLDOWN_DAYS:
-        deferred.append((e,str(datetime.date.fromisoformat(last[e])+datetime.timedelta(days=COOLDOWN_DAYS)))); continue
+    hit = recent_send(e, days=COOLDOWN_DAYS, log=log)
+    if hit:
+        when = hit.get('date') or (hit.get('time') or '')[:10]
+        try:
+            eligible = str(datetime.date.fromisoformat(when[:10]) + datetime.timedelta(days=COOLDOWN_DAYS))
+        except Exception:
+            eligible = when
+        deferred.append((e, eligible)); continue
     queue.append(c)
 def label(s): return "Editor's pick on" if s in picks else "Listed on"
 def body(c,featured_line):

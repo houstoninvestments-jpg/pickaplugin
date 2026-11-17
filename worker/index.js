@@ -118,7 +118,7 @@ async function handle(req, env, u) {
     if (rec.status !== "confirmed") {
       rec.status = "confirmed"; rec.confirmed_at = new Date().toISOString();
       await env.LEADS.put(key, JSON.stringify(rec));
-      await notify(env, "[PickAPlugin] New newsletter subscriber (confirmed)", email + "\nfrom: " + (rec.from || ""));
+      // No per-confirm email to Aaron; subscriber counts go in the Tuesday newsletter report.
     }
     return page(u, "/confirmed");
   }
