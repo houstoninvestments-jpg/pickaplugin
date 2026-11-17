@@ -59,3 +59,7 @@ prefetch and no-Accept-Language requests skipped), once per visitor per slug per
 /p pages show "N views · M clicks to the maker this month" only when views > 0; /advertise shows the site-wide clicks line
 only when > 0. Read all counts: `curl -s "https://pickaplugin.com/api/admin?token=$T&stats=1[&month=2026-11]"`.
 Counting started 2026-11-15.
+
+## Newsletter first-run setup (2026-11-17)
+- DONE: /featured copy now says 'PickAPlugin weekly newsletter' (scripts/build.py), no Substack mention.
+- NOT DONE: confirmation email to the 1 legacy unconfirmed subscriber. /api/subscribe is Turnstile-protected (w=captcha), so it can't be driven from a script. Needs a browser submit or Aaron's OK to mint the confirm link directly.

@@ -1,0 +1,208 @@
+{
+ "date": "2026-11-17",
+ "status": "draft",
+ "generated_at": "2026-11-17T09:10:23",
+ "window": [
+  "2026-11-10",
+  "2026-11-17"
+ ],
+ "catalog_size": 592,
+ "stars_baseline_commit": "2b3b2ff",
+ "subject": "97 new MCP servers & plugins this week",
+ "new_total": 97,
+ "new": [
+  {
+   "slug": "e2e",
+   "name": "e2e",
+   "summary": "Write, run, and debug end-to-end tests for web and mobile apps with agent skills and an MCP server.",
+   "category": "Review & Testing",
+   "maker": "tester-army",
+   "url": "https://pickaplugin.com/p/e2e",
+   "stars": 13987
+  },
+  {
+   "slug": "lgpd-skills",
+   "name": "lgpd-skills",
+   "summary": "Modular Agent Skills toolkit (Claude Code, Codex, Cursor, Gemini CLI, OpenCode) for LGPD & ECA Digital privacy engineering, automated compliance audits, LINDDUN threat modeling, consent ledgers, and DSAR endpoints.",
+   "category": "Agent Workflows",
+   "maker": "goul4rt",
+   "url": "https://pickaplugin.com/p/lgpd-skills",
+   "stars": 270
+  },
+  {
+   "slug": "phonedriver",
+   "name": "phonedriver",
+   "summary": "Lets Codex see and operate Android phones, emulators, the iOS Simulator and iPhones through a local MCP server and its skill, and asks you before any tap that pays.",
+   "category": "Messaging & Remote",
+   "maker": "hridaya423",
+   "url": "https://pickaplugin.com/p/phonedriver",
+   "stars": 158
+  },
+  {
+   "slug": "loom",
+   "name": "Loom",
+   "summary": "Self-hosted shared long-term memory and code index (definitions, callers, change impact) for Codex, stored in ClickHouse, with lifecycle hooks that capture each session and MCP tools that save and recall decisions across sessions and teammates.",
+   "category": "Memory & Context",
+   "maker": "ClickHouse",
+   "url": "https://pickaplugin.com/p/loom",
+   "stars": 146
+  },
+  {
+   "slug": "copper-kicad",
+   "name": "Copper",
+   "summary": "MCP server that lets AI apps design real, orderable KiCad circuit boards: schematics, LCSC parts, PCB routing, ERC/DRC checks and JLCPCB fab files.",
+   "category": "Industry Tools",
+   "maker": "claynicholson",
+   "url": "https://pickaplugin.com/p/copper-kicad",
+   "stars": 105
+  },
+  {
+   "slug": "poptin-mcp",
+   "name": "Poptin MCP",
+   "summary": "Official remote MCP server (OAuth) for Poptin: agents create and schedule email campaigns, compare popup and form conversions, and build audience segments from plain-language requests.",
+   "category": "Docs, Content & SEO",
+   "maker": "Poptin",
+   "url": "https://pickaplugin.com/p/poptin-mcp",
+   "stars": 36
+  },
+  {
+   "slug": "bulkhead",
+   "name": "Bulkhead",
+   "summary": "Guards for machines that run many Codex and other agent sessions at once: a PreToolUse hook on Bash blocks name-based process kills, port collisions, destructive git commands on another session's worktree, whole-disk scans and long foreground sleeps, and holds heavy commands back when RAM runs low.",
+   "category": "Memory & Context",
+   "maker": "dooly6276",
+   "url": "https://pickaplugin.com/p/bulkhead",
+   "stars": 35
+  },
+  {
+   "slug": "browser-hands",
+   "name": "Browser Hands",
+   "summary": "Chrome extension plus a small local MCP server that lets Claude Code, Codex or Cursor drive the Chrome you already use: click, type, read pages, screenshot and record GIFs across profiles.",
+   "category": "Agent Workflows",
+   "maker": "214140846",
+   "url": "https://pickaplugin.com/p/browser-hands",
+   "stars": 27
+  },
+  {
+   "slug": "ccx",
+   "name": "ccx",
+   "summary": "Syncs task context between Claude Code, Codex and Antigravity, so a Claude Code session or an Antigravity conversation can be imported into a Codex thread, kept in sync, or handed over.",
+   "category": "Memory & Context",
+   "maker": "AaronWong1999",
+   "url": "https://pickaplugin.com/p/ccx",
+   "stars": 16
+  },
+  {
+   "slug": "punchcutter",
+   "name": "Punchcutter",
+   "summary": "A type foundry inside Claude, ChatGPT and Codex: describe a typeface or send a photo of your handwriting and get a real font family (variable fonts, kerning, OpenType) with its own Studio app. Plugin, skill and MCP server.",
+   "category": "Design & Frontend",
+   "maker": "Rishi Shah",
+   "url": "https://pickaplugin.com/p/punchcutter",
+   "stars": 15
+  },
+  {
+   "slug": "wingbox",
+   "name": "Wingbox",
+   "summary": "Gives your coding agent a local map of your codebase (blast radius, find usages, architecture layers) to cut cost and missed files; skill and Claude Code/Codex plugin plus an MCP server, 9 languages, no model and nothing leaves your machine.",
+   "category": "Memory & Context",
+   "maker": "Aileron Tech",
+   "url": "https://pickaplugin.com/p/wingbox",
+   "stars": 15
+  },
+  {
+   "slug": "brief2mp4",
+   "name": "brief2mp4",
+   "summary": "Turns a written video brief into a finished MP4 motion graphic with HyperFrames, Three.js or Blender, then measures the file and checks real frames against every line of the brief before delivering it with a report.",
+   "category": "Docs, Content & SEO",
+   "maker": "qualixar",
+   "url": "https://pickaplugin.com/p/brief2mp4",
+   "stars": 13
+  },
+  {
+   "slug": "enhancv-mcp",
+   "name": "Enhancv MCP",
+   "summary": "Enhancv's official remote MCP server (OAuth): Claude, ChatGPT, Cursor and other AI apps can edit your resumes, write cover letters, search jobs and track applications in your Enhancv account.",
+   "category": "Industry Tools",
+   "maker": "Enhancv",
+   "url": "https://pickaplugin.com/p/enhancv-mcp",
+   "stars": 11
+  },
+  {
+   "slug": "option-desk",
+   "name": "Option Desk",
+   "summary": "Skills and a local MCP server for option research on a supplied chain, with Greeks, dealer positioning, strategy payoffs, simulation and backtests.",
+   "category": "Other",
+   "maker": "Iman",
+   "url": "https://pickaplugin.com/p/option-desk",
+   "stars": 11
+  },
+  {
+   "slug": "telegram-bot-ui",
+   "name": "Telegram Bot UI",
+   "summary": "Design, build and audit Telegram bot interfaces (texts, keyboards, colored buttons, streaming AI replies, Rich Messages, channel posts) with a skill updated for every Bot API release.",
+   "category": "Messaging & Remote",
+   "maker": "hlibsuslov",
+   "url": "https://pickaplugin.com/p/telegram-bot-ui",
+   "stars": 11
+  }
+ ],
+ "movers": [
+  {
+   "slug": "claude-seo",
+   "name": "claude-seo",
+   "summary": "SEO skill pack with 26 sub-skills and 19 specialist agents for technical SEO, schema, E-E-A-T, AI-search (GEO) and sitemap audits; built for Claude Code and documented to work with Codex CLI via AGENTS.md.",
+   "category": "Docs, Content & SEO",
+   "maker": "AgriciDaniel",
+   "url": "https://pickaplugin.com/p/claude-seo",
+   "stars": 30253,
+   "gained": 2383,
+   "was": 27870
+  },
+  {
+   "slug": "poki",
+   "name": "Poki",
+   "summary": "Open-source local MCP server and agent that lets AI assistants operate a real iPhone through the accessibility tree, with no jailbreak or extra hardware.",
+   "category": "Messaging & Remote",
+   "maker": "Joseph Zhou",
+   "url": "https://pickaplugin.com/p/poki",
+   "stars": 1556,
+   "gained": 658,
+   "was": 898
+  },
+  {
+   "slug": "muse4ai",
+   "name": "Muse4AI",
+   "summary": "Local Windows bridge that hands your Muse session to ChatGPT, Claude, Cursor, Codex or n8n over REST, MCP or OAuth so agents can make pictures and videos.",
+   "category": "Design & Frontend",
+   "maker": "andrew-babo",
+   "url": "https://pickaplugin.com/p/muse4ai",
+   "stars": 1119,
+   "gained": 599,
+   "was": 520
+  },
+  {
+   "slug": "claude-code-skills",
+   "name": "Claude Code Skills",
+   "summary": "223 production-ready skills, 23 agents, and 298 Python tools across 9 domains — engineering, marketing, product, compliance, and more.",
+   "category": "Agent Workflows",
+   "maker": "alirezarezvani",
+   "url": "https://pickaplugin.com/p/claude-code-skills",
+   "stars": 29966,
+   "gained": 378,
+   "was": 29588
+  },
+  {
+   "slug": "anomaly-browse",
+   "name": "browse",
+   "summary": "Lets your AI agents use your real, logged-in browser through an MCP server and a Chromium extension.",
+   "category": "Agent Workflows",
+   "maker": "Anomaly",
+   "url": "https://pickaplugin.com/p/anomaly-browse",
+   "stars": 822,
+   "gained": 364,
+   "was": 458
+  }
+ ],
+ "sponsored": null
+}

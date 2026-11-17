@@ -319,7 +319,7 @@ open(D+"/featured.html","w").write(layout("Get featured — PickAPlugin",f"""<di
 <li><b>Top of your category page</b>: pinned above every other plugin in that category.</li>
 <li><b>“Also in” lists</b>: pinned first on the page of every other plugin in your category.</li>
 <li><b>Your own page</b> gets a Featured badge.</li>
-<li><b>Newsletter mention</b>: founding featured makers also get a mention in the PickAPlugin Substack roundup.</li></ul>
+<li><b>Newsletter mention</b>: founding featured makers also get a mention in the PickAPlugin weekly newsletter.</li></ul>
 <h3>What you get</h3><ul class=where><li>A clear “Featured” label. We don't disguise ads as picks, which is why readers trust the rest of the page.</li><li>Your own name, description and link. Want different copy? Email us.</li><li>Live within 24 hours of payment.</li><li>Month to month. Email us to cancel any time, no questions asked.</li></ul>
 <div class=faq><h3>How do I get set up?</h3><p>{howto}</p>
 <h3>Will this get me installs?</h3><p>We don't promise traffic numbers, and we'll never invent any. Traffic is still early. What you get is the most visible spot on a site built for people who are choosing a plugin, at the founding rate while spots last.</p>
