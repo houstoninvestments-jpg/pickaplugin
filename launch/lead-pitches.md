@@ -572,3 +572,47 @@ I'll be straight: we're new and traffic is still small. That's why the first 10 
 No pressure, the listing stays either way.
 
 Aaron
+
+## 2026-11-18
+
+### 1. COINOTAG, COINOTAG MCP
+To: contact@coinotag.com (partnerships address in the @coinotagen X bio)
+Subject: COINOTAG MCP is on PickAPlugin
+
+Hi COINOTAG team,
+
+Saw the MCP server go live yesterday. Support and resistance levels for ~750 markets plus news in 6 languages, with a free tier and no key, is an easy thing for agents to pick up, so I added it to PickAPlugin (610+ Codex, ChatGPT and Claude plugins, skills and MCP servers) as a free listing: https://pickaplugin.com/p/coinotag-mcp
+
+Honest heads-up: we're new and traffic is still small, so this is a cheap extra placement, not a big-reach play. The first 10 makers get a founding featured spot (top of Industry Tools, the homepage, and a newsletter mention) at $29/mo for life instead of the regular $49, with a 7-day free trial: https://buy.stripe.com/7sY6oG0A9bUbdX7eW1cQU06
+
+No pressure, the free listing stays either way. If anything on the page is off, reply and I'll fix it.
+
+Aaron
+
+### 2. BugRecon, BugRecon MCP
+To: contact@bugrecon.me (listed on https://bugrecon.me; X @Bug_Recon)
+Subject: BugRecon MCP is listed on PickAPlugin
+
+Hey BugRecon team,
+
+Congrats on shipping the MCP server. Letting an assistant work with your projects, scopes and scans on the same permissions and quotas as the API is a nice clean setup for hunters, so I listed BugRecon MCP on PickAPlugin for free: https://pickaplugin.com/p/bugrecon-mcp
+
+To be upfront, we're a young directory and traffic is still small. If a small extra spot is useful, the first 10 makers get a founding featured placement (top of Security & Governance + the homepage + a newsletter mention) at $29/mo for life, first 7 days free: https://buy.stripe.com/7sY6oG0A9bUbdX7eW1cQU06
+
+Totally optional. Happy to tweak the listing if you want different wording.
+
+Aaron
+
+### 3. Deployxa, Deployxa MCP
+To: support@deployxa.com (listed on https://deployxa.com; X @deployxa)
+Subject: Deployxa's MCP server is on PickAPlugin
+
+Hi Deployxa team,
+
+Saw your post about deploying straight from Claude Code, Codex and ChatGPT. One hosted MCP URL with OAuth is about as low-friction as it gets, so I added Deployxa MCP to PickAPlugin as a free listing: https://pickaplugin.com/p/deployxa-mcp
+
+I'll be straight: we're new and traffic is still small. That's why the first 10 makers get a founding featured spot (top of Deploy & DevOps + the homepage + a newsletter mention) at $29/mo for life versus $49/mo later, with a 7-day free trial: https://buy.stripe.com/7sY6oG0A9bUbdX7eW1cQU06
+
+No pressure, the listing stays either way.
+
+Aaron

@@ -1,5 +1,37 @@
 [
  {
+  "slug": "beacon-mcp",
+  "name": "Beacon MCP",
+  "description": "Browser MCP that lets your agent use your own signed-in Chrome: install the extension, paste a key into your MCP client, then observe and act on controls by stable id. Each agent gets its own colour-coded tab group, and irreversible steps wait for a human.",
+  "maker": "Beacon",
+  "link": "https://www.trybeacon.space",
+  "category": "Agent Workflows",
+  "source": "editor-added",
+  "source_url": "https://www.trybeacon.space",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-18",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-18",
+  "install": null
+ },
+ {
+  "slug": "bugrecon-mcp",
+  "name": "BugRecon MCP",
+  "description": "Local MCP server for BugRecon, the bug bounty recon and attack surface platform: connect your AI assistant with your own API token to work with projects, scopes and scans, using the same permissions and quotas as the API (Basic plan or higher).",
+  "maker": "BugRecon",
+  "link": "https://bugrecon.gitbook.io/docs/features-list/mcp",
+  "category": "Security & Governance",
+  "source": "editor-added",
+  "source_url": "https://bugrecon.gitbook.io/docs/features-list/mcp",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-18",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-18",
+  "install": null
+ },
+ {
   "slug": "call-me",
   "name": "/call-me",
   "description": "Lets Codex agents ring or text your iPhone through a hosted MCP server and read your spoken or typed reply back as text; the iPhone app is a paid subscription.",
@@ -2987,6 +3019,22 @@
   "install": "claude plugin marketplace add ./"
  },
  {
+  "slug": "coinotag-mcp",
+  "name": "COINOTAG MCP",
+  "description": "MCP server from crypto news site COINOTAG: support and resistance levels for about 750 crypto markets (spot and futures) on 14 timeframes, plus crypto and traditional market news in 6 languages. Free tier with no key; paid keys or pay-per-call over x402.",
+  "maker": "COINOTAG",
+  "link": "https://coinotag.com/mcp",
+  "category": "Industry Tools",
+  "source": "editor-added",
+  "source_url": "https://coinotag.com/mcp",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-18",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-18",
+  "install": "https://coinotag.com/mcp"
+ },
+ {
   "slug": "cometchat",
   "name": "CometChat",
   "description": "Add real-time chat, voice and video calling to React, Angular, React Native, iOS, Android and Flutter apps, with the CometChat Docs MCP for current docs.",
@@ -3478,6 +3526,22 @@
   "license": "Apache-2.0",
   "language": "Python",
   "install": "claude plugin marketplace add davidmosiah/delx-plugins"
+ },
+ {
+  "slug": "deployxa-mcp",
+  "name": "Deployxa MCP",
+  "description": "Hosted MCP server for Deployxa, the deploy-any-repo cloud: connect Claude, Codex, Cursor and other agents to your Deployxa projects and deployments over OAuth or an API key. Deployxa also ships plugins for Claude Code, Codex and ChatGPT.",
+  "maker": "Deployxa",
+  "link": "https://deployxa.com/docs/mcp-server",
+  "category": "Deploy & DevOps",
+  "source": "editor-added",
+  "source_url": "https://deployxa.com/docs/mcp-server",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-18",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-18",
+  "install": "https://mcp.deployxa.com/mcp"
  },
  {
   "slug": "design-helper",
@@ -4271,6 +4335,22 @@
   "language": "JavaScript",
   "license": "MIT",
   "install": "claude plugin marketplace add https://github.com/clockgrove/pendulum.git"
+ },
+ {
+  "slug": "facilethings-mcp",
+  "name": "FacileThings MCP",
+  "description": "Hosted MCP server for FacileThings, the GTD productivity app: capture, clarify and review your commitments from Claude, ChatGPT or any MCP client, guided by the GTD method. Just paste the server URL; v0.2.4 adds routines (repeating tasks).",
+  "maker": "FacileThings",
+  "link": "https://facilethings.com/mcp",
+  "category": "Other",
+  "source": "editor-added",
+  "source_url": "https://facilethings.com/mcp",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-18",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-18",
+  "install": "https://mcp.facilethings.com/mcp"
  },
  {
   "slug": "fair-value-calculator",
@@ -6507,6 +6587,22 @@
   "install": null
  },
  {
+  "slug": "mapped",
+  "name": "Mapped",
+  "description": "Mapped plugin for ChatGPT and Claude, plus Mapped's hosted MCP server: ask about your buildings, floors, spaces, equipment and points in plain language. It turns requests into Mapped GraphQL queries, runs them, and walks the Mapped ontology. OAuth sign-in, runs with your account's permissions.",
+  "maker": "Mapped",
+  "link": "https://docs.mapped.com/guides/agent-plugins/introduction-to-mapped-mcp",
+  "category": "Industry Tools",
+  "source": "editor-added",
+  "source_url": "https://docs.mapped.com/guides/agent-plugins/introduction-to-mapped-mcp",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-18",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-18",
+  "install": null
+ },
+ {
   "slug": "maqami-travel",
   "name": "MAQAMI Travel",
   "description": "Search hotels (3M+ hotels) and flights worldwide, read hotel details, then get a secure checkout link on book.maqami.co through the hosted MAQAMI MCP server (no API key), with a booking skill that confirms with you before holding a rate.",
@@ -7459,6 +7555,22 @@
   "install": "/plugin marketplace add Mountainheads-Private-limited/osmo-ai-plugins"
  },
  {
+  "slug": "oviond-mcp",
+  "name": "Oviond MCP",
+  "description": "Hosted MCP server for Oviond's marketing reporting platform (125 tools): from Claude, ChatGPT, Codex or Cursor, pull any client's numbers across 100+ marketing data sources, build reports, write summaries and schedule them. OAuth sign-in.",
+  "maker": "Oviond",
+  "link": "https://www.oviond.com/marketing-mcp-server/",
+  "category": "Docs, Content & SEO",
+  "source": "editor-added",
+  "source_url": "https://www.oviond.com/marketing-mcp-server/",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-18",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-18",
+  "install": "https://api.oviond.com/mcp"
+ },
+ {
   "slug": "pacxio",
   "name": "pacxio",
   "description": "Open-source packaging design engine with a Claude Code / Codex plugin: generate editable dielines for cartons, mailers, labels and pouches, preview them in 3D and export DXF or PDF.",
@@ -8088,6 +8200,26 @@
   "license": "MIT",
   "language": "Shell",
   "install": "claude plugin marketplace add msoltanov/Proxmox-Technical-Writing-Style-Skill"
+ },
+ {
+  "slug": "pulsar",
+  "name": "pulsar",
+  "description": "MCP server that puts every AI coding agent on your machine on one bus (Claude Code, Codex, OpenCode, Cursor, Gemini CLI and more): agents see who else is running, tag themselves, and message one agent, a group or all of them. A message can wake an idle agent.",
+  "maker": "Eric Schoffstall",
+  "link": "https://github.com/yocontra/pulsar",
+  "category": "Agent Workflows",
+  "source": "editor-added",
+  "source_url": "https://github.com/yocontra/pulsar",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-18",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-18",
+  "install": "npx pulsar setup",
+  "stars": 44,
+  "pushed_at": "2026-11-17",
+  "license": "MIT",
+  "language": "TypeScript"
  },
  {
   "slug": "punchcutter",
@@ -8867,6 +8999,26 @@
   "license": "MIT",
   "language": "Shell",
   "install": null
+ },
+ {
+  "slug": "runelay",
+  "name": "runelay",
+  "description": "Open-source, self-hosted MCP gateway: one MCP endpoint that gives Claude Code, Codex, Cursor and other agents the same accounts, skills and memory. Runs in Docker on your computer or server, and migrates the MCP servers, memories and skills you already have.",
+  "maker": "Anderson Medeiros",
+  "link": "https://github.com/Andsu-dev/runelay",
+  "category": "Agent Workflows",
+  "source": "editor-added",
+  "source_url": "https://github.com/Andsu-dev/runelay",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-18",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-18",
+  "install": "curl -fsSL runelay.com/install | sh",
+  "stars": 20,
+  "pushed_at": "2026-11-18",
+  "license": "MIT",
+  "language": "TypeScript"
  },
  {
   "slug": "runheed",
@@ -10433,6 +10585,26 @@
   "license": "MIT",
   "language": null,
   "install": "npx skills add gettaskhold/taskhold-plugin        # this project (asks which agents)"
+ },
+ {
+  "slug": "tau-scout",
+  "name": "Tau Scout",
+  "description": "Local LinkedIn job search MCP server: find, compare and refine job shortlists from your AI chat using your own Apify token, with CV-evidence fit review and remote/student-program checks. No LinkedIn login or Tau account. v0.3 developer preview.",
+  "maker": "Tau",
+  "link": "https://github.com/ArsenOria/tau-linkedin-job-research-mcp",
+  "category": "Industry Tools",
+  "source": "editor-added",
+  "source_url": "https://github.com/ArsenOria/tau-linkedin-job-research-mcp",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-18",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-18",
+  "install": null,
+  "stars": 15,
+  "pushed_at": "2026-11-13",
+  "license": "MIT",
+  "language": "Python"
  },
  {
   "slug": "teaching-skills",
