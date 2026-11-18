@@ -1,5 +1,7 @@
 # Print-style redesign preview. exec'd by build.py when REDESIGN=1; overrides templates only.
 import subprocess as _sp, datetime as _dt
+# Newspaper dateline: today's typographic date on every page. build_seo._sig must ignore
+# this (weekday/month names plus the .dl.mono div); digit-stripping alone is not enough.
 BUILD=_dt.date.today(); BUILD_S=BUILD.strftime("%A, %B %-d, %Y")
 _ck=sorted({p.get("stars_checked") for p in P if p.get("stars_checked")}); CHECKED=_ck[-1] if _ck else None
 CSS="""@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,800;1,6..72,400;1,6..72,600&family=Martian+Mono:wght@400;500&display=swap');

@@ -92,13 +92,23 @@ def _fix(m,base):
   elif p.endswith(".html"): p=p[:-5]
   return f'href="/{p.lstrip("./")}{"#"+frag if frag else ""}"'.replace('href="/"','href="/"')
 URLS=[]
-# Real lastmod (2026-11-16): a page's lastmod only moves when its substantive content changes. Signature = page text with
-# scripts, digits (star counts, dates, counters) and whitespace removed. State in data/lastmod.json; URLs changed in today's
-# builds go to data/changed_urls.json, which indexnow.py submits by default (Bing asks for changed URLs only).
+# Real lastmod (2026-11-16, tightened 2026-11-18): a page's lastmod only moves when its substantive
+# content changes. Signature = page text with scripts, the newspaper dateline, weekday/month names,
+# digits (star counts, ISO dates, counters) and whitespace removed. The dateline in scripts/redesign.py
+# is "Updated Wednesday, November 18, 2026" (today's typographic date on every page). Stripping digits
+# alone left the weekday/month, so every daily build looked like a content change and stamped lastmod
+# as today. State in data/lastmod.json; URLs whose signature changed in this run go to
+# data/changed_urls.json, which indexnow.py submits by default (Bing asks for changed URLs only).
 import hashlib as _hl
 _PAGE_SIG={}
+_WEEKDAY=r"(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday|Mon|Tue|Wed|Thu|Fri|Sat|Sun)"
+_MONTH=r"(?:January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)"
 def _sig(h):
-  t=_re.sub(r"(?is)<script.*?</script>","",h); t=_re.sub(r"\d+","",t); t=_re.sub(r"\s+"," ",t)
+  t=_re.sub(r"(?is)<script.*?</script>","",h)
+  t=_re.sub(r'(?is)<div class="dl mono">.*?</div>',"",t)
+  t=_re.sub(r"(?i)\b"+_WEEKDAY+r"\b","",t)
+  t=_re.sub(r"(?i)\b"+_MONTH+r"\b","",t)
+  t=_re.sub(r"\d+","",t); t=_re.sub(r"\s+"," ",t)
   return _hl.sha256(t.encode()).hexdigest()[:20]
 exec(open(os.path.join(ROOT,"scripts","seo_overrides.py")).read())
 _N=len(PL) if "PL" in dir() else None
@@ -151,19 +161,30 @@ today=_dt.date.today().isoformat()
 _LMF=os.path.join(ROOT,"data","lastmod.json")
 _LM=_json.load(open(_LMF)) if os.path.exists(_LMF) else {}
 _seed=not _LM
+_keep=os.environ.get("RESTORE_LASTMOD")=="1"
 def _seed_date(u):
   k=u[len(SITE)+1:]
   if k.startswith("p/") and by.get(k[2:],{}).get("first_seen"): return min(by[k[2:]]["first_seen"][:10],today)
   if k.split("/")[0] in ("compare","alternatives","best-for") and "/" in k: return "2026-11-14"
   return COLL_LASTMOD.get(k) or today
+_chg=[]
 for _u,_sg in _PAGE_SIG.items():
   _old=_LM.get(_u)
-  if not _old: _LM[_u]={"sig":_sg,"date":_seed_date(_u) if _seed else today}
-  elif _old["sig"]!=_sg: _LM[_u]={"sig":_sg,"date":today}
+  if not _old:
+    _LM[_u]={"sig":_sg,"date":_seed_date(_u) if _seed else today}
+    if not _seed: _chg.append(_u)
+  elif _old["sig"]!=_sg:
+    if _keep:
+      _LM[_u]={"sig":_sg,"date":_old["date"]}
+    else:
+      _LM[_u]={"sig":_sg,"date":today}
+      _chg.append(_u)
+# Drop URLs that are no longer indexable (retired compare/alternatives pages, etc.).
+_LM={u:d for u,d in _LM.items() if u in _PAGE_SIG}
 _json.dump(dict(sorted(_LM.items())),open(_LMF,"w"),indent=0)
-_chg=sorted(u for u in URLS if _LM.get(u,{}).get("date")==today and not _seed)
+_chg=sorted(_chg)
 _json.dump({"date":today,"urls":_chg},open(os.path.join(ROOT,"data","changed_urls.json"),"w"),indent=1)
-print("seo: lastmod changed today:",len(_chg),"of",len(URLS),"(seed run)" if _seed else "")
+print("seo: lastmod changed today:",len(_chg),"of",len(URLS),"(seed run)" if _seed else ("(sig-only restore)" if _keep else ""))
 LASTMOD={u:_LM.get(u,{}).get("date",today) for u in URLS}
 open(D+"/sitemap.xml","w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+"".join(f"<url><loc>{u}</loc><lastmod>{LASTMOD[u]}</lastmod></url>\n" for u in URLS)+"</urlset>\n")
 _cats={}
