@@ -6511,7 +6511,8 @@
   "pushed_at": "2026-11-13",
   "license": "MIT",
   "language": "Python",
-  "install": "npx skills add magichourhq/skills --skill magic-hour-image-to-video"
+  "install": "npx skills add magichourhq/skills --skill magic-hour-image-to-video",
+  "docs": "https://magichour.ai/mcp"
  },
  {
   "slug": "mailagent",
@@ -7126,6 +7127,27 @@
   "source_url": "https://neverapply.co/features/mcp",
   "stars": 0,
   "stars_checked": "2026-11-18"
+ },
+ {
+  "slug": "nexscope",
+  "name": "Nexscope",
+  "description": "Hosted ecommerce-data MCP server for researching products, markets, keywords, competitors, suppliers, advertising, creators and intellectual property across marketplaces such as Amazon, TikTok Shop and Shopify. Freemium: an API key plus credits, including 1,000 trial credits. Research tools retrieve data; some management tools can change authorized connected accounts.",
+  "maker": "Nexscope",
+  "link": "https://github.com/nexscope-ai/nexscope-ecommerce-api",
+  "category": "Industry Tools",
+  "source": "editor-added",
+  "source_url": "https://github.com/nexscope-ai/nexscope-ecommerce-api",
+  "source_section": "Maker submission",
+  "first_seen": "2026-11-18",
+  "featured": false,
+  "install": null,
+  "homepage": "https://www.nexscope.ai",
+  "docs": "https://www.nexscope.ai/mcp-data",
+  "stars": 18,
+  "stars_checked": "2026-11-18",
+  "pushed_at": "2026-11-16",
+  "language": "Python",
+  "archived": false
  },
  {
   "slug": "nightshift",
@@ -8060,6 +8082,28 @@
   "license": "MIT",
   "language": "JavaScript",
   "install": "claude plugins marketplace add ouonet/praxis"
+ },
+ {
+  "slug": "precision-ai-os",
+  "name": "Precision AI OS",
+  "description": "Remote MCP server for firm operators to set up and run a firm's Precision AI agents, skills and routines from any MCP client. Sign-in is OAuth; access is limited to operators of an invite-only firm. Approving work and sending messages stay in the app.",
+  "maker": "Precision AI OS",
+  "link": "https://github.com/precision-ai-os/precision-ai-os-mcp",
+  "category": "Agent Workflows",
+  "source": "editor-added",
+  "source_url": "https://github.com/precision-ai-os/precision-ai-os-mcp",
+  "source_section": "Maker submission",
+  "first_seen": "2026-11-18",
+  "featured": false,
+  "install": "claude mcp add --transport http precision 'https://mcp.getprecision.ai/v1/mcp'",
+  "homepage": "https://getprecision.ai",
+  "docs": "https://getprecision.ai/mcp",
+  "stars": 0,
+  "stars_checked": "2026-11-18",
+  "pushed_at": "2026-11-18",
+  "license": "MIT",
+  "language": "Python",
+  "archived": false
  },
  {
   "slug": "pricewin",
@@ -9978,7 +10022,7 @@
   "description": "Research public crypto trader wallets, token holders, and on-chain trade flow through a hosted OAuth MCP with metered account credits and optional price alerts that require confirmation.",
   "maker": "StalkC",
   "link": "https://github.com/StalkC/stalkchain-plugin",
-  "category": "Other",
+  "category": "Data & Backend",
   "source": "awesome-codex-plugins",
   "source_url": "https://github.com/hashgraph-online/awesome-codex-plugins",
   "source_section": "Community list",
@@ -9990,7 +10034,7 @@
   "pushed_at": "2026-11-18",
   "license": "MIT",
   "language": null,
-  "install": "/plugin marketplace add StalkC/stalkchain-plugin"
+  "install": "codex plugin marketplace add StalkC/stalkchain-plugin\ncodex plugin add stalkchain@stalkchain"
  },
  {
   "slug": "stark",
@@ -11281,6 +11325,26 @@
   "license": "MIT",
   "language": "JavaScript",
   "install": "claude plugin install valtown@claude-plugins-official"
+ },
+ {
+  "slug": "valuedge-mcp",
+  "name": "ValuEdge MCP",
+  "description": "Hosted stock-research MCP for screening companies, reviewing model-based valuations, comparing sourced fundamentals, and checking daily technical indicators. Public ticker discovery can work without sign-in; metered research and account data use OAuth and plan allowances. No brokerage trades; optional authorized edits apply only to your own watchlist or manual portfolio records.",
+  "maker": "ValuEdge",
+  "link": "https://github.com/kkfir13/valuedge-mcp",
+  "category": "Industry Tools",
+  "source": "editor-added",
+  "source_url": "https://github.com/kkfir13/valuedge-mcp",
+  "source_section": "Maker submission",
+  "first_seen": "2026-11-18",
+  "featured": false,
+  "install": "cline mcp add valuedge https://valuedge.app/mcp --transport http --yes",
+  "homepage": "https://valuedge.app",
+  "docs": "https://valuedge.app/connect",
+  "stars": 1,
+  "stars_checked": "2026-11-18",
+  "pushed_at": "2026-11-18",
+  "archived": false
  },
  {
   "slug": "varg",
