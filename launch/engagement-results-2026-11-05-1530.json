@@ -1,0 +1,52 @@
+[
+  {
+    "date": "2026-11-05",
+    "run": "15:30",
+    "type": "reply",
+    "thread_url": "https://x.com/illyism/status/2118261278137573417",
+    "author": "@illyism",
+    "reply_text": "1/5 of them being dead tracks with what i see too lol. for mcp/codex plugins specifically pickaplugin.com still takes free listings and isn't parked",
+    "reply_url": "https://x.com/PickAPlugin/status/2118489783844343999",
+    "ok": true
+  },
+  {
+    "date": "2026-11-05",
+    "run": "15:30",
+    "type": "reply",
+    "thread_url": "https://x.com/tarasshyn/status/2117984074505568747",
+    "author": "@tarasshyn",
+    "reply_text": "good tip, manus is easy to forget. i'd stack the official mcp registry first then glama/smithery since a bunch of clients pull from those. pickaplugin.com/submit is free too if you're doing a sweep",
+    "reply_url": "https://x.com/PickAPlugin/status/2118490358493687850",
+    "ok": true
+  },
+  {
+    "date": "2026-11-05",
+    "run": "15:30",
+    "type": "reply",
+    "thread_url": "https://x.com/hwchase17/status/2118464263497142576",
+    "author": "@hwchase17",
+    "reply_text": "yeah the \"disappears until the job is done\" pattern is why i stop trusting long agent runs. mid-task checkins without killing the loop is the actual unlock",
+    "reply_url": "https://x.com/PickAPlugin/status/2118490933750595728",
+    "ok": true
+  },
+  {
+    "date": "2026-11-05",
+    "run": "15:30",
+    "type": "reply",
+    "thread_url": "https://x.com/vercel/status/2118464668444557411",
+    "author": "@vercel",
+    "reply_text": "no account + db included is the part that actually matters. half the \"shipped\" ai apps i see still die at the vercel login wall lol",
+    "reply_url": "https://x.com/PickAPlugin/status/2118491687789924840",
+    "ok": true
+  },
+  {
+    "date": "2026-11-05",
+    "run": "15:30",
+    "type": "quote_tweet",
+    "thread_url": "https://x.com/replicate/status/2118465766856999282",
+    "author": "@replicate",
+    "reply_text": "consistent characters across cuts is what made me stop treating video models as toys. 10 second one-offs were cute, this is actually demo-able",
+    "reply_url": "https://x.com/PickAPlugin/status/2118492297277104595",
+    "ok": true
+  }
+]

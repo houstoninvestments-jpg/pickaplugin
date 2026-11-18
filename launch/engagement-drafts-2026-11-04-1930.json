@@ -1,0 +1,46 @@
+{
+  "run": "19:30",
+  "date": "2026-11-04",
+  "items": [
+    {
+      "kind": "reply",
+      "priority_thread": true,
+      "author": "@nikhilx22",
+      "thread_url": "https://x.com/nikhilx22/status/2118156955453931992",
+      "reply_text": "b and c every time lol. for mcp/codex plugins the free listing at pickaplugin.com/submit is like 2 minutes, no form maze. pitch and promo are still the hard parts",
+      "mentions_site": true
+    },
+    {
+      "kind": "reply",
+      "priority_thread": false,
+      "author": "@DanKornas",
+      "thread_url": "https://x.com/DanKornas/status/2118152816178975223",
+      "reply_text": "letting the agent peek at the running electron window after it edits is such an obvious gap. surprised it took this long for someone to ship it as an mcp",
+      "mentions_site": false
+    },
+    {
+      "kind": "reply",
+      "priority_thread": true,
+      "author": "@clampdown19",
+      "thread_url": "https://x.com/clampdown19/status/2118165180949348467",
+      "reply_text": "nice call for builders. if anyone's shipping mcp/codex stuff this week, free listing at pickaplugin.com/submit too — sorted by what the tool actually does, not just a dump of names",
+      "mentions_site": true
+    },
+    {
+      "kind": "reply",
+      "priority_thread": false,
+      "author": "@om_patel5",
+      "thread_url": "https://x.com/om_patel5/status/2118094463931215974",
+      "reply_text": "digging through 4k chatgpt apps just to find the seo ones is a whole job by itself. curious how long approval took once you finally submitted",
+      "mentions_site": false
+    },
+    {
+      "kind": "quote_tweet",
+      "priority_thread": false,
+      "author": "@gdb",
+      "thread_url": "https://x.com/gdb/status/2118174986544488876",
+      "reply_text": "gif support is the first time image gen feels useful for product demos instead of just moodboards. static mocks were fine, looping ones actually show the flow",
+      "mentions_site": false
+    }
+  ]
+}

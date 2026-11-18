@@ -112,3 +112,28 @@ Working send path: Resend API, domain pickaplugin.com verified. From "PickAPlugi
 2026-11-13 09:55 PT: backlink outreach to ChatGPT Apps Rank (chatgptappsrank.com) <hello@chatgptappsrank.com> "Your apps vs plugins explainer" -> sent 01a1d60c-f764-7cbb-be20-420c86e7e98b
 2026-11-13 09:55 PT: backlink outreach to Big Hat Group Codex Weekly (bighatgroup.com) <info@bighatgroup.com> "Something for Codex Weekly maybe" -> sent 01a1d60c-f7d7-7252-b057-b1f8db9d2bb3
 2026-11-16 08:15 PT: confirmed link swap with SkillMaxx <skillmaxx@gilventures.ai> "Re: SkillMaxx + PickAPlugin" (our link live on /alternatives; they add 'Related directories' on /how-we-test/) -> sent 01a1e524-7ec5-704f-a8a4-f7d157270d36
+2026-11-16 10:24 PT: backlink outreach to Lockstep (getlockstep.dev) <naman@getlockstep.dev> "Your MCP servers for dev teams post" -> sent 01a1e59a-c359-754e-b22d-1b8801958817
+2026-11-16 10:24 PT: backlink outreach to OpenApps (theopenapps.com) <hello@theopenapps.com> "Plugin Stack is listed on PickAPlugin" -> sent 01a1e59a-c3d3-7e34-bf05-8758d9edd2a4
+2026-11-16 10:24 PT: backlink outreach to ClawCall (clawcall.dev) <support@clawcall.dev> "ClawCall on PickAPlugin?" -> sent 01a1e59a-e8a7-74b4-b132-864ba7c77943
+2026-11-16 10:24 PT: backlink outreach to Best GitHub Repos (bestgithubrepositories.com) <partnership@bestgithubrepositories.com> "Your Claude Code plugins list" -> sent 01a1e59a-e91d-742a-b50b-8f71bcef6723
+2026-11-16 10:24 PT: backlink outreach to MCP Hunter (mcp-hunter.com) <hello@mcp-hunter.com> "PickAPlugin + MCP Hunter" -> sent 01a1e59a-e9a4-72a5-91b9-b033d3fb577f
+2026-11-16 10:24 PT: backlink outreach to Kipt (kipt.me) <hello@kipt.me> "Your Codex plugins guide" -> sent 01a1e59a-ea23-764a-8030-8f2a7b04f545
+2026-11-16 10:24 PT: backlink outreach to Claude Marketplaces (claudemarketplaces.com) <hi@claudemarketplaces.com> "Link swap with a Codex-side directory?" -> sent 01a1e59a-ea9a-78dd-851a-52262dfb4c6a
+2026-11-17 10:24 PT: backlink outreach to Corsair (corsair.dev) <dev@corsair.dev> "Your MCP context cost post" -> sent 01a1eac0-6682-7291-9cf9-4ed1d2488118
+2026-11-17 10:24 PT: backlink outreach to MCPSkillHub (mcpskillhub.com) <admin@mcpskillhub.com> "Your MCP context tax report" -> sent 01a1eac0-66f0-7bc4-902a-963cbeea608b
+2026-11-17 10:24 PT: backlink outreach to AI Toolbox (ai-toolbox.co) <team@ai-toolbox.co> "Your best ChatGPT plugins list" -> sent 01a1eac0-6760-7af6-a274-86e1f54a9fba
+2026-11-17 10:24 PT: backlink outreach to Agent Ready (agentready.co) <hello@agentready.co> "Your ChatGPT plugins are back post" -> sent 01a1eac0-67d6-798c-98d9-11a9903dc9a5
+2026-11-17 10:24 PT: backlink outreach to LaunchList (getlaunchlist.com) <contact@getlaunchlist.com> "One more for your MCP directories list" -> sent 01a1eac0-6845-7ca1-8d31-2b1c4e7287b3
+2026-11-17 10:24 PT: backlink outreach to SkillsLLM (skillsllm.com) <hello@skillsllm.com> "Link swap with a Codex plugin directory?" -> sent 01a1eac0-68b6-79a0-b0ec-a85c40cad7dc
+2026-11-17 10:24 PT: backlink outreach to Arantic Documentation (docs.arantic.com) <contact@arantic.com> "Your Codex plugins docs page" -> sent 01a1eac0-6929-7733-92ca-96c4f8f6ccb1
+2026-11-17 10:24 PT: backlink outreach to Arvind Verma (techiarvind.com) <connect@techiarvind.com> "Your Claude Code and Codex plugins list" -> sent 01a1eac0-699b-74f4-9ef6-2154a9e40265
+2026-11-17 10:24 PT: backlink outreach to Chen Media MCP Weekly (chen.media) <alex@chen.media> "MCP Weekly + PickAPlugin" -> sent 01a1eac0-69e2-7bd9-b29f-6264cee6a01a
+2026-11-17 10:24 PT: backlink outreach to Implicator.ai (implicator.ai) <editor@implicator.ai> "Your coding-agent plugins piece" -> sent 01a1eac0-6a4d-7af8-830d-3a42ecbfc37f
+2026-11-18 10:28 PT: backlink outreach to ChatCut (chatcut.io) <alima@chatcut.io> "Your Codex plugins for creators post" -> sent 01a1efeb-4723-71fb-8212-78b30fed234d
+2026-11-18 10:28 PT: backlink outreach to LaunchDistro (launchdistro.com) <contact@launchdistro.com> "One more for your MCP registries page" -> sent 01a1efeb-47a6-7d47-8f7a-fa498e1afca7
+2026-11-18 10:28 PT: backlink outreach to Another Directory (another.directory) <hello@another.directory> "Where to launch: plugin directories" -> sent 01a1efeb-4817-7341-accf-a7bf6aeddbbb
+2026-11-18 10:28 PT: backlink outreach to OpusClip (opus.pro) <contact@opus.pro> "AI Producer on PickAPlugin?" -> sent 01a1efeb-486e-747e-a7b0-8ae3d1bc8756
+2026-11-18 10:28 PT: backlink outreach to Satelo (satelo.io) <info@satelo.io> "Satelo MCP on PickAPlugin?" -> sent 01a1efeb-48e4-79a2-b983-a4c463a19621
+2026-11-18 10:28 PT: backlink outreach to LogNorm (lognorm.com) <hello@lognorm.com> "Your MCP servers for SEO and marketing post" -> sent 01a1efeb-4958-73bb-86ea-0e2b2e541ba9
+2026-11-18 10:28 PT: backlink outreach to Agent Skills (agentskills.codes) <agentskillscodes@gmail.com> "Link swap between skill and plugin directories?" -> sent 01a1efeb-49d2-7de7-8edf-f412072b040c
+2026-11-18 10:28 PT: backlink outreach to Starpop (starpop.ai) <alex@starpop.ai> "Starpop MCP on PickAPlugin?" -> sent 01a1efeb-4a4e-7163-b3c7-b24759b03dd1

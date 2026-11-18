@@ -107,5 +107,23 @@
   "platform": "hashnode",
   "url": "https://pickaplugin.hashnode.dev/how-to-publish-a-codex-or-chatgpt-plugin-three-routes-no-guesswork",
   "source": "articles/2026-11-13-publish-plugin.md (from guides/publish-codex-plugin); canonical https://pickaplugin.com/guides/publish-codex-plugin; tags ai, codex, tutorial, opensource"
+ },
+ {
+  "date": "2026-11-16",
+  "platform": "bluesky",
+  "url": "https://bsky.app/profile/pickaplugin.bsky.social/post/3n2hkva7o722s",
+  "source": "plugin.json checklist tip (guides/validate-plugin-json), reworded"
+ },
+ {
+  "date": "2026-11-16",
+  "platform": "devto",
+  "url": "https://dev.to/pickaplugin/why-your-codex-plugin-doesnt-show-up-a-pluginjson-checklist-42jm",
+  "source": "articles/2026-11-16-validate-plugin-json.md (from guides/validate-plugin-json); canonical https://pickaplugin.com/guides/validate-plugin-json; tags ai, codex, tutorial, debugging"
+ },
+ {
+  "date": "2026-11-16",
+  "platform": "hashnode",
+  "url": "https://pickaplugin.hashnode.dev/why-your-codex-plugin-doesn-t-show-up-a-plugin-json-checklist",
+  "source": "articles/2026-11-16-validate-plugin-json.md (from guides/validate-plugin-json); canonical https://pickaplugin.com/guides/validate-plugin-json; tags ai, codex, tutorial, debugging"
  }
 ]

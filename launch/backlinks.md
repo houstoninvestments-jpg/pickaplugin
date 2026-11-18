@@ -214,3 +214,26 @@ Submitted free, 2026-11-10 evening PT ($0, no upgrades):
 - Sent 6 via Resend, all "sent" (ids in backlink-outreach.json): scrape.ly (hello@, their plugin is listed at /p/scrape-ly), agentshortlist.dev (hi@), gearpicked.com (hello@), flaq.ai (contact@, awesome_codex_skills), chatgptappsrank.com (hello@), bighatgroup.com (info@, Codex Weekly).
 - Live checks (51 outreach pages Nov 2-12): only the known TurboAI docs and BranoLabs reports. No new live links.
 - Skipped: shortstackdaily.com (only a placeholder email), noxi.ai, eastondev.com, publishport.app, submitmcp.com, reviewland.io (no public email found).
+
+## Run 2026-11-16 (backlink outreach routine)
+- Unlinked mentions: none new. Third-party pages seen were Glama connector and mcptry listing (both already link to us, nofollow), plus our own GitHub/Hashnode pages.
+- Sent 7 via Resend, all "sent" (ids in backlink-outreach.json): getlockstep.dev (naman@), theopenapps.com (hello@, Plugin Stack is listed at /p/plugin-stack), clawcall.dev (support@), bestgithubrepositories.com (partnership@), mcp-hunter.com (hello@), kipt.me (hello@), claudemarketplaces.com (hi@).
+- Offers made that need follow-through if they say yes: free listings for Lockstep MCP, ClawCall, Kipt; adding MCP Hunter and Claude Marketplaces to /alternatives in a link swap.
+- Script fix: the daily cap now counts only cold backlink sends (key backlink-*, no type). Before the fix it counted today's submission replies and the SkillMaxx reply and stopped at 2.
+- Live checks (77 outreach pages + SkillMaxx /how-we-test/): only the known HOL (nofollow), BranoLabs reports, TurboAI docs. No new live links. SkillMaxx said (Nov 16 08:28 PT) their "Related directories" link goes out with their next site update and they'll email when it's live.
+- Skipped: mcpradars.com (only a data-corrections address), flowy.sh (429), skillspicker/agent-skills.md/getclaudeskills/agenticskills/plynixy/questera/krater (no public email found).
+
+## Run 2026-11-17 (backlink outreach routine)
+- Unlinked mentions: none new (only our own SubmitPR, Alternative Biz, dev.to, GitHub, Hashnode pages).
+- NEW LIVE: SkillMaxx https://skillmaxx.gilventures.ai/how-we-test/ now has a "Related directories" section linking https://pickaplugin.com (rel="noopener" only, so followed). This completes the SkillMaxx link swap. Still live: TurboAI docs, BranoLabs reports.
+- Sent 10 via Resend, all "sent" (ids in backlink-outreach.json): corsair.dev (dev@), mcpskillhub.com (admin@), ai-toolbox.co (team@), agentready.co (hello@), getlaunchlist.com (contact@), skillsllm.com (hello@), arantic.com (contact@), techiarvind.com (connect@), chen.media (alex@), implicator.ai (editor@).
+- Offers needing follow-through if they say yes: free listing for Corsair; add MCPSkillHub to /guides/where-to-submit-mcp-server; add SkillsLLM to /alternatives.
+- Replies from Nov 16 outreach: ClawCall (support@clawcall.dev) said yes to a free listing; Lockstep (naman@getlockstep.dev) said yes to a free listing (gave name, description, https://getlockstep.dev, github.com/lockstep-team-agent/lockstep, Apache-2.0) and may cite the research with a credit link. Neither is listed yet. No no-thanks.
+- Skipped (no public email found): walma.ai, nulltensor.com, theplugweekly.com, mcpmorning.com, zairouter.com, codex.danielvaughan.com, chatgptplugins.directory. Held off on firecrawl.dev and skyvia.com (only support addresses).
+
+## Run 2026-11-18 (backlink outreach routine)
+- Unlinked mentions: none new (only our own SubmitPR, Alternative Biz, dev.to, GitHub, Hashnode pages).
+- Sent 8 via Resend, all "sent" (ids in backlink-outreach.json): chatcut.io (alima@, free listing), launchdistro.com (contact@, add to MCP registries page), another.directory (hello@, where-to-launch page), opus.pro (contact@, free listing AI Producer/OpusClip MCP), satelo.io (info@, free listing Satelo MCP), lognorm.com (hello@, free listing LogNorm MCP), agentskills.codes (agentskillscodes@gmail.com, link swap via /alternatives), starpop.ai (alex@, free listing Starpop MCP).
+- Live checks (62 pages pitched Nov 4-17 + known): still live SkillMaxx /how-we-test/ (Brandon confirmed by email Nov 18 10:14 PT) and TurboAI docs. No new live links.
+- Replies: LaunchList (inavneetsingh@fastmail.com) asked us to submit via https://getlaunchlist.com/directories/suggest (form; not submitted). ClawCall + Lockstep already listed (commit 1fe056b) and replied to Nov 17 11:15 PT.
+- Skipped (no public email): hyperprobe.co, humblytics.com, paralect.com, qai.io, agentdisco.ai, askills.dev, orchestkit.dev, buildtolaunch.ai, vpndetection.io, elmah.io, gatehouse/artifiner/claudecodestack/claudemarket. Held off: currents.dev (support@ only).

@@ -1,0 +1,92 @@
+[
+ {
+  "key": "pluginsradar",
+  "site": "Plugins Radar (pluginsradar.com)",
+  "to": "hello@pluginsradar.com",
+  "subject": "Your ChatGPT directory tracking + GitHub side data",
+  "target_page": "https://pluginsradar.com/",
+  "link": "https://pickaplugin.com/research/state-of-codex-plugins-2026",
+  "text": "Hi,\n\nI saw your weekly reports on the ChatGPT plugin directory. The +1,574 week was wild. I run PickAPlugin, which covers the other side: the open-source Codex and ChatGPT plugins that live on GitHub and never make it into the official directory.\n\nWe published a small data report on 339 of them (stars, licenses, install commands, plugin.json checks): https://pickaplugin.com/research/state-of-codex-plugins-2026\n\nIt's CC BY, so feel free to cite it in a guide or report if it's useful. And if a link swap between our sites makes sense to you, I'm up for it.\n\nAaron, PickAPlugin\nhttps://pickaplugin.com"
+ },
+ {
+  "key": "triedaitools",
+  "site": "Tried AI Tools (triedaitools.com)",
+  "to": "hello@triedaitools.com",
+  "subject": "Your ChatGPT plugins directory page",
+  "target_page": "https://triedaitools.com/chatgpt-apps-and-skills-directory/",
+  "link": "https://pickaplugin.com/research/state-of-codex-plugins-2026",
+  "text": "Hi,\n\nI liked your ChatGPT plugins, apps and skills directory page, especially the plain one-line TLDRs. One thing it doesn't cover much is the community side: the open-source plugins people publish on GitHub for Codex and ChatGPT.\n\nThat's what we catalog at PickAPlugin, and we put out a data report on 339 of them: https://pickaplugin.com/research/state-of-codex-plugins-2026\n\nIf you ever add a line on where to find community plugins, we'd be glad to be the link. The report is CC BY, so it's free to cite too.\n\nAaron, PickAPlugin\nhttps://pickaplugin.com"
+ },
+ {
+  "key": "codexstacks",
+  "site": "CodexStacks (codexstacks.com)",
+  "to": "hello@codexstacks.com",
+  "subject": "Codex plugin data you can cite",
+  "target_page": "https://codexstacks.com/",
+  "link": "https://pickaplugin.com/research/state-of-codex-plugins-2026",
+  "text": "Hi,\n\nI run PickAPlugin, a hand-sorted catalog of ChatGPT and Codex plugins, so we're in the same corner of the internet. I liked how your about page spells out exactly where your data comes from.\n\nWe ran checks on 339 open-source Codex plugin repos (licenses, missing install commands, plugin.json errors) and wrote it up here: https://pickaplugin.com/research/state-of-codex-plugins-2026\n\nIt's CC BY, so feel free to use any of it with a credit link. Happy to do a link swap too if that's useful for you.\n\nAaron, PickAPlugin\nhttps://pickaplugin.com"
+ },
+ {
+  "key": "codexharness",
+  "site": "Codex Harness (codex-harness.com)",
+  "to": "contact@codex-harness.com",
+  "subject": "Data for your Codex plugin marketplace guide",
+  "target_page": "https://codex-harness.com/codex-plugin-marketplace/",
+  "link": "https://pickaplugin.com/research/state-of-codex-plugins-2026",
+  "text": "Hi,\n\nI came across your Codex plugin marketplace explainer. It's a clear write-up of how the install flow works.\n\nI run PickAPlugin, a hand-sorted catalog of Codex and ChatGPT plugins. We pulled GitHub data on 339 plugin repos and published what we found, like 31% having no copyable install command and only 3 of 274 plugin.json files having hard errors: https://pickaplugin.com/research/state-of-codex-plugins-2026\n\nIf any of it fits your guides, it's CC BY, free to cite with a link.\n\nAaron, PickAPlugin\nhttps://pickaplugin.com"
+ },
+ {
+  "key": "aicodingweekly",
+  "site": "AI Coding Weekly (aicodingweekly.datadriftpress.com)",
+  "to": "hello@datadriftpress.com",
+  "subject": "A possible item for AI Coding Weekly",
+  "target_page": "https://aicodingweekly.datadriftpress.com/",
+  "link": "https://pickaplugin.com/research/state-of-codex-plugins-2026",
+  "text": "Hi,\n\nI came across AI Coding Weekly and thought this might be useful for an issue. We looked at 339 open-source Codex and ChatGPT plugin repos: median 6 stars, 43% need an API key, and 16% haven't been touched in 90+ days.\n\nFull write-up and charts: https://pickaplugin.com/research/state-of-codex-plugins-2026\n\nIt's CC BY, so use whatever helps. No worries if it's not a fit.\n\nAaron, PickAPlugin\nhttps://pickaplugin.com"
+ },
+ {
+  "key": "pulsemcp",
+  "site": "PulseMCP (pulsemcp.com)",
+  "to": "hello@pulsemcp.com",
+  "subject": "Codex plugin numbers for the newsletter",
+  "target_page": "https://www.pulsemcp.com/",
+  "link": "https://pickaplugin.com/research/state-of-codex-plugins-2026",
+  "text": "Hi,\n\nPulseMCP has been a go-to MCP directory for a while. I run PickAPlugin, a hand-sorted catalog of ChatGPT and Codex plugins, and a lot of those plugins are really MCP servers in a wrapper.\n\nWe pulled data on 339 of them. 18% wire up a remote MCP server over HTTP, and 43% ask for an API key: https://pickaplugin.com/research/state-of-codex-plugins-2026\n\nMight be a useful data point for a newsletter or post. It's CC BY, free to cite with a link.\n\nAaron, PickAPlugin\nhttps://pickaplugin.com"
+ },
+ {
+  "key": "mcpagentsmarket",
+  "site": "MCP Agents Market (mcpagentsmarket.com)",
+  "to": "hello@mcpagentsmarket.com",
+  "subject": "Codex plugins for your Plugins section",
+  "target_page": "https://mcpagentsmarket.com/",
+  "link": "https://pickaplugin.com",
+  "text": "Hi,\n\nI saw you list plugins alongside MCP servers and skills. I run PickAPlugin, a hand-sorted catalog of 350+ ChatGPT and Codex plugins, mostly small open-source projects on GitHub.\n\nIf it'd help fill out your Codex side, feel free to point people to us, and I'm happy to do a link swap. We also published a data report on 339 of these plugins that's free to cite: https://pickaplugin.com/research/state-of-codex-plugins-2026\n\nAaron, PickAPlugin\nhttps://pickaplugin.com"
+ },
+ {
+  "key": "mcpfind",
+  "site": "MCP Find (mcp-find.org)",
+  "to": "hello@mcp-find.org",
+  "subject": "Codex plugin data, free to use",
+  "target_page": "https://mcp-find.org/",
+  "link": "https://pickaplugin.com/research/state-of-codex-plugins-2026",
+  "text": "Hi,\n\nI came across MCP Find while looking at MCP directories. I run PickAPlugin, a hand-sorted catalog of ChatGPT and Codex plugins, and plenty of them ship an MCP server inside.\n\nWe published a report on 339 of those plugin repos (licenses, maintenance, install commands, API keys): https://pickaplugin.com/research/state-of-codex-plugins-2026\n\nIt's CC BY, so cite it anywhere it's useful. Open to a link swap as well if you are.\n\nAaron, PickAPlugin\nhttps://pickaplugin.com"
+ },
+ {
+  "key": "mcpselect",
+  "site": "MCP Select (mcpselect.com)",
+  "to": "hello@mcpselect.com",
+  "subject": "Some data that fits your testing angle",
+  "target_page": "https://mcpselect.com/",
+  "link": "https://pickaplugin.com/research/state-of-codex-plugins-2026",
+  "text": "Hi,\n\nI like that MCP Select actually tests things before ranking them. We do something similar for Codex and ChatGPT plugins at PickAPlugin, and we wrote up what we found across 339 repos: 6 with no license file at all, 105 with no copyable install command, and so on.\n\nhttps://pickaplugin.com/research/state-of-codex-plugins-2026\n\nIf it's useful for a methodology note or a post, it's CC BY, free to cite with a link.\n\nAaron, PickAPlugin\nhttps://pickaplugin.com"
+ },
+ {
+  "key": "mcpplayground",
+  "site": "MCP Playground (mcpplaygroundonline.com)",
+  "to": "hello@mcpplaygroundonline.com",
+  "subject": "Your MCP security scanner + our plugin data",
+  "target_page": "https://mcpplaygroundonline.com/",
+  "link": "https://pickaplugin.com/research/state-of-codex-plugins-2026",
+  "text": "Hi,\n\nI came across MCP Playground. Being able to poke at a remote server in the browser with no install is handy. I run PickAPlugin, a catalog of ChatGPT and Codex plugins, and we looked at 339 of them: 61 wire up a remote MCP server over HTTP and 43% ask for an API key.\n\nhttps://pickaplugin.com/research/state-of-codex-plugins-2026\n\nThought it might be a useful stat for your security scanner page. It's CC BY, free to cite with a link.\n\nAaron, PickAPlugin\nhttps://pickaplugin.com"
+ }
+]
