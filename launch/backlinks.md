@@ -237,3 +237,11 @@ Submitted free, 2026-11-10 evening PT ($0, no upgrades):
 - Live checks (62 pages pitched Nov 4-17 + known): still live SkillMaxx /how-we-test/ (Brandon confirmed by email Nov 18 10:14 PT) and TurboAI docs. No new live links.
 - Replies: LaunchList (inavneetsingh@fastmail.com) asked us to submit via https://getlaunchlist.com/directories/suggest (form; not submitted). ClawCall + Lockstep already listed (commit 1fe056b) and replied to Nov 17 11:15 PT.
 - Skipped (no public email): hyperprobe.co, humblytics.com, paralect.com, qai.io, agentdisco.ai, askills.dev, orchestkit.dev, buildtolaunch.ai, vpndetection.io, elmah.io, gatehouse/artifiner/claudecodestack/claudemarket. Held off: currents.dev (support@ only).
+
+## Run 2026-11-19 (backlink outreach routine)
+- Unlinked mentions: none needing outreach. New third-party pages are auto-generated MCP registry listings: SourceWeft https://sourceweft.com/mcp/com.pickaplugin%2Fpickaplugin (links pickaplugin.com nofollow + /mcp-server followed) and mcpbeat https://mcpbeat.com/mcp-servers/pickaplugin/pickaplugin/ (status page).
+- Sent 7 via Resend, all "sent" (ids in backlink-outreach.json): kitbay.app (hello@, link swap), aipluginindex.com (hello@, link swap + research), scienceofapps.com (hello@, add to MCP directories post), businessmcp.com (hello@, free listing), curatedmcp@gmail.com (free listing + research), agentsuses.com (hello@, link swap + research), mcpyet.com (hello@, link swap).
+- Offers needing follow-through if they say yes: add Kitbay/AI Plugin Index/AgentsUses/mcpyet to /alternatives; free listings for BusinessMCP and CuratedMCP.
+- Live checks (104 pitched pages + known): still live HOL awesome-codex-plugins (nofollow), TurboAI docs, BranoLabs reports, SkillMaxx /how-we-test/. New: SourceWeft registry page (followed link to /mcp-server). No pitched site added a new link.
+- Replies: Starpop (alex@starpop.ai, Nov 18 11:25 PT) "Go ahead and list starpop's MCP" (not listed yet). Kling AI (wlain.cwb@gmail.com) asked to add npm install paths (global/CN) to /p/kling-ai. OpusClip auto-reply only. No opt-outs.
+- Skipped: medux.io (face-swap tools, poor fit), aftergradient.com/kxdevelopers.com/top-mcps.com/usecarly.com/mcpfind.org/protodex.io (no public email), MCP Radar Weekly (email only in page metadata).

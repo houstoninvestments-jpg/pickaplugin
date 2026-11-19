@@ -137,3 +137,10 @@ Working send path: Resend API, domain pickaplugin.com verified. From "PickAPlugi
 2026-11-18 10:28 PT: backlink outreach to LogNorm (lognorm.com) <hello@lognorm.com> "Your MCP servers for SEO and marketing post" -> sent 01a1efeb-4958-73bb-86ea-0e2b2e541ba9
 2026-11-18 10:28 PT: backlink outreach to Agent Skills (agentskills.codes) <agentskillscodes@gmail.com> "Link swap between skill and plugin directories?" -> sent 01a1efeb-49d2-7de7-8edf-f412072b040c
 2026-11-18 10:28 PT: backlink outreach to Starpop (starpop.ai) <alex@starpop.ai> "Starpop MCP on PickAPlugin?" -> sent 01a1efeb-4a4e-7163-b3c7-b24759b03dd1
+2026-11-19 10:27 PT: backlink outreach to Kitbay (kitbay.app) <hello@kitbay.app> "Kitbay + PickAPlugin link swap?" -> sent 01a1f510-8162-7328-8fa1-0b83eb91cead
+2026-11-19 10:27 PT: backlink outreach to AI Plugin Index (aipluginindex.com) <hello@aipluginindex.com> "Link swap between plugin directories?" -> sent 01a1f510-81e0-7579-a265-a482c229cb49
+2026-11-19 10:27 PT: backlink outreach to Science of Apps (scienceofapps.com) <hello@scienceofapps.com> "Your MCP server directories post" -> sent 01a1f510-827e-7104-bd84-dafd19a04f7e
+2026-11-19 10:27 PT: backlink outreach to BusinessMCP (businessmcp.com) <hello@businessmcp.com> "BusinessMCP on PickAPlugin?" -> sent 01a1f510-82dc-7ec1-bf8b-7ed242a0751e
+2026-11-19 10:27 PT: backlink outreach to CuratedMCP (curatedmcp.com) <curatedmcp@gmail.com> "CuratedMCP scanner on PickAPlugin?" -> sent 01a1f510-8360-735c-a5cc-ae16246f1f09
+2026-11-19 10:27 PT: backlink outreach to AgentsUses (agentsuses.com) <hello@agentsuses.com> "Your Codex skills page" -> sent 01a1f510-83f2-72bb-8412-86f57feadc70
+2026-11-19 10:27 PT: backlink outreach to MCP Yet (mcpyet.com) <hello@mcpyet.com> "mcpyet + PickAPlugin link swap?" -> sent 01a1f510-844b-7de2-8024-1302694fcd98
