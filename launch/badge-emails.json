@@ -210,12 +210,82 @@
    "date": "2026-11-18",
    "time": "2026-11-18T10:42:57",
    "id": "01a1eff8-1f5b-7be9-86e1-063e8a7f46df"
+  },
+  {
+   "to": "hello@kite.new",
+   "slugs": [
+    "kite"
+   ],
+   "subject": "Free badge for Kite on PickAPlugin",
+   "date": "2026-11-19",
+   "time": "2026-11-19T10:42:51",
+   "id": "01a1f51e-6042-7d7e-a649-758efbbd9ffd"
+  },
+  {
+   "to": "hi@dragdropdo.com",
+   "slugs": [
+    "dragdropdo-mcp"
+   ],
+   "subject": "Free badge for DragDropDo MCP on PickAPlugin",
+   "date": "2026-11-19",
+   "time": "2026-11-19T10:42:51",
+   "id": "01a1f51e-636e-7ad5-b592-5ab27fc1b12f"
+  },
+  {
+   "to": "support@productmetrics.io",
+   "slugs": [
+    "product-metrics-skills"
+   ],
+   "subject": "Free badge for Product Metrics on PickAPlugin",
+   "date": "2026-11-19",
+   "time": "2026-11-19T10:42:52",
+   "id": "01a1f51e-6672-7af0-856c-32623471db46"
+  },
+  {
+   "to": "support@mcpeasy.net",
+   "slugs": [
+    "mcpeasy"
+   ],
+   "subject": "Free badge for MCPEasy on PickAPlugin",
+   "date": "2026-11-19",
+   "time": "2026-11-19T10:42:53",
+   "id": "01a1f51e-699d-7c75-945e-9124f04d242d"
+  },
+  {
+   "to": "support@converter.studio",
+   "slugs": [
+    "converter-studio"
+   ],
+   "subject": "Free badge for Converter Studio on PickAPlugin",
+   "date": "2026-11-19",
+   "time": "2026-11-19T10:42:54",
+   "id": "01a1f51e-6cce-7b35-b369-e53ed0edca58"
+  },
+  {
+   "to": "support@viengine.social",
+   "slugs": [
+    "vi-engine"
+   ],
+   "subject": "Free badge for VI Engine on PickAPlugin",
+   "date": "2026-11-19",
+   "time": "2026-11-19T10:42:55",
+   "id": "01a1f51e-7001-7dcb-ae4b-c1f6b6deef87"
+  },
+  {
+   "to": "hello@omnigami.ai",
+   "slugs": [
+    "omnigami-plugins"
+   ],
+   "subject": "Free badge for omnigami on PickAPlugin",
+   "date": "2026-11-19",
+   "time": "2026-11-19T10:42:55",
+   "id": "01a1f51e-7301-7ee2-92f2-dabb5c44b986"
   }
  ],
  "skipped": [],
  "last_run": {
-  "date": "2026-11-18",
-  "sent": 6,
+  "date": "2026-11-19",
+  "sent": 7,
   "errors": [],
   "remaining_ready": 0,
   "deferred": [
