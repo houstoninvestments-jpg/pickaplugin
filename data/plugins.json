@@ -1,5 +1,25 @@
 [
  {
+  "slug": "apexuse",
+  "name": "ApexUse",
+  "description": "Local-first computer-use MCP server in Rust for macOS, Windows and Linux: gives Claude Code, Codex, Antigravity and other agents full OS and browser control using native accessibility trees, Set-of-Mark visual grounding and OCR, with an on-screen agent cursor, workflow memory, secure-field blocking and a STOP kill switch. No cloud relay.",
+  "maker": "Pawan Kumar",
+  "link": "https://github.com/Jackpkn/apexuse",
+  "category": "Agent Workflows",
+  "source": "editor-added",
+  "source_url": "https://github.com/Jackpkn/apexuse",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-19",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-19",
+  "install": "npx -y apexuse-mcp install all --write --npx --with-skill --probe",
+  "stars": 0,
+  "pushed_at": "2026-11-19",
+  "license": "MIT",
+  "language": "Rust"
+ },
+ {
   "slug": "call-me",
   "name": "/call-me",
   "description": "Lets Codex agents ring or text your iPhone through a hosted MCP server and read your spoken or typed reply back as text; the iPhone app is a paid subscription.",
@@ -3188,6 +3208,26 @@
   "install": null
  },
  {
+  "slug": "converter-studio",
+  "name": "Converter Studio",
+  "description": "Convert files between 67 formats (video, audio, images, PDFs, documents, e-books, subtitles, data, archives) from Claude Code, Codex, Cursor or Gemini CLI: a hosted MCP server, a Claude Code and Codex plugin, and four Agent Skills that fall back to local ffmpeg, ImageMagick or LibreOffice. Uses your Converter Studio credits; free accounts get 13 a day.",
+  "maker": "Converter Studio",
+  "link": "https://github.com/tariksucu/converter-studio",
+  "category": "Docs, Content & SEO",
+  "source": "editor-added",
+  "source_url": "https://github.com/tariksucu/converter-studio",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-19",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-19",
+  "install": "claude plugin marketplace add tariksucu/converter-studio",
+  "stars": 1,
+  "pushed_at": "2026-11-19",
+  "license": "MIT",
+  "language": null
+ },
+ {
   "slug": "coolify",
   "name": "Coolify",
   "description": "Control Coolify Cloud and self-hosted Coolify instances through API-aware workflow skills and local tools.",
@@ -3862,6 +3902,22 @@
   "license": "MIT",
   "language": "Python",
   "install": "claude plugin marketplace add kuroudo-ai/done-gate"
+ },
+ {
+  "slug": "dragdropdo-mcp",
+  "name": "DragDropDo MCP",
+  "description": "Hosted MCP server for the dragdropdo file tools: sign in once and Claude, Claude Code or Cursor can upload, convert, compress, merge and zip files and use the PDF password tools, the same capabilities as the DragDropDo Business API.",
+  "maker": "dragdropdo",
+  "link": "https://docs.dragdropdo.com/business-api/mcp-clients",
+  "category": "Docs, Content & SEO",
+  "source": "editor-added",
+  "source_url": "https://docs.dragdropdo.com/business-api/mcp-clients",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-19",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-19",
+  "install": "https://mcp.dragdropdo.com/mcp"
  },
  {
   "slug": "droplinked",
@@ -5779,6 +5835,22 @@
   "archived": false
  },
  {
+  "slug": "kite",
+  "name": "Kite",
+  "description": "Design canvas your AI agents and your team share: Claude, ChatGPT, Cursor, Codex or any MCP client draws in your file while you watch, follows your design system and takes jobs from comments. Local and remote MCP, skills in every design system, pastes to and from Figma. Free to start.",
+  "maker": "Kite",
+  "link": "https://kite.new",
+  "category": "Design & Frontend",
+  "source": "editor-added",
+  "source_url": "https://kite.new",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-19",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-19",
+  "install": null
+ },
+ {
   "slug": "kling-ai",
   "name": "Kling AI",
   "description": "Official Kling AI plugin for Codex and ChatGPT: connects to Kling's hosted image and video generation tools, with an agent skill for the creation workflow. Needs a Kling account (browser sign-in); generation uses paid Kling credits.",
@@ -6684,6 +6756,22 @@
   "install": null
  },
  {
+  "slug": "masttro-mcp",
+  "name": "Masttro MCP",
+  "description": "Read-only MCP server for Masttro, the wealth platform for family offices and advisors: connect Claude or ChatGPT to your clients, Global Wealth Map structure, holdings, transactions and performance. Off by default; your admin turns it on and each person's AI sees only what they can already see. For clients with Masttro API enabled.",
+  "maker": "Masttro",
+  "link": "https://masttro.com/insights/masttro-mcp-server",
+  "category": "Industry Tools",
+  "source": "editor-added",
+  "source_url": "https://masttro.com/insights/masttro-mcp-server",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-19",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-19",
+  "install": null
+ },
+ {
   "slug": "matlab-simulink-tools",
   "name": "MATLAB Simulink Tools",
   "description": "Connects Codex to MATLAB and Simulink through a local MCP server for model inspection, script execution, and engineering workflow automation.",
@@ -6722,6 +6810,22 @@
   "pushed_at": "2026-11-09",
   "license": null,
   "language": null,
+  "install": null
+ },
+ {
+  "slug": "mcpeasy",
+  "name": "MCPEasy",
+  "description": "Turn your API into a hosted MCP server: paste an OpenAPI spec or Postman collection and MCPEasy groups endpoints into a few clear tools, writes agent-friendly descriptions, adds API keys and rate limits, and hosts and monitors the server for Claude, ChatGPT and Cursor. Free to start.",
+  "maker": "MCPEasy",
+  "link": "https://mcpeasy.net",
+  "category": "Data & Backend",
+  "source": "editor-added",
+  "source_url": "https://mcpeasy.net",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-19",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-19",
   "install": null
  },
  {
@@ -7441,6 +7545,26 @@
   "license": "MIT",
   "language": null,
   "install": "claude plugin marketplace add KevinUK/okzest-skill"
+ },
+ {
+  "slug": "omnigami-plugins",
+  "name": "omnigami",
+  "description": "Two Codex plugins that make product videos from your product's real screens on your own computer: Launch Films (a ~34s captioned launch film plus per-change changelog clips) and Social Videos (short vertical videos from your app screens). Needs Node 20+, Chrome and ffmpeg; no omnigami account.",
+  "maker": "omnigami",
+  "link": "https://github.com/omnigami-ai/plugins",
+  "category": "Design & Frontend",
+  "source": "editor-added",
+  "source_url": "https://github.com/omnigami-ai/plugins",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-19",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-19",
+  "install": "codex plugin marketplace add omnigami-ai/plugins",
+  "stars": 0,
+  "pushed_at": "2026-11-18",
+  "license": null,
+  "language": null
  },
  {
   "slug": "onehaus-mcp",
@@ -8185,6 +8309,26 @@
   "license": null,
   "language": "JavaScript",
   "install": "claude plugin marketplace add jack-reson8/pro-motion"
+ },
+ {
+  "slug": "product-metrics-skills",
+  "name": "Product Metrics",
+  "description": "Agent skills and plugin for Product Metrics, the ecommerce profit-bidding platform: set up server-side tracking, check tracking, and set up profit (POAS), new-customer and LTV bidding for Shopify, WooCommerce, Magento and more across Google Ads, Meta and ChatGPT Ads, through the Product Metrics MCP server. Claude Code, Cursor and Codex.",
+  "maker": "Product Metrics",
+  "link": "https://github.com/product-metrics/skills",
+  "category": "Industry Tools",
+  "source": "editor-added",
+  "source_url": "https://github.com/product-metrics/skills",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-19",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-19",
+  "install": "claude plugin marketplace add product-metrics/skills",
+  "stars": 1,
+  "pushed_at": "2026-11-17",
+  "license": "MIT",
+  "language": null
  },
  {
   "slug": "project-autopilot",
@@ -9823,6 +9967,26 @@
   "install": "/plugin install sofya --marketplace sofya-co/sofya-mcp"
  },
  {
+  "slug": "solar-icons",
+  "name": "Solar Icons",
+  "description": "Solar icon set (1,576 SVG icons in 6 styles), now with an MCP server, CLI and Agent Skill so coding agents look up real icon names instead of guessing. Reads the static catalog locally, no API keys.",
+  "maker": "Hakim Saoudi",
+  "link": "https://github.com/saoudi-h/solar-icons",
+  "category": "Design & Frontend",
+  "source": "editor-added",
+  "source_url": "https://github.com/saoudi-h/solar-icons",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-19",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-19",
+  "install": "npx -y @solar-icons/mcp",
+  "stars": 294,
+  "pushed_at": "2026-11-19",
+  "license": null,
+  "language": "TypeScript"
+ },
+ {
   "slug": "solidping",
   "name": "SolidPing",
   "description": "Uptime monitoring from Codex through the hosted SolidPing MCP server with OAuth sign-in: read checks, results and incidents, diagnose failures, and manage checks and status pages after you confirm.",
@@ -11441,6 +11605,22 @@
   "license": "Apache-2.0",
   "language": "JavaScript",
   "install": "/plugin marketplace add epicsagas/plugins"
+ },
+ {
+  "slug": "vi-engine",
+  "name": "VI Engine",
+  "description": "MCP connector for VI Engine, the AI marketing workspace: connect Claude, Claude Code, Cursor or ChatGPT to read brand knowledge, prepare drafts, review campaigns and check analytics. Scheduling, replies and draft edits show a preview and wait for your approval. Pro and Team plans.",
+  "maker": "VI Engine",
+  "link": "https://viengine.social/mcp",
+  "category": "Docs, Content & SEO",
+  "source": "editor-added",
+  "source_url": "https://viengine.social/mcp",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-19",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-19",
+  "install": "https://api.viengine.social/mcp"
  },
  {
   "slug": "vibe-prospecting",

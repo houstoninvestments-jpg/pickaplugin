@@ -616,3 +616,47 @@ I'll be straight: we're new and traffic is still small. That's why the first 10 
 No pressure, the listing stays either way.
 
 Aaron
+
+## 2026-11-19
+
+### 1. Kite, Kite (kite.new)
+To: hello@kite.new (listed on https://kite.new/pricing; founder X @itsloukman)
+Subject: Kite is on PickAPlugin
+
+Hi Loukman and the Kite team,
+
+Congrats on the launch. A shared canvas where Claude, ChatGPT, Codex or Cursor draw in the file while you watch, and follow your design system, is a really nice take on agent design, so I added Kite to PickAPlugin (630+ Codex, ChatGPT and Claude plugins, skills and MCP servers) as a free listing: https://pickaplugin.com/p/kite
+
+Honest heads-up: we're new and traffic is still small, so this is a cheap extra placement, not a big-reach play. The first 10 makers get a founding featured spot (top of Design & Frontend, the homepage, and a newsletter mention) at $29/mo for life instead of the regular $49, with a 7-day free trial: https://buy.stripe.com/7sY6oG0A9bUbdX7eW1cQU06
+
+No pressure, the free listing stays either way. If anything on the page is off, reply and I'll fix it.
+
+Aaron
+
+### 2. dragdropdo, DragDropDo MCP
+To: hi@dragdropdo.com (listed on https://dragdropdo.com/contact-us; co-founder X @1prashantgupta)
+Subject: DragDropDo MCP is listed on PickAPlugin
+
+Hey Prashant and the dragdropdo team,
+
+Saw the MCP server went live yesterday. Letting an agent convert, compress and merge files with one sign-in is a handy, practical tool, so I listed DragDropDo MCP on PickAPlugin for free: https://pickaplugin.com/p/dragdropdo-mcp
+
+To be upfront, we're a young directory and traffic is still small. If a small extra spot is useful, the first 10 makers get a founding featured placement (top of Docs, Content & SEO + the homepage + a newsletter mention) at $29/mo for life, first 7 days free: https://buy.stripe.com/7sY6oG0A9bUbdX7eW1cQU06
+
+Totally optional. Happy to tweak the listing if you want different wording.
+
+Aaron
+
+### 3. Product Metrics, Product Metrics agent skills
+To: support@productmetrics.io (listed on the product-metrics GitHub org and in the docs)
+Subject: Product Metrics skills are on PickAPlugin
+
+Hi Product Metrics team,
+
+Saw the new skills repo. A plugin that walks an agent through server-side tracking and profit bidding for each store platform and ad channel, wired to your MCP server, is a smart fit for agencies, so I added it to PickAPlugin as a free listing: https://pickaplugin.com/p/product-metrics-skills
+
+I'll be straight: we're new and traffic is still small. That's why the first 10 makers get a founding featured spot (top of Industry Tools + the homepage + a newsletter mention) at $29/mo for life versus $49/mo later, with a 7-day free trial: https://buy.stripe.com/7sY6oG0A9bUbdX7eW1cQU06
+
+No pressure, the listing stays either way.
+
+Aaron
