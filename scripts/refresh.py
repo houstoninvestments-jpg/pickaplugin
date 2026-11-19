@@ -75,7 +75,11 @@ def add_stars(out, old):
         p["pushed_at"]=(r.get("pushedAt") or "")[:10] or None
         li=r.get("licenseInfo") or {}; p["license"]=(li.get("spdxId") if li.get("spdxId") not in (None,"NOASSERTION") else None)
         p["language"]=(r.get("primaryLanguage") or {}).get("name")
-        p["install"]=install_cmd(((r.get("rm") or {}).get("text") or ""), p["link"])
+        # Keep hand-maintained install lines on non-crawled listings (maker edits).
+        cmd=install_cmd(((r.get("rm") or {}).get("text") or ""), p["link"])
+        crawl={name for name,_,_ in SOURCES}
+        if not (p.get("source") not in crawl and p.get("install")):
+          p["install"]=cmd
   print(f"stars refreshed for {n}/{len(items)} repos")
 def main():
   path=os.path.join(ROOT,"data","plugins.json")

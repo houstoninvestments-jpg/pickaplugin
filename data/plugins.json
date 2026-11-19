@@ -5853,7 +5853,7 @@
  {
   "slug": "kling-ai",
   "name": "Kling AI",
-  "description": "Official Kling AI plugin for Codex and ChatGPT: connects to Kling's hosted image and video generation tools, with an agent skill for the creation workflow. Needs a Kling account (browser sign-in); generation uses paid Kling credits.",
+  "description": "Official Kling AI plugin for Codex and ChatGPT: connects to Kling's hosted image and video generation tools, with an agent skill for the creation workflow. Each region uses its own account and credits (kling.ai global, or klingai.com in China); generation consumes credits.",
   "maker": "Kling AI",
   "link": "https://github.com/klingai-dev/chatgpt-plugin",
   "category": "Design & Frontend",
@@ -5862,8 +5862,9 @@
   "source_section": "Maker submission",
   "first_seen": "2026-11-16",
   "featured": false,
-  "install": "codex plugin marketplace add https://github.com/klingai-dev/chatgpt-plugin.git --ref main",
+  "install": "Codex marketplace:\ncodex plugin marketplace add https://github.com/klingai-dev/chatgpt-plugin.git --ref main\n\nOfficial npm packages (choose the package for your account region). Setup guide: https://kling.ai/app/mcp/guide\n\nGlobal (kling.ai account) — Plugin:\nnpm i -g @klingai/plugin-global@latest --registry=https://registry.npmjs.org --allow-scripts=@klingai/plugin-global\n\nGlobal (kling.ai account) — CLI:\nnpm i -g @klingai/cli-global\n\nChina (klingai.com account) — Plugin:\nnpm i -g @klingai/plugin-cn@latest --registry=https://registry.npmjs.org --allow-scripts=@klingai/plugin-cn\n\nChina (klingai.com account) — CLI:\nnpm i -g @klingai/cli-cn --registry=https://registry.npmjs.org",
   "homepage": "https://kling.ai/mcp/plugin",
+  "docs": "https://kling.ai/app/mcp/guide",
   "stars": 1,
   "stars_checked": "2026-11-19",
   "pushed_at": "2026-11-19",
@@ -10253,6 +10254,22 @@
   "license": "Apache-2.0",
   "language": "Python",
   "install": "/plugin marketplace add f0d010c/stark"
+ },
+ {
+  "slug": "starpop",
+  "name": "Starpop MCP",
+  "description": "Remote MCP server that connects ChatGPT, Claude, Gemini, Grok, Codex or Claude Code to Starpop so the agent can create images, videos, voiceovers and music for your brands. The MCP is included on every plan, including the free plan; connecting and chatting are free, and generated media uses your normal Starpop credits. Sign-in is browser OAuth, with no API key.",
+  "maker": "Starpop",
+  "link": "https://starpop.ai",
+  "category": "Design & Frontend",
+  "source": "editor-added",
+  "source_url": "https://starpop.ai/docs/integrations/mcp",
+  "source_section": "Maker submission",
+  "first_seen": "2026-11-19",
+  "featured": false,
+  "install": "claude mcp add --scope user --transport http starpop https://starpop.ai/api/mcp\ncodex mcp add starpop --url https://starpop.ai/api/mcp",
+  "homepage": "https://starpop.ai",
+  "docs": "https://starpop.ai/docs/integrations/mcp"
  },
  {
   "slug": "stata-research-guard",
