@@ -5657,6 +5657,28 @@
   "language": null
  },
  {
+  "slug": "ipgeolocation-io-mcp",
+  "name": "IPGeolocation.io MCP Server",
+  "description": "Official IPGeolocation.io MCP server, available hosted or locally, for IP geolocation, company information, ASN and network data, IP security checks (including VPN, proxy and Tor detection), abuse contacts, time zones, astronomy, currency data and user-agent parsing. A free or paid API key is required for API tools; your existing plan and credit rules apply. Hosted MCP uses Streamable HTTP; the local package needs Node.js 22 or later.",
+  "maker": "IPGeolocation",
+  "link": "https://github.com/IPGeolocation/ipgeolocation-io-mcp",
+  "category": "Data & Backend",
+  "source": "editor-added",
+  "source_url": "https://github.com/IPGeolocation/ipgeolocation-io-mcp",
+  "source_section": "Maker submission",
+  "first_seen": "2026-11-20",
+  "featured": false,
+  "stars": 6,
+  "stars_checked": "2026-11-20",
+  "archived": false,
+  "pushed_at": "2026-11-20",
+  "license": "MIT",
+  "language": "JavaScript",
+  "install": "Hosted MCP (Streamable HTTP). Use an IPGeolocation.io API key (free or paid; plan and credit rules apply) in the X-IPGeolocation-API-Key header:\nhttps://mcp.ipgeolocation.io/mcp\n\nLocal (Codex), Node.js 22+:\ncodex mcp add ipgeolocation --env \"IPGEOLOCATION_API_KEY=$IPGEOLOCATION_API_KEY\" -- npx -y ipgeolocation-io-mcp@latest",
+  "homepage": "https://ipgeolocation.io",
+  "docs": "https://github.com/IPGeolocation/ipgeolocation-io-mcp"
+ },
+ {
   "slug": "jeeves",
   "name": "Jeeves",
   "description": "Claude Code plugin for long tasks: before the context fills it writes a verified handover, clears the conversation and continues your task fresh. Local only, no API key.",
@@ -6046,7 +6068,7 @@
   "source_section": "Maker submission",
   "first_seen": "2026-11-16",
   "featured": false,
-  "install": "Codex marketplace:\ncodex plugin marketplace add https://github.com/klingai-dev/chatgpt-plugin.git --ref main\n\nOfficial npm packages (choose the package for your account region). Setup guide: https://kling.ai/app/mcp/guide\n\nGlobal (kling.ai account) — Plugin:\nnpm i -g @klingai/plugin-global@latest --registry=https://registry.npmjs.org --allow-scripts=@klingai/plugin-global\n\nGlobal (kling.ai account) — CLI:\nnpm i -g @klingai/cli-global\n\nChina (klingai.com account) — Plugin:\nnpm i -g @klingai/plugin-cn@latest --registry=https://registry.npmjs.org --allow-scripts=@klingai/plugin-cn\n\nChina (klingai.com account) — CLI:\nnpm i -g @klingai/cli-cn --registry=https://registry.npmjs.org",
+  "install": "Codex marketplace (Global / main branch):\ncodex plugin marketplace add https://github.com/klingai-dev/chatgpt-plugin.git --ref main\ncodex plugin add kling-ai@kling-ai\n\nOfficial npm packages (choose the package for your account region). Setup guide: https://kling.ai/app/mcp/guide\n\nGlobal (kling.ai account) — Plugin:\nnpm i -g @klingai/plugin-global@latest --registry=https://registry.npmjs.org --allow-scripts=@klingai/plugin-global\n\nGlobal (kling.ai account) — CLI:\nnpm i -g @klingai/cli-global\n\nChina (klingai.com account) — Plugin:\nnpm i -g @klingai/plugin-cn@latest --registry=https://registry.npmjs.org --allow-scripts=@klingai/plugin-cn\n\nChina (klingai.com account) — CLI:\nnpm i -g @klingai/cli-cn --registry=https://registry.npmjs.org",
   "homepage": "https://kling.ai/mcp/plugin",
   "docs": "https://kling.ai/app/mcp/guide",
   "stars": 1,
@@ -10633,7 +10655,7 @@
   "description": "Research public crypto trader wallets, token holders, and on-chain trade flow through a hosted OAuth MCP with metered account credits and optional price alerts that require confirmation.",
   "maker": "StalkC",
   "link": "https://github.com/StalkC/stalkchain-plugin",
-  "category": "Other",
+  "category": "Data & Backend",
   "source": "awesome-codex-plugins",
   "source_url": "https://github.com/hashgraph-online/awesome-codex-plugins",
   "source_section": "Community list",
@@ -10645,7 +10667,7 @@
   "pushed_at": "2026-11-19",
   "license": "MIT",
   "language": null,
-  "install": "/plugin marketplace add StalkC/stalkchain-plugin"
+  "install": "codex plugin marketplace add StalkC/stalkchain-plugin\ncodex plugin add stalkchain@stalkchain"
  },
  {
   "slug": "stark",

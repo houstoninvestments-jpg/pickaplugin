@@ -24,7 +24,7 @@ OVERRIDES = {  # manual fixes where keyword rules misfire
  "data-product-builder-for-dbt":"Data & Backend","contam-tools":"Industry Tools","bgs-modding-superpowers":"Industry Tools",
  "car-rental-business-skills":"Industry Tools","clera":"Industry Tools","burpsuite-mcp-bridge":"Security & Governance",
  "darkmoon":"Security & Governance","damnpdfs":"Docs, Content & SEO","alcove":"Memory & Context","codex-how-to":"Agent Workflows",
- "chatgpt-agent":"Review & Testing","agent-harness-skills":"Agent Workflows","computer-usage-summary":"Data & Backend",
+ "chatgpt-agent":"Review & Testing","agent-harness-skills":"Agent Workflows","computer-usage-summary":"Data & Backend","stalkchain":"Data & Backend",
  "aiboarding":"Agent Workflows","aident-loadout":"Agent Workflows","codex-tools-bridge":"Agent Workflows","cometchat":"Messaging & Remote",
 }
 def cat(t, s=""):
@@ -75,10 +75,16 @@ def add_stars(out, old):
         p["pushed_at"]=(r.get("pushedAt") or "")[:10] or None
         li=r.get("licenseInfo") or {}; p["license"]=(li.get("spdxId") if li.get("spdxId") not in (None,"NOASSERTION") else None)
         p["language"]=(r.get("primaryLanguage") or {}).get("name")
-        # Keep hand-maintained install lines on non-crawled listings (maker edits).
+        # Keep hand-maintained install text (maker edits). Non-crawled listings
+        # keep any existing install. Crawled listings keep a multi-line install
+        # block, so a two-step Codex marketplace + add command is not replaced
+        # by the first matching README line.
         cmd=install_cmd(((r.get("rm") or {}).get("text") or ""), p["link"])
         crawl={name for name,_,_ in SOURCES}
-        if not (p.get("source") not in crawl and p.get("install")):
+        keep = bool(p.get("install")) and (
+            p.get("source") not in crawl or "\n" in str(p.get("install"))
+        )
+        if not keep:
           p["install"]=cmd
   print(f"stars refreshed for {n}/{len(items)} repos")
 def main():
