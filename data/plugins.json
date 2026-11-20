@@ -791,6 +791,22 @@
   "install": "/plugin marketplace add epicsagas/plugins"
  },
  {
+  "slug": "alpy-mcp",
+  "name": "Alpy MCP",
+  "description": "Gives Claude, Codex, Cursor and Figma a design system and 34 UI and UX design skills, so AI-built websites, landing pages and apps follow one consistent style instead of generic defaults. Remote MCP server plus official Claude and Codex plugins, with React and Vue components and web design styles.",
+  "maker": "Hakan Ertan (Alpy)",
+  "link": "https://alpymcp.com/mcp-overview",
+  "category": "Design & Frontend",
+  "source": "editor-added",
+  "source_url": "https://alpymcp.com/mcp-overview",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-20",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-20",
+  "install": "https://www.alpymcp.com/alpy-mcp"
+ },
+ {
   "slug": "amazon-249-byte-search-terms-optimizer",
   "name": "Amazon 249-Byte Search Terms Optimizer",
   "description": "Optimize Amazon Seller Central backend search terms within 249 UTF-8 bytes, sanitize listing HTML, and format Rufus AI copy.",
@@ -1172,6 +1188,22 @@
   "install": "/plugin marketplace add awss1i/assay"
  },
  {
+  "slug": "astor-mcp",
+  "name": "Astor MCP",
+  "description": "Use Astor, the personal investing agent, inside ChatGPT, Claude or any MCP client: ask about your portfolio, holdings and the market where you already chat. The assistant can only explain and analyze; it cannot place trades or move money. Official ChatGPT plugin plus a remote MCP server.",
+  "maker": "Astor",
+  "link": "https://www.astor.app/mcp",
+  "category": "Industry Tools",
+  "source": "editor-added",
+  "source_url": "https://www.astor.app/mcp",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-20",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-20",
+  "install": null
+ },
+ {
   "slug": "atomlane",
   "name": "AtomLane",
   "description": "Parallelizes only work proven safe by compiling resource-aware atomic plans for builds, tests, Make/Compose workflows, and long-running jobs with live progress and measured savings.",
@@ -1403,6 +1435,22 @@
   "archived": false,
   "stars_checked": "2026-11-18",
   "install": null
+ },
+ {
+  "slug": "bereach-linkedin-mcp",
+  "name": "BeReach LinkedIn MCP",
+  "description": "LinkedIn prospecting from your agent: the BeReach MCP server and six Claude skills let Claude, Claude Code, Codex, Cursor or ChatGPT find buyers, sort them into personas, write invitations, first messages and follow-ups in your voice, and track acceptance and replies. Paid service with a 14-day trial.",
+  "maker": "BeReach",
+  "link": "https://bereach.ai/linkedin-mcp",
+  "category": "Industry Tools",
+  "source": "editor-added",
+  "source_url": "https://bereach.ai/linkedin-mcp",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-20",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-20",
+  "install": "https://mcp.bereach.ai/mcp"
  },
  {
   "slug": "bestprice",
@@ -1833,6 +1881,22 @@
   "license": null,
   "language": "Python",
   "install": null
+ },
+ {
+  "slug": "cadenzova-mcp",
+  "name": "Cadenzova MCP",
+  "description": "MCP server for Cadenzova, the AI social media planner: Claude, ChatGPT, Cursor or any MCP client can read your brand, products, calendar and results, then plan, write and schedule posts for Instagram, TikTok, Pinterest, YouTube Shorts, X and LinkedIn, with read-only, approve-first or autopilot access.",
+  "maker": "Glenn Thomas (Cadenzova)",
+  "link": "https://www.cadenzova.com",
+  "category": "Docs, Content & SEO",
+  "source": "editor-added",
+  "source_url": "https://www.cadenzova.com",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-20",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-20",
+  "install": "https://mcp.cadenzova.com/mcp"
  },
  {
   "slug": "call-e",
@@ -6350,6 +6414,22 @@
   "install": "npx skills add LienDeadline/skills"
  },
  {
+  "slug": "lightningchart-mcp",
+  "name": "LightningChart MCP Server",
+  "description": "Official MCP server and Agent Skill for LightningChart .NET: points Claude, Codex, Cursor, Windsurf and other agents at an LLM-optimized index of the official charting docs plus a hand-written common-mistakes list, so they stop hallucinating LightningChart APIs.",
+  "maker": "LightningChart",
+  "link": "https://lightningchart.com/net-charts/docs/lightningchart-and-ai/",
+  "category": "Design & Frontend",
+  "source": "editor-added",
+  "source_url": "https://lightningchart.com/net-charts/docs/lightningchart-and-ai/",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-20",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-20",
+  "install": "npx -y @lightningchart/dotnet-mcp-server@latest"
+ },
+ {
   "slug": "linkedin-skills",
   "name": "LinkedIn Skills",
   "description": "Codex-ready LinkedIn marketing bundle with a native .codex-plugin manifest and 10 skills: post writing with 16 tested hook formulas, AI-tell humanizer, pre-publish audit, comment and reply drafting, hook extraction, content planning, profile optimization, engager analytics, and thread monitoring; also works in Claude Code.",
@@ -8265,6 +8345,26 @@
   "install": null
  },
  {
+  "slug": "pocket-design-mcp",
+  "name": "Pocket Design MCP",
+  "description": "Free MCP server that gives coding agents icons, fonts, images, components (shadcn/ui, React Bits, Motion Primitives), easings, contrast checks, SVG optimization and color palettes, and points to official MCPs like Figma or Supabase where they exist.",
+  "maker": "Jason Mello",
+  "link": "https://github.com/jasonmello/pocket-design-mcp",
+  "category": "Design & Frontend",
+  "source": "editor-added",
+  "source_url": "https://github.com/jasonmello/pocket-design-mcp",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-20",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-20",
+  "install": null,
+  "stars": 8,
+  "pushed_at": "2026-11-20",
+  "license": "Apache-2.0",
+  "language": "TypeScript"
+ },
+ {
   "slug": "podchapters-mcp",
   "name": "PodChapters MCP",
   "description": "PodChapters API and MCP server: Claude, ChatGPT or Cursor can add podcast episodes, transcribe them, generate and edit chapters, manage presets and export chapters in every format (40 operations, OAuth or API key).",
@@ -8891,6 +8991,22 @@
   "featured": false
  },
  {
+  "slug": "reactvision-mcp",
+  "name": "ReactVision MCP",
+  "description": "Remote MCP server that connects Claude, Claude Code, Cursor, Codex and Windsurf to the ReactVision XR stack: live ViroReact APIs, scene validation, asset generation, and render testing that shows your AR or VR code inside a recorded real room, with diagnostics, before you pick up a device.",
+  "maker": "ReactVision",
+  "link": "https://www.reactvision.xyz/mcp/",
+  "category": "Design & Frontend",
+  "source": "editor-added",
+  "source_url": "https://www.reactvision.xyz/mcp/",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-20",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-20",
+  "install": null
+ },
+ {
   "slug": "read-image",
   "name": "Read Image",
   "description": "Read local images, videos, web pages, and Windows screenshots through Doubao, GLM, or Qwen-compatible vision APIs.",
@@ -9062,6 +9178,22 @@
   "license": "MIT",
   "language": "JavaScript",
   "install": "codex plugin marketplace add DitriXNew/rekall"
+ },
+ {
+  "slug": "relevan",
+  "name": "Relevan",
+  "description": "Agentic search over your own data: load records, products or profiles into a managed index whose ranking tunes itself from every search your agents run. Hosted MCP server, Claude Code and Codex plugins, a ChatGPT connector and a Python SDK. Free tier; Hobby $20/mo.",
+  "maker": "Relevan",
+  "link": "https://relevan.dev",
+  "category": "Data & Backend",
+  "source": "editor-added",
+  "source_url": "https://relevan.dev",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-20",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-20",
+  "install": "https://api.relevan.dev/v1/mcp"
  },
  {
   "slug": "remotion-plugin",
@@ -10146,6 +10278,26 @@
   "license": "Apache-2.0",
   "language": "Go",
   "install": "claude mcp add --transport http skycloak https://mcp.skycloak.io"
+ },
+ {
+  "slug": "slide-anki-mcp",
+  "name": "slide-anki-mcp",
+  "description": "MCP server that turns lecture PDFs into Anki cards and rejects any answer the cited slide does not support, so study decks stay grounded in the source. Works best with text PDFs; optional OCR for scanned slides on Windows.",
+  "maker": "Meshari Alrubayan",
+  "link": "https://github.com/2Mesh/slide-anki-mcp",
+  "category": "Docs, Content & SEO",
+  "source": "editor-added",
+  "source_url": "https://github.com/2Mesh/slide-anki-mcp",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-20",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-20",
+  "install": "pip install slide-anki-mcp",
+  "stars": 11,
+  "pushed_at": "2026-11-19",
+  "license": "MIT",
+  "language": "Python"
  },
  {
   "slug": "smart-glasses-skills",
@@ -11564,6 +11716,26 @@
   "stars_checked": "2026-10-28",
   "pushed_at": "2026-10-27",
   "language": null
+ },
+ {
+  "slug": "tryhard",
+  "name": "tryhard",
+  "description": "Codex plugin that makes GPT-6.2 Astra and Sol finish the job: it writes a brief with a review bar, builds the whole thing, uses it for real, has a fresh subagent judge it READY or NOT READY, fixes what is confirmed and reports plainly. Optional AGENTS.md block keeps the loop on every turn.",
+  "maker": "Abhishek Barali",
+  "link": "https://github.com/AbhishekBarali/tryhard",
+  "category": "Agent Workflows",
+  "source": "editor-added",
+  "source_url": "https://github.com/AbhishekBarali/tryhard",
+  "source_section": "Editor-added",
+  "first_seen": "2026-11-20",
+  "featured": false,
+  "archived": false,
+  "stars_checked": "2026-11-20",
+  "install": "codex plugin marketplace add AbhishekBarali/tryhard",
+  "stars": 12,
+  "pushed_at": "2026-11-19",
+  "license": "MIT",
+  "language": "Python"
  },
  {
   "slug": "tweetapi",

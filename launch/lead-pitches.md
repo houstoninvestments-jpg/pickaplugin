@@ -660,3 +660,47 @@ I'll be straight: we're new and traffic is still small. That's why the first 10 
 No pressure, the listing stays either way.
 
 Aaron
+
+## 2026-11-20
+
+### 1. Alpy, Alpy MCP
+To: info@alpymcp.com (listed on https://alpymcp.com; founder X @hakan_ertann)
+Subject: Alpy MCP is on PickAPlugin
+
+Hey Hakan,
+
+Saw the official Claude and Codex plugins go live today. A design system plus design skills that agents can actually use is exactly the kind of thing people browse for, so I added Alpy MCP to PickAPlugin (650+ Codex, ChatGPT and Claude plugins, skills and MCP servers) as a free listing: https://pickaplugin.com/p/alpy-mcp
+
+Honest heads-up: we're new and traffic is still small, so this is a cheap extra placement, not a big-reach play. The first 10 makers get a founding featured spot (top of Design & Frontend, the homepage, and a newsletter mention) at $29/mo for life instead of the regular $49, with a 7-day free trial: https://buy.stripe.com/7sY6oG0A9bUbdX7eW1cQU06
+
+No pressure, the free listing stays either way. If anything on the page is off, reply and I'll fix it.
+
+Aaron
+
+### 2. Astor, Astor MCP
+To: founders@astor.app (listed on https://www.astor.app/contact; also support@ and press@; X @brunokoba_ / @astorinvest)
+Subject: Astor MCP is listed on PickAPlugin
+
+Hi Bruno and the Astor team,
+
+Congrats on Astor Connectors. Being able to ask about a portfolio from ChatGPT or Claude, with the assistant only explaining and never placing a trade, is a careful setup, so I listed Astor MCP on PickAPlugin, a directory of 650+ agent plugins and MCP servers, for free: https://pickaplugin.com/p/astor-mcp
+
+To be upfront, we're a young directory and traffic is still modest, so you clearly don't need us for reach. If a small extra spot is useful while the connectors are new, the first 10 makers get a featured placement (homepage + Industry Tools + a newsletter mention) at $29/mo for life, first 7 days free: https://buy.stripe.com/7sY6oG0A9bUbdX7eW1cQU06
+
+Totally optional. Happy to tweak the listing if you want different wording.
+
+Aaron
+
+### 3. Cadenzova, Cadenzova MCP
+To: support@cadenzova.com (listed on https://www.cadenzova.com; founder X @GlennThomas_)
+Subject: Cadenzova's MCP server is on PickAPlugin
+
+Hi Glenn,
+
+Saw the MCP server for Cadenzova this week. Letting Claude or ChatGPT plan and write posts with read-only, approve-first or autopilot access is a nice clean setup, so I added it to PickAPlugin as a free listing: https://pickaplugin.com/p/cadenzova-mcp
+
+I'll be straight: we're new and traffic is still small. That's why the first 10 makers get a founding featured spot (top of Docs, Content & SEO + the homepage + a newsletter mention) at $29/mo for life versus $49/mo later, with a 7-day free trial: https://buy.stripe.com/7sY6oG0A9bUbdX7eW1cQU06
+
+No pressure, the listing stays either way.
+
+Aaron
