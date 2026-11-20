@@ -280,12 +280,72 @@
    "date": "2026-11-19",
    "time": "2026-11-19T10:42:55",
    "id": "01a1f51e-7301-7ee2-92f2-dabb5c44b986"
+  },
+  {
+   "to": "info@alpymcp.com",
+   "slugs": [
+    "alpy-mcp"
+   ],
+   "subject": "Free badge for Alpy MCP on PickAPlugin",
+   "date": "2026-11-20",
+   "time": "2026-11-20T10:38:15",
+   "id": "01a1fa40-864a-7831-8670-50a36282dfaf"
+  },
+  {
+   "to": "founders@astor.app",
+   "slugs": [
+    "astor-mcp"
+   ],
+   "subject": "Free badge for Astor MCP on PickAPlugin",
+   "date": "2026-11-20",
+   "time": "2026-11-20T10:38:15",
+   "id": "01a1fa40-8972-753a-b709-31631d4bca0b"
+  },
+  {
+   "to": "support@cadenzova.com",
+   "slugs": [
+    "cadenzova-mcp"
+   ],
+   "subject": "Free badge for Cadenzova MCP on PickAPlugin",
+   "date": "2026-11-20",
+   "time": "2026-11-20T10:38:16",
+   "id": "01a1fa40-8c95-77a7-8688-10fb35f07a9f"
+  },
+  {
+   "to": "lightningchart@lightningchart.com",
+   "slugs": [
+    "lightningchart-mcp"
+   ],
+   "subject": "Free badge for LightningChart MCP Server on PickAPlugin",
+   "date": "2026-11-20",
+   "time": "2026-11-20T10:38:17",
+   "id": "01a1fa40-8fbd-7778-a25a-fb04eb718835"
+  },
+  {
+   "to": "sales@relevan.dev",
+   "slugs": [
+    "relevan"
+   ],
+   "subject": "Free badge for Relevan on PickAPlugin",
+   "date": "2026-11-20",
+   "time": "2026-11-20T10:38:18",
+   "id": "01a1fa40-92f6-7287-8b3f-84cc5765b676"
+  },
+  {
+   "to": "ben@berea.ch",
+   "slugs": [
+    "bereach-linkedin-mcp"
+   ],
+   "subject": "Free badge for BeReach LinkedIn MCP on PickAPlugin",
+   "date": "2026-11-20",
+   "time": "2026-11-20T10:38:19",
+   "id": "01a1fa40-962f-7d61-80d5-fc68487d24c0"
   }
  ],
  "skipped": [],
  "last_run": {
-  "date": "2026-11-19",
-  "sent": 7,
+  "date": "2026-11-20",
+  "sent": 6,
   "errors": [],
   "remaining_ready": 0,
   "deferred": [
@@ -540,6 +600,18 @@
    {
     "to": "team@nostairsplease.com",
     "eligible": "2026-12-01"
+   },
+   {
+    "to": "hello@valuedge.app",
+    "eligible": "2026-12-04"
+   },
+   {
+    "to": "nexscope123@gmail.com",
+    "eligible": "2026-12-04"
+   },
+   {
+    "to": "runbo@magichour.ai",
+    "eligible": "2026-12-04"
    }
   ]
  }
