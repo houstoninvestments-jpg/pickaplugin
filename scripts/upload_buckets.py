@@ -22,7 +22,7 @@ _RK = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 
 if os.path.exists(_RK): EXTRA.append({"type": "secret_text", "name": "RESEND_KEY", "text": open(_RK).read().strip()})
 else: print("WARNING: .secrets/resend_api_key missing, newsletter confirmation emails will fail")
 js = open('worker/index.js').read().strip()
-meta = {"main_module": "index.js", "compatibility_date": "2026-10-01", "assets": {"jwt": comp, "config": {"html_handling": "auto-trailing-slash", "not_found_handling": "404-page", "run_worker_first": ["/p/*", "/advertise", "/advertise.html", "/advertise/", "/go/*"]}}, "bindings": [{"type": "assets", "name": "ASSETS"}] + EXTRA}
+meta = {"main_module": "index.js", "compatibility_date": "2026-10-01", "assets": {"jwt": comp, "config": {"html_handling": "auto-trailing-slash", "not_found_handling": "404-page", "run_worker_first": ["/p/*", "/advertise", "/advertise.html", "/advertise/", "/go/*", "/best/*", "/compare/*", "/alternatives/*", "/best-for/*", "/tools/mcp-config-converter/*"]}}, "bindings": [{"type": "assets", "name": "ASSETS"}] + EXTRA}
 # Durable Object migration v1 (class Stats) is sent only if the live script doesn't have it yet.
 open('/workspace/code2.js', 'w').write('''async () => { const meta=%s; const js=%s; const b="F"+Date.now();
 const cur=(await cloudflare.request({method:"GET",path:`/accounts/${accountId}/workers/scripts`})).result.find(x=>x.id==="pickaplugin");

@@ -1,7 +1,21 @@
-# Executed at the end of build.py (shares its namespace: P, D, layout, e, slug, cats, PICKS, PAIRS, ...).
-# Per-page title overrides from Search Console (one change per page; log each in launch/seo-log.md)
-_BEST_TITLE={"data-backend":"Best backend & database plugins for OpenAI Codex and ChatGPT ({n} ranked) — PickAPlugin"}
-# Writes /best, /compare, /privacy, /terms, robots.txt, sitemap.xml, the IndexNow key file, then rewrites
+# Executed at the end of build.py (shares its namespace: P, D, layout, e, slug, cats, PICKS, ...).
+# Per-page title overrides from Search Console (one change per page; log each in launch/seo-log.md).
+#
+# Indexability rules (2026-11-21 thin-page cleanup). Do not reintroduce generated URL batches.
+# INDEX: home, /p/*, /c/* (category hubs; old /best/<cat> 301 here), guides, real tool pages,
+#   language/license pages that pass the gate, about, faq, research, blog articles, advertise,
+#   submit, featured, mcp-server, privacy, terms, changelog, badge, the /compare hub, the
+#   /alternatives directory page, languages, licenses, reports, newsletter, black-friday.
+# NOINDEX (and omitted from the sitemap): thank-you/form pages (claimed, confirm, confirmed,
+#   subscribed, unsubscribed, form-error).
+# 301 via worker/index.js (and run_worker_first in wrangler.toml / upload_buckets.py):
+#   /best/<cat> -> /c/<cat>
+#   /compare/<a>-vs-<b> -> /compare
+#   /alternatives/<slug> -> /p/<slug>
+#   /best-for/<use> -> /compare
+#   /tools/mcp-config-converter/<pair> -> /tools/mcp-config-converter
+# lastmod only moves when a page's substantive content changes (see _sig below, commit 78f80ca).
+# Writes /privacy, /terms, robots.txt, sitemap.xml, the IndexNow key file, then rewrites
 # every page to clean URLs and adds canonical / Open Graph / JSON-LD tags.
 import glob as _glob, posixpath as _pp, datetime as _dt, json as _json
 SITE="https://pickaplugin.com"; INDEXNOW_KEY="6375d5cb89838413d1e117374c6ce038"
@@ -12,50 +26,7 @@ def srow(p,i):
   if p.get("archived"): tags.append("Archived on GitHub")
   t=f' <span class=vchk style="color:var(--acc);border-color:var(--acc)">{" · ".join(tags)}</span>' if tags else ""
   return f'<a class=row href="../p/{p["slug"]}.html"><span class="no mono">#{i}</span><span><h3>{e(p["name"])}{t}</h3><p>{e(p["description"])}</p></span><span class="c mono">★ {fmt(stars(p))} · by {e(p["maker"])}</span></a>'
-INTRO={
-"Agent Workflows":"This is the busiest shelf: tools that split work across several agents, enforce a plan-then-build loop, or wrap a whole delivery process. Look for ones that write their plan to files you can read, because that's what makes a long run debuggable.",
-"Memory & Context":"These plugins try to give an agent something it lacks by default: memory that survives the session. Check where each one stores what it remembers (local files vs a hosted service) before you trust it with a real codebase.",
-"Security & Governance":"Secret scanning, policy hooks, pentest helpers and guardrails. An agent with shell access can read more than you think, so this shelf is worth a look before anything else.",
-"Review & Testing":"Plugins that review diffs, write or run tests, or check an agent's work before you merge it. Most are prompts plus scripts, so read what they run.",
-"Messaging & Remote":"Ways to reach an agent, or be reached by one, from a phone, Slack, Telegram or Discord. Several route through hosted services, so check what leaves your machine.",
-"Design & Frontend":"UI, CSS, image and front-end helpers. Quality varies a lot here, so the project's own screenshots are the best quick signal.",
-"Docs, Content & SEO":"Writing, PDFs, transcripts, translation and SEO tooling for agents.",
-"Data & Backend":"Database, analytics, dbt and observability helpers. Be careful about giving any of these credentials to production systems.",
-"Deploy & DevOps":"Deploys, containers, git hosting and publishing. These touch real infrastructure, so start them on a test project.",
-"Usage & Quotas":"Small tools that show how much of your plan or rate limit an agent has used, and when it resets.",
-"Industry Tools":"Niche plugins for specific trades and businesses, from CAD to legal research.",
-}
-os.makedirs(D+"/best",exist_ok=True); os.makedirs(D+"/compare",exist_ok=True)
-for c in cats:
-  items=sorted([p for p in P if p["category"]==c],key=rankkey)
-  checked=max((p.get("stars_checked") or "" for p in items),default="")
-  top=items[0] if items else None
-  cmp="".join(f'<li><a href="../compare/{cslug(a,b2)}.html">{e(a["name"])} vs {e(b2["name"])}</a></li>' for a,b2 in (CMP_PAIRS if "CMP_PAIRS" in dir() else PAIRS) if a["category"]==c)
-  _alt=[p for p,_ in ALT_PAGES if p["category"]==c] if "ALT_PAGES" in dir() else []
-  if _alt: cmp+='<li>Alternatives to: '+", ".join(f'<a href="../alternatives/{p["slug"]}.html">{e(p["name"])}</a>' for p in _alt[:10])+' · <a href="../compare.html">all comparisons</a></li>'
-  b=f'''<div class=prose style="max-width:900px;padding-bottom:10px"><span class=mono style="color:var(--acc)">Ranked by public signals · not tested by us</span><h1>The best {e(c)} plugins for ChatGPT &amp; Codex</h1>
-<p style="font-size:19px">{len(items)} plugins in our {e(c)} shelf ({e(BLURB.get(c,""))}), ordered by what we can actually measure: our editor's picks first, then GitHub stars{f" (checked {checked})" if checked else ""}. Archived repos go to the bottom.</p>
-<p>{e(INTRO.get(c,""))}</p>
-<p style="color:var(--mute)">Stars measure popularity, not quality or safety. We haven't installed or audited these; every description is the project's own. Read the code before you install anything. Paid placements never affect this order.</p>
-{f"<p>Most-starred right now: <a href='../p/{top['slug']}.html'><b>{e(top['name'])}</b></a> by {e(top['maker'])}.</p>" if top else ""}
-{f"<h3>Head-to-head</h3><ul class=where>{cmp}</ul>" if cmp else ""}<p><a href="../c/{slug(c)}.html">← Browse the {e(c)} shelf</a></p></div>
-<div>{"".join(srow(p,i+1) for i,p in enumerate(items))}</div>'''
-  _t=_BEST_TITLE.get(slug(c),"Best {c} plugins for ChatGPT & Codex ({n} ranked) — PickAPlugin").format(c=c,n=len(items))
-  open(f"{D}/best/{slug(c)}.html","w").write(layout(_t,b,1,f"The {len(items)} {c} plugins for ChatGPT and Codex in our catalog, ranked by editor's picks and GitHub stars. No paid ordering."))
-for a,b2 in PAIRS:
-  if cslug(a,b2) in globals().get("CMP_SLUGS",set()): continue
-  def cell(p): return f'<td style="padding:10px;vertical-align:top;border-bottom:1px solid var(--rule)">'
-  rows=[("What it says it does",lambda p:e(p["description"])),("Maker",lambda p:e(p["maker"])),("GitHub stars",lambda p:fmt(stars(p))+(f' <span class=mono>(checked {p.get("stars_checked")})</span>' if p.get("stars_checked") else "")),
-        ("Archived",lambda p:"Yes" if p.get("archived") else "No"),("Editor's pick",lambda p:"Yes — "+e(PICKS[p["slug"]]) if p["slug"] in PICKS else "No"),
-        ("In our catalog since",lambda p:p["first_seen"]),("Source",lambda p:f'<a href="{e(p["link"])}" rel="nofollow noopener">{e(p["link"].replace("https://",""))}</a>'),("Our page",lambda p:f'<a href="../p/{p["slug"]}.html">{e(p["name"])} →</a>')]
-  tbl="".join(f'<tr><th class=mono style="text-align:left;padding:10px;vertical-align:top;border-bottom:1px solid var(--rule);width:170px">{k}</th>{cell(a)}{f(a)}</td>{cell(b2)}{f(b2)}</td></tr>' for k,f in rows)
-  more=a if stars(a)>=stars(b2) else b2
-  body=f'''<div class=prose style="max-width:980px"><span class=mono style="color:var(--acc)">Compare · {e(a["category"])}</span><h1>{e(a["name"])} vs {e(b2["name"])}</h1>
-<p style="font-size:19px">Two {e(a["category"])} plugins that describe overlapping jobs. Here's what each project says about itself and the public numbers, side by side.</p>
-<table style="width:100%;border-collapse:collapse;border-top:3px solid var(--ink);margin-top:20px"><tr><th></th><th style="text-align:left;padding:10px;font:600 22px Fraunces,serif">{e(a["name"])}</th><th style="text-align:left;padding:10px;font:600 22px Fraunces,serif">{e(b2["name"])}</th></tr>{tbl}</table>
-<h3>So which one?</h3><p>We haven't run both, so we won't pick a winner. On public signals, <b>{e(more["name"])}</b> has more GitHub stars, which tells you more people have looked at it, not that it's better for you. Read both READMEs, check recent commits, and read the code before installing.</p>
-<p><a href="../best/{slug(a["category"])}.html">See every {e(a["category"])} plugin, ranked →</a></p></div>'''
-  open(f"{D}/compare/{cslug(a,b2)}.html","w").write(layout(f"{a['name']} vs {b2['name']}: {a['category']} plugins compared — PickAPlugin",body,1,f"{a['name']} vs {b2['name']}: what each {a['category']} plugin for ChatGPT/Codex says it does, GitHub stars, maker and source, side by side."))
+
 open(D+"/privacy.html","w").write(layout("Privacy — PickAPlugin",f"""<div class=prose><span class=mono style="color:var(--acc)">Plain English</span><h1>Privacy</h1>
 <p>PickAPlugin is a catalog of ChatGPT and Codex plugins, run by Aaron Houston. This page says what data the site touches and why. Questions: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
 <h3>Browsing</h3><p>You don't need an account and we don't set cookies. We don't run ad trackers. The site is hosted on Cloudflare, which processes standard request data (like IP address, browser and the page requested) to serve and protect the site. Fonts load from Google Fonts, so Google sees those requests too. Links to plugin projects take you to GitHub or other sites with their own policies.</p>
@@ -68,7 +39,7 @@ open(D+"/terms.html","w").write(layout("Terms — PickAPlugin",f"""<div class=pr
 <h3>The catalog</h3><p>Listings come from public sources and each project's own description. We don't test, audit or endorse the plugins, and rankings use public signals like GitHub stars. Install anything at your own risk and read the code first. PickAPlugin isn't affiliated with, endorsed by, or sponsored by OpenAI. ChatGPT and Codex are trademarks of OpenAI, and project names belong to their owners. Makers can ask for corrections or removal at any time.</p>
 <h3>Paid placements</h3><ul class=where><li>Payments go through Stripe. Monthly placements renew each month until you cancel.</li>
 <li>Cancel anytime by emailing <a href="mailto:{EMAIL}">{EMAIL}</a>. Your placement stays up until the end of the period you've paid for. We don't give partial refunds for unused time.</li>
-<li>Every paid placement is labelled. Payment never changes editor's picks, catalog order or the best-of rankings.</li>
+<li>Every paid placement is labelled. Payment never changes editor's picks, catalog order or the category rankings.</li>
 <li>We can turn down or remove a placement for a plugin that's broken, malicious, misleading or illegal. If we turn you down, or your slot fills up before your payment lands, we refund you in full.</li>
 <li>Expedited review buys a decision within 24 hours, not a yes. If we pass, you get a refund.</li>
 <li>We don't promise any amount of traffic, clicks or installs.</li></ul>
@@ -190,7 +161,7 @@ open(D+"/sitemap.xml","w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlse
 _cats={}
 for x in by.values(): _cats.setdefault(x["category"],[]).append(x)
 _l=["# PickAPlugin","","> An independent, hand-sorted catalog of ChatGPT and Codex plugins collected from public GitHub sources. Free to browse. Not affiliated with OpenAI. Descriptions are each project's own; we do not test or audit plugins.","",
- "## Key pages",f"- [Home / catalog]({SITE}/)",f"- [How we pick]({SITE}/about)",f"- [Changelog]({SITE}/changelog)",f"- [Submit a plugin]({SITE}/submit)",f"- [MCP server: search this catalog from Claude, Cursor, Codex or VS Code]({SITE}/mcp-server) (endpoint {SITE}/mcp, JSON catalog {SITE}/catalog.json)",f"- [Advertise]({SITE}/advertise)",f"- [Sitemap]({SITE}/sitemap.xml)",f"- [FAQ]({SITE}/faq)",f"- [Alternatives / other directories]({SITE}/alternatives)",""]+["## Guides"]+[f"- [{h}]({SITE}/guides/{s}): {d}" for s,h,d in GUIDES]+["","## Articles",f"- [State of Codex Plugins 2026]({SITE}/research/state-of-codex-plugins-2026): original data on 339 plugin repos (CSV, CC BY 4.0)",f"- [Best Codex plugins (November 2026)]({SITE}/blog/best-codex-plugins-november-2026): top 3 maintained plugins per category, with install commands","","## MCP config conversions"]+[f"- [{A} to {B}]({SITE}/tools/mcp-config-converter/{s})" for s,A,B in CONV]+["","## Free tools"]+[f"- [{h}]({SITE}/tools/{s}): {b}" for s,h,b in TOOLS]+[""]
+ "## Key pages",f"- [Home / catalog]({SITE}/)",f"- [How we pick]({SITE}/about)",f"- [Changelog]({SITE}/changelog)",f"- [Submit a plugin]({SITE}/submit)",f"- [MCP server: search this catalog from Claude, Cursor, Codex or VS Code]({SITE}/mcp-server) (endpoint {SITE}/mcp, JSON catalog {SITE}/catalog.json)",f"- [Advertise]({SITE}/advertise)",f"- [Sitemap]({SITE}/sitemap.xml)",f"- [FAQ]({SITE}/faq)",f"- [Alternatives / other directories]({SITE}/alternatives)",""]+["## Guides"]+[f"- [{h}]({SITE}/guides/{s}): {d}" for s,h,d in GUIDES]+["","## Articles",f"- [State of Codex Plugins 2026]({SITE}/research/state-of-codex-plugins-2026): original data on 339 plugin repos (CSV, CC BY 4.0)",f"- [Best Codex plugins (November 2026)]({SITE}/blog/best-codex-plugins-november-2026): top 3 maintained plugins per category, with install commands","","## MCP config conversions",f"- [MCP config converter]({SITE}/tools/mcp-config-converter): convert MCP server config between Claude, Codex, Cursor and VS Code","","## Free tools"]+[f"- [{h}]({SITE}/tools/{s}): {b}" for s,h,b in TOOLS]+[""]
 for c in sorted(_cats):
   _l.append("## "+c)
   for x in sorted(_cats[c],key=lambda x:-(x.get("stars") or 0))[:15]: _l.append(f"- [{x['name']}]({SITE}/p/{x['slug']}): {x['description'][:160]}")
@@ -203,7 +174,7 @@ for x in sorted(by.values(),key=lambda x:(x["category"],-(x.get("stars") or 0)))
   _f+= [f"## {x['name']}",f"- Page: {SITE}/p/{x['slug']}",f"- Source: {x['link']}",f"- Category: {x['category']}",f"- Maker: {x.get('maker') or 'unknown'}",f"- Stars: {x.get('stars')}  Last commit: {(x.get('pushed_at') or '')[:10]}  License: {x.get('license') or 'none'}  Language: {x.get('language') or 'n/a'}"+("  ARCHIVED" if x.get("archived") else ""),f"- What it does: {x['description']}"]+([f"- Install (from README): {x['install']}"] if x.get("install") else [])+[""]
 open(D+"/llms-full.txt","w").write("\n".join(_f))
 open(f"{D}/{INDEXNOW_KEY}.txt","w").write(INDEXNOW_KEY)
-print("seo:",len(URLS),"urls,",len(PAIRS),"comparisons")
+print("seo:",len(URLS),"indexable urls")
 # Bing Webmaster verification (file + homepage meta)
 import shutil as _sh
 _sh.copyfile(os.path.join(os.path.dirname(os.path.abspath(__file__)),"BingSiteAuth.xml"),D+"/BingSiteAuth.xml")

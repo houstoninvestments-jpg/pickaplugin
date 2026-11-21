@@ -53,12 +53,18 @@ with noindex and a "Preview" banner. The repo is public: subscriber addresses ne
 git-ignored .secrets/newsletter-sends.json; the public log has masked addresses + Resend ids).
 
 ## Views / clicks sent to makers (Durable Object `Stats`, binding STATS)
-/p/<slug> views and /go/<slug> clicks are counted in the Worker: browser-like UAs only (bot regex, verified bots,
-prefetch and no-Accept-Language requests skipped), once per visitor per slug per day using an HMAC of IP+date
-(salted with ADMIN_TOKEN, rotates daily, rows pruned after 2 days; raw IPs never stored). Monthly totals (UTC month).
-/p pages show "N views · M clicks to the maker this month" only when views > 0; /advertise shows the site-wide clicks line
-only when > 0. Read all counts: `curl -s "https://pickaplugin.com/api/admin?token=$T&stats=1[&month=2026-11]"`.
-Counting started 2026-11-15.
+/p/<slug> views and /go/<slug> clicks are counted in the Worker, once per visitor per slug per day using an HMAC of
+IP+date (salted with ADMIN_TOKEN, rotates daily, rows pruned after 2 days; raw IPs never stored). Monthly totals (UTC).
+Filters (tightened 2026-11-21 after crawlers inflated Nov counts): browser-like UAs, bot regex, verifiedBotCategory,
+botManagement.score < 30 when present, no prefetch, Accept-Language required, known automation UAs (iPhone OS 13_2_3,
+Nexus 5 default, Mac OS X 10_15_7), and datacenter ASNs/orgs. Clicks also require a same-site Referer from
+pickaplugin.com (and Sec-Fetch-Site same-origin/same-site when that header is present). /go/ links already have
+rel=nofollow. Counting started 2026-11-15.
+
+Public display is OFF as of 2026-11-21. The Nov 15–21 totals (3,005 views on 640 listings, 463 clicks on 336 listings)
+matched crawlers walking the catalog, not people: even spread, bursts at 5–7 AM PT, and default automation UAs.
+Do not show the /advertise "clicks to makers" line or listing-page view/click counts until a later sample under the
+new filters looks trustworthy. Admin read: `curl -s "https://pickaplugin.com/api/admin?token=$T&stats=1[&month=2026-11]"`.
 
 ## Newsletter first-run setup (2026-11-17)
 - DONE: /featured copy now says 'PickAPlugin weekly newsletter' (scripts/build.py), no Substack mention.

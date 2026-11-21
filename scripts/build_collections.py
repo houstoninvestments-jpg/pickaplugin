@@ -3,7 +3,10 @@
 # ONE gate per family (resolve_indexable) feeds the route (file exists or not), the sitemap,
 # the hub, related links and the chips on plugin pages. Below the gate = no file = 404.
 import statistics as _st, datetime as _cdt, json as _cj
-COLL_MIN=3
+COLL_MIN=3  # absolute floor for the helper / tests
+LANG_MIN=10  # language filter pages below this 301 to /languages
+LIC_MIN=5    # license filter pages below this 301 to /licenses
+
 LANG_ALIAS={"c#":"csharp","c++":"cpp","f#":"fsharp","javascript":"javascript","js":"javascript","typescript":"typescript","ts":"typescript","golang":"go"}
 LIC_ALIAS={"mit license":"mit","apache 2.0":"apache-2.0","apache-2":"apache-2.0"}
 FAMILIES={
@@ -30,7 +33,7 @@ def resolve_indexable(fam,plugins=None,min_n=COLL_MIN):
     if len(g["items"])>=min_n:
       out[s]={"label":max(g["labels"],key=g["labels"].get),"items":g["items"]}
   return dict(sorted(out.items(),key=lambda kv:(-len(kv[1]["items"]),kv[0])))
-GATED={fam:resolve_indexable(fam) for fam in FAMILIES}
+GATED={"language":resolve_indexable("language",min_n=LANG_MIN),"license":resolve_indexable("license",min_n=LIC_MIN)}
 def coll_href(fam,val,depth=1):
   """Chip link for a plugin page, or None if the term doesn't pass the gate."""
   s=coll_slug(fam,val)
@@ -65,7 +68,7 @@ def build_collections():
       faq=[(f"How many {lab} plugins are on PickAPlugin?",f"{n} plugins in our catalog are {'written mostly in' if fam=='language' else 'released under'} {lab}, as of {checked or today.isoformat()}."),
            (f"What's the most popular {lab} plugin for ChatGPT or Codex?",f"By GitHub stars it's {items[0]['name']} by {items[0]['maker']}"+(f", with {stars(items[0]):,} stars." if stars(items[0])>=0 else ".") if not items[0]["slug"] in PICKS else f"Our editor's pick {items[0]['name']} by {items[0]['maker']} is listed first; after picks, plugins are ordered by GitHub stars."),
            ("How is this list ranked?","Editor's picks first, then GitHub stars, with archived repos last. Paid placements don't change the order, and we haven't tested these plugins ourselves."),
-           ("Why don't some " + ("languages" if fam=="language" else "licenses") + " have a page?",f"We only make a page when at least {COLL_MIN} plugins share it. Smaller groups are still in the main catalog.")]
+           ("Why don't some " + ("languages" if fam=="language" else "licenses") + " have a page?",f"We only make a page when at least {LANG_MIN if fam=='language' else LIC_MIN} plugins share it. Smaller groups are still in the main catalog.")]
       rel=[(k,v) for k,v in g.items() if k!=s][:8]
       relhtml=" · ".join(f'<a href="{k}.html">{e(v["label"])} ({len(v["items"])})</a>' for k,v in rel)
       body=f'''<div class=prose style="max-width:900px;padding-bottom:10px"><span class=mono style="color:var(--acc)"><a href="../index.html">Home</a> / <a href="../{hub}.html">{famname}s</a> / {e(lab)}</span><h1>{e(lab)} plugins for ChatGPT &amp; Codex</h1>
@@ -88,7 +91,7 @@ def build_collections():
     unk=sum(1 for p in P if not p.get(cfg["field"]))
     htitle=f"ChatGPT & Codex Plugins by {famname} ({today.year})"
     hb=f'''<div class=prose style="max-width:900px;padding-bottom:10px"><span class=mono style="color:var(--acc)"><a href="index.html">Home</a> / {famname}s</span><h1>Plugins by {famname.lower()}</h1>
-<p style="font-size:19px">{len(g)} {famname.lower()}s cover {tot} of our {len(P)} plugins. {g[next(iter(g))]["label"]} leads with {len(next(iter(g.values()))["items"])}. {unk} plugins don't list a {"main language" if fam=="language" else "license"} on GitHub, and {famname.lower()}s with fewer than {COLL_MIN} plugins don't get their own page.</p></div><div>{rows}</div>'''
+<p style="font-size:19px">{len(g)} {famname.lower()}s cover {tot} of our {len(P)} plugins. {g[next(iter(g))]["label"]} leads with {len(next(iter(g.values()))["items"])}. {unk} plugins don't list a {"main language" if fam=="language" else "license"} on GitHub, and {famname.lower()}s with fewer than {LANG_MIN if fam=='language' else LIC_MIN} plugins don't get their own page.</p></div><div>{rows}</div>'''
     hld=_ld({"@context":"https://schema.org","@type":"CollectionPage","name":htitle,"url":f"{SITE}/{hub}"})+_ld({"@context":"https://schema.org","@type":"ItemList","numberOfItems":len(g),"itemListElement":[{"@type":"ListItem","position":i+1,"url":f"{SITE}/{fam}/{s}","name":v["label"]} for i,(s,v) in enumerate(g.items())]})\
       +_ld({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PickAPlugin","item":SITE+"/"},{"@type":"ListItem","position":2,"name":famname+"s","item":f"{SITE}/{hub}"}]})
     open(f"{D}/{hub}.html","w").write(layout(htitle,hb,0,f"Browse {tot} ChatGPT and Codex plugins by {famname.lower()}: {', '.join(v['label'] for v in list(g.values())[:4])} and more.").replace("</head>",hld+"</head>",1))

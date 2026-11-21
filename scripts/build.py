@@ -85,10 +85,11 @@ footer{border-top:3px double var(--ink);padding:22px 0 40px;color:var(--mute);fo
 .vchk{font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.06em;color:#1d6b3a;border:1px solid #1d6b3a;padding:1px 6px;margin-left:8px;vertical-align:middle;white-space:nowrap}.vbig{color:#1d6b3a;font-weight:600;margin:0 0 12px}.vbig .mono{color:var(--mute);font-weight:400;font-size:11px}
 .ladder{border-top:3px solid var(--ink);margin-top:26px}.tier{display:grid;grid-template-columns:1fr 150px 230px;gap:24px;padding:22px 0;border-bottom:1px solid var(--rule);align-items:start}.tier h3{margin:0 0 4px !important}.tier .pr{font:600 30px Fraunces,serif}.tier .pr small{display:block;font:400 12px 'IBM Plex Mono',monospace;color:var(--mute);text-transform:uppercase;letter-spacing:.06em}.tier .st{font-size:14px;color:var(--mute)}.tier .btn{margin-top:6px}.tier.soon{opacity:.7}
 @media(max-width:800px){.tier{grid-template-columns:1fr}.hero h2{font-size:36px}.spons{grid-template-columns:1fr}.spons span:last-child{grid-column:1}}"""
-def layout(title,body,depth=0,desc="An independent, hand-edited catalog of ChatGPT and Codex plugins."):
+def layout(title,body,depth=0,desc="An independent, hand-edited catalog of ChatGPT and Codex plugins.",robots=None):
   r="../"*depth
+  _rb=f'<meta name=robots content="{e(robots)}">' if robots else ""
   return f"""<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>{e(title)}</title>
-<meta name=description content="{e(desc)}"><link rel=stylesheet href="{r}style.css"></head><body><div class=w>
+<meta name=description content="{e(desc)}">{_rb}<link rel=stylesheet href="{r}style.css"></head><body><div class=w>
 <header class=mast><div class="top mono"><span>Independent · not affiliated with OpenAI</span><span>{len(P)} plugins catalogued</span></div>
 <div class=brand><a class=n href="{r}index.html">PickA<i>Plugin</i></a><nav><a href="{r}index.html#catalog">Catalog</a><a href="{r}submit.html">Submit</a><a href="{r}featured.html" style="color:var(--acc);font-weight:600">Get featured</a><a href="{r}advertise.html">Advertise</a><a href="{r}about.html">About</a></nav></div></header></div>
 {belt(r)}<div class=w>
@@ -236,7 +237,7 @@ open(D+"/badge.html","w").write(layout("Add a 'Listed on PickAPlugin' badge — 
 <p>Rather link to the homepage? Swap the link for <code>{SITE_URL}</code>.</p>
 <p class=mono>Swap <code>{_xs}</code> for your own slug. The badge only says you're listed. It isn't a review or a ranking.</p></div>""",0,"Free 'Listed on PickAPlugin' badge for your README or site, in light and dark, with copy-paste Markdown and HTML."))
 open(D+"/badge/listed.svg","w").write(badge_svg("Listed on")); open(D+"/badge/editors-pick.svg","w").write(badge_svg("Editor's pick on"))
-_msg=lambda t,h,body: open(f"{D}/{t}.html","w").write(layout(h+" — PickAPlugin",f'<div class=prose><h1>{h}</h1>{body}<p><a href="index.html">← Back to the catalog</a></p></div>'))
+_msg=lambda t,h,body: open(f"{D}/{t}.html","w").write(layout(h+" — PickAPlugin",f'<div class=prose><h1>{h}</h1>{body}<p><a href="index.html">← Back to the catalog</a></p></div>',robots="noindex, nofollow"))
 _msg("claimed","Thanks, we got your claim",'''<p style="font-size:19px">We'll verify that you own or maintain the repo, usually by checking that your GitHub handle matches the project's owner or contributors, then apply any corrections and reply by email.</p>
 <p>Claiming is free and always will be. If you later want more visibility, there are clearly labelled paid options on the <a href="advertise.html">advertise page</a>, but you don't need any of them.</p>'''+(f'''<p>One you might like: while they last, our first 10 featured makers get the <a href="featured.html">featured spot</a> at <b>$29/mo for life</b> (normally $49), with the first week free. {FOUNDING_LEFT} of 10 founding spots are left. Traffic is still early, so we won't promise numbers.</p>''' if FOUNDING_ACTIVE else '')+'''<p id=back></p>
 <script>let s=new URLSearchParams(location.search).get("s");if(s&&/^[a-z0-9-]+$/.test(s))document.getElementById("back").innerHTML='<a href="/p/'+s+'">← Back to your listing</a>'</script>''')
@@ -280,15 +281,58 @@ for j,a,b2 in sorted(PAIRS,key=lambda t:-t[0]):
   _sel.append((a,b2)); _used|={a["slug"],b2["slug"]}; _per[a["category"]]=_per.get(a["category"],0)+1
 PAIRS=_sel
 def cslug(a,b2): return f"{a['slug']}-vs-{b2['slug']}"
+# Category-hub copy (also used in place of the old /best/<cat> pages, which 301 here).
+CAT_INTRO={
+"Agent Workflows":"This is the busiest shelf: tools that split work across several agents, enforce a plan-then-build loop, or wrap a whole delivery process. The ones worth a closer look write their plan to files you can open, because that's what makes a long run debuggable. If you're new to plugins, start here, then look at review and testing before you merge anything an agent wrote.",
+"Memory & Context":"These plugins try to give an agent something it lacks by default: memory that survives the session. Before you trust one with a real codebase, check where it stores what it remembers — a local file you can delete is a different proposition from a hosted service.",
+"Security & Governance":"Secret scanning, policy hooks, pentest helpers and guardrails. An agent with shell access can read more than you think, so this is the shelf we'd open first if the agent is going to touch a real repo. Read the code, and don't give a plugin credentials you wouldn't paste into a chat.",
+"Review & Testing":"Plugins that review diffs, write or run tests, or check an agent's work before you merge it. Most are prompts plus scripts, so read what they actually run. A useful pattern is to let the agent write the change, then run a reviewer plugin as a second pass.",
+"Messaging & Remote":"Ways to reach an agent, or be reached by one, from a phone, Slack, Telegram or Discord. Several route through hosted services, so check what leaves your machine and who can trigger a run.",
+"Design & Frontend":"UI, CSS, image and front-end helpers. Quality varies a lot here, so the project's own screenshots and a recent commit date are the best quick signals. If a README is just a logo and a one-liner, keep looking.",
+"Docs, Content & SEO":"Writing, PDFs, transcripts, translation and SEO tooling for agents. Handy when the job is words rather than code. Watch for tools that send the document to a third-party API — that's fine if you meant it, surprising if you didn't.",
+"Data & Backend":"Database, analytics, dbt and observability helpers. Be careful about giving any of these credentials to production systems; use a throwaway database until you've read the repo. If you came here looking for a backend the agent can stand up, or a dbt workflow, the short notes below call out a few starting points.",
+"Deploy & DevOps":"Deploys, containers, git hosting and publishing. These touch real infrastructure, so start them on a test project, not the thing your weekend depends on.",
+"Usage & Quotas":"Small tools that show how much of your plan or rate limit an agent has used, and when it resets. A few will try to resume a Codex session after a limit lifts — useful overnight, but only on the platforms they actually support.",
+"Industry Tools":"Niche plugins for specific trades and businesses, from CAD to legal research. These are often written by people in that trade, which is good, but they may assume tools or file formats you don't have.",
+"Miscellany":"Plugins that didn't fit a tighter shelf, or that do a bit of everything. Worth a scan if the obvious categories didn't have what you wanted. We'll recategorize anything that clearly belongs somewhere else — email us if we missed it.",
+}
+CAT_EXTRA={
+"Data & Backend":'<h2>What is the best backend for OpenAI Codex?</h2><p>It depends on what "backend" means for your project. From the plugins on this shelf:</p><ul class=where>'
+'<li><b>A backend the agent can set up for you</b> (hosting, Postgres, email, storage): <a href="../p/cohesivity.html">Cohesivity</a>, or <a href="../p/host0.html">host0</a> for publishing an app with a shared database.</li>'
+'<li><b>A web search and scraping API</b> the agent calls as an MCP server: <a href="../p/crw.html">crw</a>, often the most-starred plugin here.</li>'
+'<li><b>A data warehouse and dbt</b>: <a href="../p/dex.html">Dex</a> for exploring and modeling, or the <a href="../p/data-product-builder-for-dbt.html">data product builder for dbt</a> if you use data contracts.</li>'
+'<li><b>Postgres extensions</b>: <a href="../p/villagesql-skills.html">VillageSQL skills</a>.</li></ul>'
+'<p>We haven\'t tested any of these. Give an agent a test database before you give it production credentials.</p>',
+"Usage & Quotas":'<p>Codex stopped at the 5-hour limit overnight? <a href="../p/codex-auto-resume.html">Codex Auto Resume</a> picks the same conversation back up when the limit resets (Windows only, per its README).</p>',
+"Agent Workflows":'<p>Agent workflow plugins split work across several agents, enforce a plan-then-build loop, or wrap a whole delivery process for Codex and Claude Code. This shelf also has <a href="../p/devin-plugin-cc.html">Devin plugins for Codex</a>.</p>',
+}
+CAT_TITLE={"data-backend":"Best backend & database plugins for OpenAI Codex and ChatGPT ({n} ranked) — PickAPlugin"}
 def catlinks(c):
-  cmp=[(a,b2) for a,b2 in PAIRS if a["category"]==c]
-  x=f'<p class=shelves><span class=mono>Ranked:</span><a href="../best/{slug(c)}.html">Best {e(c)} plugins, ranked by GitHub stars →</a>'
-  x+="".join(f' <a href="../compare/{cslug(a,b2)}.html">{e(a["name"])} vs {e(b2["name"])}</a>' for a,b2 in cmp)
-  return x+'</p>'
+  sib=" · ".join(f'<a href="{slug(x)}.html">{e(x)}</a>' for x in cats if x!=c)
+  return (f'<p class=shelves><span class=mono>Also see:</span> <a href="../guides/install-codex-plugin.html">Install a plugin</a> · <a href="../guides/vet-a-plugin.html">A 2-minute safety check</a> · <a href="../compare.html">How we compare plugins</a></p>'
+          f'<p class=shelves><span class=mono>Other shelves:</span> {sib}</p>')
 for c in cats:
-  items=[p for p in P if p["category"]==c]
-  b=f'''<div class=sec style="padding-top:40px"><h2 style="font-size:44px">{e(c)}</h2><span class=mono>{len(items)} plugins · {e(BLURB.get(c,""))}</span></div>{catlinks(c)}{sponsor(c)}{pinned(c,"../p/","../")}<div>{"".join(row(p,"../p/") for p in items)}</div>'''
-  open(f"{D}/c/{slug(c)}.html","w").write(layout(f"{c} plugins for ChatGPT & Codex — PickAPlugin",b,1,f"{len(items)} {c} plugins for ChatGPT and Codex, hand-sorted."))
+  items=sorted([p for p in P if p["category"]==c],key=rankkey)
+  checked=max((p.get("stars_checked") or "" for p in items),default="")
+  top=[p for p in items if not p.get("archived")][:3]
+  start=""
+  if top:
+    start="<h2>A few to start with</h2><ul class=where>"+"".join(
+      f'<li><a href="../p/{p["slug"]}.html"><b>{e(p["name"])}</b></a> by {e(p["maker"] or "unknown")}'
+      +(f' · ★ {p["stars"]:,}' if isinstance(p.get("stars"),int) else "")
+      +f' — {e(p["description"])}</li>' for p in top)+"</ul>"
+  intro=CAT_INTRO.get(c,"")
+  extra=CAT_EXTRA.get(c,"")
+  b=f'''<div class=prose style="max-width:900px;padding-bottom:10px"><span class=mono style="color:var(--acc)">Shelf · ranked by public signals · not tested by us</span>
+<h1>{e(c)} plugins for ChatGPT &amp; Codex</h1>
+<p style="font-size:19px">{len(items)} plugins on this shelf ({e(BLURB.get(c,""))}). They're ordered by editor's picks first, then GitHub stars{f" (checked {checked})" if checked else ""}, with archived repos at the bottom.</p>
+<p>{e(intro)}</p>
+<p style="color:var(--mute)">Stars measure popularity, not quality or safety. We haven't installed or audited these; every description is the project's own. Read the code before you install anything. Paid placements are labelled and never affect this order.</p>
+{extra}{start}{catlinks(c)}</div>
+{sponsor(c)}{pinned(c,"../p/","../")}<div>{"".join(row(p,"../p/") for p in items)}</div>'''
+  _t=CAT_TITLE.get(slug(c),"Best {c} plugins for ChatGPT & Codex ({n} ranked) — PickAPlugin").format(c=c,n=len(items))
+  open(f"{D}/c/{slug(c)}.html","w").write(layout(_t,b,1,f"The {len(items)} {c} plugins for ChatGPT and Codex in our catalog, ranked by editor's picks and GitHub stars. No paid ordering."))
+
 open(D+"/submit.html","w").write(layout("Submit a plugin — PickAPlugin",f"""<div class=prose><span class=mono style="color:var(--acc)">Free, always</span><h1>Submit a plugin</h1>
 <p>Listing costs nothing. We re-read our public sources every day, so if your plugin is public and in a list like <a href="https://github.com/hashgraph-online/awesome-codex-plugins">awesome-codex-plugins</a>, it'll show up on its own.</p>
 <p>Not in a list yet? Email <a href="mailto:{EMAIL}?subject=Submit%20a%20plugin">{EMAIL}</a> with the repo link and one sentence on what it does. We read every one.</p>

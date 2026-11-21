@@ -1,12 +1,9 @@
 # Executed by build.py right before build_seo.py (shares its namespace: P, D, layout, e, slug, stars, rankkey,
 # PICKS, PAIRS, cslug, words, BLURB, cats, EMAIL).
-# Writes data-driven comparison SEO pages from the catalog + cached autocomplete keywords (data/keywords.json,
-# refreshed by scripts/fetch_keywords.py):
-#   /compare/<a>-vs-<b>      head-to-head (same category, overlapping descriptions)
-#   /alternatives/<slug>     "<plugin> alternatives" (only when 4+ real alternatives exist)
-#   /best-for/<use-case>     "best MCP servers & plugins for <use case>" (only when 5+ plugins match)
-#   /compare                 hub linking all of the above
-# New plugins get pages automatically on the next build. Thin-page guards: thresholds below.
+# Used to write /compare/*, /alternatives/* and /best-for/* pages. Those families were
+# thin and near-duplicate (2026-11-21). The worker 301s the old URLs to hubs. This file
+# now enriches /p/ pages with similar-plugin lists and writes a single /compare hub.
+# Do not start generating those URL batches again.
 import json as _cj, re as _cre, datetime as _cdt, collections as _cc
 _KW_PATH=os.path.join(ROOT,"data","keywords.json")
 _KW=_cj.load(open(_KW_PATH)) if os.path.exists(_KW_PATH) else {"plugins":{},"use_cases":{}}
@@ -158,128 +155,64 @@ for t,cnt in sorted(_tails.items(),key=lambda kv:(-kv[1],kv[0])):
 USE_OF=_cc.defaultdict(list)
 for t,m in USE_PAGES:
   for p in m[:12]: USE_OF[p["slug"]].append(t)
-# ---------- rendering ----------
-_TD='style="padding:9px;vertical-align:top;border-bottom:1px solid var(--rule)"'
-_TH='class=mono style="text-align:left;padding:9px;vertical-align:top;border-bottom:1px solid var(--rule);width:160px"'
-def _inst(p): return f'<code style="font-size:12px;word-break:break-all">{e(p["install"])}</code>' if p.get("install") else '<span style="color:var(--mute)">No copyable command in the README</span>'
-def _src(p): return f'<a href="{e(p["link"])}" rel="nofollow noopener">{e(p["link"].replace("https://",""))}</a>'
-def _ul(xs): return '<ul class=where>'+"".join(f"<li>{x}</li>" for x in xs)+'</ul>'
-_CATLINK=lambda c,r="../":f'<a href="{r}c/{slug(c)}.html">{e(c)} plugins</a> · <a href="{r}best/{slug(c)}.html">best {e(c)} plugins, ranked</a>'
-def _note(): return f'<p style="color:var(--mute);font-size:14px">Data from GitHub and each project\'s README, checked {_ASOF}. We haven\'t installed or audited these, and stars measure attention, not quality. Paid placements never change this page. Spot a mistake? <a href="mailto:{EMAIL}">{EMAIL}</a></p>'
-def _verdict(a,b2):
-  x=[]
-  sa,sb=stars(a),stars(b2)
-  if sa>=0 and sb>=0 and max(sa,sb)>0:
-    hi,lo=(a,b2) if sa>=sb else (b2,a)
-    x.append(f"<b>Attention:</b> {e(hi['name'])} has {_stars_s(hi)} GitHub stars to {e(lo['name'])}'s {_stars_s(lo)}"+(f" (about {stars(hi)/max(1,stars(lo)):.0f}×)." if stars(lo)>0 and stars(hi)/max(1,stars(lo))>=2 else "."))
-  da,db=_days(a),_days(b2)
-  if da is not None and db is not None:
-    if abs(da-db)<=3: x.append(f"<b>Activity:</b> both got a push within days of each other ({a['pushed_at'][:10]} and {b2['pushed_at'][:10]}).")
-    else:
-      fr,st=(a,b2) if da<db else (b2,a); x.append(f"<b>Activity:</b> {e(fr['name'])} was pushed more recently ({fr['pushed_at'][:10]} vs {st['pushed_at'][:10]}).")
-  la,lb=_lic(a),_lic(b2)
-  x.append(f"<b>License:</b> {'both '+e(la) if la==lb else e(a['name'])+' is '+e(la)+', '+e(b2['name'])+' is '+e(lb)}."+(" Check the copyleft terms before shipping it inside closed-source work." if any(l in ("AGPL-3.0","GPL-3.0") for l in (la,lb)) else ""))
-  ra,rb=_remote(a),_remote(b2)
-  if ra!=rb: hs=a if ra else b2; x.append(f"<b>Where it runs:</b> {e(hs['name'])}'s install points at a hosted MCP endpoint; the other installs locally.")
-  ka,kb=", ".join(_kind(a)),", ".join(_kind(b2))
-  if ka!=kb: x.append(f"<b>Packaging:</b> {e(a['name'])} ships as {ka}; {e(b2['name'])} as {kb}.")
-  return x
-os.makedirs(D+"/compare",exist_ok=True)
-for a,b2 in CMP_PAIRS:
-  rows=[("What it says it does",lambda p:e(p["description"])),("Maker",lambda p:e(p["maker"] or "unknown")),("GitHub stars",lambda p:_stars_s(p)),
-        ("Last push",lambda p:e(_act(p))),("License",lambda p:e(_lic(p))),("Language",lambda p:e(p.get("language") or "n/a")),
-        ("Packaged as",lambda p:e(", ".join(_kind(p)))),("Works with",lambda p:e(", ".join(_hosts(p)) or "not stated")),
-        ("Install",_inst),("Editor's pick",lambda p:"Yes: "+e(PICKS[p["slug"]]) if p["slug"] in PICKS else "No"),
-        ("In our catalog since",lambda p:p["first_seen"]),("Source",_src),("Our page",lambda p:f'<a href="../p/{p["slug"]}.html">{e(p["name"])} →</a>')]
-  tbl="".join(f'<tr><th {_TH}>{k}</th><td {_TD}>{f(a)}</td><td {_TD}>{f(b2)}</td></tr>' for k,f in rows)
-  common=[w for w,_ in sorted(((w,_V[a["slug"]][w]*_V[b2["slug"]][w]) for w in _W[a["slug"]]&_W[b2["slug"]]),key=lambda t:(-round(t[1],9),t[0]))][:6]
-  more=[]
-  for s in (a["slug"],b2["slug"]):
-    if s in ALT_SET: more.append(f'<a href="../alternatives/{s}.html">{e(_bys[s]["name"])} alternatives</a>')
-  others=[(x,y) for x,y in CMP_OF[a["slug"]]+CMP_OF[b2["slug"]] if cslug(x,y)!=cslug(a,b2)][:6]
-  more+=[f'<a href="../compare/{cslug(x,y)}.html">{e(x["name"])} vs {e(y["name"])}</a>' for x,y in others]
-  body=f'''<div class=prose style="max-width:980px"><span class=mono style="color:var(--acc)">Compare · {e(a["category"])} · data checked {_ASOF}</span><h1>{e(a["name"])} vs {e(b2["name"])}</h1>
-<p style="font-size:19px">Two {e(a["category"])} tools whose own descriptions overlap{(" (shared terms: "+e(", ".join(common))+")") if common else ""}. Here's what each project says it does and the public numbers, side by side, so you can pick one in a minute instead of reading two READMEs.</p>
-<table style="width:100%;border-collapse:collapse;border-top:3px solid var(--ink);margin-top:20px;table-layout:fixed"><tr><th style="width:160px"></th><th style="text-align:left;padding:9px;font:600 22px Fraunces,serif">{e(a["name"])}</th><th style="text-align:left;padding:9px;font:600 22px Fraunces,serif">{e(b2["name"])}</th></tr>{tbl}</table>
-<h2>The differences that matter</h2>{_ul(_verdict(a,b2))}
-<h2>Who each one suits</h2><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px"><div><h3>{e(a["name"])}, if…</h3>{_ul(_suits(a))}</div><div><h3>{e(b2["name"])}, if…</h3>{_ul(_suits(b2))}</div></div>
-<h3>So which one?</h3><p>We haven't run both, so we won't crown a winner. Use the list above to rule one out, then read its README and recent commits before installing. Anything that runs commands on your machine deserves a look at the code.</p>
-{f"<h3>Related</h3><p>{' · '.join(more)}</p>" if more else ""}<p>More: {_CATLINK(a["category"])} · <a href="../compare.html">all comparisons</a></p>{_note()}</div>'''
-  open(f"{D}/compare/{cslug(a,b2)}.html","w").write(layout(f"{a['name']} vs {b2['name']} ({_ASOF[:4]}): {a['category']} compared — PickAPlugin",body,1,
-    f"{a['name']} vs {b2['name']}: features, license, GitHub stars, last push and install command side by side, plus who each one suits."))
-os.makedirs(D+"/alternatives",exist_ok=True)
-for p,al in ALT_PAGES:
-  rows="".join(f'<tr><td {_TD}><a href="../p/{q["slug"]}.html"><b>{e(q["name"])}</b></a><br><span style="font-size:14px">{e(q["description"])}</span></td><td {_TD} class=mono>★ {_stars_s(q)}</td><td {_TD} class=mono>{e(_lic(q))}</td><td {_TD} class=mono>{e((q.get("pushed_at") or "n/a")[:10])}</td><td {_TD} class=mono>{e(", ".join(_kind(q)))}</td></tr>' for q in al)
-  cmpl=[f'<a href="../compare/{cslug(x,y)}.html">{e(x["name"])} vs {e(y["name"])}</a>' for x,y in CMP_OF[p["slug"]]]
-  why=[]
-  perm=[q for q in al if (q.get("license") or "") in _PERM]
-  fresh=sorted([q for q in al if (_days(q) or 999)<=14],key=lambda q:_days(q))
-  if p.get("license") not in _PERM and perm: why.append(f"Need a permissive license? {', '.join(e(q['name']) for q in perm[:3])} {'is' if len(perm[:3])==1 else 'are'} {e(perm[0]['license'])}{' or similar' if len(perm)>1 else ''}, while {e(p['name'])} is {e(_lic(p))}.")
-  if fresh: why.append(f"Want active development? {', '.join(e(q['name']) for q in fresh[:3])} got a push in the last two weeks.")
-  big=max(al,key=stars)
-  if stars(big)>stars(p): why.append(f"Want the most-watched option? {e(big['name'])} has {_stars_s(big)} stars to {e(p['name'])}'s {_stars_s(p)}.")
-  loc=[q for q in al if not _remote(q) and q.get("install")]
-  if _remote(p) and loc: why.append(f"Prefer local over hosted? {e(p['name'])} installs as a hosted endpoint; {', '.join(e(q['name']) for q in loc[:3])} install locally.")
-  nohost=[q for q in al if set(_hosts(q))-set(_hosts(p))]
-  if nohost: q=nohost[0]; why.append(f"On a different tool? {e(q['name'])} mentions {e(', '.join(sorted(set(_hosts(q))-set(_hosts(p)))))}.")
-  body=f'''<div class=prose style="max-width:980px"><span class=mono style="color:var(--acc)">Alternatives · {e(p["category"])} · data checked {_ASOF}</span><h1>{e(p["name"])} alternatives</h1>
-<p style="font-size:19px">{e(p["name"])} by {e(p["maker"] or "unknown")}: {e(p["description"])} Here are {len(al)} plugins in our catalog that describe a similar job, with the numbers you'd check before switching.</p>
-<div style="border:1px solid var(--ink);background:#fffdf8;padding:12px 16px;margin:16px 0"><b>{e(p["name"])} at a glance:</b> ★ {_stars_s(p)} · {e(_lic(p))} · {e(_act(p))} · {e(", ".join(_kind(p)))}{(" · works with "+e(", ".join(_hosts(p)))) if _hosts(p) else ""} · <a href="../p/{p["slug"]}.html">full listing →</a></div>
-{f"<h2>Why you might look elsewhere</h2>{_ul(why)}" if why else ""}
-<h2>{len(al)} alternatives, side by side</h2><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;border-top:3px solid var(--ink)"><tr><th {_TH} style="text-align:left">Plugin</th><th {_TH}>Stars</th><th {_TH}>License</th><th {_TH}>Last push</th><th {_TH}>Packaged as</th></tr>{rows}</table></div>
-<p style="font-size:14px;color:var(--mute)">Picked by overlap between each project's own description and {e(p["name"])}'s, same category first. Ordered by that overlap, not by stars or payment.</p>
-{f"<h3>Head-to-head</h3><p>{' · '.join(cmpl)}</p>" if cmpl else ""}<p>More: {_CATLINK(p["category"])} · <a href="../compare.html">all comparisons</a></p>{_note()}</div>'''
-  open(f"{D}/alternatives/{p['slug']}.html","w").write(layout(f"{len(al)} {p['name']} alternatives ({_ASOF[:4]}): similar {p['category']} plugins — PickAPlugin",body,1,
-    f"{len(al)} alternatives to {p['name']} for Codex, Claude Code and ChatGPT, compared by GitHub stars, license, last push and packaging."))
-os.makedirs(D+"/best-for",exist_ok=True)
-def _uslug(t): return slug(t)
-for t,m in USE_PAGES:
-  top=m[:12]; T=t.title() if t.islower() and len(t)>3 else t
-  cats_=_cc.Counter(p["category"] for p in m).most_common(3)
-  perm=sum(1 for p in top if (p.get("license") or "") in _PERM); fresh=sum(1 for p in top if (_days(p) or 999)<=30)
-  rem=sum(1 for p in top if _remote(p))
-  rows="".join(f'<div style="border-top:1px solid var(--rule);padding:14px 0"><h3 style="margin:0">{i+1}. <a href="../p/{p["slug"]}.html">{e(p["name"])}</a>{" <span class=mono style=\'font-size:12px;color:var(--acc)\'>Editor\'s pick</span>" if p["slug"] in PICKS else ""}</h3><p style="margin:6px 0">{e(p["description"])}</p><p class=mono style="font-size:12px;color:var(--mute);margin:0">★ {_stars_s(p)} · {e(_lic(p))} · {e(_act(p))} · {e(", ".join(_kind(p)))} · by {e(p["maker"] or "unknown")}{" · <a href=\'../alternatives/"+p["slug"]+".html\'>alternatives</a>" if p["slug"] in ALT_SET else ""}</p>{("<p style=\'margin:6px 0 0\'>"+_inst(p)+"</p>") if p.get("install") else ""}</div>' for i,p in enumerate(top))
-  cm=[(x,y) for x,y in CMP_PAIRS if x in top and y in top][:6]
-  body=f'''<div class=prose style="max-width:900px"><span class=mono style="color:var(--acc)">Best for · {e(t)} · data checked {_ASOF}</span><h1>Best MCP servers &amp; Codex plugins for {e(t)}</h1>
-<p style="font-size:19px">{len(m)} plugins in our catalog say they help with {e(t)}. Here are the top {len(top)}, editor's picks first, then by GitHub stars. Most of them sit in {" and ".join(f'<a href="../c/{slug(c)}.html">{e(c)}</a>' for c,_ in cats_[:2])}.</p>
-<div style="border:1px solid var(--ink);background:#fffdf8;padding:12px 16px;margin:16px 0"><b>Quick read on these {len(top)}:</b> {perm} have a permissive license, {fresh} got a push in the last 30 days, {rem} install as a hosted MCP endpoint.</div>
-<h2>How to choose</h2>{_ul(["Match the host first: Codex and Claude Code install commands differ, and the install line below shows which one each project targets.","Check where it runs. Hosted MCP endpoints are quicker to set up but send your requests to someone else's server.","Prefer a recent push and a real license (MIT or Apache-2.0) for anything you'll use at work.","Stars tell you how many people looked, not whether it works. Read the code before you install."])}
-<h2>The list</h2>{rows}
-{("<h3>Head-to-head</h3><p>"+" · ".join(f'<a href="../compare/{cslug(x,y)}.html">{e(x["name"])} vs {e(y["name"])}</a>' for x,y in cm)+"</p>") if cm else ""}
-<p style="font-size:14px;color:var(--mute)">Matched by keywords in each project's own name and description. The topic comes from what people actually type into Google and Bing search boxes.</p><p><a href="../compare.html">All comparisons and use cases →</a></p>{_note()}</div>'''
-  open(f"{D}/best-for/{_uslug(t)}.html","w").write(layout(f"Best MCP servers & Codex plugins for {t} ({_ASOF[:4]}) — PickAPlugin",body,1,
-    f"The best MCP servers and Codex/Claude Code plugins for {t}: {len(m)} matches, top {len(top)} compared by stars, license, last push and install command."))
-# hub
-_hb=f'''<div class=prose style="max-width:980px"><span class=mono style="color:var(--acc)">Compare · {len(CMP_PAIRS)} head-to-heads · {len(ALT_PAGES)} alternatives lists · {len(USE_PAGES)} use cases</span><h1>Compare Codex plugins &amp; MCP servers</h1>
-<p style="font-size:19px">Side-by-side pages built from public data: GitHub stars, last push, license, packaging and install command. Updated every time the catalog refreshes.</p>
-<h2>Best for…</h2><p>{" · ".join(f'<a href="best-for/{_uslug(t)}.html">{e(t)}</a>' for t,_ in sorted(USE_PAGES))}</p>
-<h2>Alternatives</h2><p>{" · ".join(f'<a href="alternatives/{p["slug"]}.html">{e(p["name"])}</a>' for p,_ in sorted(ALT_PAGES,key=lambda t:t[0]["name"].lower()))}</p>
-<h2>Head-to-head</h2>'''
-for c in cats:
-  xs=[(a,b2) for a,b2 in CMP_PAIRS if a["category"]==c]
-  if xs: _hb+=f'<h3>{e(c)}</h3><p>{" · ".join(f"<a href=\"compare/{cslug(a,b2)}.html\">{e(a['name'])} vs {e(b2['name'])}</a>" for a,b2 in xs)}</p>'
-_hb+=f'<p>Ranked lists: {" · ".join(f"<a href=\"best/{slug(c)}.html\">{e(c)}</a>" for c in cats)}</p></div>'
-open(D+"/compare.html","w").write(layout("Compare Codex plugins & MCP servers: alternatives and head-to-heads — PickAPlugin",_hb,0,
-  f"{len(CMP_PAIRS)} side-by-side comparisons, {len(ALT_PAGES)} alternatives lists and {len(USE_PAGES)} best-for pages for Codex plugins, Claude Code plugins and MCP servers."))
-# internal links from each plugin page and category page
-for s in set(ALT_SET)|set(CMP_OF)|set(USE_OF):
-  f=f"{D}/p/{s}.html"
+# ---------- rendering (2026-11-21): no more /compare/*, /alternatives/*, /best-for/* pages.
+# Those URLs 301 to hubs (see worker/index.js). Similar-plugin lists now live on /p/ pages,
+# and /compare is a single how-to hub that points at category shelves.
+def _stars_line(p):
+  bits=[]
+  if stars(p)>=0: bits.append(f"★ {stars(p):,}")
+  if p.get("pushed_at"): bits.append("pushed "+p["pushed_at"][:10])
+  if p.get("license"): bits.append(p["license"])
+  return " · ".join(bits)
+# Enrich listing pages with similar plugins (catalog facts only; no new URLs).
+_enriched=0
+for p in P:
+  al=_alts(p, n=6)
+  if len(al)<3: continue
+  f=f"{D}/p/{p['slug']}.html"
   if not os.path.exists(f): continue
-  ln=[]
-  if s in ALT_SET: ln.append(f'<a href="../alternatives/{s}.html">{e(_bys[s]["name"])} alternatives</a>')
-  ln+=[f'<a href="../compare/{cslug(x,y)}.html">{e(x["name"])} vs {e(y["name"])}</a>' for x,y in CMP_OF.get(s,[])[:4]]
-  ln+=[f'<a href="../best-for/{_uslug(t)}.html">best for {e(t)}</a>' for t in USE_OF.get(s,[])[:3]]
-  h=open(f).read(); blk=f'<p class=shelves><span class=mono>Compare:</span> {" · ".join(ln)}</p>'
+  items="".join(
+    f'<a class=row href="{q["slug"]}.html"><h3>{e(q["name"])}</h3><p>{e(q["description"])}</p><span class="m mono">{e(_stars_line(q))} · {e(q["category"])}</span></a>'
+    for q in al)
+  blk=(f'<div class=sec><h2>Similar plugins</h2><span class=mono>Same kind of job, from public descriptions · not reviews</span></div>'
+       f'<p style="color:var(--mute);font-size:15px;margin:8px 0 0">These are other listings in the catalog whose descriptions overlap with {e(p["name"])}. We haven\'t tested them. Open each page for the install command, license and last GitHub push, and read the repo before you install.</p>'
+       f'<div class=cols style="column-count:2">{items}</div>')
+  h=open(f).read()
   h2=h.replace('<div class=sec><h2>Also in',blk+'<div class=sec><h2>Also in',1)
-  if h2!=h: open(f,"w").write(h2)
-for c in cats:
-  f=f"{D}/c/{slug(c)}.html"
-  if not os.path.exists(f): continue
-  xs=[(a,b2) for a,b2 in CMP_PAIRS if a["category"]==c]
-  al=[p for p,_ in ALT_PAGES if p["category"]==c][:8]
-  if not xs and not al: continue
-  blk=f'<p class=shelves><span class=mono>Compare:</span>'+"".join(f' <a href="../alternatives/{p["slug"]}.html">{e(p["name"])} alternatives</a>' for p in al)+f' <a href="../compare.html">all comparisons →</a></p>'
-  h=open(f).read(); i=h.find('<p class=shelves><span class=mono>Ranked:')
-  if i>=0:
-    j=h.index('</p>',i)+4; h=h[:j]+blk+h[j:]; open(f,"w").write(h)
-print("compare:",len(CMP_PAIRS),"head-to-heads,",len(ALT_PAGES),"alternatives,",len(USE_PAGES),"best-for pages")
+  if h2!=h:
+    open(f,"w").write(h2); _enriched+=1
+# Compare hub: useful original text + links to kept category hubs. No child URL lists.
+_round=f"{len(P)//50*50}+"
+_shelf=" · ".join(f'<a href="c/{slug(c)}.html">{e(c)}</a> ({sum(1 for p in P if p["category"]==c)})' for c in cats)
+# A few use-case shortlists, inlined on this one page (not their own URLs).
+_use_html=""
+if "USE_PAGES" in dir() and USE_PAGES:
+  shown=0
+  for t,m in USE_PAGES:
+    if shown>=6: break
+    top=[p for p in m if not p.get("archived")][:5]
+    if len(top)<5: continue
+    _use_html+=f'<h3>{e(t)}</h3><ul class=where>'+"".join(
+      f'<li><a href="p/{p["slug"]}.html"><b>{e(p["name"])}</b></a> — {e(p["description"])}'
+      +(f' · ★ {p["stars"]:,}' if isinstance(p.get("stars"),int) else "")+'</li>' for p in top)+'</ul>'
+    shown+=1
+_hb=f'''<div class=prose style="max-width:760px"><span class=mono style="color:var(--acc)">How to compare · public signals only</span>
+<h1>How to compare Codex plugins &amp; MCP servers</h1>
+<p style="font-size:19px">There is no single best plugin. The useful question is which one fits the job, the host you use, and how much you\'re willing to trust it with your machine.</p>
+<p>PickAPlugin lists about {_round} ChatGPT and Codex plugins, plus the MCP servers a lot of them ship with. We don\'t test or audit them, and we don\'t pick a winner. What we do show, on every listing, are facts you can check yourself:</p>
+<ul class=where>
+<li><b>What the project says it does</b> — the description comes from the public source list or the maker, not from us.</li>
+<li><b>GitHub stars and last push</b> — stars measure attention, not quality. A recent push means someone is still touching the repo; an archived repo is read-only.</li>
+<li><b>License</b> — MIT and Apache-2.0 are usually straightforward to use; GPL and AGPL are copyleft, so read them before you ship the code inside closed-source work. No license file means reuse rights are unclear.</li>
+<li><b>The install command</b> — copied from the project README when we can find one. Check whether it points at a local install or a hosted MCP endpoint, because a hosted endpoint sends data off your machine.</li>
+</ul>
+<p>A practical way to choose: open the shelf that matches the job, read the first few listings, then open two or three repos and skim the README and the last commits. If a plugin wants credentials or shell access, start it on a throwaway project. Our <a href="guides/vet-a-plugin.html">2-minute safety check</a> is the short version of that, and the <a href="guides/install-codex-plugin.html">install guide</a> covers the commands.</p>
+<p>Each listing also shows similar plugins, when we can find some, based on overlapping descriptions. That\'s a starting point, not a recommendation.</p>
+<h2>Compare by shelf</h2>
+<p>The category pages are the right place to browse. They\'re ranked with editor\'s picks first, then GitHub stars, and archived repos at the bottom. Paid placements are labelled and never change that order.</p>
+<p>{_shelf}</p>
+{("<h2>If you have a specific job</h2><p>A few starting lists, drawn from the same catalog. These are the most-starred matches for that wording, not reviews.</p>"+_use_html) if _use_html else ""}
+<p style="color:var(--mute);font-size:14px">Data from GitHub and each project\'s README, checked {_ASOF}. Spot a mistake? <a href="mailto:{EMAIL}">{EMAIL}</a></p></div>'''
+open(D+"/compare.html","w").write(layout("How to compare Codex plugins & MCP servers — PickAPlugin",_hb,0,
+  "How to compare ChatGPT and Codex plugins using public signals: stars, last push, license and install command, plus every category shelf."))
+print("compare: similar lists on",_enriched,"listing pages; no thin compare/alternatives/best-for URLs")

@@ -21,7 +21,7 @@ def _faq_ld(qa):
   return '<script type="application/ld+json">'+_tj.dumps({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":_re.sub("<[^>]+>","",a)}} for q,a in qa]}).replace("</","<\\/")+'</script>'
 def _faq_html(qa): return '<div class=faq2><h2 style="font:700 28px Newsreader,serif;margin-top:40px">Questions people ask</h2>'+"".join(f"<h3>{e(q)}</h3><p>{a}</p>" for q,a in qa)+'</div>'
 def _cat_links(cs):
-  return " · ".join(f'<a href="../best/{slug(c)}.html">best {e(c)} plugins</a>' for c in cs if c in cats)
+  return " · ".join(f'<a href="../c/{slug(c)}.html">{e(c)} plugins</a>' for c in cs if c in cats)
 def _plinks(slugs):
   ps=[by[s] for s in slugs if s in by]
   return "".join(f'<li><a href="../p/{p["slug"]}.html">{e(p["name"])}</a>: {e(p["description"][:120])}</li>' for p in ps)

@@ -98,7 +98,7 @@ guide("find-codex-plugins","Where to find ChatGPT and Codex plugins — PickAPlu
 <li><b>GitHub awesome lists</b>, like hashgraph-online/awesome-codex-plugins. Curated, and some double as a marketplace you can add.</li>
 <li><b>Making an MCP server?</b> See <a href="where-to-submit-mcp-server.html">where to submit your MCP server</a>.</li>
 <li><b>Independent directories</b>: PickAPlugin (us), CodexStacks, Codex Harness, Codex Marketplace and others. See <a href="../alternatives.html">how they compare</a>.</li></ul>
-<p>PickAPlugin's angle: {len(P)} plugins, hand-sorted into {len(cats)} categories in plain English, each with last update, license, language and the install command from its README. There are no accounts and no tracking walls. See <a href="../best/agent-workflows.html">best agent workflow plugins</a> or browse <a href="../languages.html">by language</a>.</p>''',
+<p>PickAPlugin's angle: {len(P)} plugins, hand-sorted into {len(cats)} categories in plain English, each with last update, license, language and the install command from its README. There are no accounts and no tracking walls. See <a href="../c/agent-workflows.html">best agent workflow plugins</a> or browse <a href="../languages.html">by language</a>.</p>''',
  [("Is there an app store for Codex plugins?","The closest thing is the built-in Plugins directory. Community plugins are spread across GitHub, which is why directories like PickAPlugin exist."),
   ("Are ChatGPT plugins the same as the old 2023 ChatGPT plugins?","No. The 2023 plugin store was retired. Today's plugins are bundles of skills, apps and MCP servers that work in ChatGPT and Codex.")])
 
@@ -188,7 +188,7 @@ _ab="".join(f'<h2>{e(n)}</h2><p>{e(w)} <a href="{u}"{"" if "skillmaxx" in u else
 _page("alternatives.html",0,"PickAPlugin alternatives: other ChatGPT & Codex plugin directories compared","An honest look at where else to find ChatGPT and Codex plugins (OpenAI's directory, CodexStacks, Codex Harness, awesome-codex-plugins) and when each is the better pick.",
  "Compared · checked "+_CHK,"PickAPlugin vs other plugin directories",
  "We'd rather you find the right plugin than stay on our site. Here's where else to look, and when each one is the better pick. Counts are what each site says about itself as of "+_CHK+".",
- f'''<h2>PickAPlugin (us)</h2><p>{len(P)} plugins, hand-sorted into {len(cats)} plain-English categories, with pages by <a href="languages.html">language</a> and <a href="licenses.html">license</a>, "best of" pages like <a href="best/review-testing.html">best review and testing plugins</a>, and free browser tools. There's no sign-up. We're smaller than some of the lists below on purpose: we leave out repos that are dead or only half work.</p><p><b>Pick it if:</b> you want a quick, readable shortlist with the install command right there.</p>{_ab}''',
+ f'''<h2>PickAPlugin (us)</h2><p>{len(P)} plugins, hand-sorted into {len(cats)} plain-English categories, with pages by <a href="languages.html">language</a> and <a href="licenses.html">license</a>, ranked shelves like <a href="c/review-testing.html">best review and testing plugins</a>, and free browser tools. There's no sign-up. We're smaller than some of the lists below on purpose: we leave out repos that are dead or only half work.</p><p><b>Pick it if:</b> you want a quick, readable shortlist with the install command right there.</p>{_ab}''',
  [("Which Codex plugin directory is the biggest?","By their own counts, CodexStacks and Codex Harness list the most (roughly 900–1,000+ as of "+_CHK+"). Bigger isn't always better, so check what filter each uses."),
   ("Can I use more than one?","Sure. They're all free to browse, and the install command is the same wherever you find a plugin.")])
 print("aiseo:",len(GUIDES),"guides + hub, faq, alternatives")
@@ -209,27 +209,18 @@ _NOTE={("claude","codex"):"JSON becomes TOML. Each entry under <code>mcpServers<
  ("claude","vscode"):"Rename the root key from <code>mcpServers</code> to <code>servers</code> and add a <code>type</code> to each entry. Everything else carries straight over.",
  ("vscode","claude"):"Rename <code>servers</code> to <code>mcpServers</code> and you can drop <code>type</code>. Swap any <code>${input:...}</code> prompts for real values or env vars."}
 _PAIRS=[(a,b) for a in _APPS for b in _APPS if a!=b and (_APPS[a][1],_APPS[b][1]) in _NOTE]
-os.makedirs(D+"/tools/mcp-config-converter",exist_ok=True)
+# Pair-specific notes live on the converter hub. Old /tools/mcp-config-converter/<pair>
+# URLs 301 to that hub (worker/index.js). Do not generate those thin pages again.
 CONV=[]
+_notes=[]
 for a,b in _PAIRS:
   A,fa,pa=_APPS[a]; B,fb,pb=_APPS[b]; sl=f"{a}-to-{b}"; CONV.append((sl,A,B))
-  others=" · ".join(f'<a href="{x}-to-{y}.html">{_APPS[x][0]} → {_APPS[y][0]}</a>' for x,y in _PAIRS if (x,y)!=(a,b) and (x==a or y==b))
-  body=f'''<h2>Where each file lives</h2><ul><li><b>{A}:</b> <code>{e(pa)}</code></li><li><b>{B}:</b> <code>{e(pb)}</code></li></ul>
-<h2>Before and after</h2><div style="display:grid;grid-template-columns:1fr 1fr;gap:14px"><div><span class=mono>{A}</span><pre>{e(_EX[fa])}</pre></div><div><span class=mono>{B}</span><pre>{e(_EX[fb])}</pre></div></div>
-<h2>What changes</h2><p>{_NOTE[(fa,fb)]}</p>
-<p style="font-size:18px"><a href="/tools/mcp-config-converter?to={fb}"><b>Open the converter set to {B} →</b></a> Paste your {A} config, copy the result. It runs in your browser and nothing gets uploaded.</p>
-<p>Double-check before you paste the result anywhere: if your config has tokens in it, they'll be in the output too.</p>
-<h3>Other conversions</h3><p>{others}</p>'''
-  qa=[(f"How do I convert an MCP config from {A} to {B}?",f"Paste the {A} config into PickAPlugin's free MCP config converter with the target set to {B}, then save the result to {pb}."),
-      (f"Do I need to change the MCP server itself?","No. A local server runs the same command in every app. Only the config format around it changes.")]
-  _page(f"tools/mcp-config-converter/{sl}.html",2,f"Convert MCP config from {A} to {B} (free, in-browser) — PickAPlugin",
-   f"Move MCP servers from {A} to {B}: file locations, a before/after example, what changes, and a free converter that runs in your browser.",
-   "Free tool · MCP config · updated "+_CHK,f"Convert MCP servers from {A} to {B}",
-   f"Got MCP servers working in {A} and want the same ones in {B}? The servers don't change, only the config wrapper does. Here's exactly what to change.",body,qa)
+  _notes.append(f"<h3>{e(A)} → {e(B)}</h3><p><b>Files:</b> {e(A)} at <code>{e(pa)}</code> · {e(B)} at <code>{e(pb)}</code></p><p>{_NOTE[(fa,fb)]}</p>")
 _cv=D+"/tools/mcp-config-converter.html"
 _h=open(_cv).read()
-_pl="".join(f'<li><a href="mcp-config-converter/{s}.html">{A} → {B}</a></li>' for s,A,B in CONV)
-_h=_h.replace("<h3>Related on PickAPlugin</h3>",f'<h3>Step-by-step for each pair</h3><ul>{_pl}</ul><h3>Related on PickAPlugin</h3>',1)
+_pl="".join(f'<li><a href="/tools/mcp-config-converter?to={_APPS[b][1]}">{A} → {B}</a></li>' for (_,A,B), (a,b) in zip(CONV,_PAIRS))
+_notes_html="<h3>What changes between apps</h3>"+"".join(_notes)
+_h=_h.replace("<h3>Related on PickAPlugin</h3>",_notes_html+"<h3>Jump to a conversion</h3><ul>"+_pl+"</ul><h3>Related on PickAPlugin</h3>",1)
 _h=_h.replace("</body>",'<script>(function(){var t=new URLSearchParams(location.search).get("to"),s=document.getElementById("to");if(t&&s&&[].some.call(s.options,function(o){return o.value==t}))s.value=t})()</script></body>',1)
 open(_cv,"w").write(_h)
 

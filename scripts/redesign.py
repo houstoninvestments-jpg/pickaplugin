@@ -56,13 +56,17 @@ pre.code{background:#fffdf8;border:1px solid var(--rule);padding:8px;font:12px '
 .hero2 p{font-size:21px;line-height:1.45;max-width:40ch;margin:0 auto 30px;color:#2b2823}
 .hero2 form{display:flex;max-width:560px;margin:0 auto;border:1px solid var(--ink);background:#fffdf8}.hero2 input{flex:1;min-width:0;border:0;background:transparent;font:italic 19px Newsreader,serif;padding:13px 16px!important;outline:none;height:auto}
 .hero2 button{border:0;background:var(--ink);color:var(--paper);font:500 11px 'Martian Mono',monospace;text-transform:uppercase;padding:0 20px;cursor:pointer}.hero2 button:hover{background:var(--acc)}
+.how{max-width:740px;padding:40px 0 16px;margin:0 auto}.how h2{font:600 28px Newsreader,serif;margin:0 0 14px}
+.how p{font-size:18px;line-height:1.5;margin:0 0 14px}.how ul{margin:0 0 16px;padding-left:1.2em}.how li{margin:0 0 8px;font-size:17px;line-height:1.45}
+.how .shelves{padding:4px 0 16px}
 .hero2 .mk{display:block;margin-top:18px;font-size:15px;color:var(--mute)}.hero2 .mk a{color:var(--acc)}
 @media(max-width:860px){.ear,.dl{display:none}.nav{justify-content:flex-start;overflow-x:auto;white-space:nowrap;gap:18px}.hero2{padding:36px 0 32px}.hero2 h1{font-size:38px}.hero2 p{font-size:18px}}"""
 open(D+"/style.css","w").write(CSS)
-def layout(title,body,depth=0,desc="An independent, hand-edited catalog of ChatGPT and Codex plugins."):
+def layout(title,body,depth=0,desc="An independent, hand-edited catalog of ChatGPT and Codex plugins.",robots=None):
   r="../"*depth
+  _rb=f'<meta name=robots content="{e(robots)}">' if robots else ""
   return f"""<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>{e(title)}</title>
-<meta name=description content="{e(desc)}"><link rel=stylesheet href="{r}style.css"><script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script></head><body><div class=w>
+<meta name=description content="{e(desc)}">{_rb}<link rel=stylesheet href="{r}style.css"><script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script></head><body><div class=w>
 <header class=mast><div class="ear mono"><span>Independent · not affiliated with OpenAI</span><span>Hand-sorted, not ranked by an algorithm</span></div>
 <a class=wm href="{r}index.html">PickA<i>Plugin</i></a><p class=tag>A catalog of ChatGPT &amp; Codex plugins, sorted by people.</p>
 <div class="dl mono"><span>Issue No. 1</span><span>Updated {BUILD_S}</span><span>{len(P)} plugins catalogued</span></div>
@@ -112,13 +116,21 @@ def preview_home():
   if not TOP: ads.append(cad("Classified · space available","The Top Spot","The lead story slot above, labelled as paid. $199/mo, one at a time.","advertise.html#top",True))
   ads.append(cad("Classified · always open","Verified by maker","Claim your listing and keep it current. $9/mo.","advertise.html#verified",True))
   rest=[s for s in PK if s!=p["slug"] and s not in others]
+  _round=f"{len(P)//50*50}+"
+  _shelves=" · ".join(f'<a href="c/{slug(c)}.html">{e(c)}</a>' for c in cats)
+  how=f"""<section class=how><h2>How to use this catalog</h2>
+<p>PickAPlugin is a free, independent directory of about {_round} ChatGPT and Codex plugins, plus the MCP servers a lot of them ship with. Most of these projects live in random GitHub repos. We collect them from public lists, sort them onto shelves, and show the facts we can actually check: last GitHub push, license, language, and the install command from the project's own README when we can find one.</p>
+<p>A listing here is not a recommendation, except for the handful of editor's picks, and even those are just our opinion from reading the docs. We don't test or audit the plugins. Read the code before you install anything, especially tools that get shell access or credentials.</p>
+<p>If you're looking for something, start with a shelf rather than the whole list. <a href="c/agent-workflows.html">Agent workflows</a> is the biggest. <a href="c/security-governance.html">Security</a> is the one we'd open first if an agent is going to touch a real repo. <a href="c/review-testing.html">Review and testing</a> is useful before you merge an agent's work. Each shelf is ranked with editor's picks first, then GitHub stars, and archived repos at the bottom. Stars measure attention, not quality.</p>
+<p class=shelves><span class=mono>Shelves:</span> {_shelves}</p>
+<p>New to installing these? There's a short <a href="guides/install-codex-plugin.html">install guide</a> and a <a href="guides/vet-a-plugin.html">2-minute safety check</a>. We also published <a href="research/state-of-codex-plugins-2026.html">State of Codex Plugins 2026</a>, our own look at the public repos. How the catalog is made is on the <a href="about.html">how we pick</a> page. Makers can <a href="submit.html">list a plugin for free</a>. Labelled paid placements exist if someone wants a listing seen first; money never changes the catalog order or the picks.</p></section>"""
   picks2="".join(f'<a class=row href="p/{s}.html"><h3>{e(by[s]["name"])}</h3><p>{e(PICKS[s])}</p><span class="m mono">{meta(by[s])}</span></a>' for s in rest)
   chips='<button class=on data-c="">Everything</button>'+"".join(f'<button data-c="{e(c)}">{e(c)}<sup>{count[c]}</sup></button>' for c in cats)
   hero=f"""<section class=hero2><h1>Hundreds of ChatGPT &amp; Codex plugins, scattered across GitHub. <em>Here they are in one place.</em></h1>
 <p>We gather them, sort them by hand, and show the real details (last update, license, install command) so you can tell what's worth installing. Free to browse.</p>
 <form onsubmit="event.preventDefault();document.getElementById('catalog').scrollIntoView({{behavior:'smooth'}})" role=search><input id=q type=search placeholder="memory, PDF, secrets…" aria-label="Search plugins"><button>Browse plugins</button></form>
 <span class=mk>Made a plugin? <a href="submit.html">List it free</a> or claim your listing. Running a sale? <a href="black-friday.html">Black Friday deals</a>. New: <a href="research/state-of-codex-plugins-2026.html">State of Codex Plugins 2026</a>, our data on 339 plugin repos.</span></section><!--/hero-->"""
-  return hero+f"""<section class=front><div>{lead}</div><div class=side3>{side}</div></section>
+  return hero+how+f"""<section class=front><div>{lead}</div><div class=side3>{side}</div></section>
 {nlform("home")}<div class=sec><h2>Ads &amp; open space</h2><span class=mono>Paid placements are labelled. They never change picks or catalog order.</span></div><div class=ads>{ads and "".join(ads[:3])}</div>
 {f'<div class=sec><h2>More picks</h2><span class=mono>Our opinion, from each project&#39;s own docs · not audited</span></div><div class=cols>{picks2}</div>' if picks2 else ""}
 <div class=sec id=catalog><h2>The full catalog</h2><span class=mono id=n></span></div>

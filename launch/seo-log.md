@@ -106,3 +106,25 @@ Checked on 2026-11-16, nothing blocking found:
 - Page indexing (report updated 2026-11-12): 86 indexed, 467 not indexed (273 "Crawled - currently not indexed", 191 "Discovered - currently not indexed", 3 redirects).
 - URL Inspection of / : "URL is not on Google" — Crawled - currently not indexed (last crawl 2026-11-10, fetch OK, indexing allowed, canonical self).
 - Read: Google is dropping the site on quality, not a technical block (likely thin, auto-generated pages plus the Nov core update). Hold off on new generated-page batches; next step is consolidating or noindexing thin /p, /compare and /alternatives pages and making the home page and key hubs more substantial. Re-check on 2026-11-23.
+## 2026-11-21 (thin-page cleanup)
+
+**Why:** GSC (reviewed 2026-11-16) showed no manual action, but the homepage and most URLs were "Crawled / Discovered - currently not indexed." Impressions fell to about 0 from Nov 9. Likely cause: a large batch of thin, auto-generated pages (compare, alternatives, best-for, /best duplicates of /c, MCP converter pairs, plus thank-you pages in the sitemap).
+
+**Audit of the then-current build (1,032 sitemap URLs):**
+- /p/ listing pages: 659. Keep indexable (they are the catalog). Median ~88 unique non-template words; descriptions are short, but each page has unique project facts.
+- /compare/<a>-vs-<b>: 123 pages, ~79% template, median 47 unique non-template words. Thin. 301 to /compare.
+- /alternatives/<slug>: 120 pages, ~66% template, median 90 unique non-template words. Thin. 301 to /p/<slug>; similar-plugin lists now sit on the listing page.
+- /best-for/<use>: 37 generated use-case pages. 301 to /compare; a few shortlists were inlined on that hub.
+- /best/<cat>: 12 pages, near-duplicates of /c/<cat> (almost the same word counts). 301 to /c/<cat>, and the ranked intro moved onto the category hubs.
+- /tools/mcp-config-converter/<pair>: 14 near-duplicate converter pages (~90% template). 301 to /tools/mcp-config-converter; pair notes folded into the hub.
+- /language/* with fewer than 10 plugins (C#, PowerShell, Swift): dropped; 308 already sent below-gate URLs to /languages. License pages all stayed (min 5).
+- Thank-you/form pages (claimed, confirm, confirmed, subscribed, unsubscribed, form-error): noindex, dropped from the sitemap.
+- Kept and enriched: homepage (new "How to use this catalog" section), all /c/ hubs (original intro, start-here shortlists, links to guides and sibling shelves), /compare hub, guides, tools, research, blog article.
+
+**Rules now in the build** (refresh.py does not undo them; lastmod still uses _sig from 78f80ca):
+- Do not generate new /compare/*, /alternatives/*, /best-for/*, /best/* or converter-pair URL batches.
+- Sitemap omits noindex pages. Worker 301s the retired URL patterns (run_worker_first updated).
+
+**Titles:** no homepage or Nov 9 listing-title changes (those are not due). Category pages absorbed the old /best titles so the 301s have a matching heading.
+
+Re-check indexing on 2026-11-23 as planned, then again in early 2027.

@@ -58,17 +58,35 @@ export class Stats extends DurableObject {
 }
 const statsStub = env => env.STATS.get(env.STATS.idFromName("v1"));
 const BOT = /bot|crawl|spider|slurp|scrap|fetch|curl|wget|python|httpx|aiohttp|go-http|java\/|okhttp|axios|undici|node|deno|headless|phantom|puppeteer|playwright|selenium|lighthouse|pagespeed|gtmetrix|preview|facebookexternalhit|embedly|whatsapp|telegram|discord|slack|skype|monitor|uptime|pingdom|feed|rss|archiv|semrush|ahrefs|mj12|dataforseo|bytespider|gpt|claude|anthropic|perplexity|cohere|meta-external|petal|yandex|baidu|bing|google|yahoo|validator|checker|scan|http-client|libwww|winhttp|postman|insomnia/i;
-function human(req) {
+// Default automation fingerprints seen on /go/ in Nov 2026 (Playwright/Puppeteer iPhone preset; Catalina is a common scraper UA).
+const FAKE_UA = /iPhone OS 13_2_3|Android 6\.0; Nexus 5 Build\/MRA58N|Intel Mac OS X 10_15_7/;
+const CLOUD_ASN = new Set([16509,14618,7224,8987,15169,396982,8075,14061,24940,213230,16276,63949,20473,31898,45102,132203,13335,136907,60068,212238,51167,20473,9009,20860,12876,16247,40676,55286,394380,399629,398101,397423,57523]);
+const CLOUD_ORG = /amazon|aws|google cloud|gcp|microsoft|azure|digitalocean|hetzner|ovh|linode|akamai|vultr|alibaba|tencent|choopa|datacamp|m247|leaseweb|hivelocity|colocrossing|psychz|quadranet|ovhcloud|oracle cloud|clouvider|scaleway|contabo|kamatera|hostwinds/i;
+function sameSiteReferer(req) {
+  const ref = req.headers.get("referer") || "";
+  try { const h = new URL(ref).hostname; return h === "pickaplugin.com" || h === "www.pickaplugin.com"; } catch { return false; }
+}
+function human(req, forClick) {
   const ua = req.headers.get("user-agent") || "";
-  if (ua.length < 40 || !/^Mozilla\/5\.0 /.test(ua) || BOT.test(ua)) return false;
+  if (ua.length < 40 || !/^Mozilla\/5\.0 /.test(ua) || BOT.test(ua) || FAKE_UA.test(ua)) return false;
   if (req.cf && req.cf.verifiedBotCategory) return false;
+  const score = req.cf && req.cf.botManagement && req.cf.botManagement.score;
+  if (typeof score === "number" && score < 30) return false;
+  const asn = Number((req.cf && req.cf.asn) || 0);
+  if (CLOUD_ASN.has(asn) || CLOUD_ORG.test((req.cf && req.cf.asOrganization) || "")) return false;
   const pur = (req.headers.get("sec-purpose") || req.headers.get("purpose") || "").toLowerCase();
   if (pur.includes("prefetch") || pur.includes("prerender")) return false;
   if (!req.headers.get("accept-language")) return false;
+  if (forClick) {
+    // Real clicks come from a listing page. Crawlers often spoof a browser UA and follow every /go/ link.
+    if (!sameSiteReferer(req)) return false;
+    const site = (req.headers.get("sec-fetch-site") || "").toLowerCase();
+    if (site && site !== "same-origin" && site !== "same-site") return false;
+  }
   return true;
 }
-async function visitor(req, env) {
-  const ip = req.headers.get("cf-connecting-ip"); if (!ip || !human(req)) return null;
+async function visitor(req, env, forClick) {
+  const ip = req.headers.get("cf-connecting-ip"); if (!ip || !human(req, forClick)) return null;
   return hmac(env.ADMIN_TOKEN || "pap", "ip:" + new Date().toISOString().slice(0, 10) + ":" + ip);  // salted, daily-rotating, never stored raw
 }
 const fmtN = n => n.toLocaleString("en-US");
@@ -291,7 +309,7 @@ async function goOut(req, env, u, slug) {
   const to = u.searchParams.get("to"), dest = (to === "home" && p.homepage) || (to === "docs" && p.docs) || p.repo;
   if (!/^https?:\/\//.test(dest || "")) return Response.redirect("https://pickaplugin.com/p/" + slug, 302);
   if (env.STATS && req.method === "GET") {
-    try { const h = await visitor(req, env); if (h) await statsStub(env).hit("click", slug, h); } catch (e) { console.log("stats click", String(e)); }
+    try { const h = await visitor(req, env, true); if (h) await statsStub(env).hit("click", slug, h); } catch (e) { console.log("stats click", String(e)); }
   }
   return new Response(null, { status: 302, headers: { location: dest, "cache-control": "no-store", "x-robots-tag": "noindex, nofollow", "referrer-policy": "origin" } });
 }
@@ -299,21 +317,33 @@ async function withViews(req, env, res, slug) {
   let c = null;
   try { const h = await visitor(req, env); c = await statsStub(env).hit(h ? "view" : "none", slug, h); } catch (e) { console.log("stats view", String(e)); }
   const out = new Response(res.body, res); out.headers.set("cache-control", "no-store");
-  if (!c || !c.views) return out;
-  const txt = `${fmtN(c.views)} view${c.views === 1 ? "" : "s"}` + (c.clicks ? ` · ${fmtN(c.clicks)} click${c.clicks === 1 ? "" : "s"} to the maker` : "") + " this month";
-  return new HTMLRewriter().on("#vs", { element(el) { el.removeAttribute("hidden"); el.setInnerContent(txt); el.setAttribute("title", "Counted by PickAPlugin: one per visitor per day, obvious bots excluded"); } }).transform(out);
+  // Public view/click counts are hidden (2026-11-21): Nov totals were inflated by crawlers
+  // spoofing browser UAs. Counts still accrue in the Durable Object for /api/admin?stats=1.
+  return out;
 }
 async function withTotal(env, res) {
   let t = null; try { t = await statsStub(env).total("click"); } catch (e) { console.log("stats total", String(e)); }
   const out = new Response(res.body, res); out.headers.set("cache-control", "no-store");
-  if (!t || !t.total) return out;
-  const txt = `So far this month, PickAPlugin sent ${fmtN(t.total)} click${t.total === 1 ? "" : "s"} to makers' projects across ${fmtN(t.plugins)} listing${t.plugins === 1 ? "" : "s"}. We started counting on November 15, 2026: one click per visitor per listing per day, obvious bots excluded.`;
-  return new HTMLRewriter().on("#clicks-sent", { element(el) { el.removeAttribute("hidden"); el.setInnerContent(txt); } }).transform(out);
+  // Same as listing pages: do not publish the site-wide click total until counts are trustworthy.
+  return out;
 }
 export default {
   async fetch(req, env) {
     const u = new URL(req.url);
     if (u.hostname === "www.pickaplugin.com" || u.protocol === "http:") { u.hostname = "pickaplugin.com"; u.protocol = "https:"; return Response.redirect(u.toString(), 301); }
+    // Thin-page consolidations (2026-11-21). Keep these in run_worker_first (wrangler.toml + upload_buckets.py).
+    const path = u.pathname.replace(/\.html$/i, "").replace(/\/+$/, "") || "/";
+    const thin = [
+      [/^\/best\/([a-z0-9-]+)$/, (s) => "/c/" + s],
+      [/^\/alternatives\/([a-z0-9-]+)$/, (s) => "/p/" + s],
+      [/^\/compare\/([a-z0-9-]+)$/, () => "/compare"],
+      [/^\/best-for\/([a-z0-9-]+)$/, () => "/compare"],
+      [/^\/tools\/mcp-config-converter\/([a-z0-9-]+)$/, () => "/tools/mcp-config-converter"],
+    ];
+    for (const [re, to] of thin) {
+      const m = path.match(re);
+      if (m) return Response.redirect("https://pickaplugin.com" + to(m[1]), 301);
+    }
     if (u.pathname === "/mcp" || u.pathname === "/mcp/") return mcp(req, env, u);
     const go = u.pathname.match(/^\/go\/([a-z0-9-]+)\/?$/);
     if (go) return goOut(req, env, u, go[1]);

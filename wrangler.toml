@@ -9,7 +9,7 @@ directory = "dist"
 binding = "ASSETS"
 html_handling = "auto-trailing-slash"
 not_found_handling = "404-page"
-run_worker_first = ["/p/*", "/advertise", "/advertise.html", "/advertise/", "/go/*"]
+run_worker_first = ["/p/*", "/advertise", "/advertise.html", "/advertise/", "/go/*", "/best/*", "/compare/*", "/alternatives/*", "/best-for/*", "/tools/mcp-config-converter/*"]
 
 [[durable_objects.bindings]]
 name = "STATS"

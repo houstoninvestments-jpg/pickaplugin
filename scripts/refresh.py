@@ -1,6 +1,13 @@
 #!/usr/bin/env python3
 """Re-crawl public sources and update data/plugins.json. Never invents entries:
-every record is parsed from a source list. Keeps first_seen dates across runs."""
+every record is parsed from a source list. Keeps first_seen dates across runs.
+
+This script does not generate HTML. Indexability rules live in build.py,
+build_seo.py, build_compare.py, build_collections.py and worker/index.js
+(2026-11-21): do not add /compare/*, /alternatives/*, /best-for/*, /best/*
+or MCP converter-pair URL batches back into the daily build. Sitemap lastmod
+only moves when a page's content actually changes (build_seo._sig, commit 78f80ca).
+"""
 import json, re, urllib.request, datetime, os
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SOURCES = [("awesome-codex-plugins",
