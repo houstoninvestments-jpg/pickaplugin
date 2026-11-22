@@ -107,7 +107,7 @@ function run(){const r=[];let j;const t=$("pj").value.trim();
 tool("mcp-config-converter","MCP config converter: JSON to Codex config.toml and back — PickAPlugin",
  "Convert MCP server config between Claude, Cursor, VS Code and Codex",
  "Free MCP config converter. Turn an mcpServers JSON block from Claude Desktop, Cursor or VS Code into Codex config.toml, or go the other way. Runs in your browser.",
- "Every app wants its MCP servers written a little differently. Claude Desktop and Cursor use an <code>mcpServers</code> JSON object, VS Code uses <code>servers</code>, and Codex wants TOML tables in <code>~/.codex/config.toml</code>. Paste one, pick where it's going, and copy the result.",
+ "Every app wants its MCP servers written a little differently. Claude Desktop and Cursor use an <code>mcpServers</code> JSON object, VS Code uses <code>servers</code>, and Codex wants TOML tables in <code>~/.codex/config.toml</code>. Paste one, pick where it's going, and copy the result. For the file paths and UI steps, see <a href='../guides/install-mcp-server-claude-cursor-codex.html'>how to install an MCP server in Claude Desktop, Cursor and Codex</a>.",
  '''<div class=two><div><label for=src>Paste your config (JSON or Codex TOML)</label><textarea id=src spellcheck=false></textarea></div>
 <div><label for=to>Convert to</label><select id=to><option value=codex>Codex (~/.codex/config.toml)</option><option value=claude>Claude Desktop / Claude Code / Cursor (mcpServers JSON)</option><option value=vscode>VS Code (.vscode/mcp.json)</option></select>
 <label>Result</label><pre id=res></pre></div></div>
@@ -152,7 +152,7 @@ function conv(){const msg=[];let s;
  $("res").textContent=o.trim();$("msg").innerHTML=msg.map(x=>"<li><b class="+x[0]+">"+(x[0]==="ok"?"Where it goes":"Heads up")+":</b> "+x[1]+"</li>").join("")}
 function cp(){navigator.clipboard.writeText($("res").textContent)}
 ''',
- [("How do I add an MCP server to Codex?","Add a <code>[mcp_servers.name]</code> table to <code>~/.codex/config.toml</code> with a <code>command</code> and <code>args</code> for a local server, or a <code>url</code> for a remote one. You can also run <code>codex mcp add</code>. This page writes the TOML for you."),
+ [("How do I add an MCP server to Codex?","Add a <code>[mcp_servers.name]</code> table to <code>~/.codex/config.toml</code> with a <code>command</code> and <code>args</code> for a local server, or a <code>url</code> for a remote one. You can also run <code>codex mcp add</code>. This page writes the TOML for you. The full walkthrough for Claude Desktop, Cursor and Codex is in the <a href=\"../guides/install-mcp-server-claude-cursor-codex.html\">MCP install guide</a>."),
   ("How do I convert claude_desktop_config.json to Codex config.toml?","Paste the whole file (or just the <code>mcpServers</code> part) on the left, choose Codex, and hit Convert. Each server becomes its own TOML table, with <code>env</code> and headers as inline tables."),
   ("Why does VS Code use servers instead of mcpServers?","That's just how VS Code's <code>.vscode/mcp.json</code> is defined. It also wants a <code>type</code> on every entry, so the converter adds <code>stdio</code> or <code>http</code>."),
   ("Does it handle Codex-only settings like startup_timeout_sec?","It keeps the common fields: command, args, env, cwd, url and headers. Codex-only extras like timeouts or <code>bearer_token_env_var</code> you'll need to add by hand after converting."),

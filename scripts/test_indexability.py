@@ -30,7 +30,7 @@ for name in thank:
 # Hubs we kept
 for keep in ("/", "/compare", "/alternatives", "/languages", "/licenses",
              "/c/agent-workflows", "/c/data-backend", "/tools/mcp-config-converter",
-             "/guides/install-codex-plugin"):
+             "/guides/install-codex-plugin", "/guides/install-mcp-server-claude-cursor-codex", "/guides/check-mcp-server-safe"):
   assert keep in paths, keep
 
 # /best files must not be generated; /c files must

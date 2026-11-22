@@ -335,7 +335,7 @@ CAT_EXTRA={
 CAT_TITLE={"data-backend":"Best backend & database plugins for OpenAI Codex and ChatGPT ({n} ranked) — PickAPlugin"}
 def catlinks(c):
   sib=" · ".join(f'<a href="{slug(x)}.html">{e(x)}</a>' for x in cats if x!=c)
-  return (f'<p class=shelves><span class=mono>Also see:</span> <a href="../guides/install-codex-plugin.html">Install a plugin</a> · <a href="../guides/vet-a-plugin.html">A 2-minute safety check</a> · <a href="../compare.html">How we compare plugins</a></p>'
+  return (f'<p class=shelves><span class=mono>Also see:</span> <a href="../guides/install-codex-plugin.html">Install a plugin</a> · <a href="../guides/install-mcp-server-claude-cursor-codex.html">Install an MCP server</a> · <a href="../guides/vet-a-plugin.html">Vet a plugin</a> · <a href="../guides/check-mcp-server-safe.html">Check an MCP server</a> · <a href="../compare.html">How we compare plugins</a></p>'
           f'<p class=shelves><span class=mono>Other shelves:</span> {sib}</p>')
 for c in cats:
   items=sorted([p for p in P if p["category"]==c],key=rankkey)
@@ -362,7 +362,7 @@ for c in cats:
 open(D+"/submit.html","w").write(layout("Submit a plugin — PickAPlugin",f"""<div class=prose><span class=mono style="color:var(--acc)">Free, always</span><h1>Submit a plugin</h1>
 <p>Listing costs nothing. We re-read our public sources every day, so if your plugin is public and in a list like <a href="https://github.com/hashgraph-online/awesome-codex-plugins">awesome-codex-plugins</a>, it'll show up on its own.</p>
 <p>Not in a list yet? Email <a href="mailto:{EMAIL}?subject=Submit%20a%20plugin">{EMAIL}</a> with the repo link and one sentence on what it does. We read every one.</p>
-<p>Got an MCP server too? Here's <a href="guides/where-to-submit-mcp-server.html">every other place to submit it</a>.</p>
+<p>Got an MCP server too? Here's <a href="guides/where-to-submit-mcp-server.html">every other place to submit it</a>, and <a href="guides/install-mcp-server-claude-cursor-codex.html">how people install one in Claude Desktop, Cursor and Codex</a>.</p>
 <p>Want it in OpenAI's official Plugins Directory too? Here's <a href="guides/publish-codex-plugin.html">how to publish a Codex or ChatGPT plugin</a>.</p>
 <div class=box id=badge><span class=mono>Get your badge</span><h3>Already listed? Show it.</h3><p><img src="badge/listed-dark.svg" alt="Listed on PickAPlugin" height=20> &nbsp; <img src="badge/listed-light.svg" alt="Listed on PickAPlugin (light)" height=20></p><p>Swap <code>your-slug</code> for the slug in your listing URL (<code>pickaplugin.com/p/your-slug</code>). Every listing page also has this snippet with the slug filled in.</p>"""+_snip("Markdown (README)",f"[![Listed on PickAPlugin]({SITE_URL}/badge/your-slug.svg)]({SITE_URL}/p/your-slug)")+_snip("HTML (your site)",f'<a href="{SITE_URL}/p/your-slug"><img src="{SITE_URL}/badge/your-slug.svg" alt="Listed on PickAPlugin" height="20"></a>')+f"""<p style="margin-top:10px">Light version: <code>your-slug-light.svg</code>. <a href="badge.html">More styles →</a></p>{BADGE_JS}</div>
 <p>Building with an agent? Our free <a href="mcp-server.html">MCP server</a> lets Claude, Cursor, Codex or VS Code search the catalog directly.</p>

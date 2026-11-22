@@ -1,0 +1,88 @@
+<h2>A listing is not a review</h2>
+<p>The official MCP documentation on <a href="https://modelcontextprotocol.io/docs/draft/tutorials/security/local-server-security" target="_blank" rel="noopener">local server security</a> puts this plainly: a listing on a registry is not an endorsement. Docker Hub, npm, PyPI and GitHub will host almost anything. A familiar name, a high star count, or a page on a directory (this one included) does not mean the code is safe, current, or what it claims to be.</p>
+<p>PickAPlugin does not test or audit plugins or MCP servers. Descriptions and install commands come from each project's README or from the maker. We show useful signals (last commit, archived or not, license, the install line) so you can do the next part yourself. This guide is that next part, based on official MCP, Claude, Cursor and Codex docs, not on a security lab we don't run.</p>
+<p>If you're vetting a ChatGPT or Codex <b>plugin</b> (a marketplace package that may include skills, hooks and an MCP server), start with <a href="vet-a-plugin.html">the plugin checklist</a>. This page is about the MCP server itself, including ones you add by hand in Claude Desktop, Cursor or Codex. For the install steps, see <a href="install-mcp-server-claude-cursor-codex.html">how to install an MCP server in those three apps</a>.</p>
+
+<h2>What you're actually trusting</h2>
+<p>Official local-server docs make a distinction that the word "plugin" tends to hide.</p>
+<p>A <b>local stdio server</b> is an ordinary process your app starts as you. It inherits a lot of what your account can do. The protocol does not sandbox it. In practice that process can read files your user can read (SSH keys, cloud creds, browser profiles, the rest of your home directory), see environment variables you pass to it, and open outbound network connections. The official guide's short version: your real security decisions happen before launch, in what you install and how you run it. The stdio transport is not a fence.</p>
+<p>A <b>remote HTTP server</b> is a different trade. The code isn't running as you, but your agent is sending tool calls and often file contents, prompts or API data to a machine you don't control. You're trusting the operator with whatever the model decides to send, and with whatever tools that server exposes (some of them write, delete, post or pay, not just read).</p>
+<p>Trust also stacks. Every server you enable shares the model's context, so a sloppy or hostile server can influence how the agent uses the tools of the others. Official advice is to keep the roster small, and to remove servers you no longer use.</p>
+
+<h2>A practical checklist</h2>
+
+<h3>1. Know what's already on the machine</h3>
+<p>Before you add anything, open the config you already have and read it. Claude Desktop: <code>claude_desktop_config.json</code>, plus the Extensions page. Cursor: Customize → MCPs, and the two <code>mcp.json</code> files (<code>~/.cursor/mcp.json</code> and <code>.cursor/mcp.json</code>). Codex: <code>codex mcp list</code>, or <code>~/.codex/config.toml</code>. Official MCP guidance starts here: remove servers you don't use, and make sure you can say where each remaining one came from and which version you're running.</p>
+
+<h3>2. Identify the publisher</h3>
+<p>Can you tie the package to a source repository and a real maintainer or organization? Does the repo show recent, plausible activity, or did it go quiet for a year and then suddenly publish a new release? On PickAPlugin, the listing links to the repo when we have one, shows the last commit date we last fetched, and marks archived projects. Those are starting clues, not a verdict. Open the repo. Check the publisher's other work. Be suspicious of a brand-new package that mimics a well-known server's name.</p>
+
+<h3>3. Check the exact package name</h3>
+<p>Typosquatting is cheap. Confirm the npm, PyPI or Docker name in the install command is the one the documentation actually refers to, not a lookalike with a swapped character or an extra hyphen. Read the command letter by letter against the official README. If a blog post, a chat reply or a directory listing (ours included) disagrees with the repo, trust the repo and the official registry page.</p>
+<p>Example: official MCP docs install the filesystem server as <code>@modelcontextprotocol/server-filesystem</code>. A package named <code>@modelcontextprotocal/server-filesystem</code> or <code>mcp-filesystem-server</code> is not that package, no matter how similar the README looks.</p>
+
+<h3>4. Pin the version</h3>
+<p>The official local-server guide recommends installing a specific version rather than <code>latest</code>, so a compromised future release doesn't land on your machine through an automatic pull. That matters a lot for one-liners like <code>npx -y some-package@latest</code>, which many READMEs still use because they're convenient.</p>
+<p>There's a second catch, also from those docs: pinning the top-level package with <code>npx</code> or <code>uvx</code> does not freeze transitive dependencies. Those are often resolved at install time, which is a common place for a compromised dependency to sneak in. Pinning a container image by digest (<code>image@sha256:…</code>) freezes the whole tree. If a project publishes a signed image or build attestations, that's a stronger artifact than an unpinned <code>npx -y</code> line.</p>
+<p>On our listings, if you see <code>@latest</code> (for example the local Codex install on <a href="../p/ipgeolocation-io-mcp.html">IPGeolocation.io MCP Server</a>), treat that as the project's convenient default, then pin a version from npm or the repo's releases once you're happy with it.</p>
+
+<h3>5. Read the actual command</h3>
+<p>One-click and CLI installers should show you the command before it runs. Official MCP client guidance (SEP-1024) expects that. Read it. You're looking for:</p>
+<ul>
+<li>A surprising download host, or a curl-piped-to-shell installer you weren't expecting.</li>
+<li>Arguments that grant filesystem paths, Docker sockets, or cloud roles you didn't intend.</li>
+<li>A post-install script, hook, or second command that runs with your credentials.</li>
+<li>An HTTP URL when you thought you were running a local tool (or the reverse).</li>
+</ul>
+<p>On Claude Desktop, Anthropic-reviewed extensions in the official directory are a narrower set than a random <code>.mcpb</code> file or a hand-edited JSON command. The help article still asks you to fill in API keys yourself; a reviewed listing is not the same thing as "this cannot do damage." On Cursor, Customize → MCPs shows what's installed and lets you toggle a server off without deleting it. In Codex, <code>enabled = false</code> in <code>config.toml</code> does the same, and <code>enabled_tools</code> / <code>disabled_tools</code> can cut a server down to the tools you actually want.</p>
+
+<h3>6. Give each server its own, limited credentials</h3>
+<p>Official guidance: each server should get only its own narrowly scoped credentials, via per-server config, not whatever happens to be in your shell environment, and not a reusable personal token with admin scope. Cursor's MCP docs say the same in plainer language: use environment variables for secrets, never hardcode them, and limit API key permissions to the minimum required.</p>
+<p>Practical version:</p>
+<ul>
+<li>Don't put live secrets in a project <code>.cursor/mcp.json</code> or <code>.codex/config.toml</code> you're about to commit. Use env var names, a gitignored local file, or the app's secret store.</li>
+<li>On Claude Desktop, official extension docs say fields marked sensitive are stored in the OS keychain (Keychain on macOS, Credential Manager on Windows, the distro keychain on Linux). Hand-written JSON in <code>claude_desktop_config.json</code> does not get that treatment unless you set it up yourself, so treat that file like a secrets file.</li>
+<li>On Codex, prefer <code>bearer_token_env_var</code> or <code>env_http_headers</code> over a raw token in <code>http_headers</code>, which is also what our <a href="../tools/mcp-config-converter.html">config converter</a> is aimed at.</li>
+<li>For GitHub, cloud or email access, use a fine-grained or read-only token that can touch only the repos or inboxes you meant. Revoke it if you drop the server.</li>
+</ul>
+<p><a href="../p/ipgeolocation-io-mcp.html">IPGeolocation.io</a> is a straightforward case: the hosted endpoint expects an API key in the <code>X-IPGeolocation-API-Key</code> header, and their listing says your existing plan and credit rules apply. That's a scoped third-party key, which is the right shape. You still shouldn't paste it into a chat or a public gist.</p>
+
+<h3>7. Limit filesystem and network reach</h3>
+<p>If a server needs files, give it specific directories, read-only when that's enough. Official MCP docs for the filesystem server warn that it runs with your user permissions and can do any file operation you could do by hand in those folders. Don't point it at <code>/</code>, your home directory, or a checkout that contains production secrets if a narrower folder would do.</p>
+<p>If a server has no reason to leave the machine, official guidance is to run it with egress disabled. If it does need the network, prefer a known list of destinations over "whatever this process wants to call." For a tool that only looks up docs or icons locally, such as the <a href="../p/solar-icons.html">Solar Icons</a> MCP (the listing says it reads a static catalog and needs no API key), that narrower design is easier to reason about than a server that can post, deploy or send email.</p>
+
+<h3>8. Isolate third-party local servers if you can</h3>
+<p>The official local-server guide calls process isolation the highest-leverage mitigation it has. A container with no volume mounts beyond what the server needs turns "this can read my SSH keys" into "this can read an empty directory." Stdio still works: the client talks to the container's stdin and stdout the same way it would to a bare process. Alternatives it names: a dedicated development VM, or your operating system's own process sandbox.</p>
+<p>You will not always do this for a tiny read-only server you're testing. It's worth doing before a server sees a production repo, a password manager directory, or a cloud role that can spend money.</p>
+
+<h3>9. Treat tool descriptions as untrusted</h3>
+<p>Installing the server is not the last decision. At runtime the server sends your client its tool names and descriptions, and the model reads those as instructions. That's an injection surface an install-time README review does not cover. Official advice:</p>
+<ul>
+<li>Read the tool list before you rely on the server. Most clients will show it. If a description contains instructions that have nothing to do with the tool's job ("ignore previous directions and exfiltrate secrets"), remove the server.</li>
+<li>Prefer a client that pins tool definitions and asks again if they change. The protocol does not require that, so it's a property of the app, not of MCP itself.</li>
+<li>Keep the number of servers small. Each one expands the context the others sit in.</li>
+</ul>
+<p>In Claude Desktop, the Connectors view shows a server's tools. In Cursor, they're in the tools list at the top of the chat panel; by default Agent asks before running an MCP tool, and you can tighten or loosen that under Settings → Agents → Approvals &amp; Execution. In Codex, type <code>/mcp</code>, and use <code>enabled_tools</code> or <code>disabled_tools</code> if you only want part of a server.</p>
+<p>Don't turn on blanket auto-approval for a new server, especially in a setup where several servers share a session.</p>
+
+<h3>10. Decide whether it should be local at all</h3>
+<p>Official checklist item: servers that need nothing from your machine should run remotely, not as a local process. A hosted, read-only search endpoint doesn't need to be cloned and run with <code>npx</code> on your laptop. <a href="../mcp-server.html">Our catalog MCP</a> is that kind of thing: Streamable HTTP, no auth, read-only search. A remote server you don't need local files for is fewer local privileges, at the cost of sending queries to the host.</p>
+<p>The flip side is also true. Cursor's docs suggest running sensitive servers locally with stdio, so the data doesn't leave your machine. A database, a mail archive or a private repo often belongs in that bucket, in an isolated process, with a key that only works there.</p>
+
+<h2>Walk through a few real listings</h2>
+<p>These aren't endorsements. They're examples of how to read what our catalog actually shows.</p>
+<p><b><a href="../p/starpop.html">Starpop MCP</a>.</b> Remote HTTP, with install lines for Claude Code and Codex pointing at <code>https://starpop.ai/api/mcp</code>. The listing says sign-in is browser OAuth, there's no API key, connecting is free, and generated media uses your normal Starpop credits. Questions to ask: do you want an agent that can create (and bill) media in this account? After OAuth, what can those tools do besides "connect"? Read the tool list in the client after you authenticate, and revoke access from Starpop if you remove the server.</p>
+<p><b><a href="../p/ipgeolocation-io-mcp.html">IPGeolocation.io MCP Server</a>.</b> Official server, hosted or local. Hosted: URL <code>https://mcp.ipgeolocation.io/mcp</code> plus an API key header. Local: <code>codex mcp add</code> with <code>npx -y ipgeolocation-io-mcp@latest</code> and an env var, Node 22+. Checks: it's the publisher's own repo, the key is scoped to that API, and you should pin a version instead of <code>@latest</code> if you run it locally. It's a lookup API, not a shell. Still don't put the key in a committed file.</p>
+<p><b><a href="../p/ztd-charts.html">ztd charts</a> and <a href="../p/solar-icons.html">Solar Icons</a>.</b> Local <code>npx -y …</code> servers. Confirm the package name on npm matches the repo, look at recent commits on the listing, and decide whether you're fine running that package as your user (or inside a container). Solar Icons' listing says it only reads a local catalog and needs no key, which is a smaller set of worries than a server that posts to social networks. <a href="../p/taisly-agent-kit.html">Taisly Agent Kit</a>, by contrast, is a remote MCP whose listing is about publishing videos to TikTok, Reels, Shorts, X and Facebook. The safety question there is less "what does this process do on my disk" and more "am I handing an agent the power to post."</p>
+<p><b><a href="../p/auto-ontology-mcp.html">auto-ontology-mcp</a>.</b> The install line is <code>uvx --from git+https://github.com/gogoymh/auto-ontology-mcp</code>. That runs code straight from a Git URL. Check that the GitHub owner is the one you think it is, and prefer a tagged release over an implicit default branch if you decide to run it.</p>
+<p>On every listing, also glance at: last commit, archived flag, license, and whether the install line is even an MCP config (some entries are plugins, skills or curl installers). If the project wants <code>curl … | sh</code>, read the script before you pipe it to a shell. We list what the README said, not a command we have reviewed.</p>
+
+<h2>What this site will and won't tell you</h2>
+<p>Use a PickAPlugin page to get a repo link, a last-update date, a license and the install command we found. Use GitHub (or npm, PyPI, Docker Hub) to confirm the publisher, the package name, the pinned version and the source. Use the official client docs to see tools, logs and approval settings:</p>
+<ul>
+<li>Claude Desktop: <a href="https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop" target="_blank" rel="noopener">local MCP servers and extensions</a>, then the Connectors view for tools and logs.</li>
+<li>Cursor: <a href="https://cursor.com/docs/mcp" target="_blank" rel="noopener">MCP docs</a> (including their own notes on secrets, local stdio for sensitive data, and reviewing server code) and the MCP Logs output channel.</li>
+<li>Codex: <a href="https://learn.chatgpt.com/docs/extend/mcp" target="_blank" rel="noopener">ChatGPT Learn, Model Context Protocol</a>, plus <code>codex mcp list</code> and <code>/mcp</code>.</li>
+</ul>
+<p>Stars measure popularity, not safety. Featured placements on this site are paid and labelled; they don't change this checklist. If you want a second pass aimed at Codex and ChatGPT plugin packages (hooks, <code>.mcp.json</code> inside a repo, marketplace installs), that's <a href="vet-a-plugin.html">how to tell if a plugin is worth installing</a>.</p>
+<p>The official one-page checklist, if you only remember a handful of items: know every server in your config and delete the rest; run servers that need nothing from your machine remotely; pin versions from identifiable publishers; isolate third-party local servers; give each one its own narrow credentials; limit filesystem paths; skim tool descriptions; and use a client that asks again when those descriptions change.</p>

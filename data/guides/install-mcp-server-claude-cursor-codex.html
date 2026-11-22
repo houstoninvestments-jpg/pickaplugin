@@ -1,0 +1,227 @@
+<h2>The server is the same. The config is not.</h2>
+<p>An MCP server (Model Context Protocol) is a small program that exposes tools and data to an app like Claude Desktop, Cursor or Codex. The protocol is open, so one server can talk to all three. What changes is the wrapper: the file you edit, the field names, and whether you paste JSON, TOML, or a CLI command.</p>
+<p>There are two common shapes:</p>
+<ul>
+<li><b>Local (stdio).</b> The app starts a command on your machine, such as <code>npx</code>, <code>uvx</code> or a binary, and talks to it over stdin and stdout. This is the format official MCP docs use for the filesystem server, and the one most GitHub READMEs show as a <code>command</code> plus <code>args</code>.</li>
+<li><b>Remote (Streamable HTTP or SSE).</b> You give the app a URL. The server runs somewhere else. Some need an API key in a header, some use OAuth in the browser, some (like <a href="../mcp-server.html">our own catalog server</a>) need no login at all.</li>
+</ul>
+<p>If you already have a working JSON block for Claude or Cursor and you just need it in Codex TOML, skip the typing and use our free <a href="../tools/mcp-config-converter.html">MCP config converter</a>. It runs in your browser. This guide is the longer version: where each file lives, how to add a server in the UI, and how to read the install lines you see on PickAPlugin listings.</p>
+
+<h2>A gotcha: <code>claude mcp add</code> is Claude Code, not Claude Desktop</h2>
+<p>A lot of READMEs, and a lot of listings in our catalog, start with <code>claude mcp add</code>. That command is from <a href="https://code.claude.com/docs/en/mcp" target="_blank" rel="noopener">Claude Code's MCP docs</a>. It writes Claude Code's config. It does not, by itself, add the server to the Claude Desktop app.</p>
+<p>The good news is the ingredients are usually the same. A line like:</p>
+<pre>claude mcp add ztd-charts -- npx -y ztd-charts-mcp</pre>
+<p>means: start a local server with command <code>npx</code> and args <code>-y</code>, <code>ztd-charts-mcp</code>. You can drop those into Claude Desktop's JSON, Cursor's <code>mcp.json</code>, or Codex's <code>codex mcp add</code> as shown below. That's the install line from <a href="../p/ztd-charts.html">ztd charts</a>.</p>
+<p>A line with <code>--transport http</code> and a URL is a remote server. <a href="../p/starpop.html">Starpop MCP</a> lists both:</p>
+<pre>claude mcp add --scope user --transport http starpop https://starpop.ai/api/mcp
+codex mcp add starpop --url https://starpop.ai/api/mcp</pre>
+<p>Same endpoint, two clients. Cursor just wants that URL in <code>mcp.json</code>.</p>
+
+<h2>Claude Desktop</h2>
+<p>Anthropic now steers most people toward desktop extensions, which are one-click packages for local MCP servers. The older JSON file is still officially documented and is what you'll use when a project only gives you a <code>command</code> and <code>args</code>.</p>
+
+<h3>Option A: install from the official extensions directory</h3>
+<p>Per <a href="https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop" target="_blank" rel="noopener">Anthropic's Claude Desktop help article</a>:</p>
+<ol>
+<li>Open <b>Settings → Desktop app</b> and click <b>Manage</b> next to Extensions. (Older layouts put this under Settings → Extensions.)</li>
+<li>Click <b>Browse extensions</b>, pick a tool Anthropic has reviewed, and click <b>Install</b>.</li>
+<li>Fill in any required settings, such as an API key, in the form Claude shows you.</li>
+<li>The extension should then be available in your conversations.</li>
+</ol>
+<p>Extensions from that official directory update automatically by default. That is the low-friction route when the server you want is in the directory.</p>
+
+<h3>Option B: install a custom <code>.mcpb</code> file</h3>
+<p>If a developer gave you a desktop extension package, the same help article says: open the Extensions manager, click <b>Advanced settings</b>, find the Extension Developer section, click <b>Install Extension…</b>, and choose the <code>.mcpb</code> file. Claude Desktop includes a built-in Node.js environment, so a Node-based extension does not require you to install Node yourself.</p>
+
+<h3>Option C: edit <code>claude_desktop_config.json</code></h3>
+<p>This is the method in the official MCP guide <a href="https://modelcontextprotocol.io/docs/2026-07-28/develop/connect-local-servers" target="_blank" rel="noopener">Connect to local MCP servers</a>. In Claude Desktop, open Settings from the Claude menu in the system menu bar (not the in-window account settings), go to the <b>Developer</b> tab, and click <b>Edit Config</b>. That opens or creates:</p>
+<ul>
+<li>macOS: <code>~/Library/Application Support/Claude/claude_desktop_config.json</code></li>
+<li>Windows: <code>%APPDATA%\Claude\claude_desktop_config.json</code></li>
+<li>Linux: <code>~/.config/Claude/claude_desktop_config.json</code></li>
+</ul>
+<p>A local stdio server looks like this (the filesystem example from those official docs, with paths you must change):</p>
+<pre>{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/username/Desktop",
+        "/Users/username/Downloads"
+      ]
+    }
+  }
+}</pre>
+<p>On Windows the same idea uses paths like <code>C:\\Users\\username\\Desktop</code>. Official docs are clear on two points that trip people up: use <b>absolute</b> paths, not <code>./something</code>, and <b>fully quit</b> Claude Desktop and reopen it after you save. Closing the window is not always enough.</p>
+<p>The filesystem server can read and change any directory you list, with the same permissions as your user account. Only grant folders you're comfortable with an agent touching. There's a longer checklist for that in <a href="check-mcp-server-safe.html">how to check if an MCP server is safe before installing</a>.</p>
+<p>Need an API key? Official debugging docs put it in an <code>env</code> object on that server:</p>
+<pre>{
+  "mcpServers": {
+    "myserver": {
+      "command": "npx",
+      "args": ["-y", "some-mcp-package"],
+      "env": {
+        "API_KEY": "your-key"
+      }
+    }
+  }
+}</pre>
+<p>Don't commit that file if it has secrets. Prefer a key that can be revoked.</p>
+
+<h3>Remote servers in Claude Desktop</h3>
+<p>For a hosted URL, current Claude Desktop builds can add a custom connector: <b>Settings → Connectors → Add custom connector</b>, then paste the URL. That's how we tell people to add <a href="../mcp-server.html">the PickAPlugin MCP server</a> at <code>https://pickaplugin.com/mcp</code> (Streamable HTTP, no auth).</p>
+<p>On older Desktop versions that don't offer custom connectors, a common workaround is to run the official <code>mcp-remote</code> helper as a local command that points at the URL:</p>
+<pre>{
+  "mcpServers": {
+    "pickaplugin": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://pickaplugin.com/mcp"]
+    }
+  }
+}</pre>
+<p>That still needs Node, because it uses <code>npx</code>.</p>
+
+<h3>Did it connect?</h3>
+<p>Anthropic's help article says to click the <b>+</b> button at the bottom of the chat box, then <b>Connectors</b>, to see connected MCP servers and their tools. You can also check the Local MCP servers section on the Extensions page, or Settings → Developer on older layouts, and read the logs if a server is red.</p>
+<p>If a server doesn't show up: fully restart Claude Desktop, validate the JSON (a missing comma will silently break the file), confirm any paths are absolute and exist, and if the command is <code>npx</code>, confirm Node.js is installed and on the PATH that the Desktop app sees.</p>
+
+<h2>Cursor</h2>
+<p>Cursor's own docs are at <a href="https://cursor.com/docs/mcp" target="_blank" rel="noopener">cursor.com/docs/mcp</a>, with a shorter walkthrough in <a href="https://cursor.com/help/customization/mcp" target="_blank" rel="noopener">the MCP help page</a>. Cursor supports local stdio servers and remote servers over Streamable HTTP or SSE, plus OAuth when the server asks for it.</p>
+
+<h3>One-click install</h3>
+<ol>
+<li>Open <b>Customize</b> in the sidebar and click <b>MCPs</b>.</li>
+<li>Browse or search, then click <b>Add to Cursor</b>.</li>
+<li>Finish any sign-in prompts if the server uses OAuth.</li>
+</ol>
+<p>Official and team-distributed servers also show up there. Cursor's docs point at the Cursor Marketplace for official plugins, and at cursor.directory for community servers.</p>
+
+<h3>Manual install with <code>mcp.json</code></h3>
+<p>Create a file in one of these places (both are officially supported, and they're merged):</p>
+<ul>
+<li>All your projects: <code>~/.cursor/mcp.json</code></li>
+<li>Just this repo, safe to share if it has no secrets: <code>.cursor/mcp.json</code> in the project folder</li>
+</ul>
+<p>If the same server name appears in both, the project file wins.</p>
+<p>Local Node server, from Cursor's docs:</p>
+<pre>{
+  "mcpServers": {
+    "server-name": {
+      "command": "npx",
+      "args": ["-y", "mcp-server"],
+      "env": {
+        "API_KEY": "value"
+      }
+    }
+  }
+}</pre>
+<p>Remote server:</p>
+<pre>{
+  "mcpServers": {
+    "pickaplugin": {
+      "url": "https://pickaplugin.com/mcp"
+    }
+  }
+}</pre>
+<p>If the remote server needs a static header, Cursor's help page puts it under <code>headers</code>:</p>
+<pre>{
+  "mcpServers": {
+    "ipgeolocation": {
+      "url": "https://mcp.ipgeolocation.io/mcp",
+      "headers": {
+        "X-IPGeolocation-API-Key": "your-key"
+      }
+    }
+  }
+}</pre>
+<p>That URL and header name come from the <a href="../p/ipgeolocation-io-mcp.html">IPGeolocation.io MCP Server</a> listing (a free or paid API key is required, and their plan limits still apply). Don't commit the key. After you save the file, restart Cursor.</p>
+<p>We also have an <b>Add to Cursor</b> button on <a href="../mcp-server.html">the PickAPlugin MCP page</a> if you just want the catalog in Agent.</p>
+
+<h3>Using tools, and logs</h3>
+<p>Cursor's help page says Agent picks MCP tools up automatically when they're relevant. You can toggle a tool in the tools list at the top of the chat panel. By default, Agent asks before it runs an MCP tool. In Cursor 3.6 and above, Auto-review mode (Settings → Agents → Approvals &amp; Execution) can let allowlisted tools run immediately and send the rest through a safety classifier. Keep an eye on that if you'd rather approve each call yourself.</p>
+<p>If a server won't start: open the Output panel (<code>Cmd+Shift+U</code> on macOS, <code>Ctrl+Shift+U</code> on Windows or Linux), choose <b>MCP Logs</b>, and look for a bad path, a missing env var, or a crash. You can also toggle a server off and on under Customize → MCPs without deleting it. Cursor's docs note that servers started from the GUI don't always inherit environment variables from your shell profile, so put secrets in the <code>env</code> block (or Cursor's own env settings) rather than assuming <code>export</code> in <code>~/.zshrc</code> is enough.</p>
+
+<h2>Codex (CLI, IDE and ChatGPT desktop)</h2>
+<p>OpenAI's current walkthrough is <a href="https://learn.chatgpt.com/docs/extend/mcp" target="_blank" rel="noopener">Model Context Protocol on ChatGPT Learn</a>. Codex stores MCP config in TOML, not JSON. The default file is <code>~/.codex/config.toml</code>. You can also use a project-scoped <code>.codex/config.toml</code>, but only in trusted projects. The ChatGPT desktop app, the Codex CLI and the IDE extension share this config, so you set a server up once.</p>
+<p>ChatGPT in the browser is a different path: it does not read your local <code>config.toml</code>. Remote MCP tools there go through plugins. This section is for the local Codex host (desktop app, CLI and IDE).</p>
+
+<h3>In the ChatGPT desktop app or the IDE extension</h3>
+<ol>
+<li>Open Settings, then <b>MCP servers</b> (in the IDE, that's the gear menu, then MCP servers).</li>
+<li>Click <b>Add server</b>.</li>
+<li>Give it a name, choose <b>STDIO</b> or <b>Streamable HTTP</b>, and paste the command or the URL.</li>
+<li>Save, then click <b>Restart</b> (or <b>Restart extension</b> in the IDE).</li>
+</ol>
+<p>The list shows which servers are enabled and which need OAuth. Use <b>Authenticate</b> when a server asks you to sign in. In the composer, type <code>/mcp</code> to see connected servers. In the Codex terminal UI the same command works.</p>
+
+<h3>With the CLI</h3>
+<p>Official pattern for a local server:</p>
+<pre>codex mcp add &lt;server-name&gt; --env VAR1=VALUE1 -- &lt;stdio server-command&gt;</pre>
+<p>OpenAI's own example is Context7:</p>
+<pre>codex mcp add context7 -- npx -y @upstash/context7-mcp</pre>
+<p>For a remote URL:</p>
+<pre>codex mcp add pickaplugin --url https://pickaplugin.com/mcp
+codex mcp add starpop --url https://starpop.ai/api/mcp
+codex mcp add taisly --url https://app.taisly.com/mcp</pre>
+<p>The Starpop line is from the <a href="../p/starpop.html">Starpop</a> listing. The Taisly line is from <a href="../p/taisly-agent-kit.html">Taisly Agent Kit</a>. Then run <code>codex mcp list</code> to confirm. For a server that uses OAuth, run <code>codex mcp login SERVERNAME</code>. If you don't have a browser in that terminal, <code>codex mcp login --no-browser</code> prints a URL; after you sign in, paste the full redirect URL back into the terminal.</p>
+<p><a href="../p/ipgeolocation-io-mcp.html">IPGeolocation.io</a> also publishes a local Codex install that passes the key as an env var instead of a header:</p>
+<pre>codex mcp add ipgeolocation --env "IPGEOLOCATION_API_KEY=$IPGEOLOCATION_API_KEY" -- npx -y ipgeolocation-io-mcp@latest</pre>
+<p>Their listing says the local package wants Node.js 22 or later. <code>@latest</code> always pulls the newest package. If you'd rather pin a version, see the safety guide.</p>
+
+<h3>By hand in <code>config.toml</code></h3>
+<p>Each server gets a <code>[mcp_servers.NAME]</code> table. Local:</p>
+<pre>[mcp_servers.context7]
+command = "npx"
+args = ["-y", "@upstash/context7-mcp"]</pre>
+<p>Remote:</p>
+<pre>[mcp_servers.pickaplugin]
+url = "https://pickaplugin.com/mcp"</pre>
+<p>Official options worth knowing, from the same Codex docs: <code>env</code> sets environment variables, <code>cwd</code> sets the working directory, <code>startup_timeout_sec</code> defaults to 10, <code>tool_timeout_sec</code> defaults to 60, and <code>enabled = false</code> turns a server off without deleting it. You can also set <code>enabled_tools</code> or <code>disabled_tools</code> if you only want some of a server's tools.</p>
+<p>For a remote server that needs a bearer token, prefer <code>bearer_token_env_var = "MY_TOKEN"</code> so the token isn't sitting in the file. Static headers go in <code>http_headers</code>. Headers that should be read from the environment go in <code>env_http_headers</code>. That's also what our <a href="../tools/mcp-config-converter.html">converter</a> emits when you paste a JSON <code>headers</code> block and ask for Codex TOML.</p>
+
+<h2>One server, three configs (a worked example)</h2>
+<p>Take a local install like the one on <a href="../p/ztd-charts.html">ztd charts</a>: <code>npx -y ztd-charts-mcp</code>.</p>
+<div class=two style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<pre>{
+  "mcpServers": {
+    "ztd-charts": {
+      "command": "npx",
+      "args": ["-y", "ztd-charts-mcp"]
+    }
+  }
+}</pre>
+<pre>[mcp_servers.ztd-charts]
+command = "npx"
+args = ["-y", "ztd-charts-mcp"]</pre>
+</div>
+<p>The JSON on the left goes in Claude Desktop's <code>claude_desktop_config.json</code>, or in Cursor's <code>mcp.json</code>. The TOML on the right goes in <code>~/.codex/config.toml</code>. Or skip the TOML and run <code>codex mcp add ztd-charts -- npx -y ztd-charts-mcp</code>.</p>
+<p>Another local example from the catalog: <a href="../p/solar-icons.html">Solar Icons</a> lists <code>npx -y @solar-icons/mcp</code>. Same pattern, package name <code>@solar-icons/mcp</code>. Their listing says it reads a local icon catalog and doesn't need an API key, which is a nicer setup to practice on than a server that wants production credentials.</p>
+<p>A remote example you can try without a key is our catalog:</p>
+<pre>claude mcp add --transport http pickaplugin https://pickaplugin.com/mcp
+codex mcp add pickaplugin --url https://pickaplugin.com/mcp</pre>
+<p>In Cursor, use the JSON <code>url</code> block above, or the Add to Cursor button on <a href="../mcp-server.html">the MCP server page</a>. It's read-only search: names, descriptions, categories and install commands for the plugins and MCP servers we list. We don't audit what those projects do, so still read a listing before you install the thing it pointed you at.</p>
+
+<h2>How to read a PickAPlugin listing</h2>
+<p>Open any catalog page and look at the install box. We copy that text from the project's README (or from what the maker sent us). It is not a command we invented, and it may be written for only one client.</p>
+<ul>
+<li>If it starts with <code>claude mcp add</code>, it's a Claude Code line. Translate the command or URL into Desktop / Cursor / Codex as shown above.</li>
+<li>If it starts with <code>codex mcp add</code>, you can run it in the Codex CLI as written, then reuse the same command or URL in the other apps.</li>
+<li>If it's just <code>npx …</code> or <code>uvx …</code>, wrap it as <code>command</code> plus <code>args</code>.</li>
+<li>If it's a bare <code>https://…</code> URL, that's a remote server. Check the listing for the header or OAuth notes.</li>
+<li>If it says <code>codex plugin marketplace add</code> or <code>claude plugin marketplace add</code>, that's a <b>plugin</b>, not a raw MCP config. Use <a href="install-codex-plugin.html">how to install a Codex plugin</a> instead. Some plugins bundle an MCP server, and the plugin install sets that up for you.</li>
+</ul>
+<p>Each listing also shows the last GitHub update (when we have a repo), whether it's archived, the license, and the install line. That's useful context, not a safety rating. For the actual pre-install checks, use <a href="check-mcp-server-safe.html">the MCP safety guide</a>.</p>
+<p>Want to browse from the agent itself? Add <a href="../mcp-server.html">the PickAPlugin MCP server</a>, then ask it to search the catalog. If you built a server and want it listed, <a href="../submit.html">submit it free</a>, and see <a href="where-to-submit-mcp-server.html">every other place to submit an MCP server</a>.</p>
+
+<h2>Quick troubleshooting</h2>
+<ul>
+<li><b>Nothing shows up after you edit a file.</b> Restart the app for real. Claude Desktop in particular wants a full quit. Cursor wants a restart after <code>mcp.json</code> changes. Codex wants Restart on the MCP servers page, or a new CLI session after <code>codex mcp add</code>.</li>
+<li><b>JSON or TOML won't parse.</b> A trailing comma in JSON, or a typo in a table name like <code>[mcp_servers.my server]</code> without quotes, will do it. Paste the file into a validator, or use our converter and copy the result back.</li>
+<li><b><code>npx</code> or <code>uvx</code> not found.</b> The Desktop or GUI app may not see the PATH from your terminal. Use the full path to the binary (<code>which npx</code> or <code>where npx</code>).</li>
+<li><b>Works in the terminal, fails in the app.</b> Official MCP debugging docs note that stdio servers often start with a sparse environment and a working directory that isn't your project (on macOS it can even be <code>/</code>). That's why absolute paths and explicit <code>env</code> blocks matter.</li>
+<li><b>Remote server asks you to log in.</b> That's normal for OAuth. In Codex run <code>codex mcp login</code>. In Cursor and Claude, use the Authenticate or connector prompt the app shows you.</li>
+<li><b>The tool list is empty.</b> The process may have crashed on startup (bad path, missing key, Node version). Read the app's MCP logs before you rewrite the config.</li>
+</ul>
+<p>Still stuck on a format conversion only? <a href="../tools/mcp-config-converter.html">Convert the config</a> and compare it with the examples here. And before you point a new server at a real repo, mail account or production database, spend a few minutes on <a href="check-mcp-server-safe.html">the safety checklist</a>.</p>

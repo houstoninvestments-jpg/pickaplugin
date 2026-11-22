@@ -32,84 +32,92 @@
 "date": "2026-11-22"
 },
 "https://pickaplugin.com/c/agent-workflows": {
-"sig": "226528c85e2a0b0c72a8",
+"sig": "bc0febde985dc14cb976",
 "date": "2026-11-22"
 },
 "https://pickaplugin.com/c/data-backend": {
-"sig": "dbfc7741371390b5c19c",
+"sig": "2ff1e566e35b13f4f879",
 "date": "2026-11-22"
 },
 "https://pickaplugin.com/c/deploy-devops": {
-"sig": "4afc895d4d24ed599d66",
+"sig": "ef2e5dac003814f77553",
 "date": "2026-11-22"
 },
 "https://pickaplugin.com/c/design-frontend": {
-"sig": "42e3b54c9f3a638d26fd",
+"sig": "b0a4b69c8427657c0fdf",
 "date": "2026-11-22"
 },
 "https://pickaplugin.com/c/docs-content-seo": {
-"sig": "f7e104999e06190c1050",
+"sig": "46a5d9b8acf0936a4806",
 "date": "2026-11-22"
 },
 "https://pickaplugin.com/c/industry-tools": {
-"sig": "fc5e2b359ae0cb446ab9",
+"sig": "92cc1b43ca2a65c9816f",
 "date": "2026-11-22"
 },
 "https://pickaplugin.com/c/memory-context": {
-"sig": "d8e341efd82d5b7b0f38",
+"sig": "1c3e938949d020811dc1",
 "date": "2026-11-22"
 },
 "https://pickaplugin.com/c/messaging-remote": {
-"sig": "1d888613bf8eaa1906ea",
+"sig": "fe3f9646529c11b6f8a3",
 "date": "2026-11-22"
 },
 "https://pickaplugin.com/c/miscellany": {
-"sig": "20699662591da9e7793f",
+"sig": "f9fc13f26572275c17d7",
 "date": "2026-11-22"
 },
 "https://pickaplugin.com/c/review-testing": {
-"sig": "3d8ab1f1f53340e51caa",
+"sig": "d1aa590660fc140be053",
 "date": "2026-11-22"
 },
 "https://pickaplugin.com/c/security-governance": {
-"sig": "4a5efade80efbf14e701",
+"sig": "3c00b4648c6454060f04",
 "date": "2026-11-22"
 },
 "https://pickaplugin.com/c/usage-quotas": {
-"sig": "e221f697bf51f19623dc",
+"sig": "d1228a22c19c4189fe21",
 "date": "2026-11-22"
 },
 "https://pickaplugin.com/changelog": {
-"sig": "06e9b6c05dbb143143ca",
+"sig": "978f29af2190a0ad401b",
 "date": "2026-11-22"
 },
 "https://pickaplugin.com/compare": {
-"sig": "c61272ad3bf75de0bff8",
+"sig": "0c9f2f01381c52c9c16f",
 "date": "2026-11-22"
 },
 "https://pickaplugin.com/faq": {
-"sig": "59cb430012b6642ac4e1",
-"date": "2026-11-16"
+"sig": "f04740886cf54cac305a",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/featured": {
 "sig": "aed01e46a23b2c52b064",
 "date": "2026-11-22"
 },
 "https://pickaplugin.com/guides": {
-"sig": "dc7b434b0daa955cd5d9",
-"date": "2026-11-16"
+"sig": "36abcce96f22e6f7290b",
+"date": "2026-11-22"
+},
+"https://pickaplugin.com/guides/check-mcp-server-safe": {
+"sig": "a61a099be7d017356cff",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/guides/convert-mcp-config-claude-to-codex": {
-"sig": "8a83a7bcb6068e2eb5ea",
-"date": "2026-11-16"
+"sig": "8344e20f9bcde622bdcf",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/guides/find-codex-plugins": {
 "sig": "7bd2299e6962c8915942",
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/guides/install-codex-plugin": {
-"sig": "b54f4d55a7f4666c6512",
-"date": "2026-11-16"
+"sig": "31ecd61f18d37b33a5aa",
+"date": "2026-11-22"
+},
+"https://pickaplugin.com/guides/install-mcp-server-claude-cursor-codex": {
+"sig": "e09eb3cdadbf1c86b6a2",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/guides/publish-codex-plugin": {
 "sig": "0367ea1296d848e93989",
@@ -120,12 +128,12 @@
 "date": "2026-11-16"
 },
 "https://pickaplugin.com/guides/vet-a-plugin": {
-"sig": "a1d46033d95ee274664c",
-"date": "2026-11-16"
+"sig": "aa0c6cdeb544370d617e",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/guides/where-to-submit-mcp-server": {
-"sig": "2a218ce15b8110cb36a6",
-"date": "2026-11-16"
+"sig": "cf2056301eadc3ce6adf",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/guides/write-agents-md": {
 "sig": "160696256670adcd129c",
@@ -180,8 +188,8 @@
 "date": "2026-11-18"
 },
 "https://pickaplugin.com/mcp-server": {
-"sig": "2be0e88dc03510dbb53a",
-"date": "2026-11-16"
+"sig": "377b40e48c4edba6ffa7",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/newsletter": {
 "sig": "d43e291d6fb3e3c76656",
@@ -2948,8 +2956,8 @@
 "date": "2026-11-16"
 },
 "https://pickaplugin.com/submit": {
-"sig": "ce6f0edce38edf4ebac9",
-"date": "2026-11-16"
+"sig": "1e89cb2ce180d8d8fa2d",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/terms": {
 "sig": "d95c7dae13106b719608",
@@ -2964,8 +2972,8 @@
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/tools/mcp-config-converter": {
-"sig": "d896129b4bd771aea21c",
-"date": "2026-11-21"
+"sig": "fb7517778948a8980a5b",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/tools/plugin-install-command": {
 "sig": "33b1709db90a2a808229",

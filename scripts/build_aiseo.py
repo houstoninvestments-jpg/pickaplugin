@@ -9,9 +9,11 @@ def _page(path,depth,title,desc,kicker,h1,intro,body,qa):
 <p style="margin-top:30px"><a href="{r}guides/index.html">All guides</a> · <a href="{r}tools/index.html">Free tools</a> · <a href="{r}faq.html">FAQ</a> · <a href="{r}index.html#catalog">Browse all {len(P)} plugins</a></p></div>{_faq_ld(qa) if qa else ""}'''
   open(f"{D}/{path}","w").write(layout(title,html,depth,desc))
 GUIDES=[]
-def guide(sl,title,desc,h1,intro,body,qa):
+def guide(sl,title,desc,h1,intro,body,qa,updated=None):
   GUIDES.append((sl,h1,desc))
-  _page(f"guides/{sl}.html",1,title,desc,"Guide · updated "+_CHK,h1,intro,body,qa)
+  _page(f"guides/{sl}.html",1,title,desc,"Guide · updated "+(updated or _CHK),h1,intro,body,qa)
+def _gbody(name):
+  return open(os.path.join(ROOT,"data","guides",name),encoding="utf-8").read()
 
 guide("install-codex-plugin","How to install a Codex plugin (CLI, app and GitHub repos) — PickAPlugin",
  "Step-by-step: install a Codex or ChatGPT plugin from the built-in directory, from a GitHub repo marketplace, or from a local folder. Plain commands, no fluff.",
@@ -30,11 +32,25 @@ codex plugin add plugin-name@marketplace-name</pre>
 <p>Put the plugin in <code>./plugins/my-plugin</code> (repo) or <code>~/.codex/plugins/my-plugin</code> (personal), then list it in <code>.agents/plugins/marketplace.json</code> with <code>"source": {"source": "local", "path": "./plugins/my-plugin"}</code>. Restart the app and it shows up. Check the manifest first with our <a href="../tools/plugin-json-validator.html">plugin.json validator</a>.</p>
 <p>Go deeper: <a href="https://www.turboai.dev/docs/codex/plugins" target="_blank" rel="noopener">TurboAI's Codex CLI plugins reference</a> covers the full manifest lookup order if a plugin still doesn't show up.</p>
 <h2>Before you install anything from GitHub</h2>
-<p>Community plugins can bundle hooks, MCP servers and shell commands. Spend two minutes on the repo: when was the last commit, what does <code>.mcp.json</code> start, are there hooks. We wrote that up in <a href="vet-a-plugin.html">how to tell if a plugin is safe to install</a>.</p>''',
+<p>Community plugins can bundle hooks, MCP servers and shell commands. Spend two minutes on the repo: when was the last commit, what does <code>.mcp.json</code> start, are there hooks. We wrote that up in <a href="vet-a-plugin.html">how to tell if a plugin is safe to install</a>. If you're adding the MCP server itself in Claude Desktop, Cursor or Codex, use <a href="install-mcp-server-claude-cursor-codex.html">the MCP install guide</a> and <a href="check-mcp-server-safe.html">the MCP safety checklist</a>.</p>''',
  [("Where do Codex plugins get installed?","Into ~/.codex/plugins/cache/MARKETPLACE/PLUGIN/VERSION/. Local plugins use the version 'local'."),
   ("Do ChatGPT and Codex use the same plugins?","Yes, according to OpenAI's docs they share one plugin directory, and plugins can include skills, connectors (apps) or both."),
   ("How do I remove a plugin?","Run codex plugin remove plugin-name@marketplace, or uninstall it from the Plugins view in the app."),
   ("Why does 'codex plugin marketplace add' give a 404?","Usually because you passed the raw marketplace.json URL. Give it the repo (owner/repo or the .git URL) instead.")])
+
+
+guide("install-mcp-server-claude-cursor-codex",
+ "How to install an MCP server in Claude Desktop, Cursor and Codex — PickAPlugin",
+ "Step-by-step: add the same MCP server in Claude Desktop, Cursor and Codex, with official file paths, JSON and TOML examples, and real listings from the catalog.",
+ "How to install an MCP server in Claude Desktop, Cursor and Codex",
+ "The server is the same. The config file is not. Here's how to add one in each app, with official file paths, worked examples, and install lines from real PickAPlugin listings.",
+ _gbody("install-mcp-server-claude-cursor-codex.html"),
+ [("Is claude mcp add the same as Claude Desktop?","No. claude mcp add is the Claude Code CLI. Claude Desktop uses the Extensions directory, a .mcpb package, Connectors for remote URLs, or claude_desktop_config.json."),
+  ("Where is Claude Desktop's config file?","macOS: ~/Library/Application Support/Claude/claude_desktop_config.json. Windows: %APPDATA%\\Claude\\claude_desktop_config.json. Linux: ~/.config/Claude/claude_desktop_config.json. Official MCP docs also tell you to fully quit and reopen the app after you save."),
+  ("Where does Cursor keep MCP servers?","In ~/.cursor/mcp.json (all projects) and/or .cursor/mcp.json in the repo. The two files are merged; if the same name appears in both, the project file wins."),
+  ("Where does Codex keep MCP servers?","In ~/.codex/config.toml, under [mcp_servers.NAME] tables, shared by the ChatGPT desktop app, the CLI and the IDE extension. Trusted projects can also use a project-scoped .codex/config.toml. The CLI command is codex mcp add."),
+  ("Can I convert a config instead of rewriting it?","Yes. Paste JSON or TOML into our MCP config converter and copy the result. The server command or URL does not change, only the wrapper.")],
+ updated="Nov 22, 2026")
 
 guide("validate-plugin-json","How to validate a plugin.json for Codex and ChatGPT — PickAPlugin",
  "What a valid .codex-plugin/plugin.json needs, the mistakes that break installs, and a free in-browser checker.",
@@ -61,6 +77,7 @@ command = "npx"
 args = ["-y", "@upstash/context7-mcp"]</pre></div>
 <p>Each server becomes a <code>[mcp_servers.NAME]</code> table in <code>~/.codex/config.toml</code> (or <code>.codex/config.toml</code> in a trusted project). <code>env</code> becomes an inline table. For a remote server use <code>url</code>, and put headers in <code>http_headers</code>, or better, <code>bearer_token_env_var</code> so the token isn't in the file.</p>
 <p>Or skip the typing and use our <a href="../tools/mcp-config-converter.html">MCP config converter</a>. Paste JSON, get TOML (and back). It runs in your browser.</p>
+<p>Want the full walkthrough, including Claude Desktop extensions, Cursor's mcp.json, and official file paths? See <a href="install-mcp-server-claude-cursor-codex.html">how to install an MCP server in Claude Desktop, Cursor and Codex</a>.</p>
 <h2>Or just use the CLI</h2><pre>codex mcp add context7 -- npx -y @upstash/context7-mcp
 codex mcp list</pre>''',
  [("Where is Claude Desktop's config file?","macOS: ~/Library/Application Support/Claude/claude_desktop_config.json. Windows: %APPDATA%\\Claude\\claude_desktop_config.json."),
@@ -86,9 +103,23 @@ guide("vet-a-plugin","How to tell if a ChatGPT or Codex plugin is safe to instal
 <li><b>What does it ask for?</b> Tokens, filesystem access, network. Does that match what it says it does?</li>
 <li><b>Who made it?</b> A known company or an active maintainer is a better bet than a fresh account.</li>
 <li><b>License.</b> If there's none, you technically can't reuse the code. Browse <a href="../licenses.html">plugins by license</a>.</li>
-<li><b>Manifest sanity.</b> Run it through the <a href="../tools/plugin-json-validator.html">validator</a>. Absolute paths or secrets in the manifest are a red flag.</li></ol>''',
+<li><b>Manifest sanity.</b> Run it through the <a href="../tools/plugin-json-validator.html">validator</a>. Absolute paths or secrets in the manifest are a red flag.</li></ol>
+<p>Adding a raw MCP server in Claude Desktop, Cursor or Codex is a slightly different trust decision (a local stdio process runs as you; a remote URL sends data off the machine). That's <a href="check-mcp-server-safe.html">how to check if an MCP server is safe before installing</a>.</p>''',
  [("Does PickAPlugin test the plugins?","No. We sort and describe them, show last update, license and install command, and link to the source. Read the code before installing anything."),
   ("Are official OpenAI plugins safer?","They're curated by OpenAI, which is a real signal, but it's still worth knowing what you're connecting.")])
+
+
+guide("check-mcp-server-safe",
+ "How to check if an MCP server is safe before installing — PickAPlugin",
+ "A practical checklist before you install an MCP server: publisher, exact package name, pinned versions, credentials, filesystem access, and what a local stdio server can do on your machine.",
+ "How to check if an MCP server is safe before you install it",
+ "A listing, including one on this site, is not a safety review. Official MCP docs say the same. Here's what to look at before a server runs on your machine, or before you point an agent at a remote one.",
+ _gbody("check-mcp-server-safe.html"),
+ [("Does PickAPlugin audit MCP servers?","No. We list them, show last update, license and the install command we found, and link to the source. Descriptions are each project's own. Read the repo and the command before you install."),
+  ("Is a local MCP server sandboxed?","Not by the protocol. Official MCP local-server docs treat a stdio server as an ordinary process your app starts as you, with access to files, environment variables and the network unless you isolate it yourself (for example in a container)."),
+  ("Are stars or a directory listing a safety signal?","Stars measure popularity. A listing, here or elsewhere, is not an endorsement. Official MCP docs say curated catalogs reduce risk, they don't take responsibility for what you run."),
+  ("What's the difference between this and the plugin checklist?","The plugin guide is for ChatGPT and Codex plugin packages (marketplace.json, hooks, bundled MCP). This guide is for the MCP server itself, including servers you add by hand in Claude Desktop, Cursor or Codex.")],
+ updated="Nov 22, 2026")
 
 guide("find-codex-plugins","Where to find ChatGPT and Codex plugins — PickAPlugin",
  "Every place to find ChatGPT and Codex plugins: the built-in directory, GitHub awesome lists, and independent directories, and when to use each.",
@@ -119,7 +150,7 @@ guide("where-to-submit-mcp-server","Where to submit your MCP server (2026): ever
 <h2>9. cursor.directory: free</h2><p>Community directory for Cursor rules and MCP servers. Sign in and submit from <a href="https://cursor.directory/mcp" rel=nofollow>cursor.directory/mcp</a>. Good if your server is aimed at Cursor users.</p>
 <h2>10. awesome-mcp-servers (GitHub): free, by PR</h2><p>About 97k GitHub stars, per Marc Kohlbrugge (Oct 2026). Open a PR to <a href="https://github.com/punkpeye/awesome-mcp-servers" rel=nofollow>punkpeye/awesome-mcp-servers</a> adding one line in the right category, in alphabetical order. It's only for servers with a public repo you install yourself; hosted-only servers go to awesome-remote-mcp-servers.</p>
 <h2>11. HOL Plugins (hol.org/plugins): free</h2><p>A free directory with trust scores, from the team behind awesome-codex-plugins. If your server ships as a Codex plugin, see <a href="https://hol.org/plugins" rel=nofollow>hol.org/plugins</a>.</p>
-<h2>A sensible order</h2><ol><li>Official MCP Registry (others copy from it).</li><li>awesome-mcp-servers PR (feeds Glama too).</li><li>The free forms: MCP Market, mcpservers.org, mcp.so, Smithery, LobeHub, cursor.directory, PickAPlugin.</li><li>Docker MCP Catalog if you ship a container.</li></ol><p>Before you submit, make sure the README has a one-line description and a copy-paste install command. Our <a href="../tools/mcp-config-converter.html">MCP config converter</a> helps you show both JSON and TOML configs.</p>''',
+<h2>A sensible order</h2><ol><li>Official MCP Registry (others copy from it).</li><li>awesome-mcp-servers PR (feeds Glama too).</li><li>The free forms: MCP Market, mcpservers.org, mcp.so, Smithery, LobeHub, cursor.directory, PickAPlugin.</li><li>Docker MCP Catalog if you ship a container.</li></ol><p>Before you submit, make sure the README has a one-line description and a copy-paste install command. Our <a href="../tools/mcp-config-converter.html">MCP config converter</a> helps you show both JSON and TOML configs, and <a href="install-mcp-server-claude-cursor-codex.html">the install guide</a> shows the file paths for Claude Desktop, Cursor and Codex.</p>''',
  [("Where should I submit my MCP server first?","The official MCP Registry at registry.modelcontextprotocol.io. Several directories and clients read from it, so it's the one listing that spreads on its own."),
   ("Is it free to list an MCP server?","Yes, every place on this page has a free option. MCP Market ($29), mcpservers.org ($39) and mcp.so ($39) also sell one-time paid options for faster review or badges. You don't need them to get listed."),
   ("Which MCP directory gets the most traffic?","Of the sites Marc Kohlbrugge compared in Oct 2026, MCP Market had the most (about 81k visits a month), then mcpservers.org (about 45k) and mcp.so (about 18k). The awesome-mcp-servers GitHub list had about 97k stars."),
@@ -161,14 +192,15 @@ codex plugin add plugin-name@marketplace-name</pre>
   ("Is listing on PickAPlugin free?",'Yes. Send the repo on the <a href="../submit.html">submit page</a>. Paid featured spots exist, but they\'re always labelled and never change the ranking.')])
 
 _gl="".join(f'<a class=row style="grid-template-columns:1fr" href="{s}.html"><span><h3>{e(h)}</h3><p>{e(d)}</p></span></a>' for s,h,d in GUIDES)
-open(D+"/guides/index.html","w").write(layout("ChatGPT & Codex plugin guides — PickAPlugin",f'''<div class=prose style="max-width:860px"><span class=mono style="color:var(--acc)">Guides</span><h1>Plain-English guides to ChatGPT and Codex plugins</h1><p style="font-size:19px">Short, practical answers to the stuff people actually get stuck on.</p></div><div style="border-top:3px solid var(--ink)">{_gl}</div>''',1,"Practical guides: install a Codex plugin, validate plugin.json, convert MCP configs, write AGENTS.md, and vet a plugin before installing."))
+open(D+"/guides/index.html","w").write(layout("ChatGPT & Codex plugin guides — PickAPlugin",f'''<div class=prose style="max-width:860px"><span class=mono style="color:var(--acc)">Guides</span><h1>Plain-English guides to ChatGPT and Codex plugins</h1><p style="font-size:19px">Practical answers to the stuff people actually get stuck on: installing a plugin or an MCP server, checking it before you install, and the builder tools around that.</p></div><div style="border-top:3px solid var(--ink)">{_gl}</div>''',1,"Practical guides: install a Codex plugin or an MCP server in Claude Desktop, Cursor and Codex, validate plugin.json, convert MCP configs, write AGENTS.md, and vet a plugin or MCP server before installing."))
 
 # ---- FAQ ----
 _FAQ=[("What is PickAPlugin?",f"An independent, free directory of {len(P)} ChatGPT and Codex plugins gathered from public GitHub sources, hand-sorted into categories with last update, license, language and install command for each."),
  ("Is PickAPlugin affiliated with OpenAI?","No. It's an independent site. ChatGPT and Codex are trademarks of OpenAI."),
  ("Is it free?","Yes, browsing and the tools are free. Makers can pay for clearly labelled featured spots. Those never change the ranking order."),
  ("How do I install a plugin I found here?",'Each plugin page shows the install command from its README. See <a href="guides/install-codex-plugin.html">how to install a Codex plugin</a>.'),
- ("Do you test or audit plugins?",'No. Descriptions are each project\'s own. Read the code first. Here\'s <a href="guides/vet-a-plugin.html">a two-minute checklist</a>.'),
+ ("How do I install an MCP server in Claude, Cursor or Codex?",'The server is the same, the config file is not. Step by step, with official file paths and examples: <a href="guides/install-mcp-server-claude-cursor-codex.html">how to install an MCP server in Claude Desktop, Cursor and Codex</a>. If you only need to change the format, use the <a href="tools/mcp-config-converter.html">MCP config converter</a>.'),
+ ("Do you test or audit plugins?",'No. Descriptions are each project\'s own. Read the code first. Here\'s <a href="guides/vet-a-plugin.html">a two-minute checklist</a> for plugins, and <a href="guides/check-mcp-server-safe.html">how to check an MCP server before installing</a>.'),
  ("How do I get my plugin listed?",'Submit it free on the <a href="submit.html">submit page</a>.'),
  ("How do I publish my Codex or ChatGPT plugin?",'Submit it to OpenAI\'s Plugins Directory through the plugin submission portal, publish a marketplace.json from your GitHub repo, and list it in free directories. Step by step: <a href="guides/publish-codex-plugin.html">how to publish a Codex or ChatGPT plugin</a>.'),
  ("Where else should I submit my MCP server?",'Start with the official MCP Registry, then the big directories. We keep a list with submit links and prices in <a href="guides/where-to-submit-mcp-server.html">where to submit your MCP server</a>.'),
