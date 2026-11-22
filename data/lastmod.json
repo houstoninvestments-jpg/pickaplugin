@@ -1,7 +1,7 @@
 {
 "https://pickaplugin.com/": {
-"sig": "d0a0e34ad179ca9815b9",
-"date": "2026-11-21"
+"sig": "99e71236223aa56ba3d4",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/about": {
 "sig": "1506c4a8f897a6d50fc5",
@@ -32,20 +32,20 @@
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/c/agent-workflows": {
-"sig": "3b6d8f7ed59b10a37bb0",
-"date": "2026-11-21"
+"sig": "2efc6b2b8346c925ec5e",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/c/data-backend": {
 "sig": "7a6c2d6201f0d58c7067",
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/c/deploy-devops": {
-"sig": "7d07f6d83aaec4021b23",
-"date": "2026-11-21"
+"sig": "d13b4a0ad27366ee2292",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/c/design-frontend": {
-"sig": "a5a1530b9533f20a48d3",
-"date": "2026-11-21"
+"sig": "ae8d1377883384d477d2",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/c/docs-content-seo": {
 "sig": "5fc342135bd70558b921",
@@ -56,16 +56,16 @@
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/c/memory-context": {
-"sig": "8de0ed4081c8b1f61878",
-"date": "2026-11-21"
+"sig": "20aeb397a3aea6f041d6",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/c/messaging-remote": {
-"sig": "9ea53ead995e2369ef7c",
-"date": "2026-11-21"
+"sig": "201eabed2a73e2ff8735",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/c/miscellany": {
-"sig": "d202f92d337dc6e23743",
-"date": "2026-11-21"
+"sig": "e950e9772119c8afe31b",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/c/review-testing": {
 "sig": "dbb670551775e24c8962",
@@ -76,16 +76,16 @@
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/c/usage-quotas": {
-"sig": "933b76e3333af2fb65f0",
-"date": "2026-11-21"
+"sig": "4741970d9ab27366b9da",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/changelog": {
-"sig": "df387879cf2d9683b368",
-"date": "2026-11-21"
+"sig": "56c2c23dd025660f27d5",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/compare": {
-"sig": "9d67ba520cc3db138223",
-"date": "2026-11-21"
+"sig": "eec722cc948f16d6b210",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/faq": {
 "sig": "59cb430012b6642ac4e1",
@@ -140,12 +140,12 @@
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/language/javascript": {
-"sig": "ade9983ff59dc98ee879",
-"date": "2026-11-21"
+"sig": "decc0143102c1dc337c8",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/language/python": {
-"sig": "c0e83f53577e7c7150bf",
-"date": "2026-11-21"
+"sig": "5fac8674e1d5f1a83bb0",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/language/rust": {
 "sig": "25b6e05173af41d601e7",
@@ -156,8 +156,8 @@
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/language/typescript": {
-"sig": "cd0e017724932cb80786",
-"date": "2026-11-21"
+"sig": "23ebf25f5397c12f1346",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/languages": {
 "sig": "14b63412e9c0522a2140",
@@ -168,12 +168,12 @@
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/license/apache-2-0": {
-"sig": "9b872090a13a1e0257dc",
-"date": "2026-11-21"
+"sig": "be341178caadf04a9494",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/license/mit": {
-"sig": "5537679bbda9b3b662ea",
-"date": "2026-11-21"
+"sig": "304e80e98be480f03881",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/licenses": {
 "sig": "ee9697b4bc7683d7a8cf",
@@ -312,8 +312,8 @@
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/p/agiflow": {
-"sig": "5d1e7fcf1a69f9a33124",
-"date": "2026-11-21"
+"sig": "faed371b5b983c612da1",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/ahel": {
 "sig": "09bf8ea19cb2e7bb1d65",
@@ -412,12 +412,12 @@
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/p/archcore": {
-"sig": "4ed7c921c392931a3b7f",
-"date": "2026-11-21"
+"sig": "ddd10d8609c448486ab4",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/arcmira-youtube-transcript-search": {
-"sig": "232c7db9918ea8028d74",
-"date": "2026-11-21"
+"sig": "d748f1664cae6e4177f3",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/armorcodex": {
 "sig": "5d56ed0229c9848855b5",
@@ -528,8 +528,8 @@
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/p/brief2mp4": {
-"sig": "789102e2ce6734f3a5be",
-"date": "2026-11-18"
+"sig": "47aedacc9780457fa0cd",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/bring-your-ai-migration-auditor": {
 "sig": "15500f985f2922393a16",
@@ -712,16 +712,16 @@
 "date": "2026-11-20"
 },
 "https://pickaplugin.com/p/codebase-recon": {
-"sig": "1acdc45bee1516fc5ee4",
-"date": "2026-11-21"
+"sig": "bb55bce5a405822fbb5d",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/codemap-qd": {
 "sig": "a03a634b4b4a545438a5",
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/p/codetruss": {
-"sig": "fa2f5dc04bce9011f3d7",
-"date": "2026-11-21"
+"sig": "990820d57c7aca34799c",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/codex-agenteam": {
 "sig": "c1569d1328af16ba44c1",
@@ -772,8 +772,8 @@
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/p/codex-mem": {
-"sig": "99f7ec4e664e301f907e",
-"date": "2026-11-21"
+"sig": "cc21da0228e7163d0fdf",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/codex-multi-auth": {
 "sig": "b5b9a129098943593bfe",
@@ -788,8 +788,8 @@
 "date": "2026-10-25"
 },
 "https://pickaplugin.com/p/codex-quota-optimizer": {
-"sig": "ea82375805cf07156938",
-"date": "2026-11-21"
+"sig": "d4dc3f3d4eee807b2689",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/codex-quota-title": {
 "sig": "29ea90c6dd43af5a689e",
@@ -880,8 +880,8 @@
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/p/converter-studio": {
-"sig": "43a9669d3580ede2d730",
-"date": "2026-11-21"
+"sig": "2dce23aea66f85239813",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/coolify": {
 "sig": "a8b79a46bf3284a90dde",
@@ -1068,8 +1068,8 @@
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/p/ejentum-mcp": {
-"sig": "7b964912174233f70324",
-"date": "2026-11-21"
+"sig": "e28fc39ecfb3f43a80aa",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/elozi": {
 "sig": "e1db206b677cb8d96a11",
@@ -1259,9 +1259,13 @@
 "sig": "61157df2f1c71179aae7",
 "date": "2026-11-21"
 },
+"https://pickaplugin.com/p/graphify": {
+"sig": "9ae1081fb7d8f91dee52",
+"date": "2026-11-22"
+},
 "https://pickaplugin.com/p/graymatter": {
-"sig": "62f41f287819abc55bf3",
-"date": "2026-11-21"
+"sig": "59e61d4be6e2fb5ecb8b",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/gsc-mcp": {
 "sig": "1b0a7ea1ff013395be74",
@@ -1312,8 +1316,8 @@
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/p/host0": {
-"sig": "1190f15f36d4aff55183",
-"date": "2026-11-21"
+"sig": "192df9b12518654ff036",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/hotl-plugin": {
 "sig": "c92a54f3c0dad2df7af3",
@@ -1388,8 +1392,8 @@
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/p/joxo": {
-"sig": "ca14381bf82661b6642c",
-"date": "2026-11-21"
+"sig": "33472a10369ef9019dd7",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/justroadmap-mcp": {
 "sig": "423ab6aa8b4d4b6f47e3",
@@ -1428,8 +1432,8 @@
 "date": "2026-11-20"
 },
 "https://pickaplugin.com/p/kite": {
-"sig": "6a3ee5973ad888e13249",
-"date": "2026-11-21"
+"sig": "bf4a4940bb9fc3210cbc",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/kling-ai": {
 "sig": "d6c8bc9ee426857c0dd7",
@@ -1452,16 +1456,16 @@
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/p/kreuzberg": {
-"sig": "0165a5f53506f066bb2d",
-"date": "2026-10-25"
+"sig": "a744d0f33df80371bcb0",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/kreuzberg-cloud": {
-"sig": "d16e7808eebf66a6536b",
-"date": "2026-10-25"
+"sig": "b24239c34f075ead88f5",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/kreuzcrawl": {
-"sig": "dadbdb8e2ebe9188eb98",
-"date": "2026-10-25"
+"sig": "d4f9fb15437e5c1e3801",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/krexa": {
 "sig": "770e6c6156beee17fc79",
@@ -1476,8 +1480,8 @@
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/p/kuudo-skills": {
-"sig": "7ee51caa2484c6f8860e",
-"date": "2026-11-21"
+"sig": "80cfd3a42bac68ed247b",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/lacuna-music": {
 "sig": "7459387b540ea2451cf8",
@@ -1488,8 +1492,8 @@
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/p/launch-fast": {
-"sig": "9796d55be4a014df0974",
-"date": "2026-11-21"
+"sig": "cb7aea1b2aff04952f4d",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/launch-film": {
 "sig": "8d5918a92535459a44a1",
@@ -1520,8 +1524,8 @@
 "date": "2026-10-25"
 },
 "https://pickaplugin.com/p/living-brain": {
-"sig": "455a07f8dab096101870",
-"date": "2026-11-21"
+"sig": "cad2923792155c36e22e",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/llm-transpile": {
 "sig": "2171ae09fdacc62bfa0d",
@@ -1540,16 +1544,16 @@
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/p/lockstep": {
-"sig": "a3b452eb3dcfcabe6b54",
-"date": "2026-11-21"
+"sig": "b0f50e7c9de7c75449cf",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/long-form-distribution": {
 "sig": "bf6c4f17cdbb0368899e",
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/p/loom": {
-"sig": "bb0d531c0ac19536db9f",
-"date": "2026-11-21"
+"sig": "b5b02dd4325c2ceb5a78",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/loomaly": {
 "sig": "4356f086f7a78f7b9536",
@@ -1560,8 +1564,8 @@
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/p/lorevault": {
-"sig": "fecff67a4a1d676e9149",
-"date": "2026-11-21"
+"sig": "b2b5c8794b58de976fc1",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/loupe-code-review": {
 "sig": "5eedf83fdab463755729",
@@ -1588,8 +1592,8 @@
 "date": "2026-10-25"
 },
 "https://pickaplugin.com/p/magents": {
-"sig": "5381c5ce42ecf2dfaf12",
-"date": "2026-11-21"
+"sig": "67337ed380e4a6eda5e7",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/magic-hour": {
 "sig": "ee0ee3b1729691302986",
@@ -1652,8 +1656,8 @@
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/p/memtomem": {
-"sig": "928ca1053ee5af896077",
-"date": "2026-11-21"
+"sig": "4afbe5d88129b9c9b7f4",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/meta-box-skill": {
 "sig": "11d2bc10bb6329c9fc80",
@@ -1816,12 +1820,12 @@
 "date": "2026-11-16"
 },
 "https://pickaplugin.com/p/ontoly": {
-"sig": "64387940c9bdc969051f",
-"date": "2026-11-21"
+"sig": "45193e33f0e6edfd2b43",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/open-dynamic-workflows": {
-"sig": "7da25edab9850591b8a7",
-"date": "2026-11-21"
+"sig": "933a00584ec82e356373",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/openproject-codex": {
 "sig": "7be89a26baf0449be557",
@@ -1840,8 +1844,8 @@
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/p/osmo-phone-calls": {
-"sig": "381a24bc741341ad2de8",
-"date": "2026-11-21"
+"sig": "4c1c5ff4d8c2b8bd1fa6",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/oviond-mcp": {
 "sig": "39cbac7b99b6218c5233",
@@ -1860,8 +1864,8 @@
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/p/papersflow": {
-"sig": "a9b37ee3216ab5c0747c",
-"date": "2026-11-21"
+"sig": "ad0e7415f5b10ae17d14",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/pdf-monster": {
 "sig": "60c9fc7693cb413d741f",
@@ -2040,20 +2044,20 @@
 "date": "2026-11-12"
 },
 "https://pickaplugin.com/p/questionpunk": {
-"sig": "543d233515c4be2d8ba1",
-"date": "2026-11-21"
+"sig": "a137ade8e7f044b35ec2",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/quiver": {
 "sig": "3895c63b9ad4373c9934",
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/p/qurl": {
-"sig": "e13ab4d6b8c248843ce1",
-"date": "2026-11-19"
+"sig": "4e6f7f5f1cf5fb87ddc6",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/rag-reviewer": {
-"sig": "4a2c47d52971047ec51f",
-"date": "2026-11-21"
+"sig": "cc47d51eb42ab7bdf583",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/ramback": {
 "sig": "d7653c2f836bc2ea219a",
@@ -2340,16 +2344,16 @@
 "date": "2026-10-25"
 },
 "https://pickaplugin.com/p/sofya": {
-"sig": "a552d5e1fece3199877b",
-"date": "2026-11-21"
+"sig": "b9d31d4b77d997cc38b6",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/solar-icons": {
 "sig": "463a2bef18ec2b56940c",
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/p/solidping": {
-"sig": "6215275f6fbd398c6562",
-"date": "2026-11-21"
+"sig": "f97a7aba406a8a74264b",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/solidworks-gpt-plugin": {
 "sig": "d222c9106c7c991065a6",
@@ -2364,8 +2368,8 @@
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/p/spec-driven-development": {
-"sig": "86b5b2874a816c77cd7d",
-"date": "2026-11-21"
+"sig": "460fa7525d8bd19e7d8b",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/spec-superflow": {
 "sig": "ea92bb87800f5975d316",
@@ -2532,8 +2536,8 @@
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/p/team-skills-platform": {
-"sig": "8491c46b49df26c1094a",
-"date": "2026-11-21"
+"sig": "fc4cc5bc5ac856cb5b6d",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/telegram-bot-ui": {
 "sig": "6be761cad8d12c0ce47e",
@@ -2612,8 +2616,8 @@
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/p/treza": {
-"sig": "8dec1e5c36b1858971ff",
-"date": "2026-11-21"
+"sig": "58dd8e84d4eee9f1ab79",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/tripsy-mcp": {
 "sig": "4915e0821d005bef1187",
@@ -2680,8 +2684,8 @@
 "date": "2026-11-20"
 },
 "https://pickaplugin.com/p/varg": {
-"sig": "15f03dc43df9c7ea28b2",
-"date": "2026-11-21"
+"sig": "84ab6edb137140731215",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/vast-agentic-giveaway": {
 "sig": "1c31895b98cf314ef3c7",
@@ -2848,12 +2852,12 @@
 "date": "2026-11-21"
 },
 "https://pickaplugin.com/p/zenitya": {
-"sig": "a7ebd43f2fa934a9575f",
-"date": "2026-11-21"
+"sig": "23f3d2e87b896687c68e",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/zipline-mcp": {
-"sig": "c2931e24c26c4673a4c4",
-"date": "2026-11-21"
+"sig": "025b9e11d6392a621b30",
+"date": "2026-11-22"
 },
 "https://pickaplugin.com/p/zotero-research-tools": {
 "sig": "10bec07592886f0355b7",
