@@ -5,6 +5,10 @@ ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Print-style redesign is the default (scripts/redesign.py). REDESIGN=0 builds the old look; OUT=dir overrides output.
 PREVIEW=os.environ.get("REDESIGN","1")!="0"; D=os.path.join(ROOT,os.environ.get("OUT","dist"))
 P=json.load(open(os.path.join(ROOT,"data","plugins.json")))
+import sys as _sys
+_sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from listing_overrides import apply_list
+apply_list(P)
 for p in P:
   if p["category"]=="Other": p["category"]="Miscellany"
 # TODO(Aaron): paste real Stripe Payment Links here once created in Stripe. Leave "" until then.
@@ -96,7 +100,7 @@ def layout(title,body,depth=0,desc="An independent, hand-edited catalog of ChatG
 {body}<footer><span>PickAPlugin is an independent catalog. Not affiliated with, endorsed by, or sponsored by OpenAI. ChatGPT and Codex are trademarks of OpenAI. Listings come from public sources — read the code before you install anything.</span><span><a href="{r}advertise.html">Advertise</a> · <a href="{r}privacy.html">Privacy</a> · <a href="{r}terms.html">Terms</a> · <a href="mailto:{EMAIL}">{EMAIL}</a></span></footer></div></body></html>"""
 idx={p["slug"]:i+1 for i,p in enumerate(P)}
 def num(p): return f"No.{idx[p['slug']]:03d}"
-def row(p,pre="p/"): return f'<a class=row href="{pre}{p["slug"]}.html" data-c="{e(p["category"])}" data-t="{e((p["name"]+" "+p["description"]+" "+p["maker"]).lower())}"><span class="no mono">{num(p)}</span><span><h3>{e(p["name"])}{vmark(p)}</h3><p>{e(p["description"])}</p></span><span class="c mono">{e(p["category"])}</span></a>'
+def row(p,pre="p/"): return f'<a class=row href="{pre}{p["slug"]}.html" data-c="{e(p["category"])}"><span class="no mono">{num(p)}</span><span><h3>{e(p["name"])}{vmark(p)}</h3><p>{e(p["description"])}</p></span><span class="c mono">{e(p["category"])}</span></a>'
 def slug(c): return "".join(ch if ch.isalnum() else "-" for ch in c.lower()).replace("--","-").replace("--","-").strip("-")
 def pinrow(p,pre): return f'<a class=row style="grid-template-columns:110px 1fr" href="{pre}{p["slug"]}.html"><span class=badge>Featured</span><span><h3>{e(p["name"])}</h3><p>{e(p["description"])}</p></span></a>'
 def pinned(cat,pre,r):
@@ -168,7 +172,7 @@ home=topspot()+fband("")+f"""<section class=lede><div><span class="mono" style="
 <div class=sec><h2>Editor's picks</h2><span class=mono>Chosen from each project's own description · not audited</span></div><div class=picks>{picks}</div>
 {newsec}
 <div class=sec id=catalog><h2>The full catalog</h2><span class=mono id=n></span></div>{shelves}<div id=list>{"".join(row(p) for p in P)}</div>
-<script>let c="",q=document.getElementById('q'),rs=[...document.querySelectorAll('#list .row')];function f(){{let t=q.value.toLowerCase(),n=0;rs.forEach(x=>{{let ok=(!c||x.dataset.c==c)&&x.dataset.t.includes(t);x.style.display=ok?'':'none';n+=ok}});document.getElementById('n').textContent=n+' of {len(P)} shown'}}
+<script>let c="",q=document.getElementById('q'),rs=[...document.querySelectorAll('#list .row')];function f(){{let t=q.value.toLowerCase(),n=0;rs.forEach(x=>{{let ok=(!c||x.dataset.c==c)&&x.textContent.toLowerCase().includes(t);x.style.display=ok?'':'none';n+=ok}});document.getElementById('n').textContent=n+' of {len(P)} shown'}}
 q.oninput=f;document.querySelectorAll('.cats button').forEach(b=>b.onclick=()=>{{document.querySelectorAll('.cats button').forEach(z=>z.classList.remove('on'));b.classList.add('on');c=b.dataset.c;f();document.getElementById('catalog').scrollIntoView({{behavior:'smooth'}})}});f()</script>"""
 if PREVIEW: home=preview_home()
 open(D+"/index.html","w").write(layout("PickAPlugin — an independent catalog of ChatGPT & Codex plugins",home))
@@ -249,24 +253,46 @@ _msg("confirmed","You're subscribed","<p style='font-size:19px'>Thanks for confi
 _msg("unsubscribed","You're unsubscribed","<p style='font-size:19px'>Your email has been removed from the PickAPlugin list. Sorry to see you go.</p>")
 _msg("form-error","That didn't go through",f'''<p style="font-size:19px" id=why>Something was missing or invalid. Please go back and try again.</p><p>Still stuck? Email <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
 <script>let w=new URLSearchParams(location.search).get("w"),m={{captcha:"The spam check didn't pass. Please go back, wait for the check box to finish, and submit again.",unsub:"That unsubscribe link isn't valid. Email us and we'll remove you by hand.",claim:"Please enter a valid email and GitHub handle.",sub:"Please enter a valid email address.",confirm:"That confirmation link isn\\u2019t valid or has expired. Please sign up again.",mail:"We couldn\\u2019t send the confirmation email just now. Please try again in a few minutes."}};if(m[w])document.getElementById("why").textContent=m[w]</script>''')
+import re as _re
+def stars(p): return p.get("stars") if isinstance(p.get("stars"),int) else -1
+def words(p): return {w for w in _re.findall(r"[a-z]{4,}",((p.get("description") or "")+" "+(p.get("about") or "")).lower())}-{"with","your","that","from","into","codex","claude","code","plugin","plugins","agent","agents","skills","skill","tools","using","which","their","this","them","they","over"}
+_bycat={}
+for _x in P: _bycat.setdefault(_x["category"], []).append(_x)
+_ww={_x["slug"]:words(_x) for _x in P}
+def related(p,n=4):
+  w=_ww[p["slug"]]
+  cands=[x for x in _bycat.get(p["category"],[]) if x["slug"]!=p["slug"] and not x.get("featured") and not x.get("archived")]
+  cands.sort(key=lambda x:(len(w & _ww[x["slug"]]), stars(x)), reverse=True)
+  top=cands[:n]
+  if len(top)<n:
+    extra=[x for x in _bycat.get(p["category"],[]) if x["slug"]!=p["slug"] and x not in top]
+    top+=extra[:n-len(top)]
+  return top
 for p in P:
-  same=[x for x in P if x["category"]==p["category"] and x["slug"]!=p["slug"] and not x.get("featured")][:4]
+  same=related(p)
   isf=p.get("featured")
   note=f'<p class=note>Editor\'s note: {e(PICKS[p["slug"]])}</p>' if p["slug"] in PICKS else ""
+  about=""
+  if (p.get("about") or "").strip() and p["about"].strip()!=p["description"].strip():
+    about=(f'<h2>About this plugin</h2><p>{e(p["about"])}</p>'
+           '<p style="color:var(--mute)">Summarized from the project\'s README or homepage. We haven\'t tested it.</p>')
+  dead=""
+  if p.get("link_missing"):
+    when=p.get("link_checked") or ""
+    dead=(f'<p class=note>We couldn\'t open this project\'s GitHub repository'
+          +(f' on {e(when)}' if when else '')
+          +'. It may have been renamed, removed, or made private. The listing stays because it was on a source list we read.</p>')
   rel="".join(f'<a class=row style="grid-template-columns:70px 1fr" href="{x["slug"]}.html"><span class="no mono">{num(x)}</span><span><h3>{e(x["name"])}</h3><p>{e(x["description"])}</p></span></a>' for x in same)
-  b=f"""<article class=doc><div><a class=mono href="../index.html#catalog" style="text-decoration:none">← Catalog</a> <span class=mono>/</span> <a class=mono href="../c/{slug(p["category"])}.html" style="text-decoration:none">{e(p["category"])}</a>{'<div style="margin-top:14px"><span class=badge>Featured</span></div>' if isf else ""}<h1>{e(p["name"])}</h1>{'<p class=vbig>✓ Verified by maker <span class=mono>· paid badge: the maker claimed this listing and keeps it current</span></p>' if p.get("verified") else ""}<p class=d>{e(p["description"])}</p>{note}
+  b=f"""<article class=doc><div><a class=mono href="../index.html#catalog" style="text-decoration:none">← Catalog</a> <span class=mono>/</span> <a class=mono href="../c/{slug(p["category"])}.html" style="text-decoration:none">{e(p["category"])}</a>{'<div style="margin-top:14px"><span class=badge>Featured</span></div>' if isf else ""}<h1>{e(p["name"])}</h1>{'<p class=vbig>✓ Verified by maker <span class=mono>· paid badge: the maker claimed this listing and keeps it current</span></p>' if p.get("verified") else ""}<p class=d>{e(p["description"])}</p>{note}{about}{dead}
 <a class=btn href="/go/{p["slug"]}" rel="nofollow noopener" target=_blank>Open the project ↗</a>{(' <a class=btn href="/go/'+p["slug"]+'?to=home" rel="nofollow noopener" target=_blank>Homepage ↗</a>') if p.get("homepage") else ""}{(' <a class=btn href="/go/'+p["slug"]+'?to=docs" rel="nofollow noopener" target=_blank>Docs ↗</a>') if p.get("docs") else ""}<p class="mono vs" id=vs hidden></p>{"" if isf else '<p class=mine>Is this your plugin? <a href="../featured.html">Get featured</a>'+(f' (founding rate: $29/mo for life, first week free, {FOUNDING_LEFT} of 10 left)' if FOUNDING_ACTIVE else '')+("" if p.get("verified") else ' or <a href="../advertise.html#verified">get a Verified badge ($9/mo)</a>')+' →</p>'}
-{nlform("plugin:"+p["slug"]) if PREVIEW else ""}{claimbox(p)}{badgebox(p)}<div class=sec><h2>Also in {e(p["category"])}</h2><span class=mono>{BLURB.get(p["category"],"")}</span></div>{pinned(p["category"],"",  "../")}{rel}</div>
+{nlform("plugin:"+p["slug"]) if PREVIEW else ""}{claimbox(p)}{badgebox(p)}<div class=sec><h2>Also in <a href="../c/{slug(p["category"])}.html">{e(p["category"])}</a></h2><span class=mono>{BLURB.get(p["category"],"")}</span></div>{pinned(p["category"],"",  "../")}{rel}</div>
 <aside class=side><span class=mono>{num(p)}</span><dl><dt class=mono>Maker</dt><dd>{e(p["maker"] or "Unknown")}</dd><dt class=mono>Category</dt><dd>{e(p["category"])}</dd>
 <dt class=mono>Listed via</dt><dd><a href="{e(p["source_url"])}">{e(p["source"])}</a></dd><dt class=mono>In our catalog since</dt><dd>{p["first_seen"]}</dd>{checked(p) if PREVIEW else ""}{ghfacts(p)}</dl>{installbox(p)}
 <p style="font-size:14px;color:var(--mute);margin-top:24px">Made this? You can <a href="../featured.html">feature it</a> or <a href="mailto:{EMAIL}?subject=Listing%20fix:%20{e(p['name'])}">ask for a correction</a>.</p></aside></article>"""
   open(f'{D}/p/{p["slug"]}.html',"w").write(layout(f'{p["name"]} — PickAPlugin',b,1,p["description"][:155]))
 os.makedirs(D+"/c",exist_ok=True)
 # ---- best-of rankings + comparisons (real signals only: GitHub stars, editor's picks) ----
-import re as _re
-def stars(p): return p.get("stars") if isinstance(p.get("stars"),int) else -1
 def rankkey(p): return (p.get("archived") is True, -(1 if p["slug"] in PICKS else 0), -stars(p), p["name"].lower())
-def words(p): return {w for w in _re.findall(r"[a-z]{4,}",p["description"].lower())}-{"with","your","that","from","into","codex","claude","code","plugin","plugins","agent","agents","skills","skill","tools","using","which","their","this","them","they","over"}
 PAIRS=[]
 for c in cats:
   if c=="Miscellany": continue
@@ -353,6 +379,8 @@ price_line=(f'<p class=price>$29 <span class=mono>per month for life · normally
 howto=("Email us with your plugin URL to claim a founding spot. We'll send the $29/mo payment link (first week free)."
        if FOUNDING_ACTIVE and not STRIPE.get("featured_founding")
        else "Click the button and pay with Stripe. Put your plugin's URL (GitHub repo or homepage) in the “Plugin URL” box. If it isn't in the catalog yet, we'll add it.")
+_feat_desc=("Paid, clearly labelled featured spots on PickAPlugin, a hand-sorted catalog of ChatGPT and Codex plugins."
+            +(" Founding rate $29/mo for life while spots last." if FOUNDING_ACTIVE else " $49/mo, cancel anytime."))
 open(D+"/featured.html","w").write(layout("Get featured — PickAPlugin",f"""<div class=prose><span class=mono style="color:var(--acc)">Three slots. That's the whole inventory.</span><h1>Put your plugin where people pick plugins.</h1>
 <p style="font-size:19px">PickAPlugin is a hand-sorted catalog of {len(P)} ChatGPT &amp; Codex plugins. Featured gets three slots, so each one actually stands out. (Other placements are on the <a href="advertise.html">advertise</a> page.)</p>
 {founding_box}{price_line}
@@ -371,7 +399,7 @@ open(D+"/featured.html","w").write(layout("Get featured — PickAPlugin",f"""<di
 <h3>Can you turn me down?</h3><p>Yes. If a plugin is broken, malicious or misleading, we'll refund you and pass.</p>
 <h3>What happens when I cancel?</h3><p>Your slot stays up until the end of the period you've paid for, then opens for someone else. Founding pricing is for as long as you stay subscribed — if you cancel and come back later, the regular rate applies.</p>
 <h3>Questions?</h3><p><a href="mailto:{EMAIL}">{EMAIL}</a></p></div>
-<p style="margin-top:30px">{cta if OPEN else ""}</p></div>"""))
+<p style="margin-top:30px">{cta if OPEN else ""}</p></div>""",0,_feat_desc))
 open(D+"/about.html","w").write(layout("About — PickAPlugin",f"""<div class=prose><h1>About</h1><p>PickAPlugin is an independent catalog of plugins for ChatGPT and Codex. It is <b>not affiliated with, endorsed by, or sponsored by OpenAI</b>.</p>
 <p>Listings are collected daily from public sources and link straight to the original project. We don't host plugin code and we haven't audited it — a plugin can run commands on your machine, so read it first.</p>
 <p>Editor's picks are our opinion, based on what each project says about itself. Featured slots are paid and always labelled.</p><p>Corrections, removals, hellos: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p></div>"""))

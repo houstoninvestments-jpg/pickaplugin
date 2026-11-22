@@ -64,5 +64,14 @@ todays=sum(1 for d in lastmods.values() if d==today)
 assert todays < len(lastmods), (todays, len(lastmods))
 # A stable legal page should usually keep its old date unless we edited it this run.
 # Don't hard-fail if privacy was actually rewritten; just report.
+# Unique metas on previously generic legal/sales pages
+for rel,needle in (("featured.html","Paid, clearly labelled featured spots"),
+                   ("privacy.html","What data PickAPlugin touches"),
+                   ("terms.html","Terms for using PickAPlugin")):
+  h=open(os.path.join(D,rel)).read()
+  assert needle in h, rel
+# Homepage catalog search should not duplicate every description in a data-t attribute
+home=open(os.path.join(D,"index.html")).read()
+assert " data-t=" not in home
 print("ok: sitemap",len(urls),"urls; lastmod today",todays,"of",len(urls),
       "; categories",len(cfiles),"; noindex",",".join(thank))

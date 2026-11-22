@@ -79,6 +79,7 @@ def add_stars(out, old):
       r=d.get(f"r{j}")
       if r:
         p=out[s]; p["stars"]=r["stargazerCount"]; p["archived"]=r["isArchived"]; p["stars_checked"]=today; n+=1
+        p.pop("link_missing", None)
         p["pushed_at"]=(r.get("pushedAt") or "")[:10] or None
         li=r.get("licenseInfo") or {}; p["license"]=(li.get("spdxId") if li.get("spdxId") not in (None,"NOASSERTION") else None)
         p["language"]=(r.get("primaryLanguage") or {}).get("name")
@@ -93,6 +94,9 @@ def add_stars(out, old):
         )
         if not keep:
           p["install"]=cmd
+      elif d and f"r{j}" in d:
+        # Query succeeded and GitHub has no such repo (not a transport error).
+        p=out[s]; p["link_missing"]=True; p["link_checked"]=today
   print(f"stars refreshed for {n}/{len(items)} repos")
 def main():
   path=os.path.join(ROOT,"data","plugins.json")
@@ -116,6 +120,12 @@ def main():
   for s,p in out.items():  # keep fulfillment fields (featured_sub, featured_since...)
     for k,v in old.get(s,{}).items():
       if k.startswith(("featured_","top_spot","belt","verified","sponsor_","homepage","docs")): p[k]=v
+    # Hand-written about text and last link check, so a crawl can't wipe them.
+    prev=old.get(s,{})
+    if prev.get("about") and not p.get("about"): p["about"]=prev["about"]
+    if prev.get("link_missing") and "link_missing" not in p:
+      p["link_missing"]=prev["link_missing"]
+      if prev.get("link_checked"): p["link_checked"]=prev["link_checked"]
   # Keep every listing that didn't come from a crawled source list. Previously only
   # featured-order + editor-added survived, so a hand-added entry with any other
   # source (e.g. maker-submitted) was silently dropped on the next refresh. Prefer
@@ -132,6 +142,12 @@ def main():
   if kept:
     print(f"kept {kept} non-crawled listings (editor-added/featured-order/maker-submitted/...)")
   add_stars(out, old)
+  # Re-apply hand-maintained about/description/install/homepage/docs after the crawl.
+  import sys as _sys
+  _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+  from listing_overrides import apply_map
+  _n=apply_map(out)
+  if _n: print(f"applied {_n} listing override fields")
   data=sorted(out.values(),key=lambda p:p["name"].lower())
   json.dump(data,open(path,"w"),indent=1,ensure_ascii=False)
   print(f"{len(data)} plugins written ({len(set(out)-set(old))} new)")

@@ -25,7 +25,7 @@ def srow(p,i):
   if p["slug"] in PICKS: tags.append("Editor's pick")
   if p.get("archived"): tags.append("Archived on GitHub")
   t=f' <span class=vchk style="color:var(--acc);border-color:var(--acc)">{" · ".join(tags)}</span>' if tags else ""
-  return f'<a class=row href="../p/{p["slug"]}.html"><span class="no mono">#{i}</span><span><h3>{e(p["name"])}{t}</h3><p>{e(p["description"])}</p></span><span class="c mono">★ {fmt(stars(p))} · by {e(p["maker"])}</span></a>'
+  return f'<a class=row href="../p/{p["slug"]}.html"><span class="no mono">#{i}</span><span><h3>{e(p["name"])}{t}</h3><p>{e((p["description"][:137]+"…") if len(p["description"])>140 else p["description"])}</p></span><span class="c mono">★ {fmt(stars(p))} · by {e(p["maker"])}</span></a>'
 
 open(D+"/privacy.html","w").write(layout("Privacy — PickAPlugin",f"""<div class=prose><span class=mono style="color:var(--acc)">Plain English</span><h1>Privacy</h1>
 <p>PickAPlugin is a catalog of ChatGPT and Codex plugins, run by Aaron Houston. This page says what data the site touches and why. Questions: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
@@ -33,7 +33,7 @@ open(D+"/privacy.html","w").write(layout("Privacy — PickAPlugin",f"""<div clas
 <h3>Paying for a placement</h3><p>Paid placements (Featured, Top Spot, On the Belt, Category Sponsor, Verified badge, Expedited review) are paid through Stripe. Stripe collects your card details. We never see or store your full card number. We receive what Stripe shares with sellers: your name, email, billing country, what you bought, and the plugin URL you enter at checkout. We use it to set up your placement, contact you about it, and keep the records we need for tax and accounting. See <a href="https://stripe.com/privacy">Stripe's privacy policy</a>.</p>
 <h3>Email</h3><p>If you email us, we keep the conversation so we can reply and follow up. We don't sell or share your email, and we don't add you to a mailing list without asking.</p>
 <h3>Your choices</h3><p>Email <a href="mailto:{EMAIL}">{EMAIL}</a> to ask what we hold about you, to correct it, or to delete it. We keep payment records only as long as the law requires.</p>
-<h3>Changes</h3><p>If this changes, we'll update this page. Last updated 2026-10-26.</p></div>"""))
+<h3>Changes</h3><p>If this changes, we'll update this page. Last updated 2026-10-26.</p></div>""",0,"What data PickAPlugin touches and why: no accounts or tracking cookies, Cloudflare and Google Fonts request data, and Stripe for paid placements."))
 open(D+"/terms.html","w").write(layout("Terms — PickAPlugin",f"""<div class=prose><span class=mono style="color:var(--acc)">Plain English</span><h1>Terms</h1>
 <p>PickAPlugin (pickaplugin.com) is run by Aaron Houston. By using the site or buying a placement, you agree to these terms. Questions: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
 <h3>The catalog</h3><p>Listings come from public sources and each project's own description. We don't test, audit or endorse the plugins, and rankings use public signals like GitHub stars. Install anything at your own risk and read the code first. PickAPlugin isn't affiliated with, endorsed by, or sponsored by OpenAI. ChatGPT and Codex are trademarks of OpenAI, and project names belong to their owners. Makers can ask for corrections or removal at any time.</p>
@@ -44,7 +44,7 @@ open(D+"/terms.html","w").write(layout("Terms — PickAPlugin",f"""<div class=pr
 <li>Expedited review buys a decision within 24 hours, not a yes. If we pass, you get a refund.</li>
 <li>We don't promise any amount of traffic, clicks or installs.</li></ul>
 <h3>No warranty</h3><p>The site is provided as is. To the extent the law allows, we aren't liable for losses from using it or from any plugin listed on it. Our total liability for a paid placement is limited to what you paid us for it.</p>
-<h3>Changes</h3><p>We may update these terms and will post the changes here. Last updated 2026-10-26.</p></div>"""))
+<h3>Changes</h3><p>We may update these terms and will post the changes here. Last updated 2026-10-26.</p></div>""",0,"Terms for using PickAPlugin and buying a labelled placement. We don't test or endorse listed plugins; install at your own risk."))
 build_collections()
 # ---- clean URLs, canonical, OG/Twitter, JSON-LD ----
 def _url(rel):

@@ -159,7 +159,9 @@
   "pushed_at": "2026-11-22",
   "license": "MIT",
   "language": "Python",
-  "install": null
+  "install": null,
+  "about": "Make your AI coding agent trustworthy: fewer reworks, safer changes, proof before \"done\". English · 中文 · Fast-Track Playbook · 速通秘籍 Stop babysitting your agent. Aegis makes your agent plan against your real baseline before it edits, prove completion with fresh evidence, and leave simple tasks alone — you get fewer reworks, safer changes, and less blind trust in \"done\".",
+  "homepage": "https://autoloom.codes/aegis"
  },
  {
   "slug": "agency-continuity-audit",
@@ -221,7 +223,8 @@
   "pushed_at": "2026-11-21",
   "license": "MIT",
   "language": "TypeScript",
-  "install": null
+  "install": null,
+  "about": "Keep the way you work consistent across coding agents and workspaces. Agent Deck gives every agent the right playbooks, tools, and credentials from one governed source of truth. Watch the 100-second overview — one playbook across agents and workspaces."
  },
  {
   "slug": "agent-guard",
@@ -241,7 +244,8 @@
   "pushed_at": "2026-11-22",
   "license": "MIT",
   "language": "Shell",
-  "install": null
+  "install": null,
+  "about": "A local-first guardrail that keeps AI coding agents from leaking your secrets. Blocks risky .env reads, masks secret-like output, and scans changes before they reach Git. A local-first guardrail for Claude Code, Codex, Git hooks, GitHub Actions, and direct shell use."
  },
  {
   "slug": "agent-harness-skills",
@@ -261,7 +265,8 @@
   "pushed_at": "2026-11-19",
   "license": "MIT",
   "language": "Python",
-  "install": null
+  "install": null,
+  "about": "Reusable skills for turning real software repositories into agent-ready engineering environments. Helps teams build the repo-side control layer that coding agents need: clear entrypoints, explicit boundaries, runnable validation, runtime evidence, and reviewable delivery records."
  },
  {
   "slug": "agent-message-queue",
@@ -341,12 +346,13 @@
   "pushed_at": "2026-07-14",
   "license": "MIT",
   "language": "Shell",
-  "install": null
+  "install": null,
+  "about": "A macOS-only local camera appliance for AI coding agents. A signed native app captures one JPEG frame when the agent needs to look; the host adapter (Codex or Grok Build) materializes that file and inspects it through a proven local path."
  },
  {
   "slug": "agent-workflow-system",
   "name": "Agent Workflow System",
-  "description": "一套中文AI工作流系统：7个协作技能 + 行为规范宪法 + 会话恢复机制，模糊目标→可执行任务，全生命周期引导。Codex & Claude Code 双平台，新手友好。",
+  "description": "中英双语 AI 工作流系统，7个协作技能覆盖引导/规划/执行/审计/收尾全生命周期。Bilingual AI workflow system — 7 collaborative skills for project guidance, planning, execution, auditing, and closeout. Claude Code & Codex.",
   "maker": "1139030773-cmd",
   "link": "https://github.com/1139030773-cmd/agent-workflow-system",
   "category": "Agent Workflows",
@@ -361,7 +367,8 @@
   "pushed_at": "2026-06-12",
   "license": "MIT",
   "language": "PowerShell",
-  "install": "codex plugin install 1139030773-cmd/agent-workflow-system"
+  "install": "codex plugin install 1139030773-cmd/agent-workflow-system",
+  "about": "A Chinese-English bilingual AI workflow system for Claude Code and Codex CLI. Turns vague ideas into executable tasks through 7 collaborative skills + behavioral constitution + session recovery. You don't need to understand how this system works."
  },
  {
   "slug": "agentavow-trust",
@@ -497,7 +504,7 @@
  {
   "slug": "agentizer",
   "name": "Agentizer",
-  "description": "Turn any website into an AI-powered agentfront with split-pane",
+  "description": "Turn any website into an AI-powered agentfront — crawl, generate, deploy.",
   "maker": "Humiris",
   "link": "https://github.com/Humiris/wwa-transform",
   "category": "Other",
@@ -512,7 +519,8 @@
   "pushed_at": "2026-05-05",
   "license": null,
   "language": "TypeScript",
-  "install": null
+  "install": null,
+  "about": "Turn any website into an AI-powered agentfront — crawl, generate, deploy. Codiris Agentizer is a plugin for Claude Code and Codex that transforms any website into a full agent-first experience with AI chat, voice calls, interactive product browsing, conversational checkout, and more."
  },
  {
   "slug": "agentmart",
@@ -552,12 +560,14 @@
   "pushed_at": "2026-11-16",
   "license": "Apache-2.0",
   "language": "Go",
-  "install": "claude plugin marketplace add boshu2/agentops"
+  "install": "claude plugin marketplace add boshu2/agentops",
+  "about": "Software engineering practice, re-tested for AI agents. Fifty years of software engineering produced practices that work for human teams: state the behavior first, work in small slices, keep the checker separate from the author, isolate concurrent work. AgentOps runs those practices against AI coding agents and keeps the ones that hold up.",
+  "homepage": "https://www.12factoragentops.com"
  },
  {
   "slug": "agentpack",
   "name": "AgentPack",
-  "description": "Ranks repo context for Codex with likely files, skill recommendations, agent rules, commands, warnings, and compact task-focused packs before editing.",
+  "description": "Local context engine for AI coding agents. Routes tasks to relevant files, tests, rules, and skills, supports prompt caching, and builds compact context packs for Claude Code, Codex, Cursor, MCP, and more.",
   "maker": "vishal2612200",
   "link": "https://github.com/vishal2612200/agentpack",
   "category": "Memory & Context",
@@ -572,7 +582,9 @@
   "pushed_at": "2026-11-01",
   "license": "AGPL-3.0",
   "language": "Python",
-  "install": null
+  "install": null,
+  "about": "Make AI coding work easier to understand, verify, and continue. Is the local, agent-neutral reliability layer for AI software development.",
+  "homepage": "https://vishal2612200.github.io/agentpack"
  },
  {
   "slug": "agentry-observability",
@@ -673,7 +685,8 @@
   "pushed_at": "2026-11-20",
   "license": "MIT",
   "language": "Rust",
-  "install": "/plugin marketplace add TardisBooo/ai-coding-daily-report"
+  "install": "/plugin marketplace add TardisBooo/ai-coding-daily-report",
+  "about": "Turn local AI coding sessions into a Markdown daily report with Grok Build, Claude Code, or Codex. If you work with multiple AI coding agents — Codex, Claude Code, Grok Build, Pi, OMP, DSH, or Antigravity — your day is scattered across dozens of sessions in half a dozen projects. Writing a daily standup report means digging through histories by hand."
  },
  {
   "slug": "ai-native-sdlc-loop",
@@ -831,7 +844,7 @@
  {
   "slug": "amazon-249-byte-search-terms-optimizer",
   "name": "Amazon 249-Byte Search Terms Optimizer",
-  "description": "Optimize Amazon Seller Central backend search terms within 249 UTF-8 bytes, sanitize listing HTML, and format Rufus AI copy.",
+  "description": "A fast, zero-dependency UTF-8 byte counter and deduplication optimizer for Amazon Seller Central's 249-byte backend search terms limit.",
   "maker": "kuaai",
   "link": "https://github.com/kuaai/amazon-search-terms-bytes-counter",
   "category": "Data & Backend",
@@ -846,7 +859,9 @@
   "pushed_at": "2026-11-11",
   "license": "MIT",
   "language": "JavaScript",
-  "install": null
+  "install": null,
+  "about": "Amazon Search Terms (249 Bytes) Counter & Optimizer A fast, zero-dependency UTF-8 byte counter and deduplication optimizer for Amazon Seller Central's 249-byte backend search terms limit. 🚀 Built and maintained by AmazonSEO.ai — AI listing builder and Brand Analytics optimization for Amazon sellers. Amazon Seller Central strictly enforces a limit of 249 UTF-8 bytes for backend generic search terms.",
+  "homepage": "https://www.amazonseo.ai"
  },
  {
   "slug": "anchor",
@@ -906,7 +921,8 @@
   "pushed_at": "2026-10-02",
   "license": "MIT",
   "language": "Python",
-  "install": null
+  "install": null,
+  "about": "这是一个 Codex skill：用内置图像生成工具制作姿势图，再用 FFmpeg 裁剪、安排停顿，导出 GIF、MP4 和实际解码的检查图。 三个示例都是 384×384、约 2.6 秒的无限循环动图。每段用了六个真实生成的 关键姿势，采用反应贴纸的停顿节奏。它们是关键姿势动画；如果想要更顺滑， 应增加真正的中间姿势，单纯提高帧率不会凭空增加动作。"
  },
  {
   "slug": "antigravity-2-0",
@@ -926,7 +942,8 @@
   "pushed_at": "2026-07-07",
   "license": "MIT",
   "language": "JavaScript",
-  "install": null
+  "install": null,
+  "about": "This Google Antigravity Codex Plugin is a community local Windows bridge for Codex and Google Antigravity. It helps OpenAI Codex Antigravity workflows connect to the Antigravity 2.0 desktop app using a Codex MCP plugin, DevTools MCP Antigravity controls, and local helper commands. This is a local Codex plugin that helps Codex connect to Antigravity 2.0 on Windows."
  },
  {
   "slug": "antigravity-workspace-template",
@@ -946,7 +963,8 @@
   "pushed_at": "2026-11-12",
   "license": "MIT",
   "language": "Python",
-  "install": null
+  "install": null,
+  "about": "Cross-IDE repository knowledge engine for grounded codebase Q&A. Formerly known as Antigravity Workspace Template — same project, new name."
  },
  {
   "slug": "apavin-mcp",
@@ -1042,7 +1060,8 @@
   "pushed_at": "2026-03-27",
   "license": "MIT",
   "language": "Python",
-  "install": null
+  "install": null,
+  "about": "MCP Local Apple Calendar + Reminders tooling for macOS, with Codex plugin adapters and a shared MCP layer underneath."
  },
  {
   "slug": "applysent",
@@ -1125,7 +1144,9 @@
   "pushed_at": "2026-11-19",
   "license": "Apache-2.0",
   "language": "TypeScript",
-  "install": null
+  "install": null,
+  "about": "Git-native project context for AI coding agents. The agent stops guessing and starts following the system. It does not know your project: what the feature must do, where the code belongs, and which decisions and rules already apply.",
+  "homepage": "https://archcore.ai"
  },
  {
   "slug": "arcmira-youtube-transcript-search",
@@ -1167,7 +1188,8 @@
   "pushed_at": "2026-11-20",
   "license": "MIT",
   "language": "JavaScript",
-  "install": null
+  "install": null,
+  "about": "ArmorIQ intent-based security enforcement for OpenAI Codex. ArmorCodex asks Codex to declare a Bash execution plan before it runs commands, checks each Bash command against that plan and local policy, and optionally sends signed intent and audit events to ArmorIQ IAP. Treat ArmorCodex as a strong Bash guardrail and audit layer, not a complete boundary for every Codex capability."
  },
  {
   "slug": "asitis",
@@ -1325,7 +1347,8 @@
   "pushed_at": "2026-07-01",
   "license": "MIT",
   "language": "PowerShell",
-  "install": null
+  "install": null,
+  "about": "Public Codex plugin for AutoCAD and Tianzheng HVAC automation through an external autocad_tianzheng MCP server."
  },
  {
   "slug": "aw-1-circuit-breaker",
@@ -1580,7 +1603,7 @@
  {
   "slug": "bindry",
   "name": "Bindry",
-  "description": "Compiles public or workspace Binders into version-pinned agent skills, checks instruction drift, and supports optional MCP-based live mode.",
+  "description": "Official plugin marketplace for Bindry — compiles your Binders into Claude Code, Codex and Copilot skills, so instructions load only when they're actually relevant.",
   "maker": "bindryai",
   "link": "https://github.com/bindryai/Plugins/tree/codex-distribution",
   "category": "Agent Workflows",
@@ -1595,7 +1618,9 @@
   "pushed_at": "2026-10-26",
   "license": "MIT",
   "language": "JavaScript",
-  "install": null
+  "install": null,
+  "about": "A package manager for AI agent skills — version controlled, CLI accessible, and loaded just in time. Your skills live in Binders, and your agent takes one out at the moment the task calls for it, so a turn carries the instructions it needs instead of everything you own. Share a Binder privately with your team, or publish it for anyone.",
+  "homepage": "https://bindry.ai"
  },
  {
   "slug": "bitbucket-cli",
@@ -1615,7 +1640,8 @@
   "pushed_at": "2026-11-22",
   "license": "MIT",
   "language": "Go",
-  "install": "npx skills add avivsinai/bitbucket-cli -g -y"
+  "install": "npx skills add avivsinai/bitbucket-cli -g -y",
+  "about": "Bitbucket Cloud & Data Center workflows for developers, coding agents, and automation-first teams. Bkt is one command-line interface for Bitbucket Cloud and Bitbucket Data Center. It follows the ergonomics of gh, gives every command a stable JSON/YAML output contract, and ships an agent skill and an MCP server so coding agents can work with Bitbucket too."
  },
  {
   "slug": "boss",
@@ -1648,7 +1674,9 @@
   "source_url": "https://github.com/hashgraph-online/awesome-codex-plugins",
   "source_section": "Community list",
   "first_seen": "2026-10-25",
-  "featured": false
+  "featured": false,
+  "link_missing": true,
+  "link_checked": "2026-11-22"
  },
  {
   "slug": "bowmark",
@@ -1688,7 +1716,8 @@
   "pushed_at": "2026-11-15",
   "license": "MIT",
   "language": "JavaScript",
-  "install": null
+  "install": null,
+  "about": "[!WARNING] Early-stage, experimental software. Expect rough edges and breaking changes between releases. Boxery lets your agents manage their own Linux VMs: on your Mac, a Linux server, a sandbox provider like exe.dev or boat.dev, or all of them at once."
  },
  {
   "slug": "brewpage",
@@ -1788,7 +1817,8 @@
   "pushed_at": "2026-11-22",
   "license": "MIT",
   "language": "TypeScript",
-  "install": null
+  "install": null,
+  "about": "Let your AI agents use your real browser: your tabs, your logins, your extensions. A small native MCP server and a Chromium extension, for OpenCode, Claude Code, Codex, Cursor and any other MCP client. They open tabs in the background, read pages, click, type, take screenshots, capture network traffic and record the screen, in tabs grouped out of your way."
  },
  {
   "slug": "browser-hands",
@@ -1844,7 +1874,8 @@
   "pushed_at": "2026-11-17",
   "license": "MIT",
   "language": "Go",
-  "install": null
+  "install": null,
+  "about": "Product brand: Build Remote Agent Binary: gbr-agent v0.6.2 License: MIT (open source) Org: LinespottingOrg / Linespotting AB Docs (humans + AIs) | Read this | When | |-----------|------| | INSTALL.md | AIs first: install, pair, mcp add, Bot API :8788 | | AGENTS.md | You are an AI installing or debugging | | mcp/gbr-mcp/INSTALL.md | Claude / Grok CLI / Cursor / Hermes / OpenClaw | | FAQ.md | Same FAQ as the website (humans + AIs + schema) | | TROUBLESHOOTING.md | Something failed (401, empty."
  },
  {
   "slug": "buildcord-mcp",
@@ -1945,7 +1976,8 @@
   "pushed_at": "2026-11-09",
   "license": null,
   "language": "Python",
-  "install": null
+  "install": null,
+  "about": "Bridge 作为 Burp Suite 的 MCP 操作层，保持 Burp Suite 对流量、人工复核和原生工具状态的管理职责。自动化操作结果应结合完整请求/响应、后续状态变化和人工复核形成结论。"
  },
  {
   "slug": "cadenzova-mcp",
@@ -1981,7 +2013,10 @@
   "pushed_at": "2026-11-20",
   "license": "MIT",
   "language": "JavaScript",
-  "install": null
+  "install": null,
+  "about": "Tell CALL-E your goal, and it handles the phone task end-to-end: it plans, calls, adapts in real time, follows through, and improves along the way. Use CALL-E directly, or integrate it into agents, platforms, and business systems through Skills, Plugins, SDKs, or APIs.",
+  "homepage": "https://www.heycall-e.com",
+  "docs": "https://docs.heycall-e.com/"
  },
  {
   "slug": "call-grokbot",
@@ -2060,7 +2095,7 @@
  {
   "slug": "canvas-apps-plugin-codex",
   "name": "Canvas Apps Plugin Codex",
-  "description": "Build and edit Microsoft Power Apps Canvas Apps using natural language and Canvas Authoring MCP server.",
+  "description": "Power Apps Canvas Apps development with Codex CLI — adapted from Microsoft's power-platform-skills canvas-apps plugin.",
   "maker": "Ratnam-Mishra",
   "link": "https://github.com/Ratnam-Mishra/canvas-apps-plugin-codex",
   "category": "Other",
@@ -2075,7 +2110,8 @@
   "pushed_at": "2026-05-03",
   "license": null,
   "language": null,
-  "install": null
+  "install": null,
+  "about": "Power Apps Canvas Apps development with Codex CLI — adapted from Microsoft's power-platform-skills canvas-apps plugin."
  },
  {
   "slug": "car-rental-business-skills",
@@ -2115,7 +2151,9 @@
   "pushed_at": "2026-10-01",
   "license": "MIT",
   "language": "JavaScript",
-  "install": null
+  "install": null,
+  "about": "Access the full suite of CarsXE vehicle data APIs directly from OpenAI Codex — decode VINs, look up license plates, get market values, check history, recalls (VIN, YMM, or batch), YMM options, ownership, liens, OBD codes, and more. Codex auto-invokes the right skill based on what you ask. No slash commands to memorize — just describe what you need.",
+  "docs": "https://docs.carsxe.com"
  },
  {
   "slug": "casefile",
@@ -2160,7 +2198,7 @@
  {
   "slug": "centricmem",
   "name": "CentricMem",
-  "description": "Hosted librarian for agent Markdown memory via host MCP.",
+  "description": "A hosted librarian for AI agents: one shared memory across the tools you already use, so a decision made in one client is there in the next, and so are the notes, the session transcripts and the reasons behind them.",
   "maker": "zeyu-j",
   "link": "https://github.com/zeyu-j/centricmem-skill",
   "category": "Memory & Context",
@@ -2175,7 +2213,9 @@
   "pushed_at": "2026-11-18",
   "license": null,
   "language": "JavaScript",
-  "install": null
+  "install": null,
+  "about": "A hosted librarian for AI agents: one shared memory across the tools you already use, so a decision made in one client is there in the next, and so are the notes, the session transcripts and the reasons behind them. Capture stays in the client you already work in; CentricMem organises what it is given, retrieves it on request, and keeps it as Markdown cards.",
+  "homepage": "https://centricmem.com"
  },
  {
   "slug": "cesium-mcp",
@@ -2220,7 +2260,7 @@
  {
   "slug": "chrome-devtools",
   "name": "Chrome DevTools",
-  "description": "One-click Codex plugin wrapper for chrome-devtools-mcp.",
+  "description": "This repository wraps the upstream chrome-devtools-mcp package as a Codex plugin that is ready for one-click installation in the Codex app.",
   "maker": "win4r",
   "link": "https://github.com/win4r/chrome-devtools-codex-plugin",
   "category": "Other",
@@ -2235,7 +2275,8 @@
   "pushed_at": "2026-11-16",
   "license": null,
   "language": null,
-  "install": "codex mcp add chrome-devtools -- npx -y chrome-devtools-mcp@latest"
+  "install": "codex mcp add chrome-devtools -- npx -y chrome-devtools-mcp@latest",
+  "about": "This repository wraps the upstream chrome-devtools-mcp package as a Codex plugin that is ready for one-click installation in the Codex app."
  },
  {
   "slug": "chunsik-s-garage",
@@ -2657,7 +2698,7 @@
  {
   "slug": "codex-agenteam",
   "name": "Codex Agenteam",
-  "description": "Specialist AI agents (researcher, PM, architect, developer, QA, reviewer) orchestrated as a configurable team pipeline.",
+  "description": "A full AI development team — researcher, PM, architect, dev, QA, and reviewer — as native Codex agents, orchestrated through a configurable pipeline.",
   "maker": "yimwoo",
   "link": "https://github.com/yimwoo/codex-agenteam",
   "category": "Agent Workflows",
@@ -2672,7 +2713,8 @@
   "pushed_at": "2026-07-06",
   "license": "MIT",
   "language": "Python",
-  "install": null
+  "install": null,
+  "about": "A full AI development team — researcher, PM, architect, dev, QA, and reviewer — as native Codex agents, orchestrated through a configurable pipeline."
  },
  {
   "slug": "codex-agents-workflow",
@@ -2752,7 +2794,8 @@
   "pushed_at": "2026-06-01",
   "license": "MIT",
   "language": "Shell",
-  "install": "codex plugin add be-serious@personal"
+  "install": "codex plugin add be-serious@personal",
+  "about": "一个 Codex 插件，使 agent 以严肃学者的方式讲话：正式、克制、概念清楚，接近大学出版社教材或学术专著的书面语体。它抑制俚语、谄媚表达、填充词、emoji、营销形容词、强制非正式化、拟人化描述，以及中文互联网口语。 If the file already exists, append only the plugin entry instead of overwriting the file."
  },
  {
   "slug": "codex-design",
@@ -2805,7 +2848,9 @@
   "source_url": "https://github.com/hashgraph-online/awesome-codex-plugins",
   "source_section": "Community list",
   "first_seen": "2026-10-25",
-  "featured": false
+  "featured": false,
+  "link_missing": true,
+  "link_checked": "2026-11-22"
  },
  {
   "slug": "codex-how-to",
@@ -2850,7 +2895,7 @@
  {
   "slug": "codex-mem",
   "name": "Codex Mem",
-  "description": "Automatically capture, compress, and inject session context back into future Codex sessions.",
+  "description": "A Codex plugin that automatically captures everything Codex does during your coding sessions, compresses it with AI (using Codex's agent-sdk), and injects relevant context back into future sessions.",
   "maker": "2kDarki",
   "link": "https://github.com/2kDarki/codex-mem",
   "category": "Memory & Context",
@@ -2865,12 +2910,13 @@
   "pushed_at": "2026-10-06",
   "license": null,
   "language": "JavaScript",
-  "install": null
+  "install": null,
+  "docs": "https://docs.codex-mem.ai/"
  },
  {
   "slug": "codex-multi-auth",
   "name": "Codex Multi Auth",
-  "description": "Multi-account OAuth manager for the official Codex CLI with switching, health checks, and recovery tools.",
+  "description": "Codex CLI multi-account OAuth manager with account switching, health checks, runtime rotation, diagnostics, and recovery tools for @openai/codex.",
   "maker": "ndycode",
   "link": "https://github.com/ndycode/codex-multi-auth",
   "category": "Other",
@@ -2885,7 +2931,8 @@
   "pushed_at": "2026-11-18",
   "license": "MIT",
   "language": "TypeScript",
-  "install": null
+  "install": null,
+  "about": "Codex-multi-auth is a multi-account OAuth manager for the official @openai/codex CLI. It keeps a named pool of ChatGPT sign-ins on your machine, lets you switch the active account, and — when you run Codex through its optional wrapper — rotates accounts across live requests through a loopback-only proxy. It never installs or shadows a codex binary; the official OpenAI install keeps owning that command."
  },
  {
   "slug": "codex-obsidian",
@@ -2905,7 +2952,8 @@
   "pushed_at": "2026-11-06",
   "license": "MIT",
   "language": "Python",
-  "install": null
+  "install": null,
+  "about": "Codex-obsidian is a Codex plugin for local Obsidian workflows through the official desktop obsidian CLI."
  },
  {
   "slug": "codex-process-jobs",
@@ -2965,7 +3013,8 @@
   "pushed_at": "2026-11-21",
   "license": "MIT",
   "language": "C#",
-  "install": null
+  "install": null,
+  "about": "CodexQuotaTitle is a free, open-source Windows plugin for Codex Desktop. It automatically displays your remaining Codex quota in the title of the correctly correlated Codex window while preserving the title managed by Codex."
  },
  {
   "slug": "codex-reset",
@@ -3030,7 +3079,7 @@
  {
   "slug": "codex-seo",
   "name": "Codex SEO",
-  "description": "Full-stack SEO audits, Google API workflows, backlinks analysis, reporting, and optional MCP extensions for Codex.",
+  "description": "A Codex-native SEO analysis plugin with slash-friendly entrypoints, specialist agents, Python execution utilities, and optional MCP-backed extensions.",
   "maker": "BestLemoon",
   "link": "https://github.com/BestLemoon/codex-seo",
   "category": "Docs, Content & SEO",
@@ -3045,7 +3094,8 @@
   "pushed_at": "2026-07-03",
   "license": "MIT",
   "language": "Python",
-  "install": null
+  "install": null,
+  "about": "A Codex-native SEO analysis plugin with slash-friendly entrypoints, specialist agents, Python execution utilities, and optional MCP-backed extensions."
  },
  {
   "slug": "codex-skin-pack-installer",
@@ -3125,7 +3175,8 @@
   "pushed_at": "2026-09-30",
   "license": "MIT",
   "language": "TypeScript",
-  "install": null
+  "install": null,
+  "about": "Lets ChatGPT Web discover and call native local Codex tools through MCP. ChatGPT handles reasoning, tool orchestration, and conversation context; the local host executes tools and returns their results. There is no second model loop in the bridge."
  },
  {
   "slug": "codex-tui-proof",
@@ -3294,7 +3345,9 @@
   "source_url": "https://github.com/hashgraph-online/awesome-codex-plugins",
   "source_section": "Community list",
   "first_seen": "2026-10-25",
-  "featured": false
+  "featured": false,
+  "link_missing": true,
+  "link_checked": "2026-11-22"
  },
  {
   "slug": "computefirst",
@@ -3319,7 +3372,7 @@
  {
   "slug": "computer-usage-summary",
   "name": "Computer Usage Summary",
-  "description": "Privacy-first local ActivityWatch reports with deterministic categories, multi-day totals, and foreground browser-page summaries.",
+  "description": "A privacy-first Codex skill-only plugin that turns local ActivityWatch data into copyable daily overview, app usage, local-time timeline, and foreground browser-page tables.",
   "maker": "liuyewang",
   "link": "https://github.com/liuyewang/computer-usage-summary-skill",
   "category": "Data & Backend",
@@ -3334,7 +3387,9 @@
   "pushed_at": "2026-11-22",
   "license": "MIT",
   "language": "Python",
-  "install": null
+  "install": null,
+  "about": "A privacy-first Codex skill-only plugin that turns local ActivityWatch data into copyable daily overview, app usage, local-time timeline, and foreground browser-page tables. The current workflow targets macOS and keeps all activity data on the machine.",
+  "homepage": "https://liuyewang.github.io/computer-usage-summary-skill"
  },
  {
   "slug": "contam-tools",
@@ -3414,7 +3469,8 @@
   "pushed_at": "2026-09-27",
   "license": "MIT",
   "language": "Rust",
-  "install": null
+  "install": null,
+  "about": "Point it at a repository and it answers the questions an agent otherwise spends its first dozen tool calls on: which instructions to follow, how to build and test, where execution starts, which files carry the logic, how the tree is organised, and what is changing right now. The output is a few kilobytes of markdown (or JSON), deterministic, and needs no index or API key."
  },
  {
   "slug": "converter-studio",
@@ -3554,7 +3610,9 @@
   "archived": false,
   "stars_checked": "2026-11-22",
   "pushed_at": "2026-11-21",
-  "language": "Rust"
+  "language": "Rust",
+  "about": "Turn URLs into clean markdown or structured JSON with one engine for search, scrape, map, crawl, and extract. Run it locally as a small Rust binary or use the managed API.",
+  "homepage": "https://fastcrw.com"
  },
  {
   "slug": "curatedmcp",
@@ -4290,7 +4348,10 @@
   "pushed_at": "2026-11-22",
   "license": "Apache-2.0",
   "language": "TypeScript",
-  "install": null
+  "install": null,
+  "about": "An end-to-end testing framework for web and mobile apps. Describe a goal in natural language and an agent drives the app to reach it. Check the result with locators and assertions in the same test.",
+  "homepage": "https://e2e.com",
+  "docs": "https://e2e.com/docs/mcp-server"
  },
  {
   "slug": "easi-run",
@@ -4397,7 +4458,7 @@
  {
   "slug": "ejentum-mcp",
   "name": "ejentum-mcp",
-  "description": "MCP server exposing reasoning, code, anti-deception, and memory harness tools for Codex.",
+  "description": "MCP server for the Ejentum API. 8 cognitive operations across 4 harnesses (reasoning, code, anti-deception, memory) in dynamic and adaptive modes.",
   "maker": "ejentum",
   "link": "https://github.com/ejentum/ejentum-mcp",
   "category": "Memory & Context",
@@ -4412,7 +4473,9 @@
   "pushed_at": "2026-06-11",
   "license": "MIT",
   "language": "JavaScript",
-  "install": "claude mcp add ejentum -e EJENTUM_API_KEY=ej_... -- npx -y ejentum-mcp"
+  "install": "claude mcp add ejentum -e EJENTUM_API_KEY=ej_... -- npx -y ejentum-mcp",
+  "about": "MCP server that improves LLM reasoning on complex, multi-step, or multi-constraint tasks. Before the agent generates, it calls one of eight tools to retrieve a cognitive operation: a structured procedure (numbered steps with the failure pattern to refuse and a falsification test) paired with an executable reasoning topology (a DAG of those steps with decision gates, parallel branches, bounded loops, meta-cognitive exits, and escape paths).",
+  "docs": "https://ejentum.com/docs"
  },
  {
   "slug": "elden",
@@ -4628,7 +4691,8 @@
   "pushed_at": "2026-10-17",
   "license": "MIT",
   "language": "JavaScript",
-  "install": null
+  "install": null,
+  "about": "Lightweight workflows for Claude Code, Codex, OMP and Pi. Keep explanations, evidence and useful code comments, without repetitive reminders or automatic changes to your global settings."
  },
  {
   "slug": "ether-workspace",
@@ -4906,7 +4970,7 @@
  {
   "slug": "figureatlas",
   "name": "FigureAtlas",
-  "description": "Pick one of 300 verified figure types for a paper, slide, poster, or video frame, then export HTML or SVG.",
+  "description": "300 verified figure types for papers, slides, posters, and video frames. FigureAtlas helps agents pick a figure and export HTML or SVG.",
   "maker": "TardisBooo",
   "link": "https://github.com/TardisBooo/figureatlas",
   "category": "Review & Testing",
@@ -4921,7 +4985,8 @@
   "pushed_at": "2026-11-19",
   "license": null,
   "language": "HTML",
-  "install": null
+  "install": null,
+  "about": "| 中文说明 300 verified figure types for papers, slides, posters, and video frames. A figure catalog for people and coding agents. A paper, a slide, and a poster often need the same result in different frames."
  },
  {
   "slug": "fiko",
@@ -5123,7 +5188,7 @@
  {
   "slug": "frappe-agent",
   "name": "Frappe Agent",
-  "description": "Frappe and ERPNext coding, customization, bench, and review intelligence for Codex.",
+  "description": "Frappe-agent is an AI coding assistant plugin for Frappe Framework, ERPNext, and the broader Frappe ecosystem.",
   "maker": "Dkm0315",
   "link": "https://github.com/Dkm0315/frappe-agent",
   "category": "Agent Workflows",
@@ -5138,7 +5203,8 @@
   "pushed_at": "2026-10-11",
   "license": "MIT",
   "language": null,
-  "install": "/plugin marketplace add Dkm0315/frappe-agent"
+  "install": "/plugin marketplace add Dkm0315/frappe-agent",
+  "about": "Frappe-agent is an AI coding assistant plugin for Frappe Framework, ERPNext, and the broader Frappe ecosystem. It gives Codex, Claude Code, Cursor, GitHub Copilot, and other assistant workflows Frappe-specific guidance for bench inspection, ERPNext customization, DocType design, SQL/ORM decisions, and ecosystem app development. About Codex supports repo marketplaces and local plugin installation."
  },
  {
   "slug": "frugal",
@@ -5178,7 +5244,8 @@
   "pushed_at": "2026-11-11",
   "language": "Shell",
   "license": "MIT",
-  "install": "claude plugin marketplace add ckpark123/fundry-cfo"
+  "install": "claude plugin marketplace add ckpark123/fundry-cfo",
+  "about": "Connect Claude, Claude Code or Codex to your firm's Fundry books, read-only, and use three skills built for a fund CFO: Every figure comes from a Fundry tool call, in exact cents, labelled BOOKS (read from your books) or COMPUTED (recomputed or derived). When a read is incomplete or a tool refuses, the skill says so and stops instead of guessing. The skills draft; a person at your firm reviews and sends."
  },
  {
   "slug": "fxmacrodata",
@@ -5298,12 +5365,13 @@
   "pushed_at": "2026-05-15",
   "license": "MIT",
   "language": "HTML",
-  "install": null
+  "install": null,
+  "about": "Turn a project idea into a real GitHub repository without dropping out of Codex, hunting for flags, or doing the tiny setup chores by hand. Is the Codex-native repo launcher: you describe the thing you want to build, Codex infers a clean repository plan, and the plugin walks you through the decisions with native menu prompts."
  },
  {
   "slug": "githubcard-mcp",
   "name": "GitHubCard MCP",
-  "description": "Create GitHub profile and repo cards from Claude, Cursor, VS Code and other AI agents.",
+  "description": "GitHubCard MCP server: create GitHub profile and repo cards from Claude, Cursor, VS Code and other AI agents.",
   "maker": "GitHubCard",
   "link": "https://github.com/ghcardhq/githubcard-mcp",
   "category": "Design & Frontend",
@@ -5318,7 +5386,9 @@
   "pushed_at": "2026-11-08",
   "license": "MIT",
   "language": null,
-  "install": "claude mcp add --transport http githubcard https://githubcard.com/mcp \\"
+  "install": "claude mcp add --transport http githubcard https://githubcard.com/mcp \\",
+  "about": "Ask things like: Make a GitHubCard for my profile and add it near the top of my README. Create a dark card for vercel/next.js I can use as a link preview. Use the compact repo template, but with a #1e3a5f background and without the language widget.",
+  "homepage": "https://githubcard.com"
  },
  {
   "slug": "gitranks-contribute",
@@ -5371,7 +5441,8 @@
   "pushed_at": "2026-11-11",
   "license": "MIT",
   "language": "TypeScript",
-  "install": null
+  "install": null,
+  "about": "A native progress bar for Codex Goals, powered by verified checklists and local progress tracking. Existing goals, checklists, progress and display preferences are preserved."
  },
  {
   "slug": "google-search-console-mcp",
@@ -5569,7 +5640,10 @@
   "pushed_at": "2026-11-16",
   "license": "MIT",
   "language": "Python",
-  "install": null
+  "install": null,
+  "about": "Hermes Tweet, the Hermes X (Twitter) Agent Plugin for Search & Actions \\ Watch Framer build a tweet ticker with Xquik, from 6:07. Hermes Tweet brings the Xquik API to Hermes agents.",
+  "homepage": "https://docs.xquik.com/guides/hermes-tweet",
+  "docs": "https://docs.xquik.com/api-reference/overview"
  },
  {
   "slug": "hiway-kit",
@@ -5669,7 +5743,8 @@
   "pushed_at": "2026-11-09",
   "license": "MIT",
   "language": null,
-  "install": "claude mcp add --transport http hoplix https://api.hoplix.com/mcp"
+  "install": "claude mcp add --transport http hoplix https://api.hoplix.com/mcp",
+  "homepage": "https://hoplix.com/en/mcp-integration"
  },
  {
   "slug": "horizonx",
@@ -5825,7 +5900,9 @@
   "pushed_at": "2026-11-07",
   "license": "MIT",
   "language": null,
-  "install": null
+  "install": null,
+  "link_missing": true,
+  "link_checked": "2026-11-22"
  },
  {
   "slug": "inkdrop-mcp-server",
@@ -5846,7 +5923,9 @@
   "pushed_at": "2026-11-19",
   "license": "Apache-2.0",
   "language": "TypeScript",
-  "install": null
+  "install": null,
+  "about": "A Model Context Protocol server for the Inkdrop Local HTTP Server API. Installation Since MCP servers run over stdio, debugging can be challenging. For the best debugging experience, we strongly recommend using the MCP Inspector.",
+  "docs": "https://docs.inkdrop.app/reference/mcp-server"
  },
  {
   "slug": "insta-edits-for-claude",
@@ -6050,7 +6129,9 @@
   "pushed_at": "2026-11-11",
   "license": null,
   "language": null,
-  "install": null
+  "install": null,
+  "about": "For a team (ChatGPT Business or Enterprise), by a workspace admin: Then each member opens Plugins → Jirav → Install, and restarts the ChatGPT app.",
+  "homepage": "https://www.jirav.com"
  },
  {
   "slug": "jobspipe",
@@ -6149,7 +6230,8 @@
   "pushed_at": "2026-05-12",
   "license": null,
   "language": "JavaScript",
-  "install": null
+  "install": null,
+  "about": "Kachilu-browser is an anti-bot-aware browser automation CLI for AI agents such as Codex and Claude. The LLM detects it through the SKILL and hands off completion automatically. When reCAPTCHA v2/v3 or Cloudflare Turnstile appears, kachilu-browser detects the challenge and routes completion through the local CLI/browser flow."
  },
  {
   "slug": "kanareika",
@@ -6491,7 +6573,7 @@
  {
   "slug": "kubai-icons",
   "name": "Kubai Icons",
-  "description": "Claude skill that draws dynamic icons in one consistent style, with hover motion or as static SVG.",
+  "description": "An agent skill that draws animated icons in one consistent style, for Claude Code, Codex and other coding agents. Comes with 2,600+ open-source icons for React, Vue and SVG, and a website to browse them.",
   "maker": "kubai087",
   "link": "https://github.com/kubai087/kubai-icons",
   "category": "Design & Frontend",
@@ -6506,7 +6588,10 @@
   "pushed_at": "2026-11-22",
   "license": null,
   "language": "JavaScript",
-  "install": null
+  "install": null,
+  "about": "An agent skill that draws animated icons in one consistent style. Plus 2,800+ open-source icons drawn with it, for React, Vue and the web.",
+  "homepage": "https://icons.kubai.design",
+  "docs": "https://icons.kubai.design/docs/"
  },
  {
   "slug": "kuudo-skills",
@@ -6551,7 +6636,7 @@
  {
   "slug": "langfuse-observability",
   "name": "Langfuse Observability",
-  "description": "Query traces, debug exceptions, analyze sessions, and manage prompts via MCP tools.",
+  "description": "A Model Context Protocol (MCP) server for Langfuse, enabling AI agents to query Langfuse trace data for enhanced debugging and observability.",
   "maker": "avivsinai",
   "link": "https://github.com/avivsinai/langfuse-mcp",
   "category": "Memory & Context",
@@ -6566,7 +6651,8 @@
   "pushed_at": "2026-11-06",
   "license": "MIT",
   "language": "Python",
-  "install": "claude mcp add \\"
+  "install": "claude mcp add \\",
+  "about": "Local MCP server and skill for Langfuse. Debug traces, sessions, and exceptions from Claude Code, Codex, Cursor, or any MCP client. Why this instead of native Langfuse MCP?"
  },
  {
   "slug": "launch-fast",
@@ -6999,7 +7085,9 @@
   "pushed_at": "2026-09-11",
   "license": "MIT",
   "language": "TypeScript",
-  "install": "npx skills add LVTD-LLC/skills --skill django-htmx"
+  "install": "npx skills add LVTD-LLC/skills --skill django-htmx",
+  "link_missing": true,
+  "link_checked": "2026-11-22"
  },
  {
   "slug": "macbox",
@@ -7079,7 +7167,9 @@
   "pushed_at": "2026-11-21",
   "license": "MIT",
   "language": "Rust",
-  "install": null
+  "install": null,
+  "about": "Claude Code, Codex, Copilot, Cursor, Gemini, AGY, Grok, and OpenCode already keep transcripts on disk. Magents is the shared API over those sessions - an MCP server plus a small CLI - so one agent can pick up where another left off without you recapping, ping a specific live chat when you are not sitting in the middle, or start an independent persisted chat for a complete task. It is not a second copy of history and not a fire-and-forget council.",
+  "homepage": "https://abnegate.github.io/magents"
  },
  {
   "slug": "magic-hour",
@@ -7120,7 +7210,9 @@
   "pushed_at": "2026-11-20",
   "license": "MIT",
   "language": "TypeScript",
-  "install": null
+  "install": null,
+  "about": "The email and communication agent in AgentsOS. Mail Agent remains a focused product while its account, billing, run orchestration, and agent-discovery infrastructure evolves into the shared AgentsOS Cloud control plane. Temporary inboxes for AI agents and QA/E2E: create an inbox, submit its address to a signup/login form, wait for OTP or magic link, and clean up automatically.",
+  "homepage": "https://webmailagent.com"
  },
  {
   "slug": "maintainer-mode",
@@ -7133,7 +7225,9 @@
   "source_url": "https://github.com/hashgraph-online/awesome-codex-plugins",
   "source_section": "Community list",
   "first_seen": "2026-10-25",
-  "featured": false
+  "featured": false,
+  "link_missing": true,
+  "link_checked": "2026-11-22"
  },
  {
   "slug": "mancer-mcp",
@@ -7571,7 +7665,8 @@
   "pushed_at": "2026-11-20",
   "license": "MIT",
   "language": "JavaScript",
-  "install": null
+  "install": null,
+  "about": "在手机上跟进、回复、审批电脑上的 Codex、Claude Code、DeepSeek、CC Desk 和 OpenCode 会话。 所有 Agent 共用同一套会话界面：输入框、附件、语音、草稿和运行中的操作都一样，按钮按各通道实际支持的能力显示。"
  },
  {
   "slug": "mobile-dev-callstack",
@@ -7611,7 +7706,9 @@
   "pushed_at": "2026-11-19",
   "license": "MIT",
   "language": "JavaScript",
-  "install": null
+  "install": null,
+  "about": "Ask a language model for the same thing ten times and you get the same answer ten times. Model Salt is an MCP server that gives your model randomness from outside it, so one prompt gives ten different answers that still do exactly what you asked.",
+  "homepage": "https://modelsalt.com"
  },
  {
   "slug": "modelplan",
@@ -7767,7 +7864,8 @@
   "pushed_at": "2026-11-13",
   "license": "MIT",
   "language": "TypeScript",
-  "install": null
+  "install": null,
+  "about": "Runs on your own Windows PC and hands your Muse session to ChatGPT, Claude, Cursor, Codex, n8n or anything else that speaks REST, MCP or OAuth — with no cloud middleman and no per-seat fee."
  },
  {
   "slug": "mycelium",
@@ -7921,7 +8019,9 @@
   "pushed_at": "2026-11-15",
   "language": "JavaScript",
   "license": "Apache-2.0",
-  "install": "claude plugin install nolang --marketplace mvrks-inc/nolang-plugin"
+  "install": "claude plugin install nolang --marketplace mvrks-inc/nolang-plugin",
+  "link_missing": true,
+  "link_checked": "2026-11-22"
  },
  {
   "slug": "notfair-plugin",
@@ -8001,12 +8101,14 @@
   "pushed_at": "2026-07-12",
   "license": null,
   "language": "JavaScript",
-  "install": null
+  "install": null,
+  "about": "One-command setup for catalog-backed free-tier, free-trial, and cheap developer-tool recommendations.",
+  "homepage": "https://nullcost.xyz/install"
  },
  {
   "slug": "oc-chatgpt-multi-auth",
   "name": "OC ChatGPT Multi Auth",
-  "description": "Codex setup skill and OpenCode plugin for ChatGPT Plus/Pro OAuth, GPT-5/Codex presets, and multi-account failover.",
+  "description": "OpenCode plugin for ChatGPT Plus/Pro OAuth with Codex/GPT-5 routing, multi-account rotation, account switching, health checks, diagnostics, and recovery tools.",
   "maker": "ndycode",
   "link": "https://github.com/ndycode/oc-chatgpt-multi-auth",
   "category": "Usage & Quotas",
@@ -8021,7 +8123,8 @@
   "pushed_at": "2026-11-18",
   "license": "MIT",
   "language": "TypeScript",
-  "install": null
+  "install": null,
+  "about": "Oc-codex-multi-auth is an OpenCode plugin that runs Codex-style GPT models on your ChatGPT Plus/Pro subscription over OAuth. It keeps a named pool of ChatGPT accounts on your machine, rotates across them per request with health- and quota-aware selection, shows quota in the TUI prompt line, and ships a 24-tool codex- command kit plus a standalone CLI. Account state stays local under ~/.opencode."
  },
  {
   "slug": "odoo-mcp-lite",
@@ -8101,7 +8204,9 @@
   "pushed_at": "2026-11-21",
   "license": "MIT",
   "language": "TypeScript",
-  "install": null
+  "install": null,
+  "about": "An OpenCode agentic flow for the most loved spec framework. AI: [coverage interview — 3 questions, each with a recommendation] Q: Follow the OS preference or a manual toggle? (rec: both, OS default) Q: Which surfaces in v1?",
+  "docs": "https://openspec.dev/docs"
  },
  {
   "slug": "okara-mcp",
@@ -8177,7 +8282,9 @@
   "stars": 0,
   "pushed_at": "2026-11-18",
   "license": null,
-  "language": "JavaScript"
+  "language": "JavaScript",
+  "link_missing": true,
+  "link_checked": "2026-11-22"
  },
  {
   "slug": "onehaus-mcp",
@@ -8312,7 +8419,8 @@
   "pushed_at": "2026-11-19",
   "license": "MIT",
   "language": "JavaScript",
-  "install": null
+  "install": null,
+  "about": "It is the Codex counterpart to the existing OrgX Claude Code and OpenClaw plugin repos. Distribute this native runtime package through manual installation or the local Codex marketplace. It includes lifecycle hooks, which the public directory submission requirements exclude."
  },
  {
   "slug": "osmo-phone-calls",
@@ -8424,7 +8532,8 @@
   "pushed_at": "2026-10-10",
   "license": "MIT",
   "language": "JavaScript",
-  "install": null
+  "install": null,
+  "about": "This plugin points Codex at the production PapersFlow MCP server: The bundled .mcp.json uses the hosted remote MCP endpoint so Codex can authenticate with OAuth when needed."
  },
  {
   "slug": "pdf-monster",
@@ -8437,7 +8546,9 @@
   "source_url": "https://github.com/hashgraph-online/awesome-codex-plugins",
   "source_section": "Community list",
   "first_seen": "2026-10-25",
-  "featured": false
+  "featured": false,
+  "link_missing": true,
+  "link_checked": "2026-11-22"
  },
  {
   "slug": "pdf-to-einvoice",
@@ -8714,7 +8825,9 @@
   "pushed_at": "2026-08-18",
   "license": "MIT",
   "language": "Python",
-  "install": null
+  "install": null,
+  "about": "Turns approved project knowledge into private, portable Markdown inside your Obsidian vault. Yesterday's Codex task learned why an architecture was chosen, which requirement cannot change, what failed in production, and what should happen next. A new task usually starts without that context.",
+  "homepage": "https://duncanmain.github.io/project-memory-core"
  },
  {
   "slug": "pocket-design-mcp",
@@ -8770,7 +8883,9 @@
   "pushed_at": "2026-11-22",
   "language": "Swift",
   "license": "AGPL-3.0",
-  "install": null
+  "install": null,
+  "about": "An open-source agent app that runs on your iPhone, reads the screen, and taps, types and swipes in real apps with your own model account.",
+  "homepage": "https://poki.bot"
  },
  {
   "slug": "ponder",
@@ -8961,7 +9076,8 @@
   "pushed_at": "2026-11-20",
   "license": null,
   "language": "Python",
-  "install": "/plugin marketplace add TardisBooo/prewalk"
+  "install": "/plugin marketplace add TardisBooo/prewalk",
+  "about": "Let the frontier model make the one edit that matters — then hand the verified start to a cheaper executor."
  },
  {
   "slug": "pricewin",
@@ -9061,7 +9177,9 @@
   "pushed_at": "2026-04-09",
   "license": "MIT",
   "language": "Python",
-  "install": null
+  "install": null,
+  "about": "Локальный плагин для Codex, который превращает сырую идею в понятный проектный маршрут: вопросы, brief, план, реализация, проверка и финальный handoff. Плагин ведёт проект по шагам, хранит контекст в workspace, не даёт перескочить через важные этапы и помогает доводить результат до рабочего состояния без постоянного ручного подталкивания.",
+  "homepage": "https://vibecode.morecil.ru/ru"
  },
  {
   "slug": "prompt-to-asset",
@@ -9346,7 +9464,7 @@
  {
   "slug": "rag-reviewer",
   "name": "RAG Reviewer",
-  "description": "Agentic PR review: hybrid RAG + code graph via MCP, review skills for Codex.",
+  "description": "AI-assisted pull-request reviews grounded in whole-repository context: hybrid search, a code graph, and inline comments anchored to changed lines.",
   "maker": "mimfort",
   "link": "https://github.com/mimfort/rag_for_git",
   "category": "Review & Testing",
@@ -9361,7 +9479,8 @@
   "pushed_at": "2026-11-22",
   "license": "MIT",
   "language": "Python",
-  "install": null
+  "install": null,
+  "about": "AI-assisted pull-request reviews grounded in whole-repository context: hybrid search, a code graph, and inline comments anchored to changed lines. Requires Python 3.11–3.13 and external Voyage, PostgreSQL/ParadeDB, and Neo4j services. Publishing reviews also requires credentials for the selected version-control provider."
  },
  {
   "slug": "ramback",
@@ -9408,7 +9527,7 @@
  {
   "slug": "read-image",
   "name": "Read Image",
-  "description": "Read local images, videos, web pages, and Windows screenshots through Doubao, GLM, or Qwen-compatible vision APIs.",
+  "description": "Open-source multimodal MCP plugin for text-only AI agents: recognize and generate images, video, and audio through Qwen/DashScope. Supports Codex, Claude Code, and DeepSeek Harness ecosystem.",
   "maker": "ZXY1240",
   "link": "https://github.com/ZXY1240/read-image",
   "category": "Design & Frontend",
@@ -9423,12 +9542,13 @@
   "pushed_at": "2026-11-02",
   "license": "MIT",
   "language": "Python",
-  "install": null
+  "install": null,
+  "about": "Omnimodal 是给纯文本主模型（DeepSeek、Codex 文本模型等）使用的多模态插件：识别图片、视频、音频，并生成图片、视频和音频。默认通过千问/阿里 DashScope API 工作，也可切换 Z.AI/GLM 或通用 OpenAI 兼容服务。 Omnimodal 不是模型封装，而是一套面向 Agent 的 MCP 多模态能力层。DeepSeek 等纯文本模型目前缺少原生视觉与音频能力；Omnimodal 在不更换主模型的前提下，通过标准 MCP 工具让 Agent 获得媒体感知、生成和处理能力。"
  },
  {
   "slug": "readme-score",
   "name": "README Score",
-  "description": "Scores your README out of 100 and suggests a fix for every miss.",
+  "description": "Enter a GitHub repository or paste a README, and get a score out of 100, the sections found and missing, and a fix for each miss.",
   "maker": "flisk-sh",
   "link": "https://github.com/flisk-sh/readme-score",
   "category": "Docs, Content & SEO",
@@ -9443,7 +9563,9 @@
   "pushed_at": "2026-11-21",
   "license": "MIT",
   "language": "TypeScript",
-  "install": null
+  "install": null,
+  "about": "Enter a GitHub repository or paste a README, and get a score out of 100, the sections found and missing, and a fix for each miss.",
+  "homepage": "https://readme.flisk.si"
  },
  {
   "slug": "receipts-by-nueton",
@@ -9536,7 +9658,8 @@
   "pushed_at": "2026-11-09",
   "license": "Apache-2.0",
   "language": "TypeScript",
-  "install": null
+  "install": null,
+  "about": "| | Codex plugin for HOL Registry Broker. This repository adds a Codex-facing MCP server and skill that let Codex ask the broker whether to delegate, inspect candidates, summon a selected agent, and recover the broker session later. For the broader public Registry Broker skill and CLI, use hashgraph-online/registry-broker-skills and @hol-org/registry."
  },
  {
   "slug": "reimagine-it",
@@ -10152,7 +10275,8 @@
   "pushed_at": "2026-11-20",
   "license": "Apache-2.0",
   "language": "Python",
-  "install": null
+  "install": null,
+  "about": "S2f-agent is a skill-routing agent for computational genomics. It turns open-ended research questions into deterministic, runnable analysis plans across 11 model families — covering variant-effect prediction, sequence embedding, track prediction, fine-tuning, and environment setup."
  },
  {
   "slug": "sandbox-mcp",
@@ -10173,7 +10297,8 @@
   "pushed_at": "2026-11-15",
   "license": "MIT",
   "language": "JavaScript",
-  "install": null
+  "install": null,
+  "about": "Give your AI agent a brand-new Windows PC. Not a container pretending to be Windows. A real, disposable Windows 11 machine: boot it, deploy your app, drive the controls, catch the crash, keep the evidence, delete the PC."
  },
  {
   "slug": "sap-data-mcp",
@@ -10254,7 +10379,8 @@
   "pushed_at": "2026-11-15",
   "license": "MIT",
   "language": "TypeScript",
-  "install": null
+  "install": null,
+  "about": "Create beautiful screen recordings with one prompt. Any website, yours or someone else's, or any desktop app. Works with Claude Code, Codex, Cursor and any MCP client."
  },
  {
   "slug": "sealos",
@@ -10432,7 +10558,9 @@
   "pushed_at": "2026-11-14",
   "license": "MIT",
   "language": "JavaScript",
-  "install": null
+  "install": null,
+  "about": "Legends SEO Dungeon turns SEO audits into a 16-bit dungeon crawler. Enter a domain, inspect the issues as demons, and use a local AI CLI to analyze or fix them inside your local project. This Legends build carries the public Claude SEO v2.2.7 engine refresh while keeping the browser game Codex-default.",
+  "homepage": "https://seodungeon.com"
  },
  {
   "slug": "seonix",
@@ -10554,7 +10682,8 @@
   "pushed_at": "2026-11-11",
   "license": "MIT",
   "language": "JavaScript",
-  "install": null
+  "install": null,
+  "about": "Shopify Liquid & AI Shopping SEO (.cursorrules) Production-ready Cursor rules and Liquid guidelines for Shopify Online Store 2.0, Product Schema JSON-LD, AI Shopping discovery (ChatGPT Shopping, Grok, Claude, Perplexity), and shoppable blog posts. 🚀 Built and maintained by ClickFrom.AI — AI shopping optimization & dynamic blog product cards for Shopify merchants. Need automated product card embedding and real-time catalog syncing?"
  },
  {
   "slug": "shots",
@@ -10714,12 +10843,13 @@
   "pushed_at": "2026-11-22",
   "license": "Apache-2.0",
   "language": "TypeScript",
-  "install": "/plugin marketplace add louis8408/skill-check"
+  "install": "/plugin marketplace add louis8408/skill-check",
+  "about": "Agent skills (SKILL.md folders for Claude Code, Codex and other agents) change often, but once a skill is copied into your skills folder nothing tracks it. Your agent keeps running the old copy, and a stale skill doesn't fail; it just quietly does worse work."
  },
  {
   "slug": "skill-sync-publisher",
   "name": "skill-sync-publisher",
-  "description": "Safely synchronize this Codex skill across public agent-skill registries.",
+  "description": "Validates and synchronizes one local SKILL.md package across GitHub, Awesome Codex Plugins, HOL Registry, skills.sh, SkillsMP, LobeHub, ClawHub, and Cursor Directory.",
   "maker": "liuyewang",
   "link": "https://github.com/liuyewang/skill-sync-publisher",
   "category": "Deploy & DevOps",
@@ -10734,7 +10864,8 @@
   "pushed_at": "2026-11-22",
   "license": "MIT",
   "language": "Python",
-  "install": null
+  "install": null,
+  "about": "Validates and synchronizes one local SKILL.md package across GitHub, Awesome Codex Plugins, HOL Registry, skills.sh, SkillsMP, LobeHub, ClawHub, and Cursor Directory. The GitHub repository is the canonical source. The CLI remembers platform choices per skill, never stores credentials, supports dry-runs, and records partial failures for later resume."
  },
  {
   "slug": "skycloak-mcp",
@@ -11103,7 +11234,9 @@
   "source_url": "https://github.com/hashgraph-online/awesome-codex-plugins",
   "source_section": "Community list",
   "first_seen": "2026-10-25",
-  "featured": false
+  "featured": false,
+  "link_missing": true,
+  "link_checked": "2026-11-22"
  },
  {
   "slug": "stalkchain",
@@ -11204,7 +11337,7 @@
  {
   "slug": "stickypane",
   "name": "stickypane",
-  "description": "A terminal board Codex writes to and you read, with kanban, checklists, charts, forms and live logs kept as plain Markdown files.",
+  "description": "A terminal board your AI coding agent writes to: kanban, checklists, charts, forms and live logs as plain Markdown files. CLI and MCP widgets for Claude Code, Codex and any agent. Go TUI, nothing to configure.",
   "maker": "LeeSwallow",
   "link": "https://github.com/LeeSwallow/stickypane",
   "category": "Docs, Content & SEO",
@@ -11219,7 +11352,8 @@
   "pushed_at": "2026-11-21",
   "license": "MIT",
   "language": "Go",
-  "install": null
+  "install": null,
+  "about": "The agent pins notes as plain files in .sticky/, and a board in the pane beside it shows them as they change."
  },
  {
   "slug": "stop-that-shit",
@@ -11299,7 +11433,8 @@
   "pushed_at": "2026-11-16",
   "license": "MIT",
   "language": "Rust",
-  "install": null
+  "install": null,
+  "about": "The referee for a performance claim in a pull request. \"This makes it faster\" becomes a verdict: strobe runs the old and the new side in alternating pairs on CPUs of their own, and says which side won and by how much, with a confidence interval, or that it cannot tell yet."
  },
  {
   "slug": "stupidmirror",
@@ -11319,7 +11454,9 @@
   "pushed_at": "2026-11-12",
   "license": null,
   "language": "Swift",
-  "install": null
+  "install": null,
+  "link_missing": true,
+  "link_checked": "2026-11-22"
  },
  {
   "slug": "suede-ai-skills",
@@ -11359,7 +11496,8 @@
   "pushed_at": "2026-11-07",
   "license": null,
   "language": null,
-  "install": null
+  "install": "codex plugin marketplace add warengonzaga/suno-music-producer",
+  "about": "A Codex plugin that bundles the Suno MCP server and a reusable skill for producing songs and faithful covers with your workflow."
  },
  {
   "slug": "supercov",
@@ -11379,7 +11517,10 @@
   "pushed_at": "2026-11-22",
   "license": "MIT",
   "language": "Rust",
-  "install": "/plugin marketplace add supercorp-ai/supercov"
+  "install": "/plugin marketplace add supercorp-ai/supercov",
+  "about": "Tells your coding agent what to fix and what to test. It scores your code quality and flags security risks with Jev, runs the test command you already use, and turns uncovered paths into small, actionable queries. Your agent picks a target, writes a focused test or a focused refactor, proves what improved, and keeps going.",
+  "homepage": "https://supercov.com",
+  "docs": "https://supercov.com/docs"
  },
  {
   "slug": "superloopy",
@@ -11419,7 +11560,8 @@
   "pushed_at": "2026-07-15",
   "license": "MIT",
   "language": "JavaScript",
-  "install": null
+  "install": null,
+  "about": "Loop Engineering for AI coding agents, with real review boundaries. And when a host cannot enforce that, Superpipelines tells you instead of pretending."
  },
  {
   "slug": "swapwallet",
@@ -11540,7 +11682,9 @@
   "pushed_at": "2026-04-03",
   "license": null,
   "language": null,
-  "install": null
+  "install": null,
+  "about": "Codex plugins are installed from the plugin directory in the app or CLI. In the CLI, open the plugin list with: For this local plugin, use the local plugin layout described by the Codex plugin manifest and marketplace conventions.",
+  "homepage": "https://synta.io"
  },
  {
   "slug": "sysknife",
@@ -11758,7 +11902,7 @@
  {
   "slug": "teaching-skills",
   "name": "Teaching Skills",
-  "description": "Supports university teaching through 15 workflows for course design, lesson planning, assessment, student mentoring, and teaching reflection.",
+  "description": "Codex-native packaging of the Teaching Skills suite — the full university teaching lifecycle (design → build → assess → deliver → reflect → improve) for OpenAI Codex CLI.",
   "maker": "YujxZJCN",
   "link": "https://github.com/YujxZJCN/teaching-skills-codex",
   "category": "Agent Workflows",
@@ -11773,7 +11917,8 @@
   "pushed_at": "2026-10-03",
   "license": "MIT",
   "language": "Python",
-  "install": null
+  "install": null,
+  "about": "Codex-native packaging of the Teaching Skills suite — the full university teaching lifecycle (design → build → assess → deliver → reflect → improve) for OpenAI Codex CLI. This is the sibling Codex distribution of Teaching Skills for Claude Code."
  },
  {
   "slug": "team-skills-platform",
@@ -11853,7 +11998,9 @@
   "pushed_at": "2026-11-11",
   "language": null,
   "license": "MIT",
-  "install": null
+  "install": null,
+  "about": "The server receives only the tool arguments your assistant sends (such as a company name), uses them to answer and does not store them. It never receives your conversation, files or account. To limit repeated requests, a salted hash of the IP address is counted per minute in server memory only.",
+  "homepage": "https://teollimi.com/en/ai"
  },
  {
   "slug": "termlet",
@@ -12021,7 +12168,9 @@
   "source_url": "https://github.com/hashgraph-online/awesome-codex-plugins",
   "source_section": "Community list",
   "first_seen": "2026-10-25",
-  "featured": false
+  "featured": false,
+  "link_missing": true,
+  "link_checked": "2026-11-22"
  },
  {
   "slug": "token-optimizer",
@@ -12081,7 +12230,9 @@
   "pushed_at": "2026-04-02",
   "license": "MIT",
   "language": null,
-  "install": null
+  "install": null,
+  "link_missing": true,
+  "link_checked": "2026-11-22"
  },
  {
   "slug": "tool-advisor",
@@ -12297,7 +12448,9 @@
   "pushed_at": "2026-11-21",
   "language": "TypeScript",
   "license": null,
-  "install": null
+  "install": null,
+  "about": "Call the AI agents you already run from your phone, and let them call you back. Your agent keeps its own model, memory and tools.",
+  "homepage": "https://twring.com"
  },
  {
   "slug": "uizze",
@@ -12437,7 +12590,8 @@
   "pushed_at": "2026-07-03",
   "license": "MIT",
   "language": "JavaScript",
-  "install": null
+  "install": null,
+  "about": "Codex plugin for controlled Upwork job search, qualification, and proposal submission sessions."
  },
  {
   "slug": "usage-engineer",
@@ -12580,7 +12734,7 @@
  {
   "slug": "velith",
   "name": "Velith",
-  "description": "AI-native publishing system with a 6-phase pipeline from ideation to EPUB/PDF across 8 genres.",
+  "description": "AI-native publishing system — build books like software. 6-phase pipeline from blank page to EPUB/PDF, with 16 skills, 7 agents, and 8 genre templates. Claude Code plugin.",
   "maker": "epicsagas",
   "link": "https://github.com/epicsagas/Velith",
   "category": "Docs, Content & SEO",
@@ -12595,7 +12749,9 @@
   "pushed_at": "2026-11-04",
   "license": "Apache-2.0",
   "language": "JavaScript",
-  "install": "/plugin marketplace add epicsagas/plugins"
+  "install": "/plugin marketplace add epicsagas/plugins",
+  "about": "A six-phase pipeline that takes a book from a blank page to a publishable EPUB and PDF, and holds every chapter, every edit, and every image to one standard: a cold reader who buys books in this genre cannot tell it was machine-drafted.",
+  "homepage": "https://epicsagas.github.io/Velith"
  },
  {
   "slug": "vi-engine",
@@ -12772,7 +12928,9 @@
   "pushed_at": "2026-10-31",
   "license": "MIT",
   "language": "HTML",
-  "install": null
+  "install": null,
+  "about": "Teach your agent to present its ideas properly. A free skill for Claude Code and Codex that will save you a lot of nerves.",
+  "homepage": "https://neurozeh.ru/skills/visual-review-page"
  },
  {
   "slug": "voicemoat-skills",
@@ -12812,7 +12970,8 @@
   "pushed_at": "2026-10-30",
   "license": "Apache-2.0",
   "language": "Python",
-  "install": null
+  "install": null,
+  "about": "Keep decisions, context, and the reasons behind them across conversations. An open-source, local-first memory layer for AI agents. It stores project knowledge as a graph: what you decided, why it matters, what it depends on, and what has changed."
  },
  {
   "slug": "waiting-gaming",
@@ -12857,7 +13016,7 @@
  {
   "slug": "wapliss-chatgpt",
   "name": "Wapliss for ChatGPT",
-  "description": "Connect WhatsApp to ChatGPT with the Wapliss MCP server: read and summarize chats and groups and send messages.",
+  "description": "Connect your WhatsApp to ChatGPT with the Wapliss MCP server: read and summarize chats and groups, and send messages, files, locations and polls with your confirmation. Official ChatGPT plugin, created by netdigitaltech.",
   "maker": "Wapliss",
   "link": "https://github.com/proteuscrypto/wapliss-for-chatgpt",
   "category": "Messaging & Remote",
@@ -12872,7 +13031,9 @@
   "pushed_at": "2026-11-12",
   "language": "Shell",
   "license": "MIT",
-  "install": null
+  "install": null,
+  "about": "Connect your own WhatsApp to ChatGPT with the Wapliss MCP server. Read and summarize chats and groups, and send messages, files, locations and polls, always with your confirmation.",
+  "homepage": "https://wapliss.com/integrations#chatgpt"
  },
  {
   "slug": "wavegrain",
@@ -13058,7 +13219,7 @@
  {
   "slug": "workilot",
   "name": "Workilot",
-  "description": "Codex plugins for Workilot, the human and AI task collaboration platform.",
+  "description": "Connect Codex to Workilot through MCP to capture bugs, act on improvement suggestions, execute ready work, and report results and workflow status.",
   "maker": "Workilot (starsarc)",
   "link": "https://github.com/starsarc/workilot-plugins",
   "category": "Agent Workflows",
@@ -13073,7 +13234,8 @@
   "pushed_at": "2026-11-11",
   "language": "Python",
   "license": "MIT",
-  "install": "codex plugin marketplace add starsarc/workilot-plugins"
+  "install": "codex plugin marketplace add starsarc/workilot-plugins",
+  "about": "Connect Codex to Workilot through MCP to capture bugs, act on improvement suggestions, execute ready work, and report results and workflow status. This repository distributes plugins only. The Workilot API, web console, mobile app, and their source history are maintained separately on GitArk."
  },
  {
   "slug": "workmagic-agent-plugin",
@@ -13154,7 +13316,8 @@
   "pushed_at": "2026-09-21",
   "license": "MIT",
   "language": "JavaScript",
-  "install": null
+  "install": null,
+  "about": "AI writing that learns from your style, approvals, and edits. It turns writing into a reviewable loop — frame, plan, draft, critique, revise — and learns only from style samples you provide or approve and decisions you actually review."
  },
  {
   "slug": "wtfm",
@@ -13219,7 +13382,7 @@
  {
   "slug": "yandex-direct",
   "name": "Yandex Direct",
-  "description": "GitHub-ready Codex plugin bundle for Yandex Direct, Wordstat, Metrika, and Roistat.",
+  "description": "GitHub-ready Codex plugin bundle for Yandex Direct, Wordstat, Metrika, Roistat, Audiences, and Yandex Search API workflows.",
   "maker": "nebelov",
   "link": "https://github.com/nebelov/yandex-direct-for-all",
   "category": "Other",
@@ -13234,7 +13397,8 @@
   "pushed_at": "2026-11-13",
   "license": "MIT",
   "language": "Python",
-  "install": null
+  "install": "/plugin install yandex-direct-for-all --marketplace nebelov/yandex-direct-for-all",
+  "about": "Набор навыков и серверов MCP для работы с Яндекс Директом из Claude Code и Codex. Агент с этим набором читает кабинет, собирает спрос в Wordstat и выдачу конкурентов, разбирает поисковые запросы и площадки РСЯ, готовит сборку кампаний и вносит правки в кабинет — только по вашему явному разрешению и с проверкой результата. Всё, что нужно для старта, — аккаунт Яндекса с доступом к Директу."
  },
  {
   "slug": "yandex-tools-mcp",
@@ -13449,7 +13613,8 @@
   "pushed_at": "2026-07-01",
   "license": "MIT",
   "language": "PowerShell",
-  "install": null
+  "install": null,
+  "about": "Public Codex plugin for searching, reading, summarizing, citing, and organizing Zotero library items through Zotero MCP."
  },
  {
   "slug": "ztd-charts",

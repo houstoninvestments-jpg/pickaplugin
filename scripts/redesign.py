@@ -85,7 +85,7 @@ def meta(p):
   if isinstance(p.get("stars"),int): bits.append(f'★ {p["stars"]:,} on {p.get("stars_checked") or "?"}')
   if p.get("archived"): bits.append("archived")
   return " · ".join(e(b) for b in bits)
-def row(p,pre="p/"): return f'<a class=row href="{pre}{p["slug"]}.html" data-c="{e(p["category"])}" data-t="{e((p["name"]+" "+p["description"]+" "+p["maker"]).lower())}"><h3>{e(p["name"])}{vmark(p)}</h3><p>{e(p["description"])}</p><span class="m mono">{meta(p)}</span></a>'
+def row(p,pre="p/"): return f'<a class=row href="{pre}{p["slug"]}.html" data-c="{e(p["category"])}"><h3>{e(p["name"])}{vmark(p)}</h3><p>{e(p["description"])}</p><span class="m mono">{meta(p)}</span></a>'
 def vmark(p): return ' <span class=vchk title="Paid badge: the maker claimed this listing">✓ verified by maker (paid)</span>' if p.get("verified") else ""
 def cad(kind,name,desc,href,open_=False): return f'<a class="cls{" open" if open_ else ""}" href="{href}"><span class="k mono">{kind}</span><b>{e(name)}</b><p>{e(desc)}</p></a>'
 def pinrow(p,pre): return cad("Advertisement · Featured",p["name"],p["description"][:140],f'{pre}{p["slug"]}.html')
@@ -137,7 +137,7 @@ def preview_home():
 <div class=find style="grid-template-columns:1fr"><div class=cats>{chips}</div></div>
 <p class="mono" style="color:var(--mute);margin:10px 0 0">Stars pulled from GitHub on {CHECKED or "—"}. Listed in catalog order.</p>
 <div id=list class=cols>{"".join(row(x) for x in P)}</div>
-<script>let c="",q=document.getElementById('q'),rs=[...document.querySelectorAll('#list .row')];function f(){{let t=q.value.toLowerCase(),n=0;rs.forEach(x=>{{let ok=(!c||x.dataset.c==c)&&x.dataset.t.includes(t);x.style.display=ok?'':'none';n+=ok}});document.getElementById('n').textContent=n+' of {len(P)} shown'}}
+<script>let c="",q=document.getElementById('q'),rs=[...document.querySelectorAll('#list .row')];function f(){{let t=q.value.toLowerCase(),n=0;rs.forEach(x=>{{let ok=(!c||x.dataset.c==c)&&x.textContent.toLowerCase().includes(t);x.style.display=ok?'':'none';n+=ok}});document.getElementById('n').textContent=n+' of {len(P)} shown'}}
 q.oninput=f;document.querySelectorAll('.cats button').forEach(b=>b.onclick=()=>{{document.querySelectorAll('.cats button').forEach(z=>z.classList.remove('on'));b.classList.add('on');c=b.dataset.c;f()}});f()</script>"""
 def preview_pages():
   srcs=sorted({(p["source"],p["source_url"]) for p in P})
