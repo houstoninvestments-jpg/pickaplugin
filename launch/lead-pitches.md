@@ -704,3 +704,49 @@ I'll be straight: we're new and traffic is still small. That's why the first 10 
 No pressure, the listing stays either way.
 
 Aaron
+
+## 2026-11-23
+
+Status: NOT SENT. Drafts only, for Aaron to review. Cold featured pitching is paused (Nov 21), so these wait for his OK. Check launch/outreach_cooldown.py and do-not-contact.json before any send.
+
+### 1. Listen Notes, Listen Notes Podcast MCP (score 4.7), NOT SENT
+To: hello@listennotes.com (listed on listennotes.com; CEO X @wenbinf)
+Subject: Listen Notes Podcast MCP is on PickAPlugin
+
+Hi Wenbin and the Listen Notes team,
+
+Saw the hosted Podcast MCP and the skills for Claude, Codex and Gemini. Podcast search, transcripts and guest research inside an assistant is a really practical use, so I added it to PickAPlugin (700 Codex, ChatGPT and Claude plugins, skills and MCP servers) as a free listing: https://pickaplugin.com/p/listen-notes-podcast-mcp
+
+To be upfront: the directory is young and traffic is still small, so this won't move your numbers much. If you ever want a bit more visibility while the MCP is new, a featured spot (top of Data & Backend, the homepage, and a newsletter mention) is $49/mo, and you can cancel anytime.
+
+No pressure at all, the free listing stays either way. If anything on the page is wrong, reply and I'll fix it.
+
+Aaron
+
+### 2. Mason (Sitepulse), Sitepulse MCP (score 4.3), NOT SENT
+To: hello@sitepulse.dev (listed on sitepulse.dev; X @capten_masin)
+Subject: Sitepulse's MCP server is on PickAPlugin
+
+Hey Mason,
+
+Saw today's Sitepulse update with the MCP server. Checking uptime, SSL and issues across a pile of client sites from an assistant, with read-only scoped tokens, is a nice setup, so I listed it on PickAPlugin for free: https://pickaplugin.com/p/sitepulse-mcp
+
+Honest heads-up: we're new and traffic is still small, so think of this as a cheap extra placement, not a big-reach play. If it's useful, a featured spot (top of Deploy & DevOps, the homepage, and a newsletter mention) is $49/mo, cancel anytime.
+
+Totally optional, the listing stays either way. Happy to tweak the wording if you'd describe it differently.
+
+Aaron
+
+### 3. Siqi Liu (Menso), Menso MCP (score 4.0), NOT SENT
+To: support@menso.io (listed on menso.io; X @MENSO_Liu)
+Subject: Menso MCP is listed on PickAPlugin
+
+Hi Siqi,
+
+Saw the Menso MCP post. Telling a coding agent "test the signup on the site I just shipped" and getting a replay of where an AI user got stuck is a fun idea, so I added Menso MCP to PickAPlugin as a free listing: https://pickaplugin.com/p/menso-mcp
+
+I'll be straight: the directory is young and traffic is still modest. If a small extra spot helps while the MCP is new, a featured placement (top of Review & Testing, the homepage, and a newsletter mention) is $49/mo, cancel anytime.
+
+No pressure, the free listing stays either way. If anything on the page is off, reply and I'll fix it.
+
+Aaron
