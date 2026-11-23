@@ -13698,5 +13698,20 @@
   "language": "TypeScript",
   "license": "MIT",
   "install": "claude mcp add ztd-charts -- npx -y ztd-charts-mcp"
+ },
+ {
+  "slug": "agent-flights",
+  "name": "Agent Flights",
+  "description": "Free remote MCP server from lowest.flights that lets AI agents (Claude, ChatGPT, Cursor and others) search and compare flights. Tools cover a route search that returns the cheapest fare plus a \"cheapest-sensible\" alternative, a price calendar for flexible dates, cheap destinations from an origin, full offer details (legs, layovers, baggage, fees) and a booking link to a booking site. No key or payment needed; an optional free API key raises limits. Booking happens on the booking site, and the maker says it earns a partner commission without adding a booking fee. Listed in the official MCP Registry as flights.lowest/agent-flights.",
+  "maker": "Babacar Diop (Agent Flights)",
+  "link": "https://lowest.flights",
+  "category": "Industry Tools",
+  "source": "editor-added",
+  "source_url": "https://lowest.flights",
+  "source_section": "Maker submission",
+  "first_seen": "2026-11-23",
+  "featured": false,
+  "install": "Remote MCP (Streamable HTTP, no sign-in):\nhttps://lowest.flights/mcp\n\nClaude Code: claude mcp add --transport http agent-flights https://lowest.flights/mcp\n\nClaude, ChatGPT, Cursor, VS Code and other remote-MCP clients can add the same URL. Per-client install notes are in the README at https://github.com/lomiafrica/agent-flights-mcp (that repo is archived and read-only but kept for installs).",
+  "docs": "https://lowest.flights/agents"
  }
 ]
