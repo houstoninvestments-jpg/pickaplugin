@@ -128,3 +128,11 @@ Checked on 2026-11-16, nothing blocking found:
 **Titles:** no homepage or Nov 9 listing-title changes (those are not due). Category pages absorbed the old /best titles so the 301s have a matching heading.
 
 Re-check indexing on 2026-11-23 as planned, then again in early 2027.
+
+## 2026-11-23 (Monday GSC meeting)
+
+**Data:** launch/gsc-exports/2026-11-23-*.csv (last 28 days Oct 26–Nov 21, Web: 30 clicks, 1.63K impressions, avg pos 16.7). No brand rows. The query table is identical to the Nov 16 export; Nov 12–21 had 0 clicks and 0 impressions every day except 3 on Nov 14.
+**Indexing (report last updated 2026-11-15, so it predates the Nov 21 cleanup):** 80 indexed, 473 not indexed (280 crawled-not-indexed, 190 discovered-not-indexed, 3 redirects). Home / still "Crawled - currently not indexed", last crawl Nov 10. Sitemap discovery showed "Temporary processing error". No manual action seen last week.
+**Jobs 1/2/3:** no changes. There's no fresh signal and the site is in a drop, so the guide says leave titles alone. Nov 9 title changes: no verdict possible (no impressions since). Next look 2026-11-30, and judge the cleanup once the indexing report updates past Nov 21.
+**Bing:** signed in. AI Performance (3 months): 95 citations, peaking Nov 8 (17). Cited pages: /blog/best-codex-plugins-november-2026 (43), /guides/install-codex-plugin (22), /guides/vet-a-plugin (14), /guides/convert-mcp-config-claude-to-codex (11), /guides/write-agents-md (5). Only sampled grounding query: "codex cli plugins" (8 citations, 40% share). Topics Portfolio is announced but not available for this site yet, so there were no uncited questions to build pages for. Guides and the monthly blog roundup are what AI answers cite, so a December roundup is worth doing.
+
