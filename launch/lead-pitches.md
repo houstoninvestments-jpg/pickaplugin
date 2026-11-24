@@ -750,3 +750,49 @@ I'll be straight: the directory is young and traffic is still modest. If a small
 No pressure, the free listing stays either way. If anything on the page is off, reply and I'll fix it.
 
 Aaron
+
+## 2026-11-24
+
+Status: NOT SENT. Drafts only, for Aaron to review. Cold featured pitching is paused (Nov 21), so these wait for his OK. Check launch/outreach_cooldown.py and do-not-contact.json before any send. Price note: the site currently shows the founding offer ($29/mo for life, first week free, 0 of 10 taken); the Nov 23 drafts above say $49/mo, which is the post-founding price.
+
+### 1. Outstand, Outstand MCP (score 4.3), NOT SENT
+To: support@outstand.so (listed on outstand.so privacy/terms; X @OutstandSo)
+Subject: Outstand MCP is on PickAPlugin
+
+Hi Outstand team,
+
+Saw the Code Mode post. Letting an agent write one small program for a cross-account report instead of dozens of tool calls is a smart fit for a social API, so I added the Outstand MCP server to PickAPlugin (713 Codex, ChatGPT and Claude plugins, skills and MCP servers) as a free listing: https://pickaplugin.com/p/outstand-mcp
+
+To be upfront: the directory is young and traffic is still small, so this won't move your numbers much. If you want a bit more visibility while Code Mode is in preview, a founding featured spot (top of Messaging & Remote, the homepage, and a newsletter mention) is $29/mo for life, first week free, cancel anytime.
+
+No pressure, the free listing stays either way. If anything on the page is wrong, reply and I'll fix it.
+
+Aaron
+
+### 2. Karanfil Labs, Karanfil Labs Visual DNA MCP (score 4.3), NOT SENT
+To: info@karanfillabs.com (listed on karanfillabs.com)
+Subject: Visual DNA MCP is listed on PickAPlugin
+
+Hi Karanfil Labs team,
+
+Saw the new Visual DNA MCP server. Dropping a screenshot into Claude and getting back the show, season and episode is a fun, very concrete tool, so I listed it on PickAPlugin for free: https://pickaplugin.com/p/karanfil-labs-visual-dna-mcp
+
+Honest heads-up: we're new and traffic is still modest, so think of this as a cheap extra placement, not a big-reach play. If it's useful, a founding featured spot (top of Data & Backend, the homepage, and a newsletter mention) is $29/mo for life with the first week free, cancel anytime.
+
+Totally optional, the listing stays either way. Happy to tweak the description if you'd put it differently.
+
+Aaron
+
+### 3. Sprites, Sprites Apple Ads MCP (score 4.0), NOT SENT
+To: siamak@spritesai.com (the only address published on sprites.ai, in the terms page; X @GetSprites)
+Subject: Your Apple Ads MCP is on PickAPlugin
+
+Hi Siamak,
+
+Saw the Apple Ads MCP server go public. Search term reports and bid changes from Claude or Codex, with every write approved first, is the right way to do ads from an agent, so I added it to PickAPlugin as a free listing: https://pickaplugin.com/p/sprites-apple-ads-mcp
+
+I'll be straight: the directory is young and traffic is still small. If a little extra placement helps while the server is new, a founding featured spot (top of Industry Tools, the homepage, and a newsletter mention) is $29/mo for life, first week free, cancel anytime.
+
+No pressure, the free listing stays either way. If anything on the page is off, reply and I'll fix it.
+
+Aaron
