@@ -1,0 +1,208 @@
+{
+ "date": "2026-11-24",
+ "status": "draft",
+ "generated_at": "2026-11-24T09:15:02",
+ "window": [
+  "2026-11-17",
+  "2026-11-24"
+ ],
+ "catalog_size": 713,
+ "stars_baseline_commit": "1fe056b",
+ "subject": "117 new MCP servers & plugins this week",
+ "new_total": 117,
+ "new": [
+  {
+   "slug": "solar-icons",
+   "name": "Solar Icons",
+   "summary": "Solar icon set (1,576 SVG icons in 6 styles), now with an MCP server, CLI and Agent Skill so coding agents look up real icon names instead of guessing. Reads the static catalog locally, no API keys.",
+   "category": "Design & Frontend",
+   "maker": "Hakim Saoudi",
+   "url": "https://pickaplugin.com/p/solar-icons",
+   "stars": 373
+  },
+  {
+   "slug": "traxagent",
+   "name": "TraxAgent",
+   "summary": "Official Claude Code plugin and hosted MCP server for TraxAgent, which tracks AI spend across Claude, OpenAI, Cursor and other seats. Agents can ask who spent the budget and what to fix. Access is read-only OAuth; the MCP server is on TraxAgent's paid plans. TraxAgent is free up to $100 a month of AI spend.",
+   "category": "Usage & Quotas",
+   "maker": "TraxAgent",
+   "url": "https://pickaplugin.com/p/traxagent",
+   "stars": 174
+  },
+  {
+   "slug": "sap-data-mcp",
+   "name": "SAP Data MCP",
+   "summary": "Read-only local MCP servers that let an AI assistant query SAP S/4HANA through public-cloud APIs or, on private cloud, RFC/BAPI and OData. You run it yourself and point it at your own SAP system; credentials stay in your environment file.",
+   "category": "Data & Backend",
+   "maker": "w1ccc",
+   "url": "https://pickaplugin.com/p/sap-data-mcp",
+   "stars": 99
+  },
+  {
+   "slug": "publora-skills",
+   "name": "Publora Skills",
+   "summary": "Nine skills that let Codex draft, schedule and publish posts to LinkedIn, X, Instagram, Threads, TikTok, YouTube, Facebook, Bluesky, Mastodon and Telegram through the Publora MCP server.",
+   "category": "Messaging & Remote",
+   "maker": "publora",
+   "url": "https://pickaplugin.com/p/publora-skills",
+   "stars": 72
+  },
+  {
+   "slug": "pulsar",
+   "name": "pulsar",
+   "summary": "MCP server that puts every AI coding agent on your machine on one bus (Claude Code, Codex, OpenCode, Cursor, Gemini CLI and more): agents see who else is running, tag themselves, and message one agent, a group or all of them. A message can wake an idle agent.",
+   "category": "Agent Workflows",
+   "maker": "Eric Schoffstall",
+   "url": "https://pickaplugin.com/p/pulsar",
+   "stars": 61
+  },
+  {
+   "slug": "mycelium",
+   "name": "Mycelium",
+   "summary": "A plugin that keeps you and your AI coding agent focused on building the right thing, from first idea to market.",
+   "category": "Agent Workflows",
+   "maker": "haabe",
+   "url": "https://pickaplugin.com/p/mycelium",
+   "stars": 54
+  },
+  {
+   "slug": "diderot",
+   "name": "Diderot",
+   "summary": "Open-source, self-hosted server that indexes Slack, Discord, coding-agent sessions (Claude Code, Codex and others), Notion, Linear, Zendesk and Markdown docs, then answers questions with citations. It also exposes an MCP server for your own agents. You run one Go server with Postgres and Qdrant, and administer it in the browser.",
+   "category": "Memory & Context",
+   "maker": "Bluesky",
+   "url": "https://pickaplugin.com/p/diderot",
+   "stars": 53
+  },
+  {
+   "slug": "enterplace",
+   "name": "Enterplace",
+   "summary": "Open-source, self-hosted AI gateway. Coding agents, apps and MCP clients call models through Enterplace instead of the provider, so each request gets an identity, a policy decision and a tamper-evident audit record. It can front OpenAI, Anthropic, Gemini, Vertex, Bedrock, Azure, Mistral or local models.",
+   "category": "Deploy & DevOps",
+   "maker": "Enterplace",
+   "url": "https://pickaplugin.com/p/enterplace",
+   "stars": 46
+  },
+  {
+   "slug": "s2f-agent",
+   "name": "s2f Agent",
+   "summary": "Codex skills and routing playbooks for computational genomics, including sequence-model inference and variant-effect analysis.",
+   "category": "Agent Workflows",
+   "maker": "JiaqiLi1024",
+   "url": "https://pickaplugin.com/p/s2f-agent",
+   "stars": 36
+  },
+  {
+   "slug": "termlet",
+   "name": "Termlet",
+   "summary": "Free, open-source SSH client (AGPL-3.0) with a Claude Code skill and an MCP server, so an assistant can run commands on machines you have authorized. Passwords and private keys stay in Termlet; dangerous commands can require your approval first, and each call is written to an audit log. AI access is off by default and allowed per host.",
+   "category": "Deploy & DevOps",
+   "maker": "Termlet",
+   "url": "https://pickaplugin.com/p/termlet",
+   "stars": 32
+  },
+  {
+   "slug": "zim-mcp",
+   "name": "zim-mcp",
+   "summary": "Local MCP server that lets an agent search and read Kiwix ZIM archives (offline Wikipedia and other snapshots) from directories you point it at. A single Rust binary, no network required for the archives themselves.",
+   "category": "Docs, Content & SEO",
+   "maker": "Gordon Brander",
+   "url": "https://pickaplugin.com/p/zim-mcp",
+   "stars": 29
+  },
+  {
+   "slug": "runelay",
+   "name": "runelay",
+   "summary": "Open-source, self-hosted MCP gateway: one MCP endpoint that gives Claude Code, Codex, Cursor and other agents the same accounts, skills and memory. Runs in Docker on your computer or server, and migrates the MCP servers, memories and skills you already have.",
+   "category": "Agent Workflows",
+   "maker": "Anderson Medeiros",
+   "url": "https://pickaplugin.com/p/runelay",
+   "stars": 26
+  },
+  {
+   "slug": "ai-coding-daily-report",
+   "name": "AI Coding Daily Report",
+   "summary": "Generates a Markdown work report from local AI coding sessions with your chosen writer CLI.",
+   "category": "Memory & Context",
+   "maker": "TardisBooo",
+   "url": "https://pickaplugin.com/p/ai-coding-daily-report",
+   "stars": 25
+  },
+  {
+   "slug": "tau-scout",
+   "name": "Tau Scout",
+   "summary": "Local LinkedIn job search MCP server: find, compare and refine job shortlists from your AI chat using your own Apify token, with CV-evidence fit review and remote/student-program checks. No LinkedIn login or Tau account. v0.3 developer preview.",
+   "category": "Industry Tools",
+   "maker": "Tau",
+   "url": "https://pickaplugin.com/p/tau-scout",
+   "stars": 25
+  },
+  {
+   "slug": "mission-kit",
+   "name": "Mission Kit",
+   "summary": "Plans, handoff and durable memory for long-term projects with your own coding agents.",
+   "category": "Memory & Context",
+   "maker": "agent-kit-startup",
+   "url": "https://pickaplugin.com/p/mission-kit",
+   "stars": 24
+  }
+ ],
+ "movers": [
+  {
+   "slug": "claude-seo",
+   "name": "claude-seo",
+   "summary": "SEO skill pack with 26 sub-skills and 19 specialist agents for technical SEO, schema, E-E-A-T, AI-search (GEO) and sitemap audits; built for Claude Code and documented to work with Codex CLI via AGENTS.md.",
+   "category": "Docs, Content & SEO",
+   "maker": "AgriciDaniel",
+   "url": "https://pickaplugin.com/p/claude-seo",
+   "stars": 32094,
+   "gained": 1841,
+   "was": 30253
+  },
+  {
+   "slug": "claude-code-skills",
+   "name": "Claude Code Skills",
+   "summary": "223 production-ready skills, 23 agents, and 298 Python tools across 9 domains — engineering, marketing, product, compliance, and more.",
+   "category": "Agent Workflows",
+   "maker": "alirezarezvani",
+   "url": "https://pickaplugin.com/p/claude-code-skills",
+   "stars": 30414,
+   "gained": 448,
+   "was": 29966
+  },
+  {
+   "slug": "poki",
+   "name": "Poki",
+   "summary": "Open-source local MCP server and agent that lets AI assistants operate a real iPhone through the accessibility tree, with no jailbreak or extra hardware.",
+   "category": "Messaging & Remote",
+   "maker": "Joseph Zhou",
+   "url": "https://pickaplugin.com/p/poki",
+   "stars": 1908,
+   "gained": 352,
+   "was": 1556
+  },
+  {
+   "slug": "stack-diagram",
+   "name": "stack-diagram",
+   "summary": "Agent skill that turns a one-sentence description of your stack into an architecture diagram with official logos.",
+   "category": "Docs, Content & SEO",
+   "maker": "caru-ini",
+   "url": "https://pickaplugin.com/p/stack-diagram",
+   "stars": 2874,
+   "gained": 311,
+   "was": 2563
+  },
+  {
+   "slug": "kubai-icons",
+   "name": "Kubai Icons",
+   "summary": "An agent skill that draws animated icons in one consistent style, for Claude Code, Codex and other coding agents. Comes with 2,600+ open-source icons for React, Vue and SVG, and a website to browse them.",
+   "category": "Design & Frontend",
+   "maker": "kubai087",
+   "url": "https://pickaplugin.com/p/kubai-icons",
+   "stars": 1195,
+   "gained": 278,
+   "was": 917
+  }
+ ],
+ "sponsored": null
+}
