@@ -796,3 +796,49 @@ I'll be straight: the directory is young and traffic is still small. If a little
 No pressure, the free listing stays either way. If anything on the page is off, reply and I'll fix it.
 
 Aaron
+
+## 2026-11-25
+
+Status: NOT SENT. Drafts only, for Aaron to review. Cold featured pitching is paused (Nov 21), so these wait for his OK. Check launch/outreach_cooldown.py and do-not-contact.json before any send. Price shown matches the site's founding offer ($29/mo for life, first week free, 0 of 10 taken). Listing pages go live with the next deploy (Cloudflare connector signed out on Nov 25), so confirm the links return 200 before sending.
+
+### 1. Bruno, Bruno MCP (score 5.0), NOT SENT
+To: support@usebruno.com (listed on usebruno.com; sales@usebruno.com is also published; X @use_bruno)
+Subject: Bruno MCP is on PickAPlugin
+
+Hi Bruno team,
+
+Saw the Bruno MCP launch. Letting Codex or Claude run requests straight from a Bruno collection, with the files staying on disk, fits Bruno's offline-first approach well, so I added it to PickAPlugin (728 Codex, ChatGPT and Claude plugins, skills and MCP servers) as a free listing: https://pickaplugin.com/p/bruno-mcp
+
+To be upfront: the directory is young and our traffic is still small, much smaller than yours. If you'd still like extra placement, a founding featured spot (top of Review & Testing, the homepage, and a newsletter mention) is $29/mo for life, first week free, cancel anytime.
+
+No pressure, the free listing stays either way. If anything on the page is wrong, reply and I'll fix it.
+
+Aaron
+
+### 2. Yash Kapoor, OpenPromoter (score 4.3), NOT SENT
+To: support@openpromoter.com (listed on openpromoter.com; X @IamYashKapoor)
+Subject: OpenPromoter's MCP server is on PickAPlugin
+
+Hi Yash,
+
+Saw your one-week update. A remote MCP server for Claude and ChatGPT where AI can prepare payouts but only a person can approve them is a sensible line to draw, so I listed OpenPromoter on PickAPlugin for free: https://pickaplugin.com/p/openpromoter
+
+Honest heads-up: we're new and traffic is still modest, so think of this as a cheap extra placement, not a big-reach play. If it's useful, a founding featured spot (top of Industry Tools, the homepage, and a newsletter mention) is $29/mo for life with the first week free, cancel anytime.
+
+Totally optional, the listing stays either way. Happy to tweak the description if you'd put it differently.
+
+Aaron
+
+### 3. Cueston, Cueston MCP (score 4.0), NOT SENT
+To: hello@cueston.com (listed on cueston.com/contact; X @cuestonapp)
+Subject: Cueston MCP is listed on PickAPlugin
+
+Hi Cueston team,
+
+Saw the new Cueston MCP server. Having an agent build a product tour as a draft, check it against the real page and preview it before anything goes live is a careful way to do it, so I added it to PickAPlugin as a free listing: https://pickaplugin.com/p/cueston-mcp
+
+I'll be straight: the directory is young and traffic is still small. If a little extra placement helps while the server is new, a founding featured spot (top of Design & Frontend, the homepage, and a newsletter mention) is $29/mo for life, first week free, cancel anytime.
+
+No pressure, the free listing stays either way. If anything on the page is off, reply and I'll fix it.
+
+Aaron
