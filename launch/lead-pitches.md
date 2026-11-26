@@ -842,3 +842,49 @@ I'll be straight: the directory is young and traffic is still small. If a little
 No pressure, the free listing stays either way. If anything on the page is off, reply and I'll fix it.
 
 Aaron
+
+## 2026-11-26
+
+Status: NOT SENT. Drafts only, for Aaron to review. Cold featured pitching is paused (Nov 21), so these wait for his OK. Check launch/outreach_cooldown.py and do-not-contact.json before any send. Price shown matches the site's founding offer ($29/mo for life, first week free, 0 of 10 taken). Listing pages go live with the next daily redeploy (Nov 27 ~7 AM PT), so confirm the links return 200 before sending. Third pick: Hookdeck, ClipWrapper and Teammates.ai tied at 3.3; Hookdeck has no public email (contact form only) and ClipWrapper is a free solo tool, so Teammates.ai got the draft.
+
+### 1. OJO (Touchine AI), OJO Plugin (score 4.3), NOT SENT
+To: support@ojo.art (listed on ojo.art/help-center; X @OJOaidesign)
+Subject: The OJO plugin is on PickAPlugin
+
+Hi OJO team,
+
+Saw the OJO plugin launch for Codex and Claude Code. Getting a coding agent past the usual "AI look" by working from a reviewed prototype first is a real gap, so I added it to PickAPlugin (741 Codex, ChatGPT and Claude plugins, skills and MCP servers) as a free listing: https://pickaplugin.com/p/ojo-plugin
+
+To be upfront: the directory is young and our traffic is still small, a lot smaller than your launch post got. If you'd still like extra placement, a founding featured spot (top of Design & Frontend, the homepage, and a newsletter mention) is $29/mo for life, first week free, cancel anytime.
+
+No pressure, the free listing stays either way. If anything on the page is wrong, reply and I'll fix it.
+
+Aaron
+
+### 2. redirection.io, redirection.io MCP (score 4.0), NOT SENT
+To: hello@redirection.io (listed on redirection.io/contact; X @redirectionio)
+Subject: redirection.io's MCP server is on PickAPlugin
+
+Hi redirection.io team,
+
+Saw the new MCP server. Letting an assistant dig into 404s and draft redirect rules, while publishing stays a separate permission, is a sensible way to do it, so I listed it on PickAPlugin for free: https://pickaplugin.com/p/redirection-io-mcp
+
+Honest heads-up: we're new and traffic is still modest, so think of this as a cheap extra placement, not a big-reach play. If it's useful, a founding featured spot (top of Docs, Content & SEO, the homepage, and a newsletter mention) is $29/mo for life with the first week free, cancel anytime.
+
+Totally optional, the listing stays either way. Happy to tweak the description if you'd put it differently.
+
+Aaron
+
+### 3. Teammates.ai, Teammates.ai plugin (score 3.3), NOT SENT
+To: support@teammates.ai (listed on teammates.ai/contact)
+Subject: Teammates.ai is listed on PickAPlugin
+
+Hi Teammates.ai team,
+
+Saw the new Teammates.ai plugin and OAuth MCP connector for Codex, Claude and the rest. Keeping founder approvals in the loop for what the agents do is a good call, so I added it to PickAPlugin as a free listing: https://pickaplugin.com/p/teammates-ai
+
+I'll be straight: the directory is young and traffic is still small. If a little extra placement helps while the plugin is new, a founding featured spot (top of Agent Workflows, the homepage, and a newsletter mention) is $29/mo for life, first week free, cancel anytime.
+
+No pressure, the free listing stays either way. If anything on the page is off, reply and I'll fix it.
+
+Aaron
