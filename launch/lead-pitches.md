@@ -888,3 +888,49 @@ I'll be straight: the directory is young and traffic is still small. If a little
 No pressure, the free listing stays either way. If anything on the page is off, reply and I'll fix it.
 
 Aaron
+
+## 2026-11-27
+
+Status: NOT SENT. Drafts only, for Aaron to review. Cold featured pitching is paused (Nov 21), so these wait for his OK. Check launch/outreach_cooldown.py and do-not-contact.json before any send. Price shown matches the site's founding offer ($29/mo for life, first week free, 0 of 10 taken). Listing pages go live with the next daily redeploy (Nov 28 ~7 AM PT), so confirm the links return 200 before sending. Third pick: INE MCP, Inkworks and generate-icons tied at 4.0 but none has a public email (INE is Spain's national statistics office, so a paid pitch doesn't fit; the other two are solo makers with only X or a site), so Clavem (3.7, support@clavem.io, paid Stripe-based SaaS for indie devs) got the draft.
+
+### 1. UX Pilot, Frontend Design Skill (score 5.0), NOT SENT
+To: support@uxpilot.ai (listed on uxpilot.ai)
+Subject: Your frontend design skill is on PickAPlugin
+
+Hi UX Pilot team,
+
+Saw the new Frontend Design skill for Claude Code, Codex and Cursor. Having the agent design on a canvas you can actually edit before it writes any UI is a nice answer to "every AI site looks the same", so I added it to PickAPlugin (758 Codex, ChatGPT and Claude plugins, skills and MCP servers) as a free listing: https://pickaplugin.com/p/uxpilot-frontend-design-skill
+
+To be upfront: the directory is young and our traffic is still small, a lot smaller than the repo's first two days on GitHub. If you'd still like extra placement, a founding featured spot (top of Design & Frontend, the homepage, and a newsletter mention) is $29/mo for life, first week free, cancel anytime.
+
+No pressure, the free listing stays either way. If anything on the page is wrong, reply and I'll fix it.
+
+Aaron
+
+### 2. NeuralTrust, TrustGate (score 4.3), NOT SENT
+To: hello@neuraltrust.ai (listed on neuraltrust.ai/contact; X @NeuralTrustAI)
+Subject: TrustGate is listed on PickAPlugin
+
+Hi NeuralTrust team,
+
+Saw TrustGate go open source. One gateway that checks who's calling and where LLM, MCP and agent-to-agent calls may go is something a lot of teams running coding agents will need, so I listed it on PickAPlugin for free: https://pickaplugin.com/p/trustgate
+
+Honest heads-up: we're new and traffic is still modest, so think of this as a cheap extra placement, not a big-reach play. If it's useful, a founding featured spot (top of Security & Governance, the homepage, and a newsletter mention) is $29/mo for life with the first week free, cancel anytime.
+
+Totally optional, the listing stays either way. Happy to tweak the description if you'd put it differently.
+
+Aaron
+
+### 3. Clavem, Clavem MCP (score 3.7), NOT SENT
+To: support@clavem.io (listed on clavem.io; X @clavem_io)
+Subject: Clavem's MCP server is on PickAPlugin
+
+Hi Clavem team,
+
+Saw that Clavem now runs from Claude. Setting up products, linking Stripe prices and issuing licenses by just asking, with the key scoped to one account, fits the indie developers you're building for, so I added the MCP server to PickAPlugin as a free listing: https://pickaplugin.com/p/clavem-mcp
+
+I'll be straight: the directory is young and traffic is still small. If a little extra placement helps while the MCP server is new, a founding featured spot (top of Industry Tools, the homepage, and a newsletter mention) is $29/mo for life, first week free, cancel anytime.
+
+No pressure, the free listing stays either way. If anything on the page is off, reply and I'll fix it.
+
+Aaron
